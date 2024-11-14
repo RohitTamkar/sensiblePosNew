@@ -393,7 +393,7 @@ class _ImsServiceWidgetState extends State<ImsServiceWidget>
                                                   .primary,
                                           unselectedLabelColor:
                                               FlutterFlowTheme.of(context)
-                                                  .primary,
+                                                  .secondaryText,
                                           labelStyle: FlutterFlowTheme.of(
                                                   context)
                                               .bodyMedium

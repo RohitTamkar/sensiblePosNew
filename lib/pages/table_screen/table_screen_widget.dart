@@ -3298,7 +3298,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                       unselectedLabelColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .primaryText,
+                                                              .secondaryText,
                                                       labelStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)

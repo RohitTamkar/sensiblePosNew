@@ -654,39 +654,69 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                         ?.text =
                                                                     containerVarItem
                                                                         .name;
-                                                                _model.custnameTextController
-                                                                        ?.selection =
-                                                                    TextSelection.collapsed(
-                                                                        offset: _model
-                                                                            .custnameTextController!
-                                                                            .text
-                                                                            .length);
+                                                                _model
+                                                                    .custnameFocusNode
+                                                                    ?.requestFocus();
+                                                                WidgetsBinding
+                                                                    .instance
+                                                                    .addPostFrameCallback(
+                                                                        (_) {
+                                                                  _model.custnameTextController
+                                                                          ?.selection =
+                                                                      TextSelection
+                                                                          .collapsed(
+                                                                    offset: _model
+                                                                        .custnameTextController!
+                                                                        .text
+                                                                        .length,
+                                                                  );
+                                                                });
                                                               });
                                                               safeSetState(() {
                                                                 _model.custmobTextController
                                                                         ?.text =
                                                                     containerVarItem
                                                                         .mobile;
-                                                                _model.custmobTextController
-                                                                        ?.selection =
-                                                                    TextSelection.collapsed(
-                                                                        offset: _model
-                                                                            .custmobTextController!
-                                                                            .text
-                                                                            .length);
+                                                                _model
+                                                                    .custmobFocusNode
+                                                                    ?.requestFocus();
+                                                                WidgetsBinding
+                                                                    .instance
+                                                                    .addPostFrameCallback(
+                                                                        (_) {
+                                                                  _model.custmobTextController
+                                                                          ?.selection =
+                                                                      TextSelection
+                                                                          .collapsed(
+                                                                    offset: _model
+                                                                        .custmobTextController!
+                                                                        .text
+                                                                        .length,
+                                                                  );
+                                                                });
                                                               });
                                                               safeSetState(() {
                                                                 _model.addressTextController
                                                                         ?.text =
                                                                     containerVarItem
                                                                         .address;
-                                                                _model.addressTextController
-                                                                        ?.selection =
-                                                                    TextSelection.collapsed(
-                                                                        offset: _model
-                                                                            .addressTextController!
-                                                                            .text
-                                                                            .length);
+                                                                _model
+                                                                    .addressFocusNode
+                                                                    ?.requestFocus();
+                                                                WidgetsBinding
+                                                                    .instance
+                                                                    .addPostFrameCallback(
+                                                                        (_) {
+                                                                  _model.addressTextController
+                                                                          ?.selection =
+                                                                      TextSelection
+                                                                          .collapsed(
+                                                                    offset: _model
+                                                                        .addressTextController!
+                                                                        .text
+                                                                        .length,
+                                                                  );
+                                                                });
                                                               });
                                                               Navigator.pop(
                                                                   context);
@@ -970,13 +1000,23 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                           ?.text =
                                                                       listItem
                                                                           .name;
-                                                                  _model.custnameTextController
-                                                                          ?.selection =
-                                                                      TextSelection.collapsed(
-                                                                          offset: _model
-                                                                              .custnameTextController!
-                                                                              .text
-                                                                              .length);
+                                                                  _model
+                                                                      .custnameFocusNode
+                                                                      ?.requestFocus();
+                                                                  WidgetsBinding
+                                                                      .instance
+                                                                      .addPostFrameCallback(
+                                                                          (_) {
+                                                                    _model.custnameTextController
+                                                                            ?.selection =
+                                                                        TextSelection
+                                                                            .collapsed(
+                                                                      offset: _model
+                                                                          .custnameTextController!
+                                                                          .text
+                                                                          .length,
+                                                                    );
+                                                                  });
                                                                 });
                                                                 safeSetState(
                                                                     () {
@@ -984,13 +1024,23 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                           ?.text =
                                                                       listItem
                                                                           .mobile;
-                                                                  _model.custmobTextController
-                                                                          ?.selection =
-                                                                      TextSelection.collapsed(
-                                                                          offset: _model
-                                                                              .custmobTextController!
-                                                                              .text
-                                                                              .length);
+                                                                  _model
+                                                                      .custmobFocusNode
+                                                                      ?.requestFocus();
+                                                                  WidgetsBinding
+                                                                      .instance
+                                                                      .addPostFrameCallback(
+                                                                          (_) {
+                                                                    _model.custmobTextController
+                                                                            ?.selection =
+                                                                        TextSelection
+                                                                            .collapsed(
+                                                                      offset: _model
+                                                                          .custmobTextController!
+                                                                          .text
+                                                                          .length,
+                                                                    );
+                                                                  });
                                                                 });
                                                                 safeSetState(
                                                                     () {
@@ -998,13 +1048,23 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                           ?.text =
                                                                       listItem
                                                                           .address;
-                                                                  _model.addressTextController
-                                                                          ?.selection =
-                                                                      TextSelection.collapsed(
-                                                                          offset: _model
-                                                                              .addressTextController!
-                                                                              .text
-                                                                              .length);
+                                                                  _model
+                                                                      .addressFocusNode
+                                                                      ?.requestFocus();
+                                                                  WidgetsBinding
+                                                                      .instance
+                                                                      .addPostFrameCallback(
+                                                                          (_) {
+                                                                    _model.addressTextController
+                                                                            ?.selection =
+                                                                        TextSelection
+                                                                            .collapsed(
+                                                                      offset: _model
+                                                                          .addressTextController!
+                                                                          .text
+                                                                          .length,
+                                                                    );
+                                                                  });
                                                                 });
                                                                 Navigator.pop(
                                                                     context);
@@ -2563,13 +2623,23 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                       _model
                                                                           .datePicked!
                                                                           .toString();
-                                                                  _model.supplierbilldateTextController1
-                                                                          ?.selection =
-                                                                      TextSelection.collapsed(
-                                                                          offset: _model
-                                                                              .supplierbilldateTextController1!
-                                                                              .text
-                                                                              .length);
+                                                                  _model
+                                                                      .supplierbilldateFocusNode1
+                                                                      ?.requestFocus();
+                                                                  WidgetsBinding
+                                                                      .instance
+                                                                      .addPostFrameCallback(
+                                                                          (_) {
+                                                                    _model.supplierbilldateTextController1
+                                                                            ?.selection =
+                                                                        TextSelection
+                                                                            .collapsed(
+                                                                      offset: _model
+                                                                          .supplierbilldateTextController1!
+                                                                          .text
+                                                                          .length,
+                                                                    );
+                                                                  });
                                                                 });
                                                               },
                                                             ),

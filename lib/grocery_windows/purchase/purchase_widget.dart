@@ -711,30 +711,39 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                   widget!.jsonitem,
                   r'''$.acceptedQty''',
                 ).toString();
-                _model.textFieldaccqtyTextController?.selection =
-                    TextSelection.collapsed(
-                        offset:
-                            _model.textFieldaccqtyTextController!.text.length);
+                _model.textFieldaccqtyFocusNode?.requestFocus();
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  _model.textFieldaccqtyTextController?.selection =
+                      TextSelection.collapsed(
+                    offset: _model.textFieldaccqtyTextController!.text.length,
+                  );
+                });
               });
               safeSetState(() {
                 _model.textFieldrejqtyTextController?.text = getJsonField(
                   widget!.jsonitem,
                   r'''$.rejectedQty''',
                 ).toString();
-                _model.textFieldrejqtyTextController?.selection =
-                    TextSelection.collapsed(
-                        offset:
-                            _model.textFieldrejqtyTextController!.text.length);
+                _model.textFieldrejqtyFocusNode?.requestFocus();
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  _model.textFieldrejqtyTextController?.selection =
+                      TextSelection.collapsed(
+                    offset: _model.textFieldrejqtyTextController!.text.length,
+                  );
+                });
               });
               safeSetState(() {
                 _model.textFieldnoteTextController?.text = getJsonField(
                   widget!.jsonitem,
                   r'''$.note''',
                 ).toString();
-                _model.textFieldnoteTextController?.selection =
-                    TextSelection.collapsed(
-                        offset:
-                            _model.textFieldnoteTextController!.text.length);
+                _model.textFieldnoteFocusNode?.requestFocus();
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  _model.textFieldnoteTextController?.selection =
+                      TextSelection.collapsed(
+                    offset: _model.textFieldnoteTextController!.text.length,
+                  );
+                });
               });
             },
             child: Container(

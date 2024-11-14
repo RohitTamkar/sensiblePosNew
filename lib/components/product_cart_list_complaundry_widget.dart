@@ -66,13 +66,21 @@ class _ProductCartListComplaundryWidgetState
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       safeSetState(() {
         _model.textController1?.text = widget!.parameter2!.toString();
-        _model.textController1?.selection = TextSelection.collapsed(
-            offset: _model.textController1!.text.length);
+        _model.textFieldFocusNode?.requestFocus();
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          _model.textController1?.selection = TextSelection.collapsed(
+            offset: _model.textController1!.text.length,
+          );
+        });
       });
       safeSetState(() {
         _model.productQtyTextController?.text = widget!.parameter8!.toString();
-        _model.productQtyTextController?.selection = TextSelection.collapsed(
-            offset: _model.productQtyTextController!.text.length);
+        _model.productQtyFocusNode?.requestFocus();
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          _model.productQtyTextController?.selection = TextSelection.collapsed(
+            offset: _model.productQtyTextController!.text.length,
+          );
+        });
       });
 
       _model.updatePage(() {});

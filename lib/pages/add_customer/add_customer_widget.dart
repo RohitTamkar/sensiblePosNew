@@ -5391,7 +5391,7 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                '7odmmed6' /* Customer */,
+                                                                '7odmmed6' /* CUSTOMER */,
                                                               ),
                                                             ),
                                                             options: [

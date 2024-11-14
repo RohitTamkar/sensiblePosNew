@@ -894,7 +894,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                       labelColor:
                                           FlutterFlowTheme.of(context).primary,
                                       unselectedLabelColor:
-                                          FlutterFlowTheme.of(context).primary,
+                                          FlutterFlowTheme.of(context)
+                                              .secondaryText,
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(

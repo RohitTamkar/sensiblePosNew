@@ -249,12 +249,15 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                                 .text) -
                                             1)
                                         .toString();
-                                _model.textFieldqtTextController?.selection =
-                                    TextSelection.collapsed(
-                                        offset: _model
-                                            .textFieldqtTextController!
-                                            .text
-                                            .length);
+                                _model.textFieldqtFocusNode?.requestFocus();
+                                WidgetsBinding.instance
+                                    .addPostFrameCallback((_) {
+                                  _model.textFieldqtTextController?.selection =
+                                      TextSelection.collapsed(
+                                    offset: _model
+                                        .textFieldqtTextController!.text.length,
+                                  );
+                                });
                               });
                               _model.allbillistplusCopy =
                                   await actions.addToHoldListGrCalculationqty(
@@ -294,13 +297,17 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                       .first,
                                   r'''$.disAmt''',
                                 ).toString();
-                                _model.textFielddisAmtTextController
-                                        ?.selection =
-                                    TextSelection.collapsed(
-                                        offset: _model
-                                            .textFielddisAmtTextController!
-                                            .text
-                                            .length);
+                                _model.textFielddisAmtFocusNode?.requestFocus();
+                                WidgetsBinding.instance
+                                    .addPostFrameCallback((_) {
+                                  _model.textFielddisAmtTextController
+                                      ?.selection = TextSelection.collapsed(
+                                    offset: _model
+                                        .textFielddisAmtTextController!
+                                        .text
+                                        .length,
+                                  );
+                                });
                               });
                               safeSetState(() {
                                 _model.textFieldTaxAmtTextController?.text =
@@ -319,13 +326,17 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                       .first,
                                   r'''$.taxAmt''',
                                 ).toString();
-                                _model.textFieldTaxAmtTextController
-                                        ?.selection =
-                                    TextSelection.collapsed(
-                                        offset: _model
-                                            .textFieldTaxAmtTextController!
-                                            .text
-                                            .length);
+                                _model.textFieldTaxAmtFocusNode?.requestFocus();
+                                WidgetsBinding.instance
+                                    .addPostFrameCallback((_) {
+                                  _model.textFieldTaxAmtTextController
+                                      ?.selection = TextSelection.collapsed(
+                                    offset: _model
+                                        .textFieldTaxAmtTextController!
+                                        .text
+                                        .length,
+                                  );
+                                });
                               });
                               _model.output1Copy =
                                   await actions.calSubTotalForGrocery(
@@ -345,12 +356,15 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                             } else {
                               safeSetState(() {
                                 _model.textFieldqtTextController?.text = '1.0';
-                                _model.textFieldqtTextController?.selection =
-                                    TextSelection.collapsed(
-                                        offset: _model
-                                            .textFieldqtTextController!
-                                            .text
-                                            .length);
+                                _model.textFieldqtFocusNode?.requestFocus();
+                                WidgetsBinding.instance
+                                    .addPostFrameCallback((_) {
+                                  _model.textFieldqtTextController?.selection =
+                                      TextSelection.collapsed(
+                                    offset: _model
+                                        .textFieldqtTextController!.text.length,
+                                  );
+                                });
                               });
                             }
 
@@ -400,13 +414,17 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                       .first,
                                   r'''$.disAmt''',
                                 ).toString();
-                                _model.textFielddisAmtTextController
-                                        ?.selection =
-                                    TextSelection.collapsed(
-                                        offset: _model
-                                            .textFielddisAmtTextController!
-                                            .text
-                                            .length);
+                                _model.textFielddisAmtFocusNode?.requestFocus();
+                                WidgetsBinding.instance
+                                    .addPostFrameCallback((_) {
+                                  _model.textFielddisAmtTextController
+                                      ?.selection = TextSelection.collapsed(
+                                    offset: _model
+                                        .textFielddisAmtTextController!
+                                        .text
+                                        .length,
+                                  );
+                                });
                               });
                               safeSetState(() {
                                 _model.textFieldTaxAmtTextController?.text =
@@ -425,13 +443,17 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                       .first,
                                   r'''$.taxAmt''',
                                 ).toString();
-                                _model.textFieldTaxAmtTextController
-                                        ?.selection =
-                                    TextSelection.collapsed(
-                                        offset: _model
-                                            .textFieldTaxAmtTextController!
-                                            .text
-                                            .length);
+                                _model.textFieldTaxAmtFocusNode?.requestFocus();
+                                WidgetsBinding.instance
+                                    .addPostFrameCallback((_) {
+                                  _model.textFieldTaxAmtTextController
+                                      ?.selection = TextSelection.collapsed(
+                                    offset: _model
+                                        .textFieldTaxAmtTextController!
+                                        .text
+                                        .length,
+                                  );
+                                });
                               });
                               _model.output =
                                   await actions.calSubTotalForGrocery(
@@ -541,10 +563,14 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                               .textFieldqtTextController.text) +
                                           1)
                                       .toString();
-                              _model.textFieldqtTextController?.selection =
-                                  TextSelection.collapsed(
-                                      offset: _model.textFieldqtTextController!
-                                          .text.length);
+                              _model.textFieldqtFocusNode?.requestFocus();
+                              WidgetsBinding.instance.addPostFrameCallback((_) {
+                                _model.textFieldqtTextController?.selection =
+                                    TextSelection.collapsed(
+                                  offset: _model
+                                      .textFieldqtTextController!.text.length,
+                                );
+                              });
                             });
                             _model.all =
                                 await actions.addToHoldListGrCalculationqty(
@@ -583,12 +609,14 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                     .first,
                                 r'''$.disAmt''',
                               ).toString();
-                              _model.textFielddisAmtTextController?.selection =
-                                  TextSelection.collapsed(
-                                      offset: _model
-                                          .textFielddisAmtTextController!
-                                          .text
-                                          .length);
+                              _model.textFielddisAmtFocusNode?.requestFocus();
+                              WidgetsBinding.instance.addPostFrameCallback((_) {
+                                _model.textFielddisAmtTextController
+                                    ?.selection = TextSelection.collapsed(
+                                  offset: _model.textFielddisAmtTextController!
+                                      .text.length,
+                                );
+                              });
                             });
                             safeSetState(() {
                               _model.textFieldTaxAmtTextController?.text =
@@ -607,12 +635,14 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                     .first,
                                 r'''$.taxAmt''',
                               ).toString();
-                              _model.textFieldTaxAmtTextController?.selection =
-                                  TextSelection.collapsed(
-                                      offset: _model
-                                          .textFieldTaxAmtTextController!
-                                          .text
-                                          .length);
+                              _model.textFieldTaxAmtFocusNode?.requestFocus();
+                              WidgetsBinding.instance.addPostFrameCallback((_) {
+                                _model.textFieldTaxAmtTextController
+                                    ?.selection = TextSelection.collapsed(
+                                  offset: _model.textFieldTaxAmtTextController!
+                                      .text.length,
+                                );
+                              });
                             });
                             _model.output1 =
                                 await actions.calSubTotalForGrocery(
@@ -729,13 +759,17 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                   )?.toString(),
                                   '0',
                                 );
-                                _model.textFieldTaxAmtTextController
-                                        ?.selection =
-                                    TextSelection.collapsed(
-                                        offset: _model
-                                            .textFieldTaxAmtTextController!
-                                            .text
-                                            .length);
+                                _model.textFieldTaxAmtFocusNode?.requestFocus();
+                                WidgetsBinding.instance
+                                    .addPostFrameCallback((_) {
+                                  _model.textFieldTaxAmtTextController
+                                      ?.selection = TextSelection.collapsed(
+                                    offset: _model
+                                        .textFieldTaxAmtTextController!
+                                        .text
+                                        .length,
+                                  );
+                                });
                               });
                               safeSetState(() {
                                 _model.textFielddisAmtTextController?.text =
@@ -757,13 +791,17 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                   )?.toString(),
                                   '0',
                                 );
-                                _model.textFielddisAmtTextController
-                                        ?.selection =
-                                    TextSelection.collapsed(
-                                        offset: _model
-                                            .textFielddisAmtTextController!
-                                            .text
-                                            .length);
+                                _model.textFielddisAmtFocusNode?.requestFocus();
+                                WidgetsBinding.instance
+                                    .addPostFrameCallback((_) {
+                                  _model.textFielddisAmtTextController
+                                      ?.selection = TextSelection.collapsed(
+                                    offset: _model
+                                        .textFielddisAmtTextController!
+                                        .text
+                                        .length,
+                                  );
+                                });
                               });
                               _model.outputr2 =
                                   await actions.calSubTotalForGrocery(
@@ -1211,13 +1249,17 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                       .first,
                                   r'''$.taxAmt''',
                                 ).toString();
-                                _model.textFieldTaxAmtTextController
-                                        ?.selection =
-                                    TextSelection.collapsed(
-                                        offset: _model
-                                            .textFieldTaxAmtTextController!
-                                            .text
-                                            .length);
+                                _model.textFieldTaxAmtFocusNode?.requestFocus();
+                                WidgetsBinding.instance
+                                    .addPostFrameCallback((_) {
+                                  _model.textFieldTaxAmtTextController
+                                      ?.selection = TextSelection.collapsed(
+                                    offset: _model
+                                        .textFieldTaxAmtTextController!
+                                        .text
+                                        .length,
+                                  );
+                                });
                               });
                               _model.output2 =
                                   await actions.calSubTotalForGrocery(
@@ -1370,13 +1412,17 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                       .first,
                                   r'''$.taxPer''',
                                 ).toString();
-                                _model.textFieldtaxPerTextController
-                                        ?.selection =
-                                    TextSelection.collapsed(
-                                        offset: _model
-                                            .textFieldtaxPerTextController!
-                                            .text
-                                            .length);
+                                _model.textFieldtaxPerFocusNode?.requestFocus();
+                                WidgetsBinding.instance
+                                    .addPostFrameCallback((_) {
+                                  _model.textFieldtaxPerTextController
+                                      ?.selection = TextSelection.collapsed(
+                                    offset: _model
+                                        .textFieldtaxPerTextController!
+                                        .text
+                                        .length,
+                                  );
+                                });
                               });
                               _model.output3 =
                                   await actions.calSubTotalForGrocery(
@@ -1538,9 +1584,13 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                   )?.toString(),
                   '0',
                 );
-                _model.textFieldqtTextController?.selection =
-                    TextSelection.collapsed(
-                        offset: _model.textFieldqtTextController!.text.length);
+                _model.textFieldqtFocusNode?.requestFocus();
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  _model.textFieldqtTextController?.selection =
+                      TextSelection.collapsed(
+                    offset: _model.textFieldqtTextController!.text.length,
+                  );
+                });
               });
               safeSetState(() {
                 _model.textFieldrateTextController?.text =
@@ -1551,10 +1601,13 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                   )?.toString(),
                   '0',
                 );
-                _model.textFieldrateTextController?.selection =
-                    TextSelection.collapsed(
-                        offset:
-                            _model.textFieldrateTextController!.text.length);
+                _model.textFieldrateFocusNode?.requestFocus();
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  _model.textFieldrateTextController?.selection =
+                      TextSelection.collapsed(
+                    offset: _model.textFieldrateTextController!.text.length,
+                  );
+                });
               });
               safeSetState(() {
                 _model.textFielddisAmtTextController?.text =
@@ -1565,10 +1618,13 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                   )?.toString(),
                   '0',
                 );
-                _model.textFielddisAmtTextController?.selection =
-                    TextSelection.collapsed(
-                        offset:
-                            _model.textFielddisAmtTextController!.text.length);
+                _model.textFielddisAmtFocusNode?.requestFocus();
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  _model.textFielddisAmtTextController?.selection =
+                      TextSelection.collapsed(
+                    offset: _model.textFielddisAmtTextController!.text.length,
+                  );
+                });
               });
               safeSetState(() {
                 _model.textFieldTaxAmtTextController?.text =
@@ -1579,10 +1635,13 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                   )?.toString(),
                   '0',
                 );
-                _model.textFieldTaxAmtTextController?.selection =
-                    TextSelection.collapsed(
-                        offset:
-                            _model.textFieldTaxAmtTextController!.text.length);
+                _model.textFieldTaxAmtFocusNode?.requestFocus();
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  _model.textFieldTaxAmtTextController?.selection =
+                      TextSelection.collapsed(
+                    offset: _model.textFieldTaxAmtTextController!.text.length,
+                  );
+                });
               });
               safeSetState(() {
                 _model.textFielddisPerTextController?.text =
@@ -1593,10 +1652,13 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                   )?.toString(),
                   '0',
                 );
-                _model.textFielddisPerTextController?.selection =
-                    TextSelection.collapsed(
-                        offset:
-                            _model.textFielddisPerTextController!.text.length);
+                _model.textFielddisPerFocusNode?.requestFocus();
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  _model.textFielddisPerTextController?.selection =
+                      TextSelection.collapsed(
+                    offset: _model.textFielddisPerTextController!.text.length,
+                  );
+                });
               });
               safeSetState(() {
                 _model.textFieldtaxPerTextController?.text =
@@ -1607,10 +1669,13 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                   )?.toString(),
                   '0',
                 );
-                _model.textFieldtaxPerTextController?.selection =
-                    TextSelection.collapsed(
-                        offset:
-                            _model.textFieldtaxPerTextController!.text.length);
+                _model.textFieldtaxPerFocusNode?.requestFocus();
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  _model.textFieldtaxPerTextController?.selection =
+                      TextSelection.collapsed(
+                    offset: _model.textFieldtaxPerTextController!.text.length,
+                  );
+                });
               });
             },
             child: Container(

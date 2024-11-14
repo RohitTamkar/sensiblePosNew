@@ -50,8 +50,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
       safeSetState(() {});
       safeSetState(() {
         _model.textController1?.text = _model.amount!;
-        _model.textController1?.selection = TextSelection.collapsed(
-            offset: _model.textController1!.text.length);
+        _model.textFieldFocusNode?.requestFocus();
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          _model.textController1?.selection = TextSelection.collapsed(
+            offset: _model.textController1!.text.length,
+          );
+        });
       });
     });
 
@@ -558,13 +562,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
-                                                            _model.textController1
-                                                                    ?.selection =
-                                                                TextSelection.collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length);
+                                                            _model
+                                                                .textFieldFocusNode
+                                                                ?.requestFocus();
+                                                            WidgetsBinding
+                                                                .instance
+                                                                .addPostFrameCallback(
+                                                                    (_) {
+                                                              _model.textController1
+                                                                      ?.selection =
+                                                                  TextSelection
+                                                                      .collapsed(
+                                                                offset: _model
+                                                                    .textController1!
+                                                                    .text
+                                                                    .length,
+                                                              );
+                                                            });
                                                           });
                                                         },
                                                         text:
@@ -637,13 +651,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
-                                                            _model.textController1
-                                                                    ?.selection =
-                                                                TextSelection.collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length);
+                                                            _model
+                                                                .textFieldFocusNode
+                                                                ?.requestFocus();
+                                                            WidgetsBinding
+                                                                .instance
+                                                                .addPostFrameCallback(
+                                                                    (_) {
+                                                              _model.textController1
+                                                                      ?.selection =
+                                                                  TextSelection
+                                                                      .collapsed(
+                                                                offset: _model
+                                                                    .textController1!
+                                                                    .text
+                                                                    .length,
+                                                              );
+                                                            });
                                                           });
                                                         },
                                                         text:
@@ -716,13 +740,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
-                                                            _model.textController1
-                                                                    ?.selection =
-                                                                TextSelection.collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length);
+                                                            _model
+                                                                .textFieldFocusNode
+                                                                ?.requestFocus();
+                                                            WidgetsBinding
+                                                                .instance
+                                                                .addPostFrameCallback(
+                                                                    (_) {
+                                                              _model.textController1
+                                                                      ?.selection =
+                                                                  TextSelection
+                                                                      .collapsed(
+                                                                offset: _model
+                                                                    .textController1!
+                                                                    .text
+                                                                    .length,
+                                                              );
+                                                            });
                                                           });
                                                         },
                                                         text:
@@ -804,13 +838,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
-                                                            _model.textController1
-                                                                    ?.selection =
-                                                                TextSelection.collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length);
+                                                            _model
+                                                                .textFieldFocusNode
+                                                                ?.requestFocus();
+                                                            WidgetsBinding
+                                                                .instance
+                                                                .addPostFrameCallback(
+                                                                    (_) {
+                                                              _model.textController1
+                                                                      ?.selection =
+                                                                  TextSelection
+                                                                      .collapsed(
+                                                                offset: _model
+                                                                    .textController1!
+                                                                    .text
+                                                                    .length,
+                                                              );
+                                                            });
                                                           });
                                                         },
                                                         text:
@@ -883,13 +927,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
-                                                            _model.textController1
-                                                                    ?.selection =
-                                                                TextSelection.collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length);
+                                                            _model
+                                                                .textFieldFocusNode
+                                                                ?.requestFocus();
+                                                            WidgetsBinding
+                                                                .instance
+                                                                .addPostFrameCallback(
+                                                                    (_) {
+                                                              _model.textController1
+                                                                      ?.selection =
+                                                                  TextSelection
+                                                                      .collapsed(
+                                                                offset: _model
+                                                                    .textController1!
+                                                                    .text
+                                                                    .length,
+                                                              );
+                                                            });
                                                           });
                                                         },
                                                         text:
@@ -962,13 +1016,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
-                                                            _model.textController1
-                                                                    ?.selection =
-                                                                TextSelection.collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length);
+                                                            _model
+                                                                .textFieldFocusNode
+                                                                ?.requestFocus();
+                                                            WidgetsBinding
+                                                                .instance
+                                                                .addPostFrameCallback(
+                                                                    (_) {
+                                                              _model.textController1
+                                                                      ?.selection =
+                                                                  TextSelection
+                                                                      .collapsed(
+                                                                offset: _model
+                                                                    .textController1!
+                                                                    .text
+                                                                    .length,
+                                                              );
+                                                            });
                                                           });
                                                         },
                                                         text:
@@ -1050,13 +1114,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
-                                                            _model.textController1
-                                                                    ?.selection =
-                                                                TextSelection.collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length);
+                                                            _model
+                                                                .textFieldFocusNode
+                                                                ?.requestFocus();
+                                                            WidgetsBinding
+                                                                .instance
+                                                                .addPostFrameCallback(
+                                                                    (_) {
+                                                              _model.textController1
+                                                                      ?.selection =
+                                                                  TextSelection
+                                                                      .collapsed(
+                                                                offset: _model
+                                                                    .textController1!
+                                                                    .text
+                                                                    .length,
+                                                              );
+                                                            });
                                                           });
                                                         },
                                                         text:
@@ -1129,13 +1203,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
-                                                            _model.textController1
-                                                                    ?.selection =
-                                                                TextSelection.collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length);
+                                                            _model
+                                                                .textFieldFocusNode
+                                                                ?.requestFocus();
+                                                            WidgetsBinding
+                                                                .instance
+                                                                .addPostFrameCallback(
+                                                                    (_) {
+                                                              _model.textController1
+                                                                      ?.selection =
+                                                                  TextSelection
+                                                                      .collapsed(
+                                                                offset: _model
+                                                                    .textController1!
+                                                                    .text
+                                                                    .length,
+                                                              );
+                                                            });
                                                           });
                                                         },
                                                         text:
@@ -1208,13 +1292,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
-                                                            _model.textController1
-                                                                    ?.selection =
-                                                                TextSelection.collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length);
+                                                            _model
+                                                                .textFieldFocusNode
+                                                                ?.requestFocus();
+                                                            WidgetsBinding
+                                                                .instance
+                                                                .addPostFrameCallback(
+                                                                    (_) {
+                                                              _model.textController1
+                                                                      ?.selection =
+                                                                  TextSelection
+                                                                      .collapsed(
+                                                                offset: _model
+                                                                    .textController1!
+                                                                    .text
+                                                                    .length,
+                                                              );
+                                                            });
                                                           });
                                                         },
                                                         text:
@@ -1296,13 +1390,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
-                                                            _model.textController1
-                                                                    ?.selection =
-                                                                TextSelection.collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length);
+                                                            _model
+                                                                .textFieldFocusNode
+                                                                ?.requestFocus();
+                                                            WidgetsBinding
+                                                                .instance
+                                                                .addPostFrameCallback(
+                                                                    (_) {
+                                                              _model.textController1
+                                                                      ?.selection =
+                                                                  TextSelection
+                                                                      .collapsed(
+                                                                offset: _model
+                                                                    .textController1!
+                                                                    .text
+                                                                    .length,
+                                                              );
+                                                            });
                                                           });
                                                         },
                                                         text:
@@ -1378,13 +1482,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
-                                                            _model.textController1
-                                                                    ?.selection =
-                                                                TextSelection.collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length);
+                                                            _model
+                                                                .textFieldFocusNode
+                                                                ?.requestFocus();
+                                                            WidgetsBinding
+                                                                .instance
+                                                                .addPostFrameCallback(
+                                                                    (_) {
+                                                              _model.textController1
+                                                                      ?.selection =
+                                                                  TextSelection
+                                                                      .collapsed(
+                                                                offset: _model
+                                                                    .textController1!
+                                                                    .text
+                                                                    .length,
+                                                              );
+                                                            });
                                                           });
                                                         },
                                                         text:
@@ -1581,13 +1695,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
-                                                            _model.textController1
-                                                                    ?.selection =
-                                                                TextSelection.collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length);
+                                                            _model
+                                                                .textFieldFocusNode
+                                                                ?.requestFocus();
+                                                            WidgetsBinding
+                                                                .instance
+                                                                .addPostFrameCallback(
+                                                                    (_) {
+                                                              _model.textController1
+                                                                      ?.selection =
+                                                                  TextSelection
+                                                                      .collapsed(
+                                                                offset: _model
+                                                                    .textController1!
+                                                                    .text
+                                                                    .length,
+                                                              );
+                                                            });
                                                           });
                                                         },
                                                         text: '',
@@ -1680,13 +1804,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
-                                                            _model.textController1
-                                                                    ?.selection =
-                                                                TextSelection.collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length);
+                                                            _model
+                                                                .textFieldFocusNode
+                                                                ?.requestFocus();
+                                                            WidgetsBinding
+                                                                .instance
+                                                                .addPostFrameCallback(
+                                                                    (_) {
+                                                              _model.textController1
+                                                                      ?.selection =
+                                                                  TextSelection
+                                                                      .collapsed(
+                                                                offset: _model
+                                                                    .textController1!
+                                                                    .text
+                                                                    .length,
+                                                              );
+                                                            });
                                                           });
 
                                                           safeSetState(() {});
@@ -2349,13 +2483,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                   FFAppState()
                                                                       .disAmtPay
                                                                       .toString();
-                                                              _model.textFielddisamtTextController
-                                                                      ?.selection =
-                                                                  TextSelection.collapsed(
-                                                                      offset: _model
-                                                                          .textFielddisamtTextController!
-                                                                          .text
-                                                                          .length);
+                                                              _model
+                                                                  .textFielddisamtFocusNode
+                                                                  ?.requestFocus();
+                                                              WidgetsBinding
+                                                                  .instance
+                                                                  .addPostFrameCallback(
+                                                                      (_) {
+                                                                _model.textFielddisamtTextController
+                                                                        ?.selection =
+                                                                    TextSelection
+                                                                        .collapsed(
+                                                                  offset: _model
+                                                                      .textFielddisamtTextController!
+                                                                      .text
+                                                                      .length,
+                                                                );
+                                                              });
                                                             });
                                                           },
                                                           autofocus: false,
@@ -2628,13 +2772,23 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 FFAppState()
                                                                     .disPer
                                                                     .toString();
-                                                            _model.textFielddisperTextController
-                                                                    ?.selection =
-                                                                TextSelection.collapsed(
-                                                                    offset: _model
-                                                                        .textFielddisperTextController!
-                                                                        .text
-                                                                        .length);
+                                                            _model
+                                                                .textFielddisperFocusNode
+                                                                ?.requestFocus();
+                                                            WidgetsBinding
+                                                                .instance
+                                                                .addPostFrameCallback(
+                                                                    (_) {
+                                                              _model.textFielddisperTextController
+                                                                      ?.selection =
+                                                                  TextSelection
+                                                                      .collapsed(
+                                                                offset: _model
+                                                                    .textFielddisperTextController!
+                                                                    .text
+                                                                    .length,
+                                                              );
+                                                            });
                                                           });
                                                         },
                                                         autofocus: false,

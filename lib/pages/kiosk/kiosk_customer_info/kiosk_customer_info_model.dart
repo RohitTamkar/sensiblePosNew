@@ -24,7 +24,7 @@ class KioskCustomerInfoModel extends FlutterFlowModel<KioskCustomerInfoWidget> {
   String? _textControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'zj9ucuuq' /* Enter Mobile Number */,
+        'fd37c86v' /* Enter Mobile Number */,
       );
     }
 

@@ -393,7 +393,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                   .primary,
                                           unselectedLabelColor:
                                               FlutterFlowTheme.of(context)
-                                                  .primary,
+                                                  .secondaryText,
                                           labelStyle: FlutterFlowTheme.of(
                                                   context)
                                               .bodyMedium

@@ -4493,7 +4493,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     '7odmmed6': {
-      'en': 'Customer',
+      'en': 'CUSTOMER',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -22982,7 +22982,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    '164d8t1d': {
+    'fd37c86v': {
       'en': 'Enter Mobile Number',
       'hi': '',
       'kn': '',
