@@ -4313,6 +4313,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             FFAppState().delCharges = 0.0;
                                             FFAppState().disAmtPay = 0.0;
                                             FFAppState().taxAmtPay = 0.0;
+                                            FFAppState().prdid = '';
                                             FFAppState().update(() {});
                                             Navigator.pop(context);
                                             if (_shouldSetState)
@@ -5286,6 +5287,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             FFAppState().count = _model
                                                 .updatedShiftDetails!.billCount;
                                             FFAppState().groceryJson = null;
+                                            FFAppState().prdid = '';
                                             FFAppState().update(() {});
                                             Navigator.pop(context);
                                             if (_shouldSetState)
