@@ -31,6 +31,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await actions.newCustomAction5();
+      await actions.savelogstoStorage();
       if (FFAppState().navigate == 'REGULAR') {
         if (isAndroid == true) {
           context.pushNamed('welcomeScreenNew');
