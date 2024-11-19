@@ -1384,10 +1384,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                     FFAppState().orderId + 10;
                                                 FFAppState().paytmOrderId =
                                                     valueOrDefault<String>(
-                                                  'ORD-${functions.genInvoiceNum(FFAppState().count, getJsonField(
-                                                        widget!.shiftdetails,
-                                                        r'''$.shiftCount''',
-                                                      ))}',
+                                                  'ORD-${getCurrentTimestamp.millisecondsSinceEpoch.toString()}',
                                                   '0',
                                                 );
                                                 FFAppState().outletId =
