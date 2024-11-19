@@ -2,6 +2,7 @@ import '/components/directorypath_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/instant_timer.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'start_screen_widget.dart' show StartScreenWidget;
 import 'package:flutter/material.dart';
@@ -11,9 +12,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class StartScreenModel extends FlutterFlowModel<StartScreenWidget> {
+  ///  State fields for stateful widgets in this page.
+
+  InstantTimer? instantTimer;
+
   @override
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {}
+  void dispose() {
+    instantTimer?.cancel();
+  }
 }
