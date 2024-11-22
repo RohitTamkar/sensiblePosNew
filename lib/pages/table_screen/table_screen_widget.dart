@@ -3328,7 +3328,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                           text: FFLocalizations
                                                                   .of(context)
                                                               .getText(
-                                                            '7w48njot' /* Order/KOT */,
+                                                            '7w48njot' /* OrderKOT */,
                                                           ),
                                                         ),
                                                         Tab(
@@ -3896,7 +3896,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                 InputDecoration(
                                                                               isDense: true,
                                                                               hintText: FFLocalizations.of(context).getText(
-                                                                                '39vvt2y0' /* Covers/Guests */,
+                                                                                '39vvt2y0' /* CoversGuests */,
                                                                               ),
                                                                               hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,

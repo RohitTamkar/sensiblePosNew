@@ -763,7 +763,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'evf3j8bt' /* P/L */,
+                                                'evf3j8bt' /* PL */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)

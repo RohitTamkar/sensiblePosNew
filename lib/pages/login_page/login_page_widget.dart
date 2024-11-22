@@ -2700,7 +2700,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   AutoSizeText(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'e41ud8dm' /* 09/06/2022 */,
+                                                      'e41ud8dm' /* 09062022 */,
                                                     ),
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(

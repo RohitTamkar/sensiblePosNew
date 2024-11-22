@@ -430,33 +430,98 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
           FFAppState().delCharges = 0.0;
           FFAppState().update(() {});
           _model.taxmaster = await queryTaxMasterRecordOnce();
-
-          context.pushNamed(
-            'KioskAdvertising',
-            queryParameters: {
-              'userDoc': serializeParam(
-                _model.outletdoc?.userRef,
-                ParamType.DocumentReference,
-              ),
-              'shiftdoc': serializeParam(
-                _model.shiftSummarRkiosk,
-                ParamType.JSON,
-              ),
-              'appsetting': serializeParam(
-                _model.appsetting,
-                ParamType.Document,
-              ),
-              'taxcollection': serializeParam(
-                _model.taxmaster,
-                ParamType.Document,
-                isList: true,
-              ),
-            }.withoutNulls,
-            extra: <String, dynamic>{
-              'appsetting': _model.appsetting,
-              'taxcollection': _model.taxmaster,
-            },
-          );
+          if (_model.appsetting!.settingList
+              .where((e) => e.title == 'navigateMenuscreen')
+              .toList()
+              .first
+              .value) {
+            if (_model.appsetting!.settingList
+                .where((e) => e.title == 'hideDineInScreen')
+                .toList()
+                .first
+                .value) {
+              context.pushNamed(
+                'KioskBillScreen',
+                queryParameters: {
+                  'doc': serializeParam(
+                    _model.outletdoc?.userRef,
+                    ParamType.DocumentReference,
+                  ),
+                  'shiftdoc': serializeParam(
+                    _model.shiftSummarRkiosk,
+                    ParamType.JSON,
+                  ),
+                  'appsetting': serializeParam(
+                    _model.appsetting,
+                    ParamType.Document,
+                  ),
+                  'taxcollection': serializeParam(
+                    _model.taxmaster,
+                    ParamType.Document,
+                    isList: true,
+                  ),
+                }.withoutNulls,
+                extra: <String, dynamic>{
+                  'appsetting': _model.appsetting,
+                  'taxcollection': _model.taxmaster,
+                },
+              );
+            } else {
+              context.pushNamed(
+                'KioskDineParcel',
+                queryParameters: {
+                  'userdoc': serializeParam(
+                    _model.outletdoc?.userRef,
+                    ParamType.DocumentReference,
+                  ),
+                  'shiftdoc': serializeParam(
+                    _model.shiftSummarRkiosk,
+                    ParamType.JSON,
+                  ),
+                  'appSetting': serializeParam(
+                    _model.appsetting,
+                    ParamType.Document,
+                  ),
+                  'taxcollection': serializeParam(
+                    _model.taxmaster,
+                    ParamType.Document,
+                    isList: true,
+                  ),
+                }.withoutNulls,
+                extra: <String, dynamic>{
+                  'appSetting': _model.appsetting,
+                  'taxcollection': _model.taxmaster,
+                },
+              );
+            }
+          } else {
+            context.pushNamed(
+              'KioskAdvertising',
+              queryParameters: {
+                'userDoc': serializeParam(
+                  _model.outletdoc?.userRef,
+                  ParamType.DocumentReference,
+                ),
+                'shiftdoc': serializeParam(
+                  _model.shiftSummarRkiosk,
+                  ParamType.JSON,
+                ),
+                'appsetting': serializeParam(
+                  _model.appsetting,
+                  ParamType.Document,
+                ),
+                'taxcollection': serializeParam(
+                  _model.taxmaster,
+                  ParamType.Document,
+                  isList: true,
+                ),
+              }.withoutNulls,
+              extra: <String, dynamic>{
+                'appsetting': _model.appsetting,
+                'taxcollection': _model.taxmaster,
+              },
+            );
+          }
 
           return;
         } else {

@@ -206,16 +206,46 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 15.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onLongPress: () async {
-                                      context.pushNamed('KotOrderScreen');
-                                    },
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      if (widget!.appsetting!.settingList
+                                          .where((e) =>
+                                              e.title == 'hideDineInScreen')
+                                          .toList()
+                                          .first
+                                          .value) {
+                                        FFAppState().orderType = 'DINE IN';
+                                        FFAppState().delCharges = 0.0;
+                                        safeSetState(() {});
+
+                                        context.pushNamed(
+                                          'KioskBillScreen',
+                                          queryParameters: {
+                                            'doc': serializeParam(
+                                              widget!.userDoc,
+                                              ParamType.DocumentReference,
+                                            ),
+                                            'shiftdoc': serializeParam(
+                                              widget!.shiftdoc,
+                                              ParamType.JSON,
+                                            ),
+                                            'taxcollection': serializeParam(
+                                              widget!.taxcollection,
+                                              ParamType.Document,
+                                              isList: true,
+                                            ),
+                                            'appsetting': serializeParam(
+                                              widget!.appsetting,
+                                              ParamType.Document,
+                                            ),
+                                          }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            'taxcollection':
+                                                widget!.taxcollection,
+                                            'appsetting': widget!.appsetting,
+                                          },
+                                        );
+                                      } else {
                                         context.pushNamed(
                                           'KioskDineParcel',
                                           queryParameters: {
@@ -243,49 +273,45 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                                 widget!.taxcollection,
                                           },
                                         );
-                                      },
-                                      text: FFLocalizations.of(context).getText(
-                                        '90zc4l3n' /* Go For Menu */,
-                                      ),
-                                      options: FFButtonOptions(
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                0.8,
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                0.1,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 24.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
+                                      }
+                                    },
+                                    text: FFLocalizations.of(context).getText(
+                                      '90zc4l3n' /* Go For Menu */,
+                                    ),
+                                    options: FFButtonOptions(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.8,
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.1,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          24.0, 0.0, 24.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
+                                            color: Colors.white,
+                                            fontSize: 30.0,
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily),
+                                          ),
+                                      elevation: 10.0,
+                                      borderSide: BorderSide(
                                         color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmallFamily,
-                                              color: Colors.white,
-                                              fontSize: 30.0,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmallFamily),
-                                            ),
-                                        elevation: 10.0,
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBtnText,
-                                          width: 5.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(15.0),
+                                            .primaryBtnText,
+                                        width: 5.0,
                                       ),
+                                      borderRadius: BorderRadius.circular(15.0),
                                     ),
                                   ),
                                 ),

@@ -1636,7 +1636,7 @@ class _BillWidgetState extends State<BillWidget> {
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        'ncbipchv' /* Date/Time */,
+                                                                        'ncbipchv' /* DateTime */,
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)

@@ -634,7 +634,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'bfc3dg22' /* Search Item by Name/Barcode/Co... */,
+                                                        'bfc3dg22' /* Search Item by NameBarcodeCo... */,
                                                       ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
@@ -759,7 +759,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '969f7b3s' /* Select Barcode/QR Code */,
+                                                        '969f7b3s' /* Select BarcodeQR Code */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(

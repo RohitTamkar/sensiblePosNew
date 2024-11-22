@@ -921,7 +921,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    '802x6vzp' /* 2. DUPLICATE BILL ENABLE/DISAB... */,
+                                                                    '802x6vzp' /* 2. DUPLICATE BILL ENABLEDISAB... */,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -1936,7 +1936,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'mxgzl7su' /* 23.ENABLE COUPON/ KOT SUMMARY  */,
+                                                                    'mxgzl7su' /* 23.ENABLE COUPON KOT SUMMARY  */,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)

@@ -400,33 +400,98 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
             FFAppState().delCharges = 0.0;
             FFAppState().update(() {});
             _model.taxmaster = await queryTaxMasterRecordOnce();
-
-            context.pushNamed(
-              'KioskAdvertising',
-              queryParameters: {
-                'userDoc': serializeParam(
-                  _model.outletdoc?.userRef,
-                  ParamType.DocumentReference,
-                ),
-                'shiftdoc': serializeParam(
-                  _model.shiftSummarRkiosk,
-                  ParamType.JSON,
-                ),
-                'appsetting': serializeParam(
-                  _model.appsetting,
-                  ParamType.Document,
-                ),
-                'taxcollection': serializeParam(
-                  _model.taxmaster,
-                  ParamType.Document,
-                  isList: true,
-                ),
-              }.withoutNulls,
-              extra: <String, dynamic>{
-                'appsetting': _model.appsetting,
-                'taxcollection': _model.taxmaster,
-              },
-            );
+            if (_model.appsetting!.settingList
+                .where((e) => e.title == 'navigateMenuscreen')
+                .toList()
+                .first
+                .value) {
+              if (_model.appsetting!.settingList
+                  .where((e) => e.title == 'hideDineInScreen')
+                  .toList()
+                  .first
+                  .value) {
+                context.pushNamed(
+                  'KioskBillScreen',
+                  queryParameters: {
+                    'doc': serializeParam(
+                      _model.outletdoc?.userRef,
+                      ParamType.DocumentReference,
+                    ),
+                    'shiftdoc': serializeParam(
+                      _model.shiftSummarRkiosk,
+                      ParamType.JSON,
+                    ),
+                    'appsetting': serializeParam(
+                      _model.appsetting,
+                      ParamType.Document,
+                    ),
+                    'taxcollection': serializeParam(
+                      _model.taxmaster,
+                      ParamType.Document,
+                      isList: true,
+                    ),
+                  }.withoutNulls,
+                  extra: <String, dynamic>{
+                    'appsetting': _model.appsetting,
+                    'taxcollection': _model.taxmaster,
+                  },
+                );
+              } else {
+                context.pushNamed(
+                  'KioskDineParcel',
+                  queryParameters: {
+                    'userdoc': serializeParam(
+                      _model.outletdoc?.userRef,
+                      ParamType.DocumentReference,
+                    ),
+                    'shiftdoc': serializeParam(
+                      _model.shiftSummarRkiosk,
+                      ParamType.JSON,
+                    ),
+                    'appSetting': serializeParam(
+                      _model.appsetting,
+                      ParamType.Document,
+                    ),
+                    'taxcollection': serializeParam(
+                      _model.taxmaster,
+                      ParamType.Document,
+                      isList: true,
+                    ),
+                  }.withoutNulls,
+                  extra: <String, dynamic>{
+                    'appSetting': _model.appsetting,
+                    'taxcollection': _model.taxmaster,
+                  },
+                );
+              }
+            } else {
+              context.pushNamed(
+                'KioskAdvertising',
+                queryParameters: {
+                  'userDoc': serializeParam(
+                    _model.outletdoc?.userRef,
+                    ParamType.DocumentReference,
+                  ),
+                  'shiftdoc': serializeParam(
+                    _model.shiftSummarRkiosk,
+                    ParamType.JSON,
+                  ),
+                  'appsetting': serializeParam(
+                    _model.appsetting,
+                    ParamType.Document,
+                  ),
+                  'taxcollection': serializeParam(
+                    _model.taxmaster,
+                    ParamType.Document,
+                    isList: true,
+                  ),
+                }.withoutNulls,
+                extra: <String, dynamic>{
+                  'appsetting': _model.appsetting,
+                  'taxcollection': _model.taxmaster,
+                },
+              );
+            }
 
             return;
           } else {
@@ -480,33 +545,98 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
           FFAppState().noOfItems = 0;
           FFAppState().delCharges = 0.0;
           FFAppState().update(() {});
-
-          context.pushNamed(
-            'KioskAdvertising',
-            queryParameters: {
-              'userDoc': serializeParam(
-                _model.outletdoc?.userRef,
-                ParamType.DocumentReference,
-              ),
-              'shiftdoc': serializeParam(
-                widget!.shiftdetails,
-                ParamType.JSON,
-              ),
-              'appsetting': serializeParam(
-                _model.appsetting1,
-                ParamType.Document,
-              ),
-              'taxcollection': serializeParam(
-                _model.taxmaster2,
-                ParamType.Document,
-                isList: true,
-              ),
-            }.withoutNulls,
-            extra: <String, dynamic>{
-              'appsetting': _model.appsetting1,
-              'taxcollection': _model.taxmaster2,
-            },
-          );
+          if (_model.appsetting1!.settingList
+              .where((e) => e.title == 'navigateMenuscreen')
+              .toList()
+              .first
+              .value) {
+            if (_model.appsetting1!.settingList
+                .where((e) => e.title == 'hideDineInScreen')
+                .toList()
+                .first
+                .value) {
+              context.pushNamed(
+                'KioskBillScreen',
+                queryParameters: {
+                  'doc': serializeParam(
+                    _model.outletdoc?.userRef,
+                    ParamType.DocumentReference,
+                  ),
+                  'shiftdoc': serializeParam(
+                    widget!.shiftdetails,
+                    ParamType.JSON,
+                  ),
+                  'appsetting': serializeParam(
+                    _model.appsetting1,
+                    ParamType.Document,
+                  ),
+                  'taxcollection': serializeParam(
+                    _model.taxmaster2,
+                    ParamType.Document,
+                    isList: true,
+                  ),
+                }.withoutNulls,
+                extra: <String, dynamic>{
+                  'appsetting': _model.appsetting1,
+                  'taxcollection': _model.taxmaster2,
+                },
+              );
+            } else {
+              context.pushNamed(
+                'KioskDineParcel',
+                queryParameters: {
+                  'userdoc': serializeParam(
+                    _model.outletdoc?.userRef,
+                    ParamType.DocumentReference,
+                  ),
+                  'shiftdoc': serializeParam(
+                    widget!.shiftdetails,
+                    ParamType.JSON,
+                  ),
+                  'appSetting': serializeParam(
+                    _model.appsetting1,
+                    ParamType.Document,
+                  ),
+                  'taxcollection': serializeParam(
+                    _model.taxmaster2,
+                    ParamType.Document,
+                    isList: true,
+                  ),
+                }.withoutNulls,
+                extra: <String, dynamic>{
+                  'appSetting': _model.appsetting1,
+                  'taxcollection': _model.taxmaster2,
+                },
+              );
+            }
+          } else {
+            context.pushNamed(
+              'KioskAdvertising',
+              queryParameters: {
+                'userDoc': serializeParam(
+                  _model.outletdoc?.userRef,
+                  ParamType.DocumentReference,
+                ),
+                'shiftdoc': serializeParam(
+                  widget!.shiftdetails,
+                  ParamType.JSON,
+                ),
+                'appsetting': serializeParam(
+                  _model.appsetting1,
+                  ParamType.Document,
+                ),
+                'taxcollection': serializeParam(
+                  _model.taxmaster2,
+                  ParamType.Document,
+                  isList: true,
+                ),
+              }.withoutNulls,
+              extra: <String, dynamic>{
+                'appsetting': _model.appsetting1,
+                'taxcollection': _model.taxmaster2,
+              },
+            );
+          }
         }
       } else {
         return;

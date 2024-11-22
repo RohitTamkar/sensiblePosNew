@@ -2304,7 +2304,7 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        '7cyybitw' /* CGHS/ECHS CARD */,
+                                                                        '7cyybitw' /* CGHSECHS CARD */,
                                                                       ),
                                                                       FFLocalizations.of(
                                                                               context)

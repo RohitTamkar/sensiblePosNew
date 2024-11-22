@@ -475,7 +475,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                   text: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    '5wsayijt' /* Inward/Outward */,
+                                                    '5wsayijt' /* InwardOutward */,
                                                   ),
                                                 ),
                                               ],

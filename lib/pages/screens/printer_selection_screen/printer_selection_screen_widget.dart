@@ -2997,7 +2997,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 '401xvfyt' /* Subtitle */,
                                                                               ),
                                                                               hintText: FFLocalizations.of(context).getText(
-                                                                                '6fbciy7m' /* Subtitle/Address */,
+                                                                                '6fbciy7m' /* SubtitleAddress */,
                                                                               ),
                                                                               enabledBorder: UnderlineInputBorder(
                                                                                 borderSide: BorderSide(

@@ -10414,7 +10414,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               Text(
                                                                         FFLocalizations.of(context)
                                                                             .getText(
-                                                                          '1pdkr062' /* 09/11/2022 */,
+                                                                          '1pdkr062' /* 09112022 */,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall

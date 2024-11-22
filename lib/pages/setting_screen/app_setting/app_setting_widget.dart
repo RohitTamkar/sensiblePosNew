@@ -1548,7 +1548,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '95sz191k' /* 1.REGIONAL LANGUAGE ENABLE/DIS... */,
+                                                                '95sz191k' /* 1.REGIONAL LANGUAGE ENABLEDIS... */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -1739,7 +1739,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '1dyolp2l' /* 4.WEIGHT START WITH (+)/(-) */,
+                                                                      '1dyolp2l' /* 4.WEIGHT START WITH (+)(-) */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2175,7 +2175,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                           title:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              's8smze4l' /* 1.INCLUSIVE / REVERSE TAX */,
+                                                                              's8smze4l' /* 1.INCLUSIVE  REVERSE TAX */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -2528,7 +2528,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                           title:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'dzrawbej' /* 6.ENABLE CHECK-IN/CHECK-OUT */,
+                                                                              'dzrawbej' /* 6.ENABLE CHECK-INCHECK-OUT */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -2907,7 +2907,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             title:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
-                                                                                'ww6q9i4z' /* 3.ENABLE COUPON/KOT HEADER ON ... */,
+                                                                                'ww6q9i4z' /* 3.ENABLE COUPONKOT HEADER ON ... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -3924,7 +3924,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                            '11rcddij' /* 10.ESTIMATE MODE ENABLE/DISABL... */,
+                                                            '11rcddij' /* 10.ESTIMATE MODE ENABLEDISABL... */,
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)

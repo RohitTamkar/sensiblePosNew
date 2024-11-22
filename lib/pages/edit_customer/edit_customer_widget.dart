@@ -3629,7 +3629,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                         ),
                                                                         FFLocalizations.of(context)
                                                                             .getText(
-                                                                          'eikua38r' /* CGHS/ECHS CARD */,
+                                                                          'eikua38r' /* CGHSECHS CARD */,
                                                                         ),
                                                                         FFLocalizations.of(context)
                                                                             .getText(

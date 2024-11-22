@@ -287,7 +287,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                         children: [
                                           Text(
                                             FFLocalizations.of(context).getText(
-                                              'gge7h5gp' /* Date/Time */,
+                                              'gge7h5gp' /* DateTime */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
@@ -611,7 +611,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'e7req91m' /* Date/Time */,
+                                                        'e7req91m' /* DateTime */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(

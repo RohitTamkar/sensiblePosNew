@@ -171,7 +171,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                                     ),
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        '7j906k9w' /* Inward / Outward */,
+                                        '7j906k9w' /* Inward  Outward */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium

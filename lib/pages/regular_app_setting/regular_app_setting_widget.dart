@@ -1003,7 +1003,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        'l9q64ah0' /* 4. REGIONAL LANGUAGE ENABLE/DI... */,
+                                                                        'l9q64ah0' /* 4. REGIONAL LANGUAGE ENABLEDI... */,
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -1852,7 +1852,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'yfluaj9a' /* 1. INCLUSIVE / REVERSE TAX */,
+                                                                      'yfluaj9a' /* 1. INCLUSIVE  REVERSE TAX */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2809,7 +2809,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                             title:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
-                                                                                'fqreiat3' /* 1. DUPLICATE BILL ENABLE/DISAB... */,
+                                                                                'fqreiat3' /* 1. DUPLICATE BILL ENABLEDISAB... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -3305,7 +3305,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                             title:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
-                                                                                'pd7q7b3k' /* 18. ENABLE COUPON/ KOT SUMMARY... */,
+                                                                                'pd7q7b3k' /* 18. ENABLE COUPON KOT SUMMARY... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
