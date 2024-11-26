@@ -428,10 +428,14 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                         milliseconds:
                                                                             500),
                                                                 imageUrl:
-                                                                    getJsonField(
-                                                                  listviewItem,
-                                                                  r'''$.imageUrl''',
-                                                                ).toString(),
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                  getJsonField(
+                                                                    listviewItem,
+                                                                    r'''$.imageUrl''',
+                                                                  )?.toString(),
+                                                                  'https://as1.ftcdn.net/v2/jpg/04/34/72/82/1000_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg',
+                                                                ),
                                                                 width: 300.0,
                                                                 height: 110.0,
                                                                 fit: BoxFit
