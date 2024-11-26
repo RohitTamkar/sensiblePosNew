@@ -13,6 +13,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -46,6 +47,12 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => KioskCartModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.btnPressed = false;
+      safeSetState(() {});
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -1326,252 +1333,288 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                     Align(
                                       alignment: AlignmentDirectional(0.0, 1.0),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          if (FFAppState().isPrinterConnected) {
-                                            _model.outletDOc =
-                                                await queryOutletRecordOnce(
-                                              queryBuilder: (outletRecord) =>
-                                                  outletRecord.where(
-                                                'id',
-                                                isEqualTo: FFAppState()
-                                                    .outletIdRef
-                                                    ?.id,
-                                              ),
-                                              singleRecord: true,
-                                            ).then((s) => s.firstOrNull);
-                                            _model.qrDocumentcount =
-                                                await queryQrTransactionsRecordOnce(
-                                              parent: FFAppState().outletIdRef,
-                                              queryBuilder:
-                                                  (qrTransactionsRecord) =>
-                                                      qrTransactionsRecord
-                                                          .orderBy(
-                                                              'createdDate',
-                                                              descending: true),
-                                              singleRecord: true,
-                                            ).then((s) => s.firstOrNull);
-                                            if (_model.qrDocumentcount !=
-                                                null) {
-                                              FFAppState().count =
-                                                  valueOrDefault<int>(
-                                                functions.returncount(
-                                                    valueOrDefault<String>(
-                                                  _model
-                                                      .qrDocumentcount?.orderId,
-                                                  '0',
-                                                )),
-                                                0,
-                                              );
-                                              safeSetState(() {});
-                                            } else {
-                                              FFAppState().count = 0;
-                                              safeSetState(() {});
-                                            }
+                                        onPressed: _model.btnPressed
+                                            ? null
+                                            : () async {
+                                                _model.btnPressed = true;
+                                                safeSetState(() {});
+                                                if (FFAppState()
+                                                    .isPrinterConnected) {
+                                                  _model.outletDOc =
+                                                      await queryOutletRecordOnce(
+                                                    queryBuilder:
+                                                        (outletRecord) =>
+                                                            outletRecord.where(
+                                                      'id',
+                                                      isEqualTo: FFAppState()
+                                                          .outletIdRef
+                                                          ?.id,
+                                                    ),
+                                                    singleRecord: true,
+                                                  ).then((s) => s.firstOrNull);
+                                                  _model.qrDocumentcount =
+                                                      await queryQrTransactionsRecordOnce(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
+                                                    queryBuilder:
+                                                        (qrTransactionsRecord) =>
+                                                            qrTransactionsRecord
+                                                                .orderBy(
+                                                                    'createdDate',
+                                                                    descending:
+                                                                        true),
+                                                    singleRecord: true,
+                                                  ).then((s) => s.firstOrNull);
+                                                  if (_model.qrDocumentcount !=
+                                                      null) {
+                                                    FFAppState().count =
+                                                        valueOrDefault<int>(
+                                                      functions.returncount(
+                                                          valueOrDefault<
+                                                              String>(
+                                                        _model.qrDocumentcount
+                                                            ?.orderId,
+                                                        '0',
+                                                      )),
+                                                      0,
+                                                    );
+                                                    safeSetState(() {});
+                                                  } else {
+                                                    FFAppState().count = 0;
+                                                    safeSetState(() {});
+                                                  }
 
-                                            if (functions
-                                                .filterBillList(
-                                                    FFAppState().selBill,
-                                                    FFAppState()
-                                                        .allBillsList
-                                                        .toList())
-                                                .isNotEmpty) {
-                                              if (_model.outletDOc
-                                                          ?.merchantId !=
-                                                      null &&
-                                                  _model.outletDOc
-                                                          ?.merchantId !=
-                                                      '') {
-                                                if (getJsonField(
-                                                  widget!.shiftdetails,
-                                                  r'''$.shiftExists''',
-                                                )) {
-                                                  FFAppState().count =
-                                                      FFAppState().count + 1;
-                                                  safeSetState(() {});
+                                                  if (functions
+                                                      .filterBillList(
+                                                          FFAppState().selBill,
+                                                          FFAppState()
+                                                              .allBillsList
+                                                              .toList())
+                                                      .isNotEmpty) {
+                                                    if (_model.outletDOc
+                                                                ?.merchantId !=
+                                                            null &&
+                                                        _model.outletDOc
+                                                                ?.merchantId !=
+                                                            '') {
+                                                      if (getJsonField(
+                                                        widget!.shiftdetails,
+                                                        r'''$.shiftExists''',
+                                                      )) {
+                                                        FFAppState().count =
+                                                            FFAppState().count +
+                                                                1;
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        FFAppState().count =
+                                                            FFAppState().count +
+                                                                1;
+                                                        safeSetState(() {});
+                                                      }
+
+                                                      FFAppState().orderId =
+                                                          FFAppState().orderId +
+                                                              10;
+                                                      FFAppState()
+                                                              .paytmOrderId =
+                                                          valueOrDefault<
+                                                              String>(
+                                                        'ORD-${functions.genInvoiceNum(FFAppState().count, getJsonField(
+                                                              widget!
+                                                                  .shiftdetails,
+                                                              r'''$.shiftCount''',
+                                                            ))}',
+                                                        '0',
+                                                      );
+                                                      FFAppState().outletId =
+                                                          _model.outletDOc!.id;
+                                                      safeSetState(() {});
+                                                      _model.paymentQrResponse =
+                                                          await CreateQRCall
+                                                              .call(
+                                                        mid: valueOrDefault<
+                                                            String>(
+                                                          _model.outletDOc
+                                                              ?.merchantId,
+                                                          '0',
+                                                        ),
+                                                        orderId: FFAppState()
+                                                            .paytmOrderId,
+                                                        amount:
+                                                            functions.toDecimal(
+                                                                FFAppState()
+                                                                    .finalAmt),
+                                                        businessType:
+                                                            'UPI_QR_CODE',
+                                                        posId: FFAppState()
+                                                            .outletId,
+                                                        mKey: valueOrDefault<
+                                                            String>(
+                                                          _model.outletDOc
+                                                              ?.merchantKey,
+                                                          '0',
+                                                        ),
+                                                        isProd: _model
+                                                            .outletDOc?.isProd,
+                                                      );
+
+                                                      context.pushNamed(
+                                                        'KioskChoosePaymentMode',
+                                                        queryParameters: {
+                                                          'doc': serializeParam(
+                                                            widget!.doc,
+                                                            ParamType
+                                                                .DocumentReference,
+                                                          ),
+                                                          'shiftdetails':
+                                                              serializeParam(
+                                                            widget!
+                                                                .shiftdetails,
+                                                            ParamType.JSON,
+                                                          ),
+                                                          'appSettings':
+                                                              serializeParam(
+                                                            widget!.appsetting,
+                                                            ParamType.Document,
+                                                          ),
+                                                          'taxcollection':
+                                                              serializeParam(
+                                                            widget!
+                                                                .taxcollection,
+                                                            ParamType.Document,
+                                                            isList: true,
+                                                          ),
+                                                          'qrJson':
+                                                              serializeParam(
+                                                            (_model.paymentQrResponse
+                                                                    ?.jsonBody ??
+                                                                ''),
+                                                            ParamType.JSON,
+                                                          ),
+                                                          'paytmOrderId':
+                                                              serializeParam(
+                                                            FFAppState()
+                                                                .paytmOrderId,
+                                                            ParamType.String,
+                                                          ),
+                                                          'isPaytm':
+                                                              serializeParam(
+                                                            true,
+                                                            ParamType.bool,
+                                                          ),
+                                                        }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          'appSettings': widget!
+                                                              .appsetting,
+                                                          'taxcollection':
+                                                              widget!
+                                                                  .taxcollection,
+                                                        },
+                                                      );
+                                                    } else {
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (alertDialogContext) {
+                                                          return AlertDialog(
+                                                            content: Text(
+                                                                'Merchant Id  Is Not Available Contact Support!'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext),
+                                                                child:
+                                                                    Text('Ok'),
+                                                              ),
+                                                            ],
+                                                          );
+                                                        },
+                                                      );
+                                                    }
+                                                  } else {
+                                                    await showDialog(
+                                                      context: context,
+                                                      builder:
+                                                          (alertDialogContext) {
+                                                        return AlertDialog(
+                                                          content: Text(
+                                                              'Cart Is Empty !'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext),
+                                                              child: Text('Ok'),
+                                                            ),
+                                                          ],
+                                                        );
+                                                      },
+                                                    );
+
+                                                    context.pushNamed(
+                                                      'KioskBillScreen',
+                                                      queryParameters: {
+                                                        'doc': serializeParam(
+                                                          widget!.doc,
+                                                          ParamType
+                                                              .DocumentReference,
+                                                        ),
+                                                        'shiftdoc':
+                                                            serializeParam(
+                                                          widget!.shiftdetails,
+                                                          ParamType.JSON,
+                                                        ),
+                                                        'appsetting':
+                                                            serializeParam(
+                                                          widget!.appsetting,
+                                                          ParamType.Document,
+                                                        ),
+                                                        'taxcollection':
+                                                            serializeParam(
+                                                          widget!.taxcollection,
+                                                          ParamType.Document,
+                                                          isList: true,
+                                                        ),
+                                                      }.withoutNulls,
+                                                      extra: <String, dynamic>{
+                                                        'appsetting':
+                                                            widget!.appsetting,
+                                                        'taxcollection': widget!
+                                                            .taxcollection,
+                                                      },
+                                                    );
+                                                  }
                                                 } else {
-                                                  FFAppState().count =
-                                                      FFAppState().count + 1;
-                                                  safeSetState(() {});
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        content: Text(
+                                                            'Printer Not Connected !'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext),
+                                                            child: Text('Ok'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  );
+                                                  _model.connectdeviceCOPY23 =
+                                                      await actions
+                                                          .connectDevice(
+                                                    FFAppState().printerDevice,
+                                                    FFAppState().printerIndex,
+                                                  );
                                                 }
 
-                                                FFAppState().orderId =
-                                                    FFAppState().orderId + 10;
-                                                FFAppState().paytmOrderId =
-                                                    valueOrDefault<String>(
-                                                  'ORD-${functions.genInvoiceNum(FFAppState().count, getJsonField(
-                                                        widget!.shiftdetails,
-                                                        r'''$.shiftCount''',
-                                                      ))}',
-                                                  '0',
-                                                );
-                                                FFAppState().outletId =
-                                                    _model.outletDOc!.id;
                                                 safeSetState(() {});
-                                                _model.paymentQrResponse =
-                                                    await CreateQRCall.call(
-                                                  mid: valueOrDefault<String>(
-                                                    _model
-                                                        .outletDOc?.merchantId,
-                                                    '0',
-                                                  ),
-                                                  orderId:
-                                                      FFAppState().paytmOrderId,
-                                                  amount: functions.toDecimal(
-                                                      FFAppState().finalAmt),
-                                                  businessType: 'UPI_QR_CODE',
-                                                  posId: FFAppState().outletId,
-                                                  mKey: valueOrDefault<String>(
-                                                    _model
-                                                        .outletDOc?.merchantKey,
-                                                    '0',
-                                                  ),
-                                                  isProd:
-                                                      _model.outletDOc?.isProd,
-                                                );
-
-                                                context.pushNamed(
-                                                  'KioskChoosePaymentMode',
-                                                  queryParameters: {
-                                                    'doc': serializeParam(
-                                                      widget!.doc,
-                                                      ParamType
-                                                          .DocumentReference,
-                                                    ),
-                                                    'shiftdetails':
-                                                        serializeParam(
-                                                      widget!.shiftdetails,
-                                                      ParamType.JSON,
-                                                    ),
-                                                    'appSettings':
-                                                        serializeParam(
-                                                      widget!.appsetting,
-                                                      ParamType.Document,
-                                                    ),
-                                                    'taxcollection':
-                                                        serializeParam(
-                                                      widget!.taxcollection,
-                                                      ParamType.Document,
-                                                      isList: true,
-                                                    ),
-                                                    'qrJson': serializeParam(
-                                                      (_model.paymentQrResponse
-                                                              ?.jsonBody ??
-                                                          ''),
-                                                      ParamType.JSON,
-                                                    ),
-                                                    'paytmOrderId':
-                                                        serializeParam(
-                                                      FFAppState().paytmOrderId,
-                                                      ParamType.String,
-                                                    ),
-                                                    'isPaytm': serializeParam(
-                                                      true,
-                                                      ParamType.bool,
-                                                    ),
-                                                  }.withoutNulls,
-                                                  extra: <String, dynamic>{
-                                                    'appSettings':
-                                                        widget!.appsetting,
-                                                    'taxcollection':
-                                                        widget!.taxcollection,
-                                                  },
-                                                );
-                                              } else {
-                                                await showDialog(
-                                                  context: context,
-                                                  builder:
-                                                      (alertDialogContext) {
-                                                    return AlertDialog(
-                                                      content: Text(
-                                                          'Merchant Id  Is Not Available Contact Support!'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: Text('Ok'),
-                                                        ),
-                                                      ],
-                                                    );
-                                                  },
-                                                );
-                                              }
-                                            } else {
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    content:
-                                                        Text('Cart Is Empty !'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
-                                              );
-
-                                              context.pushNamed(
-                                                'KioskBillScreen',
-                                                queryParameters: {
-                                                  'doc': serializeParam(
-                                                    widget!.doc,
-                                                    ParamType.DocumentReference,
-                                                  ),
-                                                  'shiftdoc': serializeParam(
-                                                    widget!.shiftdetails,
-                                                    ParamType.JSON,
-                                                  ),
-                                                  'appsetting': serializeParam(
-                                                    widget!.appsetting,
-                                                    ParamType.Document,
-                                                  ),
-                                                  'taxcollection':
-                                                      serializeParam(
-                                                    widget!.taxcollection,
-                                                    ParamType.Document,
-                                                    isList: true,
-                                                  ),
-                                                }.withoutNulls,
-                                                extra: <String, dynamic>{
-                                                  'appsetting':
-                                                      widget!.appsetting,
-                                                  'taxcollection':
-                                                      widget!.taxcollection,
-                                                },
-                                              );
-                                            }
-                                          } else {
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  content: Text(
-                                                      'Printer Not Connected !'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
-                                                );
                                               },
-                                            );
-                                            _model.connectdeviceCOPY23 =
-                                                await actions.connectDevice(
-                                              FFAppState().printerDevice,
-                                              FFAppState().printerIndex,
-                                            );
-                                          }
-
-                                          safeSetState(() {});
-                                        },
                                         text:
                                             FFLocalizations.of(context).getText(
                                           'sq4xgrw1' /* Proceed to Payment */,

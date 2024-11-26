@@ -36,6 +36,8 @@ class KioskBillScreenModel extends FlutterFlowModel<KioskBillScreenWidget> {
 
   int? startLoop;
 
+  bool pressed = false;
+
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Firestore Query - Query a collection] action in KioskBillScreen widget.

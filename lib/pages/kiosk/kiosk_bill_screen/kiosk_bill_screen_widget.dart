@@ -58,6 +58,8 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.pressed = false;
+      safeSetState(() {});
       _model.prodoc = await queryProductRecordOnce(
         parent: FFAppState().outletIdRef,
         queryBuilder: (productRecord) => productRecord.where(Filter.or(
@@ -1803,6 +1805,8 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                           ),
                           FFButtonWidget(
                             onPressed: () async {
+                              _model.pressed = true;
+                              safeSetState(() {});
                               _model.connectdevice12 =
                                   await actions.connectDevice(
                                 FFAppState().printerDevice,

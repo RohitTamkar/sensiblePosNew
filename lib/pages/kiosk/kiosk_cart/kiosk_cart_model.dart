@@ -14,11 +14,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class KioskCartModel extends FlutterFlowModel<KioskCartWidget> {
+  ///  Local state fields for this page.
+
+  bool btnPressed = false;
+
   ///  State fields for stateful widgets in this page.
 
   // Model for KioskHeader component.
