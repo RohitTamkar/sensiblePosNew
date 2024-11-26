@@ -25,7 +25,6 @@ void main() async {
   await initFirebase();
 
   // Start initial custom actions code
-  await actions.setupItemHive();
   await actions.hideStatusBar();
   // End initial custom actions code
 
