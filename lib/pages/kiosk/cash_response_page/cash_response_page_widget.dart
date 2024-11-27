@@ -440,7 +440,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                 .toList()
                 .first
                 .value) {
-              context.pushNamed(
+              context.goNamed(
                 'KioskBillScreen',
                 queryParameters: {
                   'doc': serializeParam(
@@ -467,7 +467,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                 },
               );
             } else {
-              context.pushNamed(
+              context.goNamed(
                 'KioskDineParcel',
                 queryParameters: {
                   'userdoc': serializeParam(
@@ -495,7 +495,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
               );
             }
           } else {
-            context.pushNamed(
+            context.goNamed(
               'KioskAdvertising',
               queryParameters: {
                 'userDoc': serializeParam(

@@ -147,7 +147,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                             size: 40.0,
                                           ),
                                           onPressed: () async {
-                                            context.pushNamed(
+                                            context.goNamed(
                                               'KioskBillScreen',
                                               queryParameters: {
                                                 'doc': serializeParam(
@@ -1458,7 +1458,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                             .outletDOc?.isProd,
                                                       );
 
-                                                      context.pushNamed(
+                                                      context.goNamed(
                                                         'KioskChoosePaymentMode',
                                                         queryParameters: {
                                                           'doc': serializeParam(
@@ -1553,7 +1553,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                       },
                                                     );
 
-                                                    context.pushNamed(
+                                                    context.goNamed(
                                                       'KioskBillScreen',
                                                       queryParameters: {
                                                         'doc': serializeParam(

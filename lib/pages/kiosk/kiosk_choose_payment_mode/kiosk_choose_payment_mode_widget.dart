@@ -226,7 +226,7 @@ class _KioskChoosePaymentModeWidgetState
                                   FFAppState().PayMode = 'UPI QR';
                                   safeSetState(() {});
 
-                                  context.pushNamed(
+                                  context.goNamed(
                                     'KioskPayment',
                                     queryParameters: {
                                       'doc': serializeParam(
@@ -384,7 +384,7 @@ class _KioskChoosePaymentModeWidgetState
                                     FFAppState().PayMode = 'CASH';
                                     safeSetState(() {});
 
-                                    context.pushNamed(
+                                    context.goNamed(
                                       'cashResponsePage',
                                       queryParameters: {
                                         'shiftdetails': serializeParam(

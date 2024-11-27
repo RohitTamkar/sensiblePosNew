@@ -228,7 +228,7 @@ class _KioskDineParcelWidgetState extends State<KioskDineParcelWidget>
                                       },
                                     );
                                   } else {
-                                    context.pushNamed(
+                                    context.goNamed(
                                       'KioskBillScreen',
                                       queryParameters: {
                                         'doc': serializeParam(
@@ -384,7 +384,7 @@ class _KioskDineParcelWidgetState extends State<KioskDineParcelWidget>
                                         },
                                       );
                                     } else {
-                                      context.pushNamed(
+                                      context.goNamed(
                                         'KioskBillScreen',
                                         queryParameters: {
                                           'doc': serializeParam(

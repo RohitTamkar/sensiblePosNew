@@ -1820,7 +1820,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                   FFAppState().isBillPrinted = false;
                                   safeSetState(() {});
 
-                                  context.pushNamed(
+                                  context.goNamed(
                                     'KioskCart',
                                     queryParameters: {
                                       'doc': serializeParam(

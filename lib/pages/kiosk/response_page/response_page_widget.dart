@@ -410,7 +410,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                   .toList()
                   .first
                   .value) {
-                context.pushNamed(
+                context.goNamed(
                   'KioskBillScreen',
                   queryParameters: {
                     'doc': serializeParam(
@@ -437,7 +437,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                   },
                 );
               } else {
-                context.pushNamed(
+                context.goNamed(
                   'KioskDineParcel',
                   queryParameters: {
                     'userdoc': serializeParam(
@@ -465,7 +465,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                 );
               }
             } else {
-              context.pushNamed(
+              context.goNamed(
                 'KioskAdvertising',
                 queryParameters: {
                   'userDoc': serializeParam(
@@ -555,7 +555,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                 .toList()
                 .first
                 .value) {
-              context.pushNamed(
+              context.goNamed(
                 'KioskBillScreen',
                 queryParameters: {
                   'doc': serializeParam(
@@ -582,7 +582,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                 },
               );
             } else {
-              context.pushNamed(
+              context.goNamed(
                 'KioskDineParcel',
                 queryParameters: {
                   'userdoc': serializeParam(
@@ -610,7 +610,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               );
             }
           } else {
-            context.pushNamed(
+            context.goNamed(
               'KioskAdvertising',
               queryParameters: {
                 'userDoc': serializeParam(
