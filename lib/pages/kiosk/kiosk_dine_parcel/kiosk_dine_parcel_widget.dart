@@ -356,7 +356,7 @@ class _KioskDineParcelWidgetState extends State<KioskDineParcelWidget>
                                           false,
                                         ) ==
                                         true) {
-                                      context.pushNamed(
+                                      context.goNamed(
                                         'kioskCustomerInfo',
                                         queryParameters: {
                                           'userdoc': serializeParam(

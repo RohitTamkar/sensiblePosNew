@@ -218,7 +218,7 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                         FFAppState().delCharges = 0.0;
                                         safeSetState(() {});
 
-                                        context.pushNamed(
+                                        context.goNamed(
                                           'KioskBillScreen',
                                           queryParameters: {
                                             'doc': serializeParam(
@@ -246,7 +246,7 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                           },
                                         );
                                       } else {
-                                        context.pushNamed(
+                                        context.goNamed(
                                           'KioskDineParcel',
                                           queryParameters: {
                                             'userdoc': serializeParam(
