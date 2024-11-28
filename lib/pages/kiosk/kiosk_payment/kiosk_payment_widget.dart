@@ -142,10 +142,19 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              wrapWithModel(
-                                model: _model.kioskHeaderModel,
-                                updateCallback: () => safeSetState(() {}),
-                                child: KioskHeaderWidget(),
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onLongPress: () async {
+                                  context.pushNamed('KioskLogin');
+                                },
+                                child: wrapWithModel(
+                                  model: _model.kioskHeaderModel,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: KioskHeaderWidget(),
+                                ),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,

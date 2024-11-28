@@ -164,3 +164,4 @@ export 'listof_serial_ports.dart' show listofSerialPorts;
 export 'check_dup_customer.dart' show checkDupCustomer;
 export 'gen_bill_invoice_pdf.dart' show genBillInvoicePdf;
 export 'savelogsto_storage.dart' show savelogstoStorage;
+export 'auto_launch_app.dart' show autoLaunchApp;

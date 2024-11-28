@@ -115,8 +115,8 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                       FlutterFlowTheme.of(context).primaryText,
                                   size: 36.0,
                                 ),
-                                onPressed: () {
-                                  print('IconButton pressed ...');
+                                onPressed: () async {
+                                  context.pop();
                                 },
                               ),
                               Text(
