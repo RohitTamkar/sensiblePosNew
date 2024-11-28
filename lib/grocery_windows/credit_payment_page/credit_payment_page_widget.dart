@@ -3274,6 +3274,21 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                       final list3 = _model
                                                           .listprd
                                                           .toList();
+                                                      if (list3.isEmpty) {
+                                                        return Image.asset(
+                                                          'assets/images/Sensible_Connect_Logo_1.png',
+                                                          width:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .width *
+                                                                  0.1,
+                                                          height:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .height *
+                                                                  0.1,
+                                                        );
+                                                      }
 
                                                       return ListView.builder(
                                                         padding:

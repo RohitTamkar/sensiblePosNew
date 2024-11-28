@@ -62,16 +62,15 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
       safeSetState(() {});
       _model.prodoc = await queryProductRecordOnce(
         parent: FFAppState().outletIdRef,
-        queryBuilder: (productRecord) => productRecord.where(Filter.or(
-          Filter(
-            'isDeleted',
-            isEqualTo: false,
-          ),
-          Filter(
-            'isEnable',
-            isEqualTo: true,
-          ),
-        )),
+        queryBuilder: (productRecord) => productRecord
+            .where(
+              'isDeleted',
+              isEqualTo: false,
+            )
+            .where(
+              'isEnable',
+              isEqualTo: true,
+            ),
       );
       _model.categorydoc = await queryCategoryRecordOnce(
         parent: FFAppState().outletIdRef,
