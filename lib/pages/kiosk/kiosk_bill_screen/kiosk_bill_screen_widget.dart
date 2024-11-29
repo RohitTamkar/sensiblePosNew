@@ -1353,7 +1353,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).primary,
-                                                                                  fontSize: 13.0,
+                                                                                  fontSize: 15.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),

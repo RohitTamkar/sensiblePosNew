@@ -405,7 +405,9 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                           parent: FFAppState().outletIdRef,
                           queryBuilder: (invoiceRecord) => invoiceRecord.where(
                             'party',
-                            isEqualTo: FFAppState().setCustRef?.id,
+                            isEqualTo: FFAppState().setCustRef?.id != ''
+                                ? FFAppState().setCustRef?.id
+                                : null,
                           ),
                         ),
                         builder: (context, snapshot) {
