@@ -15,7 +15,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:shake/shake.dart';
 import 'welcome_screen_parking_model.dart';
 export 'welcome_screen_parking_model.dart';
 
@@ -39,8 +38,6 @@ class _WelcomeScreenParkingWidgetState extends State<WelcomeScreenParkingWidget>
   late WelcomeScreenParkingModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  late ShakeDetector shakeDetector;
-  var shakeActionInProgress = false;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -241,20 +238,6 @@ class _WelcomeScreenParkingWidgetState extends State<WelcomeScreenParkingWidget>
       context.pushNamed('LoginPageNew');
     });
 
-    // On shake action.
-    shakeDetector = ShakeDetector.autoStart(
-      onPhoneShake: () async {
-        if (shakeActionInProgress) {
-          return;
-        }
-        shakeActionInProgress = true;
-        try {} finally {
-          shakeActionInProgress = false;
-        }
-      },
-      shakeThresholdGravity: 1.5,
-    );
-
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -328,7 +311,6 @@ class _WelcomeScreenParkingWidgetState extends State<WelcomeScreenParkingWidget>
   void dispose() {
     _model.dispose();
 
-    shakeDetector.stopListening();
     super.dispose();
   }
 
