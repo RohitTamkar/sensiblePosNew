@@ -226,3 +226,5 @@ export '/pages/weightscalesetting/weightscalesetting_widget.dart'
 export '/pages/product_and_listlaundrybilling/product_and_listlaundrybilling_widget.dart'
     show ProductAndListlaundrybillingWidget;
 export '/test_widget/test_widget_widget.dart' show TestWidgetWidget;
+export '/grocery_windows/credit_payment_page_copy/credit_payment_page_copy_widget.dart'
+    show CreditPaymentPageCopyWidget;

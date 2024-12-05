@@ -16,26 +16,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'credit_payment_page_model.dart';
-export 'credit_payment_page_model.dart';
+import 'credit_payment_page_copy_model.dart';
+export 'credit_payment_page_copy_model.dart';
 
-class CreditPaymentPageWidget extends StatefulWidget {
-  const CreditPaymentPageWidget({super.key});
+class CreditPaymentPageCopyWidget extends StatefulWidget {
+  const CreditPaymentPageCopyWidget({super.key});
 
   @override
-  State<CreditPaymentPageWidget> createState() =>
-      _CreditPaymentPageWidgetState();
+  State<CreditPaymentPageCopyWidget> createState() =>
+      _CreditPaymentPageCopyWidgetState();
 }
 
-class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
-  late CreditPaymentPageModel _model;
+class _CreditPaymentPageCopyWidgetState
+    extends State<CreditPaymentPageCopyWidget> {
+  late CreditPaymentPageCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CreditPaymentPageModel());
+    _model = createModel(context, () => CreditPaymentPageCopyModel());
 
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
@@ -58,7 +59,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
     context.watch<FFAppState>();
 
     return Title(
-        title: 'CreditPaymentPage',
+        title: 'CreditPaymentPageCopy',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -110,7 +111,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                 Expanded(
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'dd7mq219' /* Payment */,
+                                      'fnji2ssf' /* Payment */,
                                     ),
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
@@ -248,7 +249,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'dfu7egb1' /* Customer Details */,
+                                        'msve8q2g' /* Customer Details */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -288,7 +289,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        '2qb8hf4h' /* Pending Bills */,
+                                        'dnvnkcnw' /* Pending Bills */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -328,7 +329,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        '6pqqxppn' /* Last Transactions */,
+                                        '0i1irjzq' /* Last Transactions */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -368,7 +369,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        '7t7zoxz9' /* Items */,
+                                        'rxyyxcf8' /* Items */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -480,7 +481,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'oxd0krfx' /* CUSTOMER. NAME :  */,
+                                                        'u7z2wa3l' /* CUSTOMER. NAME :  */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -647,7 +648,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'haf2ddfm' /* NOTE : */,
+                                                        'kle551an' /* NOTE : */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -691,7 +692,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                          '005dca8i' /* Note... */,
+                                                          'djqnr855' /* Note... */,
                                                         ),
                                                         labelStyle:
                                                             FlutterFlowTheme.of(
@@ -852,7 +853,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'm7yrpcl8' /* BALANCE */,
+                                                          'zxsaoghe' /* BALANCE */,
                                                         ),
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -1003,7 +1004,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                 FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  'qzouruw9' /* AMOUNT  :  */,
+                                                                  'f6wuxezj' /* AMOUNT  :  */,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -1047,7 +1048,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                   hintText: FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'o7orpeh8' /* 00.00 */,
+                                                                    'ejxnow7e' /* 00.00 */,
                                                                   ),
                                                                   hintStyle: FlutterFlowTheme.of(
                                                                           context)
@@ -1170,7 +1171,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'yc4l4pfh' /* PAYMENT MODE : */,
+                                                                'o0stlm5t' /* PAYMENT MODE : */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -1225,49 +1226,49 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                         .dropDownCustCredValue ??= FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'wpug7szx' /* Cash */,
+                                                                      '1tro34gi' /* Cash */,
                                                                     ),
                                                                   ),
                                                                   options: [
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '345uafdz' /* Cash */,
+                                                                      'cqlwrgc3' /* Cash */,
                                                                     ),
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '5amxkdym' /* Digital */,
+                                                                      'hhn7eb82' /* Digital */,
                                                                     ),
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'kxh86z9y' /* Card */,
+                                                                      'z0762ksy' /* Card */,
                                                                     ),
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'r7q2jlz2' /* Google Pay */,
+                                                                      '08qh6n0i' /* Google Pay */,
                                                                     ),
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'xjyi2hze' /* PhonePay */,
+                                                                      'j2atxx45' /* PhonePay */,
                                                                     ),
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'h6zd4lye' /* Paytm */,
+                                                                      'orh60qbj' /* Paytm */,
                                                                     ),
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'b0w5b6mx' /* Cheque */,
+                                                                      'sbwsrau1' /* Cheque */,
                                                                     ),
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'jjvkmed5' /* Other */,
+                                                                      '839w8vh2' /* Other */,
                                                                     )
                                                                   ],
                                                                   onChanged: (val) =>
@@ -1480,7 +1481,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                       text: FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'eo43rr57' /* SAVE */,
+                                                        'khicisbj' /* SAVE */,
                                                       ),
                                                       options: FFButtonOptions(
                                                         width: 120.0,
@@ -1763,7 +1764,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                       text: FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'rexvwed4' /* PRINT */,
+                                                        'gxyu0rxn' /* PRINT */,
                                                       ),
                                                       options: FFButtonOptions(
                                                         width: 120.0,
@@ -1841,6 +1842,312 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                           ),
+                                        ),
+                                        child: Builder(
+                                          builder: (context) {
+                                            final containerVar =
+                                                containerInvoiceRecordList
+                                                    .map((e) => e)
+                                                    .toList();
+
+                                            return ListView.builder(
+                                              padding: EdgeInsets.zero,
+                                              scrollDirection: Axis.vertical,
+                                              itemCount: containerVar.length,
+                                              itemBuilder:
+                                                  (context, containerVarIndex) {
+                                                final containerVarItem =
+                                                    containerVar[
+                                                        containerVarIndex];
+                                                return Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      _model.listprd =
+                                                          containerVarItem
+                                                              .productList
+                                                              .toList()
+                                                              .cast<
+                                                                  SelItemListStruct>();
+                                                      safeSetState(() {});
+                                                    },
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .height *
+                                                          0.2,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                        border: Border.all(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .customColor2,
+                                                          width: 0.5,
+                                                        ),
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceAround,
+                                                        children: [
+                                                          Expanded(
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'o4mls3dm' /* Bill No :  */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                                Text(
+                                                                  containerVarItem
+                                                                      .invoice,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                      ),
+                                                                ),
+                                                                Expanded(
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .start,
+                                                                    children: [
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            'qsfaj8k8' /* Date:  */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.w600,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                      Text(
+                                                                        dateTimeFormat(
+                                                                          "d/M/y",
+                                                                          DateTime.fromMillisecondsSinceEpoch(
+                                                                              containerVarItem.invoiceDate),
+                                                                          locale:
+                                                                              FFLocalizations.of(context).languageCode,
+                                                                        ),
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              letterSpacing: 0.0,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                            ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                          Expanded(
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'tmuu0hir' /* Pay Mode:  */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                                Text(
+                                                                  containerVarItem
+                                                                      .paymentMode,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                      ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                          Expanded(
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'q2mqt610' /* Total Amount:  */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'zgbnbrxz' /* ₹  */,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                      ),
+                                                                ),
+                                                                Text(
+                                                                  containerVarItem
+                                                                      .finalBillAmt
+                                                                      .toString(),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                      ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              },
+                                            );
+                                          },
                                         ),
                                       ),
                                     ),
@@ -1948,7 +2255,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'h551tz0o' /* Bill No :  */,
+                                                                      'k1kixccn' /* Bill No :  */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -1999,7 +2306,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                             Text(
                                                                           FFLocalizations.of(context)
                                                                               .getText(
-                                                                            'b675u2z1' /* Date:  */,
+                                                                            'b8uhmahl' /* Date:  */,
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
@@ -2050,7 +2357,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'cz13di8p' /* Pay Mode:  */,
+                                                                      'q25rz7v9' /* Pay Mode:  */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2102,7 +2409,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '8btdvuj5' /* Total Amount:  */,
+                                                                      'c2th2p0g' /* Total Amount:  */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2125,7 +2432,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    '0l4y3uma' /* ₹  */,
+                                                                    'i5vxw9kl' /* ₹  */,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -2189,6 +2496,450 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                               .secondaryBackground,
                                         ),
                                       ),
+                                      child: StreamBuilder<List<PaymentRecord>>(
+                                        stream: queryPaymentRecord(
+                                          parent: FFAppState().outletIdRef,
+                                          queryBuilder: (paymentRecord) =>
+                                              paymentRecord.where(
+                                            'party',
+                                            isEqualTo: FFAppState().setCustRef,
+                                            isNull: (FFAppState().setCustRef) ==
+                                                null,
+                                          ),
+                                        ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 40.0,
+                                                height: 40.0,
+                                                child: SpinKitFadingCircle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  size: 40.0,
+                                                ),
+                                              ),
+                                            );
+                                          }
+                                          List<PaymentRecord>
+                                              listViewPaymentRecordList =
+                                              snapshot.data!;
+
+                                          return ListView.builder(
+                                            padding: EdgeInsets.zero,
+                                            scrollDirection: Axis.vertical,
+                                            itemCount: listViewPaymentRecordList
+                                                .length,
+                                            itemBuilder:
+                                                (context, listViewIndex) {
+                                              final listViewPaymentRecord =
+                                                  listViewPaymentRecordList[
+                                                      listViewIndex];
+                                              return Padding(
+                                                padding: EdgeInsets.all(8.0),
+                                                child:
+                                                    StreamBuilder<PartyRecord>(
+                                                  stream:
+                                                      PartyRecord.getDocument(
+                                                          listViewPaymentRecord
+                                                              .party!),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 40.0,
+                                                          height: 40.0,
+                                                          child:
+                                                              SpinKitFadingCircle(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            size: 40.0,
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+
+                                                    final containerPartyRecord =
+                                                        snapshot.data!;
+
+                                                    return InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        FFAppState()
+                                                                .custNameRef =
+                                                            FFAppState()
+                                                                .custNameRef;
+                                                        FFAppState()
+                                                            .update(() {});
+                                                      },
+                                                      child: Container(
+                                                        width: 100.0,
+                                                        height:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height *
+                                                                0.2,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      14.0),
+                                                          border: Border.all(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .customColor2,
+                                                            width: 0.5,
+                                                          ),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      4.0),
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceAround,
+                                                            children: [
+                                                              Expanded(
+                                                                child: Padding(
+                                                                  padding:
+                                                                      EdgeInsets
+                                                                          .all(
+                                                                              2.0),
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            3.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            dateTimeFormat(
+                                                                              "yMMMd",
+                                                                              DateTime.fromMillisecondsSinceEpoch(listViewPaymentRecord.createdDate),
+                                                                              locale: FFLocalizations.of(context).languageCode,
+                                                                            ),
+                                                                            '0',
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.w600,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            3.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          dateTimeFormat(
+                                                                            "jm",
+                                                                            DateTime.fromMillisecondsSinceEpoch(listViewPaymentRecord.createdDate),
+                                                                            locale:
+                                                                                FFLocalizations.of(context).languageCode,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.w600,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              Expanded(
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          '3f2bg7dd' /* Customer Name :  */,
+                                                                        ),
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              letterSpacing: 0.0,
+                                                                              fontWeight: FontWeight.w600,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                    Text(
+                                                                      containerPartyRecord
+                                                                          .name,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                          ),
+                                                                    ),
+                                                                    Expanded(
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                10.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Text(
+                                                                              FFLocalizations.of(context).getText(
+                                                                                'a5n2hxmb' /* Note:  */,
+                                                                              ),
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.w600,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                  ),
+                                                                            ),
+                                                                          ),
+                                                                          Text(
+                                                                            listViewPaymentRecord.note,
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                  letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              Expanded(
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          '1tpj2wwf' /* Pay.Mode:  */,
+                                                                        ),
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              letterSpacing: 0.0,
+                                                                              fontWeight: FontWeight.w600,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                    Text(
+                                                                      listViewPaymentRecord
+                                                                          .paymentType,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                          ),
+                                                                    ),
+                                                                    Expanded(
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                10.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Text(
+                                                                              FFLocalizations.of(context).getText(
+                                                                                'gqhw0n4r' /* Balance:  */,
+                                                                              ),
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.w600,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                  ),
+                                                                            ),
+                                                                          ),
+                                                                          Text(
+                                                                            valueOrDefault<String>(
+                                                                              containerPartyRecord.oldBalance.toString(),
+                                                                              '0',
+                                                                            ),
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                  letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              Expanded(
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'p6k4rsbt' /* Amount paid:  */,
+                                                                        ),
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                              letterSpacing: 0.0,
+                                                                              fontWeight: FontWeight.w600,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                    Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'j9wzvdr4' /* ₹  */,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                          ),
+                                                                    ),
+                                                                    Text(
+                                                                      listViewPaymentRecord
+                                                                          .amount
+                                                                          .toString(),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                          ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                ),
+                                              );
+                                            },
+                                          );
+                                        },
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -2235,7 +2986,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                   AutoSizeText(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'hzayotlx' /* Items */,
+                                                      '4qxkchvp' /* Items */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -2318,7 +3069,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'tnerht82' /* Item name */,
+                                                                'o89jlky6' /* Item name */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -2400,7 +3151,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                           Text(
                                                                         FFLocalizations.of(context)
                                                                             .getText(
-                                                                          'k4rvztz3' /* Qty */,
+                                                                          '4w7e00k8' /* Qty */,
                                                                         ),
                                                                         textAlign:
                                                                             TextAlign.center,
@@ -2450,7 +3201,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'z0towng6' /* Amt */,
+                                                              '3r3z6qii' /* Amt */,
                                                             ),
                                                             textAlign: TextAlign
                                                                 .center,
@@ -2633,7 +3384,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                                     children: [
                                                                                       Text(
                                                                                         FFLocalizations.of(context).getText(
-                                                                                          'l6qrvvh3' /* ₹  */,
+                                                                                          '92k5e6ra' /* ₹  */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,

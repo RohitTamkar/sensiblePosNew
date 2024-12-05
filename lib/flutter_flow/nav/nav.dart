@@ -1664,6 +1664,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'testWidget',
               path: 'testWidget',
               builder: (context, params) => TestWidgetWidget(),
+            ),
+            FFRoute(
+              name: 'CreditPaymentPageCopy',
+              path: 'creditPaymentPageCopy',
+              builder: (context, params) => CreditPaymentPageCopyWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
