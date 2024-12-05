@@ -1,5 +1,4 @@
 export 'qr_code.dart' show QrCode;
-export 'bluetooth_printing.dart' show BluetoothPrinting;
 export 'open_w_i_f_i_setting.dart' show OpenWIFISetting;
 export 'pos_printing.dart' show PosPrinting;
 export 'pos_printing_copy.dart' show PosPrintingCopy;
