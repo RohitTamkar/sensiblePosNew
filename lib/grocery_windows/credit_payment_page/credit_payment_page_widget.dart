@@ -1846,9 +1846,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                           builder: (context) {
                                             final containerVar =
                                                 containerInvoiceRecordList
-                                                    .where((e) =>
-                                                        e.paymentMode ==
-                                                        'CREDIT')
+                                                    .map((e) => e)
                                                     .toList();
 
                                             return ListView.builder(
@@ -2504,6 +2502,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                               paymentRecord.where(
                                             'party',
                                             isEqualTo: FFAppState().setCustRef,
+                                            isNull: (FFAppState().setCustRef) ==
+                                                null,
                                           ),
                                         ),
                                         builder: (context, snapshot) {
