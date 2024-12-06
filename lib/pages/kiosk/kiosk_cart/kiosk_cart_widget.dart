@@ -1352,33 +1352,21 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                     ),
                                                     singleRecord: true,
                                                   ).then((s) => s.firstOrNull);
-                                                  _model.qrDocumentcount =
-                                                      await queryQrTransactionsRecordOnce(
+                                                  _model.invoicecount =
+                                                      await queryInvoiceRecordOnce(
                                                     parent: FFAppState()
                                                         .outletIdRef,
                                                     queryBuilder:
-                                                        (qrTransactionsRecord) =>
-                                                            qrTransactionsRecord
-                                                                .orderBy(
-                                                                    'createdDate',
-                                                                    descending:
-                                                                        true),
+                                                        (invoiceRecord) =>
+                                                            invoiceRecord.orderBy(
+                                                                'invoiceDate',
+                                                                descending:
+                                                                    true),
                                                     singleRecord: true,
                                                   ).then((s) => s.firstOrNull);
-                                                  if (_model.qrDocumentcount !=
+                                                  if (_model.invoicecount
+                                                          ?.count !=
                                                       null) {
-                                                    FFAppState().count =
-                                                        valueOrDefault<int>(
-                                                      functions.returncount(
-                                                          valueOrDefault<
-                                                              String>(
-                                                        _model.qrDocumentcount
-                                                            ?.orderId,
-                                                        '0',
-                                                      )),
-                                                      0,
-                                                    );
-                                                    safeSetState(() {});
                                                   } else {
                                                     FFAppState().count = 0;
                                                     safeSetState(() {});

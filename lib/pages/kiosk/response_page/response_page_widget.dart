@@ -107,6 +107,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               ).toString().toString(),
               orderType: FFAppState().orderType,
               kotStatus: 'PENDING',
+              count: FFAppState().count,
             ),
             ...mapToFirestore(
               {
@@ -151,6 +152,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               ).toString().toString(),
               orderType: FFAppState().orderType,
               kotStatus: 'PENDING',
+              count: FFAppState().count,
             ),
             ...mapToFirestore(
               {

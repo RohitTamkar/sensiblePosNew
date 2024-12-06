@@ -53,7 +53,7 @@ class KioskCartModel extends FlutterFlowModel<KioskCartWidget> {
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   OutletRecord? outletDOc;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  QrTransactionsRecord? qrDocumentcount;
+  InvoiceRecord? invoicecount;
   // Stores action output result for [Backend Call - API (createQR)] action in Button widget.
   ApiCallResponse? paymentQrResponse;
   // Stores action output result for [Custom Action - connectDevice] action in Button widget.
