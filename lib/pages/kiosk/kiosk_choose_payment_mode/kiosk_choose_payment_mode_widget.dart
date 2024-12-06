@@ -217,7 +217,7 @@ class _KioskChoosePaymentModeWidgetState
                                           .displayLargeFamily,
                                       color: FlutterFlowTheme.of(context)
                                           .parkingSecondaryBackground,
-                                      fontSize: 40.0,
+                                      fontSize: 30.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                       useGoogleFonts: GoogleFonts.asMap()
