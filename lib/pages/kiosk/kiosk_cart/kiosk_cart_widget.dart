@@ -1367,6 +1367,9 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                   if (_model.invoicecount
                                                           ?.count !=
                                                       null) {
+                                                    FFAppState().count = _model
+                                                        .invoicecount!.count;
+                                                    safeSetState(() {});
                                                   } else {
                                                     FFAppState().count = 0;
                                                     safeSetState(() {});
