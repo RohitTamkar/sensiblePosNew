@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -273,15 +272,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                           ),
                                                           TextSpan(
                                                             text:
-                                                                valueOrDefault<
-                                                                    String>(
-                                                              functions
-                                                                  .returncount(
-                                                                      containerVarItem
-                                                                          .invoice)
-                                                                  ?.toString(),
-                                                              '0',
-                                                            ),
+                                                                containerVarItem
+                                                                    .count
+                                                                    .toString(),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .headlineSmall

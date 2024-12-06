@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -330,12 +329,10 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                           Text(
                                                             valueOrDefault<
                                                                 String>(
-                                                              functions
-                                                                  .returncount(
-                                                                      pendingListItem
-                                                                          .invoice)
-                                                                  ?.toString(),
-                                                              '00',
+                                                              pendingListItem
+                                                                  .count
+                                                                  .toString(),
+                                                              '0',
                                                             ),
                                                             textAlign: TextAlign
                                                                 .center,
@@ -486,12 +483,9 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                               0.0, 0.0),
                                                       child: Text(
                                                         valueOrDefault<String>(
-                                                          functions
-                                                              .returncount(
-                                                                  collectListItem
-                                                                      .invoice)
-                                                              ?.toString(),
-                                                          '0',
+                                                          collectListItem.count
+                                                              .toString(),
+                                                          '11',
                                                         ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
