@@ -17,6 +17,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -215,7 +217,7 @@ Future printBill(
 
       String printLine = '';
       String dateString = '';
-      String serialTemp = 'Serial no: ' + FFAppState().count.toString();
+      String serialTemp = 'Token no: ' + FFAppState().count.toString();
 
       final DateTime now = DateTime.now();
       final DateFormat formatter = DateFormat('dd-MM-yyyy');
@@ -928,7 +930,7 @@ Future printBill(
 
       String printLine = '';
       String dateString = '';
-      String serialTemp = 'Serial no: ' + FFAppState().count.toString();
+      String serialTemp = 'Token no: ' + FFAppState().count.toString();
 
       final DateTime now = DateTime.now();
       final DateFormat formatter = DateFormat('dd-MM-yyyy');

@@ -184,22 +184,41 @@ class _KioskChoosePaymentModeWidgetState
                                 ),
                               ),
                             ),
+                            Text(
+                              FFLocalizations.of(context).getText(
+                                'sw0ojh01' /* Choose Payment Type  */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .displayLarge
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .displayLargeFamily,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    fontSize: 40.0,
+                                    letterSpacing: 5.0,
+                                    fontWeight: FontWeight.bold,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .displayLargeFamily),
+                                  ),
+                            ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 80.0),
+                                  0.0, 20.0, 0.0, 80.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'sw0ojh01' /* Choose Payment Type  */,
+                                  '8bm0y3wk' /* Please Collect Your Token & Bi... */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .displayLarge
                                     .override(
                                       fontFamily: FlutterFlowTheme.of(context)
                                           .displayLargeFamily,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      color: FlutterFlowTheme.of(context)
+                                          .parkingSecondaryBackground,
                                       fontSize: 40.0,
-                                      letterSpacing: 5.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(

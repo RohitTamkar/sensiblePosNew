@@ -20359,14 +20359,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'jzhjl7xx': {
-      'en': 'Order Ready',
+      'en': 'Order Picked Up',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
     'bgqcvj6q': {
-      'en': 'In Progress',
+      'en': 'Order Ready',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -21169,6 +21169,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'sw0ojh01': {
       'en': 'Choose Payment Type ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '8bm0y3wk': {
+      'en': 'Please Collect Your Token & Bill Print !',
       'hi': '',
       'kn': '',
       'mr': '',

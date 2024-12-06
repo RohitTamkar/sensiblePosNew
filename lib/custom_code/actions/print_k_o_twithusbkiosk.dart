@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -118,29 +120,53 @@ Future printKOTwithusbkiosk(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 align: PosAlign.center));
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+        bytes += generator.text('Token no: ' + FFAppState().count.toString(),
+            styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size2,
+                bold: true,
+                align: PosAlign.center));
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
 
         String printLine = '';
         String dateString = '';
-        String serialTemp = 'Serial no: ' + FFAppState().count.toString();
+        // String serialTemp = 'Token no: ' + FFAppState().count.toString();
 
         final DateTime now = DateTime.now();
         final DateFormat formatter = DateFormat('dd-MM-yyyy');
         final String formatted = formatter.format(now);
         dateString = formatted.toString();
-        printLine = serialTemp;
-        for (int i = 1;
+
+        //  printLine = serialTemp;
+        /*  for (int i = 1;
             i <= (size - (serialTemp.length + dateString.length));
             i++) {
           printLine += " ";
-        }
-
-        printLine += dateString;
-
-        bytes += generator.text(printLine,
+        }*/
+        /*    for (int i = 1;
+        i <= (size - (dateString.length));
+        i++) {
+          printLine += " ";
+          printLine += dateString;
+        }*/
+        /*bytes += generator.text(printLine,
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: false));
+                bold: false));*/
         printLine = '';
         final DateTime now1 = DateTime.now();
         final DateFormat formatter1 = DateFormat('h:mm:ss');
@@ -149,6 +175,7 @@ Future printKOTwithusbkiosk(
         String dateTimeString = formatted1.toString();
         String billNo = 'Bill No: ' + invoiceDetails.invoice.toString();
         printLine = billNo;
+
         for (int i = 1;
             i <= (size - (billNo.length + dateTimeString.length));
             i++) {
@@ -160,6 +187,11 @@ Future printKOTwithusbkiosk(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false));
+        bytes += generator.text('Date:' + dateString,
+            styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                align: PosAlign.left));
         bytes += generator.text(
             "-----------------------------------------------",
             styles: const PosStyles(
@@ -183,6 +215,19 @@ Future printKOTwithusbkiosk(
         for (var product in productsToPrint) {
           bytes += generatePrintBytes(generator, product);
         }
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+        bytes += generator.text("# KOT IS REQUIRED TO COLLECT TOUR ORDER #",
+            styles: PosStyles(
+                bold: true,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                align: PosAlign.center));
       } else {
         String billColumn3 = "ITEM NAME                   QTY";
         bytes += generator.text("# NEW KOT #",
@@ -198,7 +243,7 @@ Future printKOTwithusbkiosk(
 
         String printLine = '';
         String dateString = '';
-        String serialTemp = 'Serial no: ' + FFAppState().count.toString();
+        String serialTemp = 'Token no: ' + FFAppState().count.toString();
 
         final DateTime now = DateTime.now();
         final DateFormat formatter = DateFormat('dd-MM-yyyy');
@@ -350,9 +395,31 @@ Future printKOTwithusbkiosk(
 
 List<int> generatePrintBytes(Generator generator, dynamic product) {
   List<int> bytes = [];
-
+  bytes += generator.row([
+    PosColumn(
+      text: product.name.toString(),
+      width: 10,
+      styles: PosStyles(
+        fontType: PosFontType.fontA,
+        height: PosTextSize.size1,
+        width: PosTextSize.size1,
+        bold: true,
+        align: PosAlign.left,
+      ),
+    ),
+    PosColumn(
+      text: product.quantity.toString(),
+      width: 2,
+      styles: PosStyles(
+        height: PosTextSize.size1,
+        width: PosTextSize.size1,
+        bold: true,
+        align: PosAlign.right,
+      ),
+    ),
+  ]);
   // Define the maximum length per line for the product name conservatively
-  const int maxLineLength =
+/*  const int maxLineLength =
       15; // Adjust this value based on your printer's actual character width per line
 
   // Split the product name into multiple lines if necessary
@@ -363,10 +430,10 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
         ? i + maxLineLength
         : productName.length;
     nameLines.add(productName.substring(i, end));
-  }
+  }*/
 
   // Print each line of the product name
-  for (int i = 0; i < nameLines.length; i++) {
+  /*for (int i = 0; i < nameLines.length; i++) {
     if (i == 0) {
       // First line: print product name and quantity
       bytes += generator.row([
@@ -376,7 +443,7 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
           styles: PosStyles(
             fontType: PosFontType.fontA,
             height: PosTextSize.size1,
-            width: PosTextSize.size2,
+            width: PosTextSize.size1,
             bold: false,
             align: PosAlign.left,
           ),
@@ -386,7 +453,7 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
           width: 4,
           styles: PosStyles(
             height: PosTextSize.size1,
-            width: PosTextSize.size2,
+            width: PosTextSize.size1,
             bold: false,
             align: PosAlign.right,
           ),
@@ -401,7 +468,7 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
           styles: PosStyles(
             fontType: PosFontType.fontA,
             height: PosTextSize.size1,
-            width: PosTextSize.size2,
+            width: PosTextSize.size1,
             bold: false,
             align: PosAlign.left,
           ),
@@ -411,14 +478,14 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
           width: 4, // Empty column to maintain the total width of 12
           styles: PosStyles(
             height: PosTextSize.size1,
-            width: PosTextSize.size2,
+            width: PosTextSize.size1,
             bold: false,
             align: PosAlign.right,
           ),
         ),
       ]);
     }
-  }
+  }*/
 
   return bytes;
 }

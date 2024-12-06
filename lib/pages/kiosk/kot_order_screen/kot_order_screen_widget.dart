@@ -341,7 +341,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                             text: FFLocalizations
                                                                     .of(context)
                                                                 .getText(
-                                                              'jzhjl7xx' /* Order Ready */,
+                                                              'jzhjl7xx' /* Order Picked Up */,
                                                             ),
                                                             options:
                                                                 FFButtonOptions(
@@ -407,7 +407,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                             text: FFLocalizations
                                                                     .of(context)
                                                                 .getText(
-                                                              'bgqcvj6q' /* In Progress */,
+                                                              'bgqcvj6q' /* Order Ready */,
                                                             ),
                                                             options:
                                                                 FFButtonOptions(
