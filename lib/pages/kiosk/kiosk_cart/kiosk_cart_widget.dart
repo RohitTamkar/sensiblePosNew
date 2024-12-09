@@ -1,10 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -54,7 +56,6 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
       safeSetState(() {});
     });
 
-    _model.switchValue = FFAppState().orderType == 'PARCEL';
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -203,161 +204,109 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                           .headlineSmallFamily),
                                             ),
                                       ),
-                                      FlutterFlowIconButton(
-                                        borderColor: Colors.transparent,
-                                        borderRadius: 5.0,
-                                        buttonSize: 75.0,
-                                        icon: Icon(
-                                          Icons.keyboard_backspace_outlined,
-                                          color: Colors.transparent,
-                                        ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
-                                        },
-                                      ),
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          if (FFAppState().orderType ==
-                                              'DINE IN')
-                                            FFButtonWidget(
-                                              onPressed: () {
-                                                print('Button pressed ...');
-                                              },
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'nywa1bor' /* Dine In */,
-                                              ),
-                                              icon: Icon(
-                                                Icons.dinner_dining_rounded,
-                                                color:
+                                          Expanded(
+                                            child: FlutterFlowChoiceChips(
+                                              options: [
+                                                ChipData(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'm630vqg2' /* DINE IN */,
+                                                )),
+                                                ChipData(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '9hqpozct' /* PARCEL */,
+                                                ))
+                                              ],
+                                              onChanged: (val) => safeSetState(
+                                                  () =>
+                                                      _model.choiceChipsValue =
+                                                          val?.firstOrNull),
+                                              selectedChipStyle: ChipStyle(
+                                                backgroundColor:
                                                     FlutterFlowTheme.of(context)
-                                                        .info,
-                                                size: 30.0,
-                                              ),
-                                              options: FFButtonOptions(
-                                                height: 65.0,
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: Color(0x00B6001A),
+                                                        .primary,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleSmall
+                                                        .bodyMedium
                                                         .override(
                                                           fontFamily:
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .titleSmallFamily,
+                                                                  .bodyMediumFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .info,
-                                                          fontSize: 24.0,
+                                                              .secondaryBackground,
+                                                          fontSize: 30.0,
                                                           letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
                                                               .containsKey(
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleSmallFamily),
+                                                                      .bodyMediumFamily),
                                                         ),
+                                                iconColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .info,
+                                                iconSize: 16.0,
                                                 elevation: 0.0,
-                                                borderSide: BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 1.0,
-                                                ),
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                               ),
-                                            ),
-                                        ],
-                                      ),
-                                      Switch.adaptive(
-                                        value: _model.switchValue!,
-                                        onChanged: (newValue) async {
-                                          safeSetState(() =>
-                                              _model.switchValue = newValue!);
-                                          if (newValue!) {
-                                            FFAppState().orderType = 'PARCEL';
-                                            safeSetState(() {});
-                                          } else {
-                                            FFAppState().orderType = 'DINE IN';
-                                            safeSetState(() {});
-                                          }
-                                        },
-                                        activeColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                        activeTrackColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                        inactiveTrackColor:
-                                            FlutterFlowTheme.of(context).info,
-                                        inactiveThumbColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                      ),
-                                      if (FFAppState().orderType == 'PARCEL')
-                                        FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
-                                          },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            '062fzq3c' /* Parcel */,
-                                          ),
-                                          icon: Icon(
-                                            Icons.takeout_dining_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            size: 30.0,
-                                          ),
-                                          options: FFButtonOptions(
-                                            height: 65.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    24.0, 0.0, 24.0, 0.0),
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: Color(0x00B6001A),
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmallFamily,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      fontSize: 24.0,
-                                                      letterSpacing: 0.0,
-                                                      useGoogleFonts: GoogleFonts
-                                                              .asMap()
-                                                          .containsKey(
+                                              unselectedChipStyle: ChipStyle(
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .titleSmallFamily),
-                                                    ),
-                                            elevation: 0.0,
-                                            borderSide: BorderSide(
-                                              color: Colors.transparent,
-                                              width: 1.0,
+                                                                  .bodyMediumFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                        ),
+                                                iconColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                iconSize: 16.0,
+                                                elevation: 0.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              chipSpacing: 20.0,
+                                              rowSpacing: 8.0,
+                                              multiselect: false,
+                                              initialized:
+                                                  _model.choiceChipsValue !=
+                                                      null,
+                                              alignment: WrapAlignment.start,
+                                              controller: _model
+                                                      .choiceChipsValueController ??=
+                                                  FormFieldController<
+                                                      List<String>>(
+                                                [FFAppState().orderType],
+                                              ),
+                                              wrapped: false,
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
                                           ),
-                                        ),
-                                    ],
+                                        ],
+                                      ),
+                                    ].divide(SizedBox(width: 20.0)),
                                   ),
                                 ],
                               ),

@@ -1,10 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -28,8 +30,12 @@ class KioskCartModel extends FlutterFlowModel<KioskCartWidget> {
 
   // Model for KioskHeader component.
   late KioskHeaderModel kioskHeaderModel;
-  // State field(s) for Switch widget.
-  bool? switchValue;
+  // State field(s) for ChoiceChips widget.
+  FormFieldController<List<String>>? choiceChipsValueController;
+  String? get choiceChipsValue =>
+      choiceChipsValueController?.value?.firstOrNull;
+  set choiceChipsValue(String? val) =>
+      choiceChipsValueController?.value = val != null ? [val] : [];
   // Stores action output result for [Custom Action - reduceQuantityHoldListkiosk] action in IconButton widget.
   List<dynamic>? res2cart;
   // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in IconButton widget.
