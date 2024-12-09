@@ -1387,7 +1387,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                             ),
                                             Container(
                                               width: double.infinity,
-                                              height: 70.0,
+                                              height: 50.0,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFF362E25),
                                                 borderRadius:
@@ -1425,8 +1425,13 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBtnText,
+                                                                  fontSize:
+                                                                      22.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
                                                                   useGoogleFonts: GoogleFonts
                                                                           .asMap()
                                                                       .containsKey(
@@ -1443,8 +1448,13 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                   fontFamily: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMediumFamily,
+                                                                  fontSize:
+                                                                      30.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
                                                                   useGoogleFonts: GoogleFonts
                                                                           .asMap()
                                                                       .containsKey(
