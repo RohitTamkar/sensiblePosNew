@@ -281,11 +281,13 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                           chipSpacing: 20.0,
                                           rowSpacing: 8.0,
                                           multiselect: false,
+                                          initialized:
+                                              _model.choiceChipsValue != null,
                                           alignment: WrapAlignment.start,
                                           controller: _model
                                                   .choiceChipsValueController ??=
                                               FormFieldController<List<String>>(
-                                            [],
+                                            [FFAppState().orderType],
                                           ),
                                           wrapped: false,
                                         ),
