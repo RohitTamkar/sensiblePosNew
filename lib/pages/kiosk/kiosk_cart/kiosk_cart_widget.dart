@@ -1,7 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -9,7 +8,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
-import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
@@ -18,7 +16,6 @@ import 'package:collection/collection.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -43,13 +40,10 @@ class KioskCartWidget extends StatefulWidget {
   State<KioskCartWidget> createState() => _KioskCartWidgetState();
 }
 
-class _KioskCartWidgetState extends State<KioskCartWidget>
-    with TickerProviderStateMixin {
+class _KioskCartWidgetState extends State<KioskCartWidget> {
   late KioskCartModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -60,29 +54,6 @@ class _KioskCartWidgetState extends State<KioskCartWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.btnPressed = false;
       safeSetState(() {});
-    });
-
-    animationsMap.addAll({
-      'choiceChipsOnPageLoadAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          ScaleEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 1500.0.ms,
-            begin: Offset(1.0, 1.0),
-            end: Offset(1.35, 1.35),
-          ),
-          TintEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 1500.0.ms,
-            color: Color(0x01FFDD42),
-            begin: 0.0,
-            end: 1.0,
-          ),
-        ],
-      ),
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -310,17 +281,14 @@ class _KioskCartWidgetState extends State<KioskCartWidget>
                                           chipSpacing: 20.0,
                                           rowSpacing: 8.0,
                                           multiselect: false,
-                                          initialized:
-                                              _model.choiceChipsValue != null,
                                           alignment: WrapAlignment.start,
                                           controller: _model
                                                   .choiceChipsValueController ??=
                                               FormFieldController<List<String>>(
-                                            [FFAppState().orderType],
+                                            [],
                                           ),
                                           wrapped: false,
-                                        ).animateOnPageLoad(animationsMap[
-                                            'choiceChipsOnPageLoadAnimation']!),
+                                        ),
                                       ),
                                     ],
                                   ),
