@@ -379,9 +379,48 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                             .orderType ==
                                                         'PARCEL')
                                                       FFButtonWidget(
-                                                        onPressed: () {
-                                                          print(
-                                                              'Button pressed ...');
+                                                        onPressed: () async {
+                                                          context.pushNamed(
+                                                            'KioskDineParcel',
+                                                            queryParameters: {
+                                                              'userdoc':
+                                                                  serializeParam(
+                                                                widget!.doc,
+                                                                ParamType
+                                                                    .DocumentReference,
+                                                              ),
+                                                              'shiftdoc':
+                                                                  serializeParam(
+                                                                widget!
+                                                                    .shiftdoc,
+                                                                ParamType.JSON,
+                                                              ),
+                                                              'appSetting':
+                                                                  serializeParam(
+                                                                widget!
+                                                                    .appsetting,
+                                                                ParamType
+                                                                    .Document,
+                                                              ),
+                                                              'taxcollection':
+                                                                  serializeParam(
+                                                                widget!
+                                                                    .taxcollection,
+                                                                ParamType
+                                                                    .Document,
+                                                                isList: true,
+                                                              ),
+                                                            }.withoutNulls,
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              'appSetting':
+                                                                  widget!
+                                                                      .appsetting,
+                                                              'taxcollection':
+                                                                  widget!
+                                                                      .taxcollection,
+                                                            },
+                                                          );
                                                         },
                                                         text:
                                                             FFLocalizations.of(

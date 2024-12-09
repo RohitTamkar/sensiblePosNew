@@ -16663,14 +16663,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'xjiq6xxv': {
+    'nywa1bor': {
       'en': 'Dine In',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'rck93vde': {
+    '062fzq3c': {
       'en': 'Parcel',
       'hi': '',
       'kn': '',

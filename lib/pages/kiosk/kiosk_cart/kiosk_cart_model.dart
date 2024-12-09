@@ -28,6 +28,8 @@ class KioskCartModel extends FlutterFlowModel<KioskCartWidget> {
 
   // Model for KioskHeader component.
   late KioskHeaderModel kioskHeaderModel;
+  // State field(s) for Switch widget.
+  bool? switchValue;
   // Stores action output result for [Custom Action - reduceQuantityHoldListkiosk] action in IconButton widget.
   List<dynamic>? res2cart;
   // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in IconButton widget.

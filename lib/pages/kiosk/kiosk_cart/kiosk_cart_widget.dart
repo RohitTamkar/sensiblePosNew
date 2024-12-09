@@ -54,6 +54,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
       safeSetState(() {});
     });
 
+    _model.switchValue = FFAppState().orderType == 'PARCEL';
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -214,64 +215,94 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                           print('IconButton pressed ...');
                                         },
                                       ),
-                                    ],
-                                  ),
-                                  Stack(
-                                    children: [
-                                      if (FFAppState().orderType == 'DINE IN')
-                                        FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
-                                          },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'xjiq6xxv' /* Dine In */,
-                                          ),
-                                          icon: Icon(
-                                            Icons.dinner_dining_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            size: 30.0,
-                                          ),
-                                          options: FFButtonOptions(
-                                            height: 65.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    24.0, 0.0, 24.0, 0.0),
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: Color(0x00B6001A),
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmallFamily,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      fontSize: 24.0,
-                                                      letterSpacing: 0.0,
-                                                      useGoogleFonts: GoogleFonts
-                                                              .asMap()
-                                                          .containsKey(
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          if (FFAppState().orderType ==
+                                              'DINE IN')
+                                            FFButtonWidget(
+                                              onPressed: () {
+                                                print('Button pressed ...');
+                                              },
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'nywa1bor' /* Dine In */,
+                                              ),
+                                              icon: Icon(
+                                                Icons.dinner_dining_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .info,
+                                                size: 30.0,
+                                              ),
+                                              options: FFButtonOptions(
+                                                height: 65.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 24.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color: Color(0x00B6001A),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .titleSmallFamily),
-                                                    ),
-                                            elevation: 0.0,
-                                            borderSide: BorderSide(
-                                              color: Colors.transparent,
-                                              width: 1.0,
+                                                                  .titleSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .info,
+                                                          fontSize: 24.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
+                                                        ),
+                                                elevation: 0.0,
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                        ),
+                                        ],
+                                      ),
+                                      Switch.adaptive(
+                                        value: _model.switchValue!,
+                                        onChanged: (newValue) async {
+                                          safeSetState(() =>
+                                              _model.switchValue = newValue!);
+                                          if (newValue!) {
+                                            FFAppState().orderType = 'PARCEL';
+                                            safeSetState(() {});
+                                          } else {
+                                            FFAppState().orderType = 'DINE IN';
+                                            safeSetState(() {});
+                                          }
+                                        },
+                                        activeColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        activeTrackColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        inactiveTrackColor:
+                                            FlutterFlowTheme.of(context).info,
+                                        inactiveThumbColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                      ),
                                       if (FFAppState().orderType == 'PARCEL')
                                         FFButtonWidget(
                                           onPressed: () {
@@ -279,7 +310,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'rck93vde' /* Parcel */,
+                                            '062fzq3c' /* Parcel */,
                                           ),
                                           icon: Icon(
                                             Icons.takeout_dining_rounded,
