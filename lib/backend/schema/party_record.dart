@@ -171,6 +171,16 @@ class PartyRecord extends FirestoreRecord {
   String get country => _country ?? '';
   bool hasCountry() => _country != null;
 
+  // "balance" field.
+  double? _balance;
+  double get balance => _balance ?? 0.0;
+  bool hasBalance() => _balance != null;
+
+  // "isDealer" field.
+  bool? _isDealer;
+  bool get isDealer => _isDealer ?? false;
+  bool hasIsDealer() => _isDealer != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -205,6 +215,8 @@ class PartyRecord extends FirestoreRecord {
     _state = snapshotData['state'] as String?;
     _area = snapshotData['area'] as String?;
     _country = snapshotData['country'] as String?;
+    _balance = castToType<double>(snapshotData['balance']);
+    _isDealer = snapshotData['isDealer'] as bool?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -277,6 +289,8 @@ Map<String, dynamic> createPartyRecordData({
   String? state,
   String? area,
   String? country,
+  double? balance,
+  bool? isDealer,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -311,6 +325,8 @@ Map<String, dynamic> createPartyRecordData({
       'state': state,
       'area': area,
       'country': country,
+      'balance': balance,
+      'isDealer': isDealer,
     }.withoutNulls,
   );
 
@@ -352,7 +368,9 @@ class PartyRecordDocumentEquality implements Equality<PartyRecord> {
         e1?.code == e2?.code &&
         e1?.state == e2?.state &&
         e1?.area == e2?.area &&
-        e1?.country == e2?.country;
+        e1?.country == e2?.country &&
+        e1?.balance == e2?.balance &&
+        e1?.isDealer == e2?.isDealer;
   }
 
   @override
@@ -387,7 +405,9 @@ class PartyRecordDocumentEquality implements Equality<PartyRecord> {
         e?.code,
         e?.state,
         e?.area,
-        e?.country
+        e?.country,
+        e?.balance,
+        e?.isDealer
       ]);
 
   @override
