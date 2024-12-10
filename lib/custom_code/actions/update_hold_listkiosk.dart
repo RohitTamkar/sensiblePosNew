@@ -9,27 +9,27 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-// Imports other custom actions
+import 'index.dart'; // Imports other custom actions
 
-Future<List<dynamic>> addToHoldListkioskGst(
-  ProductRecord document,
-  int billno,
+import 'index.dart'; // Imports other custom actions
+
+Future<List<dynamic>> updateHoldListkiosk(
+  dynamic obj,
+  int billNo,
   List<TaxMasterRecord> taxcollection,
   String inclusiveorexclusive,
+  String ordertype,
 ) async {
-  // Add your function code here!
-
-  // Add your function code here!
   List<dynamic> list = FFAppState().allBillsList;
-  print(document);
+  print(obj);
   List<dynamic> itemList = [];
   var y = 1.0;
 
   String? taxId = '';
-  if (document?.taxRef?.id == null) {
+  if (obj['taxId'] == null) {
     taxId = 'QPIz6c63YKBYVKT80oPv';
   } else {
-    taxId = document?.taxRef?.id;
+    taxId = obj['taxId'];
   }
 
   TaxMasterRecord? taxRecord = taxcollection.firstWhere(
@@ -39,7 +39,7 @@ Future<List<dynamic>> addToHoldListkioskGst(
 
   if (taxRecord != null) {
     double taxPer = taxRecord.percentage ?? 0.0;
-    double price = document!.sellingPrice;
+    double price = obj['price'];
     double quantity = y.toDouble();
 
     // Calculate taxAmt for each item separately
@@ -49,7 +49,7 @@ Future<List<dynamic>> addToHoldListkioskGst(
 
     double taxAmt = taxAmtPerItem * quantity;
 
-    /*double total = (inclusiveorexclusive.toLowerCase() == 'inclusive')
+    /* double total = (inclusiveorexclusive.toLowerCase() == 'inclusive')
         ? (price * quantity)
         : (price * quantity) + double.parse(taxAmt.toStringAsFixed(2));*/
     double total = (inclusiveorexclusive.toLowerCase() == 'inclusive')
@@ -57,20 +57,15 @@ Future<List<dynamic>> addToHoldListkioskGst(
         : (price * quantity);
 
     final data = {
-      "name": document!.name,
-      "price": (document.sellingPrice)!.toDouble(),
+      "name": obj['name'],
+      "price": (obj['price'])!.toDouble(),
       "quantity": quantity,
       "total": total, // Include taxAmt for exclusive tax
-      "id": document!.id,
-      "catId": document!.categoryRef!.id,
+      "id": obj['id'],
+      "catId": obj['catId'],
       "taxId": taxId,
       "taxPer": taxPer,
       "taxAmt": double.parse(taxAmt.toStringAsFixed(2)),
-      "regionalName": document!.regionalName,
-      "imageUrl": document!.imageUrl,
-      "currentStock": document!.currentStock ?? 0,
-      "stockable": document!.stockable ?? false,
-      "ordertype": "DINE IN",
     };
 
     var index;
@@ -79,7 +74,7 @@ Future<List<dynamic>> addToHoldListkioskGst(
 
     if (list.isNotEmpty) {
       for (int i = 0; i < list.length; i++) {
-        if (list[i]["billno"] == billno) {
+        if (list[i]["billno"] == billNo) {
           if (list[i]["details"]["itemList"].length > 0) {
             itemList = (list[i]["details"]["itemList"]);
             index = i;
@@ -105,9 +100,12 @@ Future<List<dynamic>> addToHoldListkioskGst(
               itemList[j]["total"] = itemList[j]["quantity"] *
                   itemList[j]["price"]; // Update total for each item
             } else {
+              /* itemList[j]["total"] =
+                  itemList[j]["quantity"] * itemList[j]["price"] +
+                      itemList[j]["taxAmt"];*/
               itemList[j]["total"] =
                   itemList[j]["quantity"] * itemList[j]["price"];
-            }
+            } // Update total for each item
             list[index]["details"]["itemList"] = itemList;
             FFAppState().allBillsList = list;
             flag = true;
@@ -127,3 +125,27 @@ Future<List<dynamic>> addToHoldListkioskGst(
   print(FFAppState().allBillsList);
   return FFAppState().allBillsList;
 }
+
+//   List<dynamic> itemList;
+//   List<dynamic> allBillList = FFAppState().allBillsList;
+//   if (allBillList.isNotEmpty) {
+//     for (int i = 0; i < allBillList.length; i++) {
+//       print(allBillList[i]["billno"]);
+//       if (allBillList[i]["billno"] == billNo) {
+//         if (allBillList[i]["details"]["itemList"].length > 0) {
+//           itemList = (allBillList[i]["details"]["itemList"]);
+//           if (itemList.isNotEmpty) {
+//             var index = itemList.indexOf(obj);
+//             if (itemList[index]["quantity"] >= 0) {
+//               itemList[index]["quantity"]++;
+//               allBillList[i]["details"]["itemList"] = itemList;
+//             }
+//           }
+//           break;
+//         }
+//       }
+//     }
+//   }
+
+//   return (allBillList);
+// }
