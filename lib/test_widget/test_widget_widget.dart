@@ -91,7 +91,7 @@ class _TestWidgetWidgetState extends State<TestWidgetWidget> {
                                     4.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'gzgycq4f' /* Back */,
+                                    'vevrxux4' /* Back */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineMedium
@@ -116,7 +116,7 @@ class _TestWidgetWidgetState extends State<TestWidgetWidget> {
                               24.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'dhh0b28h' /* Page Title */,
+                              'x9mzaph9' /* Page Title */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium

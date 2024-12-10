@@ -1,5 +1,4 @@
 export 'check_platform.dart' show checkPlatform;
-export 'update_hold_listkiosk.dart' show updateHoldListkiosk;
 export 'calculate_mixpaymentamt.dart' show calculateMixpaymentamt;
 export 'print_billnewhive.dart' show printBillnewhive;
 export 'laudry_add_custom_qty.dart' show laudryAddCustomQty;

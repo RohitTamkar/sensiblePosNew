@@ -42,7 +42,6 @@ Future<List<SelItemListStruct>> filterProducts(
                 catId: itemList[j]["catId"],
                 taxPer: itemList[j]["taxPer"],
                 taxAmt: itemList[j]["taxAmt"],
-                ordertype: itemList[j]["ordertype"],
                 isDeletedItem: false);
 
             returnList.add(struct);

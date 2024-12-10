@@ -121,7 +121,8 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -191,6 +192,107 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmallFamily),
                                         ),
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Expanded(
+                                        child: FlutterFlowChoiceChips(
+                                          options: [
+                                            ChipData(FFLocalizations.of(context)
+                                                .getText(
+                                              'm630vqg2' /* DINE IN */,
+                                            )),
+                                            ChipData(FFLocalizations.of(context)
+                                                .getText(
+                                              '9hqpozct' /* PARCEL */,
+                                            ))
+                                          ],
+                                          onChanged: (val) async {
+                                            safeSetState(() =>
+                                                _model.choiceChipsValue =
+                                                    val?.firstOrNull);
+                                            FFAppState().orderType =
+                                                _model.choiceChipsValue!;
+                                            safeSetState(() {});
+                                          },
+                                          selectedChipStyle: ChipStyle(
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily,
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      fontSize: 30.0,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily),
+                                                    ),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .info,
+                                            iconSize: 16.0,
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          unselectedChipStyle: ChipStyle(
+                                            backgroundColor: Color(0xFFD7D4E8),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily),
+                                                    ),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryText,
+                                            iconSize: 16.0,
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          chipSpacing: 20.0,
+                                          rowSpacing: 8.0,
+                                          multiselect: false,
+                                          initialized:
+                                              _model.choiceChipsValue != null,
+                                          alignment: WrapAlignment.start,
+                                          controller: _model
+                                                  .choiceChipsValueController ??=
+                                              FormFieldController<List<String>>(
+                                            [FFAppState().orderType],
+                                          ),
+                                          wrapped: false,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
@@ -440,73 +542,6 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                     ),
                                                                               ),
                                                                               textAlign: TextAlign.start,
-                                                                            ),
-                                                                            FlutterFlowChoiceChips(
-                                                                              options: [
-                                                                                ChipData(FFLocalizations.of(context).getText(
-                                                                                  'h4hy0iiw' /* DINE IN */,
-                                                                                )),
-                                                                                ChipData(FFLocalizations.of(context).getText(
-                                                                                  'o4xh3yf5' /* PARCEL */,
-                                                                                ))
-                                                                              ],
-                                                                              onChanged: (val) async {
-                                                                                safeSetState(() => _model.choiceChipsValue = val?.firstOrNull);
-                                                                                _model.listview2 = await actions.updateHoldListkiosk(
-                                                                                  listviewItem,
-                                                                                  FFAppState().selBill,
-                                                                                  widget!.taxcollection!.toList(),
-                                                                                  functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                                    widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
-                                                                                    false,
-                                                                                  )),
-                                                                                  _model.choiceChipsValue!,
-                                                                                );
-
-                                                                                safeSetState(() {});
-                                                                              },
-                                                                              selectedChipStyle: ChipStyle(
-                                                                                backgroundColor: FlutterFlowTheme.of(context).primary,
-                                                                                textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      fontSize: 14.0,
-                                                                                      letterSpacing: 0.0,
-                                                                                      fontWeight: FontWeight.bold,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                    ),
-                                                                                iconColor: FlutterFlowTheme.of(context).info,
-                                                                                iconSize: 16.0,
-                                                                                elevation: 0.0,
-                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                              ),
-                                                                              unselectedChipStyle: ChipStyle(
-                                                                                backgroundColor: Color(0x659DB8FF),
-                                                                                textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                      color: FlutterFlowTheme.of(context).primaryText,
-                                                                                      letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                    ),
-                                                                                iconColor: FlutterFlowTheme.of(context).secondaryText,
-                                                                                iconSize: 16.0,
-                                                                                elevation: 0.0,
-                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                              ),
-                                                                              chipSpacing: 8.0,
-                                                                              rowSpacing: 8.0,
-                                                                              multiselect: false,
-                                                                              initialized: _model.choiceChipsValue != null,
-                                                                              alignment: WrapAlignment.start,
-                                                                              controller: _model.choiceChipsValueController ??= FormFieldController<List<String>>(
-                                                                                [
-                                                                                  getJsonField(
-                                                                                    listviewItem,
-                                                                                    r'''$.ordertype''',
-                                                                                  ).toString()
-                                                                                ],
-                                                                              ),
-                                                                              wrapped: true,
                                                                             ),
                                                                           ],
                                                                         ),

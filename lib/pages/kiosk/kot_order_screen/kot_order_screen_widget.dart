@@ -1385,6 +1385,88 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                 ),
                                               ),
                                             ),
+                                            Container(
+                                              width: double.infinity,
+                                              height: 50.0,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFF362E25),
+                                                borderRadius:
+                                                    BorderRadius.circular(0.0),
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsets.all(15.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    RichText(
+                                                      textScaler:
+                                                          MediaQuery.of(context)
+                                                              .textScaler,
+                                                      text: TextSpan(
+                                                        children: [
+                                                          TextSpan(
+                                                            text:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              containerVarItem
+                                                                  .orderType,
+                                                              '0',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelLarge
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBtnText,
+                                                                  fontSize:
+                                                                      22.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelLargeFamily),
+                                                                ),
+                                                          )
+                                                        ],
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  fontSize:
+                                                                      30.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
                                             Padding(
                                               padding: EdgeInsets.all(15.0),
                                               child: Container(
@@ -1561,10 +1643,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Text(
-                                                                              valueOrDefault<String>(
-                                                                                prdlistItem.name,
-                                                                                '0',
-                                                                              ),
+                                                                              prdlistItem.name,
                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                     letterSpacing: 0.0,
@@ -1575,27 +1654,6 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                  Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      prdlistItem
-                                                                          .ordertype,
-                                                                      '0',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .headlineLarge
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).headlineLargeFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          fontWeight:
-                                                                              FontWeight.w600,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
-                                                                        ),
                                                                   ),
                                                                   Text(
                                                                     valueOrDefault<
@@ -1619,9 +1677,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                               GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
                                                                         ),
                                                                   ),
-                                                                ].divide(SizedBox(
-                                                                    width:
-                                                                        20.0)),
+                                                                ],
                                                               ),
                                                             );
                                                           }),
