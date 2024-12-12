@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -166,50 +165,7 @@ class _KioskChoosePaymentModeWidgetState
                         decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 20.0, 0.0),
-                              child: FlutterFlowIconButton(
-                                borderColor:
-                                    FlutterFlowTheme.of(context).primary,
-                                borderRadius: 15.0,
-                                borderWidth: 0.5,
-                                buttonSize: 65.0,
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                icon: Icon(
-                                  Icons.keyboard_backspace_outlined,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 40.0,
-                                ),
-                                onPressed: () async {
-                                  context.goNamed(
-                                    'KioskCart',
-                                    queryParameters: {
-                                      'shiftdetails': serializeParam(
-                                        widget!.shiftdetails,
-                                        ParamType.JSON,
-                                      ),
-                                      'appsetting': serializeParam(
-                                        widget!.appSettings,
-                                        ParamType.Document,
-                                      ),
-                                      'taxcollection': serializeParam(
-                                        widget!.taxcollection,
-                                        ParamType.Document,
-                                        isList: true,
-                                      ),
-                                    }.withoutNulls,
-                                    extra: <String, dynamic>{
-                                      'appsetting': widget!.appSettings,
-                                      'taxcollection': widget!.taxcollection,
-                                    },
-                                  );
-                                },
-                              ),
-                            ),
-                          ],
+                          children: [],
                         ),
                       ),
                       Padding(
