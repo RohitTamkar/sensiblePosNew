@@ -156,7 +156,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                 0.0, 0.0, 0.0, 5.0),
                             child: Container(
                               width: double.infinity,
-                              height: MediaQuery.sizeOf(context).height * 0.13,
+                              height: MediaQuery.sizeOf(context).height * 0.15,
                               decoration: BoxDecoration(),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -172,409 +172,330 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                       updateCallback: () => safeSetState(() {}),
                                       child: KioskHeaderWidget(),
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 0.0, 0.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 7.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onLongPress: () async {},
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '9j0g1ck5' /* Welcome to */,
+                                    Flexible(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            5.0, 0.0, 0.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Flexible(
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 7.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '9j0g1ck5' /* Welcome to */,
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                fontSize: 20.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily),
+                                                              ),
                                                     ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .headlineSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmallFamily,
-                                                          color: FlutterFlowTheme
+                                                  ),
+                                                  Flexible(
+                                                    child: Text(
+                                                      FFAppState().outletName,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily,
+                                                                color: Color(
+                                                                    0xFF033BE8),
+                                                                fontSize: 32.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily),
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 5.0, 0.0),
+                                                  child: Stack(
+                                                    children: [
+                                                      if (FFAppState()
+                                                              .orderType ==
+                                                          'DINE IN')
+                                                        FFButtonWidget(
+                                                          onPressed: () {
+                                                            print(
+                                                                'Button pressed ...');
+                                                          },
+                                                          text: FFLocalizations
                                                                   .of(context)
-                                                              .primary,
-                                                          fontSize: 20.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineSmallFamily),
+                                                              .getText(
+                                                            'uhllvaea' /* Dine In */,
+                                                          ),
+                                                          icon: Icon(
+                                                            Icons
+                                                                .dinner_dining_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            size: 24.0,
+                                                          ),
+                                                          options:
+                                                              FFButtonOptions(
+                                                            height: 55.0,
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        24.0,
+                                                                        0.0,
+                                                                        24.0,
+                                                                        0.0),
+                                                            iconPadding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            color: Color(
+                                                                0x00B6001A),
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      fontSize:
+                                                                          22.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                    ),
+                                                            elevation: 0.0,
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: Colors
+                                                                  .transparent,
+                                                              width: 1.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
                                                         ),
+                                                      if (FFAppState()
+                                                              .orderType ==
+                                                          'PARCEL')
+                                                        FFButtonWidget(
+                                                          onPressed: () {
+                                                            print(
+                                                                'Button pressed ...');
+                                                          },
+                                                          text: FFLocalizations
+                                                                  .of(context)
+                                                              .getText(
+                                                            '6gjpa29u' /* Parcel */,
+                                                          ),
+                                                          icon: Icon(
+                                                            Icons
+                                                                .takeout_dining_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            size: 30.0,
+                                                          ),
+                                                          options:
+                                                              FFButtonOptions(
+                                                            height: 55.0,
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        24.0,
+                                                                        0.0,
+                                                                        24.0,
+                                                                        0.0),
+                                                            iconPadding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            color: Color(
+                                                                0x00B6001A),
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      fontSize:
+                                                                          24.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                    ),
+                                                            elevation: 0.0,
+                                                            borderSide:
+                                                                BorderSide(
+                                                              color: Colors
+                                                                  .transparent,
+                                                              width: 1.0,
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
+                                                        ),
+                                                    ],
                                                   ),
                                                 ),
-                                              ),
-                                              Text(
-                                                FFAppState().outletName,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmallFamily,
-                                                          color:
-                                                              Color(0xFF033BE8),
-                                                          fontSize: 32.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineSmallFamily),
-                                                        ),
-                                              ),
-                                            ],
-                                          ),
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 5.0, 0.0),
-                                                child: Stack(
-                                                  children: [
-                                                    if (FFAppState()
-                                                            .orderType ==
-                                                        'DINE IN')
-                                                      FFButtonWidget(
-                                                        onPressed: () async {
-                                                          context.pushNamed(
-                                                            'KioskDineParcel',
-                                                            queryParameters: {
-                                                              'userdoc':
-                                                                  serializeParam(
-                                                                widget!.doc,
-                                                                ParamType
-                                                                    .DocumentReference,
-                                                              ),
-                                                              'shiftdoc':
-                                                                  serializeParam(
-                                                                widget!
-                                                                    .shiftdoc,
-                                                                ParamType.JSON,
-                                                              ),
-                                                              'appSetting':
-                                                                  serializeParam(
-                                                                widget!
-                                                                    .appsetting,
-                                                                ParamType
-                                                                    .Document,
-                                                              ),
-                                                              'taxcollection':
-                                                                  serializeParam(
-                                                                widget!
-                                                                    .taxcollection,
-                                                                ParamType
-                                                                    .Document,
-                                                                isList: true,
-                                                              ),
-                                                            }.withoutNulls,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              'appSetting':
-                                                                  widget!
-                                                                      .appsetting,
-                                                              'taxcollection':
-                                                                  widget!
-                                                                      .taxcollection,
-                                                            },
-                                                          );
-                                                        },
-                                                        text:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          'uhllvaea' /* Dine In */,
-                                                        ),
-                                                        icon: Icon(
-                                                          Icons
-                                                              .dinner_dining_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          size: 24.0,
-                                                        ),
-                                                        options:
-                                                            FFButtonOptions(
-                                                          height: 55.0,
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      24.0,
-                                                                      0.0,
-                                                                      24.0,
-                                                                      0.0),
-                                                          iconPadding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          color:
-                                                              Color(0x00B6001A),
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleSmallFamily,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    fontSize:
-                                                                        22.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                  ),
-                                                          elevation: 0.0,
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Colors
-                                                                .transparent,
-                                                            width: 1.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                        ),
+                                                FlutterFlowIconButton(
+                                                  borderRadius: 10.0,
+                                                  buttonSize: 55.0,
+                                                  icon: Icon(
+                                                    Icons.replay,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    size: 30.0,
+                                                  ),
+                                                  onPressed: () async {
+                                                    _model.appsettingresfresh =
+                                                        await queryAppSettingsRecordOnce(
+                                                      parent: FFAppState()
+                                                          .outletIdRef,
+                                                      queryBuilder:
+                                                          (appSettingsRecord) =>
+                                                              appSettingsRecord
+                                                                  .where(
+                                                        'deviceId',
+                                                        isEqualTo:
+                                                            FFAppState().dId,
                                                       ),
-                                                    if (FFAppState()
-                                                            .orderType ==
-                                                        'PARCEL')
-                                                      FFButtonWidget(
-                                                        onPressed: () async {
-                                                          context.pushNamed(
-                                                            'KioskDineParcel',
-                                                            queryParameters: {
-                                                              'userdoc':
-                                                                  serializeParam(
-                                                                widget!.doc,
-                                                                ParamType
-                                                                    .DocumentReference,
-                                                              ),
-                                                              'shiftdoc':
-                                                                  serializeParam(
-                                                                widget!
-                                                                    .shiftdoc,
-                                                                ParamType.JSON,
-                                                              ),
-                                                              'appSetting':
-                                                                  serializeParam(
-                                                                widget!
-                                                                    .appsetting,
-                                                                ParamType
-                                                                    .Document,
-                                                              ),
-                                                              'taxcollection':
-                                                                  serializeParam(
-                                                                widget!
-                                                                    .taxcollection,
-                                                                ParamType
-                                                                    .Document,
-                                                                isList: true,
-                                                              ),
-                                                            }.withoutNulls,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              'appSetting':
-                                                                  widget!
-                                                                      .appsetting,
-                                                              'taxcollection':
-                                                                  widget!
-                                                                      .taxcollection,
-                                                            },
-                                                          );
-                                                        },
-                                                        text:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                          '6gjpa29u' /* Parcel */,
-                                                        ),
-                                                        icon: Icon(
-                                                          Icons
-                                                              .takeout_dining_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          size: 30.0,
-                                                        ),
-                                                        options:
-                                                            FFButtonOptions(
-                                                          height: 55.0,
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      24.0,
-                                                                      0.0,
-                                                                      24.0,
-                                                                      0.0),
-                                                          iconPadding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          color:
-                                                              Color(0x00B6001A),
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleSmallFamily,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    fontSize:
-                                                                        24.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                  ),
-                                                          elevation: 0.0,
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Colors
-                                                                .transparent,
-                                                            width: 1.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                        ),
-                                                      ),
-                                                  ],
-                                                ),
-                                              ),
-                                              FlutterFlowIconButton(
-                                                borderRadius: 10.0,
-                                                buttonSize: 55.0,
-                                                icon: Icon(
-                                                  Icons.replay,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  size: 30.0,
-                                                ),
-                                                onPressed: () async {
-                                                  _model.appsettingresfresh =
-                                                      await queryAppSettingsRecordOnce(
-                                                    parent: FFAppState()
-                                                        .outletIdRef,
-                                                    queryBuilder:
-                                                        (appSettingsRecord) =>
-                                                            appSettingsRecord
-                                                                .where(
-                                                      'deviceId',
-                                                      isEqualTo:
-                                                          FFAppState().dId,
-                                                    ),
-                                                    singleRecord: true,
-                                                  ).then((s) => s.firstOrNull);
+                                                      singleRecord: true,
+                                                    ).then((s) =>
+                                                            s.firstOrNull);
 
-                                                  context.pushNamed(
-                                                    'KioskBillScreen',
-                                                    queryParameters: {
-                                                      'doc': serializeParam(
-                                                        widget!.doc,
-                                                        ParamType
-                                                            .DocumentReference,
-                                                      ),
-                                                      'shiftdoc':
-                                                          serializeParam(
-                                                        widget!.shiftdoc,
-                                                        ParamType.JSON,
-                                                      ),
-                                                      'appsetting':
-                                                          serializeParam(
-                                                        _model
-                                                            .appsettingresfresh,
-                                                        ParamType.Document,
-                                                      ),
-                                                      'taxcollection':
-                                                          serializeParam(
-                                                        widget!.taxcollection,
-                                                        ParamType.Document,
-                                                        isList: true,
-                                                      ),
-                                                    }.withoutNulls,
-                                                    extra: <String, dynamic>{
-                                                      'appsetting': _model
-                                                          .appsettingresfresh,
-                                                      'taxcollection':
+                                                    context.pushNamed(
+                                                      'KioskBillScreen',
+                                                      queryParameters: {
+                                                        'doc': serializeParam(
+                                                          widget!.doc,
+                                                          ParamType
+                                                              .DocumentReference,
+                                                        ),
+                                                        'shiftdoc':
+                                                            serializeParam(
+                                                          widget!.shiftdoc,
+                                                          ParamType.JSON,
+                                                        ),
+                                                        'appsetting':
+                                                            serializeParam(
+                                                          _model
+                                                              .appsettingresfresh,
+                                                          ParamType.Document,
+                                                        ),
+                                                        'taxcollection':
+                                                            serializeParam(
                                                           widget!.taxcollection,
-                                                    },
-                                                  );
+                                                          ParamType.Document,
+                                                          isList: true,
+                                                        ),
+                                                      }.withoutNulls,
+                                                      extra: <String, dynamic>{
+                                                        'appsetting': _model
+                                                            .appsettingresfresh,
+                                                        'taxcollection': widget!
+                                                            .taxcollection,
+                                                      },
+                                                    );
 
-                                                  safeSetState(() {});
-                                                },
-                                              ),
-                                              FlutterFlowIconButton(
-                                                borderColor: Colors.transparent,
-                                                borderRadius: 10.0,
-                                                buttonSize: 55.0,
-                                                icon: Icon(
-                                                  Icons.settings_outlined,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  size: 30.0,
+                                                    safeSetState(() {});
+                                                  },
                                                 ),
-                                                onPressed: () async {
-                                                  context.pushNamed(
-                                                      'printSettingkiosk');
-                                                },
-                                              ),
-                                            ],
-                                          ),
-                                        ],
+                                                FlutterFlowIconButton(
+                                                  borderColor:
+                                                      Colors.transparent,
+                                                  borderRadius: 10.0,
+                                                  buttonSize: 55.0,
+                                                  icon: Icon(
+                                                    Icons.settings_outlined,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    size: 30.0,
+                                                  ),
+                                                  onPressed: () async {
+                                                    context.pushNamed(
+                                                        'printSettingkiosk');
+                                                  },
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ],
