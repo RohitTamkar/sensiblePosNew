@@ -42,8 +42,6 @@ class CreditPaymentPageModel extends FlutterFlowModel<CreditPaymentPageWidget> {
   // State field(s) for DropDownCustCred widget.
   String? dropDownCustCredValue;
   FormFieldController<String>? dropDownCustCredValueController;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  PaymentRecord? paymentDoc2;
   // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
   bool? resDevice23;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.

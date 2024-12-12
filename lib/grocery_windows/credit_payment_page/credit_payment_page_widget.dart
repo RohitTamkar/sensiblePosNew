@@ -1355,11 +1355,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                         if (FFAppState()
                                                                 .setCustRef !=
                                                             null) {
-                                                          var paymentRecordReference =
-                                                              PaymentRecord.createDoc(
-                                                                  FFAppState()
-                                                                      .outletIdRef!);
-                                                          await paymentRecordReference
+                                                          await PaymentRecord
+                                                                  .createDoc(
+                                                                      FFAppState()
+                                                                          .outletIdRef!)
                                                               .set(
                                                                   createPaymentRecordData(
                                                             note: _model
@@ -1371,6 +1370,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     .text),
                                                             paymentType: _model
                                                                 .dropDownCustCredValue,
+                                                            expenceType:
+                                                                'Credit',
                                                             createdBy:
                                                                 FFAppState()
                                                                     .userdoc,
@@ -1379,63 +1380,18 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     .millisecondsSinceEpoch,
                                                             party: FFAppState()
                                                                 .setCustRef,
-                                                            expenceType:
-                                                                ' Credit',
                                                             oldBalance:
-                                                                valueOrDefault<
-                                                                    int>(
-                                                              FFAppState()
-                                                                  .oldBalance,
-                                                              0,
-                                                            ),
+                                                                FFAppState()
+                                                                    .oldBalance,
                                                           ));
-                                                          _model.paymentDoc2 =
-                                                              PaymentRecord
-                                                                  .getDocumentFromData(
-                                                                      createPaymentRecordData(
-                                                                        note: _model
-                                                                            .textController1
-                                                                            .text,
-                                                                        amount: double.tryParse(_model
-                                                                            .textFieldCustCredAmtTextController
-                                                                            .text),
-                                                                        paymentType:
-                                                                            _model.dropDownCustCredValue,
-                                                                        createdBy:
-                                                                            FFAppState().userdoc,
-                                                                        createdDate:
-                                                                            getCurrentTimestamp.millisecondsSinceEpoch,
-                                                                        party: FFAppState()
-                                                                            .setCustRef,
-                                                                        expenceType:
-                                                                            ' Credit',
-                                                                        oldBalance:
-                                                                            valueOrDefault<int>(
-                                                                          FFAppState()
-                                                                              .oldBalance,
-                                                                          0,
-                                                                        ),
-                                                                      ),
-                                                                      paymentRecordReference);
 
                                                           await FFAppState()
                                                               .setCustRef!
                                                               .update(
                                                                   createPartyRecordData(
                                                                 oldBalance:
-                                                                    valueOrDefault<
-                                                                        int>(
-                                                                  FFAppState()
-                                                                          .oldBalance -
-                                                                      valueOrDefault<
-                                                                          int>(
-                                                                        int.tryParse(_model
-                                                                            .textFieldCustCredAmtTextController
-                                                                            .text),
-                                                                        0,
-                                                                      ),
-                                                                  0,
-                                                                ),
+                                                                    FFAppState()
+                                                                        .oldBalance,
                                                               ));
                                                           FFAppState()
                                                               .oldBalance = 0;
@@ -1454,29 +1410,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                 ?.clear();
                                                           });
                                                           context.pop();
-                                                        } else {
-                                                          await showDialog(
-                                                            context: context,
-                                                            builder:
-                                                                (alertDialogContext) {
-                                                              return AlertDialog(
-                                                                content: Text(
-                                                                    'Customer Is Not Selected !'),
-                                                                actions: [
-                                                                  TextButton(
-                                                                    onPressed: () =>
-                                                                        Navigator.pop(
-                                                                            alertDialogContext),
-                                                                    child: Text(
-                                                                        'Ok'),
-                                                                  ),
-                                                                ],
-                                                              );
-                                                            },
-                                                          );
                                                         }
-
-                                                        safeSetState(() {});
                                                       },
                                                       text: FFLocalizations.of(
                                                               context)
