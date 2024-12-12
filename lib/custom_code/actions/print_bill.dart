@@ -107,7 +107,7 @@ Future printBill(
         if (doc["title"] != null && doc["title"].isNotEmpty) {
           bytes += generator.text(doc["title"],
               styles: PosStyles(
-                  height: PosTextSize.size2,
+                  height: PosTextSize.size1,
                   width: PosTextSize.size2,
                   align: PosAlign.center));
         }
@@ -499,8 +499,8 @@ Future printBill(
       bytes += generator.text(
           "PAYMENT MODE :" + invoiceDetails.paymentMode.toString(),
           styles: const PosStyles(
-              height: PosTextSize.size2,
-              width: PosTextSize.size2,
+              height: PosTextSize.size1,
+              width: PosTextSize.size1,
               align: PosAlign.center));
 
       // bytes += generator.text(
