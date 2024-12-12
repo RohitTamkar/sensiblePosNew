@@ -284,14 +284,14 @@ class _LoadingScreenkiosknewWidgetState
             .toList()
             .firstOrNull!
             .value) {
-          FFAppState().count = 0;
+          FFAppState().count = 100;
           safeSetState(() {});
         } else {
           if (_model.invoicecount?.count != null) {
             FFAppState().count = _model.invoicecount!.count;
             safeSetState(() {});
           } else {
-            FFAppState().count = 0;
+            FFAppState().count = 100;
             safeSetState(() {});
           }
         }
@@ -370,7 +370,7 @@ class _LoadingScreenkiosknewWidgetState
           FFAppState().count = _model.invoicecountshiftresumed!.count;
           safeSetState(() {});
         } else {
-          FFAppState().count = 0;
+          FFAppState().count = 100;
           safeSetState(() {});
         }
 

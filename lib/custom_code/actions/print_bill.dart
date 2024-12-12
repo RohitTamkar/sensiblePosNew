@@ -485,7 +485,7 @@ Future printBill(
 
       bytes += generator.text("NET :" + FFAppState().finalAmt.toString(),
           styles: PosStyles(
-              height: PosTextSize.size2,
+              height: PosTextSize.size1,
               width: PosTextSize.size2,
               align: PosAlign.right));
 
