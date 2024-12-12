@@ -1331,7 +1331,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               FFAppState().customer = true;
                                                                               FFAppState().update(() {});
 
-                                                                              context.pushNamed('CreditPaymentPage');
+                                                                              context.pushNamed('PaymentScreen');
                                                                             },
                                                                           ),
                                                                         ),
