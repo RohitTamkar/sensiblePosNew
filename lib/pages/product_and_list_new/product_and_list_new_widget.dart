@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/discount_and_delivery_copy/discount_and_delivery_copy_widget.dart';
@@ -378,7 +377,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
             title: 'ProductAndListNew',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: WillPopScope(
                 onWillPop: () async => false,
                 child: Scaffold(
@@ -2444,7 +2446,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   ),
                                                                                   child: Stack(
                                                                                     children: [
-                                                                                      if (!productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'showProductImage').toList().first.value)
+                                                                                      if (!productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'showProductImage').toList().firstOrNull!.value)
                                                                                         InkWell(
                                                                                           splashColor: Colors.transparent,
                                                                                           focusColor: Colors.transparent,
@@ -2464,13 +2466,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                     productListItem,
                                                                                                     FFAppState().selBill,
                                                                                                     widget!.taxcollection!.toList(),
-                                                                                                    functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                                    functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                                   );
                                                                                                   _shouldSetState = true;
                                                                                                   _model.calculateResult23dfsdf = await actions.calSubTotalForHoldListkiosk(
                                                                                                     FFAppState().selBill.toString(),
                                                                                                     _model.addtosavebill3!.toList(),
-                                                                                                    functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                                    functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                                   );
                                                                                                   _shouldSetState = true;
                                                                                                   _model.calbillAmt2s = await actions.calBillAmt(
@@ -2503,7 +2505,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                     '0',
                                                                                                                   ))
                                                                                                               .toList()
-                                                                                                              .first,
+                                                                                                              .firstOrNull,
                                                                                                           r'''$.quantity''',
                                                                                                         ),
                                                                                                         0.0,
@@ -2517,13 +2519,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                       productListItem,
                                                                                                       FFAppState().selBill,
                                                                                                       widget!.taxcollection!.toList(),
-                                                                                                      functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                                      functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                                     );
                                                                                                     _shouldSetState = true;
                                                                                                     _model.calculateResult23df = await actions.calSubTotalForHoldListkiosk(
                                                                                                       FFAppState().selBill.toString(),
                                                                                                       _model.addtosavebill3d!.toList(),
-                                                                                                      functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                                      functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                                     );
                                                                                                     _shouldSetState = true;
                                                                                                     _model.calbillAmt2sd = await actions.calBillAmt(
@@ -2585,13 +2587,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                 productListItem,
                                                                                                 FFAppState().selBill,
                                                                                                 widget!.taxcollection!.toList(),
-                                                                                                functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                                functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                               );
                                                                                               _shouldSetState = true;
                                                                                               _model.calculateResult23 = await actions.calSubTotalForHoldListkiosk(
                                                                                                 FFAppState().selBill.toString(),
                                                                                                 _model.addtosavebill2!.toList(),
-                                                                                                functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                                functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                               );
                                                                                               _shouldSetState = true;
                                                                                               _model.calbillAmt3 = await actions.calBillAmt(
@@ -2689,7 +2691,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                         ).animateOnActionTrigger(animationsMap['containerOnActionTriggerAnimation3']!, hasBeenTriggered: hasContainerTriggered3),
-                                                                                      if (productAndListNewAppSettingsRecord?.settingList?.where((e) => e.title == 'showProductImage').toList()?.first?.value ?? true)
+                                                                                      if (productAndListNewAppSettingsRecord?.settingList?.where((e) => e.title == 'showProductImage').toList()?.firstOrNull?.value ?? true)
                                                                                         InkWell(
                                                                                           splashColor: Colors.transparent,
                                                                                           focusColor: Colors.transparent,
@@ -2705,7 +2707,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                               productListItem,
                                                                                               FFAppState().selBill,
                                                                                               widget!.taxcollection!.toList(),
-                                                                                              functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                              functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                             );
                                                                                             _model.calculateResult2 = await actions.calSubTotalForHoldList(
                                                                                               FFAppState().selBill.toString(),
@@ -3804,12 +3806,12 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                         ProductStructStruct.maybeFromMap(billItem)!,
                                                                                         FFAppState().selBill,
                                                                                         widget!.taxcollection!.toList(),
-                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                       );
                                                                                       await actions.calSubTotalForHoldListkiosk(
                                                                                         FFAppState().selBill.toString(),
                                                                                         _model.resultminus!.toList(),
-                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                       );
                                                                                       _model.reu34 = await actions.calBillAmt(
                                                                                         valueOrDefault<double>(
@@ -3928,13 +3930,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                         ProductStructStruct.maybeFromMap(billItem)!,
                                                                                         FFAppState().selBill,
                                                                                         widget!.taxcollection!.toList(),
-                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                       );
                                                                                       _shouldSetState = true;
                                                                                       await actions.calSubTotalForHoldListkiosk(
                                                                                         FFAppState().selBill.toString(),
                                                                                         _model.resultplus!.toList(),
-                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                       );
                                                                                       _model.reuslt12 = await actions.calBillAmt(
                                                                                         valueOrDefault<double>(
@@ -4068,7 +4070,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 await actions.calSubTotalForHoldListkiosk(
                                                                               FFAppState().selBill.toString(),
                                                                               FFAppState().allBillsList.toList(),
-                                                                              functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                              functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                             );
                                                                             _model.reuslt22 =
                                                                                 await actions.calBillAmt(
@@ -4143,7 +4145,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 e.title ==
                                                                 'enableCustomer')
                                                             .toList()
-                                                            ?.first
+                                                            ?.firstOrNull
                                                             ?.value ??
                                                         true)
                                                       Expanded(
@@ -4542,10 +4544,15 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                             context: context,
                                                             builder: (context) {
                                                               return GestureDetector(
-                                                                onTap: () =>
-                                                                    FocusScope.of(
-                                                                            context)
-                                                                        .unfocus(),
+                                                                onTap: () {
+                                                                  FocusScope.of(
+                                                                          context)
+                                                                      .unfocus();
+                                                                  FocusManager
+                                                                      .instance
+                                                                      .primaryFocus
+                                                                      ?.unfocus();
+                                                                },
                                                                 child: Padding(
                                                                   padding: MediaQuery
                                                                       .viewInsetsOf(
@@ -4888,8 +4895,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       builder:
                                                                           (context) {
                                                                         return GestureDetector(
-                                                                          onTap: () =>
-                                                                              FocusScope.of(context).unfocus(),
+                                                                          onTap:
+                                                                              () {
+                                                                            FocusScope.of(context).unfocus();
+                                                                            FocusManager.instance.primaryFocus?.unfocus();
+                                                                          },
                                                                           child:
                                                                               Padding(
                                                                             padding:
@@ -5296,7 +5306,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                             e.title ==
                                                             'enableSaveBill')
                                                         .toList()
-                                                        ?.first
+                                                        ?.firstOrNull
                                                         ?.value ??
                                                     true)
                                                   Expanded(
@@ -6058,7 +6068,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         e.title ==
                                                                         'enableStock')
                                                                     .toList()
-                                                                    .first
+                                                                    .firstOrNull!
                                                                     .value) {
                                                                   FFAppState()
                                                                       .startLoop = 0;
@@ -6077,7 +6087,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           .where(
                                                                             'id',
                                                                             isEqualTo:
-                                                                                (_model.prdlistsavebill?[FFAppState().startLoop])?.id,
+                                                                                (_model.prdlistsavebill?.elementAtOrNull(FFAppState().startLoop))?.id,
                                                                           )
                                                                           .where(
                                                                             'stockable',
@@ -6100,7 +6110,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         ...mapToFirestore(
                                                                           {
                                                                             'currentStock':
-                                                                                FieldValue.increment(-(functions.doubleToInt((_model.prdlistsavebill?[FFAppState().startLoop])?.quantity)!)),
+                                                                                FieldValue.increment(-(functions.doubleToInt((_model.prdlistsavebill?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)),
                                                                           },
                                                                         ),
                                                                       });
@@ -6111,8 +6121,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             .stockupdateprd
                                                                             ?.reference
                                                                             .id,
-                                                                        _model.prdlistsavebill?[
-                                                                            FFAppState().startLoop],
+                                                                        _model
+                                                                            .prdlistsavebill
+                                                                            ?.elementAtOrNull(FFAppState().startLoop),
                                                                         'get',
                                                                       );
                                                                       _shouldSetState =
@@ -6202,7 +6213,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               .itemprd
                                                                               ?.recipeId
                                                                           ..stock =
-                                                                              _model.itemprd!.stock - (functions.doubleToInt((_model.prdlistsavebill?[FFAppState().startLoop])?.quantity)!)
+                                                                              _model.itemprd!.stock - (functions.doubleToInt((_model.prdlistsavebill?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)
                                                                           ..isDeleted = _model
                                                                               .itemprd
                                                                               ?.isDeleted
@@ -7365,7 +7376,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           e.title ==
                                                                           'printKotWithBill')
                                                                       .toList()
-                                                                      .first
+                                                                      .firstOrNull!
                                                                       .value) {
                                                                     await actions
                                                                         .printKOTwithusbkioskhive(
@@ -7404,7 +7415,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           e.title ==
                                                                           'enableEthernetPrint')
                                                                       .toList()
-                                                                      .first
+                                                                      .firstOrNull!
                                                                       .value) {
                                                                     await actions
                                                                         .printEthernethive(
@@ -7443,7 +7454,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           e.title ==
                                                                           'enableStock')
                                                                       .toList()
-                                                                      .first
+                                                                      .firstOrNull!
                                                                       .value) {
                                                                     FFAppState()
                                                                         .startLoop = 0;
@@ -7461,7 +7472,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         queryBuilder: (productRecord) => productRecord
                                                                             .where(
                                                                               'id',
-                                                                              isEqualTo: (_model.prdlinstnewtx?[FFAppState().startLoop])?.id,
+                                                                              isEqualTo: (_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.id,
                                                                             )
                                                                             .where(
                                                                               'stockable',
@@ -7482,7 +7493,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             .update({
                                                                           ...mapToFirestore(
                                                                             {
-                                                                              'currentStock': FieldValue.increment(-(functions.doubleToInt((_model.prdlinstnewtx?[FFAppState().startLoop])?.quantity)!)),
+                                                                              'currentStock': FieldValue.increment(-(functions.doubleToInt((_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)),
                                                                             },
                                                                           ),
                                                                         });
@@ -7493,7 +7504,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               ?.reference
                                                                               .id,
                                                                           _model
-                                                                              .prdlinstnewtx?[FFAppState().startLoop],
+                                                                              .prdlinstnewtx
+                                                                              ?.elementAtOrNull(FFAppState().startLoop),
                                                                           'get',
                                                                         );
                                                                         _shouldSetState =
@@ -7556,7 +7568,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             ..recipeId =
                                                                                 _model.itemprd2?.recipeId
                                                                             ..stock =
-                                                                                _model.itemprd2!.stock - (functions.doubleToInt((_model.prdlinstnewtx?[FFAppState().startLoop])?.quantity)!)
+                                                                                _model.itemprd2!.stock - (functions.doubleToInt((_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)
                                                                             ..isDeleted =
                                                                                 _model.itemprd2?.isDeleted
                                                                             ..keywords =

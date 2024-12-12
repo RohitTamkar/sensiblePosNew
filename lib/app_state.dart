@@ -45,6 +45,9 @@ class FFAppState extends ChangeNotifier {
       _outletIdRef = prefs.getString('ff_outletIdRef')?.ref ?? _outletIdRef;
     });
     _safeInit(() {
+      _count = prefs.getInt('ff_count') ?? _count;
+    });
+    _safeInit(() {
       if (prefs.containsKey('ff_paymentDetails')) {
         try {
           _paymentDetails =
@@ -711,6 +714,7 @@ class FFAppState extends ChangeNotifier {
   int get count => _count;
   set count(int value) {
     _count = value;
+    prefs.setInt('ff_count', value);
   }
 
   dynamic _paymentDetails;

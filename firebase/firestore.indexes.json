@@ -15,38 +15,6 @@
       ]
     },
     {
-      "collectionGroup": "CATEGORY",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "type",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "isDeleted",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "categoryNo",
-          "order": "ASCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "PRODUCT",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "isDeleted",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "type",
-          "order": "ASCENDING"
-        }
-      ]
-    },
-    {
       "collectionGroup": "PAYMENT",
       "queryScope": "COLLECTION",
       "fields": [

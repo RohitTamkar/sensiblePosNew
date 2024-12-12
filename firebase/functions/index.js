@@ -67,7 +67,3 @@ exports.ffPrivateApiCallV2 = onRequest(
     }
   },
 );
-exports.onUserDeleted = functions.auth.user().onDelete(async (user) => {
-  let firestore = admin.firestore();
-  let userRef = firestore.doc("USER_PROFILE/" + user.uid);
-});

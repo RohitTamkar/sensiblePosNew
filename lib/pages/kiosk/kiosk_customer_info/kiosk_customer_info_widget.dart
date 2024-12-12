@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -62,7 +61,10 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
         title: 'kioskCustomerInfo',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -352,7 +354,7 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                         ?.where(
                                             (e) => e.title == 'hideSkipButton')
                                         .toList()
-                                        ?.first
+                                        ?.firstOrNull
                                         ?.value,
                                     false,
                                   ))

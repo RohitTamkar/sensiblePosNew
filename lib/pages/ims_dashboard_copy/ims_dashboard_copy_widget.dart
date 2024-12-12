@@ -41,7 +41,10 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
         title: 'imsDashboardCopy',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -171,7 +174,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                                     ),
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        '7j906k9w' /* Inward  Outward */,
+                                        '7j906k9w' /* Inward / Outward */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium

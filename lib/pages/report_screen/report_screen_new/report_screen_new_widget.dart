@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/calender/calender_widget.dart';
 import '/components/header/header_widget.dart';
@@ -266,7 +265,10 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
         title: 'ReportScreenNew',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -344,7 +346,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                           .where((e) =>
                                               e.title == 'enableweightScale')
                                           .toList()
-                                          .first
+                                          .firstOrNull!
                                           .value) {
                                         context.pushNamed(
                                           'ProductAndListlaundrybilling',
@@ -1325,10 +1327,15 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                         context: context,
                                                         builder: (context) {
                                                           return GestureDetector(
-                                                            onTap: () =>
-                                                                FocusScope.of(
-                                                                        context)
-                                                                    .unfocus(),
+                                                            onTap: () {
+                                                              FocusScope.of(
+                                                                      context)
+                                                                  .unfocus();
+                                                              FocusManager
+                                                                  .instance
+                                                                  .primaryFocus
+                                                                  ?.unfocus();
+                                                            },
                                                             child: Padding(
                                                               padding: MediaQuery
                                                                   .viewInsetsOf(
@@ -1443,10 +1450,15 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                         context: context,
                                                         builder: (context) {
                                                           return GestureDetector(
-                                                            onTap: () =>
-                                                                FocusScope.of(
-                                                                        context)
-                                                                    .unfocus(),
+                                                            onTap: () {
+                                                              FocusScope.of(
+                                                                      context)
+                                                                  .unfocus();
+                                                              FocusManager
+                                                                  .instance
+                                                                  .primaryFocus
+                                                                  ?.unfocus();
+                                                            },
                                                             child: Padding(
                                                               padding: MediaQuery
                                                                   .viewInsetsOf(
@@ -1561,10 +1573,15 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                         context: context,
                                                         builder: (context) {
                                                           return GestureDetector(
-                                                            onTap: () =>
-                                                                FocusScope.of(
-                                                                        context)
-                                                                    .unfocus(),
+                                                            onTap: () {
+                                                              FocusScope.of(
+                                                                      context)
+                                                                  .unfocus();
+                                                              FocusManager
+                                                                  .instance
+                                                                  .primaryFocus
+                                                                  ?.unfocus();
+                                                            },
                                                             child: Padding(
                                                               padding: MediaQuery
                                                                   .viewInsetsOf(
@@ -1678,10 +1695,15 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                         context: context,
                                                         builder: (context) {
                                                           return GestureDetector(
-                                                            onTap: () =>
-                                                                FocusScope.of(
-                                                                        context)
-                                                                    .unfocus(),
+                                                            onTap: () {
+                                                              FocusScope.of(
+                                                                      context)
+                                                                  .unfocus();
+                                                              FocusManager
+                                                                  .instance
+                                                                  .primaryFocus
+                                                                  ?.unfocus();
+                                                            },
                                                             child: Padding(
                                                               padding: MediaQuery
                                                                   .viewInsetsOf(

@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -129,7 +128,10 @@ class _KioskChoosePaymentModeWidgetState
         title: 'KioskChoosePaymentMode',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -232,7 +234,7 @@ class _KioskChoosePaymentModeWidgetState
                                   ?.where(
                                       (e) => e.title == 'hideUpiPaymentMode')
                                   .toList()
-                                  ?.first
+                                  ?.firstOrNull
                                   ?.value,
                               false,
                             ))
@@ -354,7 +356,7 @@ class _KioskChoosePaymentModeWidgetState
                                   ?.where(
                                       (e) => e.title == 'hideUpiPaymentMode')
                                   .toList()
-                                  ?.first
+                                  ?.firstOrNull
                                   ?.value,
                               false,
                             ))
@@ -387,7 +389,7 @@ class _KioskChoosePaymentModeWidgetState
                                   ?.where(
                                       (e) => e.title == 'hideCashPaymentMode')
                                   .toList()
-                                  ?.first
+                                  ?.firstOrNull
                                   ?.value,
                               false,
                             ))

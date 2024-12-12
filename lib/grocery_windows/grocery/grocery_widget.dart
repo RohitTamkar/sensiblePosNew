@@ -293,7 +293,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                             r'''$.id''',
                                           ))
                                       .toList()
-                                      .first,
+                                      .firstOrNull,
                                   r'''$.disAmt''',
                                 ).toString();
                                 _model.textFielddisAmtFocusNode?.requestFocus();
@@ -322,7 +322,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                             r'''$.id''',
                                           ))
                                       .toList()
-                                      .first,
+                                      .firstOrNull,
                                   r'''$.taxAmt''',
                                 ).toString();
                                 _model.textFieldTaxAmtFocusNode?.requestFocus();
@@ -442,7 +442,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                             r'''$.id''',
                                           ))
                                       .toList()
-                                      .first,
+                                      .firstOrNull,
                                   r'''$.disAmt''',
                                 ).toString();
                                 _model.textFielddisAmtFocusNode?.requestFocus();
@@ -471,7 +471,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                             r'''$.id''',
                                           ))
                                       .toList()
-                                      .first,
+                                      .firstOrNull,
                                   r'''$.taxAmt''',
                                 ).toString();
                                 _model.textFieldTaxAmtFocusNode?.requestFocus();
@@ -670,7 +670,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                           r'''$.id''',
                                         ))
                                     .toList()
-                                    .first,
+                                    .firstOrNull,
                                 r'''$.disAmt''',
                               ).toString();
                               _model.textFielddisAmtFocusNode?.requestFocus();
@@ -696,7 +696,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                           r'''$.id''',
                                         ))
                                     .toList()
-                                    .first,
+                                    .firstOrNull,
                                 r'''$.taxAmt''',
                               ).toString();
                               _model.textFieldTaxAmtFocusNode?.requestFocus();
@@ -819,7 +819,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                               r'''$.id''',
                                             ))
                                         .toList()
-                                        ?.first,
+                                        ?.firstOrNull,
                                     r'''$.taxAmt''',
                                   )?.toString(),
                                   '0',
@@ -851,7 +851,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                               r'''$.id''',
                                             ))
                                         .toList()
-                                        ?.first,
+                                        ?.firstOrNull,
                                     r'''$.disAmt''',
                                   )?.toString(),
                                   '0',
@@ -1051,7 +1051,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                             r'''$.id''',
                                           ))
                                       .toList()
-                                      .first,
+                                      .firstOrNull,
                                   r'''$.disAmt''',
                                 ).toString();
                                 _model.textFielddisAmtFocusNode?.requestFocus();
@@ -1214,7 +1214,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                             r'''$.id''',
                                           ))
                                       .toList()
-                                      .first,
+                                      .firstOrNull,
                                   r'''$.disPer''',
                                 ).toString();
                                 _model.textFielddisPerFocusNode?.requestFocus();
@@ -1377,7 +1377,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                             r'''$.id''',
                                           ))
                                       .toList()
-                                      .first,
+                                      .firstOrNull,
                                   r'''$.taxAmt''',
                                 ).toString();
                                 _model.textFieldTaxAmtFocusNode?.requestFocus();
@@ -1540,7 +1540,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                             r'''$.id''',
                                           ))
                                       .toList()
-                                      .first,
+                                      .firstOrNull,
                                   r'''$.taxPer''',
                                 ).toString();
                                 _model.textFieldtaxPerFocusNode?.requestFocus();

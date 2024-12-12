@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
@@ -74,7 +73,10 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
         title: 'KioskCart',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -482,7 +484,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                   ),
                                                                                 ),
                                                                                 if (!valueOrDefault<bool>(
-                                                                                  widget!.appsetting?.settingList?.where((e) => e.title == 'hideRegionalLanguage').toList()?.first?.value,
+                                                                                  widget!.appsetting?.settingList?.where((e) => e.title == 'hideRegionalLanguage').toList()?.firstOrNull?.value,
                                                                                   false,
                                                                                 ))
                                                                                   Padding(
@@ -601,7 +603,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                         FFAppState().selBill,
                                                                                         widget!.taxcollection!.toList(),
                                                                                         functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                                          widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                                          widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                           false,
                                                                                         )),
                                                                                       );
@@ -612,7 +614,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                         ),
                                                                                         FFAppState().allBillsList.toList(),
                                                                                         functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                                          widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                                          widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                           false,
                                                                                         )),
                                                                                       );
@@ -699,7 +701,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                         FFAppState().selBill,
                                                                                         widget!.taxcollection!.toList(),
                                                                                         functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                                          widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                                          widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                           false,
                                                                                         )),
                                                                                       );
@@ -711,7 +713,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                         ),
                                                                                         FFAppState().allBillsList.toList(),
                                                                                         functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                                          widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                                          widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                           false,
                                                                                         )),
                                                                                       );
@@ -1318,29 +1320,6 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                     ),
                                                     singleRecord: true,
                                                   ).then((s) => s.firstOrNull);
-                                                  _model.invoicecount =
-                                                      await queryInvoiceRecordOnce(
-                                                    parent: FFAppState()
-                                                        .outletIdRef,
-                                                    queryBuilder:
-                                                        (invoiceRecord) =>
-                                                            invoiceRecord.orderBy(
-                                                                'invoiceDate',
-                                                                descending:
-                                                                    true),
-                                                    singleRecord: true,
-                                                  ).then((s) => s.firstOrNull);
-                                                  if (_model.invoicecount
-                                                          ?.count !=
-                                                      null) {
-                                                    FFAppState().count = _model
-                                                        .invoicecount!.count;
-                                                    safeSetState(() {});
-                                                  } else {
-                                                    FFAppState().count = 0;
-                                                    safeSetState(() {});
-                                                  }
-
                                                   if (functions
                                                       .filterBillList(
                                                           FFAppState().selBill,

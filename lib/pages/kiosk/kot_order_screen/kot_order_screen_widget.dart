@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/selection_option/selection_option_widget.dart';
@@ -88,7 +87,10 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
         title: 'KotOrderScreen',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -238,9 +240,13 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                 context: context,
                                                 builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .unfocus(),
+                                                    onTap: () {
+                                                      FocusScope.of(context)
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
                                                     child: Padding(
                                                       padding: MediaQuery
                                                           .viewInsetsOf(

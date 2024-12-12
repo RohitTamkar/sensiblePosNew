@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -45,6 +44,8 @@ class _SendemailWidgetState extends State<SendemailWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Column(
       mainAxisSize: MainAxisSize.max,
       children: [
@@ -52,7 +53,7 @@ class _SendemailWidgetState extends State<SendemailWidget> {
           stream: queryUserProfileRecord(
             queryBuilder: (userProfileRecord) => userProfileRecord.where(
               'id',
-              isEqualTo: currentUserReference?.id,
+              isEqualTo: FFAppState().userdoc?.id,
             ),
             singleRecord: true,
           ),

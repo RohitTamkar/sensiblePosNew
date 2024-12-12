@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/transaction_status/transaction_status_widget.dart';
@@ -301,7 +300,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
             if (_model.appsetting!.settingList
                 .where((e) => e.title == 'printKotWithBill')
                 .toList()
-                .first
+                .firstOrNull!
                 .value) {
               await actions.printKOTwithusbkiosk(
                 _model.returnedList2kiosk!.toList(),
@@ -320,7 +319,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
             if (_model.appsetting!.settingList
                 .where((e) => e.title == 'enableEthernetPrint')
                 .toList()
-                .first
+                .firstOrNull!
                 .value) {
               await actions.printEthernet(
                 _model.returnedList2kiosk!.toList(),
@@ -533,7 +532,10 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
         title: 'responsePageCopy',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -693,7 +695,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                               .where((e) =>
                                                   e.title == 'printKotWithBill')
                                               .toList()
-                                              .first
+                                              .firstOrNull!
                                               .value) {
                                             await actions.printKOTwithusbkiosk(
                                               _model.returnedList2kioskCopy!
@@ -716,7 +718,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                                   e.title ==
                                                   'enableEthernetPrint')
                                               .toList()
-                                              .first
+                                              .firstOrNull!
                                               .value) {
                                             await actions.printEthernet(
                                               _model.returnedList2kioskCopy!

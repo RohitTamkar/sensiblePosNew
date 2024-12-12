@@ -80,7 +80,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
         title: 'TableScreen',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -2825,7 +2828,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                   context: context,
                                                                                                   builder: (context) {
                                                                                                     return GestureDetector(
-                                                                                                      onTap: () => FocusScope.of(context).unfocus(),
+                                                                                                      onTap: () {
+                                                                                                        FocusScope.of(context).unfocus();
+                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                      },
                                                                                                       child: Padding(
                                                                                                         padding: MediaQuery.viewInsetsOf(context),
                                                                                                         child: Container(
@@ -3328,7 +3334,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                           text: FFLocalizations
                                                                   .of(context)
                                                               .getText(
-                                                            '7w48njot' /* OrderKOT */,
+                                                            '7w48njot' /* Order/KOT */,
                                                           ),
                                                         ),
                                                         Tab(
@@ -3896,7 +3902,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                 InputDecoration(
                                                                               isDense: true,
                                                                               hintText: FFLocalizations.of(context).getText(
-                                                                                '39vvt2y0' /* CoversGuests */,
+                                                                                '39vvt2y0' /* Covers/Guests */,
                                                                               ),
                                                                               hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -4458,7 +4464,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                         context: context,
                                                                                         builder: (context) {
                                                                                           return GestureDetector(
-                                                                                            onTap: () => FocusScope.of(context).unfocus(),
+                                                                                            onTap: () {
+                                                                                              FocusScope.of(context).unfocus();
+                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                            },
                                                                                             child: Padding(
                                                                                               padding: MediaQuery.viewInsetsOf(context),
                                                                                               child: Container(

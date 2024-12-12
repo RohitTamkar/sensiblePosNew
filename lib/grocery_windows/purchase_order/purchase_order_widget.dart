@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/exit_confirm/exit_confirm_widget.dart';
@@ -178,7 +177,10 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
             title: 'purchaseOrder',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -314,9 +316,13 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                 context: context,
                                                 builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .unfocus(),
+                                                    onTap: () {
+                                                      FocusScope.of(context)
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
                                                     child: Padding(
                                                       padding: MediaQuery
                                                           .viewInsetsOf(
@@ -2067,9 +2073,13 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                               context: context,
                                               builder: (context) {
                                                 return GestureDetector(
-                                                  onTap: () =>
-                                                      FocusScope.of(context)
-                                                          .unfocus(),
+                                                  onTap: () {
+                                                    FocusScope.of(context)
+                                                        .unfocus();
+                                                    FocusManager
+                                                        .instance.primaryFocus
+                                                        ?.unfocus();
+                                                  },
                                                   child: Padding(
                                                     padding:
                                                         MediaQuery.viewInsetsOf(
@@ -2923,10 +2933,15 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               builder:
                                                                   (context) {
                                                                 return GestureDetector(
-                                                                  onTap: () =>
-                                                                      FocusScope.of(
-                                                                              context)
-                                                                          .unfocus(),
+                                                                  onTap: () {
+                                                                    FocusScope.of(
+                                                                            context)
+                                                                        .unfocus();
+                                                                    FocusManager
+                                                                        .instance
+                                                                        .primaryFocus
+                                                                        ?.unfocus();
+                                                                  },
                                                                   child:
                                                                       Padding(
                                                                     padding: MediaQuery
@@ -4400,7 +4415,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                       e.title ==
                                                                       'enableInclusiveTax')
                                                                   .toList()
-                                                                  ?.first
+                                                                  ?.firstOrNull
                                                                   ?.value,
                                                               parameter2: ProductStructStruct
                                                                   .maybeFromMap(
@@ -4622,9 +4637,13 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                 context: context,
                                                 builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .unfocus(),
+                                                    onTap: () {
+                                                      FocusScope.of(context)
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
                                                     child: Padding(
                                                       padding: MediaQuery
                                                           .viewInsetsOf(

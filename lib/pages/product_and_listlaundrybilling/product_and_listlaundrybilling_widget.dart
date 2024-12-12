@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
@@ -372,7 +371,10 @@ class _ProductAndListlaundrybillingWidgetState
             title: 'ProductAndListlaundrybilling',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: WillPopScope(
                 onWillPop: () async => false,
                 child: Scaffold(
@@ -2428,7 +2430,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                   ),
                                                                                   child: Stack(
                                                                                     children: [
-                                                                                      if (!productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'showProductImage').toList().first.value)
+                                                                                      if (!productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'showProductImage').toList().firstOrNull!.value)
                                                                                         InkWell(
                                                                                           splashColor: Colors.transparent,
                                                                                           focusColor: Colors.transparent,
@@ -2444,7 +2446,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                               productListItem,
                                                                                               FFAppState().selBill,
                                                                                               widget!.taxcollection!.toList(),
-                                                                                              functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                              functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                             );
                                                                                             _model.calculateResult233 = await actions.laundrycalSubTotalForHoldList(
                                                                                               FFAppState().selBill.toString(),
@@ -2540,7 +2542,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                             ),
                                                                                           ),
                                                                                         ).animateOnActionTrigger(animationsMap['containerOnActionTriggerAnimation3']!, hasBeenTriggered: hasContainerTriggered3),
-                                                                                      if (productAndListlaundrybillingAppSettingsRecord?.settingList?.where((e) => e.title == 'showProductImage').toList()?.first?.value ?? true)
+                                                                                      if (productAndListlaundrybillingAppSettingsRecord?.settingList?.where((e) => e.title == 'showProductImage').toList()?.firstOrNull?.value ?? true)
                                                                                         InkWell(
                                                                                           splashColor: Colors.transparent,
                                                                                           focusColor: Colors.transparent,
@@ -2556,7 +2558,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                               productListItem,
                                                                                               FFAppState().selBill,
                                                                                               widget!.taxcollection!.toList(),
-                                                                                              functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                              functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                             );
                                                                                             _model.calculateResult2 = await actions.calSubTotalForHoldList(
                                                                                               FFAppState().selBill.toString(),
@@ -2750,7 +2752,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                         e.title ==
                                                         'enableweightScale')
                                                     .toList()
-                                                    ?.first
+                                                    ?.firstOrNull
                                                     ?.value ??
                                                 true)
                                               Container(
@@ -3098,7 +3100,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                               e.title ==
                                                                               'enableInclusiveTax')
                                                                           .toList()
-                                                                          ?.first
+                                                                          ?.firstOrNull
                                                                           ?.value,
                                                                       parameter8:
                                                                           getJsonField(
@@ -3241,7 +3243,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                 e.title ==
                                                                 'enableCustomer')
                                                             .toList()
-                                                            ?.first
+                                                            ?.firstOrNull
                                                             ?.value ??
                                                         true)
                                                       Expanded(
@@ -3640,10 +3642,15 @@ class _ProductAndListlaundrybillingWidgetState
                                                             context: context,
                                                             builder: (context) {
                                                               return GestureDetector(
-                                                                onTap: () =>
-                                                                    FocusScope.of(
-                                                                            context)
-                                                                        .unfocus(),
+                                                                onTap: () {
+                                                                  FocusScope.of(
+                                                                          context)
+                                                                      .unfocus();
+                                                                  FocusManager
+                                                                      .instance
+                                                                      .primaryFocus
+                                                                      ?.unfocus();
+                                                                },
                                                                 child: Padding(
                                                                   padding: MediaQuery
                                                                       .viewInsetsOf(
@@ -3986,8 +3993,11 @@ class _ProductAndListlaundrybillingWidgetState
                                                                       builder:
                                                                           (context) {
                                                                         return GestureDetector(
-                                                                          onTap: () =>
-                                                                              FocusScope.of(context).unfocus(),
+                                                                          onTap:
+                                                                              () {
+                                                                            FocusScope.of(context).unfocus();
+                                                                            FocusManager.instance.primaryFocus?.unfocus();
+                                                                          },
                                                                           child:
                                                                               Padding(
                                                                             padding:
@@ -4394,7 +4404,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                             e.title ==
                                                             'enableSaveBill')
                                                         .toList()
-                                                        ?.first
+                                                        ?.firstOrNull
                                                         ?.value ??
                                                     true)
                                                   Expanded(
@@ -5159,7 +5169,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           e.title ==
                                                                           'sendInvoiceToWhatsapp')
                                                                       .toList()
-                                                                      .first
+                                                                      .firstOrNull!
                                                                       .value) {
                                                                     var confirmDialogResponse =
                                                                         await showDialog<bool>(
@@ -5347,7 +5357,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         e.title ==
                                                                         'enableStock')
                                                                     .toList()
-                                                                    .first
+                                                                    .firstOrNull!
                                                                     .value) {
                                                                   FFAppState()
                                                                       .startLoop = 0;
@@ -5366,7 +5376,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           .where(
                                                                             'id',
                                                                             isEqualTo:
-                                                                                (_model.prdlistsavebill?[FFAppState().startLoop])?.id,
+                                                                                (_model.prdlistsavebill?.elementAtOrNull(FFAppState().startLoop))?.id,
                                                                           )
                                                                           .where(
                                                                             'stockable',
@@ -5389,7 +5399,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         ...mapToFirestore(
                                                                           {
                                                                             'currentStock':
-                                                                                FieldValue.increment(-(functions.doubleToInt((_model.prdlistsavebill?[FFAppState().startLoop])?.quantity)!)),
+                                                                                FieldValue.increment(-(functions.doubleToInt((_model.prdlistsavebill?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)),
                                                                           },
                                                                         ),
                                                                       });
@@ -5400,8 +5410,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                             .stockupdateprd
                                                                             ?.reference
                                                                             .id,
-                                                                        _model.prdlistsavebill?[
-                                                                            FFAppState().startLoop],
+                                                                        _model
+                                                                            .prdlistsavebill
+                                                                            ?.elementAtOrNull(FFAppState().startLoop),
                                                                         'get',
                                                                       );
                                                                       _shouldSetState =
@@ -5491,7 +5502,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                               .itemprd
                                                                               ?.recipeId
                                                                           ..stock =
-                                                                              _model.itemprd!.stock - (functions.doubleToInt((_model.prdlistsavebill?[FFAppState().startLoop])?.quantity)!)
+                                                                              _model.itemprd!.stock - (functions.doubleToInt((_model.prdlistsavebill?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)
                                                                           ..isDeleted = _model
                                                                               .itemprd
                                                                               ?.isDeleted
@@ -6530,7 +6541,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                             e.title ==
                                                                             'sendInvoiceToWhatsapp')
                                                                         .toList()
-                                                                        .first
+                                                                        .firstOrNull!
                                                                         .value) {
                                                                       var confirmDialogResponse = await showDialog<
                                                                               bool>(
@@ -6800,7 +6811,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           e.title ==
                                                                           'printKotWithBill')
                                                                       .toList()
-                                                                      .first
+                                                                      .firstOrNull!
                                                                       .value) {
                                                                     await actions
                                                                         .printKOTwithusbkioskhive(
@@ -6839,7 +6850,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           e.title ==
                                                                           'enableEthernetPrint')
                                                                       .toList()
-                                                                      .first
+                                                                      .firstOrNull!
                                                                       .value) {
                                                                     await actions
                                                                         .printEthernethive(
@@ -6878,7 +6889,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           e.title ==
                                                                           'enableStock')
                                                                       .toList()
-                                                                      .first
+                                                                      .firstOrNull!
                                                                       .value) {
                                                                     FFAppState()
                                                                         .startLoop = 0;
@@ -6896,7 +6907,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         queryBuilder: (productRecord) => productRecord
                                                                             .where(
                                                                               'id',
-                                                                              isEqualTo: (_model.prdlinstnewtx?[FFAppState().startLoop])?.id,
+                                                                              isEqualTo: (_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.id,
                                                                             )
                                                                             .where(
                                                                               'stockable',
@@ -6917,7 +6928,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                             .update({
                                                                           ...mapToFirestore(
                                                                             {
-                                                                              'currentStock': FieldValue.increment(-(functions.doubleToInt((_model.prdlinstnewtx?[FFAppState().startLoop])?.quantity)!)),
+                                                                              'currentStock': FieldValue.increment(-(functions.doubleToInt((_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)),
                                                                             },
                                                                           ),
                                                                         });
@@ -6928,7 +6939,8 @@ class _ProductAndListlaundrybillingWidgetState
                                                                               ?.reference
                                                                               .id,
                                                                           _model
-                                                                              .prdlinstnewtx?[FFAppState().startLoop],
+                                                                              .prdlinstnewtx
+                                                                              ?.elementAtOrNull(FFAppState().startLoop),
                                                                           'get',
                                                                         );
                                                                         _shouldSetState =
@@ -6991,7 +7003,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                             ..recipeId =
                                                                                 _model.itemprd2?.recipeId
                                                                             ..stock =
-                                                                                _model.itemprd2!.stock - (functions.doubleToInt((_model.prdlinstnewtx?[FFAppState().startLoop])?.quantity)!)
+                                                                                _model.itemprd2!.stock - (functions.doubleToInt((_model.prdlinstnewtx?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)
                                                                             ..isDeleted =
                                                                                 _model.itemprd2?.isDeleted
                                                                             ..keywords =

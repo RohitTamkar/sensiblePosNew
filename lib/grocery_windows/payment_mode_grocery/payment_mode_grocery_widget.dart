@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -1614,7 +1613,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                     e.title ==
                                                                     'enableInclusiveTax')
                                                                 .toList()
-                                                                .first
+                                                                .firstOrNull!
                                                                 .value
                                                                 .toString(),
                                                           );
@@ -2473,7 +2472,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                       e.title ==
                                                                       'enableInclusiveTax')
                                                                   .toList()
-                                                                  .first
+                                                                  .firstOrNull!
                                                                   .value
                                                                   .toString(),
                                                             );
@@ -2762,7 +2761,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                     e.title ==
                                                                     'enableInclusiveTax')
                                                                 .toList()
-                                                                .first
+                                                                .firstOrNull!
                                                                 .value
                                                                 .toString(),
                                                           );
@@ -3094,7 +3093,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                       e.title ==
                                                                       'enableInclusiveTax')
                                                                   .toList()
-                                                                  .first
+                                                                  .firstOrNull!
                                                                   .value
                                                                   .toString(),
                                                             );
@@ -3375,7 +3374,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                     e.title ==
                                                                     'enableInclusiveTax')
                                                                 .toList()
-                                                                .first
+                                                                .firstOrNull!
                                                                 .value
                                                                 .toString(),
                                                           );
@@ -4118,7 +4117,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 .where((e) =>
                                                     e.title == 'enableStock')
                                                 .toList()
-                                                .first
+                                                .firstOrNull!
                                                 .value) {
                                               FFAppState().startLoop = 0;
                                               safeSetState(() {});
@@ -4135,9 +4134,9 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               .where(
                                                                 'id',
                                                                 isEqualTo: (_model
-                                                                            .prdlistsavebill?[
-                                                                        FFAppState()
-                                                                            .startLoop])
+                                                                        .prdlistsavebill
+                                                                        ?.elementAtOrNull(
+                                                                            FFAppState().startLoop))
                                                                     ?.id,
                                                               )
                                                               .where(
@@ -4155,13 +4154,13 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                       .update({
                                                     ...mapToFirestore(
                                                       {
-                                                        'currentStock': FieldValue
-                                                            .increment(-(functions
-                                                                .doubleToInt((_model
-                                                                            .prdlistsavebill?[
+                                                        'currentStock': FieldValue.increment(
+                                                            -(functions.doubleToInt((_model
+                                                                    .prdlistsavebill
+                                                                    ?.elementAtOrNull(
                                                                         FFAppState()
-                                                                            .startLoop])
-                                                                    ?.quantity)!)),
+                                                                            .startLoop))
+                                                                ?.quantity)!)),
                                                       },
                                                     ),
                                                   });
@@ -4169,8 +4168,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                       .hivegetproductbyId(
                                                     _model.stockupdateprdsave
                                                         ?.reference.id,
-                                                    _model.prdlistsavebill?[
-                                                        FFAppState().startLoop],
+                                                    _model.prdlistsavebill
+                                                        ?.elementAtOrNull(
+                                                            FFAppState()
+                                                                .startLoop),
                                                     'get',
                                                   );
                                                   _shouldSetState = true;
@@ -4235,11 +4236,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           .itemprd?.recipeRefId
                                                       ..stock = _model
                                                               .itemprd!.stock -
-                                                          (functions.doubleToInt(
-                                                              (_model.prdlistsavebill?[
+                                                          (functions.doubleToInt((_model
+                                                                  .prdlistsavebill
+                                                                  ?.elementAtOrNull(
                                                                       FFAppState()
-                                                                          .startLoop])
-                                                                  ?.quantity)!)
+                                                                          .startLoop))
+                                                              ?.quantity)!)
                                                       ..isDeleted = _model
                                                           .itemprd?.isDeleted
                                                       ..keywords = _model
@@ -5094,7 +5096,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 .where((e) =>
                                                     e.title == 'enableStock')
                                                 .toList()
-                                                .first
+                                                .firstOrNull!
                                                 .value) {
                                               FFAppState().startLoop = 0;
                                               safeSetState(() {});
@@ -5111,9 +5113,9 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               .where(
                                                                 'id',
                                                                 isEqualTo: (_model
-                                                                            .prdlinstnewtx?[
-                                                                        FFAppState()
-                                                                            .startLoop])
+                                                                        .prdlinstnewtx
+                                                                        ?.elementAtOrNull(
+                                                                            FFAppState().startLoop))
                                                                     ?.id,
                                                               )
                                                               .where(
@@ -5131,13 +5133,13 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                       .update({
                                                     ...mapToFirestore(
                                                       {
-                                                        'currentStock': FieldValue
-                                                            .increment(-(functions
-                                                                .doubleToInt((_model
-                                                                            .prdlinstnewtx?[
+                                                        'currentStock': FieldValue.increment(
+                                                            -(functions.doubleToInt((_model
+                                                                    .prdlinstnewtx
+                                                                    ?.elementAtOrNull(
                                                                         FFAppState()
-                                                                            .startLoop])
-                                                                    ?.quantity)!)),
+                                                                            .startLoop))
+                                                                ?.quantity)!)),
                                                       },
                                                     ),
                                                   });
@@ -5146,8 +5148,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           .hivegetproductbyId(
                                                     _model.stockupdateprdprt
                                                         ?.reference.id,
-                                                    _model.prdlinstnewtx?[
-                                                        FFAppState().startLoop],
+                                                    _model.prdlinstnewtx
+                                                        ?.elementAtOrNull(
+                                                            FFAppState()
+                                                                .startLoop),
                                                     'get',
                                                   );
                                                   _shouldSetState = true;
@@ -5215,11 +5219,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           .itemprd2?.recipeRefId
                                                       ..stock = _model
                                                               .itemprd2!.stock -
-                                                          (functions.doubleToInt(
-                                                              (_model.prdlinstnewtx?[
+                                                          (functions.doubleToInt((_model
+                                                                  .prdlinstnewtx
+                                                                  ?.elementAtOrNull(
                                                                       FFAppState()
-                                                                          .startLoop])
-                                                                  ?.quantity)!)
+                                                                          .startLoop))
+                                                              ?.quantity)!)
                                                       ..isDeleted = _model
                                                           .itemprd2?.isDeleted
                                                       ..keywords = _model

@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/header/header_widget.dart';
 import '/components/reset_bill/reset_bill_widget.dart';
@@ -76,7 +75,10 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
         title: 'AppSetting',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1548,7 +1550,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '95sz191k' /* 1.REGIONAL LANGUAGE ENABLEDIS... */,
+                                                                '95sz191k' /* 1.REGIONAL LANGUAGE ENABLE/DIS... */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -1739,7 +1741,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '1dyolp2l' /* 4.WEIGHT START WITH (+)(-) */,
+                                                                      '1dyolp2l' /* 4.WEIGHT START WITH (+)/(-) */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2175,7 +2177,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                           title:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              's8smze4l' /* 1.INCLUSIVE  REVERSE TAX */,
+                                                                              's8smze4l' /* 1.INCLUSIVE / REVERSE TAX */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -2528,7 +2530,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                           title:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'dzrawbej' /* 6.ENABLE CHECK-INCHECK-OUT */,
+                                                                              'dzrawbej' /* 6.ENABLE CHECK-IN/CHECK-OUT */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -2907,7 +2909,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             title:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
-                                                                                'ww6q9i4z' /* 3.ENABLE COUPONKOT HEADER ON ... */,
+                                                                                'ww6q9i4z' /* 3.ENABLE COUPON/KOT HEADER ON ... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -3690,7 +3692,10 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               context: context,
                                                                               builder: (context) {
                                                                                 return GestureDetector(
-                                                                                  onTap: () => FocusScope.of(context).unfocus(),
+                                                                                  onTap: () {
+                                                                                    FocusScope.of(context).unfocus();
+                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                  },
                                                                                   child: Padding(
                                                                                     padding: MediaQuery.viewInsetsOf(context),
                                                                                     child: ResetBillWidget(),
@@ -3924,7 +3929,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                            '11rcddij' /* 10.ESTIMATE MODE ENABLEDISABL... */,
+                                                            '11rcddij' /* 10.ESTIMATE MODE ENABLE/DISABL... */,
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)

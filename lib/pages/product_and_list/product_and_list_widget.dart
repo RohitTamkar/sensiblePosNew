@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
@@ -327,7 +326,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
             title: 'ProductAndList',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -4583,9 +4585,15 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                 builder:
                                                                     (context) {
                                                                   return GestureDetector(
-                                                                    onTap: () =>
-                                                                        FocusScope.of(context)
-                                                                            .unfocus(),
+                                                                    onTap: () {
+                                                                      FocusScope.of(
+                                                                              context)
+                                                                          .unfocus();
+                                                                      FocusManager
+                                                                          .instance
+                                                                          .primaryFocus
+                                                                          ?.unfocus();
+                                                                    },
                                                                     child:
                                                                         Padding(
                                                                       padding: MediaQuery

@@ -55,7 +55,10 @@ class _BillWidgetState extends State<BillWidget> {
         title: 'Bill',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1636,7 +1639,7 @@ class _BillWidgetState extends State<BillWidget> {
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        'ncbipchv' /* DateTime */,
+                                                                        'ncbipchv' /* Date/Time */,
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)

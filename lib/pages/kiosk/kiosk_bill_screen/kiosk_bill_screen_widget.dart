@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -124,7 +123,10 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
         title: 'KioskBillScreen',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -710,7 +712,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                             e.title ==
                                                                             'sortCategoryByCode')
                                                                         .toList()
-                                                                        ?.first
+                                                                        ?.firstOrNull
                                                                         ?.value,
                                                                     false,
                                                                   )
@@ -915,7 +917,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                 e.title ==
                                                                 'sortProductByCode')
                                                             .toList()
-                                                            ?.first
+                                                            ?.firstOrNull
                                                             ?.value,
                                                         false,
                                                       )
@@ -1079,7 +1081,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                               e.title ==
                                                                               'hideRegionalLanguage')
                                                                           .toList()
-                                                                          ?.first
+                                                                          ?.firstOrNull
                                                                           ?.value,
                                                                       false,
                                                                     ))
@@ -1206,7 +1208,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                               ),
                                                                               widget!.taxcollection!.toList(),
                                                                               functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                                widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                                widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                 false,
                                                                               )),
                                                                             );
@@ -1220,7 +1222,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                               ),
                                                                               _model.result1!.toList(),
                                                                               functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                                widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                                widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                 false,
                                                                               )),
                                                                             );
@@ -1251,7 +1253,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                                 '0',
                                                                                               ))
                                                                                           .toList()
-                                                                                          .first,
+                                                                                          .firstOrNull,
                                                                                       r'''$.quantity''',
                                                                                     ),
                                                                                     0,
@@ -1320,7 +1322,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                             ),
                                                                             widget!.taxcollection!.toList(),
                                                                             functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                              widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                              widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                               false,
                                                                             )),
                                                                           );
@@ -1334,7 +1336,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                             ),
                                                                             _model.result4!.toList(),
                                                                             functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                              widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                              widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                               false,
                                                                             )),
                                                                           );
@@ -1464,11 +1466,11 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                               '0',
                                                                                             ))
                                                                                         .toList()
-                                                                                        .first,
+                                                                                        .firstOrNull!,
                                                                                     FFAppState().selBill,
                                                                                     widget!.taxcollection!.toList(),
                                                                                     functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                                      widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                                      widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                       false,
                                                                                     )),
                                                                                   );
@@ -1479,7 +1481,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                     ),
                                                                                     FFAppState().allBillsList.toList(),
                                                                                     functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                                      widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                                      widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                       false,
                                                                                     )),
                                                                                   );
@@ -1516,7 +1518,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                                     '0',
                                                                                                   ))
                                                                                               .toList()
-                                                                                              .first,
+                                                                                              .firstOrNull,
                                                                                           r'''$.quantity''',
                                                                                         )?.toString(),
                                                                                         '0',
@@ -1562,7 +1564,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                                     '0',
                                                                                                   ))
                                                                                               .toList()
-                                                                                              .first,
+                                                                                              .firstOrNull,
                                                                                           r'''$.quantity''',
                                                                                         ),
                                                                                         0.0,
@@ -1600,11 +1602,11 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                             '0',
                                                                                           ))
                                                                                       .toList()
-                                                                                      .first,
+                                                                                      .firstOrNull!,
                                                                                   FFAppState().selBill,
                                                                                   widget!.taxcollection!.toList(),
                                                                                   functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                                    widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                                    widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                     false,
                                                                                   )),
                                                                                 );
@@ -1616,7 +1618,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                   ),
                                                                                   FFAppState().allBillsList.toList(),
                                                                                   functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                                    widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                                    widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                     false,
                                                                                   )),
                                                                                 );
@@ -1978,8 +1980,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                   merchantOrderId: FFAppState().paytmOrderId,
                                   amount: functions
                                       .toDecimal(FFAppState().finalAmt),
-                                  storeId: valueOrDefault(
-                                      currentUserDocument?.outletId, ''),
+                                  storeId: FFAppState().userdoc?.id,
                                   expiresIn: 1800,
                                 );
 

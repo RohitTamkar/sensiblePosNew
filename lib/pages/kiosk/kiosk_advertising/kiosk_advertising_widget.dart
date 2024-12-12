@@ -99,7 +99,10 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
             title: 'KioskAdvertising',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: WillPopScope(
                 onWillPop: () async => false,
                 child: Scaffold(
@@ -212,7 +215,7 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                           .where((e) =>
                                               e.title == 'hideDineInScreen')
                                           .toList()
-                                          .first
+                                          .firstOrNull!
                                           .value) {
                                         FFAppState().orderType = 'DINE IN';
                                         FFAppState().delCharges = 0.0;

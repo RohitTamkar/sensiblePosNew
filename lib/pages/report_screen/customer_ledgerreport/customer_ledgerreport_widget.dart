@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/components/customer_details/customer_details_widget.dart';
@@ -55,7 +54,10 @@ class _CustomerLedgerreportWidgetState
             alignment: AlignmentDirectional(0.0, 0.0)
                 .resolve(Directionality.of(context)),
             child: GestureDetector(
-              onTap: () => FocusScope.of(dialogContext).unfocus(),
+              onTap: () {
+                FocusScope.of(dialogContext).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: Container(
                 height: 560.0,
                 width: 360.0,
@@ -123,7 +125,10 @@ class _CustomerLedgerreportWidgetState
               title: 'customerLedgerreport',
               color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
               child: GestureDetector(
-                onTap: () => FocusScope.of(context).unfocus(),
+                onTap: () {
+                  FocusScope.of(context).unfocus();
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
                 child: Scaffold(
                   key: scaffoldKey,
                   backgroundColor:
@@ -358,10 +363,15 @@ class _CustomerLedgerreportWidgetState
                                                       context: context,
                                                       builder: (context) {
                                                         return GestureDetector(
-                                                          onTap: () =>
-                                                              FocusScope.of(
-                                                                      context)
-                                                                  .unfocus(),
+                                                          onTap: () {
+                                                            FocusScope.of(
+                                                                    context)
+                                                                .unfocus();
+                                                            FocusManager
+                                                                .instance
+                                                                .primaryFocus
+                                                                ?.unfocus();
+                                                          },
                                                           child: Padding(
                                                             padding: MediaQuery
                                                                 .viewInsetsOf(
@@ -493,10 +503,14 @@ class _CustomerLedgerreportWidgetState
                                                                 Directionality.of(
                                                                     context)),
                                                     child: GestureDetector(
-                                                      onTap: () =>
-                                                          FocusScope.of(
-                                                                  dialogContext)
-                                                              .unfocus(),
+                                                      onTap: () {
+                                                        FocusScope.of(
+                                                                dialogContext)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
                                                       child: Container(
                                                         height: 200.0,
                                                         width: 300.0,

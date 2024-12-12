@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/header/header_widget.dart';
 import '/components/reset_bill/reset_bill_widget.dart';
@@ -52,7 +51,10 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
         title: 'RegularAppSetting',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1003,7 +1005,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        'l9q64ah0' /* 4. REGIONAL LANGUAGE ENABLEDI... */,
+                                                                        'l9q64ah0' /* 4. REGIONAL LANGUAGE ENABLE/DI... */,
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -1585,8 +1587,11 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                         builder:
                                                                             (context) {
                                                                           return GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(context).unfocus(),
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
@@ -1852,7 +1857,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'yfluaj9a' /* 1. INCLUSIVE  REVERSE TAX */,
+                                                                      'yfluaj9a' /* 1. INCLUSIVE / REVERSE TAX */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2809,7 +2814,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                             title:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
-                                                                                'fqreiat3' /* 1. DUPLICATE BILL ENABLEDISAB... */,
+                                                                                'fqreiat3' /* 1. DUPLICATE BILL ENABLE/DISAB... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -3305,7 +3310,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                             title:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
-                                                                                'pd7q7b3k' /* 18. ENABLE COUPON KOT SUMMARY... */,
+                                                                                'pd7q7b3k' /* 18. ENABLE COUPON/ KOT SUMMARY... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,

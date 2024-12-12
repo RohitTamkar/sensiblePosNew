@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/selectlabel/selectlabel_widget.dart';
@@ -66,7 +65,8 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
         parent: FFAppState().outletIdRef,
       );
       FFAppState().orderDetails = _model.listOfOrdersAdmin!
-          .map((e) => e.productList.first)
+          .map((e) => e.productList.firstOrNull)
+          .withoutNulls
           .toList()
           .toList()
           .cast<PurchaseSaleItemListStruct>();
@@ -1646,7 +1646,7 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         e.title ==
                                                                         'enableInclusiveTax')
                                                                     .toList()
-                                                                    .first
+                                                                    .firstOrNull!
                                                                     .value
                                                                     .toString(),
                                                               );
@@ -2508,7 +2508,7 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         e.title ==
                                                                         'enableInclusiveTax')
                                                                     .toList()
-                                                                    .first
+                                                                    .firstOrNull!
                                                                     .value
                                                                     .toString(),
                                                               );
@@ -2790,7 +2790,7 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                       e.title ==
                                                                       'enableInclusiveTax')
                                                                   .toList()
-                                                                  .first
+                                                                  .firstOrNull!
                                                                   .value
                                                                   .toString(),
                                                             );
@@ -3122,7 +3122,7 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         e.title ==
                                                                         'enableInclusiveTax')
                                                                     .toList()
-                                                                    .first
+                                                                    .firstOrNull!
                                                                     .value
                                                                     .toString(),
                                                               );
@@ -3396,7 +3396,7 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                       e.title ==
                                                                       'enableInclusiveTax')
                                                                   .toList()
-                                                                  .first
+                                                                  .firstOrNull!
                                                                   .value
                                                                   .toString(),
                                                             );
@@ -3840,9 +3840,10 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                 invoiceDate:
                                                     functions.timestampToMili(
                                                         getCurrentTimestamp),
-                                                mobile: valueOrDefault(
-                                                    currentUserDocument?.mobile,
-                                                    ''),
+                                                mobile: valueOrDefault<String>(
+                                                  FFAppState().setCustMobNo,
+                                                  '0',
+                                                ),
                                                 orderTime: getCurrentTimestamp,
                                                 createdBy:
                                                     FFAppState().userdoc?.id,
@@ -3895,9 +3896,10 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                 invoiceDate:
                                                     functions.timestampToMili(
                                                         getCurrentTimestamp),
-                                                mobile: valueOrDefault(
-                                                    currentUserDocument?.mobile,
-                                                    ''),
+                                                mobile: valueOrDefault<String>(
+                                                  FFAppState().setCustMobNo,
+                                                  '0',
+                                                ),
                                                 orderTime: getCurrentTimestamp,
                                                 createdBy:
                                                     FFAppState().userdoc?.id,
@@ -3931,7 +3933,7 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                 .where((e) =>
                                                     e.title == 'enableStock')
                                                 .toList()
-                                                .first
+                                                .firstOrNull!
                                                 .value) {
                                               FFAppState().startLoop = 0;
                                               safeSetState(() {});
@@ -3948,9 +3950,9 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                               .where(
                                                                 'id',
                                                                 isEqualTo: (_model
-                                                                            .prdlinstnewtx?[
-                                                                        FFAppState()
-                                                                            .startLoop])
+                                                                        .prdlinstnewtx
+                                                                        ?.elementAtOrNull(
+                                                                            FFAppState().startLoop))
                                                                     ?.id,
                                                               )
                                                               .where(
@@ -3972,9 +3974,10 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                             .increment(functions
                                                                 .doubleToInt(
                                                                     getJsonField(
-                                                          (_model.prdlinstnewtx?[
-                                                                  FFAppState()
-                                                                      .startLoop])
+                                                          (_model.prdlinstnewtx
+                                                                  ?.elementAtOrNull(
+                                                                      FFAppState()
+                                                                          .startLoop))
                                                               ?.toMap(),
                                                           r'''$.quantity''',
                                                         ))!),
@@ -3986,8 +3989,10 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                           .hivegetproductbyId2(
                                                     _model
                                                         .stockupdateprdprt?.id,
-                                                    _model.prdlinstnewtx?[
-                                                        FFAppState().startLoop],
+                                                    _model.prdlinstnewtx
+                                                        ?.elementAtOrNull(
+                                                            FFAppState()
+                                                                .startLoop),
                                                     'get',
                                                   );
                                                   _shouldSetState = true;
@@ -4055,11 +4060,12 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                           .itemprd2?.recipeId
                                                       ..stock = _model
                                                               .itemprd2!.stock +
-                                                          (functions.doubleToInt(
-                                                              (_model.prdlinstnewtx?[
+                                                          (functions.doubleToInt((_model
+                                                                  .prdlinstnewtx
+                                                                  ?.elementAtOrNull(
                                                                       FFAppState()
-                                                                          .startLoop])
-                                                                  ?.quantity)!)
+                                                                          .startLoop))
+                                                              ?.quantity)!)
                                                       ..isDeleted = _model
                                                           .itemprd2?.isDeleted
                                                       ..keywords = _model

@@ -104,61 +104,10 @@ export '/pages/screens/barcode_printing_copy/barcode_printing_copy_widget.dart'
 export '/pages/about_us/about_us_widget.dart' show AboutUsWidget;
 export '/pages/kiosk/kiosk_bill_screen/kiosk_bill_screen_widget.dart'
     show KioskBillScreenWidget;
-export '/pages/parking/phone_auth_page/phone_auth_page_widget.dart'
-    show PhoneAuthPageWidget;
-export '/pages/parking/o_t_pverification_new_p/o_t_pverification_new_p_widget.dart'
-    show OTPverificationNewPWidget;
-export '/pages/parking/business_profile_adminfinal/business_profile_adminfinal_widget.dart'
-    show BusinessProfileAdminfinalWidget;
-export '/pages/parking/outletlist_page/outletlist_page_widget.dart'
-    show OutletlistPageWidget;
-export '/pages/parking/add_outlet_page/add_outlet_page_widget.dart'
-    show AddOutletPageWidget;
-export '/pages/parking/create_user_profile_new_p/create_user_profile_new_p_widget.dart'
-    show CreateUserProfileNewPWidget;
-export '/pages/parking/add_business_profile/add_business_profile_widget.dart'
-    show AddBusinessProfileWidget;
-export '/pages/parking/edit_busines_profile/edit_busines_profile_widget.dart'
-    show EditBusinesProfileWidget;
-export '/pages/parking/account/account_widget.dart' show AccountWidget;
-export '/pages/parking/edit_userprofile/edit_userprofile_widget.dart'
-    show EditUserprofileWidget;
-export '/pages/parking/masters_new/masters_new_widget.dart'
-    show MastersNewWidget;
-export '/pages/parking/categories/categories_widget.dart' show CategoriesWidget;
-export '/pages/parking/product_list_new_m/product_list_new_m_widget.dart'
-    show ProductListNewMWidget;
-export '/pages/parking/editproduct_new_m/editproduct_new_m_widget.dart'
-    show EditproductNewMWidget;
-export '/pages/parking/addproduct_a_p_p/addproduct_a_p_p_widget.dart'
-    show AddproductAPPWidget;
-export '/pages/parking/edit_category_m/edit_category_m_widget.dart'
-    show EditCategoryMWidget;
-export '/pages/parking/add_category_m/add_category_m_widget.dart'
-    show AddCategoryMWidget;
-export '/pages/parking/parking_check_i_n/parking_check_i_n_widget.dart'
-    show ParkingCheckINWidget;
-export '/pages/parking/parking_customers/parking_customers_widget.dart'
-    show ParkingCustomersWidget;
-export '/pages/parking/parking_product/parking_product_widget.dart'
-    show ParkingProductWidget;
 export '/pages/dummytest/dummytest_widget.dart' show DummytestWidget;
-export '/pages/edit_user_permission/edit_user_permission_widget.dart'
-    show EditUserPermissionWidget;
-export '/pages/parking/parking_product_copy/parking_product_copy_widget.dart'
-    show ParkingProductCopyWidget;
-export '/pages/screens/welcome_screen_parking/welcome_screen_parking_widget.dart'
-    show WelcomeScreenParkingWidget;
 export '/pages/demo/demo_widget.dart' show DemoWidget;
-export '/pages/parking/printersetting_car/printersetting_car_widget.dart'
-    show PrintersettingCarWidget;
 export '/pages/ims_dashboard_copy/ims_dashboard_copy_widget.dart'
     show ImsDashboardCopyWidget;
-export '/pages/parking/subscription_new2/subscription_new2_widget.dart'
-    show SubscriptionNew2Widget;
-export '/pages/deviceqr/deviceqr_widget.dart' show DeviceqrWidget;
-export '/pages/parking/parking_report/parking_report_widget.dart'
-    show ParkingReportWidget;
 export '/pages/kiosk/response_page/response_page_widget.dart'
     show ResponsePageWidget;
 export '/pages/kiosk/kiosk_welcome/kiosk_welcome_widget.dart'

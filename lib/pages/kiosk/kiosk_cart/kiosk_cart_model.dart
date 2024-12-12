@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
@@ -60,8 +59,6 @@ class KioskCartModel extends FlutterFlowModel<KioskCartWidget> {
   ApiCallResponse? qrResp;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   OutletRecord? outletDOc;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  InvoiceRecord? invoicecount;
   // Stores action output result for [Backend Call - API (createQR)] action in Button widget.
   ApiCallResponse? paymentQrResponse;
   // Stores action output result for [Custom Action - connectDevice] action in Button widget.

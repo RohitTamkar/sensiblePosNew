@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/cash_confirm_order/cash_confirm_order_widget.dart';
@@ -313,7 +312,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
           if (_model.appsetting!.settingList
               .where((e) => e.title == 'printBillFormatTwo')
               .toList()
-              .first
+              .firstOrNull!
               .value) {
             await actions.printBillFormatTwo(
               _model.returnedList2kiosk!.toList(),
@@ -344,7 +343,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
           if (_model.appsetting!.settingList
               .where((e) => e.title == 'printKotWithBill')
               .toList()
-              .first
+              .firstOrNull!
               .value) {
             await actions.printKOTwithusbkiosk(
               _model.returnedList2kiosk!.toList(),
@@ -363,7 +362,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
           if (_model.appsetting!.settingList
               .where((e) => e.title == 'enableEthernetPrint')
               .toList()
-              .first
+              .firstOrNull!
               .value) {
             await actions.printEthernet(
               _model.returnedList2kiosk!.toList(),
@@ -382,7 +381,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
           if (widget!.appsetting!.settingList
               .where((e) => e.title == 'enableStock')
               .toList()
-              .first
+              .firstOrNull!
               .value) {
             FFAppState().startLoop = 0;
             safeSetState(() {});
@@ -392,8 +391,9 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                 queryBuilder: (productRecord) => productRecord
                     .where(
                       'id',
-                      isEqualTo:
-                          (_model.prdListkiosk?[FFAppState().startLoop])?.id,
+                      isEqualTo: (_model.prdListkiosk
+                              ?.elementAtOrNull(FFAppState().startLoop))
+                          ?.id,
                     )
                     .where(
                       'stockable',
@@ -406,9 +406,9 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                   ...mapToFirestore(
                     {
                       'currentStock': FieldValue.increment(
-                          -(functions.doubleToInt(
-                              (_model.prdListkiosk?[FFAppState().startLoop])
-                                  ?.quantity)!)),
+                          -(functions.doubleToInt((_model.prdListkiosk
+                                  ?.elementAtOrNull(FFAppState().startLoop))
+                              ?.quantity)!)),
                     },
                   ),
                 });
@@ -435,12 +435,12 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
           if (_model.appsetting!.settingList
               .where((e) => e.title == 'navigateMenuscreen')
               .toList()
-              .first
+              .firstOrNull!
               .value) {
             if (_model.appsetting!.settingList
                 .where((e) => e.title == 'hideDineInScreen')
                 .toList()
-                .first
+                .firstOrNull!
                 .value) {
               context.goNamed(
                 'KioskBillScreen',
@@ -585,7 +585,10 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
         title: 'cashResponsePage',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -713,7 +716,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                                       .where((e) =>
                                           e.title == 'printBillFormatTwo')
                                       .toList()
-                                      .first
+                                      .firstOrNull!
                                       .value) {
                                     await actions.printBillFormatTwo(
                                       _model.returnedList2kioskCopy!.toList(),
@@ -749,7 +752,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                                       .where(
                                           (e) => e.title == 'printKotWithBill')
                                       .toList()
-                                      .first
+                                      .firstOrNull!
                                       .value) {
                                     await actions.printKOTwithusbkiosk(
                                       _model.returnedList2kioskCopy!.toList(),
@@ -770,7 +773,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                                       .where((e) =>
                                           e.title == 'enableEthernetPrint')
                                       .toList()
-                                      .first
+                                      .firstOrNull!
                                       .value) {
                                     await actions.printEthernet(
                                       _model.returnedList2kioskCopy!.toList(),

@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -110,7 +109,10 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
         title: 'AddCustomer',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -2304,7 +2306,7 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        '7cyybitw' /* CGHSECHS CARD */,
+                                                                        '7cyybitw' /* CGHS/ECHS CARD */,
                                                                       ),
                                                                       FFLocalizations.of(
                                                                               context)

@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -274,6 +273,28 @@ class _LoadingScreenkiosknewWidgetState
           ),
           singleRecord: true,
         ).then((s) => s.firstOrNull);
+        _model.invoicecount = await queryInvoiceRecordOnce(
+          parent: FFAppState().outletIdRef,
+          queryBuilder: (invoiceRecord) =>
+              invoiceRecord.orderBy('invoiceDate', descending: true),
+          singleRecord: true,
+        ).then((s) => s.firstOrNull);
+        if (_model.appsetting!.settingList
+            .where((e) => e.title == 'resetserialNoDaily')
+            .toList()
+            .firstOrNull!
+            .value) {
+          FFAppState().count = 0;
+          safeSetState(() {});
+        } else {
+          if (_model.invoicecount?.count != null) {
+            FFAppState().count = _model.invoicecount!.count;
+            safeSetState(() {});
+          } else {
+            FFAppState().count = 0;
+            safeSetState(() {});
+          }
+        }
 
         context.pushNamed(
           'KioskAdvertising',
@@ -334,6 +355,24 @@ class _LoadingScreenkiosknewWidgetState
           ),
           singleRecord: true,
         ).then((s) => s.firstOrNull);
+        _model.invoicecountshiftresumed = await queryInvoiceRecordOnce(
+          parent: FFAppState().outletIdRef,
+          queryBuilder: (invoiceRecord) =>
+              invoiceRecord.orderBy('invoiceDate', descending: true),
+          singleRecord: true,
+        ).then((s) => s.firstOrNull);
+        if ((_model.invoicecountshiftresumed?.count != null) &&
+            (_model.invoicecountshiftresumed?.shiftId ==
+                getJsonField(
+                  _model.shiftDetailsNewresumed,
+                  r'''$.shiftId''',
+                ).toString().toString())) {
+          FFAppState().count = _model.invoicecountshiftresumed!.count;
+          safeSetState(() {});
+        } else {
+          FFAppState().count = 0;
+          safeSetState(() {});
+        }
 
         context.pushNamed(
           'KioskAdvertising',
@@ -384,7 +423,10 @@ class _LoadingScreenkiosknewWidgetState
         title: 'loadingScreenkiosknew',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,

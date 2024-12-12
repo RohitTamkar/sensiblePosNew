@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/calender/calender_widget.dart';
@@ -193,7 +192,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
         title: 'EditBill',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -658,8 +660,11 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                       context: context,
                                       builder: (context) {
                                         return GestureDetector(
-                                          onTap: () =>
-                                              FocusScope.of(context).unfocus(),
+                                          onTap: () {
+                                            FocusScope.of(context).unfocus();
+                                            FocusManager.instance.primaryFocus
+                                                ?.unfocus();
+                                          },
                                           child: Padding(
                                             padding: MediaQuery.viewInsetsOf(
                                                 context),

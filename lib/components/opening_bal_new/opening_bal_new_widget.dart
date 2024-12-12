@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -931,7 +930,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                             e.title ==
                                                             'enableweightScale')
                                                         .toList()
-                                                        .first
+                                                        .firstOrNull!
                                                         .value) {
                                                       context.pushNamed(
                                                         'ProductAndListlaundrybilling',
@@ -1255,7 +1254,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                             e.title ==
                                                             'enableweightScale')
                                                         .toList()
-                                                        .first
+                                                        .firstOrNull!
                                                         .value) {
                                                       context.pushNamed(
                                                         'ProductAndListlaundrybilling',

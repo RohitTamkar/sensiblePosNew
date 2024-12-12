@@ -44,7 +44,10 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
         title: 'GSTReport',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -165,9 +168,13 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                           context: context,
                                           builder: (context) {
                                             return GestureDetector(
-                                              onTap: () =>
-                                                  FocusScope.of(context)
-                                                      .unfocus(),
+                                              onTap: () {
+                                                FocusScope.of(context)
+                                                    .unfocus();
+                                                FocusManager
+                                                    .instance.primaryFocus
+                                                    ?.unfocus();
+                                              },
                                               child: Padding(
                                                 padding:
                                                     MediaQuery.viewInsetsOf(
@@ -287,7 +294,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                         children: [
                                           Text(
                                             FFLocalizations.of(context).getText(
-                                              'gge7h5gp' /* DateTime */,
+                                              'gge7h5gp' /* Date/Time */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
@@ -611,7 +618,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'e7req91m' /* DateTime */,
+                                                        'e7req91m' /* Date/Time */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(

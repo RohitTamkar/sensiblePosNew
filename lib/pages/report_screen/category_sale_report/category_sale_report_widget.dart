@@ -61,7 +61,10 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
         title: 'categorySaleReport',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -257,9 +260,13 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                           context: context,
                                           builder: (context) {
                                             return GestureDetector(
-                                              onTap: () =>
-                                                  FocusScope.of(context)
-                                                      .unfocus(),
+                                              onTap: () {
+                                                FocusScope.of(context)
+                                                    .unfocus();
+                                                FocusManager
+                                                    .instance.primaryFocus
+                                                    ?.unfocus();
+                                              },
                                               child: Padding(
                                                 padding:
                                                     MediaQuery.viewInsetsOf(

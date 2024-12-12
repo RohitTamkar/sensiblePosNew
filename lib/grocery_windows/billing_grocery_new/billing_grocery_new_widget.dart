@@ -165,7 +165,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
             title: 'BillingGroceryNew',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -301,9 +304,13 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                 context: context,
                                                 builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .unfocus(),
+                                                    onTap: () {
+                                                      FocusScope.of(context)
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
                                                     child: Padding(
                                                       padding: MediaQuery
                                                           .viewInsetsOf(
@@ -1855,9 +1862,13 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                             context: context,
                                             builder: (context) {
                                               return GestureDetector(
-                                                onTap: () =>
-                                                    FocusScope.of(context)
-                                                        .unfocus(),
+                                                onTap: () {
+                                                  FocusScope.of(context)
+                                                      .unfocus();
+                                                  FocusManager
+                                                      .instance.primaryFocus
+                                                      ?.unfocus();
+                                                },
                                                 child: Padding(
                                                   padding:
                                                       MediaQuery.viewInsetsOf(
@@ -2340,10 +2351,15 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                               builder:
                                                                   (context) {
                                                                 return GestureDetector(
-                                                                  onTap: () =>
-                                                                      FocusScope.of(
-                                                                              context)
-                                                                          .unfocus(),
+                                                                  onTap: () {
+                                                                    FocusScope.of(
+                                                                            context)
+                                                                        .unfocus();
+                                                                    FocusManager
+                                                                        .instance
+                                                                        .primaryFocus
+                                                                        ?.unfocus();
+                                                                  },
                                                                   child:
                                                                       Padding(
                                                                     padding: MediaQuery
@@ -3506,7 +3522,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                       e.title ==
                                                                       'enableInclusiveTax')
                                                                   .toList()
-                                                                  ?.first
+                                                                  ?.firstOrNull
                                                                   ?.value,
                                                               unitList:
                                                                   billingGroceryNewUnitTypeRecordList,
@@ -3725,9 +3741,13 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                 context: context,
                                                 builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .unfocus(),
+                                                    onTap: () {
+                                                      FocusScope.of(context)
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
                                                     child: Padding(
                                                       padding: MediaQuery
                                                           .viewInsetsOf(

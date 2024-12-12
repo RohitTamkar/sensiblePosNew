@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -53,7 +52,10 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
         title: 'PrintOptions',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -921,7 +923,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    '802x6vzp' /* 2. DUPLICATE BILL ENABLEDISAB... */,
+                                                                    '802x6vzp' /* 2. DUPLICATE BILL ENABLE/DISAB... */,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -1936,7 +1938,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'mxgzl7su' /* 23.ENABLE COUPON KOT SUMMARY  */,
+                                                                    'mxgzl7su' /* 23.ENABLE COUPON/ KOT SUMMARY  */,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)

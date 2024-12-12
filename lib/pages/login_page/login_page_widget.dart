@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/components/power_off/power_off_widget.dart';
@@ -120,7 +119,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
         title: 'LoginPage',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -2700,7 +2702,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   AutoSizeText(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'e41ud8dm' /* 09062022 */,
+                                                      'e41ud8dm' /* 09/06/2022 */,
                                                     ),
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
@@ -2935,8 +2937,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         context: context,
                                         builder: (context) {
                                           return GestureDetector(
-                                            onTap: () => FocusScope.of(context)
-                                                .unfocus(),
+                                            onTap: () {
+                                              FocusScope.of(context).unfocus();
+                                              FocusManager.instance.primaryFocus
+                                                  ?.unfocus();
+                                            },
                                             child: Padding(
                                               padding: MediaQuery.viewInsetsOf(
                                                   context),

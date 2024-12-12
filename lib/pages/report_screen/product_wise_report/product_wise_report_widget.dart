@@ -83,7 +83,10 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
         title: 'ProductWiseReport',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -302,8 +305,11 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                         context: context,
                                         builder: (context) {
                                           return GestureDetector(
-                                            onTap: () => FocusScope.of(context)
-                                                .unfocus(),
+                                            onTap: () {
+                                              FocusScope.of(context).unfocus();
+                                              FocusManager.instance.primaryFocus
+                                                  ?.unfocus();
+                                            },
                                             child: Padding(
                                               padding: MediaQuery.viewInsetsOf(
                                                   context),
@@ -763,7 +769,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'evf3j8bt' /* PL */,
+                                                'evf3j8bt' /* P/L */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)

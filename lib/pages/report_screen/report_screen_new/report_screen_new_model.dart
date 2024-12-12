@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/calender/calender_widget.dart';
 import '/components/header/header_widget.dart';

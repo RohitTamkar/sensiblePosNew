@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/transaction_status/transaction_status_widget.dart';
@@ -283,7 +282,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
             if (_model.appsetting!.settingList
                 .where((e) => e.title == 'printBillFormatTwo')
                 .toList()
-                .first
+                .firstOrNull!
                 .value) {
               await actions.printBillFormatTwo(
                 _model.returnedList2kiosk!.toList(),
@@ -314,7 +313,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
             if (_model.appsetting!.settingList
                 .where((e) => e.title == 'printKotWithBill')
                 .toList()
-                .first
+                .firstOrNull!
                 .value) {
               await actions.printKOTwithusbkiosk(
                 _model.returnedList2kiosk!.toList(),
@@ -333,7 +332,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
             if (_model.appsetting!.settingList
                 .where((e) => e.title == 'enableEthernetPrint')
                 .toList()
-                .first
+                .firstOrNull!
                 .value) {
               await actions.printEthernet(
                 _model.returnedList2kiosk!.toList(),
@@ -352,7 +351,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
             if (widget!.appsetting!.settingList
                 .where((e) => e.title == 'enableStock')
                 .toList()
-                .first
+                .firstOrNull!
                 .value) {
               FFAppState().startLoop = 0;
               safeSetState(() {});
@@ -362,8 +361,9 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                   queryBuilder: (productRecord) => productRecord
                       .where(
                         'id',
-                        isEqualTo:
-                            (_model.prdListkiosk?[FFAppState().startLoop])?.id,
+                        isEqualTo: (_model.prdListkiosk
+                                ?.elementAtOrNull(FFAppState().startLoop))
+                            ?.id,
                       )
                       .where(
                         'stockable',
@@ -376,9 +376,9 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                     ...mapToFirestore(
                       {
                         'currentStock': FieldValue.increment(
-                            -(functions.doubleToInt(
-                                (_model.prdListkiosk?[FFAppState().startLoop])
-                                    ?.quantity)!)),
+                            -(functions.doubleToInt((_model.prdListkiosk
+                                    ?.elementAtOrNull(FFAppState().startLoop))
+                                ?.quantity)!)),
                       },
                     ),
                   });
@@ -405,12 +405,12 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
             if (_model.appsetting!.settingList
                 .where((e) => e.title == 'navigateMenuscreen')
                 .toList()
-                .first
+                .firstOrNull!
                 .value) {
               if (_model.appsetting!.settingList
                   .where((e) => e.title == 'hideDineInScreen')
                   .toList()
-                  .first
+                  .firstOrNull!
                   .value) {
                 context.goNamed(
                   'KioskBillScreen',
@@ -550,12 +550,12 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
           if (_model.appsetting1!.settingList
               .where((e) => e.title == 'navigateMenuscreen')
               .toList()
-              .first
+              .firstOrNull!
               .value) {
             if (_model.appsetting1!.settingList
                 .where((e) => e.title == 'hideDineInScreen')
                 .toList()
-                .first
+                .firstOrNull!
                 .value) {
               context.goNamed(
                 'KioskBillScreen',
@@ -714,7 +714,10 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
         title: 'responsePage',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -845,7 +848,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                                         .where((e) =>
                                             e.title == 'printBillFormatTwo')
                                         .toList()
-                                        .first
+                                        .firstOrNull!
                                         .value) {
                                       await actions.printBillFormatTwo(
                                         _model.returnedList2kioskCopy!.toList(),
@@ -881,7 +884,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                                         .where((e) =>
                                             e.title == 'printKotWithBill')
                                         .toList()
-                                        .first
+                                        .firstOrNull!
                                         .value) {
                                       await actions.printKOTwithusbkiosk(
                                         _model.returnedList2kioskCopy!.toList(),
@@ -902,7 +905,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                                         .where((e) =>
                                             e.title == 'enableEthernetPrint')
                                         .toList()
-                                        .first
+                                        .firstOrNull!
                                         .value) {
                                       await actions.printEthernet(
                                         _model.returnedList2kioskCopy!.toList(),

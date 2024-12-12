@@ -57,7 +57,10 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
         title: 'imsInwardOutward',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -475,7 +478,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                   text: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    '5wsayijt' /* InwardOutward */,
+                                                    '5wsayijt' /* Inward/Outward */,
                                                   ),
                                                 ),
                                               ],

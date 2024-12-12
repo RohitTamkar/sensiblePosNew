@@ -57,7 +57,10 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
         title: 'BarcodePrinting',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -634,7 +637,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'bfc3dg22' /* Search Item by NameBarcodeCo... */,
+                                                        'bfc3dg22' /* Search Item by Name/Barcode/Co... */,
                                                       ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
@@ -759,7 +762,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '969f7b3s' /* Select BarcodeQR Code */,
+                                                        '969f7b3s' /* Select Barcode/QR Code */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(

@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -122,7 +121,10 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
         title: 'MiniKioskDineParcel',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -241,7 +243,7 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
                         widget!.appSetting?.settingList
                             ?.where((e) => e.title == 'hideParcelButton')
                             .toList()
-                            ?.first
+                            ?.firstOrNull
                             ?.value,
                         false,
                       ))

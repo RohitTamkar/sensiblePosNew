@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/discount_and_delivery_copy/discount_and_delivery_copy_widget.dart';
@@ -377,7 +376,10 @@ class _ProductAndListNewCopyWidgetState
             title: 'ProductAndListNewCopy',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: WillPopScope(
                 onWillPop: () async => false,
                 child: Scaffold(
@@ -2315,7 +2317,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                   ),
                                                                                   child: Stack(
                                                                                     children: [
-                                                                                      if (!productAndListNewCopyAppSettingsRecord!.settingList.where((e) => e.title == 'showProductImage').toList().first.value)
+                                                                                      if (!productAndListNewCopyAppSettingsRecord!.settingList.where((e) => e.title == 'showProductImage').toList().firstOrNull!.value)
                                                                                         InkWell(
                                                                                           splashColor: Colors.transparent,
                                                                                           focusColor: Colors.transparent,
@@ -2331,7 +2333,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                               productListItem,
                                                                                               FFAppState().selBill,
                                                                                               widget!.taxcollection!.toList(),
-                                                                                              functions.enabletaxinclusive(productAndListNewCopyAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                              functions.enabletaxinclusive(productAndListNewCopyAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                             );
                                                                                             _model.calculateResult = await actions.calSubTotalForHoldList(
                                                                                               FFAppState().selBill.toString(),
@@ -2416,7 +2418,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                             ),
                                                                                           ),
                                                                                         ).animateOnActionTrigger(animationsMap['containerOnActionTriggerAnimation3']!, hasBeenTriggered: hasContainerTriggered3),
-                                                                                      if (productAndListNewCopyAppSettingsRecord?.settingList?.where((e) => e.title == 'showProductImage').toList()?.first?.value ?? true)
+                                                                                      if (productAndListNewCopyAppSettingsRecord?.settingList?.where((e) => e.title == 'showProductImage').toList()?.firstOrNull?.value ?? true)
                                                                                         InkWell(
                                                                                           splashColor: Colors.transparent,
                                                                                           focusColor: Colors.transparent,
@@ -2432,7 +2434,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                               productListItem,
                                                                                               FFAppState().selBill,
                                                                                               widget!.taxcollection!.toList(),
-                                                                                              functions.enabletaxinclusive(productAndListNewCopyAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                              functions.enabletaxinclusive(productAndListNewCopyAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                             );
                                                                                             _model.calculateResult2 = await actions.calSubTotalForHoldList(
                                                                                               FFAppState().selBill.toString(),
@@ -3531,7 +3533,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                         ProductStructStruct.maybeFromMap(billItem)!,
                                                                                         FFAppState().selBill,
                                                                                         widget!.taxcollection!.toList(),
-                                                                                        functions.enabletaxinclusive(productAndListNewCopyAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                        functions.enabletaxinclusive(productAndListNewCopyAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                       );
                                                                                       _model.resultmi = await actions.calSubTotalForHoldListminus(
                                                                                         FFAppState().selBill.toString(),
@@ -3622,7 +3624,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                         ProductStructStruct.maybeFromMap(billItem)!,
                                                                                         FFAppState().selBill,
                                                                                         widget!.taxcollection!.toList(),
-                                                                                        functions.enabletaxinclusive(productAndListNewCopyAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                        functions.enabletaxinclusive(productAndListNewCopyAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                       );
                                                                                       _model.res13 = await actions.calSubTotalForHoldList(
                                                                                         FFAppState().selBill.toString(),
@@ -3831,7 +3833,7 @@ class _ProductAndListNewCopyWidgetState
                                                                 e.title ==
                                                                 'enableCustomer')
                                                             .toList()
-                                                            ?.first
+                                                            ?.firstOrNull
                                                             ?.value ??
                                                         true)
                                                       Expanded(
@@ -4230,10 +4232,15 @@ class _ProductAndListNewCopyWidgetState
                                                             context: context,
                                                             builder: (context) {
                                                               return GestureDetector(
-                                                                onTap: () =>
-                                                                    FocusScope.of(
-                                                                            context)
-                                                                        .unfocus(),
+                                                                onTap: () {
+                                                                  FocusScope.of(
+                                                                          context)
+                                                                      .unfocus();
+                                                                  FocusManager
+                                                                      .instance
+                                                                      .primaryFocus
+                                                                      ?.unfocus();
+                                                                },
                                                                 child: Padding(
                                                                   padding: MediaQuery
                                                                       .viewInsetsOf(
@@ -4934,7 +4941,7 @@ class _ProductAndListNewCopyWidgetState
                                                             e.title ==
                                                             'enableSaveBill')
                                                         .toList()
-                                                        ?.first
+                                                        ?.firstOrNull
                                                         ?.value ??
                                                     true)
                                                   Expanded(
@@ -6039,7 +6046,7 @@ class _ProductAndListNewCopyWidgetState
                                                                           e.title ==
                                                                           'printKotWithBill')
                                                                       .toList()
-                                                                      .first
+                                                                      .firstOrNull!
                                                                       .value) {
                                                                     await actions
                                                                         .printKOTwithusbkioskhive(
@@ -6078,7 +6085,7 @@ class _ProductAndListNewCopyWidgetState
                                                                           e.title ==
                                                                           'enableEthernetPrint')
                                                                       .toList()
-                                                                      .first
+                                                                      .firstOrNull!
                                                                       .value) {
                                                                     await actions
                                                                         .printEthernethive(

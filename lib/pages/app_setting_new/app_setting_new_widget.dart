@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/header/header_widget.dart';
 import '/components/reset_bill/reset_bill_widget.dart';
@@ -51,7 +50,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
         title: 'AppSettingNew',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -2038,8 +2040,11 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         builder:
                                                                             (context) {
                                                                           return GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(context).unfocus(),
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
@@ -2450,7 +2455,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        'tys4fgtk' /* 4. REGIONAL LANGUAGE ENABLEDI... */,
+                                                                        'tys4fgtk' /* 4. REGIONAL LANGUAGE ENABLE/DI... */,
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -2929,7 +2934,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 children: [
                                                                                   Text(
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'g62ukzbx' /* 3. WEIGHT START WITH (+)(-) */,
+                                                                                      'g62ukzbx' /* 3. WEIGHT START WITH (+)/(-) */,
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -3150,7 +3155,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             title:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
-                                                                                'hh6cdhqu' /* 8. ESTIMATE MODE ENABLEDISABL... */,
+                                                                                'hh6cdhqu' /* 8. ESTIMATE MODE ENABLE/DISABL... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -4364,7 +4369,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        'lo17pvpj' /* 5. ENABLE CHECK-INCHECK-OUT */,
+                                                                        'lo17pvpj' /* 5. ENABLE CHECK-IN/CHECK-OUT */,
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -6098,7 +6103,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             title:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
-                                                                                'runsgg02' /* 1. DUPLICATE BILL ENABLEDISAB... */,
+                                                                                'runsgg02' /* 1. DUPLICATE BILL ENABLE/DISAB... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -6594,7 +6599,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             title:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
-                                                                                'bm7d9c91' /* 23. ENABLE COUPON KOT SUMMARY... */,
+                                                                                'bm7d9c91' /* 23. ENABLE COUPON/ KOT SUMMARY... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -6791,7 +6796,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'i8yrf34f' /* 1. INCLUSIVE  REVERSE TAX */,
+                                                                      'i8yrf34f' /* 1. INCLUSIVE / REVERSE TAX */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)

@@ -112,7 +112,9 @@ class StockSummaryRecord extends FirestoreRecord {
       snapshotData['productListMap'],
       ProductListStockStruct.fromMap,
     );
-    _stockList = CartListStruct.maybeFromMap(snapshotData['stockList']);
+    _stockList = snapshotData['stockList'] is CartListStruct
+        ? snapshotData['stockList']
+        : CartListStruct.maybeFromMap(snapshotData['stockList']);
     _createdByRef = snapshotData['createdByRef'] as DocumentReference?;
     _updatedByRef = snapshotData['updatedByRef'] as DocumentReference?;
     _requstedId = snapshotData['requstedId'] as String?;

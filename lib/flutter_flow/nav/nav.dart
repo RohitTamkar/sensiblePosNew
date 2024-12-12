@@ -8,8 +8,6 @@ import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 
-import '/auth/base_auth_user_provider.dart';
-
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -29,46 +27,7 @@ class AppStateNotifier extends ChangeNotifier {
   static AppStateNotifier? _instance;
   static AppStateNotifier get instance => _instance ??= AppStateNotifier._();
 
-  BaseAuthUser? initialUser;
-  BaseAuthUser? user;
   bool showSplashImage = true;
-  String? _redirectLocation;
-
-  /// Determines whether the app will refresh and build again when a sign
-  /// in or sign out happens. This is useful when the app is launched or
-  /// on an unexpected logout. However, this must be turned off when we
-  /// intend to sign in/out and then navigate or perform any actions after.
-  /// Otherwise, this will trigger a refresh and interrupt the action(s).
-  bool notifyOnAuthChange = true;
-
-  bool get loading => user == null || showSplashImage;
-  bool get loggedIn => user?.loggedIn ?? false;
-  bool get initiallyLoggedIn => initialUser?.loggedIn ?? false;
-  bool get shouldRedirect => loggedIn && _redirectLocation != null;
-
-  String getRedirectLocation() => _redirectLocation!;
-  bool hasRedirect() => _redirectLocation != null;
-  void setRedirectLocationIfUnset(String loc) => _redirectLocation ??= loc;
-  void clearRedirectLocation() => _redirectLocation = null;
-
-  /// Mark as not needing to notify on a sign in / out when we intend
-  /// to perform subsequent actions (such as navigation) afterwards.
-  void updateNotifyOnAuthChange(bool notify) => notifyOnAuthChange = notify;
-
-  void update(BaseAuthUser newUser) {
-    final shouldUpdate =
-        user?.uid == null || newUser.uid == null || user?.uid != newUser.uid;
-    initialUser ??= newUser;
-    user = newUser;
-    // Refresh the app on auth change unless explicitly marked otherwise.
-    // No need to update unless the user has changed.
-    if (notifyOnAuthChange && shouldUpdate) {
-      notifyListeners();
-    }
-    // Once again mark the notifier as needing to update on auth change
-    // (in order to catch sign in / out events).
-    updateNotifyOnAuthChange(true);
-  }
 
   void stopShowingSplashImage() {
     showSplashImage = false;
@@ -80,14 +39,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? AccountWidget() : StartScreenWidget(),
+      errorBuilder: (context, state) => StartScreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? AccountWidget() : StartScreenWidget(),
+          builder: (context, _) => StartScreenWidget(),
           routes: [
             FFRoute(
               name: 'welcomeScreen',
@@ -708,332 +665,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'phoneAuthPage',
-              path: 'phoneAuthPage',
-              builder: (context, params) => PhoneAuthPageWidget(),
-            ),
-            FFRoute(
-              name: 'OTPverificationNewP',
-              path: 'oTPverificationNewP',
-              asyncParams: {
-                'userDoc':
-                    getDoc(['USER_PROFILE'], UserProfileRecord.fromSnapshot),
-              },
-              builder: (context, params) => OTPverificationNewPWidget(
-                isMobileExists: params.getParam(
-                  'isMobileExists',
-                  ParamType.bool,
-                ),
-                userDoc: params.getParam(
-                  'userDoc',
-                  ParamType.Document,
-                ),
-                mobile: params.getParam(
-                  'mobile',
-                  ParamType.String,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'businessProfileAdminfinal',
-              path: 'businessProfileAdminfinal',
-              builder: (context, params) => BusinessProfileAdminfinalWidget(
-                mobileNo: params.getParam(
-                  'mobileNo',
-                  ParamType.String,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'outletlistPage',
-              path: 'outletlistPage',
-              builder: (context, params) => OutletlistPageWidget(
-                mobileNo: params.getParam(
-                  'mobileNo',
-                  ParamType.String,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'addOutletPage',
-              path: 'addOutletPage',
-              builder: (context, params) => AddOutletPageWidget(
-                mobile: params.getParam(
-                  'mobile',
-                  ParamType.String,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'CreateUserProfileNewP',
-              path: 'createUserProfileNewP',
-              builder: (context, params) => CreateUserProfileNewPWidget(
-                mobile: params.getParam(
-                  'mobile',
-                  ParamType.String,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'AddBusinessProfile',
-              path: 'addBusinessProfile',
-              builder: (context, params) => AddBusinessProfileWidget(
-                premiseRef: params.getParam(
-                  'premiseRef',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['OUTLET', 'PREMISES'],
-                ),
-                mobile: params.getParam(
-                  'mobile',
-                  ParamType.String,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'editBusinesProfile',
-              path: 'editBusinesProfile',
-              builder: (context, params) => EditBusinesProfileWidget(
-                businessMRef: params.getParam(
-                  'businessMRef',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['BUSINESSS_MASTER'],
-                ),
-                id: params.getParam(
-                  'id',
-                  ParamType.String,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'account',
-              path: 'account',
-              builder: (context, params) => AccountWidget(
-                isList: params.getParam(
-                  'isList',
-                  ParamType.bool,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'editUserprofile',
-              path: 'editUserprofile',
-              asyncParams: {
-                'docRef':
-                    getDoc(['USER_PROFILE'], UserProfileRecord.fromSnapshot),
-              },
-              builder: (context, params) => EditUserprofileWidget(
-                docRef: params.getParam(
-                  'docRef',
-                  ParamType.Document,
-                ),
-                nextP: params.getParam(
-                  'nextP',
-                  ParamType.int,
-                ),
-                id: params.getParam(
-                  'id',
-                  ParamType.String,
-                ),
-                mobile: params.getParam(
-                  'mobile',
-                  ParamType.String,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'mastersNew',
-              path: 'mastersNew',
-              builder: (context, params) => MastersNewWidget(
-                isListSelected: params.getParam(
-                  'isListSelected',
-                  ParamType.bool,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'categories',
-              path: 'categories',
-              builder: (context, params) => CategoriesWidget(
-                outletId: params.getParam(
-                  'outletId',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['OUTLET'],
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'productListNewM',
-              path: 'productListNewM',
-              builder: (context, params) => ProductListNewMWidget(
-                outletId: params.getParam(
-                  'outletId',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['OUTLET'],
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'editproductNewM',
-              path: 'editproductNewM',
-              asyncParams: {
-                'productDocument':
-                    getDoc(['OUTLET', 'PRODUCT'], ProductRecord.fromSnapshot),
-              },
-              builder: (context, params) => EditproductNewMWidget(
-                codeLen: params.getParam(
-                  'codeLen',
-                  ParamType.int,
-                ),
-                proRef: params.getParam(
-                  'proRef',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['OUTLET', 'PRODUCT'],
-                ),
-                id: params.getParam(
-                  'id',
-                  ParamType.String,
-                ),
-                productDocument: params.getParam(
-                  'productDocument',
-                  ParamType.Document,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'addproductAPP',
-              path: 'addproductApp',
-              builder: (context, params) => AddproductAPPWidget(
-                catcodeLen: params.getParam(
-                  'catcodeLen',
-                  ParamType.int,
-                ),
-                proRef: params.getParam(
-                  'proRef',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['OUTLET', 'PRODUCT'],
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'editCategoryM',
-              path: 'editCategoryM',
-              builder: (context, params) => EditCategoryMWidget(
-                catRef: params.getParam(
-                  'catRef',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['OUTLET', 'CATEGORY'],
-                ),
-                id: params.getParam(
-                  'id',
-                  ParamType.String,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'addCategoryM',
-              path: 'addCategoryM',
-              builder: (context, params) => AddCategoryMWidget(
-                codeLen: params.getParam(
-                  'codeLen',
-                  ParamType.int,
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'ParkingCheckIN',
-              path: 'parkingCheckIN',
-              builder: (context, params) => ParkingCheckINWidget(
-                shiftDoc: params.getParam(
-                  'shiftDoc',
-                  ParamType.JSON,
-                ),
-                userRef: params.getParam(
-                  'userRef',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['USER_PROFILE'],
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'ParkingCustomers',
-              path: 'parkingCustomers',
-              builder: (context, params) => ParkingCustomersWidget(
-                shiftDoc: params.getParam(
-                  'shiftDoc',
-                  ParamType.JSON,
-                ),
-                userRef: params.getParam(
-                  'userRef',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['USER_PROFILE'],
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'ParkingProduct',
-              path: 'parkingProduct',
-              builder: (context, params) => ParkingProductWidget(
-                shiftdoc: params.getParam(
-                  'shiftdoc',
-                  ParamType.JSON,
-                ),
-                userRef: params.getParam(
-                  'userRef',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['USER_PROFILE'],
-                ),
-              ),
-            ),
-            FFRoute(
               name: 'dummytest',
               path: 'dummytest',
               builder: (context, params) => DummytestWidget(),
-            ),
-            FFRoute(
-              name: 'editUserPermission',
-              path: 'editUserPermission',
-              builder: (context, params) => EditUserPermissionWidget(
-                userRef: params.getParam(
-                  'userRef',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['USER_PROFILE'],
-                ),
-              ),
-            ),
-            FFRoute(
-              name: 'ParkingProductCopy',
-              path: 'parkingProductCopy',
-              builder: (context, params) => ParkingProductCopyWidget(),
-            ),
-            FFRoute(
-              name: 'welcomeScreenParking',
-              path: 'welcomeScreenParking',
-              asyncParams: {
-                'deviceDoc': getDoc(['DEVICE'], DeviceRecord.fromSnapshot),
-                'appSettings': getDoc(
-                    ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
-              },
-              builder: (context, params) => WelcomeScreenParkingWidget(
-                deviceDoc: params.getParam(
-                  'deviceDoc',
-                  ParamType.Document,
-                ),
-                appSettings: params.getParam(
-                  'appSettings',
-                  ParamType.Document,
-                ),
-              ),
             ),
             FFRoute(
               name: 'demo',
@@ -1041,29 +675,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => DemoWidget(),
             ),
             FFRoute(
-              name: 'PrintersettingCar',
-              path: 'printersettingCar',
-              builder: (context, params) => PrintersettingCarWidget(),
-            ),
-            FFRoute(
               name: 'imsDashboardCopy',
               path: 'imsDashboardCopy',
               builder: (context, params) => ImsDashboardCopyWidget(),
-            ),
-            FFRoute(
-              name: 'subscriptionNew2',
-              path: 'subscriptionNew2',
-              builder: (context, params) => SubscriptionNew2Widget(),
-            ),
-            FFRoute(
-              name: 'Deviceqr',
-              path: 'deviceqr',
-              builder: (context, params) => DeviceqrWidget(),
-            ),
-            FFRoute(
-              name: 'parkingReport',
-              path: 'parkingReport',
-              builder: (context, params) => ParkingReportWidget(),
             ),
             FFRoute(
               name: 'responsePage',
@@ -1684,40 +1298,6 @@ extension NavParamExtensions on Map<String, String?> {
 }
 
 extension NavigationExtensions on BuildContext {
-  void goNamedAuth(
-    String name,
-    bool mounted, {
-    Map<String, String> pathParameters = const <String, String>{},
-    Map<String, String> queryParameters = const <String, String>{},
-    Object? extra,
-    bool ignoreRedirect = false,
-  }) =>
-      !mounted || GoRouter.of(this).shouldRedirect(ignoreRedirect)
-          ? null
-          : goNamed(
-              name,
-              pathParameters: pathParameters,
-              queryParameters: queryParameters,
-              extra: extra,
-            );
-
-  void pushNamedAuth(
-    String name,
-    bool mounted, {
-    Map<String, String> pathParameters = const <String, String>{},
-    Map<String, String> queryParameters = const <String, String>{},
-    Object? extra,
-    bool ignoreRedirect = false,
-  }) =>
-      !mounted || GoRouter.of(this).shouldRedirect(ignoreRedirect)
-          ? null
-          : pushNamed(
-              name,
-              pathParameters: pathParameters,
-              queryParameters: queryParameters,
-              extra: extra,
-            );
-
   void safePop() {
     // If there is only one route on the stack, navigate to the initial
     // page instead of popping.
@@ -1727,19 +1307,6 @@ extension NavigationExtensions on BuildContext {
       go('/');
     }
   }
-}
-
-extension GoRouterExtensions on GoRouter {
-  AppStateNotifier get appState => AppStateNotifier.instance;
-  void prepareAuthEvent([bool ignoreRedirect = false]) =>
-      appState.hasRedirect() && !ignoreRedirect
-          ? null
-          : appState.updateNotifyOnAuthChange(false);
-  bool shouldRedirect(bool ignoreRedirect) =>
-      !ignoreRedirect && appState.hasRedirect();
-  void clearRedirectLocation() => appState.clearRedirectLocation();
-  void setRedirectLocationIfUnset(String location) =>
-      appState.updateNotifyOnAuthChange(false);
 }
 
 extension _GoRouterStateExtensions on GoRouterState {
@@ -1834,19 +1401,6 @@ class FFRoute {
   GoRoute toRoute(AppStateNotifier appStateNotifier) => GoRoute(
         name: name,
         path: path,
-        redirect: (context, state) {
-          if (appStateNotifier.shouldRedirect) {
-            final redirectLocation = appStateNotifier.getRedirectLocation();
-            appStateNotifier.clearRedirectLocation();
-            return redirectLocation;
-          }
-
-          if (requireAuth && !appStateNotifier.loggedIn) {
-            appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/startScreen';
-          }
-          return null;
-        },
         pageBuilder: (context, state) {
           fixStatusBarOniOS16AndBelow(context);
           final ffParams = FFParameters(state, asyncParams);
@@ -1856,18 +1410,7 @@ class FFRoute {
                   builder: (context, _) => builder(context, ffParams),
                 )
               : builder(context, ffParams);
-          final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 40.0,
-                    height: 40.0,
-                    child: SpinKitFadingCircle(
-                      color: FlutterFlowTheme.of(context).primary,
-                      size: 40.0,
-                    ),
-                  ),
-                )
-              : page;
+          final child = page;
 
           final transitionInfo = state.transitionInfo;
           return transitionInfo.hasTransition

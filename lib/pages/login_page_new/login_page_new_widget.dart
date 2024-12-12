@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/power_off/power_off_widget.dart';
@@ -82,7 +81,10 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
         title: 'LoginPageNew',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1821,8 +1823,11 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                         context: context,
                                         builder: (context) {
                                           return GestureDetector(
-                                            onTap: () => FocusScope.of(context)
-                                                .unfocus(),
+                                            onTap: () {
+                                              FocusScope.of(context).unfocus();
+                                              FocusManager.instance.primaryFocus
+                                                  ?.unfocus();
+                                            },
                                             child: Padding(
                                               padding: MediaQuery.viewInsetsOf(
                                                   context),

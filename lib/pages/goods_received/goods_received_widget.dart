@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/acc_and_rej_qty/acc_and_rej_qty_widget.dart';
 import '/components/menu_drawer/menu_drawer_widget.dart';
@@ -65,7 +64,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
         title: 'GoodsReceived',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -5483,8 +5485,15 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     builder:
                                                                         (context) {
                                                                       return GestureDetector(
-                                                                        onTap: () =>
-                                                                            FocusScope.of(context).unfocus(),
+                                                                        onTap:
+                                                                            () {
+                                                                          FocusScope.of(context)
+                                                                              .unfocus();
+                                                                          FocusManager
+                                                                              .instance
+                                                                              .primaryFocus
+                                                                              ?.unfocus();
+                                                                        },
                                                                         child:
                                                                             Padding(
                                                                           padding:
@@ -7298,7 +7307,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                 context: context,
                                                                                                 builder: (context) {
                                                                                                   return GestureDetector(
-                                                                                                    onTap: () => FocusScope.of(context).unfocus(),
+                                                                                                    onTap: () {
+                                                                                                      FocusScope.of(context).unfocus();
+                                                                                                      FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                    },
                                                                                                     child: Padding(
                                                                                                       padding: MediaQuery.viewInsetsOf(context),
                                                                                                       child: RejectionDetailsWidget(
@@ -10414,7 +10426,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               Text(
                                                                         FFLocalizations.of(context)
                                                                             .getText(
-                                                                          '1pdkr062' /* 09112022 */,
+                                                                          '1pdkr062' /* 09/11/2022 */,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall

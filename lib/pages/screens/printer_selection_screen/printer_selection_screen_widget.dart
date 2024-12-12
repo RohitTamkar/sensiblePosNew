@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_checkbox_group.dart';
@@ -148,7 +147,10 @@ class _PrinterSelectionScreenWidgetState
             title: 'PrinterSelectionScreen',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor:
@@ -2997,7 +2999,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 '401xvfyt' /* Subtitle */,
                                                                               ),
                                                                               hintText: FFLocalizations.of(context).getText(
-                                                                                '6fbciy7m' /* SubtitleAddress */,
+                                                                                '6fbciy7m' /* Subtitle/Address */,
                                                                               ),
                                                                               enabledBorder: UnderlineInputBorder(
                                                                                 borderSide: BorderSide(
