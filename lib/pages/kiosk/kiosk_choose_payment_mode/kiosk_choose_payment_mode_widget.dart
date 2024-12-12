@@ -185,13 +185,9 @@ class _KioskChoosePaymentModeWidgetState
                                 ),
                                 onPressed: () async {
                                   context.goNamed(
-                                    'KioskBillScreen',
+                                    'KioskCart',
                                     queryParameters: {
-                                      'doc': serializeParam(
-                                        widget!.doc,
-                                        ParamType.DocumentReference,
-                                      ),
-                                      'shiftdoc': serializeParam(
+                                      'shiftdetails': serializeParam(
                                         widget!.shiftdetails,
                                         ParamType.JSON,
                                       ),
@@ -218,7 +214,7 @@ class _KioskChoosePaymentModeWidgetState
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 250.0, 0.0, 0.0),
+                            0.0, 190.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
