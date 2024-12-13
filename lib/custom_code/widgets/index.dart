@@ -16,3 +16,4 @@ export 'dynamic_q_r.dart' show DynamicQR;
 export 'user_input.dart' show UserInput;
 export 'weightscalewidget.dart' show Weightscalewidget;
 export 'labeltestprint.dart' show Labeltestprint;
+export 'pd_led_customerdisplay.dart' show PdLedCustomerdisplay;

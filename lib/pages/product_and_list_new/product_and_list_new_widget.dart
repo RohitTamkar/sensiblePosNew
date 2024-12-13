@@ -1607,6 +1607,19 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                           8.0),
                                                 ),
                                               ),
+                                              Container(
+                                                width: 100.0,
+                                                height: 100.0,
+                                                child: custom_widgets
+                                                    .PdLedCustomerdisplay(
+                                                  width: 100.0,
+                                                  height: 100.0,
+                                                  amount: FFAppState()
+                                                      .finalAmt
+                                                      .toString(),
+                                                  token: 'TOKEN',
+                                                ),
+                                              ),
                                             ],
                                           ),
                                         ),

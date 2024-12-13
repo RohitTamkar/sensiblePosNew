@@ -159,15 +159,6 @@ class _KioskChoosePaymentModeWidgetState
                         updateCallback: () => safeSetState(() {}),
                         child: KioskHeaderWidget(),
                       ),
-                      Container(
-                        width: double.infinity,
-                        height: 100.0,
-                        decoration: BoxDecoration(),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [],
-                        ),
-                      ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 190.0, 0.0, 0.0),
