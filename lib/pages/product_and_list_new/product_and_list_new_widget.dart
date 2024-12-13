@@ -1618,6 +1618,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                       .finalAmt
                                                       .toString(),
                                                   displayString: 'TOKEN',
+                                                  port: 'COM2',
                                                 ),
                                               ),
                                             ],

@@ -12,6 +12,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/grocery_windows/add_customer_grocery/add_customer_grocery_widget.dart';
 import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
@@ -526,8 +527,32 @@ class _ProductAndListlaundrybillingWidgetState
                                                 size: 22.0,
                                               ),
                                               onPressed: () async {
-                                                context
-                                                    .pushNamed('AddCustomer');
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child:
+                                                            AddCustomerGroceryWidget(),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
                                               },
                                             ),
                                           ],
@@ -1028,39 +1053,34 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        Expanded(
-                                                                          child:
-                                                                              FlutterFlowIconButton(
-                                                                            borderColor:
-                                                                                Colors.transparent,
-                                                                            borderRadius:
-                                                                                30.0,
-                                                                            borderWidth:
-                                                                                1.0,
-                                                                            buttonSize:
-                                                                                60.0,
-                                                                            icon:
-                                                                                Icon(
-                                                                              Icons.chevron_right,
-                                                                              color: FlutterFlowTheme.of(context).secondary,
-                                                                              size: 24.0,
-                                                                            ),
-                                                                            onPressed:
-                                                                                () async {
-                                                                              FFAppState().setCustName = containerVarItem.name;
-                                                                              FFAppState().setCustMobNo = containerVarItem.mobile;
-                                                                              FFAppState().oldBalance = containerVarItem.oldBalance;
-                                                                              FFAppState().custCredit = containerVarItem.creditLimit;
-                                                                              FFAppState().update(() {});
-                                                                              FFAppState().setCustRef = containerVarItem.reference;
-                                                                              FFAppState().isCustListShown = true;
-                                                                              FFAppState().customer = true;
-                                                                              FFAppState().update(() {});
+                                                                        if (false)
+                                                                          Expanded(
+                                                                            child:
+                                                                                FlutterFlowIconButton(
+                                                                              borderColor: Colors.transparent,
+                                                                              borderRadius: 30.0,
+                                                                              borderWidth: 1.0,
+                                                                              buttonSize: 60.0,
+                                                                              icon: Icon(
+                                                                                Icons.chevron_right,
+                                                                                color: FlutterFlowTheme.of(context).secondary,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                              onPressed: () async {
+                                                                                FFAppState().setCustName = containerVarItem.name;
+                                                                                FFAppState().setCustMobNo = containerVarItem.mobile;
+                                                                                FFAppState().oldBalance = containerVarItem.oldBalance;
+                                                                                FFAppState().custCredit = containerVarItem.creditLimit;
+                                                                                FFAppState().update(() {});
+                                                                                FFAppState().setCustRef = containerVarItem.reference;
+                                                                                FFAppState().isCustListShown = true;
+                                                                                FFAppState().customer = true;
+                                                                                FFAppState().update(() {});
 
-                                                                              context.pushNamed('CreditPaymentPage');
-                                                                            },
+                                                                                context.pushNamed('CreditPaymentPage');
+                                                                              },
+                                                                            ),
                                                                           ),
-                                                                        ),
                                                                       ],
                                                                     ),
                                                                   ),
@@ -1298,39 +1318,34 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        Expanded(
-                                                                          child:
-                                                                              FlutterFlowIconButton(
-                                                                            borderColor:
-                                                                                Colors.transparent,
-                                                                            borderRadius:
-                                                                                30.0,
-                                                                            borderWidth:
-                                                                                1.0,
-                                                                            buttonSize:
-                                                                                60.0,
-                                                                            icon:
-                                                                                Icon(
-                                                                              Icons.chevron_right,
-                                                                              color: FlutterFlowTheme.of(context).secondary,
-                                                                              size: 24.0,
-                                                                            ),
-                                                                            onPressed:
-                                                                                () async {
-                                                                              FFAppState().setCustName = listItem.name;
-                                                                              FFAppState().setCustMobNo = listItem.mobile;
-                                                                              FFAppState().oldBalance = listItem.oldBalance;
-                                                                              FFAppState().custCredit = listItem.creditLimit;
-                                                                              FFAppState().update(() {});
-                                                                              FFAppState().setCustRef = listItem.reference;
-                                                                              FFAppState().isCustListShown = true;
-                                                                              FFAppState().customer = true;
-                                                                              FFAppState().update(() {});
+                                                                        if (false)
+                                                                          Expanded(
+                                                                            child:
+                                                                                FlutterFlowIconButton(
+                                                                              borderColor: Colors.transparent,
+                                                                              borderRadius: 30.0,
+                                                                              borderWidth: 1.0,
+                                                                              buttonSize: 60.0,
+                                                                              icon: Icon(
+                                                                                Icons.chevron_right,
+                                                                                color: FlutterFlowTheme.of(context).secondary,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                              onPressed: () async {
+                                                                                FFAppState().setCustName = listItem.name;
+                                                                                FFAppState().setCustMobNo = listItem.mobile;
+                                                                                FFAppState().oldBalance = listItem.oldBalance;
+                                                                                FFAppState().custCredit = listItem.creditLimit;
+                                                                                FFAppState().update(() {});
+                                                                                FFAppState().setCustRef = listItem.reference;
+                                                                                FFAppState().isCustListShown = true;
+                                                                                FFAppState().customer = true;
+                                                                                FFAppState().update(() {});
 
-                                                                              context.pushNamed('CreditPaymentPage');
-                                                                            },
+                                                                                context.pushNamed('CreditPaymentPage');
+                                                                              },
+                                                                            ),
                                                                           ),
-                                                                        ),
                                                                       ],
                                                                     ),
                                                                   ),

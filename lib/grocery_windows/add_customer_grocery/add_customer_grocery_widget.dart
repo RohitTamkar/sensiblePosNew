@@ -3618,6 +3618,18 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     .update(createPartyRecordData(
                                   id: _model.custDoc?.reference.id,
                                 ));
+                                FFAppState().setCustName = _model.custDoc!.name;
+                                FFAppState().setCustMobNo =
+                                    _model.custDoc!.mobile;
+                                FFAppState().oldBalance =
+                                    _model.custDoc!.oldBalance;
+                                FFAppState().custCredit =
+                                    _model.custDoc!.creditLimit;
+                                FFAppState().update(() {});
+                                FFAppState().setCustRef =
+                                    _model.custDoc?.reference;
+                                FFAppState().isCustListShown = true;
+                                FFAppState().update(() {});
                                 safeSetState(() {
                                   _model.textFieldnameTextController?.clear();
                                   _model.textFieldmobTextController?.clear();
@@ -3649,6 +3661,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   _model.textFieldpostlcodeTextController
                                       ?.clear();
                                 });
+                                Navigator.pop(context);
                               } else {
                                 if (_shouldSetState) safeSetState(() {});
                                 return;
