@@ -16,13 +16,15 @@ class PdLedCustomerdisplay extends StatefulWidget {
     this.width,
     this.height,
     required this.amount,
-    required this.token,
+    required this.displayString,
+    required this.port,
   });
 
   final double? width;
   final double? height;
   final String amount;
-  final String token;
+  final String displayString;
+  final String port;
 
   @override
   State<PdLedCustomerdisplay> createState() => _PdLedCustomerdisplayState();

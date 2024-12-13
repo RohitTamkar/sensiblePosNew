@@ -1617,7 +1617,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                   amount: FFAppState()
                                                       .finalAmt
                                                       .toString(),
-                                                  token: 'TOKEN',
+                                                  displayString: 'TOKEN',
                                                 ),
                                               ),
                                             ],
