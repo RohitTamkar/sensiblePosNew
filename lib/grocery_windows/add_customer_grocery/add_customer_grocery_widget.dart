@@ -664,6 +664,11 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                         .labelLargeFamily),
                                           ),
                                       maxLength: 10,
+                                      buildCounter: (context,
+                                              {required currentLength,
+                                              required isFocused,
+                                              maxLength}) =>
+                                          null,
                                       keyboardType: TextInputType.number,
                                       validator: _model
                                           .textFieldmobTextControllerValidator
