@@ -209,6 +209,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     _model.textFieldfrmvisitTextController.text,
                                 lastVisit: _model
                                     .textFieldlastvisitTextController.text,
+                                balance: 0.0,
                               ));
                               _model.custDoc = PartyRecord.getDocumentFromData(
                                   createPartyRecordData(
@@ -259,6 +260,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         .textFieldfrmvisitTextController.text,
                                     lastVisit: _model
                                         .textFieldlastvisitTextController.text,
+                                    balance: 0.0,
                                   ),
                                   partyRecordReference);
                               _shouldSetState = true;
@@ -274,11 +276,11 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   _model.custDoc!.oldBalance;
                               FFAppState().custCredit =
                                   _model.custDoc!.creditLimit;
-                              FFAppState().update(() {});
+                              _model.updatePage(() {});
                               FFAppState().setCustRef =
                                   _model.custDoc?.reference;
                               FFAppState().isCustListShown = true;
-                              FFAppState().update(() {});
+                              _model.updatePage(() {});
                               safeSetState(() {
                                 _model.textFieldnameTextController?.clear();
                                 _model.textFieldmobTextController?.clear();
