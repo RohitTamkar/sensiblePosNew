@@ -23077,6 +23077,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    '1rpgsm22': {
+      'en': 'Submit',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'd9b2gv2x': {
       'en': 'Personal Details',
       'hi': '',
@@ -23667,13 +23674,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'p40h8qkr': {
       'en': 'Search for an item...',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '1rpgsm22': {
-      'en': 'Submit',
       'hi': '',
       'kn': '',
       'mr': '',

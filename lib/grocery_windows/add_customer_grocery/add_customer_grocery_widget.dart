@@ -152,6 +152,200 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                 FlutterFlowTheme.of(context).titleMediumFamily),
                           ),
                     ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 25.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          var _shouldSetState = false;
+                          if (_model.textFieldnameTextController.text != null &&
+                              _model.textFieldnameTextController.text != '') {
+                            if (_model.textFieldmobTextController.text !=
+                                    null &&
+                                _model.textFieldmobTextController.text != '') {
+                              var partyRecordReference = PartyRecord.createDoc(
+                                  FFAppState().outletIdRef!);
+                              await partyRecordReference
+                                  .set(createPartyRecordData(
+                                name: _model.textFieldnameTextController.text,
+                                mobile: _model.textFieldmobTextController.text,
+                                alternateNumber:
+                                    _model.textFieldaltmobTextController.text,
+                                email: _model.textFieldemailTextController.text,
+                                refName:
+                                    _model.textFieldrefnameTextController.text,
+                                adharCardNo:
+                                    _model.textFieldadharnoTextController.text,
+                                vehicleNo:
+                                    _model.textFieldvechnoTextController.text,
+                                panCardNo:
+                                    _model.textFieldpannoTextController.text,
+                                gstNo: _model.textFieldgstnoTextController.text,
+                                address:
+                                    _model.textFieldaddressTextController.text,
+                                proofOfIdentity: _model.dropDownproofValue,
+                                creditLimit: int.tryParse(
+                                    _model.textFieldcredliTextController.text),
+                                oldBalance: int.tryParse(
+                                    _model.textFieldoldbalTextController.text),
+                                birthday:
+                                    _model.textFieldbdateTextController.text,
+                                anniversary:
+                                    _model.textFieldanniveTextController.text,
+                                firmName:
+                                    _model.textFieldfirmnameTextController.text,
+                                familySize: int.tryParse(
+                                    _model.textFieldfamsizeTextController.text),
+                                city: _model.textFieldcityTextController.text,
+                                credit: _model.switchValue,
+                                postalCode: _model
+                                    .textFieldpostlcodeTextController.text,
+                                extraDetails:
+                                    _model.textFieldextdetTextController.text,
+                                gender: _model.dropDowngenderValue,
+                                role: 'CUSTOMER',
+                                type: _model.dropDowntypeValue,
+                                firstVisit:
+                                    _model.textFieldfrmvisitTextController.text,
+                                lastVisit: _model
+                                    .textFieldlastvisitTextController.text,
+                              ));
+                              _model.custDoc = PartyRecord.getDocumentFromData(
+                                  createPartyRecordData(
+                                    name:
+                                        _model.textFieldnameTextController.text,
+                                    mobile:
+                                        _model.textFieldmobTextController.text,
+                                    alternateNumber: _model
+                                        .textFieldaltmobTextController.text,
+                                    email: _model
+                                        .textFieldemailTextController.text,
+                                    refName: _model
+                                        .textFieldrefnameTextController.text,
+                                    adharCardNo: _model
+                                        .textFieldadharnoTextController.text,
+                                    vehicleNo: _model
+                                        .textFieldvechnoTextController.text,
+                                    panCardNo: _model
+                                        .textFieldpannoTextController.text,
+                                    gstNo: _model
+                                        .textFieldgstnoTextController.text,
+                                    address: _model
+                                        .textFieldaddressTextController.text,
+                                    proofOfIdentity: _model.dropDownproofValue,
+                                    creditLimit: int.tryParse(_model
+                                        .textFieldcredliTextController.text),
+                                    oldBalance: int.tryParse(_model
+                                        .textFieldoldbalTextController.text),
+                                    birthday: _model
+                                        .textFieldbdateTextController.text,
+                                    anniversary: _model
+                                        .textFieldanniveTextController.text,
+                                    firmName: _model
+                                        .textFieldfirmnameTextController.text,
+                                    familySize: int.tryParse(_model
+                                        .textFieldfamsizeTextController.text),
+                                    city:
+                                        _model.textFieldcityTextController.text,
+                                    credit: _model.switchValue,
+                                    postalCode: _model
+                                        .textFieldpostlcodeTextController.text,
+                                    extraDetails: _model
+                                        .textFieldextdetTextController.text,
+                                    gender: _model.dropDowngenderValue,
+                                    role: 'CUSTOMER',
+                                    type: _model.dropDowntypeValue,
+                                    firstVisit: _model
+                                        .textFieldfrmvisitTextController.text,
+                                    lastVisit: _model
+                                        .textFieldlastvisitTextController.text,
+                                  ),
+                                  partyRecordReference);
+                              _shouldSetState = true;
+
+                              await _model.custDoc!.reference
+                                  .update(createPartyRecordData(
+                                id: _model.custDoc?.reference.id,
+                              ));
+                              FFAppState().setCustName = _model.custDoc!.name;
+                              FFAppState().setCustMobNo =
+                                  _model.custDoc!.mobile;
+                              FFAppState().oldBalance =
+                                  _model.custDoc!.oldBalance;
+                              FFAppState().custCredit =
+                                  _model.custDoc!.creditLimit;
+                              FFAppState().update(() {});
+                              FFAppState().setCustRef =
+                                  _model.custDoc?.reference;
+                              FFAppState().isCustListShown = true;
+                              FFAppState().update(() {});
+                              safeSetState(() {
+                                _model.textFieldnameTextController?.clear();
+                                _model.textFieldmobTextController?.clear();
+                                _model.textFieldaltmobTextController?.clear();
+                                _model.textFieldemailTextController?.clear();
+                                _model.textFieldrefnameTextController?.clear();
+                                _model.textFieldvechnoTextController?.clear();
+                                _model.textFieldadharnoTextController?.clear();
+                                _model.textFieldgstnoTextController?.clear();
+                                _model.textFieldcredliTextController?.clear();
+                                _model.textFieldpannoTextController?.clear();
+                                _model.textFieldoldbalTextController?.clear();
+                                _model.textFieldanniveTextController?.clear();
+                                _model.textFieldbdateTextController?.clear();
+                                _model.textFieldextdetTextController?.clear();
+                                _model.textFieldfamsizeTextController?.clear();
+                                _model.textFieldfrmvisitTextController?.clear();
+                                _model.textFieldfirmnameTextController?.clear();
+                                _model.textFieldcityTextController?.clear();
+                                _model.textFieldlastvisitTextController
+                                    ?.clear();
+                                _model.textFieldaddressTextController?.clear();
+                                _model.textFieldpostlcodeTextController
+                                    ?.clear();
+                              });
+                              Navigator.pop(context);
+                            } else {
+                              if (_shouldSetState) safeSetState(() {});
+                              return;
+                            }
+                          } else {
+                            if (_shouldSetState) safeSetState(() {});
+                            return;
+                          }
+
+                          if (_shouldSetState) safeSetState(() {});
+                        },
+                        text: FFLocalizations.of(context).getText(
+                          '1rpgsm22' /* Submit */,
+                        ),
+                        options: FFButtonOptions(
+                          height: 40.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
+                                color: Colors.white,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleSmallFamily),
+                              ),
+                          elevation: 3.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                    ),
                     FlutterFlowIconButton(
                       borderColor: Colors.transparent,
                       borderRadius: 30.0,
@@ -380,7 +574,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                       controller:
                                           _model.textFieldmobTextController,
                                       focusNode: _model.textFieldmobFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -469,6 +663,8 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelLargeFamily),
                                           ),
+                                      maxLength: 10,
+                                      keyboardType: TextInputType.number,
                                       validator: _model
                                           .textFieldmobTextControllerValidator
                                           .asValidator(context),
@@ -512,7 +708,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                           _model.textFieldaltmobTextController,
                                       focusNode:
                                           _model.textFieldaltmobFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -651,7 +847,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                       controller:
                                           _model.textFieldemailTextController,
                                       focusNode: _model.textFieldemailFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -783,7 +979,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                           _model.textFieldrefnameTextController,
                                       focusNode:
                                           _model.textFieldrefnameFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -915,7 +1111,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                           _model.textFieldvechnoTextController,
                                       focusNode:
                                           _model.textFieldvechnoFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -1090,7 +1286,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                           _model.textFieldadharnoTextController,
                                       focusNode:
                                           _model.textFieldadharnoFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -1221,7 +1417,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                       controller:
                                           _model.textFieldpannoTextController,
                                       focusNode: _model.textFieldpannoFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -1352,7 +1548,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                       controller:
                                           _model.textFieldgstnoTextController,
                                       focusNode: _model.textFieldgstnoFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -1638,7 +1834,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        isDense: true,
+                                        isDense: false,
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -1771,20 +1967,6 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMediumFamily,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMediumFamily),
-                                            ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
                                           'uz6a1u3f' /* old balance */,
@@ -1991,7 +2173,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                       controller:
                                           _model.textFieldbdateTextController,
                                       focusNode: _model.textFieldbdateFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -2123,7 +2305,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                           _model.textFieldanniveTextController,
                                       focusNode:
                                           _model.textFieldanniveFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -2255,7 +2437,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                           .textFieldfirmnameTextController,
                                       focusNode:
                                           _model.textFieldfirmnameFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -2395,7 +2577,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                           _model.textFieldextdetTextController,
                                       focusNode:
                                           _model.textFieldextdetFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -2616,7 +2798,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                           _model.textFieldfamsizeTextController,
                                       focusNode:
                                           _model.textFieldfamsizeFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -2756,7 +2938,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                           _model.textFieldaddressTextController,
                                       focusNode:
                                           _model.textFieldaddressFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -2887,7 +3069,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                       controller:
                                           _model.textFieldcityTextController,
                                       focusNode: _model.textFieldcityFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -3019,7 +3201,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                           .textFieldpostlcodeTextController,
                                       focusNode:
                                           _model.textFieldpostlcodeFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -3159,7 +3341,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                           .textFieldfrmvisitTextController,
                                       focusNode:
                                           _model.textFieldfrmvisitFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -3291,7 +3473,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                           .textFieldlastvisitTextController,
                                       focusNode:
                                           _model.textFieldlastvisitFocusNode,
-                                      autofocus: true,
+                                      autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -3475,232 +3657,6 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                               ),
                             ),
                           ].divide(SizedBox(width: 10.0)),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 25.0, 0.0, 25.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            var _shouldSetState = false;
-                            if (_model.textFieldnameTextController.text !=
-                                    null &&
-                                _model.textFieldnameTextController.text != '') {
-                              if (_model.textFieldmobTextController.text !=
-                                      null &&
-                                  _model.textFieldmobTextController.text !=
-                                      '') {
-                                var partyRecordReference =
-                                    PartyRecord.createDoc(
-                                        FFAppState().outletIdRef!);
-                                await partyRecordReference
-                                    .set(createPartyRecordData(
-                                  name: _model.textFieldnameTextController.text,
-                                  mobile:
-                                      _model.textFieldmobTextController.text,
-                                  alternateNumber:
-                                      _model.textFieldaltmobTextController.text,
-                                  email:
-                                      _model.textFieldemailTextController.text,
-                                  refName: _model
-                                      .textFieldrefnameTextController.text,
-                                  adharCardNo: _model
-                                      .textFieldadharnoTextController.text,
-                                  vehicleNo:
-                                      _model.textFieldvechnoTextController.text,
-                                  panCardNo:
-                                      _model.textFieldpannoTextController.text,
-                                  gstNo:
-                                      _model.textFieldgstnoTextController.text,
-                                  address: _model
-                                      .textFieldaddressTextController.text,
-                                  proofOfIdentity: _model.dropDownproofValue,
-                                  creditLimit: int.tryParse(_model
-                                      .textFieldcredliTextController.text),
-                                  oldBalance: int.tryParse(_model
-                                      .textFieldoldbalTextController.text),
-                                  birthday:
-                                      _model.textFieldbdateTextController.text,
-                                  anniversary:
-                                      _model.textFieldanniveTextController.text,
-                                  firmName: _model
-                                      .textFieldfirmnameTextController.text,
-                                  familySize: int.tryParse(_model
-                                      .textFieldfamsizeTextController.text),
-                                  city: _model.textFieldcityTextController.text,
-                                  credit: _model.switchValue,
-                                  postalCode: _model
-                                      .textFieldpostlcodeTextController.text,
-                                  extraDetails:
-                                      _model.textFieldextdetTextController.text,
-                                  gender: _model.dropDowngenderValue,
-                                  role: 'CUSTOMER',
-                                  type: _model.dropDowntypeValue,
-                                  firstVisit: _model
-                                      .textFieldfrmvisitTextController.text,
-                                  lastVisit: _model
-                                      .textFieldlastvisitTextController.text,
-                                ));
-                                _model.custDoc =
-                                    PartyRecord.getDocumentFromData(
-                                        createPartyRecordData(
-                                          name: _model
-                                              .textFieldnameTextController.text,
-                                          mobile: _model
-                                              .textFieldmobTextController.text,
-                                          alternateNumber: _model
-                                              .textFieldaltmobTextController
-                                              .text,
-                                          email: _model
-                                              .textFieldemailTextController
-                                              .text,
-                                          refName: _model
-                                              .textFieldrefnameTextController
-                                              .text,
-                                          adharCardNo: _model
-                                              .textFieldadharnoTextController
-                                              .text,
-                                          vehicleNo: _model
-                                              .textFieldvechnoTextController
-                                              .text,
-                                          panCardNo: _model
-                                              .textFieldpannoTextController
-                                              .text,
-                                          gstNo: _model
-                                              .textFieldgstnoTextController
-                                              .text,
-                                          address: _model
-                                              .textFieldaddressTextController
-                                              .text,
-                                          proofOfIdentity:
-                                              _model.dropDownproofValue,
-                                          creditLimit: int.tryParse(_model
-                                              .textFieldcredliTextController
-                                              .text),
-                                          oldBalance: int.tryParse(_model
-                                              .textFieldoldbalTextController
-                                              .text),
-                                          birthday: _model
-                                              .textFieldbdateTextController
-                                              .text,
-                                          anniversary: _model
-                                              .textFieldanniveTextController
-                                              .text,
-                                          firmName: _model
-                                              .textFieldfirmnameTextController
-                                              .text,
-                                          familySize: int.tryParse(_model
-                                              .textFieldfamsizeTextController
-                                              .text),
-                                          city: _model
-                                              .textFieldcityTextController.text,
-                                          credit: _model.switchValue,
-                                          postalCode: _model
-                                              .textFieldpostlcodeTextController
-                                              .text,
-                                          extraDetails: _model
-                                              .textFieldextdetTextController
-                                              .text,
-                                          gender: _model.dropDowngenderValue,
-                                          role: 'CUSTOMER',
-                                          type: _model.dropDowntypeValue,
-                                          firstVisit: _model
-                                              .textFieldfrmvisitTextController
-                                              .text,
-                                          lastVisit: _model
-                                              .textFieldlastvisitTextController
-                                              .text,
-                                        ),
-                                        partyRecordReference);
-                                _shouldSetState = true;
-
-                                await _model.custDoc!.reference
-                                    .update(createPartyRecordData(
-                                  id: _model.custDoc?.reference.id,
-                                ));
-                                FFAppState().setCustName = _model.custDoc!.name;
-                                FFAppState().setCustMobNo =
-                                    _model.custDoc!.mobile;
-                                FFAppState().oldBalance =
-                                    _model.custDoc!.oldBalance;
-                                FFAppState().custCredit =
-                                    _model.custDoc!.creditLimit;
-                                FFAppState().update(() {});
-                                FFAppState().setCustRef =
-                                    _model.custDoc?.reference;
-                                FFAppState().isCustListShown = true;
-                                FFAppState().update(() {});
-                                safeSetState(() {
-                                  _model.textFieldnameTextController?.clear();
-                                  _model.textFieldmobTextController?.clear();
-                                  _model.textFieldaltmobTextController?.clear();
-                                  _model.textFieldemailTextController?.clear();
-                                  _model.textFieldrefnameTextController
-                                      ?.clear();
-                                  _model.textFieldvechnoTextController?.clear();
-                                  _model.textFieldadharnoTextController
-                                      ?.clear();
-                                  _model.textFieldgstnoTextController?.clear();
-                                  _model.textFieldcredliTextController?.clear();
-                                  _model.textFieldpannoTextController?.clear();
-                                  _model.textFieldoldbalTextController?.clear();
-                                  _model.textFieldanniveTextController?.clear();
-                                  _model.textFieldbdateTextController?.clear();
-                                  _model.textFieldextdetTextController?.clear();
-                                  _model.textFieldfamsizeTextController
-                                      ?.clear();
-                                  _model.textFieldfrmvisitTextController
-                                      ?.clear();
-                                  _model.textFieldfirmnameTextController
-                                      ?.clear();
-                                  _model.textFieldcityTextController?.clear();
-                                  _model.textFieldlastvisitTextController
-                                      ?.clear();
-                                  _model.textFieldaddressTextController
-                                      ?.clear();
-                                  _model.textFieldpostlcodeTextController
-                                      ?.clear();
-                                });
-                                Navigator.pop(context);
-                              } else {
-                                if (_shouldSetState) safeSetState(() {});
-                                return;
-                              }
-                            } else {
-                              if (_shouldSetState) safeSetState(() {});
-                              return;
-                            }
-
-                            if (_shouldSetState) safeSetState(() {});
-                          },
-                          text: FFLocalizations.of(context).getText(
-                            '1rpgsm22' /* Submit */,
-                          ),
-                          options: FFButtonOptions(
-                            height: 40.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleSmallFamily,
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .titleSmallFamily),
-                                ),
-                            elevation: 3.0,
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
                         ),
                       ),
                     ],

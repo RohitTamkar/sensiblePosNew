@@ -17,6 +17,8 @@ class AddCustomerGroceryModel
     extends FlutterFlowModel<AddCustomerGroceryWidget> {
   ///  State fields for stateful widgets in this component.
 
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  PartyRecord? custDoc;
   // State field(s) for TextFieldname widget.
   FocusNode? textFieldnameFocusNode;
   TextEditingController? textFieldnameTextController;
@@ -130,8 +132,6 @@ class AddCustomerGroceryModel
   // State field(s) for DropDowntype widget.
   String? dropDowntypeValue;
   FormFieldController<String>? dropDowntypeValueController;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  PartyRecord? custDoc;
 
   @override
   void initState(BuildContext context) {}
