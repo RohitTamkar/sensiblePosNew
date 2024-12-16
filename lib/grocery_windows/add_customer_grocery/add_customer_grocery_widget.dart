@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -163,156 +164,229 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                             if (_model.textFieldmobTextController.text !=
                                     null &&
                                 _model.textFieldmobTextController.text != '') {
-                              var partyRecordReference = PartyRecord.createDoc(
-                                  FFAppState().outletIdRef!);
-                              await partyRecordReference
-                                  .set(createPartyRecordData(
-                                name: _model.textFieldnameTextController.text,
-                                mobile: _model.textFieldmobTextController.text,
-                                alternateNumber:
-                                    _model.textFieldaltmobTextController.text,
-                                email: _model.textFieldemailTextController.text,
-                                refName:
-                                    _model.textFieldrefnameTextController.text,
-                                adharCardNo:
-                                    _model.textFieldadharnoTextController.text,
-                                vehicleNo:
-                                    _model.textFieldvechnoTextController.text,
-                                panCardNo:
-                                    _model.textFieldpannoTextController.text,
-                                gstNo: _model.textFieldgstnoTextController.text,
-                                address:
-                                    _model.textFieldaddressTextController.text,
-                                proofOfIdentity: _model.dropDownproofValue,
-                                creditLimit: int.tryParse(
-                                    _model.textFieldcredliTextController.text),
-                                oldBalance: valueOrDefault<int>(
-                                  int.tryParse(_model
-                                      .textFieldoldbalTextController.text),
-                                  0,
+                              _model.docexist = await queryPartyRecordOnce(
+                                parent: FFAppState().outletIdRef,
+                                queryBuilder: (partyRecord) =>
+                                    partyRecord.where(
+                                  'mobile',
+                                  isEqualTo:
+                                      _model.textFieldmobTextController.text,
                                 ),
-                                birthday:
-                                    _model.textFieldbdateTextController.text,
-                                anniversary:
-                                    _model.textFieldanniveTextController.text,
-                                firmName:
-                                    _model.textFieldfirmnameTextController.text,
-                                familySize: int.tryParse(
-                                    _model.textFieldfamsizeTextController.text),
-                                city: _model.textFieldcityTextController.text,
-                                credit: _model.switchValue,
-                                postalCode: _model
-                                    .textFieldpostlcodeTextController.text,
-                                extraDetails:
-                                    _model.textFieldextdetTextController.text,
-                                gender: _model.dropDowngenderValue,
-                                role: 'CUSTOMER',
-                                type: _model.dropDowntypeValue,
-                                firstVisit:
-                                    _model.textFieldfrmvisitTextController.text,
-                                lastVisit: _model
-                                    .textFieldlastvisitTextController.text,
-                                balance: 0.0,
-                              ));
-                              _model.custDoc = PartyRecord.getDocumentFromData(
-                                  createPartyRecordData(
-                                    name:
-                                        _model.textFieldnameTextController.text,
-                                    mobile:
-                                        _model.textFieldmobTextController.text,
-                                    alternateNumber: _model
-                                        .textFieldaltmobTextController.text,
-                                    email: _model
-                                        .textFieldemailTextController.text,
-                                    refName: _model
-                                        .textFieldrefnameTextController.text,
-                                    adharCardNo: _model
-                                        .textFieldadharnoTextController.text,
-                                    vehicleNo: _model
-                                        .textFieldvechnoTextController.text,
-                                    panCardNo: _model
-                                        .textFieldpannoTextController.text,
-                                    gstNo: _model
-                                        .textFieldgstnoTextController.text,
-                                    address: _model
-                                        .textFieldaddressTextController.text,
-                                    proofOfIdentity: _model.dropDownproofValue,
-                                    creditLimit: int.tryParse(_model
-                                        .textFieldcredliTextController.text),
-                                    oldBalance: valueOrDefault<int>(
-                                      int.tryParse(_model
-                                          .textFieldoldbalTextController.text),
-                                      0,
-                                    ),
-                                    birthday: _model
-                                        .textFieldbdateTextController.text,
-                                    anniversary: _model
-                                        .textFieldanniveTextController.text,
-                                    firmName: _model
-                                        .textFieldfirmnameTextController.text,
-                                    familySize: int.tryParse(_model
-                                        .textFieldfamsizeTextController.text),
-                                    city:
-                                        _model.textFieldcityTextController.text,
-                                    credit: _model.switchValue,
-                                    postalCode: _model
-                                        .textFieldpostlcodeTextController.text,
-                                    extraDetails: _model
-                                        .textFieldextdetTextController.text,
-                                    gender: _model.dropDowngenderValue,
-                                    role: 'CUSTOMER',
-                                    type: _model.dropDowntypeValue,
-                                    firstVisit: _model
-                                        .textFieldfrmvisitTextController.text,
-                                    lastVisit: _model
-                                        .textFieldlastvisitTextController.text,
-                                    balance: 0.0,
-                                  ),
-                                  partyRecordReference);
+                                singleRecord: true,
+                              ).then((s) => s.firstOrNull);
                               _shouldSetState = true;
+                              if (_model.docexist != null) {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      content: Text(
+                                          'Customer Mobile No Already Exists !'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                                FFAppState().setCustName =
+                                    _model.docexist!.name;
+                                FFAppState().setCustMobNo =
+                                    _model.docexist!.mobile;
+                                FFAppState().oldBalance =
+                                    _model.docexist!.oldBalance;
+                                FFAppState().custCredit =
+                                    _model.docexist!.creditLimit;
+                                _model.updatePage(() {});
+                                FFAppState().setCustRef =
+                                    _model.docexist?.reference;
+                                FFAppState().isCustListShown = true;
+                                _model.updatePage(() {});
+                              } else {
+                                var partyRecordReference =
+                                    PartyRecord.createDoc(
+                                        FFAppState().outletIdRef!);
+                                await partyRecordReference
+                                    .set(createPartyRecordData(
+                                  name: _model.textFieldnameTextController.text,
+                                  mobile:
+                                      _model.textFieldmobTextController.text,
+                                  alternateNumber:
+                                      _model.textFieldaltmobTextController.text,
+                                  email:
+                                      _model.textFieldemailTextController.text,
+                                  refName: _model
+                                      .textFieldrefnameTextController.text,
+                                  adharCardNo: _model
+                                      .textFieldadharnoTextController.text,
+                                  vehicleNo:
+                                      _model.textFieldvechnoTextController.text,
+                                  panCardNo:
+                                      _model.textFieldpannoTextController.text,
+                                  gstNo:
+                                      _model.textFieldgstnoTextController.text,
+                                  address: _model
+                                      .textFieldaddressTextController.text,
+                                  proofOfIdentity: _model.dropDownproofValue,
+                                  creditLimit: int.tryParse(_model
+                                      .textFieldcredliTextController.text),
+                                  oldBalance: valueOrDefault<int>(
+                                    int.tryParse(_model
+                                        .textFieldoldbalTextController.text),
+                                    0,
+                                  ),
+                                  birthday:
+                                      _model.textFieldbdateTextController.text,
+                                  anniversary:
+                                      _model.textFieldanniveTextController.text,
+                                  firmName: _model
+                                      .textFieldfirmnameTextController.text,
+                                  familySize: int.tryParse(_model
+                                      .textFieldfamsizeTextController.text),
+                                  city: _model.textFieldcityTextController.text,
+                                  credit: _model.switchValue,
+                                  postalCode: _model
+                                      .textFieldpostlcodeTextController.text,
+                                  extraDetails:
+                                      _model.textFieldextdetTextController.text,
+                                  gender: _model.dropDowngenderValue,
+                                  role: 'CUSTOMER',
+                                  type: _model.dropDowntypeValue,
+                                  firstVisit: _model
+                                      .textFieldfrmvisitTextController.text,
+                                  lastVisit: _model
+                                      .textFieldlastvisitTextController.text,
+                                  balance: 0.0,
+                                ));
+                                _model.custDoc =
+                                    PartyRecord.getDocumentFromData(
+                                        createPartyRecordData(
+                                          name: _model
+                                              .textFieldnameTextController.text,
+                                          mobile: _model
+                                              .textFieldmobTextController.text,
+                                          alternateNumber: _model
+                                              .textFieldaltmobTextController
+                                              .text,
+                                          email: _model
+                                              .textFieldemailTextController
+                                              .text,
+                                          refName: _model
+                                              .textFieldrefnameTextController
+                                              .text,
+                                          adharCardNo: _model
+                                              .textFieldadharnoTextController
+                                              .text,
+                                          vehicleNo: _model
+                                              .textFieldvechnoTextController
+                                              .text,
+                                          panCardNo: _model
+                                              .textFieldpannoTextController
+                                              .text,
+                                          gstNo: _model
+                                              .textFieldgstnoTextController
+                                              .text,
+                                          address: _model
+                                              .textFieldaddressTextController
+                                              .text,
+                                          proofOfIdentity:
+                                              _model.dropDownproofValue,
+                                          creditLimit: int.tryParse(_model
+                                              .textFieldcredliTextController
+                                              .text),
+                                          oldBalance: valueOrDefault<int>(
+                                            int.tryParse(_model
+                                                .textFieldoldbalTextController
+                                                .text),
+                                            0,
+                                          ),
+                                          birthday: _model
+                                              .textFieldbdateTextController
+                                              .text,
+                                          anniversary: _model
+                                              .textFieldanniveTextController
+                                              .text,
+                                          firmName: _model
+                                              .textFieldfirmnameTextController
+                                              .text,
+                                          familySize: int.tryParse(_model
+                                              .textFieldfamsizeTextController
+                                              .text),
+                                          city: _model
+                                              .textFieldcityTextController.text,
+                                          credit: _model.switchValue,
+                                          postalCode: _model
+                                              .textFieldpostlcodeTextController
+                                              .text,
+                                          extraDetails: _model
+                                              .textFieldextdetTextController
+                                              .text,
+                                          gender: _model.dropDowngenderValue,
+                                          role: 'CUSTOMER',
+                                          type: _model.dropDowntypeValue,
+                                          firstVisit: _model
+                                              .textFieldfrmvisitTextController
+                                              .text,
+                                          lastVisit: _model
+                                              .textFieldlastvisitTextController
+                                              .text,
+                                          balance: 0.0,
+                                        ),
+                                        partyRecordReference);
+                                _shouldSetState = true;
 
-                              await _model.custDoc!.reference
-                                  .update(createPartyRecordData(
-                                id: _model.custDoc?.reference.id,
-                              ));
-                              FFAppState().setCustName = _model.custDoc!.name;
-                              FFAppState().setCustMobNo =
-                                  _model.custDoc!.mobile;
-                              FFAppState().oldBalance =
-                                  _model.custDoc!.oldBalance;
-                              FFAppState().custCredit =
-                                  _model.custDoc!.creditLimit;
-                              _model.updatePage(() {});
-                              FFAppState().setCustRef =
-                                  _model.custDoc?.reference;
-                              FFAppState().isCustListShown = true;
-                              _model.updatePage(() {});
-                              safeSetState(() {
-                                _model.textFieldnameTextController?.clear();
-                                _model.textFieldmobTextController?.clear();
-                                _model.textFieldaltmobTextController?.clear();
-                                _model.textFieldemailTextController?.clear();
-                                _model.textFieldrefnameTextController?.clear();
-                                _model.textFieldvechnoTextController?.clear();
-                                _model.textFieldadharnoTextController?.clear();
-                                _model.textFieldgstnoTextController?.clear();
-                                _model.textFieldcredliTextController?.clear();
-                                _model.textFieldpannoTextController?.clear();
-                                _model.textFieldoldbalTextController?.clear();
-                                _model.textFieldanniveTextController?.clear();
-                                _model.textFieldbdateTextController?.clear();
-                                _model.textFieldextdetTextController?.clear();
-                                _model.textFieldfamsizeTextController?.clear();
-                                _model.textFieldfrmvisitTextController?.clear();
-                                _model.textFieldfirmnameTextController?.clear();
-                                _model.textFieldcityTextController?.clear();
-                                _model.textFieldlastvisitTextController
-                                    ?.clear();
-                                _model.textFieldaddressTextController?.clear();
-                                _model.textFieldpostlcodeTextController
-                                    ?.clear();
-                              });
-                              Navigator.pop(context);
+                                await _model.custDoc!.reference
+                                    .update(createPartyRecordData(
+                                  id: _model.custDoc?.reference.id,
+                                ));
+                                FFAppState().setCustName = _model.custDoc!.name;
+                                FFAppState().setCustMobNo =
+                                    _model.custDoc!.mobile;
+                                FFAppState().oldBalance =
+                                    _model.custDoc!.oldBalance;
+                                FFAppState().custCredit =
+                                    _model.custDoc!.creditLimit;
+                                _model.updatePage(() {});
+                                FFAppState().setCustRef =
+                                    _model.custDoc?.reference;
+                                FFAppState().isCustListShown = true;
+                                _model.updatePage(() {});
+                                safeSetState(() {
+                                  _model.textFieldnameTextController?.clear();
+                                  _model.textFieldmobTextController?.clear();
+                                  _model.textFieldaltmobTextController?.clear();
+                                  _model.textFieldemailTextController?.clear();
+                                  _model.textFieldrefnameTextController
+                                      ?.clear();
+                                  _model.textFieldvechnoTextController?.clear();
+                                  _model.textFieldadharnoTextController
+                                      ?.clear();
+                                  _model.textFieldgstnoTextController?.clear();
+                                  _model.textFieldcredliTextController?.clear();
+                                  _model.textFieldpannoTextController?.clear();
+                                  _model.textFieldoldbalTextController?.clear();
+                                  _model.textFieldanniveTextController?.clear();
+                                  _model.textFieldbdateTextController?.clear();
+                                  _model.textFieldextdetTextController?.clear();
+                                  _model.textFieldfamsizeTextController
+                                      ?.clear();
+                                  _model.textFieldfrmvisitTextController
+                                      ?.clear();
+                                  _model.textFieldfirmnameTextController
+                                      ?.clear();
+                                  _model.textFieldcityTextController?.clear();
+                                  _model.textFieldlastvisitTextController
+                                      ?.clear();
+                                  _model.textFieldaddressTextController
+                                      ?.clear();
+                                  _model.textFieldpostlcodeTextController
+                                      ?.clear();
+                                });
+                                Navigator.pop(context);
+                              }
                             } else {
                               if (_shouldSetState) safeSetState(() {});
                               return;

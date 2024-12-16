@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'add_customer_grocery_widget.dart' show AddCustomerGroceryWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -17,6 +18,8 @@ class AddCustomerGroceryModel
     extends FlutterFlowModel<AddCustomerGroceryWidget> {
   ///  State fields for stateful widgets in this component.
 
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  PartyRecord? docexist;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   PartyRecord? custDoc;
   // State field(s) for TextFieldname widget.

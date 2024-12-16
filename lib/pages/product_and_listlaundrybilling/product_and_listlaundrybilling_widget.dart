@@ -527,6 +527,13 @@ class _ProductAndListlaundrybillingWidgetState
                                                 size: 22.0,
                                               ),
                                               onPressed: () async {
+                                                if (scaffoldKey.currentState!
+                                                        .isDrawerOpen ||
+                                                    scaffoldKey.currentState!
+                                                        .isEndDrawerOpen) {
+                                                  Navigator.pop(context);
+                                                }
+
                                                 await showModalBottomSheet(
                                                   isScrollControlled: true,
                                                   backgroundColor:
