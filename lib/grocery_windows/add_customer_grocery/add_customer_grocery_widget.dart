@@ -186,8 +186,11 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                 proofOfIdentity: _model.dropDownproofValue,
                                 creditLimit: int.tryParse(
                                     _model.textFieldcredliTextController.text),
-                                oldBalance: int.tryParse(
-                                    _model.textFieldoldbalTextController.text),
+                                oldBalance: valueOrDefault<int>(
+                                  int.tryParse(_model
+                                      .textFieldoldbalTextController.text),
+                                  0,
+                                ),
                                 birthday:
                                     _model.textFieldbdateTextController.text,
                                 anniversary:
@@ -236,8 +239,11 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     proofOfIdentity: _model.dropDownproofValue,
                                     creditLimit: int.tryParse(_model
                                         .textFieldcredliTextController.text),
-                                    oldBalance: int.tryParse(_model
-                                        .textFieldoldbalTextController.text),
+                                    oldBalance: valueOrDefault<int>(
+                                      int.tryParse(_model
+                                          .textFieldoldbalTextController.text),
+                                      0,
+                                    ),
                                     birthday: _model
                                         .textFieldbdateTextController.text,
                                     anniversary: _model
