@@ -62,6 +62,7 @@ class _AppsettingWidgetState extends State<AppsettingWidget> {
                 value: _model.switchListTilecheckInOutValue,
                 display: widget!.struct?.display,
                 isDeleted: widget!.struct?.isDeleted,
+                settingType: widget!.struct?.settingType,
               ),
               widget!.alldoc!.toList(),
             );
@@ -77,6 +78,7 @@ class _AppsettingWidgetState extends State<AppsettingWidget> {
                 value: _model.switchListTilecheckInOutValue,
                 display: widget!.struct?.display,
                 isDeleted: widget!.struct?.isDeleted,
+                settingType: widget!.struct?.settingType,
               ),
               widget!.alldoc!.toList(),
             );

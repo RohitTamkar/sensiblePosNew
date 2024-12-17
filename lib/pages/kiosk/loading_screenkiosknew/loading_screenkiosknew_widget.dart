@@ -80,10 +80,6 @@ class _LoadingScreenkiosknewWidgetState
       ).then((s) => s.firstOrNull);
       _model.taxcollection = await queryTaxMasterRecordOnce();
       _model.masterAppsetting = await queryAppSettingsMasterRecordOnce();
-      _model.returnAppsettiing = await actions.returnAppsetting(
-        _model.masterAppsetting!.toList(),
-        FFAppState().appSettings.toList(),
-      );
       FFAppState().shiftexist = valueOrDefault<String>(
         getJsonField(
           widget!.shiftDoc,
@@ -121,6 +117,11 @@ class _LoadingScreenkiosknewWidgetState
           ),
         });
       } else {
+        _model.returnAppsettiing = await actions.returnAppsetting(
+          _model.masterAppsetting!.toList(),
+          FFAppState().appSettings.toList(),
+        );
+
         var appSettingsRecordReference =
             AppSettingsRecord.createDoc(FFAppState().outletIdRef!);
         await appSettingsRecordReference.set({

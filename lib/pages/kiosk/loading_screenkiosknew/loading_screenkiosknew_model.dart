@@ -29,12 +29,12 @@ class LoadingScreenkiosknewModel
   List<TaxMasterRecord>? taxcollection;
   // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenkiosknew widget.
   List<AppSettingsMasterRecord>? masterAppsetting;
-  // Stores action output result for [Custom Action - returnAppsetting] action in loadingScreenkiosknew widget.
-  List<AppSettingsStruct>? returnAppsettiing;
   // Stores action output result for [Custom Action - shiftkiosknew] action in loadingScreenkiosknew widget.
   bool? shiftboolean;
   // Stores action output result for [Custom Action - returnAppsetting] action in loadingScreenkiosknew widget.
   List<AppSettingsStruct>? returnAppsettiing2;
+  // Stores action output result for [Custom Action - returnAppsetting] action in loadingScreenkiosknew widget.
+  List<AppSettingsStruct>? returnAppsettiing;
   // Stores action output result for [Backend Call - Create Document] action in loadingScreenkiosknew widget.
   AppSettingsRecord? doc;
   // Stores action output result for [Backend Call - Create Document] action in loadingScreenkiosknew widget.
