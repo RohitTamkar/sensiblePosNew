@@ -205,6 +205,10 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                                 final settinglist =
                                                     containerMainAppSettingsRecord
                                                             ?.settingList
+                                                            ?.where((e) =>
+                                                                e.settingType ==
+                                                                'REGULAR')
+                                                            .toList()
                                                             ?.toList() ??
                                                         [];
 
