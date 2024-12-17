@@ -1607,20 +1607,29 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                           8.0),
                                                 ),
                                               ),
-                                              Container(
-                                                width: 100.0,
-                                                height: 100.0,
-                                                child: custom_widgets
-                                                    .PdLedCustomerdisplay(
+                                              if (productAndListNewAppSettingsRecord
+                                                      ?.settingList
+                                                      ?.where((e) =>
+                                                          e.title ==
+                                                          'enableLedDisplay')
+                                                      .toList()
+                                                      ?.firstOrNull
+                                                      ?.value ??
+                                                  true)
+                                                Container(
                                                   width: 100.0,
                                                   height: 100.0,
-                                                  amount: FFAppState()
-                                                      .finalAmt
-                                                      .toString(),
-                                                  displayString: 'TOKEN',
-                                                  port: 'COM2',
+                                                  child: custom_widgets
+                                                      .PdLedCustomerdisplay(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    amount: FFAppState()
+                                                        .finalAmt
+                                                        .toString(),
+                                                    displayString: 'TOKEN',
+                                                    port: 'COM2',
+                                                  ),
                                                 ),
-                                              ),
                                             ],
                                           ),
                                         ),

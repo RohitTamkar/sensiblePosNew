@@ -153,7 +153,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                       size: 26.0,
                                     ),
                                     onPressed: () async {
-                                      context.safePop();
+                                      context.pop();
                                     },
                                   ),
                                   Text(

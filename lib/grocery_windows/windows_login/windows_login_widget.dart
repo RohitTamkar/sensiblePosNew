@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/instant_timer.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -47,7 +48,13 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
       _model.platform = await actions.checkPlatform(
         isWeb.toString(),
       );
-      await actions.savelogstoStorage();
+      _model.instantTimer = InstantTimer.periodic(
+        duration: Duration(milliseconds: 2000),
+        callback: (timer) async {
+          await actions.savelogstoStorage();
+        },
+        startImmediately: true,
+      );
     });
 
     _model.textController1 ??= TextEditingController();
