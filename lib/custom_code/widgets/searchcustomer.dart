@@ -58,7 +58,7 @@ class _SearchcustomerState extends State<Searchcustomer> {
                 focusNode: _focusNode,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
-                  hintText: 'Search by name or mobile number...',
+                  hintText: 'Search Customer by name or mobile number...',
                 ),
                 onSubmitted: (value) {
                   _selectCustomer(value);
@@ -77,6 +77,7 @@ class _SearchcustomerState extends State<Searchcustomer> {
               },
               onSuggestionSelected: (PartyRecord selectedCustomer) {
                 _selectCustomer(selectedCustomer.name);
+                _custNameController.clear();
               },
             ),
           ),
