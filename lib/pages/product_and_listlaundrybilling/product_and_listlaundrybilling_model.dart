@@ -99,9 +99,6 @@ class ProductAndListlaundrybillingModel
   List<ProductStructStruct>? prdhive2refresh;
   // Stores action output result for [Custom Action - getCategorylistHive] action in Button widget.
   List<CategoryStructStruct>? catlistrefresh;
-  // State field(s) for DropDownCustomer widget.
-  String? dropDownCustomerValue;
-  FormFieldController<String>? dropDownCustomerValueController;
   // State field(s) for ListView widget.
   ScrollController? listViewController1;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in Container widget.
