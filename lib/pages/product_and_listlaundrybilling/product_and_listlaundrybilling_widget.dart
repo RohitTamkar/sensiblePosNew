@@ -1863,6 +1863,8 @@ class _ProductAndListlaundrybillingWidgetState
                                                         .Searchcustomer(
                                                       width: 750.0,
                                                       height: 50.0,
+                                                      customer:
+                                                          containerPartyRecordList,
                                                     ),
                                                   ),
                                                 ],
