@@ -26,27 +26,15 @@ import 'package:flutter/scheduler.dart';
 
 class Searchcustomer extends StatefulWidget {
   const Searchcustomer({
-    Key? key,
+    super.key,
     this.width,
     this.height,
-    required this.document,
-    required this.billno,
-    required this.billnum,
-    required this.disAmt,
-    required this.delChargs,
-    required this.taxcollection,
-    required this.appSettingsRecord,
-  }) : super(key: key);
+    required this.customer,
+  });
 
   final double? width;
   final double? height;
-  final List<ProductStructStruct> document;
-  final int billno;
-  final String billnum;
-  final double disAmt;
-  final double delChargs;
-  final List<TaxMasterRecord> taxcollection;
-  final AppSettingsRecord appSettingsRecord;
+  final List<PartyRecord> customer;
 
   @override
   _SearchcustomerState createState() => _SearchcustomerState();

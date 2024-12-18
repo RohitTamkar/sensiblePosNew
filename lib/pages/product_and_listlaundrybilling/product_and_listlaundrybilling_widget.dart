@@ -1800,33 +1800,75 @@ class _ProductAndListlaundrybillingWidgetState
                                       ),
                                       Expanded(
                                         flex: 19,
-                                        child: Container(
-                                          width: 100.0,
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              0.08,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4.0,
-                                                color: Color(0x32000000),
-                                                offset: Offset(
-                                                  0.0,
-                                                  2.0,
+                                        child: StreamBuilder<List<PartyRecord>>(
+                                          stream: queryPartyRecord(
+                                            parent: FFAppState().outletIdRef,
+                                            queryBuilder: (partyRecord) =>
+                                                partyRecord.where(
+                                              'type',
+                                              isEqualTo: 'Customer',
+                                            ),
+                                          ),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 40.0,
+                                                  height: 40.0,
+                                                  child: SpinKitFadingCircle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    size: 40.0,
+                                                  ),
                                                 ),
-                                              )
-                                            ],
-                                          ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [],
-                                          ),
+                                              );
+                                            }
+                                            List<PartyRecord>
+                                                containerPartyRecordList =
+                                                snapshot.data!;
+
+                                            return Container(
+                                              width: 100.0,
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.08,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    blurRadius: 4.0,
+                                                    color: Color(0x32000000),
+                                                    offset: Offset(
+                                                      0.0,
+                                                      2.0,
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Container(
+                                                    width: 750.0,
+                                                    height: 50.0,
+                                                    child: custom_widgets
+                                                        .Searchcustomer(
+                                                      width: 750.0,
+                                                      height: 50.0,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            );
+                                          },
                                         ),
                                       ),
                                     ],
