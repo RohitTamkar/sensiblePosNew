@@ -11,6 +11,7 @@ import '/grocery_windows/add_product_grocery/add_product_grocery_widget.dart';
 import '/grocery_windows/grocery/grocery_widget.dart';
 import '/grocery_windows/payment_mode_grocery/payment_mode_grocery_widget.dart';
 import 'dart:math';
+import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -645,46 +646,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                         ?.text =
                                                                     containerVarItem
                                                                         .name;
-                                                                _model
-                                                                    .custnameFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.custnameTextController
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .custnameTextController!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                               safeSetState(() {
                                                                 _model.custmobTextController
                                                                         ?.text =
                                                                     containerVarItem
                                                                         .mobile;
-                                                                _model
-                                                                    .custmobFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.custmobTextController
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .custmobTextController!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                               Navigator.pop(
                                                                   context);
@@ -968,23 +935,6 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                           ?.text =
                                                                       listItem
                                                                           .name;
-                                                                  _model
-                                                                      .custnameFocusNode
-                                                                      ?.requestFocus();
-                                                                  WidgetsBinding
-                                                                      .instance
-                                                                      .addPostFrameCallback(
-                                                                          (_) {
-                                                                    _model.custnameTextController
-                                                                            ?.selection =
-                                                                        TextSelection
-                                                                            .collapsed(
-                                                                      offset: _model
-                                                                          .custnameTextController!
-                                                                          .text
-                                                                          .length,
-                                                                    );
-                                                                  });
                                                                 });
                                                                 safeSetState(
                                                                     () {
@@ -992,23 +942,6 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                           ?.text =
                                                                       listItem
                                                                           .mobile;
-                                                                  _model
-                                                                      .custmobFocusNode
-                                                                      ?.requestFocus();
-                                                                  WidgetsBinding
-                                                                      .instance
-                                                                      .addPostFrameCallback(
-                                                                          (_) {
-                                                                    _model.custmobTextController
-                                                                            ?.selection =
-                                                                        TextSelection
-                                                                            .collapsed(
-                                                                      offset: _model
-                                                                          .custmobTextController!
-                                                                          .text
-                                                                          .length,
-                                                                    );
-                                                                  });
                                                                 });
                                                                 Navigator.pop(
                                                                     context);

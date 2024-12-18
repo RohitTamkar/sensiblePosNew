@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
@@ -76,12 +77,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
       safeSetState(() {});
       safeSetState(() {
         _model.textController1?.text = _model.amount!;
-        _model.textFieldFocusNode?.requestFocus();
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          _model.textController1?.selection = TextSelection.collapsed(
-            offset: _model.textController1!.text.length,
-          );
-        });
       });
     });
 
@@ -610,23 +605,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         ?.text =
                                                                     _model
                                                                         .amount!;
-                                                                _model
-                                                                    .textFieldFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textController1
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                             },
                                                             text: FFLocalizations
@@ -697,23 +675,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         ?.text =
                                                                     _model
                                                                         .amount!;
-                                                                _model
-                                                                    .textFieldFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textController1
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                             },
                                                             text: FFLocalizations
@@ -784,23 +745,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         ?.text =
                                                                     _model
                                                                         .amount!;
-                                                                _model
-                                                                    .textFieldFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textController1
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                             },
                                                             text: FFLocalizations
@@ -881,23 +825,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         ?.text =
                                                                     _model
                                                                         .amount!;
-                                                                _model
-                                                                    .textFieldFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textController1
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                             },
                                                             text: FFLocalizations
@@ -968,23 +895,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         ?.text =
                                                                     _model
                                                                         .amount!;
-                                                                _model
-                                                                    .textFieldFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textController1
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                             },
                                                             text: FFLocalizations
@@ -1055,23 +965,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         ?.text =
                                                                     _model
                                                                         .amount!;
-                                                                _model
-                                                                    .textFieldFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textController1
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                             },
                                                             text: FFLocalizations
@@ -1152,23 +1045,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         ?.text =
                                                                     _model
                                                                         .amount!;
-                                                                _model
-                                                                    .textFieldFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textController1
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                             },
                                                             text: FFLocalizations
@@ -1239,23 +1115,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         ?.text =
                                                                     _model
                                                                         .amount!;
-                                                                _model
-                                                                    .textFieldFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textController1
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                             },
                                                             text: FFLocalizations
@@ -1326,23 +1185,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         ?.text =
                                                                     _model
                                                                         .amount!;
-                                                                _model
-                                                                    .textFieldFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textController1
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                             },
                                                             text: FFLocalizations
@@ -1423,23 +1265,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         ?.text =
                                                                     _model
                                                                         .amount!;
-                                                                _model
-                                                                    .textFieldFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textController1
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                             },
                                                             text: FFLocalizations
@@ -1512,23 +1337,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         ?.text =
                                                                     _model
                                                                         .amount!;
-                                                                _model
-                                                                    .textFieldFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textController1
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                             },
                                                             text: FFLocalizations
@@ -1728,23 +1536,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         ?.text =
                                                                     _model
                                                                         .amount!;
-                                                                _model
-                                                                    .textFieldFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textController1
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                             },
                                                             text: '',
@@ -1839,23 +1630,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         ?.text =
                                                                     _model
                                                                         .amount!;
-                                                                _model
-                                                                    .textFieldFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textController1
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textController1!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
 
                                                               safeSetState(
@@ -2518,23 +2292,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                     FFAppState()
                                                                         .disAmtPay
                                                                         .toString();
-                                                                _model
-                                                                    .textFielddisamtFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textFielddisamtTextController
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textFielddisamtTextController!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
                                                               });
                                                             },
                                                             autofocus: false,
@@ -2800,23 +2557,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                   FFAppState()
                                                                       .disPer
                                                                       .toString();
-                                                              _model
-                                                                  .textFielddisperFocusNode
-                                                                  ?.requestFocus();
-                                                              WidgetsBinding
-                                                                  .instance
-                                                                  .addPostFrameCallback(
-                                                                      (_) {
-                                                                _model.textFielddisperTextController
-                                                                        ?.selection =
-                                                                    TextSelection
-                                                                        .collapsed(
-                                                                  offset: _model
-                                                                      .textFielddisperTextController!
-                                                                      .text
-                                                                      .length,
-                                                                );
-                                                              });
                                                             });
                                                           },
                                                           autofocus: false,

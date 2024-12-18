@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
@@ -66,21 +67,9 @@ class _ProductCartListComplaundryWidgetState
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       safeSetState(() {
         _model.textController1?.text = widget!.parameter2!.toString();
-        _model.textFieldFocusNode?.requestFocus();
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          _model.textController1?.selection = TextSelection.collapsed(
-            offset: _model.textController1!.text.length,
-          );
-        });
       });
       safeSetState(() {
         _model.productQtyTextController?.text = widget!.parameter8!.toString();
-        _model.productQtyFocusNode?.requestFocus();
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          _model.productQtyTextController?.selection = TextSelection.collapsed(
-            offset: _model.productQtyTextController!.text.length,
-          );
-        });
       });
 
       _model.updatePage(() {});

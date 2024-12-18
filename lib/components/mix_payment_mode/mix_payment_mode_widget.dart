@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -219,20 +220,6 @@ class _MixPaymentModeWidgetState extends State<MixPaymentModeWidget> {
                                                               .paymode1TextController
                                                               .text))
                                                       .toString();
-                                                  _model.paymode2FocusNode
-                                                      ?.requestFocus();
-                                                  WidgetsBinding.instance
-                                                      .addPostFrameCallback(
-                                                          (_) {
-                                                    _model.paymode2TextController
-                                                            ?.selection =
-                                                        TextSelection.collapsed(
-                                                      offset: _model
-                                                          .paymode2TextController!
-                                                          .text
-                                                          .length,
-                                                    );
-                                                  });
                                                 });
                                               },
                                             ),
@@ -424,20 +411,6 @@ class _MixPaymentModeWidgetState extends State<MixPaymentModeWidget> {
                                                               .paymode2TextController
                                                               .text))
                                                       .toString();
-                                                  _model.paymode1FocusNode
-                                                      ?.requestFocus();
-                                                  WidgetsBinding.instance
-                                                      .addPostFrameCallback(
-                                                          (_) {
-                                                    _model.paymode1TextController
-                                                            ?.selection =
-                                                        TextSelection.collapsed(
-                                                      offset: _model
-                                                          .paymode1TextController!
-                                                          .text
-                                                          .length,
-                                                    );
-                                                  });
                                                 });
                                               },
                                             ),

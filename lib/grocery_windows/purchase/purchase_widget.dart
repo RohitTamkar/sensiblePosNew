@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -711,39 +712,18 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                   widget!.jsonitem,
                   r'''$.acceptedQty''',
                 ).toString();
-                _model.textFieldaccqtyFocusNode?.requestFocus();
-                WidgetsBinding.instance.addPostFrameCallback((_) {
-                  _model.textFieldaccqtyTextController?.selection =
-                      TextSelection.collapsed(
-                    offset: _model.textFieldaccqtyTextController!.text.length,
-                  );
-                });
               });
               safeSetState(() {
                 _model.textFieldrejqtyTextController?.text = getJsonField(
                   widget!.jsonitem,
                   r'''$.rejectedQty''',
                 ).toString();
-                _model.textFieldrejqtyFocusNode?.requestFocus();
-                WidgetsBinding.instance.addPostFrameCallback((_) {
-                  _model.textFieldrejqtyTextController?.selection =
-                      TextSelection.collapsed(
-                    offset: _model.textFieldrejqtyTextController!.text.length,
-                  );
-                });
               });
               safeSetState(() {
                 _model.textFieldnoteTextController?.text = getJsonField(
                   widget!.jsonitem,
                   r'''$.note''',
                 ).toString();
-                _model.textFieldnoteFocusNode?.requestFocus();
-                WidgetsBinding.instance.addPostFrameCallback((_) {
-                  _model.textFieldnoteTextController?.selection =
-                      TextSelection.collapsed(
-                    offset: _model.textFieldnoteTextController!.text.length,
-                  );
-                });
               });
             },
             child: Container(

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:math';
+import 'dart:ui';
 import 'kiosk_choose_payment_mode_widget.dart'
     show KioskChoosePaymentModeWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';

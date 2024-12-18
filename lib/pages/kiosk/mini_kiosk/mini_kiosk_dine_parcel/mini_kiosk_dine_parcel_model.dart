@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
+import 'dart:ui';
 import 'dart:math' as math;
 import 'mini_kiosk_dine_parcel_widget.dart' show MiniKioskDineParcelWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
