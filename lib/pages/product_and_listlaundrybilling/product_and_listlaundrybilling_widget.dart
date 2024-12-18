@@ -827,8 +827,8 @@ class _ProductAndListlaundrybillingWidgetState
                                             parent: FFAppState().outletIdRef,
                                             queryBuilder: (partyRecord) =>
                                                 partyRecord.where(
-                                              'type',
-                                              isEqualTo: 'Customer',
+                                              'role',
+                                              isEqualTo: 'CUSTOMER',
                                             ),
                                           ),
                                           builder: (context, snapshot) {
