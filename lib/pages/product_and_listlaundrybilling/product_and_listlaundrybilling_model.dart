@@ -23,7 +23,6 @@ import 'product_and_listlaundrybilling_widget.dart'
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -31,7 +30,6 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:text_search/text_search.dart';
 
 class ProductAndListlaundrybillingModel
     extends FlutterFlowModel<ProductAndListlaundrybillingWidget> {
@@ -219,16 +217,6 @@ class ProductAndListlaundrybillingModel
   ProductStructStruct? productupdated2;
   // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
   List<ProductStructStruct>? newupdatedproductlist22;
-  // State field(s) for TextFieldsearch widget.
-  FocusNode? textFieldsearchFocusNode;
-  TextEditingController? textFieldsearchTextController;
-  String? Function(BuildContext, String?)?
-      textFieldsearchTextControllerValidator;
-  List<PartyRecord> simpleSearchResults = [];
-  // State field(s) for CustListView widget.
-  ScrollController? custListView;
-  // State field(s) for SearchListView widget.
-  ScrollController? searchListView;
 
   @override
   void initState(BuildContext context) {
@@ -239,8 +227,6 @@ class ProductAndListlaundrybillingModel
     listViewprd = ScrollController();
     productCartListComplaundryModels =
         FlutterFlowDynamicModels(() => ProductCartListComplaundryModel());
-    custListView = ScrollController();
-    searchListView = ScrollController();
   }
 
   @override
@@ -251,10 +237,5 @@ class ProductAndListlaundrybillingModel
     gridViewController?.dispose();
     listViewprd?.dispose();
     productCartListComplaundryModels.dispose();
-    textFieldsearchFocusNode?.dispose();
-    textFieldsearchTextController?.dispose();
-
-    custListView?.dispose();
-    searchListView?.dispose();
   }
 }

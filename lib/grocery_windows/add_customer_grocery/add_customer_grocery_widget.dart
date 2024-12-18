@@ -20,9 +20,11 @@ class AddCustomerGroceryWidget extends StatefulWidget {
   const AddCustomerGroceryWidget({
     super.key,
     this.custref,
+    this.appsetting,
   });
 
   final DocumentReference? custref;
+  final AppSettingsRecord? appsetting;
 
   @override
   State<AddCustomerGroceryWidget> createState() =>
@@ -255,7 +257,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                       _model.textFieldextdetTextController.text,
                                   gender: _model.dropDowngenderValue,
                                   role: 'CUSTOMER',
-                                  type: _model.dropDowntypeValue,
+                                  type: 'Customer',
                                   firstVisit: _model
                                       .textFieldfrmvisitTextController.text,
                                   lastVisit: _model
@@ -327,7 +329,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                               .text,
                                           gender: _model.dropDowngenderValue,
                                           role: 'CUSTOMER',
-                                          type: _model.dropDowntypeValue,
+                                          type: 'Customer',
                                           firstVisit: _model
                                               .textFieldfrmvisitTextController
                                               .text,
