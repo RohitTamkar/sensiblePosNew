@@ -59,6 +59,41 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
       FFAppState().shiftexist = 'True';
       safeSetState(() {});
       if (!FFAppState().isBillPrinted) {
+        _model.invoicecount = await queryInvoiceRecordOnce(
+          parent: FFAppState().outletIdRef,
+          queryBuilder: (invoiceRecord) =>
+              invoiceRecord.orderBy('invoiceDate', descending: true),
+          singleRecord: true,
+        ).then((s) => s.firstOrNull);
+        if (widget!.appsetting!.settingList
+            .where((e) => e.title == 'resetserialNoDaily')
+            .toList()
+            .firstOrNull!
+            .value) {
+          if ((_model.invoicecount?.count != null) &&
+              (_model.invoicecount?.shiftId ==
+                  getJsonField(
+                    widget!.shiftdetails,
+                    r'''$.shiftId''',
+                  ).toString().toString())) {
+            FFAppState().count = _model.invoicecount!.count;
+            safeSetState(() {});
+          } else {
+            FFAppState().count = 100;
+            safeSetState(() {});
+          }
+        } else {
+          if (_model.invoicecount?.count != null) {
+            FFAppState().count = _model.invoicecount!.count;
+            safeSetState(() {});
+          } else {
+            FFAppState().count = 0;
+            safeSetState(() {});
+          }
+        }
+
+        FFAppState().count = FFAppState().count + 1;
+        safeSetState(() {});
         _model.prdListkiosk = await actions.filterProducts(
           FFAppState().selBill,
           FFAppState().allBillsList.toList(),

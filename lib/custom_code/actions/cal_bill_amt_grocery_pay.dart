@@ -42,7 +42,8 @@ Future<double> calBillAmtGroceryPay(
     billAmt += taxAmtPerItem;
   }
   FFAppState().finalAmt = billAmt.roundToDouble();
-
+  //FFAppState().disPer = disPer.toDouble();
+  FFAppState().disAmt = disAmt.toDouble();
   print(billAmt);
   return billAmt.roundToDouble();
 }

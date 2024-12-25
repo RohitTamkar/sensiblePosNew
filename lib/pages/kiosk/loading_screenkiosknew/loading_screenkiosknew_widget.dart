@@ -281,22 +281,6 @@ class _LoadingScreenkiosknewWidgetState
               invoiceRecord.orderBy('invoiceDate', descending: true),
           singleRecord: true,
         ).then((s) => s.firstOrNull);
-        if (_model.appsetting!.settingList
-            .where((e) => e.title == 'resetserialNoDaily')
-            .toList()
-            .firstOrNull!
-            .value) {
-          FFAppState().count = 100;
-          safeSetState(() {});
-        } else {
-          if (_model.invoicecount?.count != null) {
-            FFAppState().count = _model.invoicecount!.count;
-            safeSetState(() {});
-          } else {
-            FFAppState().count = 0;
-            safeSetState(() {});
-          }
-        }
 
         context.pushNamed(
           'KioskAdvertising',
@@ -363,37 +347,6 @@ class _LoadingScreenkiosknewWidgetState
               invoiceRecord.orderBy('invoiceDate', descending: true),
           singleRecord: true,
         ).then((s) => s.firstOrNull);
-        if (_model.appsetting2!.settingList
-            .where((e) => e.title == 'resetserialNoDaily')
-            .toList()
-            .firstOrNull!
-            .value) {
-          if ((_model.invoicecountshiftresumed?.count != null) &&
-              (_model.invoicecountshiftresumed?.shiftId ==
-                  getJsonField(
-                    _model.shiftDetailsNewresumed,
-                    r'''$.shiftId''',
-                  ).toString().toString())) {
-            FFAppState().count = _model.invoicecountshiftresumed!.count;
-            safeSetState(() {});
-          } else {
-            FFAppState().count = 100;
-            safeSetState(() {});
-          }
-        } else {
-          if ((_model.invoicecountshiftresumed?.count != null) &&
-              (_model.invoicecountshiftresumed?.shiftId ==
-                  getJsonField(
-                    _model.shiftDetailsNewresumed,
-                    r'''$.shiftId''',
-                  ).toString().toString())) {
-            FFAppState().count = _model.invoicecountshiftresumed!.count;
-            safeSetState(() {});
-          } else {
-            FFAppState().count = 0;
-            safeSetState(() {});
-          }
-        }
 
         context.pushNamed(
           'KioskAdvertising',

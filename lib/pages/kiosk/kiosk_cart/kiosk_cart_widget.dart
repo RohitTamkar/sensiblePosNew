@@ -1337,18 +1337,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                       if (getJsonField(
                                                         widget!.shiftdetails,
                                                         r'''$.shiftExists''',
-                                                      )) {
-                                                        FFAppState().count =
-                                                            FFAppState().count +
-                                                                1;
-                                                        safeSetState(() {});
-                                                      } else {
-                                                        FFAppState().count =
-                                                            FFAppState().count +
-                                                                1;
-                                                        safeSetState(() {});
-                                                      }
-
+                                                      )) {}
                                                       FFAppState().orderId =
                                                           FFAppState().orderId +
                                                               10;

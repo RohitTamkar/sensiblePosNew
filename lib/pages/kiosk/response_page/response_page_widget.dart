@@ -65,10 +65,45 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
       safeSetState(() {});
       if (!FFAppState().isBillPrinted) {
         if (widget!.doc!.status) {
+          _model.invoicecount = await queryInvoiceRecordOnce(
+            parent: FFAppState().outletIdRef,
+            queryBuilder: (invoiceRecord) =>
+                invoiceRecord.orderBy('invoiceDate', descending: true),
+            singleRecord: true,
+          ).then((s) => s.firstOrNull);
+          if (widget!.appsetting!.settingList
+              .where((e) => e.title == 'resetserialNoDaily')
+              .toList()
+              .firstOrNull!
+              .value) {
+            if ((_model.invoicecount?.count != null) &&
+                (_model.invoicecount?.shiftId ==
+                    getJsonField(
+                      widget!.shiftdetails,
+                      r'''$.shiftId''',
+                    ).toString().toString())) {
+              FFAppState().count = _model.invoicecount!.code;
+              safeSetState(() {});
+            } else {
+              FFAppState().count = 100;
+              safeSetState(() {});
+            }
+          } else {
+            if (_model.invoicecount?.count != null) {
+              FFAppState().count = _model.invoicecount!.count;
+              safeSetState(() {});
+            } else {
+              FFAppState().count = 0;
+              safeSetState(() {});
+            }
+          }
+
           _model.prdListkiosk = await actions.filterProducts(
             FFAppState().selBill,
             FFAppState().allBillsList.toList(),
           );
+          FFAppState().count = FFAppState().count + 1;
+          safeSetState(() {});
 
           var invoiceRecordReference =
               InvoiceRecord.createDoc(FFAppState().outletIdRef!);
