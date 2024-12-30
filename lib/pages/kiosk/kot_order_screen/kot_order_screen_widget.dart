@@ -49,6 +49,28 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
     });
 
     animationsMap.addAll({
+      'textOnPageLoadAnimation': AnimationInfo(
+        loop: true,
+        reverse: true,
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.2, 1.2),
+          ),
+          TintEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            color: FlutterFlowTheme.of(context).primary,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
       'iconButtonOnActionTriggerAnimation': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: true,
@@ -1388,6 +1410,46 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                           ),
                                                       ],
                                                     ),
+                                                    if (containerVarItem
+                                                                .source !=
+                                                            null &&
+                                                        containerVarItem
+                                                                .source !=
+                                                            '')
+                                                      Flexible(
+                                                        child: Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            containerVarItem
+                                                                .source,
+                                                            '.',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .warning,
+                                                                fontSize: 20.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontStyle:
+                                                                    FontStyle
+                                                                        .italic,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                        ).animateOnPageLoad(
+                                                            animationsMap[
+                                                                'textOnPageLoadAnimation']!),
+                                                      ),
                                                   ],
                                                 ),
                                               ),
