@@ -1097,8 +1097,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                       child: Container(
                                         width: 100.0,
                                         decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                          color: (containerVarItem.source !=
+                                                          null &&
+                                                      containerVarItem.source !=
+                                                          '') &&
+                                                  (containerVarItem.source ==
+                                                      'WEBAPP')
+                                              ? FlutterFlowTheme.of(context)
+                                                  .alternate
+                                              : FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
                                           borderRadius:
                                               BorderRadius.circular(15.0),
                                           border: Border.all(
@@ -1437,7 +1445,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .warning,
-                                                                fontSize: 20.0,
+                                                                fontSize: 15.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontStyle:
@@ -1544,9 +1552,21 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                               child: Container(
                                                 width: double.infinity,
                                                 decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
+                                                  color: (containerVarItem
+                                                                      .source !=
+                                                                  null &&
+                                                              containerVarItem
+                                                                      .source !=
+                                                                  '') &&
+                                                          (containerVarItem
+                                                                  .source ==
+                                                              'WEBAPP')
+                                                      ? FlutterFlowTheme.of(
+                                                              context)
+                                                          .alternate
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
                                                 ),
                                                 child: Column(
                                                   mainAxisSize:
@@ -1719,6 +1739,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.w800,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                   ),
                                                                             ),
