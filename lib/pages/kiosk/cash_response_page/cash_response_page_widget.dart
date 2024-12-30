@@ -137,6 +137,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
             orderType: FFAppState().orderType,
             kotStatus: 'PENDING',
             count: FFAppState().count,
+            source: 'KIOSK',
           ),
           ...mapToFirestore(
             {
@@ -182,6 +183,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
             orderType: FFAppState().orderType,
             kotStatus: 'PENDING',
             count: FFAppState().count,
+            source: 'KIOSK',
           ),
           ...mapToFirestore(
             {
