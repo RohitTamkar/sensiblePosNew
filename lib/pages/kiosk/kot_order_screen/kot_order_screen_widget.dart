@@ -1410,12 +1410,15 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                           ),
                                                       ],
                                                     ),
-                                                    if (containerVarItem
-                                                                .source !=
-                                                            null &&
-                                                        containerVarItem
-                                                                .source !=
-                                                            '')
+                                                    if ((containerVarItem
+                                                                    .source !=
+                                                                null &&
+                                                            containerVarItem
+                                                                    .source !=
+                                                                '') &&
+                                                        (containerVarItem
+                                                                .source ==
+                                                            'WEBAPP'))
                                                       Flexible(
                                                         child: Text(
                                                           valueOrDefault<
