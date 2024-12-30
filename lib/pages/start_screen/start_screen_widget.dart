@@ -282,6 +282,30 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
 
                               context.pushNamed('SplashScreenWindows');
                             },
+                            onLongPress: () async {
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.transparent,
+                                enableDrag: false,
+                                context: context,
+                                builder: (context) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      FocusScope.of(context).unfocus();
+                                      FocusManager.instance.primaryFocus
+                                          ?.unfocus();
+                                    },
+                                    child: Padding(
+                                      padding: MediaQuery.viewInsetsOf(context),
+                                      child: Container(
+                                        height: 300.0,
+                                        child: DirectorypathWidget(),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
+                            },
                             child: Material(
                               color: Colors.transparent,
                               elevation: 2.0,
