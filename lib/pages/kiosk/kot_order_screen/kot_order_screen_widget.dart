@@ -65,7 +65,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            color: FlutterFlowTheme.of(context).primary,
+            color: FlutterFlowTheme.of(context).info,
             begin: 0.0,
             end: 1.0,
           ),
@@ -1123,9 +1123,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                         (containerVarItem
                                                                 .source ==
                                                             'WEB ORDER')
-                                                    ? FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate
+                                                    ? Color(0x45E21C3D)
                                                     : Color(0xFF362E25),
                                                 borderRadius: BorderRadius.only(
                                                   bottomLeft:
@@ -1464,7 +1462,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                     .bodyMediumFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .warning,
+                                                                    .primary,
                                                                 fontSize: 13.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -1498,9 +1496,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                         (containerVarItem
                                                                 .source ==
                                                             'WEB ORDER')
-                                                    ? FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate
+                                                    ? Color(0x45E21C3D)
                                                     : Color(0xFF362E25),
                                                 borderRadius:
                                                     BorderRadius.circular(0.0),
