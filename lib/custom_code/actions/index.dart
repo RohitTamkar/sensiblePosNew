@@ -1,4 +1,5 @@
 export 'check_platform.dart' show checkPlatform;
+export 'cal_bill_amt2.dart' show calBillAmt2;
 export 'calculate_mixpaymentamt.dart' show calculateMixpaymentamt;
 export 'print_billnewhive.dart' show printBillnewhive;
 export 'laudry_add_custom_qty.dart' show laudryAddCustomQty;
@@ -11,6 +12,8 @@ export 'laundrycal_sub_total_for_hold_list.dart'
     show laundrycalSubTotalForHoldList;
 export 'laundry_print_billnewhive.dart' show laundryPrintBillnewhive;
 export 'laundry_add_to_hold_listprd.dart' show laundryAddToHoldListprd;
+export 'cal_sub_total_for_hold_listkiosk2.dart'
+    show calSubTotalForHoldListkiosk2;
 export 'laundryadd_to_hold_listprdplus.dart' show laundryaddToHoldListprdplus;
 export 'shift_detail_new.dart' show shiftDetailNew;
 export 'reduce_quantity_hold_list2.dart' show reduceQuantityHoldList2;

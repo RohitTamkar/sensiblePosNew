@@ -54,15 +54,15 @@ class KioskBillScreenModel extends FlutterFlowModel<KioskBillScreenWidget> {
   AppSettingsRecord? appsettingresfresh;
   // Stores action output result for [Custom Action - addToHoldListkioskGst] action in Container widget.
   List<dynamic>? result1;
-  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in Container widget.
+  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk2] action in Container widget.
   double? resp2;
-  // Stores action output result for [Custom Action - calBillAmt] action in Container widget.
+  // Stores action output result for [Custom Action - calBillAmt2] action in Container widget.
   double? res3;
   // Stores action output result for [Custom Action - addToHoldListkioskGst] action in Container widget.
   List<dynamic>? result4;
-  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in Container widget.
+  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk2] action in Container widget.
   double? res5;
-  // Stores action output result for [Custom Action - calBillAmt] action in Container widget.
+  // Stores action output result for [Custom Action - calBillAmt2] action in Container widget.
   double? res6;
   // Stores action output result for [Custom Action - reduceQuantityHoldListkiosk] action in IconButton widget.
   List<dynamic>? resultkiosk;
@@ -72,9 +72,9 @@ class KioskBillScreenModel extends FlutterFlowModel<KioskBillScreenWidget> {
   double? reu34;
   // Stores action output result for [Custom Action - plusQuantityHoldListkiosk] action in IconButton widget.
   List<dynamic>? kioskresult;
-  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in IconButton widget.
+  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk2] action in IconButton widget.
   double? res234;
-  // Stores action output result for [Custom Action - calBillAmt] action in IconButton widget.
+  // Stores action output result for [Custom Action - calBillAmt2] action in IconButton widget.
   double? reuslt12;
   // Stores action output result for [Custom Action - connectDevice] action in Button widget.
   bool? connectdevice12;

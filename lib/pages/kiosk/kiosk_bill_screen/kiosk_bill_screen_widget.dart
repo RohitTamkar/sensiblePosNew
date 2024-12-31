@@ -1137,7 +1137,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                             _shouldSetState =
                                                                                 true;
                                                                             _model.resp2 =
-                                                                                await actions.calSubTotalForHoldListkiosk(
+                                                                                await actions.calSubTotalForHoldListkiosk2(
                                                                               valueOrDefault<String>(
                                                                                 FFAppState().selBill.toString(),
                                                                                 '1',
@@ -1151,7 +1151,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                             _shouldSetState =
                                                                                 true;
                                                                             _model.res3 =
-                                                                                await actions.calBillAmt(
+                                                                                await actions.calBillAmt2(
                                                                               FFAppState().disAmt,
                                                                               FFAppState().delCharges,
                                                                             );
@@ -1251,7 +1251,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                           _shouldSetState =
                                                                               true;
                                                                           _model.res5 =
-                                                                              await actions.calSubTotalForHoldListkiosk(
+                                                                              await actions.calSubTotalForHoldListkiosk2(
                                                                             valueOrDefault<String>(
                                                                               FFAppState().selBill.toString(),
                                                                               '1',
@@ -1265,7 +1265,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                           _shouldSetState =
                                                                               true;
                                                                           _model.res6 =
-                                                                              await actions.calBillAmt(
+                                                                              await actions.calBillAmt2(
                                                                             FFAppState().disAmt,
                                                                             FFAppState().delCharges,
                                                                           );
@@ -1533,7 +1533,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                   )),
                                                                                 );
                                                                                 _shouldSetState = true;
-                                                                                _model.res234 = await actions.calSubTotalForHoldListkiosk(
+                                                                                _model.res234 = await actions.calSubTotalForHoldListkiosk2(
                                                                                   valueOrDefault<String>(
                                                                                     FFAppState().selBill.toString(),
                                                                                     '1',
@@ -1545,7 +1545,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                   )),
                                                                                 );
                                                                                 _shouldSetState = true;
-                                                                                _model.reuslt12 = await actions.calBillAmt(
+                                                                                _model.reuslt12 = await actions.calBillAmt2(
                                                                                   valueOrDefault<double>(
                                                                                     FFAppState().disAmt,
                                                                                     0.0,
