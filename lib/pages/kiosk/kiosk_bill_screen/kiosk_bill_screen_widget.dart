@@ -1376,7 +1376,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                 size: 18.0,
                                                                               ),
                                                                               onPressed: () async {
-                                                                                if (FFAppState().qty > 0.0) {
+                                                                                if (FFAppState().qty > 1.0) {
                                                                                   FFAppState().qty = FFAppState().qty + -1.0;
                                                                                   safeSetState(() {});
                                                                                   _model.resultkiosk = await actions.reduceQuantityHoldListkiosk(
@@ -1420,6 +1420,45 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                     FFAppState().delCharges,
                                                                                     widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
                                                                                   );
+                                                                                } else {
+                                                                                  _model.res20Copy = await actions.removeHoldListItem(
+                                                                                    functions
+                                                                                        .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
+                                                                                        .where((e) =>
+                                                                                            kioskBillScreenVarItem.id ==
+                                                                                            valueOrDefault<String>(
+                                                                                              getJsonField(
+                                                                                                e,
+                                                                                                r'''$.id''',
+                                                                                              )?.toString(),
+                                                                                              '0',
+                                                                                            ))
+                                                                                        .toList()
+                                                                                        .firstOrNull!,
+                                                                                    FFAppState().selBill,
+                                                                                  );
+                                                                                  await actions.calSubTotalForHoldListkiosk2(
+                                                                                    FFAppState().selBill.toString(),
+                                                                                    FFAppState().allBillsList.toList(),
+                                                                                    functions.enabletaxinclusive(valueOrDefault<bool>(
+                                                                                      widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
+                                                                                      false,
+                                                                                    )),
+                                                                                    widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
+                                                                                  );
+                                                                                  _model.reuslt22Copy = await actions.calBillAmt2(
+                                                                                    valueOrDefault<double>(
+                                                                                      FFAppState().disAmt,
+                                                                                      0.0,
+                                                                                    ),
+                                                                                    valueOrDefault<double>(
+                                                                                      FFAppState().delCharges,
+                                                                                      0.0,
+                                                                                    ),
+                                                                                    widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
+                                                                                  );
+                                                                                  FFAppState().removeFromCartItem(kioskBillScreenVarItem.reference);
+                                                                                  safeSetState(() {});
                                                                                 }
 
                                                                                 safeSetState(() {});

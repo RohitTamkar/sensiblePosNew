@@ -70,6 +70,10 @@ class KioskBillScreenModel extends FlutterFlowModel<KioskBillScreenWidget> {
   double? res2345;
   // Stores action output result for [Custom Action - calBillAmt2] action in IconButton widget.
   double? reu34;
+  // Stores action output result for [Custom Action - removeHoldListItem] action in IconButton widget.
+  List<dynamic>? res20Copy;
+  // Stores action output result for [Custom Action - calBillAmt2] action in IconButton widget.
+  double? reuslt22Copy;
   // Stores action output result for [Custom Action - plusQuantityHoldListkiosk] action in IconButton widget.
   List<dynamic>? kioskresult;
   // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk2] action in IconButton widget.
