@@ -1351,41 +1351,103 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                     ),
-                                    Row(
+                                    Column(
                                       mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 5.0, 0.0),
-                                          child: Icon(
-                                            Icons.shopping_cart_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            size: 24.0,
-                                          ),
-                                        ),
-                                        Text(
-                                          valueOrDefault<String>(
-                                            FFAppState().noOfItems.toString(),
-                                            '0',
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .displayLarge
-                                              .override(
-                                                fontFamily:
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                              child: Icon(
+                                                Icons.shopping_cart_rounded,
+                                                color:
                                                     FlutterFlowTheme.of(context)
-                                                        .displayLargeFamily,
-                                                fontSize: 24.0,
-                                                letterSpacing: 0.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .displayLargeFamily),
+                                                        .primaryText,
+                                                size: 24.0,
                                               ),
+                                            ),
+                                            Text(
+                                              valueOrDefault<String>(
+                                                FFAppState()
+                                                    .noOfItems
+                                                    .toString(),
+                                                '0',
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displayLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .displayLargeFamily,
+                                                        fontSize: 24.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displayLargeFamily),
+                                                      ),
+                                            ),
+                                          ],
                                         ),
+                                        if (FFAppState().delCharges > 0.0)
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'y8vf63g4' /* Parcel Charges:₹  */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .displayLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .displayLargeFamily,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .displayLargeFamily),
+                                                        ),
+                                              ),
+                                              Text(
+                                                FFAppState()
+                                                    .delCharges
+                                                    .toString(),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .displayLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .displayLargeFamily,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .displayLargeFamily),
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
                                       ],
                                     ),
                                     RichText(

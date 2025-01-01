@@ -16705,6 +16705,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'y8vf63g4': {
+      'en': 'Parcel Charges:₹ ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     '9dk0mden': {
       'en': '₹ ',
       'hi': '',
