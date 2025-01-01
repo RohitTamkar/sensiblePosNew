@@ -1678,6 +1678,63 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
+                          if (FFAppState().delCharges > 0.0)
+                            Flexible(
+                              child: RichText(
+                                textScaler: MediaQuery.of(context).textScaler,
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: FFLocalizations.of(context).getText(
+                                        'opsb36aw' /* ParcelCharges  */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .displayMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .displayMediumFamily,
+                                            fontSize: 12.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.normal,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .displayMediumFamily),
+                                          ),
+                                    ),
+                                    TextSpan(
+                                      text: FFAppState().delCharges.toString(),
+                                      style: FlutterFlowTheme.of(context)
+                                          .displayMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .displayMediumFamily,
+                                            fontSize: 15.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .displayMediumFamily),
+                                          ),
+                                    )
+                                  ],
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
+                                      ),
+                                ),
+                              ),
+                            ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
