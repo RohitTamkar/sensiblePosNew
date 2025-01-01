@@ -1425,8 +1425,8 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                         ),
                                               ),
                                               Text(
-                                                FFAppState()
-                                                    .delCharges
+                                                (FFAppState().delCharges *
+                                                        FFAppState().noOfItems)
                                                     .toString(),
                                                 style:
                                                     FlutterFlowTheme.of(context)
