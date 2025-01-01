@@ -1376,7 +1376,26 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                 size: 18.0,
                                                                               ),
                                                                               onPressed: () async {
-                                                                                if (FFAppState().qty > 1.0) {
+                                                                                if (FFAppState().qty <
+                                                                                    valueOrDefault<double>(
+                                                                                      getJsonField(
+                                                                                        functions
+                                                                                            .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
+                                                                                            .where((e) =>
+                                                                                                kioskBillScreenVarItem.id ==
+                                                                                                valueOrDefault<String>(
+                                                                                                  getJsonField(
+                                                                                                    e,
+                                                                                                    r'''$.id''',
+                                                                                                  )?.toString(),
+                                                                                                  '0',
+                                                                                                ))
+                                                                                            .toList()
+                                                                                            .firstOrNull,
+                                                                                        r'''$.quantity''',
+                                                                                      ),
+                                                                                      0.0,
+                                                                                    )) {
                                                                                   FFAppState().qty = FFAppState().qty + -1.0;
                                                                                   safeSetState(() {});
                                                                                   _model.resultkiosk = await actions.reduceQuantityHoldListkiosk(

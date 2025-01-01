@@ -2851,7 +2851,7 @@ class FFAppState extends ChangeNotifier {
     prefs.setBool('ff_barcodeSetting', value);
   }
 
-  double _qty = 0.0;
+  double _qty = 1.0;
   double get qty => _qty;
   set qty(double value) {
     _qty = value;
