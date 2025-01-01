@@ -1396,7 +1396,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                       false,
                                                                                     )),
                                                                                   );
-                                                                                  _model.res2345 = await actions.calSubTotalForHoldListkiosk(
+                                                                                  _model.res2345 = await actions.calSubTotalForHoldListkiosk2(
                                                                                     valueOrDefault<String>(
                                                                                       FFAppState().selBill.toString(),
                                                                                       '1',
@@ -1407,7 +1407,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                       false,
                                                                                     )),
                                                                                   );
-                                                                                  _model.reu34 = await actions.calBillAmt(
+                                                                                  _model.reu34 = await actions.calBillAmt2(
                                                                                     valueOrDefault<double>(
                                                                                       FFAppState().disAmt,
                                                                                       0.0,
