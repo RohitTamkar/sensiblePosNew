@@ -82,7 +82,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                       widget!.shiftdetails,
                       r'''$.shiftId''',
                     ).toString().toString())) {
-              FFAppState().count = _model.invoicecount!.count;
+              FFAppState().count = _model.invoicecount!.code;
               safeSetState(() {});
             } else {
               FFAppState().count = 100;
