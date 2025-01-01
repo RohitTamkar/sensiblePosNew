@@ -1636,7 +1636,6 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                 FFAppState().cartItem = [];
                                 FFAppState().isBillPrinted = true;
                                 FFAppState().noOfItems = 0;
-                                FFAppState().delCharges = 0.0;
                                 FFAppState().update(() {});
                               }
                             },
