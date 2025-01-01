@@ -265,12 +265,108 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                       containerFooterRecord!
                                                           .parcelCharges;
                                                   safeSetState(() {});
+                                                  _model.ddr4 = await actions
+                                                      .calSubTotalForHoldListkiosk2(
+                                                    FFAppState()
+                                                        .selBill
+                                                        .toString(),
+                                                    FFAppState()
+                                                        .allBillsList
+                                                        .toList(),
+                                                    functions
+                                                        .enabletaxinclusive(
+                                                            valueOrDefault<
+                                                                bool>(
+                                                      widget!.appsetting
+                                                          ?.settingList
+                                                          ?.where((e) =>
+                                                              e.title ==
+                                                              'enableInclusiveTax')
+                                                          .toList()
+                                                          ?.firstOrNull
+                                                          ?.value,
+                                                      false,
+                                                    )),
+                                                    widget!
+                                                        .appsetting!.settingList
+                                                        .where((e) =>
+                                                            e.title ==
+                                                            'qtyWiseParcelCharges')
+                                                        .toList()
+                                                        .firstOrNull!
+                                                        .value,
+                                                  );
+                                                  _model.reusltddr =
+                                                      await actions.calBillAmt2(
+                                                    valueOrDefault<double>(
+                                                      FFAppState().disAmt,
+                                                      0.0,
+                                                    ),
+                                                    FFAppState().delCharges,
+                                                    widget!
+                                                        .appsetting!.settingList
+                                                        .where((e) =>
+                                                            e.title ==
+                                                            'qtyWiseParcelCharges')
+                                                        .toList()
+                                                        .firstOrNull!
+                                                        .value,
+                                                  );
                                                 } else {
                                                   FFAppState().orderType =
                                                       _model.choiceChipsValue!;
                                                   FFAppState().delCharges = 0.0;
                                                   safeSetState(() {});
+                                                  _model.ddr45 = await actions
+                                                      .calSubTotalForHoldListkiosk2(
+                                                    FFAppState()
+                                                        .selBill
+                                                        .toString(),
+                                                    FFAppState()
+                                                        .allBillsList
+                                                        .toList(),
+                                                    functions
+                                                        .enabletaxinclusive(
+                                                            valueOrDefault<
+                                                                bool>(
+                                                      widget!.appsetting
+                                                          ?.settingList
+                                                          ?.where((e) =>
+                                                              e.title ==
+                                                              'enableInclusiveTax')
+                                                          .toList()
+                                                          ?.firstOrNull
+                                                          ?.value,
+                                                      false,
+                                                    )),
+                                                    widget!
+                                                        .appsetting!.settingList
+                                                        .where((e) =>
+                                                            e.title ==
+                                                            'qtyWiseParcelCharges')
+                                                        .toList()
+                                                        .firstOrNull!
+                                                        .value,
+                                                  );
+                                                  _model.reusltddr67 =
+                                                      await actions.calBillAmt2(
+                                                    valueOrDefault<double>(
+                                                      FFAppState().disAmt,
+                                                      0.0,
+                                                    ),
+                                                    FFAppState().delCharges,
+                                                    widget!
+                                                        .appsetting!.settingList
+                                                        .where((e) =>
+                                                            e.title ==
+                                                            'qtyWiseParcelCharges')
+                                                        .toList()
+                                                        .firstOrNull!
+                                                        .value,
+                                                  );
                                                 }
+
+                                                safeSetState(() {});
                                               },
                                               selectedChipStyle: ChipStyle(
                                                 backgroundColor:
@@ -665,7 +761,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                           false,
                                                                                         )),
                                                                                       );
-                                                                                      _model.res2345 = await actions.calSubTotalForHoldListkiosk(
+                                                                                      _model.res2345 = await actions.calSubTotalForHoldListkiosk2(
                                                                                         valueOrDefault<String>(
                                                                                           FFAppState().selBill.toString(),
                                                                                           '1',
@@ -675,24 +771,16 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                           widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                           false,
                                                                                         )),
+                                                                                        widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
                                                                                       );
-                                                                                      if (widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value) {
-                                                                                        _model.reu345 = await actions.calBillAmt(
-                                                                                          valueOrDefault<double>(
-                                                                                            FFAppState().disAmt,
-                                                                                            0.0,
-                                                                                          ),
-                                                                                          FFAppState().delCharges,
-                                                                                        );
-                                                                                      } else {
-                                                                                        _model.reu34 = await actions.calBillAmt(
-                                                                                          valueOrDefault<double>(
-                                                                                            FFAppState().disAmt,
-                                                                                            0.0,
-                                                                                          ),
-                                                                                          FFAppState().delCharges,
-                                                                                        );
-                                                                                      }
+                                                                                      _model.reu34 = await actions.calBillAmt2(
+                                                                                        valueOrDefault<double>(
+                                                                                          FFAppState().disAmt,
+                                                                                          0.0,
+                                                                                        ),
+                                                                                        FFAppState().delCharges,
+                                                                                        widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
+                                                                                      );
 
                                                                                       safeSetState(() {});
                                                                                     },
@@ -774,7 +862,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                         )),
                                                                                       );
                                                                                       _shouldSetState = true;
-                                                                                      _model.res23456 = await actions.calSubTotalForHoldListkiosk(
+                                                                                      _model.res23456 = await actions.calSubTotalForHoldListkiosk2(
                                                                                         valueOrDefault<String>(
                                                                                           FFAppState().selBill.toString(),
                                                                                           '1',
@@ -784,28 +872,18 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                           widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                           false,
                                                                                         )),
+                                                                                        widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
                                                                                       );
                                                                                       _shouldSetState = true;
-                                                                                      if (widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value) {
-                                                                                        _model.reuslt12 = await actions.calBillAmt(
-                                                                                          valueOrDefault<double>(
-                                                                                            FFAppState().disAmt,
-                                                                                            0.0,
-                                                                                          ),
-                                                                                          FFAppState().delCharges,
-                                                                                        );
-                                                                                        _shouldSetState = true;
-                                                                                      } else {
-                                                                                        _model.reuslt123 = await actions.calBillAmt(
-                                                                                          valueOrDefault<double>(
-                                                                                            FFAppState().disAmt,
-                                                                                            0.0,
-                                                                                          ),
-                                                                                          FFAppState().delCharges,
-                                                                                        );
-                                                                                        _shouldSetState = true;
-                                                                                      }
-
+                                                                                      _model.reuslt123 = await actions.calBillAmt2(
+                                                                                        valueOrDefault<double>(
+                                                                                          FFAppState().disAmt,
+                                                                                          0.0,
+                                                                                        ),
+                                                                                        FFAppState().delCharges,
+                                                                                        widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
+                                                                                      );
+                                                                                      _shouldSetState = true;
                                                                                       if (_shouldSetState) safeSetState(() {});
                                                                                     },
                                                                                   ),
@@ -911,11 +989,16 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                   listviewItem,
                                                                                   FFAppState().selBill,
                                                                                 );
-                                                                                _model.res21Copy = await actions.calSubTotalForHoldList(
+                                                                                await actions.calSubTotalForHoldListkiosk2(
                                                                                   FFAppState().selBill.toString(),
                                                                                   FFAppState().allBillsList.toList(),
+                                                                                  functions.enabletaxinclusive(valueOrDefault<bool>(
+                                                                                    widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
+                                                                                    false,
+                                                                                  )),
+                                                                                  widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
                                                                                 );
-                                                                                _model.reuslt22Copy = await actions.calBillAmt(
+                                                                                _model.reuslt22Copy = await actions.calBillAmt2(
                                                                                   valueOrDefault<double>(
                                                                                     FFAppState().disAmt,
                                                                                     0.0,
@@ -924,6 +1007,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                     FFAppState().delCharges,
                                                                                     0.0,
                                                                                   ),
+                                                                                  widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
                                                                                 );
                                                                                 FFAppState().removeFromCartItem(functions.returnidRef(
                                                                                     getJsonField(
@@ -1190,7 +1274,6 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                           FFAppState().cartItem = [];
                                           FFAppState().isBillPrinted = true;
                                           FFAppState().noOfItems = 0;
-                                          FFAppState().delCharges = 0.0;
                                           FFAppState().update(() {});
 
                                           context.pushNamed(

@@ -1147,6 +1147,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                 widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                 false,
                                                                               )),
+                                                                              widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
                                                                             );
                                                                             _shouldSetState =
                                                                                 true;
@@ -1154,6 +1155,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                 await actions.calBillAmt2(
                                                                               FFAppState().disAmt,
                                                                               FFAppState().delCharges,
+                                                                              widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
                                                                             );
                                                                             _shouldSetState =
                                                                                 true;
@@ -1261,6 +1263,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                               widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                               false,
                                                                             )),
+                                                                            widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
                                                                           );
                                                                           _shouldSetState =
                                                                               true;
@@ -1268,6 +1271,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                               await actions.calBillAmt2(
                                                                             FFAppState().disAmt,
                                                                             FFAppState().delCharges,
+                                                                            widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
                                                                           );
                                                                           _shouldSetState =
                                                                               true;
@@ -1406,6 +1410,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                       widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                       false,
                                                                                     )),
+                                                                                    widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
                                                                                   );
                                                                                   _model.reu34 = await actions.calBillAmt2(
                                                                                     valueOrDefault<double>(
@@ -1413,6 +1418,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                       0.0,
                                                                                     ),
                                                                                     FFAppState().delCharges,
+                                                                                    widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
                                                                                   );
                                                                                 }
 
@@ -1543,6 +1549,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                     widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                     false,
                                                                                   )),
+                                                                                  widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
                                                                                 );
                                                                                 _shouldSetState = true;
                                                                                 _model.reuslt12 = await actions.calBillAmt2(
@@ -1551,6 +1558,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                     0.0,
                                                                                   ),
                                                                                   FFAppState().delCharges,
+                                                                                  widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
                                                                                 );
                                                                                 _shouldSetState = true;
                                                                                 if (_shouldSetState) safeSetState(() {});

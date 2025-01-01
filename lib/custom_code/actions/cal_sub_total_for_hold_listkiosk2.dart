@@ -13,6 +13,7 @@ Future<double> calSubTotalForHoldListkiosk2(
   String billNo,
   List<dynamic> allBillList,
   String inclusiveorexclusive,
+  bool qtywiseparcelcharge,
 ) async {
   double total = 0;
   double qty = 0;

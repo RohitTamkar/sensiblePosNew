@@ -36,27 +36,29 @@ class KioskCartModel extends FlutterFlowModel<KioskCartWidget> {
       choiceChipsValueController?.value?.firstOrNull;
   set choiceChipsValue(String? val) =>
       choiceChipsValueController?.value = val != null ? [val] : [];
+  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk2] action in ChoiceChips widget.
+  double? ddr4;
+  // Stores action output result for [Custom Action - calBillAmt2] action in ChoiceChips widget.
+  double? reusltddr;
+  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk2] action in ChoiceChips widget.
+  double? ddr45;
+  // Stores action output result for [Custom Action - calBillAmt2] action in ChoiceChips widget.
+  double? reusltddr67;
   // Stores action output result for [Custom Action - reduceQuantityHoldListkiosk] action in IconButton widget.
   List<dynamic>? res2cart;
-  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in IconButton widget.
+  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk2] action in IconButton widget.
   double? res2345;
-  // Stores action output result for [Custom Action - calBillAmt] action in IconButton widget.
-  double? reu345;
-  // Stores action output result for [Custom Action - calBillAmt] action in IconButton widget.
+  // Stores action output result for [Custom Action - calBillAmt2] action in IconButton widget.
   double? reu34;
   // Stores action output result for [Custom Action - plusQuantityHoldListkiosk] action in IconButton widget.
   List<dynamic>? resultkioskcart;
-  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in IconButton widget.
+  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk2] action in IconButton widget.
   double? res23456;
-  // Stores action output result for [Custom Action - calBillAmt] action in IconButton widget.
-  double? reuslt12;
-  // Stores action output result for [Custom Action - calBillAmt] action in IconButton widget.
+  // Stores action output result for [Custom Action - calBillAmt2] action in IconButton widget.
   double? reuslt123;
   // Stores action output result for [Custom Action - removeHoldListItem] action in IconButton widget.
   List<dynamic>? res20Copy;
-  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in IconButton widget.
-  double? res21Copy;
-  // Stores action output result for [Custom Action - calBillAmt] action in IconButton widget.
+  // Stores action output result for [Custom Action - calBillAmt2] action in IconButton widget.
   double? reuslt22Copy;
   // Stores action output result for [Custom Action - setCloseUnixTime] action in Button widget.
   DateTime? closeUnixTime;

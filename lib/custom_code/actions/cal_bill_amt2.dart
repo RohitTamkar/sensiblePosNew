@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 Future<double> calBillAmt2(
   double disAmt,
   double delChargs,
+  bool qtywiseparcelcharge,
 ) async {
   double billAmt;
   print(
