@@ -41,6 +41,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
     super.initState();
     _model = createModel(context, () => AddCustomerlaundryModel());
 
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      safeSetState(() {
+        _model.textFieldmobTextController?.text = '';
+      });
+    });
+
     _model.textFieldnameTextController ??= TextEditingController();
     _model.textFieldnameFocusNode ??= FocusNode();
 
