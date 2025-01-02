@@ -10,6 +10,9 @@ import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import '../../grocery_windows/add_customerlaundry/add_customerlaundry_widget.dart';
+import 'index.dart'; // Imports other custom widgets
+
 import 'index.dart'; // Imports other custom widgets
 
 import 'index.dart'; // Imports other custom widgets
@@ -52,7 +55,7 @@ class _SearchcustomerState extends State<Searchcustomer> {
           flex: 4,
           child: Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
-            child: TypeAheadField<PartyRecord>(
+            child: TypeAheadField<PartyRecord?>(
               textFieldConfiguration: TextFieldConfiguration(
                 controller: _custNameController,
                 focusNode: _focusNode,
@@ -65,18 +68,59 @@ class _SearchcustomerState extends State<Searchcustomer> {
                 },
               ),
               suggestionsCallback: (pattern) {
-                return widget.customer.where((cust) =>
+                final suggestions = widget.customer.where((cust) =>
                     cust.name.toLowerCase().contains(pattern.toLowerCase()) ||
                     cust.mobile.toLowerCase().contains(pattern.toLowerCase()));
+
+                // Include a placeholder suggestion for adding a new customer
+                return [
+                  ...suggestions,
+                  null, // Placeholder for "Add New Customer"
+                ];
               },
-              itemBuilder: (context, PartyRecord cust) {
+              itemBuilder: (
+                context,
+                PartyRecord? cust,
+              ) {
+                if (cust == null) {
+                  // Show the "Add Customer" button
+                  return ListTile(
+                    leading: const Icon(Icons.person_add, color: Colors.green),
+                    title: const Text('Add New Customer'),
+                    onTap: () async {
+                      await showModalBottomSheet(
+                        isScrollControlled: true,
+                        backgroundColor: Colors.transparent,
+                        enableDrag: false,
+                        context: context,
+                        builder: (context) {
+                          return GestureDetector(
+                            onTap: () {
+                              _custNameController.clear();
+                              FocusScope.of(context).unfocus();
+                              FocusManager.instance.primaryFocus?.unfocus();
+                            },
+                            child: Padding(
+                              padding: MediaQuery.viewInsetsOf(context),
+                              child: AddCustomerlaundryWidget(
+                                mobileno: _custNameController.text,
+                              ),
+                            ),
+                          );
+                        },
+                      ).then((value) => safeSetState(() {}));
+                    },
+                  );
+                }
                 return ListTile(
                   title: Text(cust.name),
                   subtitle: Text('Mobile: ${cust.mobile}'),
                 );
               },
-              onSuggestionSelected: (PartyRecord selectedCustomer) {
-                _selectCustomer(selectedCustomer.name);
+              onSuggestionSelected: (PartyRecord? selectedCustomer) {
+                if (selectedCustomer != null) {
+                  _selectCustomer(selectedCustomer.name);
+                }
                 _custNameController.clear();
               },
             ),
@@ -98,17 +142,21 @@ class _SearchcustomerState extends State<Searchcustomer> {
       PartyRecord selectedCust = custDetails.first;
 
       // Update global state
-      //  FFAppState().setCustName = selectedCust.name;
       FFAppState().setCustName = selectedCust.name;
       FFAppState().setCustMobNo = selectedCust.mobile;
       FFAppState().oldBalance = selectedCust.oldBalance;
       FFAppState().custCredit = selectedCust.creditLimit;
-      FFAppState().update(() {});
       FFAppState().setCustRef = selectedCust.reference;
       FFAppState().isCustListShown = true;
       FFAppState().update(() {});
       // Optionally refresh the UI if needed
       setState(() {});
     }
+  }
+
+  /// Handles adding a new customer
+  void _addNewCustomer() {
+    // Navigate to the Add Customer screen or implement functionality here
+    print('Navigate to Add Customer screen');
   }
 }
