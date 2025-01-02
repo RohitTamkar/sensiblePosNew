@@ -24895,27 +24895,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'yekdv8hj': {
-      'en': 'Ref Name',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'cnx4061y': {
-      'en': '',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'efa4octa': {
-      'en': 'ref name',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
   },
   // Miscellaneous
   {

@@ -53,9 +53,6 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
     _model.textFieldemailTextController ??= TextEditingController();
     _model.textFieldemailFocusNode ??= FocusNode();
 
-    _model.textFieldrefnameTextController ??= TextEditingController();
-    _model.textFieldrefnameFocusNode ??= FocusNode();
-
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -169,8 +166,7 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                       _model.textFieldaltmobTextController.text,
                                   email:
                                       _model.textFieldemailTextController.text,
-                                  refName: _model
-                                      .textFieldrefnameTextController.text,
+                                  refName: '-',
                                   adharCardNo: '.',
                                   vehicleNo: '.',
                                   panCardNo: '',
@@ -207,9 +203,7 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                           email: _model
                                               .textFieldemailTextController
                                               .text,
-                                          refName: _model
-                                              .textFieldrefnameTextController
-                                              .text,
+                                          refName: '-',
                                           adharCardNo: '.',
                                           vehicleNo: '.',
                                           panCardNo: '',
@@ -256,10 +250,8 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                 safeSetState(() {
                                   _model.textFieldnameTextController?.clear();
                                   _model.textFieldmobTextController?.clear();
-                                  _model.textFieldaltmobTextController?.clear();
-                                  _model.textFieldrefnameTextController
-                                      ?.clear();
                                   _model.textFieldemailTextController?.clear();
+                                  _model.textFieldaltmobTextController?.clear();
                                 });
                               }
                             } else {
@@ -635,6 +627,15 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                 ],
                               ),
                             ),
+                          ].divide(SizedBox(width: 10.0)),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
                             Expanded(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -767,15 +768,6 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                 ],
                               ),
                             ),
-                          ].divide(SizedBox(width: 10.0)),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
                             Expanded(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -900,138 +892,6 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                           ),
                                       validator: _model
                                           .textFieldemailTextControllerValidator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Expanded(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 5.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'yekdv8hj' /* Ref Name */,
-                                      ),
-                                      textAlign: TextAlign.start,
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelSmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelSmallFamily,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelSmallFamily),
-                                          ),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(),
-                                    child: TextFormField(
-                                      controller:
-                                          _model.textFieldrefnameTextController,
-                                      focusNode:
-                                          _model.textFieldrefnameFocusNode,
-                                      autofocus: false,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        isDense: true,
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMediumFamily,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMediumFamily),
-                                            ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'efa4octa' /* ref name */,
-                                        ),
-                                        hintStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMediumFamily,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMediumFamily),
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .customColor1,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .info,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        contentPadding: EdgeInsets.all(14.0),
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelLargeFamily,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLargeFamily),
-                                          ),
-                                      validator: _model
-                                          .textFieldrefnameTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),

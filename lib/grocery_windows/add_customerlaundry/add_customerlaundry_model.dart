@@ -39,11 +39,6 @@ class AddCustomerlaundryModel
   TextEditingController? textFieldemailTextController;
   String? Function(BuildContext, String?)?
       textFieldemailTextControllerValidator;
-  // State field(s) for TextFieldrefname widget.
-  FocusNode? textFieldrefnameFocusNode;
-  TextEditingController? textFieldrefnameTextController;
-  String? Function(BuildContext, String?)?
-      textFieldrefnameTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
@@ -61,8 +56,5 @@ class AddCustomerlaundryModel
 
     textFieldemailFocusNode?.dispose();
     textFieldemailTextController?.dispose();
-
-    textFieldrefnameFocusNode?.dispose();
-    textFieldrefnameTextController?.dispose();
   }
 }
