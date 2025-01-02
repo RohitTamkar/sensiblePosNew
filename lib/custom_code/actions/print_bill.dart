@@ -19,6 +19,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -234,9 +236,7 @@ Future printBill(
 
       bytes += generator.text(printLine,
           styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false));
+              height: PosTextSize.size1, width: PosTextSize.size1, bold: true));
       printLine = '';
       final DateTime now1 = DateTime.now();
       final DateFormat formatter1 = DateFormat('h:mm:ss');
@@ -289,7 +289,7 @@ Future printBill(
               fontType: PosFontType.fontA,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
-              bold: false,
+              bold: true,
               // align: PosAlign.left
             ),
           ),
@@ -299,7 +299,7 @@ Future printBill(
             styles: PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
-              bold: false,
+              bold: true,
               // align: PosAlign.center
             ),
           ),
@@ -309,7 +309,7 @@ Future printBill(
             styles: PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
-              bold: false,
+              bold: true,
               // align: PosAlign.center
             ),
           ),
@@ -319,7 +319,7 @@ Future printBill(
             styles: PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
-              bold: false,
+              bold: true,
               //align: PosAlign.center
             ),
           )
@@ -337,7 +337,10 @@ Future printBill(
       String itemsNo = "Items :" + len.toString();
       printLine = itemsNo;
       String subTotal = "Sub total:" +
-          ((invoiceDetails.billAmt - invoiceDetails.taxAmt).toStringAsFixed(2))
+          ((invoiceDetails.billAmt -
+                      invoiceDetails.taxAmt -
+                      (invoiceDetails.delliveryChrg))
+                  .toStringAsFixed(2))
               .toString();
       for (int i = 1; i <= (size - (itemsNo.length + subTotal.length)); i++) {
         printLine += " ";
@@ -347,6 +350,7 @@ Future printBill(
           styles: PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
+              bold: true,
               align: PosAlign.left));
 
       bytes += generator.text("-----------------------------------------------",

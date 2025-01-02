@@ -1237,6 +1237,49 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                 ),
                                                       ),
                                                     ),
+                                                    if ((containerVarItem
+                                                                    .source !=
+                                                                null &&
+                                                            containerVarItem
+                                                                    .source !=
+                                                                '') &&
+                                                        (containerVarItem
+                                                                .source ==
+                                                            'WEB ORDER'))
+                                                      Flexible(
+                                                        child: Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            containerVarItem
+                                                                .source,
+                                                            '.',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                fontSize: 13.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontStyle:
+                                                                    FontStyle
+                                                                        .italic,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                        ).animateOnPageLoad(
+                                                            animationsMap[
+                                                                'textOnPageLoadAnimation']!),
+                                                      ),
                                                     Stack(
                                                       children: [
                                                         if (containerVarItem
@@ -1436,49 +1479,6 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                           ),
                                                       ],
                                                     ),
-                                                    if ((containerVarItem
-                                                                    .source !=
-                                                                null &&
-                                                            containerVarItem
-                                                                    .source !=
-                                                                '') &&
-                                                        (containerVarItem
-                                                                .source ==
-                                                            'WEB ORDER'))
-                                                      Flexible(
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            containerVarItem
-                                                                .source,
-                                                            '.',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                                fontSize: 13.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontStyle:
-                                                                    FontStyle
-                                                                        .italic,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
-                                                              ),
-                                                        ).animateOnPageLoad(
-                                                            animationsMap[
-                                                                'textOnPageLoadAnimation']!),
-                                                      ),
                                                   ],
                                                 ),
                                               ),

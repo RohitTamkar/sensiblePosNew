@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 Future<double> calBillAmt2(
   double disAmt,
   double delChargs,
@@ -22,10 +24,20 @@ Future<double> calBillAmt2(
     billAmt -= disAmt;
     print(disAmt);
   }
-  if (delChargs > 0) {
-    // FFAppState().delCharges = delChargs * FFAppState().noOfItems;
-    billAmt += delChargs * FFAppState().noOfItems;
-    print(delChargs);
+  if (qtywiseparcelcharge) {
+    if (delChargs > 0) {
+      // FFAppState().delCharges = delChargs * FFAppState().noOfItems;
+      //   billAmt += delChargs * FFAppState().noOfItems;
+      //billAmt += delChargs;
+      print(delChargs);
+    }
+  } else {
+    if (delChargs > 0) {
+      // FFAppState().delCharges = delChargs * FFAppState().noOfItems;
+      billAmt += delChargs * FFAppState().noOfItems;
+      //billAmt += delChargs;
+      print(delChargs);
+    }
   }
 
   FFAppState().finalAmt = billAmt.roundToDouble();
