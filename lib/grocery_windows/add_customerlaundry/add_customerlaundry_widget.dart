@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -43,9 +44,18 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      safeSetState(() {
-        _model.textFieldmobTextController?.text = widget!.mobileno!;
-      });
+      _model.check2 = await actions.checkString(
+        widget!.mobileno!,
+      );
+      if (_model.check2!) {
+        safeSetState(() {
+          _model.textFieldmobTextController?.text = widget!.mobileno!;
+        });
+      } else {
+        safeSetState(() {
+          _model.textFieldnameTextController?.text = widget!.mobileno!;
+        });
+      }
     });
 
     _model.textFieldnameTextController ??= TextEditingController();
