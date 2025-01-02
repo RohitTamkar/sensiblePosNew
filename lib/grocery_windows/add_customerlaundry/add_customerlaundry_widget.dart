@@ -43,8 +43,22 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await showDialog(
+        context: context,
+        builder: (alertDialogContext) {
+          return AlertDialog(
+            title: Text(widget!.mobileno!),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(alertDialogContext),
+                child: Text('Ok'),
+              ),
+            ],
+          );
+        },
+      );
       safeSetState(() {
-        _model.textFieldmobTextController?.text = '';
+        _model.textFieldmobTextController?.text = widget!.mobileno!;
       });
     });
 
