@@ -74,10 +74,10 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
       alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
         width: MediaQuery.sizeOf(context).width * 0.6,
-        height: MediaQuery.sizeOf(context).width * 0.6,
+        height: MediaQuery.sizeOf(context).height * 0.6,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
-          shape: BoxShape.circle,
+          shape: BoxShape.rectangle,
         ),
         child: Padding(
           padding: EdgeInsets.all(25.0),
