@@ -1,6 +1,6 @@
 import '/backend/backend.dart';
+import '/components/custom_date/custom_date_widget.dart';
 import '/components/header/header_widget.dart';
-import '/components/selection_option/selection_option_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -337,9 +337,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                 padding:
                                                     MediaQuery.viewInsetsOf(
                                                         context),
-                                                child: SelectionOptionWidget(
-                                                  nav: 1,
-                                                ),
+                                                child: CustomDateWidget(),
                                               ),
                                             );
                                           },

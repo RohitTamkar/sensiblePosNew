@@ -8,6 +8,7 @@ export 'print_bill_format_two.dart' show printBillFormatTwo;
 export 'print_k_o_twithusbkioskhive.dart' show printKOTwithusbkioskhive;
 export 'cal_shift_summary_newgrocery.dart' show calShiftSummaryNewgrocery;
 export 'delete_allinvoice.dart' show deleteAllinvoice;
+export 'print_billnewhivegrocery_bill.dart' show printBillnewhivegroceryBill;
 export 'laundrycal_sub_total_for_hold_list.dart'
     show laundrycalSubTotalForHoldList;
 export 'laundry_print_billnewhive.dart' show laundryPrintBillnewhive;
