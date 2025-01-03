@@ -810,38 +810,33 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        Expanded(
-                                                                          child:
-                                                                              FlutterFlowIconButton(
-                                                                            borderColor:
-                                                                                Colors.transparent,
-                                                                            borderRadius:
-                                                                                30.0,
-                                                                            borderWidth:
-                                                                                1.0,
-                                                                            buttonSize:
-                                                                                60.0,
-                                                                            icon:
-                                                                                Icon(
-                                                                              Icons.chevron_right,
-                                                                              color: FlutterFlowTheme.of(context).info,
-                                                                              size: 24.0,
-                                                                            ),
-                                                                            onPressed:
-                                                                                () async {
-                                                                              FFAppState().setCustName = containerVarItem.name;
-                                                                              FFAppState().setCustMobNo = containerVarItem.mobile;
-                                                                              FFAppState().oldBalance = containerVarItem.oldBalance;
-                                                                              FFAppState().custCredit = containerVarItem.creditLimit;
-                                                                              FFAppState().update(() {});
-                                                                              FFAppState().setCustRef = containerVarItem.reference;
-                                                                              FFAppState().isCustListShown = true;
-                                                                              FFAppState().update(() {});
+                                                                        if (false)
+                                                                          Expanded(
+                                                                            child:
+                                                                                FlutterFlowIconButton(
+                                                                              borderColor: Colors.transparent,
+                                                                              borderRadius: 30.0,
+                                                                              borderWidth: 1.0,
+                                                                              buttonSize: 60.0,
+                                                                              icon: Icon(
+                                                                                Icons.chevron_right,
+                                                                                color: FlutterFlowTheme.of(context).info,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                              onPressed: () async {
+                                                                                FFAppState().setCustName = containerVarItem.name;
+                                                                                FFAppState().setCustMobNo = containerVarItem.mobile;
+                                                                                FFAppState().oldBalance = containerVarItem.oldBalance;
+                                                                                FFAppState().custCredit = containerVarItem.creditLimit;
+                                                                                FFAppState().update(() {});
+                                                                                FFAppState().setCustRef = containerVarItem.reference;
+                                                                                FFAppState().isCustListShown = true;
+                                                                                FFAppState().update(() {});
 
-                                                                              context.pushNamed('CreditPaymentPage');
-                                                                            },
+                                                                                context.pushNamed('CreditPaymentPage');
+                                                                              },
+                                                                            ),
                                                                           ),
-                                                                        ),
                                                                       ],
                                                                     ),
                                                                   ),

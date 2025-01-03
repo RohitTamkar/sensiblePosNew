@@ -21,6 +21,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -336,12 +338,22 @@ Future printBill(
       int len = invoiceDetails.productList!.length;
       String itemsNo = "Items :" + len.toString();
       printLine = itemsNo;
-      String subTotal = "Sub total:" +
-          ((invoiceDetails.billAmt -
-                      invoiceDetails.taxAmt -
-                      (invoiceDetails.delliveryChrg))
-                  .toStringAsFixed(2))
-              .toString();
+      String subTotal;
+      if (appSetting.settingList.any((setting) =>
+          setting.title == 'qtyWiseParcelCharges' && setting.value == true)) {
+        subTotal = "Sub total:" +
+            ((invoiceDetails.billAmt -
+                        invoiceDetails.taxAmt -
+                        (invoiceDetails.delliveryChrg))
+                    .toStringAsFixed(2))
+                .toString();
+      } else {
+        subTotal = "Sub total:" +
+            ((invoiceDetails.billAmt - invoiceDetails.taxAmt)
+                    .toStringAsFixed(2))
+                .toString();
+      }
+
       for (int i = 1; i <= (size - (itemsNo.length + subTotal.length)); i++) {
         printLine += " ";
       }

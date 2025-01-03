@@ -93,7 +93,9 @@ class _SplashScreenWindowsWidgetState extends State<SplashScreenWindowsWidget>
             r'''$.deviceId''',
           ).toString().toString(),
           branch: '',
-          billingType: FFAppState().navigate,
+          billingType: FFAppState().navigate == 'GROCERY'
+              ? 'REGULAR'
+              : FFAppState().navigate,
         ));
         _model.refnew = DeviceRecord.getDocumentFromData(
             createDeviceRecordData(
@@ -126,7 +128,9 @@ class _SplashScreenWindowsWidgetState extends State<SplashScreenWindowsWidget>
                 r'''$.deviceId''',
               ).toString().toString(),
               branch: '',
-              billingType: FFAppState().navigate,
+              billingType: FFAppState().navigate == 'GROCERY'
+                  ? 'REGULAR'
+                  : FFAppState().navigate,
             ),
             deviceRecordReference);
 

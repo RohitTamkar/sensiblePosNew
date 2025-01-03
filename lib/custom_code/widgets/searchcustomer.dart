@@ -96,7 +96,6 @@ class _SearchcustomerState extends State<Searchcustomer> {
                         builder: (context) {
                           return GestureDetector(
                             onTap: () {
-                              _custNameController.clear();
                               FocusScope.of(context).unfocus();
                               FocusManager.instance.primaryFocus?.unfocus();
                             },
@@ -108,7 +107,9 @@ class _SearchcustomerState extends State<Searchcustomer> {
                             ),
                           );
                         },
-                      ).then((value) => safeSetState(() {}));
+                      ).then((value) => safeSetState(() {
+                            _custNameController.clear();
+                          }));
                     },
                   );
                 }

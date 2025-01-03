@@ -5459,6 +5459,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'wl3e7idd': {
+      'en': 'TAX%',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '7vu8ysuf': {
+      'en': 'TAX Amt',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     '9vkeu2u7': {
       'en': 'Qty',
       'hi': '',
@@ -5648,6 +5662,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'viyse1br': {
+      'en': 'Discount %',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'j53oepha': {
+      'en': ':',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'yuoizkvf': {
+      'en': '₹',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     '3p1d3n3d': {
       'en': 'Delivery charges',
       'hi': '',
@@ -5699,6 +5734,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9i17i869': {
       'en': ':',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'q0b3n5l2': {
+      'en': 'Print',
       'hi': '',
       'kn': '',
       'mr': '',

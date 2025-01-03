@@ -41,6 +41,12 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
         }
       } else if (FFAppState().navigate == 'KIOSK') {
         context.pushNamed('KioskSplashScreen');
+      } else if (FFAppState().navigate == 'GROCERY') {
+        if (isAndroid == true) {
+          context.pushNamed('welcomeScreenNew');
+        } else {
+          context.pushNamed('SplashScreenWindows');
+        }
       }
     });
 

@@ -111,105 +111,97 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            floatingActionButton: Visibility(
-              visible: FFAppState().fabButtonHide == true,
-              child: FloatingActionButton.extended(
-                onPressed: () async {
-                  var _shouldSetState = false;
-                  _model.resDevice = await actions.scanPrinter(
+            floatingActionButton: FloatingActionButton.extended(
+              onPressed: () async {
+                var _shouldSetState = false;
+                _model.resDevice = await actions.scanPrinter(
+                  FFAppState().posMode,
+                );
+                _shouldSetState = true;
+                if (!_model.resDevice!) {
+                  _model.rd = await actions.scanPrinter(
                     FFAppState().posMode,
                   );
                   _shouldSetState = true;
-                  if (!_model.resDevice!) {
-                    _model.rd = await actions.scanPrinter(
-                      FFAppState().posMode,
-                    );
-                    _shouldSetState = true;
-                  }
-                  await actions.connectDevice(
-                    FFAppState().printerDevice,
-                    '0',
+                }
+                await actions.connectDevice(
+                  FFAppState().printerDevice,
+                  '0',
+                );
+                if (FFAppState().printerName != null &&
+                    FFAppState().printerName != '') {
+                  await actions.printBillWiseSalesReport(
+                    FFAppState().paymentDetails,
+                    getJsonField(
+                      FFAppState().printerDevice,
+                      r'''$''',
+                      true,
+                    )!,
+                    FFAppState().isPrinterConnected,
+                    FFAppState().isPrinterConnected.toString(),
+                    FFAppState().paperSize,
                   );
-                  if (FFAppState().printerName != null &&
-                      FFAppState().printerName != '') {
-                    await actions.printBillWiseSalesReport(
-                      FFAppState().paymentDetails,
-                      getJsonField(
-                        FFAppState().printerDevice,
-                        r'''$''',
-                        true,
-                      )!,
-                      FFAppState().isPrinterConnected,
-                      FFAppState().isPrinterConnected.toString(),
-                      FFAppState().paperSize,
-                    );
-                    if (_shouldSetState) safeSetState(() {});
-                    return;
-                  } else {
-                    await showDialog(
-                      context: context,
-                      builder: (alertDialogContext) {
-                        return AlertDialog(
-                          title: Text('printer connection'),
-                          content: Text('printer not connected'),
-                          actions: [
-                            TextButton(
-                              onPressed: () =>
-                                  Navigator.pop(alertDialogContext),
-                              child: Text('Ok'),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                    if (_shouldSetState) safeSetState(() {});
-                    return;
-                  }
-
                   if (_shouldSetState) safeSetState(() {});
-                },
-                backgroundColor:
-                    FlutterFlowTheme.of(context).secondaryBackground,
-                elevation: 8.0,
-                label: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          buttonSize: 30.0,
-                          icon: Icon(
-                            Icons.print,
-                            color: FlutterFlowTheme.of(context).primary,
-                            size: 20.0,
+                  return;
+                } else {
+                  await showDialog(
+                    context: context,
+                    builder: (alertDialogContext) {
+                      return AlertDialog(
+                        title: Text('printer connection'),
+                        content: Text('printer not connected'),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(alertDialogContext),
+                            child: Text('Ok'),
                           ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
-                          },
+                        ],
+                      );
+                    },
+                  );
+                  if (_shouldSetState) safeSetState(() {});
+                  return;
+                }
+
+                if (_shouldSetState) safeSetState(() {});
+              },
+              backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+              elevation: 8.0,
+              label: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      FlutterFlowIconButton(
+                        borderColor: Colors.transparent,
+                        buttonSize: 30.0,
+                        icon: Icon(
+                          Icons.print,
+                          color: FlutterFlowTheme.of(context).primary,
+                          size: 20.0,
                         ),
-                        Text(
-                          FFLocalizations.of(context).getText(
-                            'urhe6l7c' /* Print */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .bodySmall
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .bodySmallFamily,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .bodySmallFamily),
-                              ),
+                        onPressed: () {
+                          print('IconButton pressed ...');
+                        },
+                      ),
+                      Text(
+                        FFLocalizations.of(context).getText(
+                          'urhe6l7c' /* Print */,
                         ),
-                      ],
-                    ),
-                  ],
-                ),
+                        style: FlutterFlowTheme.of(context).bodySmall.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodySmallFamily,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context).bodySmallFamily),
+                            ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
             body: Padding(
