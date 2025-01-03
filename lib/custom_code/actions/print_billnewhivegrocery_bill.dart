@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 import 'dart:async';
@@ -22,8 +24,26 @@ import 'dart:io';
 import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
 import 'package:flutter_pos_printer_platform_image_3_sdt/flutter_pos_printer_platform_image_3_sdt.dart';
 
+int? returncountnew(String? invoicestring) {
+  /// MODIFY CODE ONLY BELOW THIS LINE
+
+  if (invoicestring == null) return null;
+
+  // Split the string by "/" and get the last part
+  List<String> parts = invoicestring.split('/');
+
+  if (parts.isNotEmpty) {
+    // Try to parse the last part as an integer
+    return int.tryParse(parts.last);
+  }
+
+  return null;
+
+  /// MODIFY CODE ONLY ABOVE THIS LINE
+}
+
 Future printBillnewhivegroceryBill(
-  List<dynamic> data,
+  dynamic data,
   List<dynamic> selectedPrinter,
   bool status,
   String statusName,
@@ -67,11 +87,11 @@ Future printBillnewhivegroceryBill(
   if (size == 46) {
     billColumn3 =
         "ITEM_NAME              QTY     RATE     TOTAL "; // 20, 8, 9, 9 (46)
-    billColumn4 = "ITEM_NAME           QTY   RATE  DIS%   TOTAL  ";
+    billColumn4 = "NO   ITEM_NAME      QTY  RATE  DIS%      TOTAL";
     taxColumn3 = "TAX%      TAXABLE     CGST     SGST     TAXAMT";
 
     if (data.length > 0) {
-      obj = data[0]["details"];
+      obj = data[0];
       String header;
 
       if (FFAppState().billPrintHeader != null &&
@@ -186,7 +206,7 @@ Future printBillnewhivegroceryBill(
                   align: PosAlign.center));
         }
       }
-      bytes += generator.text(FFAppState().orderType,
+      bytes += generator.text(invoiceDetails.orderType,
           styles: const PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
@@ -201,7 +221,8 @@ Future printBillnewhivegroceryBill(
 
       String printLine = '';
       String dateString = '';
-      String serialTemp = 'Serial no: ' + FFAppState().newcount.toString();
+      String serialTemp =
+          'Serial no: ' + returncountnew(invoiceDetails.invoice).toString();
 
       final DateTime now = DateTime.now();
       final DateFormat formatter = DateFormat('dd-MM-yyyy');
@@ -222,7 +243,8 @@ Future printBillnewhivegroceryBill(
               width: PosTextSize.size1,
               bold: false));
       printLine = '';
-      final DateTime now1 = DateTime.now();
+      final DateTime now1 =
+          DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
       final DateFormat formatter1 = DateFormat('h:mm:ss');
       final String formatted1 = formatter1.format(now1);
 
@@ -276,7 +298,7 @@ Future printBillnewhivegroceryBill(
               bold: false,
               align: PosAlign.center));
       if (disc) {
-        for (int i = 0; i < obj["itemList"].length; i++) {
+        for (int i = 0; i < invoiceDetails.productList.length; i++) {
           int s = i + 1;
           bytes += generator.row([
             PosColumn(
@@ -495,6 +517,38 @@ Future printBillnewhivegroceryBill(
                 align: PosAlign.center));
       }
       int disPer = invoiceDetails.discountPer!.round();
+      if (invoiceDetails.discountPer != 0) {
+        bytes += generator.row([
+          PosColumn(
+            text: "Total Discount %",
+            width: 8,
+            styles: PosStyles(
+                fontType: PosFontType.fontA,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.left),
+          ),
+          PosColumn(
+            text: invoiceDetails.discountPer.toString() + '%',
+            width: 4,
+            styles: PosStyles(
+                fontType: PosFontType.fontA,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.right),
+          )
+        ]);
+
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+      }
       if (invoiceDetails.discountAmt != 0) {
         bytes += generator.row([
           PosColumn(
@@ -527,6 +581,7 @@ Future printBillnewhivegroceryBill(
                 bold: false,
                 align: PosAlign.center));
       }
+
       if (invoiceDetails.delliveryChrg != 0) {
         bytes += generator.row([
           PosColumn(
@@ -559,7 +614,8 @@ Future printBillnewhivegroceryBill(
                 align: PosAlign.center));
       }
 
-      bytes += generator.text("Grand Total:" + FFAppState().finalAmt.toString(),
+      bytes += generator.text(
+          "Grand Total:" + invoiceDetails.finalBillAmt.toString(),
           styles: PosStyles(
               height: PosTextSize.size2,
               width: PosTextSize.size2,
@@ -573,7 +629,7 @@ Future printBillnewhivegroceryBill(
               align: PosAlign.center));
 
       bytes += generator.text(
-          "PAYMENT MODE :" + FFAppState().groceryJson['paymentMode'].toString(),
+          "PAYMENT MODE :" + invoiceDetails.paymentMode.toString(),
           styles: const PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
@@ -794,13 +850,13 @@ Future printBillnewhivegroceryBill(
         ////////////////////////////////////////////////////////////////////
       }
 
-      if (FFAppState().setCustName.isNotEmpty) {
+      if (invoiceDetails.party.isNotEmpty && invoiceDetails.party != null) {
         QuerySnapshot querySnapshotparty;
         querySnapshotparty = await FirebaseFirestore.instance
             .collection('OUTLET')
             .doc(FFAppState().outletIdRef?.id)
             .collection('PARTY')
-            .where('id', isEqualTo: FFAppState().setCustRef!.id)
+            .where('id', isEqualTo: invoiceDetails.party)
             .get();
         for (var doc in querySnapshotparty.docs) {
           bytes += generator.text("Customer Details",
@@ -825,14 +881,14 @@ Future printBillnewhivegroceryBill(
                   align: PosAlign.center));
           if (doc['oldBalance'].toInt() > 0) {
             bytes += generator.text(
-                "Old Credit :" + FFAppState().oldBalance.toString(),
+                "Old Credit :" + doc['oldBalance'].toString(),
                 styles: const PosStyles(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: true,
                     align: PosAlign.center));
           }
-
+          /* FFAppState().groceryJson=invoiceDetails.paymentMode;
           if (FFAppState().groceryJson['paymentMode']['CREDIT'] != null) {
             if (FFAppState().groceryJson['paymentMode']['CREDIT'] > 0) {
               bytes += generator.text(
@@ -847,7 +903,7 @@ Future printBillnewhivegroceryBill(
               bytes += generator.text(
                   "Total Credit :" +
                       (FFAppState().groceryJson['paymentMode']['CREDIT'] +
-                              FFAppState().oldBalance)
+                          FFAppState().oldBalance)
                           .toString(),
                   styles: const PosStyles(
                       height: PosTextSize.size1,
@@ -855,15 +911,15 @@ Future printBillnewhivegroceryBill(
                       bold: true,
                       align: PosAlign.center));
             }
-          }
+          }*/
         }
-        bytes += generator.text(
+        /* bytes += generator.text(
             "-----------------------------------------------",
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center));
+                align: PosAlign.center));*/
       }
 
       /* bytes += generator.text("** THANK YOU ! VISIT AGAIN !! **",

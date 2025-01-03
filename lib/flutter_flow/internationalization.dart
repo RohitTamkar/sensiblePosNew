@@ -5488,14 +5488,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'am3bpvqt': {
-      'en': 'Qty:',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'z83r3dxs': {
-      'en': 'Qty',
+      'en': 'No Of Items:',
       'hi': '',
       'kn': '',
       'mr': '',

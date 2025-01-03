@@ -928,7 +928,7 @@ class _BillWidgetState extends State<BillWidget> {
                                                                           children: [
                                                                             Text(
                                                                               FFLocalizations.of(context).getText(
-                                                                                'am3bpvqt' /* Qty: */,
+                                                                                'am3bpvqt' /* No Of Items: */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
@@ -937,12 +937,14 @@ class _BillWidgetState extends State<BillWidget> {
                                                                                   ),
                                                                             ),
                                                                             Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                'z83r3dxs' /* Qty */,
+                                                                              valueOrDefault<String>(
+                                                                                containerInvoiceRecord?.productList?.length?.toString(),
+                                                                                '0',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
+                                                                                    fontSize: 20.0,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
@@ -999,8 +1001,10 @@ class _BillWidgetState extends State<BillWidget> {
                                                                               containerInvoiceRecord!.billAmt.toString(),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                    color: FlutterFlowTheme.of(context).primaryText,
+                                                                                    fontSize: 20.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.bold,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                             ),
@@ -2833,8 +2837,7 @@ class _BillWidgetState extends State<BillWidget> {
                                                                 _model
                                                                     .resultItem,
                                                                 r'''$''',
-                                                                true,
-                                                              )!,
+                                                              ),
                                                               _model.device!
                                                                   .toList(),
                                                               FFAppState()
