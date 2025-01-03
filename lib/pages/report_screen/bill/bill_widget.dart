@@ -2409,32 +2409,6 @@ class _BillWidgetState extends State<BillWidget> {
                                                                     ),
                                                                   ),
                                                                 ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          4.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'yuoizkvf' /* ₹ */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                        ),
-                                                                  ),
-                                                                ),
                                                                 Text(
                                                                   valueOrDefault<
                                                                       String>(
@@ -2869,8 +2843,12 @@ class _BillWidgetState extends State<BillWidget> {
                                                                 true;
                                                             await actions
                                                                 .printBillnewhivegroceryBill(
-                                                              _model
-                                                                  .resultItem!,
+                                                              getJsonField(
+                                                                _model
+                                                                    .resultItem,
+                                                                r'''$''',
+                                                                true,
+                                                              )!,
                                                               _model.device!
                                                                   .toList(),
                                                               FFAppState()
