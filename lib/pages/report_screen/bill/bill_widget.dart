@@ -2831,6 +2831,13 @@ class _BillWidgetState extends State<BillWidget> {
                                                           );
                                                           _shouldSetState =
                                                               true;
+                                                          _model.resultItem =
+                                                              await actions
+                                                                  .docToJson(
+                                                            containerInvoiceRecord,
+                                                          );
+                                                          _shouldSetState =
+                                                              true;
                                                           if (_model
                                                               .isconnected!) {
                                                             _model.appsettings =
@@ -2852,18 +2859,6 @@ class _BillWidgetState extends State<BillWidget> {
                                                                     .firstOrNull);
                                                             _shouldSetState =
                                                                 true;
-                                                            _model.returnedList2 =
-                                                                await actions
-                                                                    .selectBillPrint(
-                                                              FFAppState()
-                                                                  .selBill
-                                                                  .toString(),
-                                                              FFAppState()
-                                                                  .allBillsList
-                                                                  .toList(),
-                                                            );
-                                                            _shouldSetState =
-                                                                true;
                                                             _model.device =
                                                                 await actions
                                                                     .newCustomAction(
@@ -2874,9 +2869,13 @@ class _BillWidgetState extends State<BillWidget> {
                                                                 true;
                                                             await actions
                                                                 .printBillnewhivegroceryBill(
-                                                              FFAppState()
-                                                                  .allBillsList
-                                                                  .toList(),
+                                                              getJsonField(
+                                                                FFAppState()
+                                                                    .resultList
+                                                                    .firstOrNull,
+                                                                r'''$.productList''',
+                                                                true,
+                                                              )!,
                                                               _model.device!
                                                                   .toList(),
                                                               FFAppState()

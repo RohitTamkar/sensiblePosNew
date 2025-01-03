@@ -24,7 +24,12 @@ Future<dynamic> docToJson(InvoiceRecord? data) async {
         "total": item.total,
         "id": item.id,
         "catId": item.catId,
-        "isDeletedItem": item.isDeletedItem
+        "isDeletedItem": item.isDeletedItem,
+        "taxId": item.isDeletedItem,
+        "taxPer": item.isDeletedItem,
+        "taxAmt": item.isDeletedItem,
+        "disPer": item.isDeletedItem,
+        "disAmt": item.isDeletedItem,
       });
     });
     objList.add({

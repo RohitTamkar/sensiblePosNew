@@ -26,10 +26,10 @@ class BillModel extends FlutterFlowModel<BillWidget> {
   bool? resDevice2;
   // Stores action output result for [Custom Action - connectDevice] action in Button widget.
   bool? isconnected;
+  // Stores action output result for [Custom Action - docToJson] action in Button widget.
+  dynamic? resultItem;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   AppSettingsRecord? appsettings;
-  // Stores action output result for [Custom Action - selectBillPrint] action in Button widget.
-  List<dynamic>? returnedList2;
   // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
   List<dynamic>? device;
 
