@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/components/calender/calender_widget.dart';
-import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -48,16 +47,10 @@ class ReportScreenNewModel extends FlutterFlowModel<ReportScreenNewWidget> {
   AppSettingsRecord? aappsetting;
   // Stores action output result for [Firestore Query - Query a collection] action in IconButton widget.
   List<PaymentModeRecord>? paymentmode;
-  // Model for Header component.
-  late HeaderModel headerModel;
 
   @override
-  void initState(BuildContext context) {
-    headerModel = createModel(context, () => HeaderModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    headerModel.dispose();
-  }
+  void dispose() {}
 }

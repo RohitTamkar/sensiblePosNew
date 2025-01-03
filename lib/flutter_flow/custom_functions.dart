@@ -1290,3 +1290,8 @@ bool greaterThanlessgrocery(
   }
   return val;
 }
+
+DateTime returnDateNextday(DateTime date) {
+  // return next date
+  return date.add(Duration(days: 1));
+}

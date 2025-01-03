@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/components/calender/calender_widget.dart';
-import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -283,7 +282,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: Color(0xEC1C4494),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -429,14 +428,6 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                               ),
                             ),
                           ),
-                          Flexible(
-                            flex: 2,
-                            child: wrapWithModel(
-                              model: _model.headerModel,
-                              updateCallback: () => safeSetState(() {}),
-                              child: HeaderWidget(),
-                            ),
-                          ),
                         ],
                       ),
                     ),
@@ -476,8 +467,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                           MediaQuery.sizeOf(context).height *
                                               0.06,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondary,
+                                        color: Color(0x879DB8FF),
                                       ),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -820,8 +810,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                             MediaQuery.sizeOf(context).height *
                                                 0.06,
                                         decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondary,
+                                          color: Color(0x879DB8FF),
                                         ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
