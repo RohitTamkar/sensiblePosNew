@@ -2872,7 +2872,7 @@ class _BillWidgetState extends State<BillWidget> {
                                                               getJsonField(
                                                                 _model
                                                                     .resultItem,
-                                                                r'''$.productList''',
+                                                                r'''$.itemList''',
                                                                 true,
                                                               )!,
                                                               _model.device!
