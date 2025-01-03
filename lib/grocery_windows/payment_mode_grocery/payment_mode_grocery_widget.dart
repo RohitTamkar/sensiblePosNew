@@ -2238,6 +2238,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                     FFAppState()
                                                                         .subTotal);
                                                             FFAppState()
+                                                                    .disPer =
+                                                                double.parse(_model
+                                                                    .textFielddisperTextController
+                                                                    .text);
+                                                            FFAppState()
                                                                 .update(() {});
                                                             await actions
                                                                 .calBillAmtGroceryPay(
