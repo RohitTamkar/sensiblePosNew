@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
-import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -76,7 +75,7 @@ class _BillWidgetState extends State<BillWidget> {
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: Color(0xEC1C4494),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -128,14 +127,6 @@ class _BillWidgetState extends State<BillWidget> {
                                   ),
                                 ],
                               ),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: wrapWithModel(
-                              model: _model.headerModel,
-                              updateCallback: () => safeSetState(() {}),
-                              child: HeaderWidget(),
                             ),
                           ),
                         ],
@@ -222,10 +213,7 @@ class _BillWidgetState extends State<BillWidget> {
                                                             .height *
                                                         0.07,
                                                     decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondary,
+                                                      color: Color(0x879DB8FF),
                                                     ),
                                                     child: Row(
                                                       mainAxisSize:
@@ -1677,9 +1665,7 @@ class _BillWidgetState extends State<BillWidget> {
                                                           0.07,
                                                       decoration: BoxDecoration(
                                                         color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondary,
+                                                            Color(0x879DB8FF),
                                                       ),
                                                       child: Column(
                                                         mainAxisSize:
@@ -2924,7 +2910,7 @@ class _BillWidgetState extends State<BillWidget> {
                                                                       0.0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .primary,
+                                                              .alternate,
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -2933,8 +2919,9 @@ class _BillWidgetState extends State<BillWidget> {
                                                                     fontFamily:
                                                                         FlutterFlowTheme.of(context)
                                                                             .titleSmallFamily,
-                                                                    color: Colors
-                                                                        .white,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts

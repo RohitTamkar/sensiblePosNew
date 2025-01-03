@@ -1199,7 +1199,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'wle24dpd': {
-      'en': 'CUSTOM DATE',
+      'en': 'CHOOSE DATE',
       'hi': '',
       'kn': '',
       'mr': '',

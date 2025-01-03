@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
-import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -20,8 +19,6 @@ import 'package:provider/provider.dart';
 class BillModel extends FlutterFlowModel<BillWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Model for Header component.
-  late HeaderModel headerModel;
   // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
   bool? resDevice2;
   // Stores action output result for [Custom Action - connectDevice] action in Button widget.
@@ -34,12 +31,8 @@ class BillModel extends FlutterFlowModel<BillWidget> {
   List<dynamic>? device;
 
   @override
-  void initState(BuildContext context) {
-    headerModel = createModel(context, () => HeaderModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    headerModel.dispose();
-  }
+  void dispose() {}
 }

@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/components/custom_date/custom_date_widget.dart';
-import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -24,8 +23,6 @@ class BillReportNewModel extends FlutterFlowModel<BillReportNewWidget> {
 
   // Stores action output result for [Custom Action - checkInternetConnection] action in BillReportNew widget.
   bool? internetCheck;
-  // Model for Header component.
-  late HeaderModel headerModel;
   // State field(s) for ListView widget.
 
   PagingController<DocumentSnapshot?, InvoiceRecord>? listViewPagingController;
@@ -38,13 +35,10 @@ class BillReportNewModel extends FlutterFlowModel<BillReportNewWidget> {
   bool? rd;
 
   @override
-  void initState(BuildContext context) {
-    headerModel = createModel(context, () => HeaderModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    headerModel.dispose();
     listViewStreamSubscriptions.forEach((s) => s?.cancel());
     listViewPagingController?.dispose();
   }

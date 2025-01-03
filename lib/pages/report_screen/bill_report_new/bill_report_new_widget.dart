@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/components/custom_date/custom_date_widget.dart';
-import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -113,97 +112,105 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            floatingActionButton: FloatingActionButton.extended(
-              onPressed: () async {
-                var _shouldSetState = false;
-                _model.resDevice = await actions.scanPrinter(
-                  FFAppState().posMode,
-                );
-                _shouldSetState = true;
-                if (!_model.resDevice!) {
-                  _model.rd = await actions.scanPrinter(
+            floatingActionButton: Visibility(
+              visible: false,
+              child: FloatingActionButton.extended(
+                onPressed: () async {
+                  var _shouldSetState = false;
+                  _model.resDevice = await actions.scanPrinter(
                     FFAppState().posMode,
                   );
                   _shouldSetState = true;
-                }
-                await actions.connectDevice(
-                  FFAppState().printerDevice,
-                  '0',
-                );
-                if (FFAppState().printerName != null &&
-                    FFAppState().printerName != '') {
-                  await actions.printBillWiseSalesReport(
-                    FFAppState().paymentDetails,
-                    getJsonField(
-                      FFAppState().printerDevice,
-                      r'''$''',
-                      true,
-                    )!,
-                    FFAppState().isPrinterConnected,
-                    FFAppState().isPrinterConnected.toString(),
-                    FFAppState().paperSize,
+                  if (!_model.resDevice!) {
+                    _model.rd = await actions.scanPrinter(
+                      FFAppState().posMode,
+                    );
+                    _shouldSetState = true;
+                  }
+                  await actions.connectDevice(
+                    FFAppState().printerDevice,
+                    '0',
                   );
-                  if (_shouldSetState) safeSetState(() {});
-                  return;
-                } else {
-                  await showDialog(
-                    context: context,
-                    builder: (alertDialogContext) {
-                      return AlertDialog(
-                        title: Text('printer connection'),
-                        content: Text('printer not connected'),
-                        actions: [
-                          TextButton(
-                            onPressed: () => Navigator.pop(alertDialogContext),
-                            child: Text('Ok'),
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                  if (_shouldSetState) safeSetState(() {});
-                  return;
-                }
-
-                if (_shouldSetState) safeSetState(() {});
-              },
-              backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-              elevation: 8.0,
-              label: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      FlutterFlowIconButton(
-                        borderColor: Colors.transparent,
-                        buttonSize: 30.0,
-                        icon: Icon(
-                          Icons.print,
-                          color: FlutterFlowTheme.of(context).primary,
-                          size: 20.0,
-                        ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
-                        },
-                      ),
-                      Text(
-                        FFLocalizations.of(context).getText(
-                          'urhe6l7c' /* Print */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodySmall.override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).bodySmallFamily,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              letterSpacing: 0.0,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context).bodySmallFamily),
+                  if (FFAppState().printerName != null &&
+                      FFAppState().printerName != '') {
+                    await actions.printBillWiseSalesReport(
+                      FFAppState().paymentDetails,
+                      getJsonField(
+                        FFAppState().printerDevice,
+                        r'''$''',
+                        true,
+                      )!,
+                      FFAppState().isPrinterConnected,
+                      FFAppState().isPrinterConnected.toString(),
+                      FFAppState().paperSize,
+                    );
+                    if (_shouldSetState) safeSetState(() {});
+                    return;
+                  } else {
+                    await showDialog(
+                      context: context,
+                      builder: (alertDialogContext) {
+                        return AlertDialog(
+                          title: Text('printer connection'),
+                          content: Text('printer not connected'),
+                          actions: [
+                            TextButton(
+                              onPressed: () =>
+                                  Navigator.pop(alertDialogContext),
+                              child: Text('Ok'),
                             ),
-                      ),
-                    ],
-                  ),
-                ],
+                          ],
+                        );
+                      },
+                    );
+                    if (_shouldSetState) safeSetState(() {});
+                    return;
+                  }
+
+                  if (_shouldSetState) safeSetState(() {});
+                },
+                backgroundColor:
+                    FlutterFlowTheme.of(context).secondaryBackground,
+                elevation: 8.0,
+                label: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
+                          buttonSize: 30.0,
+                          icon: Icon(
+                            Icons.print,
+                            color: FlutterFlowTheme.of(context).primary,
+                            size: 20.0,
+                          ),
+                          onPressed: () {
+                            print('IconButton pressed ...');
+                          },
+                        ),
+                        Text(
+                          FFLocalizations.of(context).getText(
+                            'urhe6l7c' /* Print */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodySmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodySmallFamily,
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodySmallFamily),
+                              ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             body: Padding(
@@ -217,7 +224,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: Color(0xEC1C4494),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -355,7 +362,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                         child: Container(
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondary,
+                                                .customColor1,
                                             borderRadius:
                                                 BorderRadius.circular(5.0),
                                           ),
@@ -371,7 +378,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'wle24dpd' /* CUSTOM DATE */,
+                                                    'wle24dpd' /* CHOOSE DATE */,
                                                   ),
                                                   textAlign: TextAlign.center,
                                                   style: FlutterFlowTheme.of(
@@ -387,6 +394,8 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                                     context)
                                                                 .lineColor,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
                                                             .containsKey(
@@ -404,14 +413,6 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                   ),
                                 ],
                               ),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: wrapWithModel(
-                              model: _model.headerModel,
-                              updateCallback: () => safeSetState(() {}),
-                              child: HeaderWidget(),
                             ),
                           ),
                         ],
@@ -438,7 +439,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                 height:
                                     MediaQuery.sizeOf(context).height * 0.06,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).secondary,
+                                  color: Color(0x879DB8FF),
                                 ),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -747,7 +748,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                             MediaQuery.sizeOf(
                                                                         context)
                                                                     .height *
-                                                                0.1,
+                                                                0.08,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
