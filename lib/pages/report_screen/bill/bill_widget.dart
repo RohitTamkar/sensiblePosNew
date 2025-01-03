@@ -2869,12 +2869,8 @@ class _BillWidgetState extends State<BillWidget> {
                                                                 true;
                                                             await actions
                                                                 .printBillnewhivegroceryBill(
-                                                              getJsonField(
-                                                                _model
-                                                                    .resultItem,
-                                                                r'''$.itemList''',
-                                                                true,
-                                                              )!,
+                                                              _model
+                                                                  .resultItem!,
                                                               _model.device!
                                                                   .toList(),
                                                               FFAppState()
