@@ -335,6 +335,7 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                 FFAppState().selectEndDate =
                                     _model.datePicked2!.millisecondsSinceEpoch;
                                 safeSetState(() {});
+                                Navigator.pop(context);
                               },
                               child: Container(
                                 width: 160.0,

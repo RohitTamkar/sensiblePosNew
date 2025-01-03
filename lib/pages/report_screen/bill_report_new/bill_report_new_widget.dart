@@ -61,6 +61,8 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
         return;
       }
       FFAppState().filterDate = getCurrentTimestamp.toString();
+      FFAppState().selectStartDate = getCurrentTimestamp.millisecondsSinceEpoch;
+      FFAppState().selectEndDate = getCurrentTimestamp.millisecondsSinceEpoch;
       FFAppState().update(() {});
     });
 
