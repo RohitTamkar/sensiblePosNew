@@ -1,10 +1,9 @@
-import '/components/calender_day_end/calender_day_end_widget.dart';
-import '/components/calender_day_start/calender_day_start_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -45,6 +44,8 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: AlignmentDirectional(0.0, 0.0),
       child: Column(
@@ -119,18 +120,64 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                await showModalBottomSheet(
-                                  isScrollControlled: true,
-                                  backgroundColor: Colors.transparent,
-                                  barrierColor: Color(0x00000000),
+                                final _datePicked1Date = await showDatePicker(
                                   context: context,
-                                  builder: (context) {
-                                    return Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: CalenderDayStartWidget(),
+                                  initialDate: getCurrentTimestamp,
+                                  firstDate: getCurrentTimestamp,
+                                  lastDate: DateTime(2050),
+                                  builder: (context, child) {
+                                    return wrapInMaterialDatePickerTheme(
+                                      context,
+                                      child!,
+                                      headerBackgroundColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      headerForegroundColor:
+                                          FlutterFlowTheme.of(context).info,
+                                      headerTextStyle: FlutterFlowTheme.of(
+                                              context)
+                                          .headlineLarge
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineLargeFamily,
+                                            fontSize: 32.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineLargeFamily),
+                                          ),
+                                      pickerBackgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                      pickerForegroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                      selectedDateTimeBackgroundColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      selectedDateTimeForegroundColor:
+                                          FlutterFlowTheme.of(context).info,
+                                      actionButtonForegroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                      iconSize: 24.0,
                                     );
                                   },
-                                ).then((value) => safeSetState(() {}));
+                                );
+
+                                if (_datePicked1Date != null) {
+                                  safeSetState(() {
+                                    _model.datePicked1 = DateTime(
+                                      _datePicked1Date.year,
+                                      _datePicked1Date.month,
+                                      _datePicked1Date.day,
+                                    );
+                                  });
+                                }
+                                FFAppState().selectStartDate =
+                                    _model.datePicked1!.millisecondsSinceEpoch;
+                                safeSetState(() {});
                               },
                               child: Container(
                                 width: 160.0,
@@ -185,9 +232,15 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 0.0, 0.0),
                                             child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'x95i6u8o' /* START DATE */,
+                                              dateTimeFormat(
+                                                "d/M/y",
+                                                DateTime
+                                                    .fromMillisecondsSinceEpoch(
+                                                        FFAppState()
+                                                            .selectStartDate),
+                                                locale:
+                                                    FFLocalizations.of(context)
+                                                        .languageCode,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -224,18 +277,64 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                await showModalBottomSheet(
-                                  isScrollControlled: true,
-                                  backgroundColor: Colors.transparent,
-                                  barrierColor: Color(0x00000000),
+                                final _datePicked2Date = await showDatePicker(
                                   context: context,
-                                  builder: (context) {
-                                    return Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: CalenderDayEndWidget(),
+                                  initialDate: getCurrentTimestamp,
+                                  firstDate: getCurrentTimestamp,
+                                  lastDate: DateTime(2050),
+                                  builder: (context, child) {
+                                    return wrapInMaterialDatePickerTheme(
+                                      context,
+                                      child!,
+                                      headerBackgroundColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      headerForegroundColor:
+                                          FlutterFlowTheme.of(context).info,
+                                      headerTextStyle: FlutterFlowTheme.of(
+                                              context)
+                                          .headlineLarge
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineLargeFamily,
+                                            fontSize: 32.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineLargeFamily),
+                                          ),
+                                      pickerBackgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                      pickerForegroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                      selectedDateTimeBackgroundColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      selectedDateTimeForegroundColor:
+                                          FlutterFlowTheme.of(context).info,
+                                      actionButtonForegroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                      iconSize: 24.0,
                                     );
                                   },
-                                ).then((value) => safeSetState(() {}));
+                                );
+
+                                if (_datePicked2Date != null) {
+                                  safeSetState(() {
+                                    _model.datePicked2 = DateTime(
+                                      _datePicked2Date.year,
+                                      _datePicked2Date.month,
+                                      _datePicked2Date.day,
+                                    );
+                                  });
+                                }
+                                FFAppState().selectEndDate =
+                                    _model.datePicked2!.millisecondsSinceEpoch;
+                                safeSetState(() {});
                               },
                               child: Container(
                                 width: 160.0,
@@ -288,9 +387,15 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 0.0, 0.0),
                                             child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '0gjm2dy8' /* END DATE */,
+                                              dateTimeFormat(
+                                                "d/M/y",
+                                                DateTime
+                                                    .fromMillisecondsSinceEpoch(
+                                                        FFAppState()
+                                                            .selectEndDate),
+                                                locale:
+                                                    FFLocalizations.of(context)
+                                                        .languageCode,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)

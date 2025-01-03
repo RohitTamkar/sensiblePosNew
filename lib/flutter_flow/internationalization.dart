@@ -21531,20 +21531,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'x95i6u8o': {
-      'en': 'START DATE',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '0gjm2dy8': {
-      'en': 'END DATE',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
     '9dr3jp1g': {
       'en': 'Cancel',
       'hi': '',
