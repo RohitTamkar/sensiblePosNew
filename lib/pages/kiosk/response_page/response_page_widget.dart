@@ -294,7 +294,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
           if (_model.isConnected!) {
             FFAppState().lastBill = FFAppState().finalAmt;
             FFAppState().update(() {});
-            await Future.delayed(const Duration(milliseconds: 2000));
+            await Future.delayed(const Duration(milliseconds: 3000));
             _model.returnedList2kiosk = await actions.selectBillPrint(
               FFAppState().selBill.toString(),
               FFAppState().allBillsList.toList(),
