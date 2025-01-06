@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 import 'dart:async';
@@ -91,7 +93,7 @@ Future printBillnewhivegroceryBill(
     taxColumn3 = "TAX%      TAXABLE     CGST     SGST     TAXAMT";
 
     if (data.length > 0) {
-      obj = data[0];
+      obj = data;
       String header;
 
       if (FFAppState().billPrintHeader != null &&
@@ -298,7 +300,7 @@ Future printBillnewhivegroceryBill(
               bold: false,
               align: PosAlign.center));
       if (disc) {
-        for (int i = 0; i < invoiceDetails.productList.length; i++) {
+        for (int i = 0; i < obj["itemList"].length; i++) {
           int s = i + 1;
           bytes += generator.row([
             PosColumn(

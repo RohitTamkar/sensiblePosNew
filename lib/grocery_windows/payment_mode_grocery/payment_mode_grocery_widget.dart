@@ -4405,6 +4405,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 FFAppState().shiftDetailsJson,
                                                 r'''$.shiftId''',
                                               ).toString(),
+                                              count: FFAppState().newcount,
                                             ),
                                             ...mapToFirestore(
                                               {
@@ -4463,6 +4464,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 FFAppState().shiftDetailsJson,
                                                 r'''$.shiftId''',
                                               ).toString(),
+                                              count: FFAppState().newcount,
                                             ),
                                             ...mapToFirestore(
                                               {
@@ -4680,10 +4682,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 .shiftondataprint!.reference
                                                 .update(createShiftRecordData(
                                               billCount: valueOrDefault<int>(
-                                                functions.lastBillCount(
-                                                    FFAppState()
-                                                        .shiftDetails
-                                                        .billCount),
+                                                functions
+                                                    .lastBillCount(getJsonField(
+                                                  FFAppState().shiftDetailsJson,
+                                                  r'''$.billCount''',
+                                                )),
                                                 0,
                                               ),
                                               dayId: getJsonField(
@@ -4721,12 +4724,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 _model.shiftSummarResultsNew,
                                                 r'''$.paymentJson''',
                                               ).toString(),
-                                              code: FFAppState()
-                                                  .shiftDetails
-                                                  .code,
-                                              endTime: FFAppState()
-                                                  .shiftDetails
-                                                  .endTime,
+                                              code: FFAppState().newcount,
+                                              endTime: getJsonField(
+                                                FFAppState().shiftDetailsJson,
+                                                r'''$.endTime''',
+                                              ),
                                               advanceAmtTotal: FFAppState()
                                                   .shiftDetails
                                                   .advanceAmtTotal,
