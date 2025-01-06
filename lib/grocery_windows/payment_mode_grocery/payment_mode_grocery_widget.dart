@@ -4626,6 +4626,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     .id,
                                             );
                                             safeSetState(() {});
+                                            FFAppState().billcount =
+                                                valueOrDefault<int>(
+                                              functions
+                                                  .lastBillCount(getJsonField(
+                                                FFAppState().shiftDetailsJson,
+                                                r'''$.billCount''',
+                                              )),
+                                              0,
+                                            );
+                                            safeSetState(() {});
                                             _model.shiftondataprint =
                                                 await queryShiftRecordOnce(
                                               parent: FFAppState().outletIdRef,
@@ -4985,6 +4995,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 .updatedShiftDetails!.billCount;
                                             FFAppState().groceryJson = null;
                                             FFAppState().prdid = '';
+                                            FFAppState().billcount = _model
+                                                .updatedShiftDetails!.billCount;
                                             FFAppState().update(() {});
                                             Navigator.pop(context);
                                             if (_shouldSetState)
