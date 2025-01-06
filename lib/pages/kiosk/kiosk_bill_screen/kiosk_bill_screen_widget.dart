@@ -476,23 +476,25 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                     safeSetState(() {});
                                                   },
                                                 ),
-                                                FlutterFlowIconButton(
-                                                  borderColor:
-                                                      Colors.transparent,
-                                                  borderRadius: 10.0,
-                                                  buttonSize: 55.0,
-                                                  icon: Icon(
-                                                    Icons.settings_outlined,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    size: 30.0,
+                                                if (false)
+                                                  FlutterFlowIconButton(
+                                                    borderColor:
+                                                        Colors.transparent,
+                                                    borderRadius: 10.0,
+                                                    buttonSize: 55.0,
+                                                    icon: Icon(
+                                                      Icons.settings_outlined,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      size: 30.0,
+                                                    ),
+                                                    onPressed: () async {
+                                                      context.pushNamed(
+                                                          'printSettingkiosk');
+                                                    },
                                                   ),
-                                                  onPressed: () async {
-                                                    context.pushNamed(
-                                                        'printSettingkiosk');
-                                                  },
-                                                ),
                                               ],
                                             ),
                                           ],

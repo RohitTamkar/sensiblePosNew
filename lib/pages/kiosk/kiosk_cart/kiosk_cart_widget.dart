@@ -259,8 +259,6 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                 safeSetState(() {});
                                                 if (FFAppState().orderType ==
                                                     'PARCEL') {
-                                                  FFAppState().orderType =
-                                                      'PARCEL';
                                                   FFAppState().delCharges =
                                                       containerFooterRecord!
                                                           .parcelCharges;
