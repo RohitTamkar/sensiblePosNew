@@ -3774,10 +3774,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
 
                                             await _model.shiftondata!.reference
                                                 .update(createShiftRecordData(
-                                              billCount:
-                                                  functions.lastBillCount(_model
-                                                      .getOfflineShiftdetails!
-                                                      .billCount),
+                                              billCount: functions
+                                                  .lastBillCount(getJsonField(
+                                                FFAppState().shiftDetailsJson,
+                                                r'''$.billCount''',
+                                              )),
                                               dayId: getJsonField(
                                                 _model.shiftSummarResultsNew2,
                                                 r'''$.dayId''',
@@ -3813,50 +3814,17 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 _model.shiftSummarResultsNew2,
                                                 r'''$.paymentJson''',
                                               ).toString(),
-                                              code: FFAppState()
-                                                  .shiftDetails
-                                                  .code,
+                                              code: FFAppState().newcount,
                                               endTime: FFAppState()
                                                   .shiftDetails
                                                   .endTime,
                                               advanceAmtTotal: FFAppState()
                                                   .shiftDetails
                                                   .advanceAmtTotal,
-                                              customerReciveAmtTotal:
-                                                  FFAppState()
-                                                      .shiftDetails
-                                                      .customerReciveAmtTotal,
-                                              expensesAmtTotal: FFAppState()
-                                                  .shiftDetails
-                                                  .expensesAmtTotal,
-                                              openingAmt: FFAppState()
-                                                  .shiftDetails
-                                                  .openingAmt,
-                                              receiveAmtTotal: FFAppState()
-                                                  .shiftDetails
-                                                  .receiveAmtTotal,
-                                              refoundAmount: FFAppState()
-                                                  .shiftDetails
-                                                  .refoundAmount,
-                                              roundOff: FFAppState()
-                                                  .shiftDetails
-                                                  .roundOff,
-                                              cashInHand: FFAppState()
-                                                  .shiftDetails
-                                                  .cashInHand,
-                                              startTime: FFAppState()
-                                                  .shiftDetails
-                                                  .startTime,
-                                              inActive: FFAppState()
-                                                  .shiftDetails
-                                                  .inActive,
-                                              shiftNo: FFAppState()
-                                                  .shiftDetails
-                                                  .shiftNo,
-                                              shiftId: getJsonField(
+                                              cashInHand: getJsonField(
                                                 _model.shiftSummarResultsNew2,
-                                                r'''$.shiftId''',
-                                              ).toString(),
+                                                r'''$.cashSale''',
+                                              ),
                                             ));
                                             _model.updatedShift =
                                                 await actions.hiveShiftCrud(
@@ -4732,41 +4700,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               advanceAmtTotal: FFAppState()
                                                   .shiftDetails
                                                   .advanceAmtTotal,
-                                              customerReciveAmtTotal:
-                                                  FFAppState()
-                                                      .shiftDetails
-                                                      .customerReciveAmtTotal,
-                                              expensesAmtTotal: FFAppState()
-                                                  .shiftDetails
-                                                  .expensesAmtTotal,
-                                              openingAmt: FFAppState()
-                                                  .shiftDetails
-                                                  .openingAmt,
-                                              receiveAmtTotal: FFAppState()
-                                                  .shiftDetails
-                                                  .receiveAmtTotal,
-                                              refoundAmount: FFAppState()
-                                                  .shiftDetails
-                                                  .refoundAmount,
-                                              roundOff: FFAppState()
-                                                  .shiftDetails
-                                                  .roundOff,
-                                              cashInHand: FFAppState()
-                                                  .shiftDetails
-                                                  .cashInHand,
-                                              startTime: FFAppState()
-                                                  .shiftDetails
-                                                  .startTime,
-                                              inActive: FFAppState()
-                                                  .shiftDetails
-                                                  .inActive,
-                                              shiftNo: FFAppState()
-                                                  .shiftDetails
-                                                  .shiftNo,
-                                              shiftId: getJsonField(
+                                              cashInHand: getJsonField(
                                                 _model.shiftSummarResultsNew,
-                                                r'''$.shiftId''',
-                                              ).toString(),
+                                                r'''$.cashSale''',
+                                              ),
                                             ));
                                             _model.updatedShiftDetails =
                                                 await actions.hiveShiftCrud(
