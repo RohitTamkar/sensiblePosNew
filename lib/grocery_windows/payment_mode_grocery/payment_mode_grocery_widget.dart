@@ -3642,10 +3642,9 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 .updateShiftDetailsStruct(
                                               (e) => e
                                                 ..billCount = functions
-                                                    .lastBillCount(getJsonField(
-                                                  FFAppState().shiftDetailsJson,
-                                                  r'''$.billCount''',
-                                                ))
+                                                    .lastBillCount(FFAppState()
+                                                        .shiftDetails
+                                                        .billCount)
                                                 ..totalSale = getJsonField(
                                                   _model.shiftSummarResultsNew2,
                                                   r'''$.totalSale''',
@@ -4037,6 +4036,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             FFAppState().disAmtPay = 0.0;
                                             FFAppState().taxAmtPay = 0.0;
                                             FFAppState().prdid = '';
+                                            FFAppState().shiftDetails =
+                                                _model.updatedShift!;
                                             FFAppState().update(() {});
                                             Navigator.pop(context);
                                             if (_shouldSetState)
@@ -4987,6 +4988,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             FFAppState().prdid = '';
                                             FFAppState().billcount = _model
                                                 .updatedShiftDetails!.billCount;
+                                            FFAppState().shiftDetails =
+                                                _model.updatedShiftDetails!;
                                             FFAppState().update(() {});
                                             Navigator.pop(context);
                                             if (_shouldSetState)
