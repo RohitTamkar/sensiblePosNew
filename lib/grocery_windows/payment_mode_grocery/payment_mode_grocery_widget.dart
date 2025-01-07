@@ -3775,10 +3775,9 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
 
                                             await _model.shiftondata!.reference
                                                 .update(createShiftRecordData(
-                                              billCount: functions
-                                                  .lastBillCount(FFAppState()
-                                                      .shiftDetails
-                                                      .billCount),
+                                              billCount: FFAppState()
+                                                  .shiftDetails
+                                                  .billCount,
                                               dayId: getJsonField(
                                                 _model.shiftSummarResultsNew2,
                                                 r'''$.dayId''',
@@ -4654,13 +4653,9 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             await _model
                                                 .shiftondataprint!.reference
                                                 .update(createShiftRecordData(
-                                              billCount: valueOrDefault<int>(
-                                                functions.lastBillCount(
-                                                    FFAppState()
-                                                        .shiftDetails
-                                                        .billCount),
-                                                0,
-                                              ),
+                                              billCount: FFAppState()
+                                                  .shiftDetails
+                                                  .billCount,
                                               dayId: getJsonField(
                                                 _model.shiftSummarResultsNew,
                                                 r'''$.dayId''',
