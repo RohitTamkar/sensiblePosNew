@@ -3646,7 +3646,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             FFAppState()
                                                 .updateShiftDetailsStruct(
                                               (e) => e
-                                                ..billCount = FFAppState().count
+                                                ..billCount =
+                                                    FFAppState().billcount
                                                 ..totalSale = getJsonField(
                                                   _model.shiftSummarResultsNew2,
                                                   r'''$.totalSale''',
@@ -4154,6 +4155,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 FFAppState().count + 1;
                                             FFAppState().newcount =
                                                 FFAppState().newcount + 1;
+                                            FFAppState().billcount =
+                                                FFAppState().billcount + 1;
                                             safeSetState(() {});
                                           }
 
