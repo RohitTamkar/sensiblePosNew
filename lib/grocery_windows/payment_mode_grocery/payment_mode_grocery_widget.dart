@@ -3309,16 +3309,21 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               FFAppState().groceryJson,
                                               r'''$.paidAmt''',
                                             )) {
-                                          if (!getJsonField(
+                                          if (getJsonField(
                                             FFAppState().shiftDetailsJson,
                                             r'''$.shiftExists''',
                                           )) {
+                                            FFAppState().count =
+                                                FFAppState().count + 1;
+                                            safeSetState(() {});
+                                          } else {
                                             FFAppState().count =
                                                 FFAppState().count + 1;
                                             FFAppState().newcount =
                                                 FFAppState().newcount + 1;
                                             safeSetState(() {});
                                           }
+
                                           _model.prdlistsavebill =
                                               await actions.filterProducts2(
                                             FFAppState().selBill,
@@ -3641,11 +3646,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             FFAppState()
                                                 .updateShiftDetailsStruct(
                                               (e) => e
-                                                ..billCount = functions
-                                                    .lastBillCount(getJsonField(
-                                                  _model.shiftSummarResultsNew2,
-                                                  r'''$.billCount''',
-                                                ))
+                                                ..billCount = FFAppState().count
                                                 ..totalSale = getJsonField(
                                                   _model.shiftSummarResultsNew2,
                                                   r'''$.totalSale''',
@@ -4038,8 +4039,6 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             FFAppState().prdid = '';
                                             FFAppState().shiftDetails =
                                                 _model.updatedShift!;
-                                            FFAppState().shiftDetailsJson =
-                                                _model.shiftSummarResultsNew2!;
                                             FFAppState().update(() {});
                                             Navigator.pop(context);
                                             if (_shouldSetState)
@@ -4147,6 +4146,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 FFAppState().count + 1;
                                             FFAppState().newcount =
                                                 FFAppState().newcount + 1;
+                                            FFAppState().billcount =
+                                                FFAppState().billcount + 1;
                                             safeSetState(() {});
                                           } else {
                                             FFAppState().count =
@@ -4515,15 +4516,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 .updateShiftDetailsStruct(
                                               (e) => e
                                                 ..billCount =
-                                                    valueOrDefault<int>(
-                                                  functions.lastBillCount(
-                                                      getJsonField(
-                                                    _model
-                                                        .shiftSummarResultsNew,
-                                                    r'''$.billCount''',
-                                                  )),
-                                                  0,
-                                                )
+                                                    FFAppState().billcount
                                                 ..totalSale = getJsonField(
                                                   _model.shiftSummarResultsNew,
                                                   r'''$.totalSale''',

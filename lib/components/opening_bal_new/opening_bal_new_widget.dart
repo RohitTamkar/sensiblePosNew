@@ -936,6 +936,12 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                           .toList(),
                                                     );
                                                     _shouldSetState = true;
+                                                    FFAppState().billcount =
+                                                        getJsonField(
+                                                      _model.shiftDetailsNew2,
+                                                      r'''$.billCount''',
+                                                    );
+                                                    safeSetState(() {});
                                                     if (_model
                                                         .devicew!.settingList
                                                         .where((e) =>
@@ -1058,6 +1064,11 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                         getJsonField(
                                                       widget!.shiftDetails,
                                                       r'''$.shiftCount''',
+                                                    );
+                                                    FFAppState().billcount =
+                                                        getJsonField(
+                                                      widget!.shiftDetails,
+                                                      r'''$.billCount''',
                                                     );
                                                     FFAppState().update(() {});
                                                     _model.shiftidhive2 =
