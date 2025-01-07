@@ -3642,9 +3642,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 .updateShiftDetailsStruct(
                                               (e) => e
                                                 ..billCount = functions
-                                                    .lastBillCount(FFAppState()
-                                                        .shiftDetails
-                                                        .billCount)
+                                                    .lastBillCount(getJsonField(
+                                                  _model.shiftSummarResultsNew2,
+                                                  r'''$.billCount''',
+                                                ))
                                                 ..totalSale = getJsonField(
                                                   _model.shiftSummarResultsNew2,
                                                   r'''$.totalSale''',
@@ -4515,9 +4516,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 ..billCount =
                                                     valueOrDefault<int>(
                                                   functions.lastBillCount(
-                                                      FFAppState()
-                                                          .shiftDetails
-                                                          .billCount),
+                                                      getJsonField(
+                                                    _model
+                                                        .shiftSummarResultsNew,
+                                                    r'''$.billCount''',
+                                                  )),
                                                   0,
                                                 )
                                                 ..totalSale = getJsonField(
