@@ -3315,12 +3315,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           )) {
                                             FFAppState().count =
                                                 FFAppState().count + 1;
+                                            FFAppState().billcount =
+                                                FFAppState().billcount + 1;
                                             safeSetState(() {});
                                           } else {
                                             FFAppState().count =
                                                 FFAppState().count + 1;
                                             FFAppState().newcount =
                                                 FFAppState().newcount + 1;
+                                            FFAppState().billcount =
+                                                FFAppState().billcount + 1;
                                             safeSetState(() {});
                                           }
 
@@ -4017,6 +4021,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             FFAppState().noOfItems = 0;
                                             FFAppState().subTotal = 0.0;
                                             FFAppState().count =
+                                                _model.updatedShift!.billCount;
+                                            FFAppState().billcount =
                                                 _model.updatedShift!.billCount;
                                             FFAppState().update(() {});
                                             FFAppState().oldBalance = 0;
