@@ -4038,6 +4038,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             FFAppState().prdid = '';
                                             FFAppState().shiftDetails =
                                                 _model.updatedShift!;
+                                            FFAppState().shiftDetailsJson =
+                                                _model.shiftSummarResultsNew2!;
                                             FFAppState().update(() {});
                                             Navigator.pop(context);
                                             if (_shouldSetState)
@@ -4988,6 +4990,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 .updatedShiftDetails!.billCount;
                                             FFAppState().shiftDetails =
                                                 _model.updatedShiftDetails!;
+                                            FFAppState().shiftDetailsJson =
+                                                _model.shiftSummarResultsNew!;
                                             FFAppState().update(() {});
                                             Navigator.pop(context);
                                             if (_shouldSetState)
