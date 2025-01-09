@@ -206,10 +206,12 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                                 final settinglist =
                                                     containerMainAppSettingsRecord
                                                             ?.settingList
+                                                            ?.map((e) => e)
+                                                            .toList()
                                                             ?.where((e) =>
                                                                 (e.settingType ==
                                                                     FFAppState()
-                                                                        .navigate) &&
+                                                                        .navigate) ||
                                                                 (e.settingType ==
                                                                     'DEFAULT'))
                                                             .toList()
