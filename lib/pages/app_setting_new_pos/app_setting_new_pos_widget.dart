@@ -209,7 +209,7 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                                             ?.where((e) =>
                                                                 (e.settingType ==
                                                                     FFAppState()
-                                                                        .navigate) ||
+                                                                        .navigate) &&
                                                                 (e.settingType ==
                                                                     'DEFAULT'))
                                                             .toList()
