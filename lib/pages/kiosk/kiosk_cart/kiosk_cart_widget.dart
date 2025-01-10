@@ -12,7 +12,6 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -1532,18 +1531,6 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                 safeSetState(() {});
                                                 if (FFAppState()
                                                     .isPrinterConnected) {
-                                                  _model.outletDOc =
-                                                      await queryOutletRecordOnce(
-                                                    queryBuilder:
-                                                        (outletRecord) =>
-                                                            outletRecord.where(
-                                                      'id',
-                                                      isEqualTo: FFAppState()
-                                                          .outletIdRef
-                                                          ?.id,
-                                                    ),
-                                                    singleRecord: true,
-                                                  ).then((s) => s.firstOrNull);
                                                   if (functions
                                                       .filterBillList(
                                                           FFAppState().selBill,
@@ -1551,133 +1538,49 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                               .allBillsList
                                                               .toList())
                                                       .isNotEmpty) {
-                                                    if (_model.outletDOc
-                                                                ?.merchantId !=
-                                                            null &&
-                                                        _model.outletDOc
-                                                                ?.merchantId !=
-                                                            '') {
-                                                      if (getJsonField(
-                                                        widget!.shiftdetails,
-                                                        r'''$.shiftExists''',
-                                                      )) {}
-                                                      FFAppState().orderId =
-                                                          FFAppState().orderId +
-                                                              10;
-                                                      FFAppState()
-                                                              .paytmOrderId =
-                                                          valueOrDefault<
-                                                              String>(
-                                                        'ORD-${getCurrentTimestamp.millisecondsSinceEpoch.toString()}',
-                                                        '0',
-                                                      );
-                                                      FFAppState().outletId =
-                                                          _model.outletDOc!.id;
-                                                      safeSetState(() {});
-                                                      _model.paymentQrResponse =
-                                                          await CreateQRCall
-                                                              .call(
-                                                        mid: valueOrDefault<
-                                                            String>(
-                                                          _model.outletDOc
-                                                              ?.merchantId,
-                                                          '0',
+                                                    context.goNamed(
+                                                      'KioskChoosePaymentMode',
+                                                      queryParameters: {
+                                                        'doc': serializeParam(
+                                                          widget!.doc,
+                                                          ParamType
+                                                              .DocumentReference,
                                                         ),
-                                                        orderId: FFAppState()
-                                                            .paytmOrderId,
-                                                        amount:
-                                                            functions.toDecimal(
-                                                                FFAppState()
-                                                                    .finalAmt),
-                                                        businessType:
-                                                            'UPI_QR_CODE',
-                                                        posId: FFAppState()
-                                                            .outletId,
-                                                        mKey: valueOrDefault<
-                                                            String>(
-                                                          _model.outletDOc
-                                                              ?.merchantKey,
-                                                          '0',
+                                                        'shiftdetails':
+                                                            serializeParam(
+                                                          widget!.shiftdetails,
+                                                          ParamType.JSON,
                                                         ),
-                                                        isProd: _model
-                                                            .outletDOc?.isProd,
-                                                      );
-
-                                                      context.goNamed(
-                                                        'KioskChoosePaymentMode',
-                                                        queryParameters: {
-                                                          'doc': serializeParam(
-                                                            widget!.doc,
-                                                            ParamType
-                                                                .DocumentReference,
-                                                          ),
-                                                          'shiftdetails':
-                                                              serializeParam(
-                                                            widget!
-                                                                .shiftdetails,
-                                                            ParamType.JSON,
-                                                          ),
-                                                          'appSettings':
-                                                              serializeParam(
+                                                        'appSettings':
+                                                            serializeParam(
+                                                          widget!.appsetting,
+                                                          ParamType.Document,
+                                                        ),
+                                                        'taxcollection':
+                                                            serializeParam(
+                                                          widget!.taxcollection,
+                                                          ParamType.Document,
+                                                          isList: true,
+                                                        ),
+                                                        'paytmOrderId':
+                                                            serializeParam(
+                                                          FFAppState()
+                                                              .paytmOrderId,
+                                                          ParamType.String,
+                                                        ),
+                                                        'isPaytm':
+                                                            serializeParam(
+                                                          true,
+                                                          ParamType.bool,
+                                                        ),
+                                                      }.withoutNulls,
+                                                      extra: <String, dynamic>{
+                                                        'appSettings':
                                                             widget!.appsetting,
-                                                            ParamType.Document,
-                                                          ),
-                                                          'taxcollection':
-                                                              serializeParam(
-                                                            widget!
-                                                                .taxcollection,
-                                                            ParamType.Document,
-                                                            isList: true,
-                                                          ),
-                                                          'qrJson':
-                                                              serializeParam(
-                                                            (_model.paymentQrResponse
-                                                                    ?.jsonBody ??
-                                                                ''),
-                                                            ParamType.JSON,
-                                                          ),
-                                                          'paytmOrderId':
-                                                              serializeParam(
-                                                            FFAppState()
-                                                                .paytmOrderId,
-                                                            ParamType.String,
-                                                          ),
-                                                          'isPaytm':
-                                                              serializeParam(
-                                                            true,
-                                                            ParamType.bool,
-                                                          ),
-                                                        }.withoutNulls,
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          'appSettings': widget!
-                                                              .appsetting,
-                                                          'taxcollection':
-                                                              widget!
-                                                                  .taxcollection,
-                                                        },
-                                                      );
-                                                    } else {
-                                                      await showDialog(
-                                                        context: context,
-                                                        builder:
-                                                            (alertDialogContext) {
-                                                          return AlertDialog(
-                                                            content: Text(
-                                                                'Merchant Id  Is Not Available Contact Support!'),
-                                                            actions: [
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext),
-                                                                child:
-                                                                    Text('Ok'),
-                                                              ),
-                                                            ],
-                                                          );
-                                                        },
-                                                      );
-                                                    }
+                                                        'taxcollection': widget!
+                                                            .taxcollection,
+                                                      },
+                                                    );
                                                   } else {
                                                     await showDialog(
                                                       context: context,

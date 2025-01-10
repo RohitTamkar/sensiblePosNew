@@ -302,7 +302,9 @@ class _KioskChoosePaymentModeWidgetState
                                             ParamType.JSON,
                                           ),
                                           'qrJson': serializeParam(
-                                            widget!.qrJson,
+                                            (_model.paymentQrResponse
+                                                    ?.jsonBody ??
+                                                ''),
                                             ParamType.JSON,
                                           ),
                                           'paytmOrderId': serializeParam(
