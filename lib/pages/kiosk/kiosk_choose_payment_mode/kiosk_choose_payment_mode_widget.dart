@@ -357,11 +357,11 @@ class _KioskChoosePaymentModeWidgetState
                                             ParamType.JSON,
                                           ),
                                           'paytmOrderId': serializeParam(
-                                            widget!.paytmOrderId,
+                                            FFAppState().paytmOrderId,
                                             ParamType.String,
                                           ),
                                           'isPaytm': serializeParam(
-                                            widget!.isPaytm,
+                                            true,
                                             ParamType.bool,
                                           ),
                                           'appsettings': serializeParam(
@@ -600,7 +600,7 @@ class _KioskChoosePaymentModeWidgetState
                                           amount: functions
                                               .toDecimal(FFAppState().finalAmt),
                                           businessType: 'UPI_QR_CODE',
-                                          posId: FFAppState().outletId,
+                                          posId: _model.outletDOc2?.id,
                                           mKey: _model.outletDOc2?.merchantKey,
                                           isProd: _model.outletDOc2?.isProd,
                                         );
