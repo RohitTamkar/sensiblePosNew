@@ -1,6 +1,7 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -161,6 +162,54 @@ class _KioskChoosePaymentModeWidgetState
                         model: _model.kioskHeaderModel,
                         updateCallback: () => safeSetState(() {}),
                         child: KioskHeaderWidget(),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 20.0, 0.0),
+                          child: FlutterFlowIconButton(
+                            borderColor: FlutterFlowTheme.of(context).primary,
+                            borderRadius: 15.0,
+                            borderWidth: 0.5,
+                            buttonSize: 65.0,
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            icon: Icon(
+                              Icons.keyboard_backspace_outlined,
+                              color: FlutterFlowTheme.of(context).primary,
+                              size: 40.0,
+                            ),
+                            onPressed: () async {
+                              context.goNamed(
+                                'KioskBillScreen',
+                                queryParameters: {
+                                  'doc': serializeParam(
+                                    widget!.doc,
+                                    ParamType.DocumentReference,
+                                  ),
+                                  'shiftdoc': serializeParam(
+                                    widget!.shiftdetails,
+                                    ParamType.JSON,
+                                  ),
+                                  'appsetting': serializeParam(
+                                    widget!.appSettings,
+                                    ParamType.Document,
+                                  ),
+                                  'taxcollection': serializeParam(
+                                    widget!.taxcollection,
+                                    ParamType.Document,
+                                    isList: true,
+                                  ),
+                                }.withoutNulls,
+                                extra: <String, dynamic>{
+                                  'appsetting': widget!.appSettings,
+                                  'taxcollection': widget!.taxcollection,
+                                },
+                              );
+                            },
+                          ),
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
