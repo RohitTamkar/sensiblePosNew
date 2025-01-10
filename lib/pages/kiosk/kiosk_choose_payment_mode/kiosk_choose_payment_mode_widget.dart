@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -6,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:math';
 import 'dart:ui';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -247,45 +249,150 @@ class _KioskChoosePaymentModeWidgetState
                                 onTap: () async {
                                   FFAppState().PayMode = 'UPI QR';
                                   safeSetState(() {});
-
-                                  context.goNamed(
-                                    'KioskPayment',
-                                    queryParameters: {
-                                      'doc': serializeParam(
-                                        widget!.doc,
-                                        ParamType.DocumentReference,
-                                      ),
-                                      'shiftdetails': serializeParam(
+                                  _model.outletDOc =
+                                      await queryOutletRecordOnce(
+                                    queryBuilder: (outletRecord) =>
+                                        outletRecord.where(
+                                      'id',
+                                      isEqualTo: FFAppState().outletIdRef?.id,
+                                    ),
+                                    singleRecord: true,
+                                  ).then((s) => s.firstOrNull);
+                                  if (functions
+                                      .filterBillList(FFAppState().selBill,
+                                          FFAppState().allBillsList.toList())
+                                      .isNotEmpty) {
+                                    if (_model.outletDOc?.merchantId != null &&
+                                        _model.outletDOc?.merchantId != '') {
+                                      if (getJsonField(
                                         widget!.shiftdetails,
-                                        ParamType.JSON,
-                                      ),
-                                      'qrJson': serializeParam(
-                                        widget!.qrJson,
-                                        ParamType.JSON,
-                                      ),
-                                      'paytmOrderId': serializeParam(
-                                        widget!.paytmOrderId,
-                                        ParamType.String,
-                                      ),
-                                      'isPaytm': serializeParam(
-                                        widget!.isPaytm,
-                                        ParamType.bool,
-                                      ),
-                                      'appsettings': serializeParam(
-                                        widget!.appSettings,
-                                        ParamType.Document,
-                                      ),
-                                      'taxcollection': serializeParam(
-                                        widget!.taxcollection,
-                                        ParamType.Document,
-                                        isList: true,
-                                      ),
-                                    }.withoutNulls,
-                                    extra: <String, dynamic>{
-                                      'appsettings': widget!.appSettings,
-                                      'taxcollection': widget!.taxcollection,
-                                    },
-                                  );
+                                        r'''$.shiftExists''',
+                                      )) {}
+                                      FFAppState().orderId =
+                                          FFAppState().orderId + 10;
+                                      FFAppState().paytmOrderId =
+                                          valueOrDefault<String>(
+                                        'ORD-${getCurrentTimestamp.millisecondsSinceEpoch.toString()}',
+                                        '0',
+                                      );
+                                      FFAppState().outletId =
+                                          _model.outletDOc!.id;
+                                      safeSetState(() {});
+                                      _model.paymentQrResponse =
+                                          await CreateQRCall.call(
+                                        mid: _model.outletDOc?.merchantId,
+                                        orderId: FFAppState().paytmOrderId,
+                                        amount: functions
+                                            .toDecimal(FFAppState().finalAmt),
+                                        businessType: 'UPI_QR_CODE',
+                                        posId: _model.outletDOc?.id,
+                                        mKey: _model.outletDOc?.merchantKey,
+                                        isProd: _model.outletDOc?.isProd,
+                                      );
+
+                                      context.goNamed(
+                                        'KioskPayment',
+                                        queryParameters: {
+                                          'doc': serializeParam(
+                                            widget!.doc,
+                                            ParamType.DocumentReference,
+                                          ),
+                                          'shiftdetails': serializeParam(
+                                            widget!.shiftdetails,
+                                            ParamType.JSON,
+                                          ),
+                                          'qrJson': serializeParam(
+                                            widget!.qrJson,
+                                            ParamType.JSON,
+                                          ),
+                                          'paytmOrderId': serializeParam(
+                                            widget!.paytmOrderId,
+                                            ParamType.String,
+                                          ),
+                                          'isPaytm': serializeParam(
+                                            widget!.isPaytm,
+                                            ParamType.bool,
+                                          ),
+                                          'appsettings': serializeParam(
+                                            widget!.appSettings,
+                                            ParamType.Document,
+                                          ),
+                                          'taxcollection': serializeParam(
+                                            widget!.taxcollection,
+                                            ParamType.Document,
+                                            isList: true,
+                                          ),
+                                        }.withoutNulls,
+                                        extra: <String, dynamic>{
+                                          'appsettings': widget!.appSettings,
+                                          'taxcollection':
+                                              widget!.taxcollection,
+                                        },
+                                      );
+                                    } else {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            content: Text(
+                                                'Merchant Id  Is Not Available Contact Support!'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+                                    }
+                                  } else {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          content: Text('Cart Is Empty !'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+
+                                    context.goNamed(
+                                      'KioskBillScreen',
+                                      queryParameters: {
+                                        'doc': serializeParam(
+                                          widget!.doc,
+                                          ParamType.DocumentReference,
+                                        ),
+                                        'shiftdoc': serializeParam(
+                                          widget!.shiftdetails,
+                                          ParamType.JSON,
+                                        ),
+                                        'appsetting': serializeParam(
+                                          widget!.appSettings,
+                                          ParamType.Document,
+                                        ),
+                                        'taxcollection': serializeParam(
+                                          widget!.taxcollection,
+                                          ParamType.Document,
+                                          isList: true,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        'appsetting': widget!.appSettings,
+                                        'taxcollection': widget!.taxcollection,
+                                      },
+                                    );
+                                  }
+
+                                  safeSetState(() {});
                                 },
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 0.6,
@@ -405,30 +512,137 @@ class _KioskChoosePaymentModeWidgetState
                                   onTap: () async {
                                     FFAppState().PayMode = 'CASH';
                                     safeSetState(() {});
-
-                                    context.goNamed(
-                                      'cashResponsePage',
-                                      queryParameters: {
-                                        'shiftdetails': serializeParam(
+                                    _model.outletDOc2 =
+                                        await queryOutletRecordOnce(
+                                      queryBuilder: (outletRecord) =>
+                                          outletRecord.where(
+                                        'id',
+                                        isEqualTo: FFAppState().outletIdRef?.id,
+                                      ),
+                                      singleRecord: true,
+                                    ).then((s) => s.firstOrNull);
+                                    if (functions
+                                        .filterBillList(FFAppState().selBill,
+                                            FFAppState().allBillsList.toList())
+                                        .isNotEmpty) {
+                                      if (_model.outletDOc2?.merchantId !=
+                                              null &&
+                                          _model.outletDOc2?.merchantId != '') {
+                                        if (getJsonField(
                                           widget!.shiftdetails,
-                                          ParamType.JSON,
-                                        ),
-                                        'appsetting': serializeParam(
-                                          widget!.appSettings,
-                                          ParamType.Document,
-                                        ),
-                                        'taxcoollectipon': serializeParam(
-                                          widget!.taxcollection,
-                                          ParamType.Document,
-                                          isList: true,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        'appsetting': widget!.appSettings,
-                                        'taxcoollectipon':
+                                          r'''$.shiftExists''',
+                                        )) {}
+                                        FFAppState().orderId =
+                                            FFAppState().orderId + 10;
+                                        FFAppState().paytmOrderId =
+                                            valueOrDefault<String>(
+                                          'ORD-${getCurrentTimestamp.millisecondsSinceEpoch.toString()}',
+                                          '0',
+                                        );
+                                        FFAppState().outletId =
+                                            _model.outletDOc2!.id;
+                                        safeSetState(() {});
+                                        _model.paymentQrResponsecash =
+                                            await CreateQRCall.call(
+                                          mid: _model.outletDOc2?.merchantId,
+                                          orderId: FFAppState().paytmOrderId,
+                                          amount: functions
+                                              .toDecimal(FFAppState().finalAmt),
+                                          businessType: 'UPI_QR_CODE',
+                                          posId: FFAppState().outletId,
+                                          mKey: _model.outletDOc2?.merchantKey,
+                                          isProd: _model.outletDOc2?.isProd,
+                                        );
+
+                                        context.goNamed(
+                                          'cashResponsePage',
+                                          queryParameters: {
+                                            'shiftdetails': serializeParam(
+                                              widget!.shiftdetails,
+                                              ParamType.JSON,
+                                            ),
+                                            'appsetting': serializeParam(
+                                              widget!.appSettings,
+                                              ParamType.Document,
+                                            ),
+                                            'taxcoollectipon': serializeParam(
+                                              widget!.taxcollection,
+                                              ParamType.Document,
+                                              isList: true,
+                                            ),
+                                          }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            'appsetting': widget!.appSettings,
+                                            'taxcoollectipon':
+                                                widget!.taxcollection,
+                                          },
+                                        );
+                                      } else {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              content: Text(
+                                                  'Merchant Id  Is Not Available Contact Support!'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      }
+                                    } else {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            content: Text('Cart Is Empty !'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+
+                                      context.goNamed(
+                                        'KioskBillScreen',
+                                        queryParameters: {
+                                          'doc': serializeParam(
+                                            widget!.doc,
+                                            ParamType.DocumentReference,
+                                          ),
+                                          'shiftdoc': serializeParam(
+                                            widget!.shiftdetails,
+                                            ParamType.JSON,
+                                          ),
+                                          'appsetting': serializeParam(
+                                            widget!.appSettings,
+                                            ParamType.Document,
+                                          ),
+                                          'taxcollection': serializeParam(
                                             widget!.taxcollection,
-                                      },
-                                    );
+                                            ParamType.Document,
+                                            isList: true,
+                                          ),
+                                        }.withoutNulls,
+                                        extra: <String, dynamic>{
+                                          'appsetting': widget!.appSettings,
+                                          'taxcollection':
+                                              widget!.taxcollection,
+                                        },
+                                      );
+                                    }
+
+                                    safeSetState(() {});
                                   },
                                   child: Container(
                                     width:

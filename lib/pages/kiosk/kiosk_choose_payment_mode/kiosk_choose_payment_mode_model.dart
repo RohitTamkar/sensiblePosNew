@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -6,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:math';
 import 'dart:ui';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'kiosk_choose_payment_mode_widget.dart'
     show KioskChoosePaymentModeWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -26,6 +28,14 @@ class KioskChoosePaymentModeModel
   FooterRecord? footer;
   // Model for KioskHeader component.
   late KioskHeaderModel kioskHeaderModel;
+  // Stores action output result for [Firestore Query - Query a collection] action in Container widget.
+  OutletRecord? outletDOc;
+  // Stores action output result for [Backend Call - API (createQR)] action in Container widget.
+  ApiCallResponse? paymentQrResponse;
+  // Stores action output result for [Firestore Query - Query a collection] action in Container widget.
+  OutletRecord? outletDOc2;
+  // Stores action output result for [Backend Call - API (createQR)] action in Container widget.
+  ApiCallResponse? paymentQrResponsecash;
 
   @override
   void initState(BuildContext context) {
