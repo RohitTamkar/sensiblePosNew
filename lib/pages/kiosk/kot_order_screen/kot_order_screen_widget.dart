@@ -1123,7 +1123,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                         (containerVarItem
                                                                 .source ==
                                                             'WEB ORDER')
-                                                    ? Color(0x45E21C3D)
+                                                    ? Color(0x7A281CE2)
                                                     : Color(0xFF362E25),
                                                 borderRadius: BorderRadius.only(
                                                   bottomLeft:
@@ -1496,7 +1496,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                         (containerVarItem
                                                                 .source ==
                                                             'WEB ORDER')
-                                                    ? Color(0x45E21C3D)
+                                                    ? Color(0x7A281CE2)
                                                     : Color(0xFF362E25),
                                                 borderRadius:
                                                     BorderRadius.circular(0.0),
