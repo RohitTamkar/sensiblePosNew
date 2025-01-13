@@ -65,7 +65,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            color: FlutterFlowTheme.of(context).info,
+            color: FlutterFlowTheme.of(context).primary,
             begin: 0.0,
             end: 1.0,
           ),
@@ -1263,8 +1263,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                     .bodyMediumFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primary,
-                                                                fontSize: 13.0,
+                                                                    .warning,
+                                                                fontSize: 10.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontStyle:
