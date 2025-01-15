@@ -1286,6 +1286,49 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'CreditPaymentPageCopy',
               path: 'creditPaymentPageCopy',
               builder: (context, params) => CreditPaymentPageCopyWidget(),
+            ),
+            FFRoute(
+              name: 'KioskChoosePaymentModeCopy',
+              path: 'kioskChoosePaymentModeCopy',
+              asyncParams: {
+                'appSettings': getDoc(
+                    ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
+                'taxcollection':
+                    getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
+              },
+              builder: (context, params) => KioskChoosePaymentModeCopyWidget(
+                doc: params.getParam(
+                  'doc',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['USER_PROFILE'],
+                ),
+                shiftdetails: params.getParam(
+                  'shiftdetails',
+                  ParamType.JSON,
+                ),
+                appSettings: params.getParam(
+                  'appSettings',
+                  ParamType.Document,
+                ),
+                taxcollection: params.getParam<TaxMasterRecord>(
+                  'taxcollection',
+                  ParamType.Document,
+                  isList: true,
+                ),
+                qrJson: params.getParam(
+                  'qrJson',
+                  ParamType.JSON,
+                ),
+                paytmOrderId: params.getParam(
+                  'paytmOrderId',
+                  ParamType.String,
+                ),
+                isPaytm: params.getParam(
+                  'isPaytm',
+                  ParamType.bool,
+                ),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

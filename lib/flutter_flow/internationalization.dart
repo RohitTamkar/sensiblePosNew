@@ -18228,7 +18228,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'el435bod': {
+    'zsxrmuif': {
       'en': 'UPI Payment',
       'hi': '',
       'kn': '',
@@ -18242,7 +18242,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'ppahxy75': {
+    'fwj35smm': {
       'en': 'Pay at Counter',
       'hi': '',
       'kn': '',
@@ -20560,6 +20560,65 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     '4ez0l2ep': {
+      'en': 'Home',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
+  // KioskChoosePaymentModeCopy
+  {
+    '5j75u6tj': {
+      'en': 'Choose Payment Type ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'ph3diwsf': {
+      'en': 'Please Collect Your Token & Bill Print !',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'mviqs44r': {
+      'en': 'UPI Payment',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'mryzsdaf': {
+      'en': 'OR',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'xdnyt0ej': {
+      'en': 'Pay at Counter',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '0yxoolqe': {
+      'en': 'UPI Payment',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'tqfejg1j': {
+      'en': 'UPI Payment',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'g0xoi5o7': {
       'en': 'Home',
       'hi': '',
       'kn': '',

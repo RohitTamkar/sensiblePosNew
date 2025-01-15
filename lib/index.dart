@@ -176,3 +176,5 @@ export '/pages/product_and_listlaundrybilling/product_and_listlaundrybilling_wid
 export '/test_widget/test_widget_widget.dart' show TestWidgetWidget;
 export '/grocery_windows/credit_payment_page_copy/credit_payment_page_copy_widget.dart'
     show CreditPaymentPageCopyWidget;
+export '/pages/kiosk/kiosk_choose_payment_mode_copy/kiosk_choose_payment_mode_copy_widget.dart'
+    show KioskChoosePaymentModeCopyWidget;
