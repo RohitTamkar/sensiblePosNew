@@ -61,8 +61,12 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
       if (!FFAppState().isBillPrinted) {
         _model.invoicecount = await queryInvoiceRecordOnce(
           parent: FFAppState().outletIdRef,
-          queryBuilder: (invoiceRecord) =>
-              invoiceRecord.orderBy('invoiceDate', descending: true),
+          queryBuilder: (invoiceRecord) => invoiceRecord
+              .where(
+                'source',
+                isEqualTo: 'KIOSK',
+              )
+              .orderBy('invoiceDate', descending: true),
           singleRecord: true,
         ).then((s) => s.firstOrNull);
         if (widget!.appsetting!.settingList
@@ -79,7 +83,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
             FFAppState().count = _model.invoicecount!.count;
             safeSetState(() {});
           } else {
-            FFAppState().count = 100;
+            FFAppState().count = 500;
             safeSetState(() {});
           }
         } else {
