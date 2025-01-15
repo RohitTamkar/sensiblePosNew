@@ -67,8 +67,12 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
         if (widget!.doc!.status) {
           _model.invoicecount = await queryInvoiceRecordOnce(
             parent: FFAppState().outletIdRef,
-            queryBuilder: (invoiceRecord) =>
-                invoiceRecord.orderBy('invoiceDate', descending: true),
+            queryBuilder: (invoiceRecord) => invoiceRecord
+                .where(
+                  'source',
+                  isEqualTo: 'KIOSK',
+                )
+                .orderBy('invoiceDate', descending: true),
             singleRecord: true,
           ).then((s) => s.firstOrNull);
           if (widget!.appsetting!.settingList
@@ -85,7 +89,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               FFAppState().count = _model.invoicecount!.count;
               safeSetState(() {});
             } else {
-              FFAppState().count = 100;
+              FFAppState().count = 500;
               safeSetState(() {});
             }
           } else {
