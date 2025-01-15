@@ -1186,9 +1186,17 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                           ),
                                                           TextSpan(
                                                             text:
-                                                                containerVarItem
-                                                                    .count
-                                                                    .toString(),
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              containerVarItem
+                                                                          .source ==
+                                                                      'WEB ORDER'
+                                                                  ? '00${containerVarItem.count.toString()}'
+                                                                  : containerVarItem
+                                                                      .count
+                                                                      .toString(),
+                                                              'X',
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .headlineSmall
