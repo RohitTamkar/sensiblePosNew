@@ -1708,116 +1708,109 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              50.0, 0.0, 50.0, 5.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              FlutterFlowIconButton(
-                                borderRadius: 10.0,
-                                buttonSize: 55.0,
-                                icon: Icon(
-                                  Icons.chevron_left,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 36.0,
-                                ),
-                                onPressed: () async {
-                                  context.safePop();
-                                },
-                              ),
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'kbd7anmd' /* KOT Management */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineLarge
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .headlineLargeFamily,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w600,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineLargeFamily),
+                        DragTarget<InvoiceRecord>(
+                          onWillAcceptWithDetails: (details) {
+                            (() async {
+                              _model.addToInvoices(details.data);
+                              safeSetState(() {});
+
+                              safeSetState(() {});
+                            })();
+                            return true;
+                          },
+                          builder: (context, _, __) {
+                            return Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  50.0, 0.0, 50.0, 5.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  FlutterFlowIconButton(
+                                    borderRadius: 10.0,
+                                    buttonSize: 55.0,
+                                    icon: Icon(
+                                      Icons.chevron_left,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 36.0,
                                     ),
-                              ),
-                              FFButtonWidget(
-                                onPressed: () async {
-                                  context.pushNamed('TokenDisplay');
-                                },
-                                text: FFLocalizations.of(context).getText(
-                                  'gfe5dybr' /* Online */,
-                                ),
-                                options: FFButtonOptions(
-                                  height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).success,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .titleMediumFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .titleMediumFamily),
-                                      ),
-                                  elevation: 0.0,
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
+                                    onPressed: () async {
+                                      context.safePop();
+                                    },
                                   ),
-                                  borderRadius: BorderRadius.circular(0.0),
-                                ),
-                              ),
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  scaffoldKey.currentState!.openEndDrawer();
-                                },
-                                child: Icon(
-                                  Icons.dehaze,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 24.0,
-                                ),
-                              ),
-                              DragTarget<InvoiceRecord>(
-                                onAcceptWithDetails: (details) async {
-                                  _model.addToInvoices(details.data);
-                                  safeSetState(() {});
-
-                                  safeSetState(() {});
-                                },
-                                onWillAcceptWithDetails: (details) {
-                                  (() async {
-                                    _model.addToInvoices(details.data);
-                                    safeSetState(() {});
-
-                                    safeSetState(() {});
-                                  })();
-                                  return true;
-                                },
-                                onLeave: (data) async {
-                                  _model.addToInvoices(data!);
-                                  safeSetState(() {});
-
-                                  safeSetState(() {});
-                                },
-                                builder: (context, _, __) {
-                                  return badges.Badge(
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'kbd7anmd' /* KOT Management */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineLarge
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineLargeFamily,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineLargeFamily),
+                                        ),
+                                  ),
+                                  FFButtonWidget(
+                                    onPressed: () async {
+                                      context.pushNamed('TokenDisplay');
+                                    },
+                                    text: FFLocalizations.of(context).getText(
+                                      'gfe5dybr' /* Online */,
+                                    ),
+                                    options: FFButtonOptions(
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          24.0, 0.0, 24.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).success,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMediumFamily,
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily),
+                                          ),
+                                      elevation: 0.0,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(0.0),
+                                    ),
+                                  ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      scaffoldKey.currentState!.openEndDrawer();
+                                    },
+                                    child: Icon(
+                                      Icons.dehaze,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 24.0,
+                                    ),
+                                  ),
+                                  badges.Badge(
                                     badgeContent: Text(
                                       valueOrDefault<String>(
                                         _model.invoices.length.toString(),
@@ -1854,11 +1847,11 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                           .primaryText,
                                       size: 34.0,
                                     ),
-                                  );
-                                },
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
+                            );
+                          },
                         ),
                       ],
                     ),
@@ -1913,8 +1906,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                   itemBuilder: (context, containerVarIndex) {
                                     final containerVarItem =
                                         containerVar[containerVarIndex];
-                                    return Draggable<String>(
-                                      data: '',
+                                    return Draggable<InvoiceRecord>(
+                                      data: containerVarItem,
                                       feedback: Material(
                                         type: MaterialType.transparency,
                                         child: ClipRRect(
