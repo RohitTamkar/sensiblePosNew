@@ -24,6 +24,8 @@ import 'package:provider/provider.dart';
 class ResponsePageModel extends FlutterFlowModel<ResponsePageWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Custom Action - shiftExists] action in responsePage widget.
+  dynamic? shiftDetailsneweb;
   // Stores action output result for [Firestore Query - Query a collection] action in responsePage widget.
   InvoiceRecord? invoicecount;
   // Stores action output result for [Custom Action - filterProducts] action in responsePage widget.

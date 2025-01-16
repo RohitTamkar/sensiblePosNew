@@ -22,6 +22,8 @@ import 'package:provider/provider.dart';
 class CashResponsePageModel extends FlutterFlowModel<CashResponsePageWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Custom Action - shiftExists] action in cashResponsePage widget.
+  dynamic? shiftDetailnewweb;
   // Stores action output result for [Firestore Query - Query a collection] action in cashResponsePage widget.
   InvoiceRecord? invoicecount;
   // Stores action output result for [Custom Action - filterProducts] action in cashResponsePage widget.

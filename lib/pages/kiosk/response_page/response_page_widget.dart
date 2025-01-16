@@ -55,10 +55,15 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      FFAppState().shiftDetailsNEw = widget!.shiftdetails!;
+      _model.shiftDetailsneweb = await actions.shiftExists(
+        functions.getDayId(),
+        '0',
+        FFAppState().outletIdRef!.id,
+      );
+      FFAppState().shiftDetailsNEw = _model.shiftDetailsneweb!;
       FFAppState().msg = widget!.doc!.msg;
       safeSetState(() {});
-      FFAppState().shiftDetailsJson = widget!.shiftdetails!;
+      FFAppState().shiftDetailsJson = _model.shiftDetailsneweb!;
       FFAppState().kioskAmt = FFAppState().finalAmt;
       safeSetState(() {});
       FFAppState().shiftexist = 'True';
@@ -83,7 +88,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
             if ((_model.invoicecount?.count != null) &&
                 (_model.invoicecount?.shiftId ==
                     getJsonField(
-                      widget!.shiftdetails,
+                      _model.shiftDetailsneweb,
                       r'''$.shiftId''',
                     ).toString().toString())) {
               FFAppState().count = _model.invoicecount!.count;
@@ -209,15 +214,12 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
             id: _model.docInvoicekiosk?.reference.id,
           ));
           if (getJsonField(
-            widget!.shiftdetails,
+            FFAppState().shiftDetailsJson,
             r'''$.shiftExists''',
           )) {
-            FFAppState().billcount = valueOrDefault<int>(
-              getJsonField(
-                widget!.shiftdetails,
-                r'''$.billCount''',
-              ),
-              0,
+            FFAppState().billcount = getJsonField(
+              _model.shiftDetailsneweb,
+              r'''$.billCount''',
             );
             safeSetState(() {});
             FFAppState().billcount = FFAppState().billcount + 1;
@@ -231,7 +233,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               queryBuilder: (shiftRecord) => shiftRecord.where(
                 'shiftId',
                 isEqualTo: getJsonField(
-                  widget!.shiftdetails,
+                  FFAppState().shiftDetailsJson,
                   r'''$.shiftId''',
                 ).toString().toString(),
               ),
@@ -241,15 +243,15 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
             await _model.shiftref!.reference.update(createShiftRecordData(
               billCount: FFAppState().billcount,
               totalSale: getJsonField(
-                widget!.shiftdetails,
+                _model.shiftSummarRkiosk,
                 r'''$.totalSale''',
               ),
               deliveryCharges: getJsonField(
-                widget!.shiftdetails,
+                _model.shiftSummarRkiosk,
                 r'''$.deliveryCharges''',
               ),
               tax: getJsonField(
-                widget!.shiftdetails,
+                _model.shiftSummarRkiosk,
                 r'''$.tax''',
               ),
               lastBillNo: getJsonField(
