@@ -1291,17 +1291,25 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                       ),
                                                     if (containerVar2Item
                                                             .kotStatus ==
-                                                        'FINAL')
+                                                        'HOLD')
                                                       FFButtonWidget(
-                                                        onPressed: () {
-                                                          print(
-                                                              'Button pressed ...');
+                                                        onPressed: () async {
+                                                          await containerVar2Item
+                                                              .reference
+                                                              .update(
+                                                                  createInvoiceRecordData(
+                                                            kotStatus:
+                                                                'PENDING',
+                                                          ));
+                                                          _model.removeFromInvoices(
+                                                              containerVar2Item);
+                                                          safeSetState(() {});
                                                         },
                                                         text:
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                          'p0k3xglo' /* Delivered */,
+                                                          'p0k3xglo' /* HOLD OUT */,
                                                         ),
                                                         options:
                                                             FFButtonOptions(
@@ -1711,6 +1719,10 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                         DragTarget<InvoiceRecord>(
                           onWillAcceptWithDetails: (details) {
                             (() async {
+                              await details.data.reference
+                                  .update(createInvoiceRecordData(
+                                kotStatus: 'HOLD',
+                              ));
                               _model.addToInvoices(details.data);
                               safeSetState(() {});
 
