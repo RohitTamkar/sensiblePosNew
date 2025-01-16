@@ -1801,6 +1801,21 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
 
                                   safeSetState(() {});
                                 },
+                                onWillAcceptWithDetails: (details) {
+                                  (() async {
+                                    _model.addToInvoices(details.data);
+                                    safeSetState(() {});
+
+                                    safeSetState(() {});
+                                  })();
+                                  return true;
+                                },
+                                onLeave: (data) async {
+                                  _model.addToInvoices(data!);
+                                  safeSetState(() {});
+
+                                  safeSetState(() {});
+                                },
                                 builder: (context, _, __) {
                                   return badges.Badge(
                                     badgeContent: Text(
