@@ -1123,7 +1123,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                         (containerVarItem
                                                                 .source ==
                                                             'WEB ORDER')
-                                                    ? Color(0x7A281CE2)
+                                                    ? FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary
                                                     : Color(0xFF362E25),
                                                 borderRadius: BorderRadius.only(
                                                   bottomLeft:
@@ -1164,17 +1166,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                   fontFamily: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelLargeFamily,
-                                                                  color: (containerVarItem.source != null &&
-                                                                              containerVarItem.source !=
-                                                                                  '') &&
-                                                                          (containerVarItem.source ==
-                                                                              'WEB ORDER')
-                                                                      ? FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText
-                                                                      : FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBtnText,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBtnText,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   useGoogleFonts: GoogleFonts
@@ -1204,17 +1198,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                   fontFamily: FlutterFlowTheme.of(
                                                                           context)
                                                                       .headlineSmallFamily,
-                                                                  color: (containerVarItem.source != null &&
-                                                                              containerVarItem.source !=
-                                                                                  '') &&
-                                                                          (containerVarItem.source ==
-                                                                              'WEB ORDER')
-                                                                      ? FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText
-                                                                      : FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBtnText,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBtnText,
                                                                   fontSize:
                                                                       27.0,
                                                                   letterSpacing:
@@ -1235,6 +1221,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                   fontFamily: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMediumFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   useGoogleFonts: GoogleFonts
@@ -1504,7 +1493,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                         (containerVarItem
                                                                 .source ==
                                                             'WEB ORDER')
-                                                    ? Color(0x7A281CE2)
+                                                    ? FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary
                                                     : Color(0xFF362E25),
                                                 borderRadius:
                                                     BorderRadius.circular(0.0),
@@ -1538,17 +1529,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                   fontFamily: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelLargeFamily,
-                                                                  color: (containerVarItem.source != null &&
-                                                                              containerVarItem.source !=
-                                                                                  '') &&
-                                                                          (containerVarItem.source ==
-                                                                              'WEB ORDER')
-                                                                      ? FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText
-                                                                      : FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBtnText,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
                                                                   fontSize:
                                                                       22.0,
                                                                   letterSpacing:
@@ -1572,6 +1555,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                   fontFamily: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMediumFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
                                                                   fontSize:
                                                                       30.0,
                                                                   letterSpacing:
