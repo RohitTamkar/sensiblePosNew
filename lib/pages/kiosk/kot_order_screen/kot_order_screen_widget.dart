@@ -1071,12 +1071,6 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                       borderRadius: BorderRadius.circular(0.0),
                                     ),
                                   ),
-                                  Icon(
-                                    Icons.dehaze,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 24.0,
-                                  ),
                                   DragTarget<InvoiceRecord>(
                                     onWillAcceptWithDetails: (details) {
                                       (() async {
@@ -1090,64 +1084,77 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                       return true;
                                     },
                                     builder: (context, _, __) {
-                                      return Container(
-                                        width: 100.0,
-                                        height: 50.0,
-                                        decoration: BoxDecoration(),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            badges.Badge(
-                                              badgeContent: Text(
-                                                valueOrDefault<String>(
-                                                  kotOrderScreenInvoiceRecordList
-                                                      .where((e) =>
-                                                          e.kotStatus == 'HOLD')
-                                                      .toList()
-                                                      .length
-                                                      .toString(),
-                                                  '0',
+                                      return InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          scaffoldKey.currentState!
+                                              .openEndDrawer();
+                                        },
+                                        child: Container(
+                                          width: 100.0,
+                                          height: 50.0,
+                                          decoration: BoxDecoration(),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              badges.Badge(
+                                                badgeContent: Text(
+                                                  valueOrDefault<String>(
+                                                    kotOrderScreenInvoiceRecordList
+                                                        .where((e) =>
+                                                            e.kotStatus ==
+                                                            'HOLD')
+                                                        .toList()
+                                                        .length
+                                                        .toString(),
+                                                    '0',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
+                                                        color: Colors.white,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
+                                                      ),
                                                 ),
-                                                style:
+                                                showBadge: true,
+                                                shape: badges.BadgeShape.circle,
+                                                badgeColor:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmallFamily,
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmallFamily),
-                                                        ),
+                                                        .primary,
+                                                elevation: 7.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        8.0, 8.0, 8.0, 8.0),
+                                                position: badges.BadgePosition
+                                                    .topEnd(),
+                                                animationType: badges
+                                                    .BadgeAnimationType.scale,
+                                                toAnimate: true,
+                                                child: FaIcon(
+                                                  FontAwesomeIcons
+                                                      .conciergeBell,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  size: 40.0,
+                                                ),
                                               ),
-                                              showBadge: true,
-                                              shape: badges.BadgeShape.circle,
-                                              badgeColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              elevation: 7.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(8.0, 8.0, 8.0, 8.0),
-                                              position:
-                                                  badges.BadgePosition.topEnd(),
-                                              animationType: badges
-                                                  .BadgeAnimationType.scale,
-                                              toAnimate: true,
-                                              child: FaIcon(
-                                                FontAwesomeIcons.conciergeBell,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                size: 40.0,
-                                              ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       );
                                     },
