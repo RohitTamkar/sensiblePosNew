@@ -180,7 +180,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Expanded(
+                              Flexible(
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height:
