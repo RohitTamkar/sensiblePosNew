@@ -1295,3 +1295,8 @@ DateTime returnDateNextday(DateTime date) {
   // return next date
   return date.add(Duration(days: 1));
 }
+
+String newCustomFunction(String link) {
+  Uri uri = Uri.parse(link);
+  return '${uri.scheme}://${uri.host}/';
+}
