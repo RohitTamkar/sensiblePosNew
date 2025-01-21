@@ -1731,6 +1731,34 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                       child: TextFormField(
                                         controller: _model.textController1,
                                         focusNode: _model.textFieldFocusNode1,
+                                        onChanged: (_) => EasyDebounce.debounce(
+                                          '_model.textController1',
+                                          Duration(milliseconds: 2000),
+                                          () async {
+                                            if (_model.textController1.text !=
+                                                    null &&
+                                                _model.textController1.text !=
+                                                    '') {
+                                              _model.searchedinvoice =
+                                                  kotOrderScreenInvoiceRecordList
+                                                      .where((e) =>
+                                                          valueOrDefault<bool>(
+                                                            e.count ==
+                                                                functions.stringToint(
+                                                                    _model
+                                                                        .textController1
+                                                                        .text),
+                                                            false,
+                                                          ))
+                                                      .toList()
+                                                      .cast<InvoiceRecord>();
+                                              safeSetState(() {});
+                                            } else {
+                                              _model.searchedinvoice = [];
+                                              safeSetState(() {});
+                                            }
+                                          },
+                                        ),
                                         onFieldSubmitted: (_) async {
                                           if (_model.textController1.text !=
                                                   null &&
@@ -1751,19 +1779,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                     .cast<InvoiceRecord>();
                                             safeSetState(() {});
                                           } else {
-                                            _model.searchedinvoice =
-                                                kotOrderScreenInvoiceRecordList
-                                                    .where((e) =>
-                                                        valueOrDefault<bool>(
-                                                          e.count ==
-                                                              functions.stringToint(
-                                                                  _model
-                                                                      .textController1
-                                                                      .text),
-                                                          false,
-                                                        ))
-                                                    .toList()
-                                                    .cast<InvoiceRecord>();
+                                            _model.searchedinvoice = [];
                                             safeSetState(() {});
                                           }
                                         },
