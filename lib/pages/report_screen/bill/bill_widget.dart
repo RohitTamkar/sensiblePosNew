@@ -2940,6 +2940,120 @@ class _BillWidgetState extends State<BillWidget> {
                                                         ),
                                                       ),
                                                     ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: StreamBuilder<
+                                                          List<HeaderRecord>>(
+                                                        stream:
+                                                            queryHeaderRecord(
+                                                          parent:
+                                                              containerOutletRecord
+                                                                  ?.reference,
+                                                          singleRecord: true,
+                                                        ),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 40.0,
+                                                                height: 40.0,
+                                                                child:
+                                                                    SpinKitFadingCircle(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  size: 40.0,
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }
+                                                          List<HeaderRecord>
+                                                              buttonHeaderRecordList =
+                                                              snapshot.data!;
+                                                          // Return an empty Container when the item does not exist.
+                                                          if (snapshot
+                                                              .data!.isEmpty) {
+                                                            return Container();
+                                                          }
+                                                          final buttonHeaderRecord =
+                                                              buttonHeaderRecordList
+                                                                      .isNotEmpty
+                                                                  ? buttonHeaderRecordList
+                                                                      .first
+                                                                  : null;
+
+                                                          return FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              await actions
+                                                                  .genBillInvoicePdfA4AndPrint(
+                                                                containerInvoiceRecord!,
+                                                                containerOutletRecord!,
+                                                                buttonHeaderRecord!,
+                                                              );
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'dtw94ms4' /* Print A4 */,
+                                                            ),
+                                                            icon: Icon(
+                                                              Icons.print,
+                                                              size: 15.0,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 40.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .alternate,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 0.0,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ),
+                                                    ),
                                                   ],
                                                 ),
                                               ),
