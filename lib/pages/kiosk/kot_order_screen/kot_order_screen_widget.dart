@@ -182,10 +182,6 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
     return StreamBuilder<List<InvoiceRecord>>(
       stream: queryInvoiceRecord(
         parent: FFAppState().outletIdRef,
-        queryBuilder: (invoiceRecord) => invoiceRecord.where(
-          'kotStatus',
-          isNotEqualTo: 'FINAL',
-        ),
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
@@ -2002,7 +1998,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                           .sortedList(
                                               keyOf: (e) => e.invoice,
                                               desc: false)
-                                          .where((e) => e.kotStatus != 'HOLD')
+                                          .where((e) =>
+                                              (e.kotStatus != 'HOLD') &&
+                                              (e.kotStatus != 'FINAL'))
                                           .toList();
 
                                   return MasonryGridView.builder(

@@ -213,23 +213,7 @@ Future genBillInvoicePdfA4AndPrint(
   final bytes = await pdf.save();
   final base64String = base64Encode(bytes);
 
-  // Saving PDF to external storage
-  Directory? directory = await getExternalStorageDirectory();
-  String downloadsPath = '/storage/emulated/0/Download';
-  Directory downloadsDirectory = Directory(downloadsPath);
-
-  if (!downloadsDirectory.existsSync()) {
-    downloadsDirectory.createSync(recursive: true);
-  }
-
-  String sanitizedInvoice = bill.invoice
-      .replaceAll(':', '_')
-      .replaceAll('/', '_')
-      .replaceAll('-', '_');
-  File file = File("$downloadsPath/" + sanitizedInvoice + ".pdf");
-
-  await file.writeAsBytes(bytes);
-  print("File saved at: ${file.path}");
+  print(base64String);
 }
 
 String convertToWords(int amount) {
