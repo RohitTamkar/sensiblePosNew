@@ -1977,25 +1977,34 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                       );
                                     },
                                   ),
-                                  InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      _model.searchedinvoice =
-                                          kotOrderScreenInvoiceRecordList
-                                              .where((e) =>
-                                                  e.dayId ==
-                                                  functions.getDayId())
-                                              .toList()
-                                              .cast<InvoiceRecord>();
-                                      safeSetState(() {});
-                                    },
-                                    child: Container(
-                                      width: 45.0,
-                                      height: 45.0,
-                                      decoration: BoxDecoration(),
+                                  Container(
+                                    width: 45.0,
+                                    height: 45.0,
+                                    decoration: BoxDecoration(),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        if (_model.search) {
+                                          _model.searchedinvoice =
+                                              kotOrderScreenInvoiceRecordList
+                                                  .where((e) =>
+                                                      e.dayId ==
+                                                      functions.getDayId())
+                                                  .toList()
+                                                  .cast<InvoiceRecord>();
+                                          safeSetState(() {});
+                                          _model.search = false;
+                                          safeSetState(() {});
+                                        } else {
+                                          _model.searchedinvoice = [];
+                                          safeSetState(() {});
+                                          _model.search = true;
+                                          safeSetState(() {});
+                                        }
+                                      },
                                       child: FaIcon(
                                         FontAwesomeIcons.listAlt,
                                         color: FlutterFlowTheme.of(context)

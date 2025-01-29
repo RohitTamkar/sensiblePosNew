@@ -46,6 +46,8 @@ class KotOrderScreenModel extends FlutterFlowModel<KotOrderScreenWidget> {
           int index, Function(InvoiceRecord) updateFn) =>
       searchedinvoice[index] = updateFn(searchedinvoice[index]);
 
+  bool search = false;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TextField widget.
