@@ -3671,6 +3671,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       kotStatus:
                                                                           'FINAL',
                                                                     ));
+                                                                    _model.searchedinvoice = kotOrderScreenInvoiceRecordList
+                                                                        .where((e) =>
+                                                                            e.dayId ==
+                                                                            functions
+                                                                                .getDayId())
+                                                                        .toList()
+                                                                        .cast<
+                                                                            InvoiceRecord>();
+                                                                    safeSetState(
+                                                                        () {});
                                                                   },
                                                                   text: FFLocalizations.of(
                                                                           context)
@@ -3737,6 +3747,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       kotStatus:
                                                                           'READY',
                                                                     ));
+                                                                    _model.searchedinvoice = kotOrderScreenInvoiceRecordList
+                                                                        .where((e) =>
+                                                                            e.dayId ==
+                                                                            functions
+                                                                                .getDayId())
+                                                                        .toList()
+                                                                        .cast<
+                                                                            InvoiceRecord>();
+                                                                    safeSetState(
+                                                                        () {});
                                                                   },
                                                                   text: FFLocalizations.of(
                                                                           context)
@@ -4365,6 +4385,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                     kotStatus:
                                                                         'FINAL',
                                                                   ));
+                                                                  _model.searchedinvoice = kotOrderScreenInvoiceRecordList
+                                                                      .where((e) =>
+                                                                          e.dayId ==
+                                                                          functions
+                                                                              .getDayId())
+                                                                      .toList()
+                                                                      .cast<
+                                                                          InvoiceRecord>();
+                                                                  safeSetState(
+                                                                      () {});
                                                                 },
                                                                 text: FFLocalizations.of(
                                                                         context)
@@ -4429,6 +4459,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                     kotStatus:
                                                                         'READY',
                                                                   ));
+                                                                  _model.searchedinvoice = kotOrderScreenInvoiceRecordList
+                                                                      .where((e) =>
+                                                                          e.dayId ==
+                                                                          functions
+                                                                              .getDayId())
+                                                                      .toList()
+                                                                      .cast<
+                                                                          InvoiceRecord>();
+                                                                  safeSetState(
+                                                                      () {});
                                                                 },
                                                                 text: FFLocalizations.of(
                                                                         context)
