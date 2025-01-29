@@ -2458,7 +2458,8 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                   initialDate:
                                                                       getCurrentTimestamp,
                                                                   firstDate:
-                                                                      getCurrentTimestamp,
+                                                                      DateTime(
+                                                                          1900),
                                                                   lastDate:
                                                                       DateTime(
                                                                           2050),
@@ -2529,9 +2530,14 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                     () {
                                                                   _model.supplierbilldateTextController1
                                                                           ?.text =
-                                                                      _model
-                                                                          .datePicked!
-                                                                          .toString();
+                                                                      dateTimeFormat(
+                                                                    "d/M/y",
+                                                                    _model
+                                                                        .datePicked,
+                                                                    locale: FFLocalizations.of(
+                                                                            context)
+                                                                        .languageCode,
+                                                                  );
                                                                 });
                                                               },
                                                             ),
