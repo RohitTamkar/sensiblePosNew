@@ -756,70 +756,60 @@ class _ProductAndListlaundrybillingWidgetState
                                             hasBeenTriggered:
                                                 hasContainerTriggered1),
                                       ),
-                                      if (productAndListlaundrybillingAppSettingsRecord
-                                              ?.settingList
-                                              ?.where((e) =>
-                                                  e.title == 'hideSearchBar')
-                                              .toList()
-                                              ?.firstOrNull
-                                              ?.value ??
-                                          true)
-                                        Expanded(
-                                          flex: 19,
-                                          child: Container(
-                                            width: 100.0,
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                0.08,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  blurRadius: 4.0,
-                                                  color: Color(0x32000000),
-                                                  offset: Offset(
-                                                    0.0,
-                                                    2.0,
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Container(
+                                      Expanded(
+                                        flex: 19,
+                                        child: Container(
+                                          width: 100.0,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              0.08,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 4.0,
+                                                color: Color(0x32000000),
+                                                offset: Offset(
+                                                  0.0,
+                                                  2.0,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                width: 750.0,
+                                                height: 50.0,
+                                                child: custom_widgets
+                                                    .SearchHiveprd(
                                                   width: 750.0,
                                                   height: 50.0,
-                                                  child: custom_widgets
-                                                      .SearchHiveprd(
-                                                    width: 750.0,
-                                                    height: 50.0,
-                                                    billno:
-                                                        FFAppState().selBill,
-                                                    document: FFAppState()
-                                                        .productHive,
-                                                    billnum: FFAppState()
-                                                        .selBill
-                                                        .toString(),
-                                                    disAmt: FFAppState().disAmt,
-                                                    delChargs:
-                                                        FFAppState().delCharges,
-                                                    taxcollection:
-                                                        widget!.taxcollection!,
-                                                    appSettingsRecord:
-                                                        productAndListlaundrybillingAppSettingsRecord!,
-                                                  ),
+                                                  billno: FFAppState().selBill,
+                                                  document:
+                                                      FFAppState().productHive,
+                                                  billnum: FFAppState()
+                                                      .selBill
+                                                      .toString(),
+                                                  disAmt: FFAppState().disAmt,
+                                                  delChargs:
+                                                      FFAppState().delCharges,
+                                                  taxcollection:
+                                                      widget!.taxcollection!,
+                                                  appSettingsRecord:
+                                                      productAndListlaundrybillingAppSettingsRecord!,
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                            ],
                                           ),
                                         ),
+                                      ),
                                       if (false)
                                         Expanded(
                                           flex: 19,
@@ -1948,15 +1938,7 @@ class _ProductAndListlaundrybillingWidgetState
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            if (productAndListlaundrybillingAppSettingsRecord
-                                                    ?.settingList
-                                                    ?.where((e) =>
-                                                        e.title ==
-                                                        'enableweightScale')
-                                                    .toList()
-                                                    ?.firstOrNull
-                                                    ?.value ??
-                                                true)
+                                            if (false)
                                               Container(
                                                 width: double.infinity,
                                                 height:
