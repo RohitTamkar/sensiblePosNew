@@ -3447,7 +3447,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                           child: Container(
                             width: double.infinity,
                             height: 100.0,
-                            decoration: BoxDecoration(),
+                            decoration: BoxDecoration(
+                              color: Color(0x8D9DB8FF),
+                            ),
                             child: Padding(
                               padding: EdgeInsets.all(30.0),
                               child: Builder(
