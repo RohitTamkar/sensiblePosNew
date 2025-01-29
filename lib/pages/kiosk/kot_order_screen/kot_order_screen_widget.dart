@@ -1977,6 +1977,33 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                       );
                                     },
                                   ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      _model.searchedinvoice =
+                                          kotOrderScreenInvoiceRecordList
+                                              .where((e) =>
+                                                  e.dayId ==
+                                                  functions.getDayId())
+                                              .toList()
+                                              .cast<InvoiceRecord>();
+                                      safeSetState(() {});
+                                    },
+                                    child: Container(
+                                      width: 45.0,
+                                      height: 45.0,
+                                      decoration: BoxDecoration(),
+                                      child: FaIcon(
+                                        FontAwesomeIcons.listAlt,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        size: 40.0,
+                                      ),
+                                    ),
+                                  ),
                                 ].divide(SizedBox(width: 15.0)),
                               ),
                             ),

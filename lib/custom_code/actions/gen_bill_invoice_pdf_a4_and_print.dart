@@ -9,17 +9,14 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
+import 'package:flutter/services.dart';
+import 'package:printing/printing.dart';
 
 import 'package:collection/collection.dart';
 
-import 'index.dart'; // Imports other custom actions
-
 import 'dart:io';
 import 'dart:convert';
-import 'index.dart';
+
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'dart:typed_data';
@@ -213,7 +210,16 @@ Future genBillInvoicePdfA4AndPrint(
   final bytes = await pdf.save();
   final base64String = base64Encode(bytes);
 
-  print(base64String);
+  try {
+    await Printing.layoutPdf(
+        onLayout: (PdfPageFormat format) async => pdf.save());
+
+    print('Print job sent successfully.');
+  } catch (e) {
+    print('Error while printing: $e');
+  }
+
+  // print("File saved at: $base64String");
 }
 
 String convertToWords(int amount) {
