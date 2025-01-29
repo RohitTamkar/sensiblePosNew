@@ -3419,7 +3419,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                   final searched = _model.searchedinvoice
                                       .sortedList(
                                           keyOf: (e) => e.invoice, desc: false)
-                                      .where((e) => e.kotStatus != 'HOLD')
+                                      .where((e) =>
+                                          (e.kotStatus != 'HOLD') &&
+                                          (e.dayId == functions.getDayId()))
                                       .toList();
 
                                   return MasonryGridView.builder(
