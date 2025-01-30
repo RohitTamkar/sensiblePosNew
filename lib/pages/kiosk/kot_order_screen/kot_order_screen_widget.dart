@@ -285,17 +285,44 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                         .headlineSmallFamily),
                                           ),
                                     ),
-                                    Expanded(
-                                      child: Container(
-                                        width: 200.0,
-                                        child: TextFormField(
-                                          controller: _model.textController2,
-                                          focusNode: _model.textFieldFocusNode2,
-                                          onChanged: (_) =>
-                                              EasyDebounce.debounce(
-                                            '_model.textController2',
-                                            Duration(milliseconds: 2000),
-                                            () async {
+                                    if (false)
+                                      Expanded(
+                                        child: Container(
+                                          width: 200.0,
+                                          child: TextFormField(
+                                            controller: _model.textController2,
+                                            focusNode:
+                                                _model.textFieldFocusNode2,
+                                            onChanged: (_) =>
+                                                EasyDebounce.debounce(
+                                              '_model.textController2',
+                                              Duration(milliseconds: 2000),
+                                              () async {
+                                                if (_model.textController2
+                                                            .text !=
+                                                        null &&
+                                                    _model.textController2
+                                                            .text !=
+                                                        '') {
+                                                  _model.invoices =
+                                                      kotOrderScreenInvoiceRecordList
+                                                          .where((e) =>
+                                                              e.count ==
+                                                              functions.stringToint(
+                                                                  _model
+                                                                      .textController2
+                                                                      .text))
+                                                          .toList()
+                                                          .cast<
+                                                              InvoiceRecord>();
+                                                  safeSetState(() {});
+                                                } else {
+                                                  _model.invoices = [];
+                                                  safeSetState(() {});
+                                                }
+                                              },
+                                            ),
+                                            onFieldSubmitted: (_) async {
                                               if (_model.textController2.text !=
                                                       null &&
                                                   _model.textController2.text !=
@@ -316,142 +343,121 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                 safeSetState(() {});
                                               }
                                             },
-                                          ),
-                                          onFieldSubmitted: (_) async {
-                                            if (_model.textController2.text !=
-                                                    null &&
-                                                _model.textController2.text !=
-                                                    '') {
-                                              _model.invoices =
-                                                  kotOrderScreenInvoiceRecordList
-                                                      .where((e) =>
-                                                          e.count ==
-                                                          functions.stringToint(
-                                                              _model
-                                                                  .textController2
-                                                                  .text))
-                                                      .toList()
-                                                      .cast<InvoiceRecord>();
-                                              safeSetState(() {});
-                                            } else {
-                                              _model.invoices = [];
-                                              safeSetState(() {});
-                                            }
-                                          },
-                                          autofocus: false,
-                                          obscureText: false,
-                                          decoration: InputDecoration(
-                                            isDense: true,
-                                            labelStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      fontFamily:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMediumFamily,
-                                                      letterSpacing: 0.0,
-                                                      useGoogleFonts: GoogleFonts
-                                                              .asMap()
-                                                          .containsKey(
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMediumFamily),
-                                                    ),
-                                            hintText:
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                              '9thdfdmb' /* Search */,
-                                            ),
-                                            hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .override(
-                                                      fontFamily:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMediumFamily,
-                                                      letterSpacing: 0.0,
-                                                      useGoogleFonts: GoogleFonts
-                                                              .asMap()
-                                                          .containsKey(
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMediumFamily),
-                                                    ),
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
+                                            autofocus: false,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              isDense: true,
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMediumFamily,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily),
+                                                      ),
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                '9thdfdmb' /* Search */,
+                                              ),
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMediumFamily,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily),
+                                                      ),
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .customColor1,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              suffixIcon: Icon(
+                                                Icons.search,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .customColor1,
-                                                width: 1.0,
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
                                             ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0x00000000),
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                            errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                            focusedErrorBorder:
-                                                OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                            filled: true,
-                                            fillColor:
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelSmall
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmallFamily,
+                                                  letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelSmallFamily),
+                                                ),
+                                            cursorColor:
                                                 FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                            suffixIcon: Icon(
-                                              Icons.search,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .customColor1,
-                                            ),
+                                                    .primaryText,
+                                            validator: _model
+                                                .textController2Validator
+                                                .asValidator(context),
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelSmall
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelSmallFamily,
-                                                letterSpacing: 0.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelSmallFamily),
-                                              ),
-                                          cursorColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryText,
-                                          validator: _model
-                                              .textController2Validator
-                                              .asValidator(context),
                                         ),
                                       ),
-                                    ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 15.0, 0.0),
@@ -1763,14 +1769,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                             _model.searchedinvoice =
                                                 kotOrderScreenInvoiceRecordList
                                                     .where((e) =>
-                                                        valueOrDefault<bool>(
-                                                          e.count ==
-                                                              functions.stringToint(
-                                                                  _model
-                                                                      .textController1
-                                                                      .text),
-                                                          false,
-                                                        ))
+                                                        (e.count ==
+                                                            functions.stringToint(
+                                                                _model
+                                                                    .textController1
+                                                                    .text)) &&
+                                                        (e.dayId ==
+                                                            functions
+                                                                .getDayId()))
                                                     .toList()
                                                     .cast<InvoiceRecord>();
                                             safeSetState(() {});
