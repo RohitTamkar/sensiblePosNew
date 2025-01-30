@@ -1998,6 +1998,24 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                           safeSetState(() {});
                                           _model.search = false;
                                           safeSetState(() {});
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Today\'s All  Orders !',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                            ),
+                                          );
                                         } else {
                                           _model.searchedinvoice = [];
                                           safeSetState(() {});
