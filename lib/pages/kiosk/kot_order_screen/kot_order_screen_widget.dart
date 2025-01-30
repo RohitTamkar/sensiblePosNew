@@ -1977,52 +1977,52 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                       );
                                     },
                                   ),
-                                  Container(
-                                    width: 45.0,
-                                    height: 45.0,
-                                    decoration: BoxDecoration(),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        if (_model.search) {
-                                          _model.searchedinvoice =
-                                              kotOrderScreenInvoiceRecordList
-                                                  .where((e) =>
-                                                      e.dayId ==
-                                                      functions.getDayId())
-                                                  .toList()
-                                                  .cast<InvoiceRecord>();
-                                          safeSetState(() {});
-                                          _model.search = false;
-                                          safeSetState(() {});
-                                          ScaffoldMessenger.of(context)
-                                              .showSnackBar(
-                                            SnackBar(
-                                              content: Text(
-                                                'Today\'s All  Orders !',
-                                                style: TextStyle(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      if (_model.search) {
+                                        _model.searchedinvoice =
+                                            kotOrderScreenInvoiceRecordList
+                                                .where((e) =>
+                                                    e.dayId ==
+                                                    functions.getDayId())
+                                                .toList()
+                                                .cast<InvoiceRecord>();
+                                        safeSetState(() {});
+                                        _model.search = false;
+                                        safeSetState(() {});
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Today\'s All  Orders !',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
                                               ),
-                                              duration:
-                                                  Duration(milliseconds: 4000),
-                                              backgroundColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
                                             ),
-                                          );
-                                        } else {
-                                          _model.searchedinvoice = [];
-                                          safeSetState(() {});
-                                          _model.search = true;
-                                          safeSetState(() {});
-                                        }
-                                      },
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondary,
+                                          ),
+                                        );
+                                      } else {
+                                        _model.searchedinvoice = [];
+                                        safeSetState(() {});
+                                        _model.search = true;
+                                        safeSetState(() {});
+                                      }
+                                    },
+                                    child: Container(
+                                      width: 45.0,
+                                      height: 45.0,
+                                      decoration: BoxDecoration(),
                                       child: FaIcon(
                                         FontAwesomeIcons.listAlt,
                                         color: FlutterFlowTheme.of(context)
@@ -3460,7 +3460,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                             ),
                           ),
                         ),
-                      if (_model.searchedinvoice.length > 0)
+                      if (_model.searchedinvoice.isNotEmpty)
                         Expanded(
                           child: Container(
                             width: double.infinity,
@@ -3475,9 +3475,6 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                   final searched = _model.searchedinvoice
                                       .sortedList(
                                           keyOf: (e) => e.invoice, desc: false)
-                                      .where((e) =>
-                                          (e.kotStatus != 'HOLD') &&
-                                          (e.dayId == functions.getDayId()))
                                       .toList();
 
                                   return MasonryGridView.builder(
