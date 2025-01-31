@@ -271,6 +271,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                     _model.textFieldtaxPerTextController.text),
                                 double.parse(
                                     _model.textFieldTaxAmtTextController.text),
+                                _model.textFieldqtTextController.text,
                               );
                               safeSetState(() {
                                 _model.textFielddisAmtTextController?.text =
@@ -357,6 +358,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                     _model.textFieldtaxPerTextController.text),
                                 double.parse(
                                     _model.textFieldTaxAmtTextController.text),
+                                _model.textFieldqtTextController.text,
                               );
                               safeSetState(() {
                                 _model.textFielddisAmtTextController?.text =
@@ -522,6 +524,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                   _model.textFieldtaxPerTextController.text),
                               double.parse(
                                   _model.textFieldTaxAmtTextController.text),
+                              _model.textFieldqtTextController.text,
                             );
                             safeSetState(() {
                               _model.textFielddisAmtTextController?.text =

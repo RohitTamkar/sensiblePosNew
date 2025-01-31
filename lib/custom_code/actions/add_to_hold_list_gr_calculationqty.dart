@@ -26,6 +26,7 @@ Future<List<dynamic>> addToHoldListGrCalculationqty(
   double qty,
   double taxPer,
   double taxAmt,
+  String qtystring,
 ) async {
   List<dynamic> list = FFAppState().allBillsList;
   List<dynamic> itemList = [];
