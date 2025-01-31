@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> productSaleReport(
   String dayId,
   String outletId,
@@ -22,132 +24,113 @@ Future<List<dynamic>> productSaleReport(
   List<dynamic> distinctCatID = [];
   List<dynamic> lastFinalList = [];
   double allProductTotal = 0.0;
-  double allCatTotal = 0.0;
-  List<dynamic> otherDetails = [];
-  double totalSale = 0.0;
-  int totalBill = 0;
-  double totalDis = 0.0, totalDelChg = 0.0, totalDisPer = 0.0, totalTax = 0.0;
 
   QuerySnapshot querySnapshot = await FirebaseFirestore.instance
       .collection('OUTLET')
       .doc(outletId)
       .collection('INVOICE')
       .where('dayId', isEqualTo: dayId)
-      .get();
-
+      .get()
+      .then((value) => value);
   if (querySnapshot.size == 0) {
     print('No matching documents.');
-    return [];
-  }
+  } else {
+    //int len = querySnapshot.docs.length;
+    int count = 0;
+    for (int x = 0; x < querySnapshot.docs.length; x++) {
+      int prdLen = querySnapshot.docs[x]["productList"].length;
 
-  for (var invoice in querySnapshot.docs) {
-    totalSale += invoice["finalBillAmt"];
-    totalDisPer += invoice["discountPer"];
-    totalBill += 1;
-    totalDelChg += invoice["delliveryChrg"];
-    totalDis += invoice["discountAmt"];
-    totalTax += invoice["taxAmt"];
+      for (int i = 0; i < prdLen; i++) {
+        List<dynamic> tempPrd = querySnapshot.docs[x]["productList"];
 
-    List<dynamic> tempPrd = invoice["productList"];
-
-    for (var product in tempPrd) {
-      QuerySnapshot querySnapshot2 = await FirebaseFirestore.instance
-          .collection('OUTLET')
-          .doc(outletId)
-          .collection('PRODUCT')
-          .where('id', isEqualTo: product["id"])
-          .get();
-
-      for (var doc in querySnapshot2.docs) {
-        double purPriceTotal = doc["purchasePrice"] * product["quantity"];
+        double purPriceTotal =
+            tempPrd[i]["purchasePrice"] * tempPrd[i]["quantity"];
         double costTotal =
-            product["total"] - purPriceTotal; // Profit/Loss (prls)
-
+            tempPrd[i]["total"] - purPriceTotal; // Profit/Loss (prls)
         docObj.add({
-          "id": product["id"],
-          "quantity": product["quantity"],
-          "name": product["name"],
-          "price": product["price"],
-          "purchasePrice": doc["purchasePrice"],
+          "id": tempPrd[i]["id"],
+          "quantity": tempPrd[i]["quantity"],
+          "name": tempPrd[i]["name"],
+          "purchasePrice": tempPrd[i]["purchasePrice"],
           "costTotal": purPriceTotal,
           "prls": costTotal, // Correct calculation for profit/loss
-          "total": product["total"],
-          "catId": product["catId"]
+          "price": tempPrd[i]["price"],
+          "total": tempPrd[i]["total"],
+          "catId": tempPrd[i]["catId"]
         });
+        allProductTotal = allProductTotal + tempPrd[i]["total"];
+      }
+    }
+    docObj.forEach((item) {
+      //group same items in prd list
+      if (prd.length == 0) {
+        prd.add(item);
+      } else {
+        int index = prd.indexWhere((element) => element["id"] == item["id"]);
+        if (index == -1) {
+          prd.add(item);
+        } else {
+          prd[index]["quantity"] = prd[index]["quantity"] + item["quantity"];
+          prd[index]["price"] = item["price"];
+          prd[index]["total"] = prd[index]["total"] + item["total"];
+        }
+      }
+    });
 
-        allProductTotal += product["total"]; // Accumulate product total
+    //add all the category id's to catId list
+    prd.forEach((element) {
+      catIds.add(element["catId"]);
+    });
+    //add distinct Cat Id to list
+    distinctCatID = catIds.toSet().toList();
+    print(distinctCatID);
+    var countNext = 0;
+    List<dynamic> categoryList = [];
+
+    for (int i = 0; i < distinctCatID.length; i++) {
+      QuerySnapshot querySnapshot1 = await FirebaseFirestore.instance
+          .collection('OUTLET')
+          .doc(outletId)
+          .collection('CATEGORY')
+          .where('id', isEqualTo: distinctCatID[i])
+          .get()
+          .then((value) => value);
+      if (querySnapshot1.size == 0) {
+        print('No matching documents.');
+      } else {
+        querySnapshot1.docs.forEach((doc) {
+          countNext++;
+
+          categoryList.add({
+            "catId": doc.id,
+            "catName": doc["name"],
+            "catTotal": 0,
+            "quantity": "--"
+          });
+        });
+      }
+
+      if (countNext == distinctCatID.length) {
+        for (i = 0; i < categoryList.length; i++) {
+          var temp1 = [];
+          prd.forEach((element) {
+            if (categoryList[i]["catId"] == element["catId"]) {
+              categoryList[i]["catTotal"] =
+                  categoryList[i]["catTotal"] + element["total"];
+              temp1.add(element);
+            }
+          });
+          finalList.add({"category": categoryList[i], "products": temp1});
+        }
       }
     }
   }
-
-  // Group products and aggregate quantities and totals
-  for (var item in docObj) {
-    int index = prd.indexWhere((element) => element["id"] == item["id"]);
-    if (index == -1) {
-      prd.add(item); // Add new product
-    } else {
-      // Update existing product quantities and totals
-      prd[index]["quantity"] += item["quantity"];
-      prd[index]["total"] += item["total"];
-    }
-  }
-
-  // Collect all unique category IDs
-  for (var product in prd) {
-    catIds.add(product["catId"]);
-  }
-
-  distinctCatID = catIds.toSet().toList(); // Get distinct category IDs
-  List<dynamic> categoryList = [];
-
-  for (var catId in distinctCatID) {
-    QuerySnapshot querySnapshot1 = await FirebaseFirestore.instance
-        .collection('OUTLET')
-        .doc(outletId)
-        .collection('CATEGORY')
-        .where('id', isEqualTo: catId)
-        .get();
-
-    if (querySnapshot1.size > 0) {
-      var category = querySnapshot1.docs.first;
-      categoryList.add({
-        "catId": category.id,
-        "catName": category["name"],
-        "catTotal": 0.0, // Initialize total for this category
-        "quantity": "--"
-      });
-    }
-  }
-
-  // Now group products by category and calculate category totals
-  for (var category in categoryList) {
-    List<dynamic> temp1 = [];
-    for (var product in prd) {
-      if (category["catId"] == product["catId"]) {
-        category["catTotal"] += product["total"];
-        temp1.add(product);
-      }
-    }
-    allCatTotal += category["catTotal"];
-    finalList.add({"category": category, "products": temp1});
-  }
-
-  // Final data
   lastFinalList.add({
     "allProducts": prd,
     "details": finalList,
     "dayId": dayId,
-    "allProductTotal": allProductTotal,
-    "allCatTotal": allCatTotal,
-    "otherDetails": {
-      "totalSale": totalSale,
-      "totalDisPer": totalDisPer,
-      "totalBill": totalBill,
-      "totalDelChg": totalDelChg,
-      "totalDis": totalDis,
-      "totalTax": totalTax
-    }
+    "allProductTotal": allProductTotal
   });
-
+  print(lastFinalList);
   return lastFinalList;
 }
