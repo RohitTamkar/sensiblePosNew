@@ -1744,14 +1744,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                               _model.searchedinvoice =
                                                   kotOrderScreenInvoiceRecordList
                                                       .where((e) =>
-                                                          valueOrDefault<bool>(
-                                                            e.count ==
-                                                                functions.stringToint(
-                                                                    _model
-                                                                        .textController1
-                                                                        .text),
-                                                            false,
-                                                          ))
+                                                          (e.count ==
+                                                              functions.stringToint(
+                                                                  _model
+                                                                      .textController1
+                                                                      .text)) &&
+                                                          (e.dayId ==
+                                                              functions
+                                                                  .getDayId()))
                                                       .toList()
                                                       .cast<InvoiceRecord>();
                                               safeSetState(() {});
