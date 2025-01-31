@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 import 'dart:async';
@@ -73,7 +75,7 @@ Future printBillnewhivegrocery(
   // changes according to size
   if (size == 46) {
     billColumn3 =
-        "NO ITEM_NAME             QTY    RATE     TOTAL"; // 20, 8, 9, 9 (46)
+        "NO ITEM_NAME            QTY    RATE     TOTAL "; // 20, 8, 9, 9 (46)
     billColumn4 = "NO   ITEM_NAME      QTY  RATE  DIS%      TOTAL";
     taxColumn3 = "TAX%      TAXABLE     CGST     SGST     TAXAMT";
 
@@ -308,7 +310,7 @@ Future printBillnewhivegrocery(
               ),
             ),
             PosColumn(
-              text: obj["itemList"][i]["quantity"].toString(),
+              text: obj["itemList"][i]["qtystring"].toString(),
               width: 1,
               styles: PosStyles(
                 height: PosTextSize.size1,
@@ -366,7 +368,7 @@ Future printBillnewhivegrocery(
             ),
             PosColumn(
               text: obj["itemList"][i]["name"].toString(),
-              width: 5,
+              width: 4,
               styles: PosStyles(
                 //fontType: PosFontType.fontA,
                 height: PosTextSize.size1,
@@ -376,9 +378,10 @@ Future printBillnewhivegrocery(
               ),
             ),
             PosColumn(
-              text: obj["itemList"][i]["quantity"].toString() +
+              text: obj["itemList"][i]["qtystring"].toString() +
+                  " " +
                   (unit ? obj["itemList"][i]["unit"] : ""),
-              width: 2,
+              width: 3,
               styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
