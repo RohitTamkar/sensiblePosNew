@@ -24,6 +24,7 @@ class SelItemListStruct extends FFFirebaseStruct {
     double? disAmt,
     double? disPer,
     String? ordertype,
+    String? qtystring,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _name = name,
         _price = price,
@@ -39,6 +40,7 @@ class SelItemListStruct extends FFFirebaseStruct {
         _disAmt = disAmt,
         _disPer = disPer,
         _ordertype = ordertype,
+        _qtystring = qtystring,
         super(firestoreUtilData);
 
   // "name" field.
@@ -153,6 +155,13 @@ class SelItemListStruct extends FFFirebaseStruct {
 
   bool hasOrdertype() => _ordertype != null;
 
+  // "qtystring" field.
+  String? _qtystring;
+  String get qtystring => _qtystring ?? '';
+  set qtystring(String? val) => _qtystring = val;
+
+  bool hasQtystring() => _qtystring != null;
+
   static SelItemListStruct fromMap(Map<String, dynamic> data) =>
       SelItemListStruct(
         name: data['name'] as String?,
@@ -169,6 +178,7 @@ class SelItemListStruct extends FFFirebaseStruct {
         disAmt: castToType<double>(data['disAmt']),
         disPer: castToType<double>(data['disPer']),
         ordertype: data['ordertype'] as String?,
+        qtystring: data['qtystring'] as String?,
       );
 
   static SelItemListStruct? maybeFromMap(dynamic data) => data is Map
@@ -190,6 +200,7 @@ class SelItemListStruct extends FFFirebaseStruct {
         'disAmt': _disAmt,
         'disPer': _disPer,
         'ordertype': _ordertype,
+        'qtystring': _qtystring,
       }.withoutNulls;
 
   @override
@@ -248,6 +259,10 @@ class SelItemListStruct extends FFFirebaseStruct {
         ),
         'ordertype': serializeParam(
           _ordertype,
+          ParamType.String,
+        ),
+        'qtystring': serializeParam(
+          _qtystring,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -324,6 +339,11 @@ class SelItemListStruct extends FFFirebaseStruct {
           ParamType.String,
           false,
         ),
+        qtystring: deserializeParam(
+          data['qtystring'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -345,7 +365,8 @@ class SelItemListStruct extends FFFirebaseStruct {
         categoryP == other.categoryP &&
         disAmt == other.disAmt &&
         disPer == other.disPer &&
-        ordertype == other.ordertype;
+        ordertype == other.ordertype &&
+        qtystring == other.qtystring;
   }
 
   @override
@@ -363,7 +384,8 @@ class SelItemListStruct extends FFFirebaseStruct {
         categoryP,
         disAmt,
         disPer,
-        ordertype
+        ordertype,
+        qtystring
       ]);
 }
 
@@ -382,6 +404,7 @@ SelItemListStruct createSelItemListStruct({
   double? disAmt,
   double? disPer,
   String? ordertype,
+  String? qtystring,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -402,6 +425,7 @@ SelItemListStruct createSelItemListStruct({
       disAmt: disAmt,
       disPer: disPer,
       ordertype: ordertype,
+      qtystring: qtystring,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,

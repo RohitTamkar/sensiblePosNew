@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 import 'dart:async';
@@ -61,13 +63,18 @@ Future printBillnewhivegrocery(
   String billColumn4;
   String taxColumn3;
   bool disc = false;
+  bool unit = false;
+  if (appSetting.settingList.any((setting) =>
+      setting.title == 'printUnitonbill' && setting.value == true)) {
+    unit = true;
+  }
   dynamic obj;
 
   // changes according to size
   if (size == 46) {
     billColumn3 =
-        "ITEM_NAME              QTY     RATE     TOTAL "; // 20, 8, 9, 9 (46)
-    billColumn4 = "ITEM_NAME           QTY   RATE  DIS%   TOTAL  ";
+        "NO ITEM_NAME             QTY    RATE     TOTAL"; // 20, 8, 9, 9 (46)
+    billColumn4 = "NO   ITEM_NAME      QTY  RATE  DIS%      TOTAL";
     taxColumn3 = "TAX%      TAXABLE     CGST     SGST     TAXAMT";
 
     if (data.length > 0) {
@@ -369,7 +376,8 @@ Future printBillnewhivegrocery(
               ),
             ),
             PosColumn(
-              text: obj["itemList"][i]["quantity"].toString(),
+              text: obj["itemList"][i]["quantity"].toString() +
+                  (unit ? obj["itemList"][i]["unit"] : ""),
               width: 2,
               styles: PosStyles(
                 height: PosTextSize.size1,
@@ -495,6 +503,38 @@ Future printBillnewhivegrocery(
                 align: PosAlign.center));
       }
       int disPer = invoiceDetails.discountPer!.round();
+      if (invoiceDetails.discountPer != 0) {
+        bytes += generator.row([
+          PosColumn(
+            text: "Total Discount %",
+            width: 8,
+            styles: PosStyles(
+                fontType: PosFontType.fontA,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.left),
+          ),
+          PosColumn(
+            text: invoiceDetails.discountPer.toString() + '%',
+            width: 4,
+            styles: PosStyles(
+                fontType: PosFontType.fontA,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.right),
+          )
+        ]);
+
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+      }
       if (invoiceDetails.discountAmt != 0) {
         bytes += generator.row([
           PosColumn(
@@ -527,6 +567,7 @@ Future printBillnewhivegrocery(
                 bold: false,
                 align: PosAlign.center));
       }
+
       if (invoiceDetails.delliveryChrg != 0) {
         bytes += generator.row([
           PosColumn(
