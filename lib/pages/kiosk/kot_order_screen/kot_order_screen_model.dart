@@ -51,13 +51,9 @@ class KotOrderScreenModel extends FlutterFlowModel<KotOrderScreenWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController1;
   String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
   // State field(s) for TextFielddrawer widget.
   FocusNode? textFielddrawerFocusNode;
   TextEditingController? textFielddrawerTextController;
@@ -69,11 +65,8 @@ class KotOrderScreenModel extends FlutterFlowModel<KotOrderScreenWidget> {
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
+    textFieldFocusNode?.dispose();
     textController1?.dispose();
-
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
 
     textFielddrawerFocusNode?.dispose();
     textFielddrawerTextController?.dispose();
