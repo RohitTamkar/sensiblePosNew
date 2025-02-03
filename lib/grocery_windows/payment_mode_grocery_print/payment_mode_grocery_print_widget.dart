@@ -49,6 +49,8 @@ class _PaymentModeGroceryPrintWidgetState
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.amount = FFAppState().finalAmt.toString();
       safeSetState(() {});
+      FFAppState().PayMode = 'CASH';
+      safeSetState(() {});
       safeSetState(() {
         _model.textController1?.text = _model.amount!;
       });
