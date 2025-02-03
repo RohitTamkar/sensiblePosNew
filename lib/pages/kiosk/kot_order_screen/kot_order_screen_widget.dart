@@ -288,7 +288,13 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                 .cast<InvoiceRecord>();
                                         safeSetState(() {});
                                       } else {
-                                        _model.searchedinvoice = [];
+                                        _model.searchedinvoice =
+                                            kotOrderScreenInvoiceRecordList
+                                                .where((e) =>
+                                                    e.dayId ==
+                                                    functions.getDayId())
+                                                .toList()
+                                                .cast<InvoiceRecord>();
                                         safeSetState(() {});
                                       }
                                     },
