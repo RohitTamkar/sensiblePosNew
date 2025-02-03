@@ -1433,328 +1433,95 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                               ),
                             ),
                             if (_model.invoices.length <= 0)
-                              Padding(
-                                padding: EdgeInsets.all(10.0),
-                                child: Builder(
-                                  builder: (context) {
-                                    final containerVar2 =
-                                        kotOrderScreenInvoiceRecordList
-                                            .where((e) => e.kotStatus == 'HOLD')
-                                            .toList();
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsets.all(10.0),
+                                  child: Builder(
+                                    builder: (context) {
+                                      final containerVar2 =
+                                          kotOrderScreenInvoiceRecordList
+                                              .where(
+                                                  (e) => e.kotStatus == 'HOLD')
+                                              .toList();
 
-                                    return MasonryGridView.builder(
-                                      gridDelegate:
-                                          SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                                        crossAxisCount: 1,
-                                      ),
-                                      crossAxisSpacing: 10.0,
-                                      mainAxisSpacing: 15.0,
-                                      itemCount: containerVar2.length,
-                                      shrinkWrap: true,
-                                      itemBuilder:
-                                          (context, containerVar2Index) {
-                                        final containerVar2Item =
-                                            containerVar2[containerVar2Index];
-                                        return ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(15.0),
-                                          child: Container(
-                                            width: 100.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              borderRadius:
-                                                  BorderRadius.circular(15.0),
-                                              border: Border.all(
+                                      return MasonryGridView.builder(
+                                        gridDelegate:
+                                            SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                          crossAxisCount: 1,
+                                        ),
+                                        crossAxisSpacing: 10.0,
+                                        mainAxisSpacing: 35.0,
+                                        itemCount: containerVar2.length,
+                                        shrinkWrap: true,
+                                        itemBuilder:
+                                            (context, containerVar2Index) {
+                                          final containerVar2Item =
+                                              containerVar2[containerVar2Index];
+                                          return ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(15.0),
+                                            child: Container(
+                                              width: 100.0,
+                                              decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .customColor2,
-                                                width: 2.0,
-                                              ),
-                                            ),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Container(
-                                                  width: double.infinity,
-                                                  height: 70.0,
-                                                  decoration: BoxDecoration(
-                                                    color: (containerVar2Item
-                                                                        .source !=
-                                                                    null &&
-                                                                containerVar2Item
-                                                                        .source !=
-                                                                    '') &&
-                                                            (containerVar2Item
-                                                                    .source ==
-                                                                'WEB ORDER')
-                                                        ? FlutterFlowTheme.of(
-                                                                context)
-                                                            .primary
-                                                        : Color(0xFF362E25),
-                                                    borderRadius:
-                                                        BorderRadius.only(
-                                                      bottomLeft:
-                                                          Radius.circular(0.0),
-                                                      bottomRight:
-                                                          Radius.circular(0.0),
-                                                      topLeft:
-                                                          Radius.circular(15.0),
-                                                      topRight:
-                                                          Radius.circular(15.0),
-                                                    ),
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsets.all(15.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
-                                                      children: [
-                                                        RichText(
-                                                          textScaler:
-                                                              MediaQuery.of(
-                                                                      context)
-                                                                  .textScaler,
-                                                          text: TextSpan(
-                                                            children: [
-                                                              TextSpan(
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'r1ycil2d' /* Token No. :  */,
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLarge
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelLargeFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBtnText,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).labelLargeFamily),
-                                                                    ),
-                                                              ),
-                                                              TextSpan(
-                                                                text:
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                  containerVar2Item
-                                                                              .source ==
-                                                                          'WEB ORDER'
-                                                                      ? '00${containerVar2Item.count.toString()}'
-                                                                      : containerVar2Item
-                                                                          .count
-                                                                          .toString(),
-                                                                  'X',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBtnText,
-                                                                      fontSize:
-                                                                          27.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).headlineSmallFamily),
-                                                                    ),
-                                                              )
-                                                            ],
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily),
-                                                                ),
-                                                          ),
-                                                        ),
-                                                        if ((containerVar2Item
-                                                                        .source !=
-                                                                    null &&
-                                                                containerVar2Item
-                                                                        .source !=
-                                                                    '') &&
-                                                            (containerVar2Item
-                                                                    .source ==
-                                                                'WEB ORDER'))
-                                                          Flexible(
-                                                            child: Text(
-                                                              containerVar2Item
-                                                                  .source,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .warning,
-                                                                    fontSize:
-                                                                        10.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontStyle:
-                                                                        FontStyle
-                                                                            .italic,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                  ),
-                                                            ).animateOnPageLoad(
-                                                                animationsMap[
-                                                                    'textOnPageLoadAnimation3']!),
-                                                          ),
-                                                        Stack(
-                                                          children: [
-                                                            if (containerVar2Item
-                                                                    .kotStatus ==
-                                                                'HOLD')
-                                                              FFButtonWidget(
-                                                                onPressed:
-                                                                    () async {
-                                                                  await containerVar2Item
-                                                                      .reference
-                                                                      .update(
-                                                                          createInvoiceRecordData(
-                                                                    kotStatus:
-                                                                        'PENDING',
-                                                                  ));
-                                                                  _model.removeFromInvoices(
-                                                                      containerVar2Item);
-                                                                  safeSetState(
-                                                                      () {});
-                                                                },
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'p0k3xglo' /* HOLD OUT */,
-                                                                ),
-                                                                options:
-                                                                    FFButtonOptions(
-                                                                  width: 160.0,
-                                                                  height: 40.0,
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          24.0,
-                                                                          0.0,
-                                                                          24.0,
-                                                                          0.0),
-                                                                  iconPadding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  color: Color(
-                                                                      0xFFFF9D47),
-                                                                  textStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleMediumFamily,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight:
-                                                                            FontWeight.w600,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
-                                                                      ),
-                                                                  elevation:
-                                                                      3.0,
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Colors
-                                                                        .transparent,
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              8.0),
-                                                                ),
-                                                              ),
-                                                          ],
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
+                                                        .secondaryBackground,
+                                                borderRadius:
+                                                    BorderRadius.circular(15.0),
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .customColor2,
+                                                  width: 2.0,
                                                 ),
-                                                Container(
-                                                  width: double.infinity,
-                                                  height: 50.0,
-                                                  decoration: BoxDecoration(
-                                                    color: (containerVar2Item
-                                                                        .source !=
-                                                                    null &&
-                                                                containerVar2Item
-                                                                        .source !=
-                                                                    '') &&
-                                                            (containerVar2Item
-                                                                    .source ==
-                                                                'WEB ORDER')
-                                                        ? FlutterFlowTheme.of(
-                                                                context)
-                                                            .primary
-                                                        : Color(0xFF362E25),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsets.all(15.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      1.0,
-                                                                      0.0),
-                                                          child: RichText(
+                                              ),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Container(
+                                                    width: double.infinity,
+                                                    height: 70.0,
+                                                    decoration: BoxDecoration(
+                                                      color: (containerVar2Item
+                                                                          .source !=
+                                                                      null &&
+                                                                  containerVar2Item
+                                                                          .source !=
+                                                                      '') &&
+                                                              (containerVar2Item
+                                                                      .source ==
+                                                                  'WEB ORDER')
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary
+                                                          : Color(0xFF362E25),
+                                                      borderRadius:
+                                                          BorderRadius.only(
+                                                        bottomLeft:
+                                                            Radius.circular(
+                                                                0.0),
+                                                        bottomRight:
+                                                            Radius.circular(
+                                                                0.0),
+                                                        topLeft:
+                                                            Radius.circular(
+                                                                15.0),
+                                                        topRight:
+                                                            Radius.circular(
+                                                                15.0),
+                                                      ),
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsets.all(15.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: [
+                                                          RichText(
                                                             textScaler:
                                                                 MediaQuery.of(
                                                                         context)
@@ -1762,8 +1529,11 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                             text: TextSpan(
                                                               children: [
                                                                 TextSpan(
-                                                                  text: containerVar2Item
-                                                                      .orderType,
+                                                                  text: FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'r1ycil2d' /* Token No. :  */,
+                                                                  ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelLarge
@@ -1771,15 +1541,38 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).labelLargeFamily,
                                                                         color: FlutterFlowTheme.of(context)
-                                                                            .primaryBackground,
-                                                                        fontSize:
-                                                                            22.0,
+                                                                            .primaryBtnText,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight:
-                                                                            FontWeight.w600,
                                                                         useGoogleFonts:
                                                                             GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
+                                                                      ),
+                                                                ),
+                                                                TextSpan(
+                                                                  text: valueOrDefault<
+                                                                      String>(
+                                                                    containerVar2Item.source ==
+                                                                            'WEB ORDER'
+                                                                        ? '00${containerVar2Item.count.toString()}'
+                                                                        : containerVar2Item
+                                                                            .count
+                                                                            .toString(),
+                                                                    'X',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryBtnText,
+                                                                        fontSize:
+                                                                            27.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                       ),
                                                                 )
                                                               ],
@@ -1792,14 +1585,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             .bodyMediumFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .primaryText,
-                                                                    fontSize:
-                                                                        30.0,
+                                                                        .secondaryBackground,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
                                                                     useGoogleFonts: GoogleFonts
                                                                             .asMap()
                                                                         .containsKey(
@@ -1807,36 +1595,162 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                   ),
                                                             ),
                                                           ),
-                                                        ),
-                                                      ],
+                                                          if ((containerVar2Item
+                                                                          .source !=
+                                                                      null &&
+                                                                  containerVar2Item
+                                                                          .source !=
+                                                                      '') &&
+                                                              (containerVar2Item
+                                                                      .source ==
+                                                                  'WEB ORDER'))
+                                                            Flexible(
+                                                              child: Text(
+                                                                containerVar2Item
+                                                                    .source,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .warning,
+                                                                      fontSize:
+                                                                          10.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontStyle:
+                                                                          FontStyle
+                                                                              .italic,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                    ),
+                                                              ).animateOnPageLoad(
+                                                                  animationsMap[
+                                                                      'textOnPageLoadAnimation3']!),
+                                                            ),
+                                                          Stack(
+                                                            children: [
+                                                              if (containerVar2Item
+                                                                      .kotStatus ==
+                                                                  'HOLD')
+                                                                FFButtonWidget(
+                                                                  onPressed:
+                                                                      () async {
+                                                                    await containerVar2Item
+                                                                        .reference
+                                                                        .update(
+                                                                            createInvoiceRecordData(
+                                                                      kotStatus:
+                                                                          'PENDING',
+                                                                    ));
+                                                                    _model.removeFromInvoices(
+                                                                        containerVar2Item);
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  },
+                                                                  text: FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'p0k3xglo' /* HOLD OUT */,
+                                                                  ),
+                                                                  options:
+                                                                      FFButtonOptions(
+                                                                    width:
+                                                                        160.0,
+                                                                    height:
+                                                                        40.0,
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            24.0,
+                                                                            0.0,
+                                                                            24.0,
+                                                                            0.0),
+                                                                    iconPadding:
+                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    color: Color(
+                                                                        0xFFFF9D47),
+                                                                    textStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
+                                                                        ),
+                                                                    elevation:
+                                                                        3.0,
+                                                                    borderSide:
+                                                                        BorderSide(
+                                                                      color: Colors
+                                                                          .transparent,
+                                                                      width:
+                                                                          1.0,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                  ),
+                                                                ),
+                                                            ],
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsets.all(15.0),
-                                                  child: Container(
+                                                  Container(
                                                     width: double.infinity,
+                                                    height: 50.0,
                                                     decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
+                                                      color: (containerVar2Item
+                                                                          .source !=
+                                                                      null &&
+                                                                  containerVar2Item
+                                                                          .source !=
+                                                                      '') &&
+                                                              (containerVar2Item
+                                                                      .source ==
+                                                                  'WEB ORDER')
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary
+                                                          : Color(0xFF362E25),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
                                                     ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .end,
-                                                      children: [
-                                                        if (false)
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsets.all(15.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
                                                           Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
-                                                                        0.0,
-                                                                        20.0),
+                                                                        1.0,
+                                                                        0.0),
                                                             child: RichText(
                                                               textScaler:
                                                                   MediaQuery.of(
@@ -1845,11 +1759,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                               text: TextSpan(
                                                                 children: [
                                                                   TextSpan(
-                                                                    text: FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'mfogj6o4' /* Time :  */,
-                                                                    ),
+                                                                    text: containerVar2Item
+                                                                        .orderType,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .labelLarge
@@ -1857,51 +1768,13 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           fontFamily:
                                                                               FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           color:
-                                                                              FlutterFlowTheme.of(context).primary,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
-                                                                        ),
-                                                                  ),
-                                                                  TextSpan(
-                                                                    text: FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '08rntdss' /* 01.34 */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .headlineSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).headlineSmallFamily,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primary,
+                                                                              FlutterFlowTheme.of(context).primaryBackground,
                                                                           fontSize:
-                                                                              27.0,
+                                                                              22.0,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
-                                                                        ),
-                                                                  ),
-                                                                  TextSpan(
-                                                                    text: FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'hsfcdr63' /*  min. */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primary,
-                                                                          letterSpacing:
-                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
                                                                           useGoogleFonts:
                                                                               GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                         ),
@@ -1914,8 +1787,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       fontFamily:
                                                                           FlutterFlowTheme.of(context)
                                                                               .bodyMediumFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      fontSize:
+                                                                          30.0,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
                                                                       useGoogleFonts: GoogleFonts
                                                                               .asMap()
                                                                           .containsKey(
@@ -1924,105 +1805,215 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                               ),
                                                             ),
                                                           ),
-                                                        Builder(
-                                                          builder: (context) {
-                                                            final prdlist =
-                                                                containerVar2Item
-                                                                    .productList
-                                                                    .toList();
-
-                                                            return Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: List.generate(
-                                                                  prdlist
-                                                                      .length,
-                                                                  (prdlistIndex) {
-                                                                final prdlistItem =
-                                                                    prdlist[
-                                                                        prdlistIndex];
-                                                                return Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsets.all(15.0),
+                                                    child: Container(
+                                                      width: double.infinity,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          if (false)
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
-                                                                          10.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceBetween,
-                                                                    children: [
-                                                                      Expanded(
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              20.0,
-                                                                              0.0),
+                                                                          20.0),
+                                                              child: RichText(
+                                                                textScaler: MediaQuery.of(
+                                                                        context)
+                                                                    .textScaler,
+                                                                text: TextSpan(
+                                                                  children: [
+                                                                    TextSpan(
+                                                                      text: FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'mfogj6o4' /* Time :  */,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
+                                                                          ),
+                                                                    ),
+                                                                    TextSpan(
+                                                                      text: FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        '08rntdss' /* 01.34 */,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            fontSize:
+                                                                                27.0,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
+                                                                          ),
+                                                                    ),
+                                                                    TextSpan(
+                                                                      text: FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'hsfcdr63' /*  min. */,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
+                                                                          ),
+                                                                    )
+                                                                  ],
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          Builder(
+                                                            builder: (context) {
+                                                              final prdlist =
+                                                                  containerVar2Item
+                                                                      .productList
+                                                                      .toList();
+
+                                                              return Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: List.generate(
+                                                                    prdlist
+                                                                        .length,
+                                                                    (prdlistIndex) {
+                                                                  final prdlistItem =
+                                                                      prdlist[
+                                                                          prdlistIndex];
+                                                                  return Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0),
+                                                                    child: Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .spaceBetween,
+                                                                      children: [
+                                                                        Expanded(
                                                                           child:
-                                                                              Container(
-                                                                            decoration:
-                                                                                BoxDecoration(),
+                                                                              Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                20.0,
+                                                                                0.0),
                                                                             child:
-                                                                                Column(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                                                              children: [
-                                                                                Text(
-                                                                                  prdlistItem.name,
-                                                                                  style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
-                                                                                        letterSpacing: 0.0,
-                                                                                        fontWeight: FontWeight.w800,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
-                                                                                      ),
-                                                                                ),
-                                                                              ],
+                                                                                Container(
+                                                                              decoration: BoxDecoration(),
+                                                                              child: Column(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                children: [
+                                                                                  Text(
+                                                                                    prdlistItem.name,
+                                                                                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w800,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
+                                                                                        ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                      ),
-                                                                      Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          prdlistItem
-                                                                              .quantity
-                                                                              .toString(),
-                                                                          '0',
+                                                                        Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            prdlistItem.quantity.toString(),
+                                                                            '0',
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .headlineLarge
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.w600,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
+                                                                              ),
                                                                         ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .headlineLarge
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
-                                                                              letterSpacing: 0.0,
-                                                                              fontWeight: FontWeight.w600,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
-                                                                            ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                );
-                                                              }),
-                                                            );
-                                                          },
-                                                        ),
-                                                      ],
+                                                                      ],
+                                                                    ),
+                                                                  );
+                                                                }),
+                                                              );
+                                                            },
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
-                                          ),
-                                        );
-                                      },
-                                    );
-                                  },
+                                          );
+                                        },
+                                      );
+                                    },
+                                  ),
                                 ),
                               ),
                             if (_model.invoices.length > 0)
