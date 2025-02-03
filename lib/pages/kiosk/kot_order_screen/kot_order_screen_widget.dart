@@ -2927,8 +2927,6 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                               .toList()
                                               .cast<InvoiceRecord>();
                                       safeSetState(() {});
-                                      _model.search = false;
-                                      safeSetState(() {});
                                       scaffoldKey.currentState!.openDrawer();
                                     },
                                     child: Container(
