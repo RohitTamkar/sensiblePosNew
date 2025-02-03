@@ -3487,10 +3487,7 @@ class _PaymentModeGroceryPrintWidgetState
                                             functions.timestampToMili(
                                                 getCurrentTimestamp),
                                             functions.getDayId(),
-                                            getJsonField(
-                                              FFAppState().groceryJson,
-                                              r'''$.paymentMode''',
-                                            ).toString(),
+                                            FFAppState().PayMode,
                                             valueOrDefault<double>(
                                               FFAppState().disAmt,
                                               0.0,
@@ -4367,10 +4364,7 @@ class _PaymentModeGroceryPrintWidgetState
                                             functions.timestampToMili(
                                                 getCurrentTimestamp),
                                             functions.getDayId(),
-                                            getJsonField(
-                                              FFAppState().groceryJson,
-                                              r'''$.paymentMode''',
-                                            ).toString(),
+                                            FFAppState().PayMode,
                                             valueOrDefault<double>(
                                               FFAppState().disAmt,
                                               0.0,
