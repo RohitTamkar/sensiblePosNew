@@ -10,6 +10,7 @@ import '/grocery_windows/add_customer_grocery/add_customer_grocery_widget.dart';
 import '/grocery_windows/add_product_grocery/add_product_grocery_widget.dart';
 import '/grocery_windows/grocery/grocery_widget.dart';
 import '/grocery_windows/payment_mode_grocery/payment_mode_grocery_widget.dart';
+import '/grocery_windows/payment_mode_grocery_print/payment_mode_grocery_print_widget.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
@@ -3661,35 +3662,74 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                         .allBillsList
                                                         .toList())
                                                 .isNotEmpty) {
-                                              await showModalBottomSheet(
-                                                isScrollControlled: true,
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                enableDrag: false,
-                                                context: context,
-                                                builder: (context) {
-                                                  return GestureDetector(
-                                                    onTap: () {
-                                                      FocusScope.of(context)
-                                                          .unfocus();
-                                                      FocusManager
-                                                          .instance.primaryFocus
-                                                          ?.unfocus();
-                                                    },
-                                                    child: Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child:
-                                                          PaymentModeGroceryWidget(
-                                                        paymentMode:
-                                                            _model.paymentMode,
+                                              if (containerAppSettingsRecord!
+                                                  .settingList
+                                                  .where((e) =>
+                                                      e.title ==
+                                                      'settledBtndisable')
+                                                  .toList()
+                                                  .firstOrNull!
+                                                  .value) {
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child:
+                                                            PaymentModeGroceryPrintWidget(
+                                                          paymentMode: widget!
+                                                              .paymentMode,
+                                                        ),
                                                       ),
-                                                    ),
-                                                  );
-                                                },
-                                              ).then((value) =>
-                                                  safeSetState(() {}));
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
+                                              } else {
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child:
+                                                            PaymentModeGroceryWidget(
+                                                          paymentMode: _model
+                                                              .paymentMode,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
+                                              }
                                             } else {
                                               ScaffoldMessenger.of(context)
                                                   .showSnackBar(

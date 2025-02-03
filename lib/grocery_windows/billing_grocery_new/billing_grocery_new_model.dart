@@ -10,6 +10,7 @@ import '/grocery_windows/add_customer_grocery/add_customer_grocery_widget.dart';
 import '/grocery_windows/add_product_grocery/add_product_grocery_widget.dart';
 import '/grocery_windows/grocery/grocery_widget.dart';
 import '/grocery_windows/payment_mode_grocery/payment_mode_grocery_widget.dart';
+import '/grocery_windows/payment_mode_grocery_print/payment_mode_grocery_print_widget.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
