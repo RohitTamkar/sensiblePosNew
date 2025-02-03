@@ -58,6 +58,11 @@ class KotOrderScreenModel extends FlutterFlowModel<KotOrderScreenWidget> {
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
+  // State field(s) for TextFielddrawer widget.
+  FocusNode? textFielddrawerFocusNode;
+  TextEditingController? textFielddrawerTextController;
+  String? Function(BuildContext, String?)?
+      textFielddrawerTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
@@ -69,5 +74,8 @@ class KotOrderScreenModel extends FlutterFlowModel<KotOrderScreenWidget> {
 
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
+
+    textFielddrawerFocusNode?.dispose();
+    textFielddrawerTextController?.dispose();
   }
 }
