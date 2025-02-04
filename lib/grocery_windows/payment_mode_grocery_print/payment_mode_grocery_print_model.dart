@@ -72,7 +72,7 @@ class PaymentModeGroceryPrintModel
   InvoiceRecord? invonline;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceDataCopyCopy;
-  // Stores action output result for [Custom Action - calShiftSummaryNewgrocery] action in Button widget.
+  // Stores action output result for [Custom Action - calShiftSummaryNewgroceryPrint] action in Button widget.
   dynamic? shiftSummarResultsNew2;
   // Stores action output result for [Custom Action - shiftIdtoInt] action in Button widget.
   int? shiftidhive2;
@@ -104,7 +104,7 @@ class PaymentModeGroceryPrintModel
   InvoiceRecord? invonlineprt;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceData;
-  // Stores action output result for [Custom Action - calShiftSummaryNewgrocery] action in Button widget.
+  // Stores action output result for [Custom Action - calShiftSummaryNewgroceryPrint] action in Button widget.
   dynamic? shiftSummarResultsNew;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   ShiftRecord? shiftondataprint;

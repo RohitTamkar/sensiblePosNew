@@ -615,14 +615,24 @@ Future printBillnewhivegrocery(
               width: PosTextSize.size1,
               bold: false,
               align: PosAlign.center));
-
-      bytes += generator.text(
-          "PAYMENT MODE :" + FFAppState().groceryJson['paymentMode'].toString(),
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              align: PosAlign.center));
+      if (appSetting.settingList.any((setting) =>
+          setting.title == 'settledBtndisable' && setting.value == true)) {
+        bytes += generator.text("PAYMENT MODE :" + FFAppState().PayMode,
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+      } else {
+        bytes += generator.text(
+            "PAYMENT MODE :" +
+                FFAppState().groceryJson['paymentMode'].toString(),
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+      }
 
       bytes += generator.text("-----------------------------------------------",
           styles: const PosStyles(

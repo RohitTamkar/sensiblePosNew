@@ -3525,7 +3525,7 @@ class _PaymentModeGroceryPrintWidgetState
                                           )) {
                                             _model.shiftSummarResultsNew2 =
                                                 await actions
-                                                    .calShiftSummaryNewgrocery(
+                                                    .calShiftSummaryNewgroceryPrint(
                                               _model.hiveInvoiceDataCopyCopy!,
                                               FFAppState().shiftDetailsJson,
                                             );
@@ -4402,7 +4402,7 @@ class _PaymentModeGroceryPrintWidgetState
                                           )) {
                                             _model.shiftSummarResultsNew =
                                                 await actions
-                                                    .calShiftSummaryNewgrocery(
+                                                    .calShiftSummaryNewgroceryPrint(
                                               _model.hiveInvoiceData!,
                                               FFAppState().shiftDetailsJson,
                                             );

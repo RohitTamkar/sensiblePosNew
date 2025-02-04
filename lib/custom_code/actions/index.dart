@@ -2,6 +2,8 @@ export 'check_platform.dart' show checkPlatform;
 export 'cal_bill_amt2.dart' show calBillAmt2;
 export 'calculate_mixpaymentamt.dart' show calculateMixpaymentamt;
 export 'print_billnewhive.dart' show printBillnewhive;
+export 'cal_shift_summary_newgrocery_print.dart'
+    show calShiftSummaryNewgroceryPrint;
 export 'laudry_add_custom_qty.dart' show laudryAddCustomQty;
 export 'cal_bill_amt_grocery_pay.dart' show calBillAmtGroceryPay;
 export 'print_bill_format_two.dart' show printBillFormatTwo;
