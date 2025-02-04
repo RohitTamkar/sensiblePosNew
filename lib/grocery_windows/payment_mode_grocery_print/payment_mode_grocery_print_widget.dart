@@ -250,6 +250,14 @@ class _PaymentModeGroceryPrintWidgetState
                                               builder: (context) {
                                                 final paymentMode =
                                                     containerPaymentModeRecordList
+                                                        .where((e) =>
+                                                            (e.name != 'CASH&GPAY') &&
+                                                            (e.name !=
+                                                                'CASH&CARD') &&
+                                                            (e.name !=
+                                                                'CASH&PHONEPE') &&
+                                                            (e.name !=
+                                                                'CASH&OTHER'))
                                                         .toList();
 
                                                 return GridView.builder(
@@ -419,6 +427,7 @@ class _PaymentModeGroceryPrintWidgetState
                                                   focusNode:
                                                       _model.textFieldFocusNode,
                                                   autofocus: false,
+                                                  readOnly: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText:
@@ -1473,79 +1482,6 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         .primaryText,
                                                                     fontSize:
                                                                         10.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                  ),
-                                                          elevation: 3.0,
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Colors
-                                                                .transparent,
-                                                            width: 1.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                        ),
-                                                        showLoadingIndicator:
-                                                            false,
-                                                      ),
-                                                    ),
-                                                    Expanded(
-                                                      child: FFButtonWidget(
-                                                        onPressed: () async {
-                                                          _model.amount = '';
-                                                          safeSetState(() {});
-                                                          safeSetState(() {
-                                                            _model.textController1
-                                                                    ?.text =
-                                                                _model.amount!;
-                                                          });
-                                                        },
-                                                        text: '',
-                                                        icon: Icon(
-                                                          Icons
-                                                              .backspace_rounded,
-                                                          size: 15.0,
-                                                        ),
-                                                        options:
-                                                            FFButtonOptions(
-                                                          height: 50.0,
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          iconPadding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .customColor2,
-                                                          textStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleSmallFamily,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    fontSize:
-                                                                        19.0,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
