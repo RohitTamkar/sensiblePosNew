@@ -144,6 +144,8 @@ class _PaymentModeGroceryPrintWidgetState
               safeSetState(() {});
             }
 
+            _model.flag = false;
+            safeSetState(() {});
             _model.prdlinstnewtxCopy = await actions.filterProducts2(
               FFAppState().selBill,
               FFAppState().allBillsList.toList(),
@@ -755,8 +757,6 @@ class _PaymentModeGroceryPrintWidgetState
               FFAppState().shiftDetails = _model.updatedShiftDetailsCopy!;
               FFAppState().shiftDetailsJson = _model.shiftSummarResultsNewCopy!;
               FFAppState().update(() {});
-              _model.flag = false;
-              safeSetState(() {});
               Navigator.pop(context);
               if (_shouldSetState) safeSetState(() {});
               return;
