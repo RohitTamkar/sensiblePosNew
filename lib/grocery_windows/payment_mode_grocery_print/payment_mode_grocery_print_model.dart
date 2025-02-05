@@ -102,6 +102,8 @@ class PaymentModeGroceryPrintModel
   TextEditingController? textFieldextraTextController;
   String? Function(BuildContext, String?)?
       textFieldextraTextControllerValidator;
+  // Stores action output result for [Custom Action - calculateGroceryAmtaction] action in Button widget.
+  dynamic? resultsave;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlistsavebill;
   // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
