@@ -130,6 +130,8 @@ class PaymentModeGroceryPrintModel
   ProductStructStruct? productupdated;
   // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
   List<ProductStructStruct>? newupdatedproductlist2;
+  // Stores action output result for [Custom Action - calculateGroceryAmtaction] action in Button widget.
+  dynamic? resultprint;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlinstnewtx;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
@@ -144,7 +146,7 @@ class PaymentModeGroceryPrintModel
   InvoiceRecord? invonlineprt;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceData;
-  // Stores action output result for [Custom Action - calShiftSummaryNewgroceryPrint] action in Button widget.
+  // Stores action output result for [Custom Action - calShiftSummaryNewgrocery] action in Button widget.
   dynamic? shiftSummarResultsNew;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   ShiftRecord? shiftondataprint;

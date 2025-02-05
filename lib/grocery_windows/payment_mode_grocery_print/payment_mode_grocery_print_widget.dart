@@ -4912,8 +4912,28 @@ class _PaymentModeGroceryPrintWidgetState
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   var _shouldSetState = false;
+                                                  _model.resultprint = await actions
+                                                      .calculateGroceryAmtaction(
+                                                    FFAppState().PayMode,
+                                                    valueOrDefault<double>(
+                                                      FFAppState().finalAmt,
+                                                      0.0,
+                                                    ),
+                                                    double.parse(_model
+                                                        .textController1.text),
+                                                  );
+                                                  _shouldSetState = true;
+                                                  FFAppState().groceryJson =
+                                                      _model.resultprint!;
+                                                  safeSetState(() {});
+                                                  _model.amount = '';
+                                                  safeSetState(() {});
                                                   if (FFAppState().finalAmt ==
-                                                      FFAppState().finalAmt) {
+                                                      getJsonField(
+                                                        FFAppState()
+                                                            .groceryJson,
+                                                        r'''$.paidAmt''',
+                                                      )) {
                                                     if (getJsonField(
                                                       FFAppState()
                                                           .shiftDetailsJson,
@@ -5172,8 +5192,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                             .timestampToMili(
                                                                 getCurrentTimestamp),
                                                         paymentMode:
-                                                            FFAppState()
-                                                                .PayMode,
+                                                            getJsonField(
+                                                          FFAppState()
+                                                              .groceryJson,
+                                                          r'''$.paymentMode''',
+                                                        ).toString(),
                                                         dayId: functions
                                                             .getDayId(),
                                                         discountAmt:
@@ -5246,8 +5269,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                             .timestampToMili(
                                                                 getCurrentTimestamp),
                                                         paymentMode:
-                                                            FFAppState()
-                                                                .PayMode,
+                                                            getJsonField(
+                                                          FFAppState()
+                                                              .groceryJson,
+                                                          r'''$.paymentMode''',
+                                                        ).toString(),
                                                         dayId: functions
                                                             .getDayId(),
                                                         discountAmt:
@@ -5327,7 +5353,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                       functions.timestampToMili(
                                                           getCurrentTimestamp),
                                                       functions.getDayId(),
-                                                      FFAppState().PayMode,
+                                                      getJsonField(
+                                                        FFAppState()
+                                                            .groceryJson,
+                                                        r'''$.paymentMode''',
+                                                      ).toString(),
                                                       valueOrDefault<double>(
                                                         FFAppState().disAmt,
                                                         0.0,
@@ -5369,7 +5399,7 @@ class _PaymentModeGroceryPrintWidgetState
                                                     )) {
                                                       _model.shiftSummarResultsNew =
                                                           await actions
-                                                              .calShiftSummaryNewgroceryPrint(
+                                                              .calShiftSummaryNewgrocery(
                                                         _model.hiveInvoiceData!,
                                                         FFAppState()
                                                             .shiftDetailsJson,
