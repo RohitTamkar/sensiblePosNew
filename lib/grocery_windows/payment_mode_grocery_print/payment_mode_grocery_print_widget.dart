@@ -5968,7 +5968,7 @@ class _PaymentModeGroceryPrintWidgetState
                                                     text: FFLocalizations.of(
                                                             context)
                                                         .getText(
-                                                      'snwhhnio' /* Print */,
+                                                      'snwhhnio' /* Print [Enter] */,
                                                     ),
                                                     options: FFButtonOptions(
                                                       width: 90.0,
@@ -6002,6 +6002,7 @@ class _PaymentModeGroceryPrintWidgetState
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBtnText,
+                                                                fontSize: 20.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
