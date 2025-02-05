@@ -121,7 +121,6 @@ class _PaymentModeGroceryPrintWidgetState
           FFAppState().groceryJson = _model.result233!;
           safeSetState(() {});
           _model.amount = '';
-          _model.flag = true;
           safeSetState(() {});
           if ((FFAppState().finalAmt ==
                   getJsonField(
@@ -129,6 +128,8 @@ class _PaymentModeGroceryPrintWidgetState
                     r'''$.paidAmt''',
                   )) &&
               _model.flag) {
+            _model.flag = false;
+            safeSetState(() {});
             if (getJsonField(
               FFAppState().shiftDetailsJson,
               r'''$.shiftExists''',
@@ -144,8 +145,6 @@ class _PaymentModeGroceryPrintWidgetState
               safeSetState(() {});
             }
 
-            _model.flag = false;
-            safeSetState(() {});
             _model.prdlinstnewtxCopy = await actions.filterProducts2(
               FFAppState().selBill,
               FFAppState().allBillsList.toList(),
