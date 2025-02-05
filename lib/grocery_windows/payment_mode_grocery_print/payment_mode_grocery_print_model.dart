@@ -13,6 +13,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -34,6 +35,43 @@ class PaymentModeGroceryPrintModel
 
   ///  State fields for stateful widgets in this component.
 
+  final paymentModeGroceryPrintShortcutsFocusNode = FocusNode();
+  // Stores action output result for [Custom Action - filterProducts2] action in PaymentModeGroceryPrint widget.
+  List<SelItemListStruct>? prdlinstnewtxCopy;
+  // Stores action output result for [Firestore Query - Query a collection] action in PaymentModeGroceryPrint widget.
+  AppSettingsRecord? appsettingnewCopy;
+  // Stores action output result for [Firestore Query - Query a collection] action in PaymentModeGroceryPrint widget.
+  OutletRecord? outletdocCopy;
+  // Stores action output result for [Custom Action - oldbalanceplusamt] action in PaymentModeGroceryPrint widget.
+  int? totalcreditCopy;
+  // Stores action output result for [Backend Call - Create Document] action in PaymentModeGroceryPrint widget.
+  PaymentRecord? paymentDoc22dCopy;
+  // Stores action output result for [Backend Call - Create Document] action in PaymentModeGroceryPrint widget.
+  InvoiceRecord? invonlineprtCopy;
+  // Stores action output result for [Custom Action - addInvoiceBillhive] action in PaymentModeGroceryPrint widget.
+  InvoiceStructStruct? hiveInvoiceDataCopy;
+  // Stores action output result for [Custom Action - calShiftSummaryNewgroceryPrint] action in PaymentModeGroceryPrint widget.
+  dynamic? shiftSummarResultsNewCopy;
+  // Stores action output result for [Firestore Query - Query a collection] action in PaymentModeGroceryPrint widget.
+  ShiftRecord? shiftondataprintCopy;
+  // Stores action output result for [Custom Action - hiveShiftCrud] action in PaymentModeGroceryPrint widget.
+  ShiftDetailsStruct? updatedShiftDetailsCopy;
+  // Stores action output result for [Custom Action - scanPrinter] action in PaymentModeGroceryPrint widget.
+  bool? resDevice2Copy;
+  // Stores action output result for [Custom Action - connectDevice] action in PaymentModeGroceryPrint widget.
+  bool? isconnectedCopy;
+  // Stores action output result for [Custom Action - selectBillPrint] action in PaymentModeGroceryPrint widget.
+  List<dynamic>? returnedList2Copy;
+  // Stores action output result for [Custom Action - newCustomAction] action in PaymentModeGroceryPrint widget.
+  List<dynamic>? deviceCopy;
+  // Stores action output result for [Firestore Query - Query a collection] action in PaymentModeGroceryPrint widget.
+  ProductRecord? stockupdateprdprtCopy;
+  // Stores action output result for [Custom Action - hivegetproductbyId] action in PaymentModeGroceryPrint widget.
+  ProductStructStruct? itemprd2Copy;
+  // Stores action output result for [Custom Action - hiveProductCrud] action in PaymentModeGroceryPrint widget.
+  ProductStructStruct? productupdated2Copy;
+  // Stores action output result for [Custom Action - getProductlistHive] action in PaymentModeGroceryPrint widget.
+  List<ProductStructStruct>? newupdatedproductlist22Copy;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController1;
@@ -132,6 +170,7 @@ class PaymentModeGroceryPrintModel
 
   @override
   void dispose() {
+    paymentModeGroceryPrintShortcutsFocusNode.dispose();
     textFieldFocusNode?.dispose();
     textController1?.dispose();
 
