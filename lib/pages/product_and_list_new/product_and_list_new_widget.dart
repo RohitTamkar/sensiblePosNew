@@ -2374,28 +2374,22 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                         decoration: BoxDecoration(
                                                                                           color: FFAppState().categoryColor == categoryListItem.id ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
                                                                                         ),
-                                                                                        child: Column(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          children: [
-                                                                                            Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
-                                                                                              child: Text(
-                                                                                                categoryListItem.name.maybeHandleOverflow(
-                                                                                                  maxChars: 9,
-                                                                                                  replacement: '…',
-                                                                                                ),
-                                                                                                textAlign: TextAlign.center,
-                                                                                                style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
-                                                                                                      color: FlutterFlowTheme.of(context).lineColor,
-                                                                                                      fontSize: 14.0,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
-                                                                                                    ),
-                                                                                              ),
+                                                                                        child: Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
+                                                                                          child: Text(
+                                                                                            categoryListItem.name.maybeHandleOverflow(
+                                                                                              maxChars: 9,
+                                                                                              replacement: '…',
                                                                                             ),
-                                                                                          ],
+                                                                                            textAlign: TextAlign.center,
+                                                                                            style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                                                  color: FlutterFlowTheme.of(context).lineColor,
+                                                                                                  fontSize: 14.0,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
+                                                                                                ),
+                                                                                          ),
                                                                                         ),
                                                                                       ),
                                                                                     ),

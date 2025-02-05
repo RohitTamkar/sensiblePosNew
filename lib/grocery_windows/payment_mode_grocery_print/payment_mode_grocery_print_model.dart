@@ -33,6 +33,8 @@ class PaymentModeGroceryPrintModel
   void updatePaymentMAtIndex(int index, Function(PaymentModeRecord) updateFn) =>
       paymentM[index] = updateFn(paymentM[index]);
 
+  bool flag = false;
+
   ///  State fields for stateful widgets in this component.
 
   final paymentModeGroceryPrintShortcutsFocusNode = FocusNode();
