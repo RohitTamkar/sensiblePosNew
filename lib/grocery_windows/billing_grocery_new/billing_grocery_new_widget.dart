@@ -3802,6 +3802,18 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                               topLeft: Radius.circular(0.0),
                                               topRight: Radius.circular(0.0),
                                             ),
+                                            hoverColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            hoverBorderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              width: 1.0,
+                                            ),
+                                            hoverTextColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
                                           ),
                                         ),
                                         FFButtonWidget(

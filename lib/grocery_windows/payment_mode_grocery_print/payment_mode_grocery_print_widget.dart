@@ -257,7 +257,9 @@ class _PaymentModeGroceryPrintWidgetState
                                                             (e.name !=
                                                                 'CASH&PHONEPE') &&
                                                             (e.name !=
-                                                                'CASH&OTHER'))
+                                                                'CASH&OTHER') &&
+                                                            (e.name !=
+                                                                'CASH&PAYTM'))
                                                         .toList();
 
                                                 return GridView.builder(
