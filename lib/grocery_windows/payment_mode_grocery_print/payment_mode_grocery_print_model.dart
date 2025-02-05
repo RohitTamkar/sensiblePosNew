@@ -36,6 +36,8 @@ class PaymentModeGroceryPrintModel
   ///  State fields for stateful widgets in this component.
 
   final paymentModeGroceryPrintShortcutsFocusNode = FocusNode();
+  // Stores action output result for [Custom Action - calculateGroceryAmtaction] action in PaymentModeGroceryPrint widget.
+  dynamic? result233;
   // Stores action output result for [Custom Action - filterProducts2] action in PaymentModeGroceryPrint widget.
   List<SelItemListStruct>? prdlinstnewtxCopy;
   // Stores action output result for [Firestore Query - Query a collection] action in PaymentModeGroceryPrint widget.
@@ -50,7 +52,7 @@ class PaymentModeGroceryPrintModel
   InvoiceRecord? invonlineprtCopy;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in PaymentModeGroceryPrint widget.
   InvoiceStructStruct? hiveInvoiceDataCopy;
-  // Stores action output result for [Custom Action - calShiftSummaryNewgroceryPrint] action in PaymentModeGroceryPrint widget.
+  // Stores action output result for [Custom Action - calShiftSummaryNewgrocery] action in PaymentModeGroceryPrint widget.
   dynamic? shiftSummarResultsNewCopy;
   // Stores action output result for [Firestore Query - Query a collection] action in PaymentModeGroceryPrint widget.
   ShiftRecord? shiftondataprintCopy;

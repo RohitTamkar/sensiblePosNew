@@ -109,7 +109,24 @@ class _PaymentModeGroceryPrintWidgetState
           LogicalKeyboardKey.enter,
         ): VoidCallbackIntent(() async {
           var _shouldSetState = false;
-          if (FFAppState().finalAmt == FFAppState().finalAmt) {
+          _model.result233 = await actions.calculateGroceryAmtaction(
+            FFAppState().PayMode,
+            valueOrDefault<double>(
+              FFAppState().finalAmt,
+              0.0,
+            ),
+            double.parse(_model.textController1.text),
+          );
+          _shouldSetState = true;
+          FFAppState().groceryJson = _model.result233!;
+          safeSetState(() {});
+          _model.amount = '';
+          safeSetState(() {});
+          if (FFAppState().finalAmt ==
+              getJsonField(
+                FFAppState().groceryJson,
+                r'''$.paidAmt''',
+              )) {
             if (getJsonField(
               FFAppState().shiftDetailsJson,
               r'''$.shiftExists''',
@@ -261,7 +278,10 @@ class _PaymentModeGroceryPrintWidgetState
                 ),
                 products: '',
                 invoiceDate: functions.timestampToMili(getCurrentTimestamp),
-                paymentMode: FFAppState().PayMode,
+                paymentMode: getJsonField(
+                  FFAppState().groceryJson,
+                  r'''$.paymentMode''',
+                ).toString(),
                 dayId: functions.getDayId(),
                 discountAmt: valueOrDefault<double>(
                   FFAppState().disAmt,
@@ -307,7 +327,10 @@ class _PaymentModeGroceryPrintWidgetState
                 ),
                 products: '',
                 invoiceDate: functions.timestampToMili(getCurrentTimestamp),
-                paymentMode: FFAppState().PayMode,
+                paymentMode: getJsonField(
+                  FFAppState().groceryJson,
+                  r'''$.paymentMode''',
+                ).toString(),
                 dayId: functions.getDayId(),
                 discountAmt: valueOrDefault<double>(
                   FFAppState().disAmt,
@@ -359,7 +382,10 @@ class _PaymentModeGroceryPrintWidgetState
               ),
               functions.timestampToMili(getCurrentTimestamp),
               functions.getDayId(),
-              FFAppState().PayMode,
+              getJsonField(
+                FFAppState().groceryJson,
+                r'''$.paymentMode''',
+              ).toString(),
               valueOrDefault<double>(
                 FFAppState().disAmt,
                 0.0,
@@ -396,8 +422,8 @@ class _PaymentModeGroceryPrintWidgetState
               r'''$.shiftExists''',
             )) {
               _model.shiftSummarResultsNewCopy =
-                  await actions.calShiftSummaryNewgroceryPrint(
-                _model.hiveInvoiceDataCopy!,
+                  await actions.calShiftSummaryNewgrocery(
+                _model.hiveInvoiceDataCopyCopy!,
                 FFAppState().shiftDetailsJson,
               );
               _shouldSetState = true;
