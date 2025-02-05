@@ -6056,19 +6056,6 @@ class _PaymentModeGroceryPrintWidgetState
                       },
                     ),
                   ),
-                  if (_model.flag)
-                    Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.asset(
-                          'assets/images/10-11-02-622_512.gif',
-                          width: 100.0,
-                          height: 100.0,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
                 ],
               )),
         ),
