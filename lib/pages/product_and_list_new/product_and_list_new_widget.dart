@@ -344,10 +344,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
           LogicalKeyboardKey.space,
         ): VoidCallbackIntent(() async {
           var _shouldSetState = false;
-          if (functions
-              .filterBillList(
-                  FFAppState().selBill, FFAppState().allBillsList.toList())
-              .isNotEmpty) {
+          _model.flag = true;
+          safeSetState(() {});
+          if ((functions
+                  .filterBillList(
+                      FFAppState().selBill, FFAppState().allBillsList.toList())
+                  .isNotEmpty) &&
+              _model.flag) {
             _model.flag = false;
             safeSetState(() {});
             if (getJsonField(
