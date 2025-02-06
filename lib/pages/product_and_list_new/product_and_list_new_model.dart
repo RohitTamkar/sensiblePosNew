@@ -167,11 +167,23 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
   double? calbillAmt3;
   // Stores action output result for [Custom Action - addToHoldListprdCopy] action in productimage widget.
-  List<dynamic>? addtosavebill23;
-  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in productimage widget.
-  double? calculateResult2;
+  List<dynamic>? addtosavebill3Copy;
+  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in productimage widget.
+  double? calculateResult23dfsdfimg;
   // Stores action output result for [Custom Action - calBillAmt] action in productimage widget.
-  double? calbillAmt2;
+  double? calbillAmt2simg;
+  // Stores action output result for [Custom Action - addToHoldListprdCopy] action in productimage widget.
+  List<dynamic>? addtosavebill3dCopy;
+  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in productimage widget.
+  double? calculateResult23dfimg;
+  // Stores action output result for [Custom Action - calBillAmt] action in productimage widget.
+  double? calbillAmt2sdimg;
+  // Stores action output result for [Custom Action - addToHoldListprdCopy] action in productimage widget.
+  List<dynamic>? addtosavebill2Copy;
+  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in productimage widget.
+  double? calculateResult23Copy;
+  // Stores action output result for [Custom Action - calBillAmt] action in productimage widget.
+  double? calbillAmt3img;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
