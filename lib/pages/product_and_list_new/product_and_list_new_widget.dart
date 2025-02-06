@@ -344,54 +344,78 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
           LogicalKeyboardKey.enter,
         ): VoidCallbackIntent(() async {
           var _shouldSetState = false;
-          if (getJsonField(
-            FFAppState().shiftDetailsJson,
-            r'''$.shiftExists''',
-          )) {
-            FFAppState().count = FFAppState().count + 1;
-            FFAppState().newcount = FFAppState().newcount + 1;
+          if (functions
+              .filterBillList(
+                  FFAppState().selBill, FFAppState().allBillsList.toList())
+              .isNotEmpty) {
+            _model.flag = false;
             safeSetState(() {});
-          } else {
-            FFAppState().count = FFAppState().count + 1;
-            FFAppState().newcount = FFAppState().newcount + 1;
-            safeSetState(() {});
-          }
+            if (getJsonField(
+              FFAppState().shiftDetailsJson,
+              r'''$.shiftExists''',
+            )) {
+              FFAppState().count = FFAppState().count + 1;
+              FFAppState().newcount = FFAppState().newcount + 1;
+              safeSetState(() {});
+            } else {
+              FFAppState().count = FFAppState().count + 1;
+              FFAppState().newcount = FFAppState().newcount + 1;
+              safeSetState(() {});
+            }
 
-          _model.prdlinstnewtxCopy = await actions.filterProducts2(
-            FFAppState().selBill,
-            FFAppState().allBillsList.toList(),
-          );
-          _shouldSetState = true;
-          _model.appsetting = await queryAppSettingsRecordOnce(
-            parent: FFAppState().outletIdRef,
-            singleRecord: true,
-          ).then((s) => s.firstOrNull);
-          _shouldSetState = true;
-          if (!isAndroid) {
-            await actions.newCustomAction5();
-          }
-          if (_model.dropDownValue == 'CREDIT') {
-            if (FFAppState().setCustRef?.id != null &&
-                FFAppState().setCustRef?.id != '') {
-              if (FFAppState().oldBalance < FFAppState().custCredit) {
-                _model.totalcreditCopy = await actions.oldbalanceplusamt(
-                  FFAppState().oldBalance,
-                  FFAppState().finalAmt,
-                );
-                _shouldSetState = true;
+            _model.prdlinstnewtxCopy = await actions.filterProducts2(
+              FFAppState().selBill,
+              FFAppState().allBillsList.toList(),
+            );
+            _shouldSetState = true;
+            _model.appsetting = await queryAppSettingsRecordOnce(
+              parent: FFAppState().outletIdRef,
+              singleRecord: true,
+            ).then((s) => s.firstOrNull);
+            _shouldSetState = true;
+            if (!isAndroid) {
+              await actions.newCustomAction5();
+            }
+            if (_model.dropDownValue == 'CREDIT') {
+              if (FFAppState().setCustRef?.id != null &&
+                  FFAppState().setCustRef?.id != '') {
+                if (FFAppState().oldBalance < FFAppState().custCredit) {
+                  _model.totalcreditCopy = await actions.oldbalanceplusamt(
+                    FFAppState().oldBalance,
+                    FFAppState().finalAmt,
+                  );
+                  _shouldSetState = true;
 
-                await FFAppState().setCustRef!.update(createPartyRecordData(
-                      credit: true,
-                      oldBalance: _model.totalcreditCopy,
-                      lastVisit:
-                          getCurrentTimestamp.millisecondsSinceEpoch.toString(),
-                    ));
+                  await FFAppState().setCustRef!.update(createPartyRecordData(
+                        credit: true,
+                        oldBalance: _model.totalcreditCopy,
+                        lastVisit: getCurrentTimestamp.millisecondsSinceEpoch
+                            .toString(),
+                      ));
+                } else {
+                  await showDialog(
+                    context: context,
+                    builder: (alertDialogContext) {
+                      return AlertDialog(
+                        content: Text('Credit Limit Exceeded !'),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(alertDialogContext),
+                            child: Text('Ok'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                  if (_shouldSetState) safeSetState(() {});
+                  return;
+                }
               } else {
                 await showDialog(
                   context: context,
                   builder: (alertDialogContext) {
                     return AlertDialog(
-                      content: Text('Credit Limit Exceeded !'),
+                      content: Text('Select Customer '),
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(alertDialogContext),
@@ -401,348 +425,154 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                     );
                   },
                 );
+                scaffoldKey.currentState!.openEndDrawer();
                 if (_shouldSetState) safeSetState(() {});
                 return;
               }
-            } else {
-              await showDialog(
-                context: context,
-                builder: (alertDialogContext) {
-                  return AlertDialog(
-                    content: Text('Select Customer '),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(alertDialogContext),
-                        child: Text('Ok'),
-                      ),
-                    ],
-                  );
-                },
-              );
-              scaffoldKey.currentState!.openEndDrawer();
-              if (_shouldSetState) safeSetState(() {});
-              return;
             }
-          }
-          _model.interprdCopy = await actions.checkInternetConnection();
-          _shouldSetState = true;
-          if (_model.interprdCopy!) {
-            var invoiceRecordReference =
-                InvoiceRecord.createDoc(FFAppState().outletIdRef!);
-            await invoiceRecordReference.set({
-              ...createInvoiceRecordData(
-                invoice: functions.genInvoiceNumyear(FFAppState().newcount),
-                party: valueOrDefault<String>(
-                  FFAppState().setCustRef?.id,
-                  'NA',
-                ),
-                products: '',
-                invoiceDate: functions.timestampToMili(getCurrentTimestamp),
-                paymentMode: _model.dropDownValue,
-                dayId: functions.getDayId(),
-                discountAmt: valueOrDefault<double>(
-                  FFAppState().disAmt,
-                  0.0,
-                ),
-                discountPer: valueOrDefault<double>(
-                  FFAppState().disPer,
-                  0.0,
-                ),
-                delliveryChrg: valueOrDefault<double>(
-                  FFAppState().delCharges,
-                  0.0,
-                ),
-                taxAmt: FFAppState().taxamt,
-                billAmt: valueOrDefault<double>(
-                  FFAppState().billAmt,
-                  0.0,
-                ),
-                finalBillAmt: valueOrDefault<double>(
-                  FFAppState().finalAmt,
-                  0.0,
-                ),
-                shiftId: getJsonField(
-                  widget!.shiftDetails,
-                  r'''$.shiftId''',
-                ).toString(),
-              ),
-              ...mapToFirestore(
-                {
-                  'productList': getSelItemListListFirestoreData(
-                    _model.prdlinstnewtxCopy,
-                  ),
-                },
-              ),
-            });
-            _model.invonlineprtCopy = InvoiceRecord.getDocumentFromData({
-              ...createInvoiceRecordData(
-                invoice: functions.genInvoiceNumyear(FFAppState().newcount),
-                party: valueOrDefault<String>(
-                  FFAppState().setCustRef?.id,
-                  'NA',
-                ),
-                products: '',
-                invoiceDate: functions.timestampToMili(getCurrentTimestamp),
-                paymentMode: _model.dropDownValue,
-                dayId: functions.getDayId(),
-                discountAmt: valueOrDefault<double>(
-                  FFAppState().disAmt,
-                  0.0,
-                ),
-                discountPer: valueOrDefault<double>(
-                  FFAppState().disPer,
-                  0.0,
-                ),
-                delliveryChrg: valueOrDefault<double>(
-                  FFAppState().delCharges,
-                  0.0,
-                ),
-                taxAmt: FFAppState().taxamt,
-                billAmt: valueOrDefault<double>(
-                  FFAppState().billAmt,
-                  0.0,
-                ),
-                finalBillAmt: valueOrDefault<double>(
-                  FFAppState().finalAmt,
-                  0.0,
-                ),
-                shiftId: getJsonField(
-                  widget!.shiftDetails,
-                  r'''$.shiftId''',
-                ).toString(),
-              ),
-              ...mapToFirestore(
-                {
-                  'productList': getSelItemListListFirestoreData(
-                    _model.prdlinstnewtxCopy,
-                  ),
-                },
-              ),
-            }, invoiceRecordReference);
+            _model.interprdCopy = await actions.checkInternetConnection();
             _shouldSetState = true;
-
-            await _model.invonlineprtCopy!.reference
-                .update(createInvoiceRecordData(
-              id: _model.invonlineprtCopy?.reference.id,
-            ));
-            _model.hiveInvoiceDataCopy = await actions.addInvoiceBillhive(
-              valueOrDefault<String>(
-                _model.invonline?.reference.id,
-                'NA',
-              ),
-              functions.genInvoiceNumyear(FFAppState().newcount),
-              valueOrDefault<String>(
-                FFAppState().setCustRef?.id,
-                'NA',
-              ),
-              functions.timestampToMili(getCurrentTimestamp),
-              functions.getDayId(),
-              _model.dropDownValue!,
-              valueOrDefault<double>(
-                FFAppState().disAmt,
-                0.0,
-              ),
-              valueOrDefault<double>(
-                FFAppState().disPer,
-                0.0,
-              ),
-              valueOrDefault<double>(
-                FFAppState().delCharges,
-                0.0,
-              ),
-              FFAppState().taxamt,
-              valueOrDefault<double>(
-                FFAppState().billAmt,
-                0.0,
-              ),
-              valueOrDefault<double>(
-                FFAppState().finalAmt,
-                0.0,
-              ),
-              0.0,
-              _model.prdlinstnewtxCopy?.toList(),
-              getJsonField(
-                FFAppState().shiftDetailsJson,
-                r'''$.shiftId''',
-              ).toString(),
-              true,
-              FFAppState().invoiceStructVersion,
-            );
-            _shouldSetState = true;
-          } else {
-            await showDialog(
-              context: context,
-              builder: (alertDialogContext) {
-                return AlertDialog(
-                  content: Text('Internet Not Available'),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(alertDialogContext),
-                      child: Text('Ok'),
-                    ),
-                  ],
-                );
-              },
-            );
-            if (_shouldSetState) safeSetState(() {});
-            return;
-          }
-
-          if (getJsonField(
-            FFAppState().shiftDetailsJson,
-            r'''$.shiftExists''',
-          )) {
-            _model.shiftSummarResultsNewCopy = await actions.calShiftSummaryNew(
-              _model.hiveInvoiceDataCopy!,
-              FFAppState().shiftDetailsJson,
-            );
-            _shouldSetState = true;
-            FFAppState().updateShiftDetailsStruct(
-              (e) => e
-                ..billCount = valueOrDefault<int>(
-                  functions.lastBillCount(FFAppState().shiftDetails.billCount),
-                  0,
-                )
-                ..totalSale = getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.totalSale''',
-                )
-                ..deliveryCharges = getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.deliveryCharges''',
-                )
-                ..tax = getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.tax''',
-                )
-                ..lastBillNo = getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.lastBillNo''',
-                ).toString()
-                ..discount = getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.discount''',
-                )
-                ..lastBillTime = functions.timestampToMili(getCurrentTimestamp)
-                ..cashSale = getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.cashSale''',
-                )
-                ..paymentJson = getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.paymentJson''',
-                ).toString()
-                ..dayId = getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.dayId''',
-                ).toString()
-                ..shiftId = getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.shiftId''',
-                ).toString()
-                ..hivekey = FFAppState().shiftDetails.hivekey
-                ..newIDShift = FFAppState().shiftDetails.newIDShift
-                ..code = FFAppState().shiftDetails.code
-                ..endTime = FFAppState().shiftDetails.endTime
-                ..advanceAmtTotal = FFAppState().shiftDetails.advanceAmtTotal
-                ..customerReciveAmtTotal =
-                    FFAppState().shiftDetails.customerReciveAmtTotal
-                ..expensesAmtTotal = FFAppState().shiftDetails.expensesAmtTotal
-                ..openingAmt = FFAppState().shiftDetails.openingAmt
-                ..receiveAmtTotal = FFAppState().shiftDetails.receiveAmtTotal
-                ..refoundAmount = FFAppState().shiftDetails.refoundAmount
-                ..roundOff = FFAppState().shiftDetails.roundOff
-                ..cashInHand = FFAppState().shiftDetails.cashInHand
-                ..startTime = FFAppState().shiftDetails.startTime
-                ..inActive = FFAppState().shiftDetails.inActive
-                ..shiftNo = FFAppState().shiftDetails.shiftNo
-                ..subTotalBill = FFAppState().shiftDetails.subTotalBill
-                ..version = FFAppState().shiftDetails.version
-                ..userId = FFAppState().shiftDetails.userId
-                ..deviceId = FFAppState().shiftDetails.deviceId
-                ..synC = FFAppState().shiftDetails.synC
-                ..id = FFAppState().shiftDetails.id,
-            );
-            safeSetState(() {});
             if (_model.interprdCopy!) {
-              _model.shiftondataprintCopy = await queryShiftRecordOnce(
-                parent: FFAppState().outletIdRef,
-                queryBuilder: (shiftRecord) => shiftRecord.where(
-                  'id',
-                  isEqualTo: valueOrDefault<String>(
-                    getJsonField(
-                      FFAppState().shiftDetailsJson,
-                      r'''$.ref''',
-                    )?.toString(),
+              var invoiceRecordReference =
+                  InvoiceRecord.createDoc(FFAppState().outletIdRef!);
+              await invoiceRecordReference.set({
+                ...createInvoiceRecordData(
+                  invoice: functions.genInvoiceNumyear(FFAppState().newcount),
+                  party: valueOrDefault<String>(
+                    FFAppState().setCustRef?.id,
                     'NA',
                   ),
+                  products: '',
+                  invoiceDate: functions.timestampToMili(getCurrentTimestamp),
+                  paymentMode: _model.dropDownValue,
+                  dayId: functions.getDayId(),
+                  discountAmt: valueOrDefault<double>(
+                    FFAppState().disAmt,
+                    0.0,
+                  ),
+                  discountPer: valueOrDefault<double>(
+                    FFAppState().disPer,
+                    0.0,
+                  ),
+                  delliveryChrg: valueOrDefault<double>(
+                    FFAppState().delCharges,
+                    0.0,
+                  ),
+                  taxAmt: FFAppState().taxamt,
+                  billAmt: valueOrDefault<double>(
+                    FFAppState().billAmt,
+                    0.0,
+                  ),
+                  finalBillAmt: valueOrDefault<double>(
+                    FFAppState().finalAmt,
+                    0.0,
+                  ),
+                  shiftId: getJsonField(
+                    widget!.shiftDetails,
+                    r'''$.shiftId''',
+                  ).toString(),
                 ),
-                singleRecord: true,
-              ).then((s) => s.firstOrNull);
+                ...mapToFirestore(
+                  {
+                    'productList': getSelItemListListFirestoreData(
+                      _model.prdlinstnewtxCopy,
+                    ),
+                  },
+                ),
+              });
+              _model.invonlineprtCopy = InvoiceRecord.getDocumentFromData({
+                ...createInvoiceRecordData(
+                  invoice: functions.genInvoiceNumyear(FFAppState().newcount),
+                  party: valueOrDefault<String>(
+                    FFAppState().setCustRef?.id,
+                    'NA',
+                  ),
+                  products: '',
+                  invoiceDate: functions.timestampToMili(getCurrentTimestamp),
+                  paymentMode: _model.dropDownValue,
+                  dayId: functions.getDayId(),
+                  discountAmt: valueOrDefault<double>(
+                    FFAppState().disAmt,
+                    0.0,
+                  ),
+                  discountPer: valueOrDefault<double>(
+                    FFAppState().disPer,
+                    0.0,
+                  ),
+                  delliveryChrg: valueOrDefault<double>(
+                    FFAppState().delCharges,
+                    0.0,
+                  ),
+                  taxAmt: FFAppState().taxamt,
+                  billAmt: valueOrDefault<double>(
+                    FFAppState().billAmt,
+                    0.0,
+                  ),
+                  finalBillAmt: valueOrDefault<double>(
+                    FFAppState().finalAmt,
+                    0.0,
+                  ),
+                  shiftId: getJsonField(
+                    widget!.shiftDetails,
+                    r'''$.shiftId''',
+                  ).toString(),
+                ),
+                ...mapToFirestore(
+                  {
+                    'productList': getSelItemListListFirestoreData(
+                      _model.prdlinstnewtxCopy,
+                    ),
+                  },
+                ),
+              }, invoiceRecordReference);
               _shouldSetState = true;
 
-              await _model.shiftondataprintCopy!.reference
-                  .update(createShiftRecordData(
-                billCount: valueOrDefault<int>(
-                  functions.lastBillCount(FFAppState().shiftDetails.billCount),
-                  0,
+              await _model.invonlineprtCopy!.reference
+                  .update(createInvoiceRecordData(
+                id: _model.invonlineprtCopy?.reference.id,
+              ));
+              _model.hiveInvoiceDataCopy = await actions.addInvoiceBillhive(
+                valueOrDefault<String>(
+                  _model.invonline?.reference.id,
+                  'NA',
                 ),
-                dayId: getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.dayId''',
-                ).toString(),
-                lastBillNo: getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.lastBillNo''',
-                ).toString(),
-                lastBillTime: functions.timestampToMili(getCurrentTimestamp),
-                tax: getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.tax''',
+                functions.genInvoiceNumyear(FFAppState().newcount),
+                valueOrDefault<String>(
+                  FFAppState().setCustRef?.id,
+                  'NA',
                 ),
-                deliveryCharges: getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.deliveryCharges''',
+                functions.timestampToMili(getCurrentTimestamp),
+                functions.getDayId(),
+                _model.dropDownValue!,
+                valueOrDefault<double>(
+                  FFAppState().disAmt,
+                  0.0,
                 ),
-                discount: getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.discount''',
+                valueOrDefault<double>(
+                  FFAppState().disPer,
+                  0.0,
                 ),
-                totalSale: getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.totalSale''',
+                valueOrDefault<double>(
+                  FFAppState().delCharges,
+                  0.0,
                 ),
-                cashSale: getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.cashSale''',
+                FFAppState().taxamt,
+                valueOrDefault<double>(
+                  FFAppState().billAmt,
+                  0.0,
                 ),
-                paymentJson: getJsonField(
-                  _model.shiftSummarResultsNewCopy,
-                  r'''$.paymentJson''',
-                ).toString(),
-                code: FFAppState().shiftDetails.code,
-                endTime: FFAppState().shiftDetails.endTime,
-                advanceAmtTotal: FFAppState().shiftDetails.advanceAmtTotal,
-                customerReciveAmtTotal:
-                    FFAppState().shiftDetails.customerReciveAmtTotal,
-                expensesAmtTotal: FFAppState().shiftDetails.expensesAmtTotal,
-                openingAmt: FFAppState().shiftDetails.openingAmt,
-                receiveAmtTotal: FFAppState().shiftDetails.receiveAmtTotal,
-                refoundAmount: FFAppState().shiftDetails.refoundAmount,
-                roundOff: FFAppState().shiftDetails.roundOff,
-                cashInHand: FFAppState().shiftDetails.cashInHand,
-                startTime: FFAppState().shiftDetails.startTime,
-                inActive: FFAppState().shiftDetails.inActive,
-                shiftNo: FFAppState().shiftDetails.shiftNo,
-                shiftId: getJsonField(
-                  _model.shiftSummarResultsNewCopy,
+                valueOrDefault<double>(
+                  FFAppState().finalAmt,
+                  0.0,
+                ),
+                0.0,
+                _model.prdlinstnewtxCopy?.toList(),
+                getJsonField(
+                  FFAppState().shiftDetailsJson,
                   r'''$.shiftId''',
                 ).toString(),
-              ));
-              _model.updatedShiftDetailsCopy = await actions.hiveShiftCrud(
-                FFAppState().shiftDetails.newIDShift,
-                FFAppState().shiftDetails,
-                'update',
+                true,
+                FFAppState().invoiceStructVersion,
               );
               _shouldSetState = true;
             } else {
@@ -763,261 +593,457 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
               if (_shouldSetState) safeSetState(() {});
               return;
             }
+
+            if (getJsonField(
+              FFAppState().shiftDetailsJson,
+              r'''$.shiftExists''',
+            )) {
+              _model.shiftSummarResultsNewCopy =
+                  await actions.calShiftSummaryNew(
+                _model.hiveInvoiceDataCopy!,
+                FFAppState().shiftDetailsJson,
+              );
+              _shouldSetState = true;
+              FFAppState().updateShiftDetailsStruct(
+                (e) => e
+                  ..billCount = valueOrDefault<int>(
+                    functions
+                        .lastBillCount(FFAppState().shiftDetails.billCount),
+                    0,
+                  )
+                  ..totalSale = getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.totalSale''',
+                  )
+                  ..deliveryCharges = getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.deliveryCharges''',
+                  )
+                  ..tax = getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.tax''',
+                  )
+                  ..lastBillNo = getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.lastBillNo''',
+                  ).toString()
+                  ..discount = getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.discount''',
+                  )
+                  ..lastBillTime =
+                      functions.timestampToMili(getCurrentTimestamp)
+                  ..cashSale = getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.cashSale''',
+                  )
+                  ..paymentJson = getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.paymentJson''',
+                  ).toString()
+                  ..dayId = getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.dayId''',
+                  ).toString()
+                  ..shiftId = getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.shiftId''',
+                  ).toString()
+                  ..hivekey = FFAppState().shiftDetails.hivekey
+                  ..newIDShift = FFAppState().shiftDetails.newIDShift
+                  ..code = FFAppState().shiftDetails.code
+                  ..endTime = FFAppState().shiftDetails.endTime
+                  ..advanceAmtTotal = FFAppState().shiftDetails.advanceAmtTotal
+                  ..customerReciveAmtTotal =
+                      FFAppState().shiftDetails.customerReciveAmtTotal
+                  ..expensesAmtTotal =
+                      FFAppState().shiftDetails.expensesAmtTotal
+                  ..openingAmt = FFAppState().shiftDetails.openingAmt
+                  ..receiveAmtTotal = FFAppState().shiftDetails.receiveAmtTotal
+                  ..refoundAmount = FFAppState().shiftDetails.refoundAmount
+                  ..roundOff = FFAppState().shiftDetails.roundOff
+                  ..cashInHand = FFAppState().shiftDetails.cashInHand
+                  ..startTime = FFAppState().shiftDetails.startTime
+                  ..inActive = FFAppState().shiftDetails.inActive
+                  ..shiftNo = FFAppState().shiftDetails.shiftNo
+                  ..subTotalBill = FFAppState().shiftDetails.subTotalBill
+                  ..version = FFAppState().shiftDetails.version
+                  ..userId = FFAppState().shiftDetails.userId
+                  ..deviceId = FFAppState().shiftDetails.deviceId
+                  ..synC = FFAppState().shiftDetails.synC
+                  ..id = FFAppState().shiftDetails.id,
+              );
+              safeSetState(() {});
+              if (_model.interprdCopy!) {
+                _model.shiftondataprintCopy = await queryShiftRecordOnce(
+                  parent: FFAppState().outletIdRef,
+                  queryBuilder: (shiftRecord) => shiftRecord.where(
+                    'id',
+                    isEqualTo: valueOrDefault<String>(
+                      getJsonField(
+                        FFAppState().shiftDetailsJson,
+                        r'''$.ref''',
+                      )?.toString(),
+                      'NA',
+                    ),
+                  ),
+                  singleRecord: true,
+                ).then((s) => s.firstOrNull);
+                _shouldSetState = true;
+
+                await _model.shiftondataprintCopy!.reference
+                    .update(createShiftRecordData(
+                  billCount: valueOrDefault<int>(
+                    functions
+                        .lastBillCount(FFAppState().shiftDetails.billCount),
+                    0,
+                  ),
+                  dayId: getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.dayId''',
+                  ).toString(),
+                  lastBillNo: getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.lastBillNo''',
+                  ).toString(),
+                  lastBillTime: functions.timestampToMili(getCurrentTimestamp),
+                  tax: getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.tax''',
+                  ),
+                  deliveryCharges: getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.deliveryCharges''',
+                  ),
+                  discount: getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.discount''',
+                  ),
+                  totalSale: getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.totalSale''',
+                  ),
+                  cashSale: getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.cashSale''',
+                  ),
+                  paymentJson: getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.paymentJson''',
+                  ).toString(),
+                  code: FFAppState().shiftDetails.code,
+                  endTime: FFAppState().shiftDetails.endTime,
+                  advanceAmtTotal: FFAppState().shiftDetails.advanceAmtTotal,
+                  customerReciveAmtTotal:
+                      FFAppState().shiftDetails.customerReciveAmtTotal,
+                  expensesAmtTotal: FFAppState().shiftDetails.expensesAmtTotal,
+                  openingAmt: FFAppState().shiftDetails.openingAmt,
+                  receiveAmtTotal: FFAppState().shiftDetails.receiveAmtTotal,
+                  refoundAmount: FFAppState().shiftDetails.refoundAmount,
+                  roundOff: FFAppState().shiftDetails.roundOff,
+                  cashInHand: FFAppState().shiftDetails.cashInHand,
+                  startTime: FFAppState().shiftDetails.startTime,
+                  inActive: FFAppState().shiftDetails.inActive,
+                  shiftNo: FFAppState().shiftDetails.shiftNo,
+                  shiftId: getJsonField(
+                    _model.shiftSummarResultsNewCopy,
+                    r'''$.shiftId''',
+                  ).toString(),
+                ));
+                _model.updatedShiftDetailsCopy = await actions.hiveShiftCrud(
+                  FFAppState().shiftDetails.newIDShift,
+                  FFAppState().shiftDetails,
+                  'update',
+                );
+                _shouldSetState = true;
+              } else {
+                await showDialog(
+                  context: context,
+                  builder: (alertDialogContext) {
+                    return AlertDialog(
+                      content: Text('Internet Not Available'),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(alertDialogContext),
+                          child: Text('Ok'),
+                        ),
+                      ],
+                    );
+                  },
+                );
+                if (_shouldSetState) safeSetState(() {});
+                return;
+              }
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    'Login again to start Shift ',
+                    style: TextStyle(
+                      color: FlutterFlowTheme.of(context).primaryText,
+                    ),
+                  ),
+                  duration: Duration(milliseconds: 4000),
+                  backgroundColor: Color(0x00000000),
+                ),
+              );
+              if (_shouldSetState) safeSetState(() {});
+              return;
+            }
+
+            if (!functions.isPrinterSelected(FFAppState().printerDevice)!) {
+              _model.resDevice2Copy2 = await actions.scanPrinter(
+                FFAppState().posMode,
+              );
+              _shouldSetState = true;
+            }
+            _model.isconnectedCopy = await actions.connectDevice(
+              FFAppState().printerDevice,
+              FFAppState().printerIndex,
+            );
+            _shouldSetState = true;
+            if (_model.isconnectedCopy!) {
+              FFAppState().lastBill = FFAppState().finalAmt;
+              FFAppState().update(() {});
+              _model.outletdocenter = await queryOutletRecordOnce(
+                queryBuilder: (outletRecord) => outletRecord.where(
+                  'id',
+                  isEqualTo: FFAppState().outletIdRef?.id,
+                ),
+                singleRecord: true,
+              ).then((s) => s.firstOrNull);
+              _shouldSetState = true;
+              _model.returnedList2Copy = await actions.selectBillPrint(
+                FFAppState().selBill.toString(),
+                FFAppState().allBillsList.toList(),
+              );
+              _shouldSetState = true;
+              _model.deviceCopy = await actions.newCustomAction(
+                FFAppState().printerIndex,
+              );
+              _shouldSetState = true;
+              await actions.printBillnewhive(
+                _model.returnedList2Copy!.toList(),
+                _model.deviceCopy!.toList(),
+                FFAppState().isPrinterConnected,
+                FFAppState().printerName,
+                getJsonField(
+                  functions.outletDocToJson(_model.outletdocenter!),
+                  r'''$''',
+                ),
+                _model.hiveInvoiceDataCopy!,
+                FFAppState().paperSize,
+                _model.appsetting!,
+              );
+              _model.spoutletCopy = await queryServicePointOutletRecordOnce(
+                parent: FFAppState().outletIdRef,
+              );
+              _shouldSetState = true;
+              if (_model.appsetting!.settingList
+                  .where((e) => e.title == 'printKotWithBill')
+                  .toList()
+                  .firstOrNull!
+                  .value) {
+                await actions.printKOTwithusbkioskhive(
+                  _model.returnedList2Copy!.toList(),
+                  _model.deviceCopy!.toList(),
+                  FFAppState().isPrinterConnected,
+                  FFAppState().printerName,
+                  getJsonField(
+                    functions.outletDocToJson(_model.outletdocenter!),
+                    r'''$''',
+                  ),
+                  _model.hiveInvoiceDataCopy!,
+                  FFAppState().paperSize,
+                  _model.appsetting!,
+                  FFAppState().port,
+                  FFAppState().ipAddresss,
+                  _model.spoutletCopy!.toList(),
+                );
+              }
+              if (_model.appsetting!.settingList
+                  .where((e) => e.title == 'enableEthernetPrint')
+                  .toList()
+                  .firstOrNull!
+                  .value) {
+                await actions.printEthernethive(
+                  _model.returnedList2Copy!.toList(),
+                  _model.deviceCopy!.toList(),
+                  FFAppState().isPrinterConnected,
+                  FFAppState().printerName,
+                  getJsonField(
+                    functions.outletDocToJson(_model.outletdocenter!),
+                    r'''$''',
+                  ),
+                  _model.hiveInvoiceDataCopy!,
+                  FFAppState().paperSize,
+                  FFAppState().port,
+                  FFAppState().ipAddresss,
+                  _model.spoutletCopy!.toList(),
+                  _model.appsetting!,
+                );
+              }
+              if (_model.appsetting!.settingList
+                  .where((e) => e.title == 'enableStock')
+                  .toList()
+                  .firstOrNull!
+                  .value) {
+                FFAppState().startLoop = 0;
+                safeSetState(() {});
+                while (
+                    FFAppState().startLoop < _model.prdlinstnewtxCopy!.length) {
+                  _model.stockupdateprdprtCopy = await queryProductRecordOnce(
+                    parent: FFAppState().outletIdRef,
+                    queryBuilder: (productRecord) => productRecord
+                        .where(
+                          'id',
+                          isEqualTo: (_model.prdlinstnewtxCopy
+                                  ?.elementAtOrNull(FFAppState().startLoop))
+                              ?.id,
+                        )
+                        .where(
+                          'stockable',
+                          isEqualTo: true,
+                        ),
+                    singleRecord: true,
+                  ).then((s) => s.firstOrNull);
+                  _shouldSetState = true;
+                  if (_model.stockupdateprdprtCopy != null) {
+                    await _model.stockupdateprdprtCopy!.reference.update({
+                      ...mapToFirestore(
+                        {
+                          'currentStock': FieldValue.increment(
+                              -(functions.doubleToInt((_model.prdlinstnewtxCopy
+                                      ?.elementAtOrNull(FFAppState().startLoop))
+                                  ?.quantity)!)),
+                        },
+                      ),
+                    });
+                    _model.itemprd2Copy = await actions.hivegetproductbyId(
+                      _model.stockupdateprdprtCopy?.reference.id,
+                      _model.prdlinstnewtxCopy
+                          ?.elementAtOrNull(FFAppState().startLoop),
+                      'get',
+                    );
+                    _shouldSetState = true;
+                    FFAppState().updateProductHiveputStruct(
+                      (e) => e
+                        ..id = _model.itemprd2Copy?.id
+                        ..price = _model.itemprd2Copy?.price
+                        ..category = _model.itemprd2Copy?.category
+                        ..code = _model.itemprd2Copy?.code
+                        ..name = _model.itemprd2Copy?.name
+                        ..sellingPrice = _model.itemprd2Copy?.sellingPrice
+                        ..mrpPrice = _model.itemprd2Copy?.mrpPrice
+                        ..purchasePrice = _model.itemprd2Copy?.purchasePrice
+                        ..categoryId = _model.itemprd2Copy?.categoryId
+                        ..taxId = _model.itemprd2Copy?.taxId
+                        ..unitId = _model.itemprd2Copy?.unitId
+                        ..regionalName = _model.itemprd2Copy?.regionalName
+                        ..barcode = _model.itemprd2Copy?.barcode
+                        ..hsncode = _model.itemprd2Copy?.hsncode
+                        ..reorderLevel = _model.itemprd2Copy?.reorderLevel
+                        ..searchcode = _model.itemprd2Copy?.searchcode
+                        ..shortName = _model.itemprd2Copy?.shortName
+                        ..weightable = _model.itemprd2Copy?.weightable
+                        ..stockable = _model.itemprd2Copy?.stockable
+                        ..discountPer = _model.itemprd2Copy?.discountPer
+                        ..discountAmt = _model.itemprd2Copy?.discountAmt
+                        ..productMasterId = _model.itemprd2Copy?.productMasterId
+                        ..recipeRefId = _model.itemprd2Copy?.recipeRefId
+                        ..imageUrl = _model.itemprd2Copy?.imageUrl
+                        ..serviceOutletId = _model.itemprd2Copy?.serviceOutletId
+                        ..type = _model.itemprd2Copy?.type
+                        ..recipeId = _model.itemprd2Copy?.recipeId
+                        ..stock = _model.itemprd2Copy!.stock -
+                            (functions.doubleToInt((_model.prdlinstnewtxCopy
+                                    ?.elementAtOrNull(FFAppState().startLoop))
+                                ?.quantity)!)
+                        ..isDeleted = _model.itemprd2Copy?.isDeleted
+                        ..keywords = _model.itemprd2Copy!.keywords.toList()
+                        ..synC = _model.itemprd2Copy?.synC
+                        ..hivekey = _model.itemprd2Copy?.hivekey
+                        ..version = _model.itemprd2Copy?.version,
+                    );
+                    safeSetState(() {});
+                    _model.productupdated2Copy = await actions.hiveProductCrud(
+                      FFAppState().productHiveput.hivekey,
+                      FFAppState().productHiveput,
+                      'update',
+                    );
+                    _shouldSetState = true;
+                    FFAppState().productHive = [];
+                    FFAppState().productHiveput = ProductStructStruct();
+                    safeSetState(() {});
+                    _model.newupdatedproductlist22Copy =
+                        await actions.getProductlistHive();
+                    _shouldSetState = true;
+                    FFAppState().productHive = _model
+                        .newupdatedproductlist22Copy!
+                        .toList()
+                        .cast<ProductStructStruct>();
+                    safeSetState(() {});
+                  }
+                  FFAppState().startLoop = FFAppState().startLoop + 1;
+                  safeSetState(() {});
+                }
+              }
+              await actions.removeFromAllBillList(
+                FFAppState().selBill,
+              );
+              safeSetState(() {
+                _model.dropDownValueController?.value = 'CASH';
+              });
+              await actions.clearValue();
+              FFAppState().subTotal = 0.0;
+              FFAppState().delCharges = 0.0;
+              FFAppState().oldBalance = 0;
+              FFAppState().custCredit = 0;
+              FFAppState().custNameRef = null;
+              FFAppState().setCustRef = null;
+              FFAppState().setCustName = '';
+              FFAppState().setCustMobNo = '';
+              FFAppState().noOfItems = 0;
+              FFAppState().prdid = '';
+              FFAppState().update(() {});
+              FFAppState().finalAmt = 0.0;
+              FFAppState().billAmt = 0.0;
+              FFAppState().count = _model.updatedShiftDetailsCopy!.billCount;
+              FFAppState().update(() {});
+              if (_shouldSetState) safeSetState(() {});
+              return;
+            } else {
+              await showDialog(
+                context: context,
+                builder: (alertDialogContext) {
+                  return AlertDialog(
+                    title: Text('printer connection'),
+                    content: Text('printer not connected'),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(alertDialogContext),
+                        child: Text('Ok'),
+                      ),
+                    ],
+                  );
+                },
+              );
+              if (_shouldSetState) safeSetState(() {});
+              return;
+            }
           } else {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(
-                  'Login again to start Shift ',
+                  'Cart List empty!',
                   style: TextStyle(
                     color: FlutterFlowTheme.of(context).primaryText,
                   ),
                 ),
                 duration: Duration(milliseconds: 4000),
-                backgroundColor: Color(0x00000000),
+                backgroundColor: FlutterFlowTheme.of(context).secondary,
               ),
             );
-            if (_shouldSetState) safeSetState(() {});
-            return;
-          }
-
-          if (!functions.isPrinterSelected(FFAppState().printerDevice)!) {
-            _model.resDevice2Copy2 = await actions.scanPrinter(
-              FFAppState().posMode,
-            );
-            _shouldSetState = true;
-          }
-          _model.isconnectedCopy = await actions.connectDevice(
-            FFAppState().printerDevice,
-            FFAppState().printerIndex,
-          );
-          _shouldSetState = true;
-          if (_model.isconnectedCopy!) {
-            FFAppState().lastBill = FFAppState().finalAmt;
-            FFAppState().update(() {});
-            _model.outletdocenter = await queryOutletRecordOnce(
-              queryBuilder: (outletRecord) => outletRecord.where(
-                'id',
-                isEqualTo: FFAppState().outletIdRef?.id,
-              ),
-              singleRecord: true,
-            ).then((s) => s.firstOrNull);
-            _shouldSetState = true;
-            _model.returnedList2Copy = await actions.selectBillPrint(
-              FFAppState().selBill.toString(),
-              FFAppState().allBillsList.toList(),
-            );
-            _shouldSetState = true;
-            _model.deviceCopy = await actions.newCustomAction(
-              FFAppState().printerIndex,
-            );
-            _shouldSetState = true;
-            await actions.printBillnewhive(
-              _model.returnedList2Copy!.toList(),
-              _model.deviceCopy!.toList(),
-              FFAppState().isPrinterConnected,
-              FFAppState().printerName,
-              getJsonField(
-                functions.outletDocToJson(_model.outletdocenter!),
-                r'''$''',
-              ),
-              _model.hiveInvoiceDataCopy!,
-              FFAppState().paperSize,
-              _model.appsetting!,
-            );
-            _model.spoutletCopy = await queryServicePointOutletRecordOnce(
-              parent: FFAppState().outletIdRef,
-            );
-            _shouldSetState = true;
-            if (_model.appsetting!.settingList
-                .where((e) => e.title == 'printKotWithBill')
-                .toList()
-                .firstOrNull!
-                .value) {
-              await actions.printKOTwithusbkioskhive(
-                _model.returnedList2Copy!.toList(),
-                _model.deviceCopy!.toList(),
-                FFAppState().isPrinterConnected,
-                FFAppState().printerName,
-                getJsonField(
-                  functions.outletDocToJson(_model.outletdocenter!),
-                  r'''$''',
-                ),
-                _model.hiveInvoiceDataCopy!,
-                FFAppState().paperSize,
-                _model.appsetting!,
-                FFAppState().port,
-                FFAppState().ipAddresss,
-                _model.spoutletCopy!.toList(),
-              );
-            }
-            if (_model.appsetting!.settingList
-                .where((e) => e.title == 'enableEthernetPrint')
-                .toList()
-                .firstOrNull!
-                .value) {
-              await actions.printEthernethive(
-                _model.returnedList2Copy!.toList(),
-                _model.deviceCopy!.toList(),
-                FFAppState().isPrinterConnected,
-                FFAppState().printerName,
-                getJsonField(
-                  functions.outletDocToJson(_model.outletdocenter!),
-                  r'''$''',
-                ),
-                _model.hiveInvoiceDataCopy!,
-                FFAppState().paperSize,
-                FFAppState().port,
-                FFAppState().ipAddresss,
-                _model.spoutletCopy!.toList(),
-                _model.appsetting!,
-              );
-            }
-            if (_model.appsetting!.settingList
-                .where((e) => e.title == 'enableStock')
-                .toList()
-                .firstOrNull!
-                .value) {
-              FFAppState().startLoop = 0;
-              safeSetState(() {});
-              while (
-                  FFAppState().startLoop < _model.prdlinstnewtxCopy!.length) {
-                _model.stockupdateprdprtCopy = await queryProductRecordOnce(
-                  parent: FFAppState().outletIdRef,
-                  queryBuilder: (productRecord) => productRecord
-                      .where(
-                        'id',
-                        isEqualTo: (_model.prdlinstnewtxCopy
-                                ?.elementAtOrNull(FFAppState().startLoop))
-                            ?.id,
-                      )
-                      .where(
-                        'stockable',
-                        isEqualTo: true,
-                      ),
-                  singleRecord: true,
-                ).then((s) => s.firstOrNull);
-                _shouldSetState = true;
-                if (_model.stockupdateprdprtCopy != null) {
-                  await _model.stockupdateprdprtCopy!.reference.update({
-                    ...mapToFirestore(
-                      {
-                        'currentStock': FieldValue.increment(
-                            -(functions.doubleToInt((_model.prdlinstnewtxCopy
-                                    ?.elementAtOrNull(FFAppState().startLoop))
-                                ?.quantity)!)),
-                      },
-                    ),
-                  });
-                  _model.itemprd2Copy = await actions.hivegetproductbyId(
-                    _model.stockupdateprdprtCopy?.reference.id,
-                    _model.prdlinstnewtxCopy
-                        ?.elementAtOrNull(FFAppState().startLoop),
-                    'get',
-                  );
-                  _shouldSetState = true;
-                  FFAppState().updateProductHiveputStruct(
-                    (e) => e
-                      ..id = _model.itemprd2Copy?.id
-                      ..price = _model.itemprd2Copy?.price
-                      ..category = _model.itemprd2Copy?.category
-                      ..code = _model.itemprd2Copy?.code
-                      ..name = _model.itemprd2Copy?.name
-                      ..sellingPrice = _model.itemprd2Copy?.sellingPrice
-                      ..mrpPrice = _model.itemprd2Copy?.mrpPrice
-                      ..purchasePrice = _model.itemprd2Copy?.purchasePrice
-                      ..categoryId = _model.itemprd2Copy?.categoryId
-                      ..taxId = _model.itemprd2Copy?.taxId
-                      ..unitId = _model.itemprd2Copy?.unitId
-                      ..regionalName = _model.itemprd2Copy?.regionalName
-                      ..barcode = _model.itemprd2Copy?.barcode
-                      ..hsncode = _model.itemprd2Copy?.hsncode
-                      ..reorderLevel = _model.itemprd2Copy?.reorderLevel
-                      ..searchcode = _model.itemprd2Copy?.searchcode
-                      ..shortName = _model.itemprd2Copy?.shortName
-                      ..weightable = _model.itemprd2Copy?.weightable
-                      ..stockable = _model.itemprd2Copy?.stockable
-                      ..discountPer = _model.itemprd2Copy?.discountPer
-                      ..discountAmt = _model.itemprd2Copy?.discountAmt
-                      ..productMasterId = _model.itemprd2Copy?.productMasterId
-                      ..recipeRefId = _model.itemprd2Copy?.recipeRefId
-                      ..imageUrl = _model.itemprd2Copy?.imageUrl
-                      ..serviceOutletId = _model.itemprd2Copy?.serviceOutletId
-                      ..type = _model.itemprd2Copy?.type
-                      ..recipeId = _model.itemprd2Copy?.recipeId
-                      ..stock = _model.itemprd2Copy!.stock -
-                          (functions.doubleToInt((_model.prdlinstnewtxCopy
-                                  ?.elementAtOrNull(FFAppState().startLoop))
-                              ?.quantity)!)
-                      ..isDeleted = _model.itemprd2Copy?.isDeleted
-                      ..keywords = _model.itemprd2Copy!.keywords.toList()
-                      ..synC = _model.itemprd2Copy?.synC
-                      ..hivekey = _model.itemprd2Copy?.hivekey
-                      ..version = _model.itemprd2Copy?.version,
-                  );
-                  safeSetState(() {});
-                  _model.productupdated2Copy = await actions.hiveProductCrud(
-                    FFAppState().productHiveput.hivekey,
-                    FFAppState().productHiveput,
-                    'update',
-                  );
-                  _shouldSetState = true;
-                  FFAppState().productHive = [];
-                  FFAppState().productHiveput = ProductStructStruct();
-                  safeSetState(() {});
-                  _model.newupdatedproductlist22Copy =
-                      await actions.getProductlistHive();
-                  _shouldSetState = true;
-                  FFAppState().productHive = _model.newupdatedproductlist22Copy!
-                      .toList()
-                      .cast<ProductStructStruct>();
-                  safeSetState(() {});
-                }
-                FFAppState().startLoop = FFAppState().startLoop + 1;
-                safeSetState(() {});
-              }
-            }
-            await actions.removeFromAllBillList(
-              FFAppState().selBill,
-            );
-            safeSetState(() {
-              _model.dropDownValueController?.value = 'CASH';
-            });
-            await actions.clearValue();
-            FFAppState().subTotal = 0.0;
-            FFAppState().delCharges = 0.0;
-            FFAppState().oldBalance = 0;
-            FFAppState().custCredit = 0;
-            FFAppState().custNameRef = null;
-            FFAppState().setCustRef = null;
-            FFAppState().setCustName = '';
-            FFAppState().setCustMobNo = '';
-            FFAppState().noOfItems = 0;
-            FFAppState().prdid = '';
-            FFAppState().update(() {});
-            FFAppState().finalAmt = 0.0;
-            FFAppState().billAmt = 0.0;
-            FFAppState().count = _model.updatedShiftDetailsCopy!.billCount;
-            FFAppState().update(() {});
-            if (_shouldSetState) safeSetState(() {});
-            return;
-          } else {
-            await showDialog(
-              context: context,
-              builder: (alertDialogContext) {
-                return AlertDialog(
-                  title: Text('printer connection'),
-                  content: Text('printer not connected'),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(alertDialogContext),
-                      child: Text('Ok'),
-                    ),
-                  ],
-                );
-              },
-            );
-            if (_shouldSetState) safeSetState(() {});
-            return;
           }
 
           if (_shouldSetState) safeSetState(() {});

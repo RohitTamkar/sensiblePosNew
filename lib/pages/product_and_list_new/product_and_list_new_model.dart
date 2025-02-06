@@ -71,6 +71,8 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
 
   String prdid = '0';
 
+  bool flag = true;
+
   ///  State fields for stateful widgets in this page.
 
   final shortcutsFocusNode = FocusNode();
