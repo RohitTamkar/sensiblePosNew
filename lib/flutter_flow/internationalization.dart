@@ -25350,6 +25350,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
+  // dineinparcel
+  {
+    'tx0so1hb': {
+      'en': 'DINE IN',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '5sxaj5ub': {
+      'en': 'PARCEL',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
   // Miscellaneous
   {
     'c0tsq8sj': {
