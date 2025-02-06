@@ -3666,18 +3666,20 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                             mainAxisSize: MainAxisSize.max,
                                                                                                                             mainAxisAlignment: MainAxisAlignment.end,
                                                                                                                             children: [
-                                                                                                                              Padding(
-                                                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
-                                                                                                                                child: Text(
-                                                                                                                                  productListItem.name,
-                                                                                                                                  textAlign: TextAlign.center,
-                                                                                                                                  style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                                                                        color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                                                                        letterSpacing: 0.0,
-                                                                                                                                        fontWeight: FontWeight.w600,
-                                                                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                                                                                      ),
+                                                                                                                              Flexible(
+                                                                                                                                child: Padding(
+                                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                                                                  child: Text(
+                                                                                                                                    productListItem.name,
+                                                                                                                                    textAlign: TextAlign.center,
+                                                                                                                                    style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                                                                          color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                                                                          letterSpacing: 0.0,
+                                                                                                                                          fontWeight: FontWeight.w600,
+                                                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                                                                                        ),
+                                                                                                                                  ),
                                                                                                                                 ),
                                                                                                                               ),
                                                                                                                               Padding(
@@ -3706,44 +3708,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                                                               fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                                                               color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                                                                              letterSpacing: 0.0,
-                                                                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                                                                            ),
-                                                                                                                                      ),
-                                                                                                                                    ),
-                                                                                                                                  ],
-                                                                                                                                ),
-                                                                                                                              ),
-                                                                                                                              Padding(
-                                                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
-                                                                                                                                child: Row(
-                                                                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                                                  children: [
-                                                                                                                                    Padding(
-                                                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
-                                                                                                                                      child: Text(
-                                                                                                                                        FFLocalizations.of(context).getText(
-                                                                                                                                          'fe3q2ais' /* Stock: */,
-                                                                                                                                        ),
-                                                                                                                                        style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                                                                              letterSpacing: 0.0,
-                                                                                                                                              fontWeight: FontWeight.w600,
-                                                                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                                                                            ),
-                                                                                                                                      ),
-                                                                                                                                    ),
-                                                                                                                                    Flexible(
-                                                                                                                                      child: Text(
-                                                                                                                                        valueOrDefault<String>(
-                                                                                                                                          productListItem.stock.toString(),
-                                                                                                                                          '0',
-                                                                                                                                        ),
-                                                                                                                                        style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                                                                              color: FlutterFlowTheme.of(context).primary,
                                                                                                                                               letterSpacing: 0.0,
                                                                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                                                             ),

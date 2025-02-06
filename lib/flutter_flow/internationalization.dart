@@ -14549,13 +14549,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'fe3q2ais': {
-      'en': 'Stock:',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
     'uh5njzqo': {
       'en': 'Amt.',
       'hi': '',
@@ -25344,23 +25337,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'snwhhnio': {
       'en': 'Print [Enter]',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-  },
-  // dineinparcel
-  {
-    'tx0so1hb': {
-      'en': 'DINE IN',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '5sxaj5ub': {
-      'en': 'PARCEL',
       'hi': '',
       'kn': '',
       'mr': '',

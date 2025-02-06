@@ -17,8 +17,6 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
-import 'index.dart'; // Imports other custom actions
-
 // Imports other custom actions
 
 import 'dart:async';
@@ -1790,11 +1788,6 @@ Future printBillnewhivegrocery(
       Future<void> printBill(List<int> billBytes) async {
         switch (bluetoothPrinter["typePrinter"]) {
           case PrinterType.usb:
-            if (appSetting.settingList.any((setting) =>
-                setting.title == 'openCashDrawer' && setting.value == true)) {
-              List<int> cashDrawerCommand = [0x1B, 0x70, 0x00, 0x19, 0xFA];
-              bytes += cashDrawerCommand; // Append the cash drawer open command
-            }
             billBytes += generator.feed(2);
             billBytes += generator.cut();
             FFAppState().printerName = statusName;
