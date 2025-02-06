@@ -341,7 +341,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
     return Shortcuts(
       shortcuts: {
         SingleActivator(
-          LogicalKeyboardKey.enter,
+          LogicalKeyboardKey.space,
         ): VoidCallbackIntent(() async {
           var _shouldSetState = false;
           if (functions
