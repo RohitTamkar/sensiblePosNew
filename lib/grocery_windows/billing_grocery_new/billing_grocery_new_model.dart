@@ -18,9 +18,11 @@ import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'billing_grocery_new_widget.dart' show BillingGroceryNewWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -47,6 +49,7 @@ class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final shortcutsFocusNode = FocusNode();
   // Stores action output result for [Custom Action - getProductlistHive] action in BillingGroceryNew widget.
   List<ProductStructStruct>? hiveProductList;
   // Stores action output result for [Custom Action - getCategorylistHive] action in BillingGroceryNew widget.
@@ -55,6 +58,8 @@ class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
   bool? resDevice2Copy;
   // Stores action output result for [Custom Action - connectDevice] action in BillingGroceryNew widget.
   bool? isConnected;
+  // Stores action output result for [Firestore Query - Query a collection] action in BillingGroceryNew widget.
+  AppSettingsRecord? appset;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController1;
@@ -81,7 +86,9 @@ class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
   List<PartyRecord> simpleSearchResults = [];
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    shortcutsFocusNode.requestFocus();
+  }
 
   @override
   void dispose() {
