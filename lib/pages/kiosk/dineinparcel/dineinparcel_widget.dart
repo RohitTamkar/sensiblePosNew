@@ -65,98 +65,104 @@ class _DineinparcelWidgetState extends State<DineinparcelWidget> {
         child: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
-            FlutterFlowChoiceChips(
-              options: [
-                ChipData(FFLocalizations.of(context).getText(
-                  'tx0so1hb' /* DINE IN */,
-                )),
-                ChipData(FFLocalizations.of(context).getText(
-                  '5sxaj5ub' /* PARCEL */,
-                ))
-              ],
-              onChanged: (val) async {
-                safeSetState(() => _model.choiceChipsValue = val?.firstOrNull);
-                FFAppState().orderType = _model.choiceChipsValue!;
-                safeSetState(() {});
-                if ('PARCEL' == widget!.ordertype?.toString()) {
-                  FFAppState().delCharges = widget!.parcelcharges!;
-                  safeSetState(() {});
-                  _model.ddr4orde = await actions.calSubTotalForHoldListkiosk2(
-                    FFAppState().selBill.toString(),
-                    FFAppState().allBillsList.toList(),
-                    functions.enabletaxinclusive(widget!.inclusivetax!),
-                    widget!.qtywiseparcel!,
-                  );
-                  _model.reusltddrorder = await actions.calBillAmt2(
-                    valueOrDefault<double>(
-                      FFAppState().disAmt,
-                      0.0,
-                    ),
-                    FFAppState().delCharges,
-                    widget!.qtywiseparcel!,
-                  );
-                } else {
+            Flexible(
+              child: FlutterFlowChoiceChips(
+                options: [
+                  ChipData(FFLocalizations.of(context).getText(
+                    'tx0so1hb' /* DINE IN */,
+                  )),
+                  ChipData(FFLocalizations.of(context).getText(
+                    '5sxaj5ub' /* PARCEL */,
+                  ))
+                ],
+                onChanged: (val) async {
+                  safeSetState(
+                      () => _model.choiceChipsValue = val?.firstOrNull);
                   FFAppState().orderType = _model.choiceChipsValue!;
-                  FFAppState().delCharges = 0.0;
                   safeSetState(() {});
-                  _model.ddr45order =
-                      await actions.calSubTotalForHoldListkiosk2(
-                    FFAppState().selBill.toString(),
-                    FFAppState().allBillsList.toList(),
-                    functions.enabletaxinclusive(widget!.inclusivetax!),
-                    widget!.qtywiseparcel!,
-                  );
-                  _model.reusltddr67orde = await actions.calBillAmt2(
-                    valueOrDefault<double>(
-                      FFAppState().disAmt,
-                      0.0,
-                    ),
-                    FFAppState().delCharges,
-                    widget!.qtywiseparcel!,
-                  );
-                }
+                  if ('PARCEL' == widget!.ordertype?.toString()) {
+                    FFAppState().delCharges = widget!.parcelcharges!;
+                    safeSetState(() {});
+                    _model.ddr4orde =
+                        await actions.calSubTotalForHoldListkiosk2(
+                      FFAppState().selBill.toString(),
+                      FFAppState().allBillsList.toList(),
+                      functions.enabletaxinclusive(widget!.inclusivetax!),
+                      widget!.qtywiseparcel!,
+                    );
+                    _model.reusltddrorder = await actions.calBillAmt2(
+                      valueOrDefault<double>(
+                        FFAppState().disAmt,
+                        0.0,
+                      ),
+                      FFAppState().delCharges,
+                      widget!.qtywiseparcel!,
+                    );
+                  } else {
+                    FFAppState().orderType = _model.choiceChipsValue!;
+                    FFAppState().delCharges = 0.0;
+                    safeSetState(() {});
+                    _model.ddr45order =
+                        await actions.calSubTotalForHoldListkiosk2(
+                      FFAppState().selBill.toString(),
+                      FFAppState().allBillsList.toList(),
+                      functions.enabletaxinclusive(widget!.inclusivetax!),
+                      widget!.qtywiseparcel!,
+                    );
+                    _model.reusltddr67orde = await actions.calBillAmt2(
+                      valueOrDefault<double>(
+                        FFAppState().disAmt,
+                        0.0,
+                      ),
+                      FFAppState().delCharges,
+                      widget!.qtywiseparcel!,
+                    );
+                  }
 
-                safeSetState(() {});
-              },
-              selectedChipStyle: ChipStyle(
-                backgroundColor: FlutterFlowTheme.of(context).primary,
-                textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      fontSize: 30.0,
-                      letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).bodyMediumFamily),
-                    ),
-                iconColor: FlutterFlowTheme.of(context).info,
-                iconSize: 16.0,
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(8.0),
+                  safeSetState(() {});
+                },
+                selectedChipStyle: ChipStyle(
+                  backgroundColor: FlutterFlowTheme.of(context).primary,
+                  textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        fontSize: 30.0,
+                        letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
+                      ),
+                  iconColor: FlutterFlowTheme.of(context).info,
+                  iconSize: 16.0,
+                  elevation: 0.0,
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                unselectedChipStyle: ChipStyle(
+                  backgroundColor: Color(0xFFD7D4E8),
+                  textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
+                      ),
+                  iconColor: FlutterFlowTheme.of(context).secondaryText,
+                  iconSize: 16.0,
+                  elevation: 0.0,
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                chipSpacing: 20.0,
+                rowSpacing: 8.0,
+                multiselect: false,
+                initialized: _model.choiceChipsValue != null,
+                alignment: WrapAlignment.start,
+                controller: _model.choiceChipsValueController ??=
+                    FormFieldController<List<String>>(
+                  [widget!.ordertype!.toString()],
+                ),
+                wrapped: false,
               ),
-              unselectedChipStyle: ChipStyle(
-                backgroundColor: Color(0xFFD7D4E8),
-                textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                      color: FlutterFlowTheme.of(context).primaryText,
-                      letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).bodyMediumFamily),
-                    ),
-                iconColor: FlutterFlowTheme.of(context).secondaryText,
-                iconSize: 16.0,
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              chipSpacing: 20.0,
-              rowSpacing: 8.0,
-              multiselect: false,
-              initialized: _model.choiceChipsValue != null,
-              alignment: WrapAlignment.start,
-              controller: _model.choiceChipsValueController ??=
-                  FormFieldController<List<String>>(
-                [widget!.ordertype!.toString()],
-              ),
-              wrapped: false,
             ),
           ],
         ),

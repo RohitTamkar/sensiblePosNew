@@ -235,214 +235,233 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Expanded(
-                                            child: FlutterFlowChoiceChips(
-                                              options: [
-                                                ChipData(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  'm630vqg2' /* DINE IN */,
-                                                )),
-                                                ChipData(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  '9hqpozct' /* PARCEL */,
-                                                ))
-                                              ],
-                                              onChanged: (val) async {
-                                                safeSetState(() =>
-                                                    _model.choiceChipsValue =
-                                                        val?.firstOrNull);
-                                                FFAppState().orderType =
-                                                    _model.choiceChipsValue!;
-                                                safeSetState(() {});
-                                                if (FFAppState().orderType ==
-                                                    'PARCEL') {
-                                                  FFAppState().delCharges =
-                                                      containerFooterRecord!
-                                                          .parcelCharges;
-                                                  safeSetState(() {});
-                                                  _model.ddr4 = await actions
-                                                      .calSubTotalForHoldListkiosk2(
-                                                    FFAppState()
-                                                        .selBill
-                                                        .toString(),
-                                                    FFAppState()
-                                                        .allBillsList
-                                                        .toList(),
-                                                    functions
-                                                        .enabletaxinclusive(
-                                                            valueOrDefault<
-                                                                bool>(
-                                                      widget!.appsetting
-                                                          ?.settingList
-                                                          ?.where((e) =>
-                                                              e.title ==
-                                                              'enableInclusiveTax')
-                                                          .toList()
-                                                          ?.firstOrNull
-                                                          ?.value,
-                                                      false,
-                                                    )),
-                                                    widget!
-                                                        .appsetting!.settingList
-                                                        .where((e) =>
-                                                            e.title ==
-                                                            'qtyWiseParcelCharges')
-                                                        .toList()
-                                                        .firstOrNull!
-                                                        .value,
-                                                  );
-                                                  _model.reusltddr =
-                                                      await actions.calBillAmt2(
-                                                    valueOrDefault<double>(
-                                                      FFAppState().disAmt,
-                                                      0.0,
-                                                    ),
-                                                    FFAppState().delCharges,
-                                                    widget!
-                                                        .appsetting!.settingList
-                                                        .where((e) =>
-                                                            e.title ==
-                                                            'qtyWiseParcelCharges')
-                                                        .toList()
-                                                        .firstOrNull!
-                                                        .value,
-                                                  );
-                                                } else {
+                                          if (widget!.appsetting?.settingList
+                                                  ?.where((e) =>
+                                                      e.title ==
+                                                      'qtyWiseParcelCharges')
+                                                  .toList()
+                                                  ?.firstOrNull
+                                                  ?.value ??
+                                              true)
+                                            Expanded(
+                                              child: FlutterFlowChoiceChips(
+                                                options: [
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'm630vqg2' /* DINE IN */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    '9hqpozct' /* PARCEL */,
+                                                  ))
+                                                ],
+                                                onChanged: (val) async {
+                                                  safeSetState(() =>
+                                                      _model.choiceChipsValue =
+                                                          val?.firstOrNull);
                                                   FFAppState().orderType =
                                                       _model.choiceChipsValue!;
-                                                  FFAppState().delCharges = 0.0;
                                                   safeSetState(() {});
-                                                  _model.ddr45 = await actions
-                                                      .calSubTotalForHoldListkiosk2(
-                                                    FFAppState()
-                                                        .selBill
-                                                        .toString(),
-                                                    FFAppState()
-                                                        .allBillsList
-                                                        .toList(),
-                                                    functions
-                                                        .enabletaxinclusive(
-                                                            valueOrDefault<
-                                                                bool>(
-                                                      widget!.appsetting
-                                                          ?.settingList
-                                                          ?.where((e) =>
+                                                  if (FFAppState().orderType ==
+                                                      'PARCEL') {
+                                                    FFAppState().delCharges =
+                                                        containerFooterRecord!
+                                                            .parcelCharges;
+                                                    safeSetState(() {});
+                                                    _model.ddr4 = await actions
+                                                        .calSubTotalForHoldListkiosk2(
+                                                      FFAppState()
+                                                          .selBill
+                                                          .toString(),
+                                                      FFAppState()
+                                                          .allBillsList
+                                                          .toList(),
+                                                      functions
+                                                          .enabletaxinclusive(
+                                                              valueOrDefault<
+                                                                  bool>(
+                                                        widget!.appsetting
+                                                            ?.settingList
+                                                            ?.where((e) =>
+                                                                e.title ==
+                                                                'enableInclusiveTax')
+                                                            .toList()
+                                                            ?.firstOrNull
+                                                            ?.value,
+                                                        false,
+                                                      )),
+                                                      widget!.appsetting!
+                                                          .settingList
+                                                          .where((e) =>
                                                               e.title ==
-                                                              'enableInclusiveTax')
+                                                              'qtyWiseParcelCharges')
                                                           .toList()
-                                                          ?.firstOrNull
-                                                          ?.value,
-                                                      false,
-                                                    )),
-                                                    widget!
-                                                        .appsetting!.settingList
-                                                        .where((e) =>
-                                                            e.title ==
-                                                            'qtyWiseParcelCharges')
-                                                        .toList()
-                                                        .firstOrNull!
-                                                        .value,
-                                                  );
-                                                  _model.reusltddr67 =
-                                                      await actions.calBillAmt2(
-                                                    valueOrDefault<double>(
-                                                      FFAppState().disAmt,
-                                                      0.0,
-                                                    ),
-                                                    FFAppState().delCharges,
-                                                    widget!
-                                                        .appsetting!.settingList
-                                                        .where((e) =>
-                                                            e.title ==
-                                                            'qtyWiseParcelCharges')
-                                                        .toList()
-                                                        .firstOrNull!
-                                                        .value,
-                                                  );
-                                                }
+                                                          .firstOrNull!
+                                                          .value,
+                                                    );
+                                                    _model.reusltddr =
+                                                        await actions
+                                                            .calBillAmt2(
+                                                      valueOrDefault<double>(
+                                                        FFAppState().disAmt,
+                                                        0.0,
+                                                      ),
+                                                      FFAppState().delCharges,
+                                                      widget!.appsetting!
+                                                          .settingList
+                                                          .where((e) =>
+                                                              e.title ==
+                                                              'qtyWiseParcelCharges')
+                                                          .toList()
+                                                          .firstOrNull!
+                                                          .value,
+                                                    );
+                                                  } else {
+                                                    FFAppState().orderType =
+                                                        _model
+                                                            .choiceChipsValue!;
+                                                    FFAppState().delCharges =
+                                                        0.0;
+                                                    safeSetState(() {});
+                                                    _model.ddr45 = await actions
+                                                        .calSubTotalForHoldListkiosk2(
+                                                      FFAppState()
+                                                          .selBill
+                                                          .toString(),
+                                                      FFAppState()
+                                                          .allBillsList
+                                                          .toList(),
+                                                      functions
+                                                          .enabletaxinclusive(
+                                                              valueOrDefault<
+                                                                  bool>(
+                                                        widget!.appsetting
+                                                            ?.settingList
+                                                            ?.where((e) =>
+                                                                e.title ==
+                                                                'enableInclusiveTax')
+                                                            .toList()
+                                                            ?.firstOrNull
+                                                            ?.value,
+                                                        false,
+                                                      )),
+                                                      widget!.appsetting!
+                                                          .settingList
+                                                          .where((e) =>
+                                                              e.title ==
+                                                              'qtyWiseParcelCharges')
+                                                          .toList()
+                                                          .firstOrNull!
+                                                          .value,
+                                                    );
+                                                    _model.reusltddr67 =
+                                                        await actions
+                                                            .calBillAmt2(
+                                                      valueOrDefault<double>(
+                                                        FFAppState().disAmt,
+                                                        0.0,
+                                                      ),
+                                                      FFAppState().delCharges,
+                                                      widget!.appsetting!
+                                                          .settingList
+                                                          .where((e) =>
+                                                              e.title ==
+                                                              'qtyWiseParcelCharges')
+                                                          .toList()
+                                                          .firstOrNull!
+                                                          .value,
+                                                    );
+                                                  }
 
-                                                safeSetState(() {});
-                                              },
-                                              selectedChipStyle: ChipStyle(
-                                                backgroundColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          fontSize: 30.0,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily),
-                                                        ),
-                                                iconColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .info,
-                                                iconSize: 16.0,
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                  safeSetState(() {});
+                                                },
+                                                selectedChipStyle: ChipStyle(
+                                                  backgroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            fontSize: 30.0,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts: GoogleFonts
+                                                                    .asMap()
+                                                                .containsKey(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumFamily),
+                                                          ),
+                                                  iconColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .info,
+                                                  iconSize: 16.0,
+                                                  elevation: 0.0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                unselectedChipStyle: ChipStyle(
+                                                  backgroundColor:
+                                                      Color(0xFFD7D4E8),
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
+                                                      ),
+                                                  iconColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryText,
+                                                  iconSize: 16.0,
+                                                  elevation: 0.0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                chipSpacing: 20.0,
+                                                rowSpacing: 8.0,
+                                                multiselect: false,
+                                                initialized:
+                                                    _model.choiceChipsValue !=
+                                                        null,
+                                                alignment: WrapAlignment.start,
+                                                controller: _model
+                                                        .choiceChipsValueController ??=
+                                                    FormFieldController<
+                                                        List<String>>(
+                                                  [FFAppState().orderType],
+                                                ),
+                                                wrapped: false,
                                               ),
-                                              unselectedChipStyle: ChipStyle(
-                                                backgroundColor:
-                                                    Color(0xFFD7D4E8),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily),
-                                                        ),
-                                                iconColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                iconSize: 16.0,
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              chipSpacing: 20.0,
-                                              rowSpacing: 8.0,
-                                              multiselect: false,
-                                              initialized:
-                                                  _model.choiceChipsValue !=
-                                                      null,
-                                              alignment: WrapAlignment.start,
-                                              controller: _model
-                                                      .choiceChipsValueController ??=
-                                                  FormFieldController<
-                                                      List<String>>(
-                                                [FFAppState().orderType],
-                                              ),
-                                              wrapped: false,
                                             ),
-                                          ),
                                         ],
                                       ),
                                     ],

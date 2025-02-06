@@ -17,6 +17,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -1639,9 +1641,11 @@ Future printBillnewhive(
     switch (bluetoothPrinter["typePrinter"]) {
       case PrinterType.usb:
         // Command to open the cash drawer
-        List<int> cashDrawerCommand = [0x1B, 0x70, 0x00, 0x19, 0xFA];
-        bytes += cashDrawerCommand; // Append the cash drawer open command
-
+        if (appSetting.settingList.any((setting) =>
+            setting.title == 'openCashDrawer' && setting.value == true)) {
+          List<int> cashDrawerCommand = [0x1B, 0x70, 0x00, 0x19, 0xFA];
+          bytes += cashDrawerCommand; // Append the cash drawer open command
+        }
         bytes += generator.feed(2);
         bytes += generator.cut();
         FFAppState().printerName = statusName;
