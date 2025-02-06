@@ -70,49 +70,52 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return Title(
-        title: 'KioskCart',
-        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
-        child: GestureDetector(
-          onTap: () {
-            FocusScope.of(context).unfocus();
-            FocusManager.instance.primaryFocus?.unfocus();
-          },
-          child: WillPopScope(
-            onWillPop: () async => false,
-            child: Scaffold(
-              key: scaffoldKey,
-              backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-              body: StreamBuilder<List<FooterRecord>>(
-                stream: queryFooterRecord(
-                  parent: FFAppState().outletIdRef,
-                  singleRecord: true,
+    return StreamBuilder<List<FooterRecord>>(
+      stream: queryFooterRecord(
+        parent: FFAppState().outletIdRef,
+        singleRecord: true,
+      ),
+      builder: (context, snapshot) {
+        // Customize what your widget looks like when it's loading.
+        if (!snapshot.hasData) {
+          return Scaffold(
+            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            body: Center(
+              child: SizedBox(
+                width: 40.0,
+                height: 40.0,
+                child: SpinKitFadingCircle(
+                  color: FlutterFlowTheme.of(context).primary,
+                  size: 40.0,
                 ),
-                builder: (context, snapshot) {
-                  // Customize what your widget looks like when it's loading.
-                  if (!snapshot.hasData) {
-                    return Center(
-                      child: SizedBox(
-                        width: 40.0,
-                        height: 40.0,
-                        child: SpinKitFadingCircle(
-                          color: FlutterFlowTheme.of(context).primary,
-                          size: 40.0,
-                        ),
-                      ),
-                    );
-                  }
-                  List<FooterRecord> containerFooterRecordList = snapshot.data!;
-                  // Return an empty Container when the item does not exist.
-                  if (snapshot.data!.isEmpty) {
-                    return Container();
-                  }
-                  final containerFooterRecord =
-                      containerFooterRecordList.isNotEmpty
-                          ? containerFooterRecordList.first
-                          : null;
+              ),
+            ),
+          );
+        }
+        List<FooterRecord> kioskCartFooterRecordList = snapshot.data!;
+        // Return an empty Container when the item does not exist.
+        if (snapshot.data!.isEmpty) {
+          return Container();
+        }
+        final kioskCartFooterRecord = kioskCartFooterRecordList.isNotEmpty
+            ? kioskCartFooterRecordList.first
+            : null;
 
-                  return Container(
+        return Title(
+            title: 'KioskCart',
+            color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+            child: GestureDetector(
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
+              child: WillPopScope(
+                onWillPop: () async => false,
+                child: Scaffold(
+                  key: scaffoldKey,
+                  backgroundColor:
+                      FlutterFlowTheme.of(context).primaryBackground,
+                  body: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -267,7 +270,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                   if (FFAppState().orderType ==
                                                       'PARCEL') {
                                                     FFAppState().delCharges =
-                                                        containerFooterRecord!
+                                                        kioskCartFooterRecord!
                                                             .parcelCharges;
                                                     safeSetState(() {});
                                                     _model.ddr4 = await actions
@@ -915,7 +918,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                 false,
                                                                               ),
                                                                               qtywiseparcel: widget!.appsetting?.settingList?.where((e) => e.title == 'qtyWiseParcelCharges').toList()?.firstOrNull?.value,
-                                                                              parcelcharges: containerFooterRecord?.parcelCharges,
+                                                                              parcelcharges: kioskCartFooterRecord?.parcelCharges,
                                                                             ),
                                                                             Row(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -1801,11 +1804,11 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                         ),
                       ],
                     ),
-                  );
-                },
+                  ),
+                ),
               ),
-            ),
-          ),
-        ));
+            ));
+      },
+    );
   }
 }
