@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/pages/kiosk/dineinparcel/dineinparcel_widget.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
