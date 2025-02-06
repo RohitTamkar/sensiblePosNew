@@ -362,6 +362,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
             FFAppState().allBillsList.toList(),
           );
           _shouldSetState = true;
+          _model.appsetting = await queryAppSettingsRecordOnce(
+            parent: FFAppState().outletIdRef,
+            singleRecord: true,
+          ).then((s) => s.firstOrNull);
+          _shouldSetState = true;
           if (!isAndroid) {
             await actions.newCustomAction5();
           }
@@ -817,13 +822,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
               ),
               _model.hiveInvoiceDataCopy!,
               FFAppState().paperSize,
-              productAndListNewAppSettingsRecord!,
+              _model.appsetting!,
             );
             _model.spoutletCopy = await queryServicePointOutletRecordOnce(
               parent: FFAppState().outletIdRef,
             );
             _shouldSetState = true;
-            if (productAndListNewAppSettingsRecord!.settingList
+            if (_model.appsetting!.settingList
                 .where((e) => e.title == 'printKotWithBill')
                 .toList()
                 .firstOrNull!
@@ -839,13 +844,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                 ),
                 _model.hiveInvoiceDataCopy!,
                 FFAppState().paperSize,
-                productAndListNewAppSettingsRecord!,
+                _model.appsetting!,
                 FFAppState().port,
                 FFAppState().ipAddresss,
                 _model.spoutletCopy!.toList(),
               );
             }
-            if (productAndListNewAppSettingsRecord!.settingList
+            if (_model.appsetting!.settingList
                 .where((e) => e.title == 'enableEthernetPrint')
                 .toList()
                 .firstOrNull!
@@ -864,10 +869,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                 FFAppState().port,
                 FFAppState().ipAddresss,
                 _model.spoutletCopy!.toList(),
-                productAndListNewAppSettingsRecord!,
+                _model.appsetting!,
               );
             }
-            if (productAndListNewAppSettingsRecord!.settingList
+            if (_model.appsetting!.settingList
                 .where((e) => e.title == 'enableStock')
                 .toList()
                 .firstOrNull!

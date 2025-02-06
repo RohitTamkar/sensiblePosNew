@@ -84,6 +84,8 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   bool? isConnected;
   // Stores action output result for [Custom Action - filterProducts2] action in ProductAndListNew widget.
   List<SelItemListStruct>? prdlinstnewtxCopy;
+  // Stores action output result for [Firestore Query - Query a collection] action in ProductAndListNew widget.
+  AppSettingsRecord? appsetting;
   // Stores action output result for [Custom Action - oldbalanceplusamt] action in ProductAndListNew widget.
   int? totalcreditCopy;
   // Stores action output result for [Custom Action - checkInternetConnection] action in ProductAndListNew widget.
