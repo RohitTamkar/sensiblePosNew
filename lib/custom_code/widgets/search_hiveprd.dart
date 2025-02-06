@@ -10,6 +10,10 @@ import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'package:flutter/services.dart';
+
+import 'index.dart'; // Imports other custom widgets
+
 import 'index.dart'; // Imports other custom widgets
 
 import 'package:flutter/scheduler.dart';
@@ -57,11 +61,22 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
 
   late LoadingScreenNewModel _model;
   FocusNode _focusNode = FocusNode();
+  SuggestionsBoxController _suggestionsBoxController =
+      SuggestionsBoxController();
+  int _selectedIndex = -1; // Track selected item index
+  List<ProductStructStruct> _filteredProducts = []; // Track filtered results
+  List<ProductStructStruct> matchingProducts = [];
   @override
   void initState() {
     super.initState();
 
     _model = createModel(context, () => LoadingScreenNewModel());
+
+    _focusNode.addListener(() {
+      if (_focusNode.hasFocus) {
+        _suggestionsBoxController.open();
+      }
+    });
   }
 
   LoadingScreenNewModel createModel(
@@ -77,152 +92,77 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
           flex: 4,
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
-            child: TypeAheadField<ProductStructStruct>(
-                textFieldConfiguration: TextFieldConfiguration(
-                  controller: _productNameController,
-                  focusNode: _focusNode,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Search for a product...',
-                  ),
-                  onSubmitted: (value) async {
-                    print('Submitted value: $value');
-                    List<ProductStructStruct> matchingProducts = widget.document
-                        .where((product) => product.barcode == value)
-                        .toList();
-
-                    if (matchingProducts.isNotEmpty) {
-                      ProductStructStruct selectedProduct =
-                          matchingProducts.first;
-                      FFAppState().productHiveput =
-                          selectedProduct; /*
-                      if (FFAppState().holdBillCount == 0) {
-                        FFAppState().holdBillCount =
-                            FFAppState().holdBillCount + 1;
-                        FFAppState().addToAllBillsList(
-                            functions.generateBillDetailsJson(
-                                0.0,
-                                0.0,
-                                0.0,
-                                'CASH',
-                                0.0,
-                                0.0,
-                                FFAppState().billAmt,
-                                0.0,
-                                FFAppState().finalAmt,
-                                '0',
-                                FFAppState().itemCartList.toList(),
-                                FFAppState().holdBillCount));
-                        FFAppState().selBill = 1;
+            child: RawKeyboardListener(
+              focusNode: FocusNode(), // Separate focus to avoid conflicts
+              onKey: (RawKeyEvent event) {
+                if (event is RawKeyDownEvent && _filteredProducts.isNotEmpty) {
+                  if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
+                    setState(() {
+                      if (_selectedIndex == -1) {
+                        _selectedIndex = 0; // Start at first item
+                      } else {
+                        _selectedIndex =
+                            (_selectedIndex + 1) % _filteredProducts.length;
                       }
-                      _model.addtosavebill = await actions.addToHoldListprdCopy(
-                        FFAppState().productHiveput,
-                        FFAppState().selBill,
-                        widget.taxcollection,
-                        functions.enabletaxinclusive(
-                            widget.appSettingsRecord.inclusiveTax),
-                      );
-                      _model.calculateResult =
-                          await actions.calSubTotalForHoldList(
-                        FFAppState().selBill.toString(),
-                        _model.addtosavebill!,
-                      );
-                      _model.calbillAmt = await actions.calBillAmt(
-                        FFAppState().disAmt,
-                        FFAppState().delCharges,
-                      );
-                      await _model.listViewprd?.animateTo(
-                        _model.listViewprd!.position.maxScrollExtent,
-                        duration: Duration(milliseconds: 100),
-                        curve: Curves.ease,
-                      );*/
-                      var _shouldSetState = false;
-                      if (selectedProduct.stockable) {
-                        if (selectedProduct.stock > 0) {
-                          if (FFAppState().prdid != selectedProduct.id) {
-                            if (FFAppState().holdBillCount == 0) {
-                              FFAppState().holdBillCount =
-                                  FFAppState().holdBillCount + 1;
-                              FFAppState().addToAllBillsList(
-                                  functions.generateBillDetailsJson(
-                                      0.0,
-                                      0.0,
-                                      0.0,
-                                      'CASH',
-                                      0.0,
-                                      0.0,
-                                      FFAppState().billAmt,
-                                      0.0,
-                                      FFAppState().finalAmt,
-                                      '0',
-                                      FFAppState().itemCartList.toList(),
-                                      FFAppState().holdBillCount));
-                              FFAppState().selBill = 1;
-                            }
-                            _model.addtosavebill3 =
-                                await actions.addToHoldListprdCopy(
-                              selectedProduct,
-                              FFAppState().selBill,
-                              widget!.taxcollection!.toList(),
-                              functions.enabletaxinclusive(widget
-                                  .appSettingsRecord.settingList
-                                  .where((e) => e.title == 'enableInclusiveTax')
-                                  .toList()
-                                  .first
-                                  .value),
-                            );
-                            _shouldSetState = true;
-                            _model.calculateResult1 =
-                                await actions.calSubTotalForHoldList(
-                              FFAppState().selBill.toString(),
-                              _model.addtosavebill3!.toList(),
-                            );
-                            _shouldSetState = true;
-                            _model.calbillAmt2s = await actions.calBillAmt(
-                              FFAppState().disAmt,
-                              FFAppState().delCharges,
-                            );
-                            _shouldSetState = true;
-                            // _model.stockcheck = false;
-                            // widget.prdid = document.id;
-                            FFAppState().prdid = selectedProduct.id;
-                            safeSetState(() {});
-                            await _model.listViewprd?.animateTo(
-                              _model.listViewprd!.position.maxScrollExtent,
-                              duration: Duration(milliseconds: 100),
-                              curve: Curves.ease,
-                            );
-                            _model.submitForm();
-                            FFAppState().update(() {});
+                    });
+                    _refreshSuggestionsBox();
+                  } else if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
+                    setState(() {
+                      if (_selectedIndex == -1) {
+                        _selectedIndex = _filteredProducts.length - 1;
+                      } else {
+                        _selectedIndex =
+                            (_selectedIndex - 1 + _filteredProducts.length) %
+                                _filteredProducts.length;
+                      }
+                    });
+                    _refreshSuggestionsBox();
+                  } else if (event.logicalKey == LogicalKeyboardKey.enter &&
+                      _selectedIndex != -1) {
+                    _handleSuggestionSelected(
+                        _filteredProducts[_selectedIndex]);
+                  }
+                }
+              },
+              child: TypeAheadField<ProductStructStruct>(
+                  suggestionsBoxController: _suggestionsBoxController,
+                  textFieldConfiguration: TextFieldConfiguration(
+                    controller: _productNameController,
+                    focusNode: _focusNode,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Search for a product...',
+                    ),
+                    onSubmitted: (value) async {
+                      // print('Submitted value: $value');
+                      setState(() {
+                        _filteredProducts = widget.document
+                            .where((product) => product.name
+                                .toLowerCase()
+                                .contains(value.toLowerCase()))
+                            .toList();
 
-                            setState(() {});
-                            _productNameController.clear();
-                            await Future.delayed(Duration(milliseconds: 100));
-                            FocusScope.of(context).requestFocus(_focusNode);
-                            if (_shouldSetState) safeSetState(() {});
-                            return;
-                          } else {
-                            if (selectedProduct.stock >
-                                functions.doubleToInt(valueOrDefault<double>(
-                                  getJsonField(
-                                    functions
-                                        .filterBillList(FFAppState().selBill,
-                                            FFAppState().allBillsList.toList())
-                                        .where((e) =>
-                                            selectedProduct.id ==
-                                            valueOrDefault<String>(
-                                              getJsonField(
-                                                e,
-                                                r'''$.id''',
-                                              )?.toString(),
-                                              '0',
-                                            ))
-                                        .toList()
-                                        .first,
-                                    r'''$.quantity''',
-                                  ),
-                                  0.0,
-                                ))!) {
+                        _filteredProducts.addAll(widget.document
+                            .where((product) => product.barcode
+                                .toLowerCase()
+                                .contains(value.toLowerCase()))
+                            .toList());
+
+                        // Remove duplicates if necessary
+                        _filteredProducts = _filteredProducts.toSet().toList();
+
+                        _selectedIndex = -1; // Reset selection on new input
+                        matchingProducts = _filteredProducts;
+                      });
+
+                      if (matchingProducts.isNotEmpty) {
+                        ProductStructStruct selectedProduct =
+                            matchingProducts.first;
+                        FFAppState().productHiveput = selectedProduct;
+                        var _shouldSetState = false;
+                        if (selectedProduct.stockable) {
+                          if (selectedProduct.stock > 0) {
+                            if (FFAppState().prdid != selectedProduct.id) {
                               if (FFAppState().holdBillCount == 0) {
                                 FFAppState().holdBillCount =
                                     FFAppState().holdBillCount + 1;
@@ -242,7 +182,7 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
                                         FFAppState().holdBillCount));
                                 FFAppState().selBill = 1;
                               }
-                              _model.addtosavebill3d =
+                              _model.addtosavebill3 =
                                   await actions.addToHoldListprdCopy(
                                 selectedProduct,
                                 FFAppState().selBill,
@@ -256,17 +196,21 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
                                     .value),
                               );
                               _shouldSetState = true;
-                              _model.calculateResult1d =
+                              _model.calculateResult1 =
                                   await actions.calSubTotalForHoldList(
                                 FFAppState().selBill.toString(),
-                                _model.addtosavebill3d!.toList(),
+                                _model.addtosavebill3!.toList(),
                               );
                               _shouldSetState = true;
-                              _model.calbillAmt2sd = await actions.calBillAmt(
+                              _model.calbillAmt2s = await actions.calBillAmt(
                                 FFAppState().disAmt,
                                 FFAppState().delCharges,
                               );
                               _shouldSetState = true;
+                              // _model.stockcheck = false;
+                              // widget.prdid = document.id;
+                              FFAppState().prdid = selectedProduct.id;
+                              safeSetState(() {});
                               await _model.listViewprd?.animateTo(
                                 _model.listViewprd!.position.maxScrollExtent,
                                 duration: Duration(milliseconds: 100),
@@ -282,253 +226,144 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
                               if (_shouldSetState) safeSetState(() {});
                               return;
                             } else {
-                              await showDialog(
-                                context: context,
-                                builder: (alertDialogContext) {
-                                  return AlertDialog(
-                                    content: Text('Item Out Of Stock'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                              _model.submitForm();
-                              FFAppState().update(() {});
+                              if (selectedProduct.stock >
+                                  functions.doubleToInt(valueOrDefault<double>(
+                                    getJsonField(
+                                      functions
+                                          .filterBillList(
+                                              FFAppState().selBill,
+                                              FFAppState()
+                                                  .allBillsList
+                                                  .toList())
+                                          .where((e) =>
+                                              selectedProduct.id ==
+                                              valueOrDefault<String>(
+                                                getJsonField(
+                                                  e,
+                                                  r'''$.id''',
+                                                )?.toString(),
+                                                '0',
+                                              ))
+                                          .toList()
+                                          .first,
+                                      r'''$.quantity''',
+                                    ),
+                                    0.0,
+                                  ))!) {
+                                if (FFAppState().holdBillCount == 0) {
+                                  FFAppState().holdBillCount =
+                                      FFAppState().holdBillCount + 1;
+                                  FFAppState().addToAllBillsList(
+                                      functions.generateBillDetailsJson(
+                                          0.0,
+                                          0.0,
+                                          0.0,
+                                          'CASH',
+                                          0.0,
+                                          0.0,
+                                          FFAppState().billAmt,
+                                          0.0,
+                                          FFAppState().finalAmt,
+                                          '0',
+                                          FFAppState().itemCartList.toList(),
+                                          FFAppState().holdBillCount));
+                                  FFAppState().selBill = 1;
+                                }
+                                _model.addtosavebill3d =
+                                    await actions.addToHoldListprdCopy(
+                                  selectedProduct,
+                                  FFAppState().selBill,
+                                  widget!.taxcollection!.toList(),
+                                  functions.enabletaxinclusive(widget
+                                      .appSettingsRecord.settingList
+                                      .where((e) =>
+                                          e.title == 'enableInclusiveTax')
+                                      .toList()
+                                      .first
+                                      .value),
+                                );
+                                _shouldSetState = true;
+                                _model.calculateResult1d =
+                                    await actions.calSubTotalForHoldList(
+                                  FFAppState().selBill.toString(),
+                                  _model.addtosavebill3d!.toList(),
+                                );
+                                _shouldSetState = true;
+                                _model.calbillAmt2sd = await actions.calBillAmt(
+                                  FFAppState().disAmt,
+                                  FFAppState().delCharges,
+                                );
+                                _shouldSetState = true;
+                                await _model.listViewprd?.animateTo(
+                                  _model.listViewprd!.position.maxScrollExtent,
+                                  duration: Duration(milliseconds: 100),
+                                  curve: Curves.ease,
+                                );
+                                _model.submitForm();
+                                FFAppState().update(() {});
 
-                              setState(() {});
-                              _productNameController.clear();
-                              await Future.delayed(Duration(milliseconds: 100));
-                              FocusScope.of(context).requestFocus(_focusNode);
-                              if (_shouldSetState) safeSetState(() {});
-                              return;
+                                setState(() {});
+                                _productNameController.clear();
+                                await Future.delayed(
+                                    Duration(milliseconds: 100));
+                                FocusScope.of(context).requestFocus(_focusNode);
+                                if (_shouldSetState) safeSetState(() {});
+                                return;
+                              } else {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      content: Text('Item Out Of Stock'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                                _model.submitForm();
+                                FFAppState().update(() {});
+
+                                setState(() {});
+                                _productNameController.clear();
+                                await Future.delayed(
+                                    Duration(milliseconds: 100));
+                                FocusScope.of(context).requestFocus(_focusNode);
+                                if (_shouldSetState) safeSetState(() {});
+                                return;
+                              }
                             }
+                          } else {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content: Text('Item Out Of Stock'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            _model.submitForm();
+                            FFAppState().update(() {});
+
+                            setState(() {});
+                            _productNameController.clear();
+                            await Future.delayed(Duration(milliseconds: 100));
+                            FocusScope.of(context).requestFocus(_focusNode);
+                            if (_shouldSetState) safeSetState(() {});
+                            return;
                           }
                         } else {
-                          await showDialog(
-                            context: context,
-                            builder: (alertDialogContext) {
-                              return AlertDialog(
-                                content: Text('Item Out Of Stock'),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () =>
-                                        Navigator.pop(alertDialogContext),
-                                    child: Text('Ok'),
-                                  ),
-                                ],
-                              );
-                            },
-                          );
-                          _model.submitForm();
-                          FFAppState().update(() {});
-
-                          setState(() {});
-                          _productNameController.clear();
-                          await Future.delayed(Duration(milliseconds: 100));
-                          FocusScope.of(context).requestFocus(_focusNode);
-                          if (_shouldSetState) safeSetState(() {});
-                          return;
-                        }
-                      } else {
-                        if (FFAppState().holdBillCount == 0) {
-                          FFAppState().holdBillCount =
-                              FFAppState().holdBillCount + 1;
-                          FFAppState().addToAllBillsList(
-                              functions.generateBillDetailsJson(
-                                  0.0,
-                                  0.0,
-                                  0.0,
-                                  'CASH',
-                                  0.0,
-                                  0.0,
-                                  FFAppState().billAmt,
-                                  0.0,
-                                  FFAppState().finalAmt,
-                                  '0',
-                                  FFAppState().itemCartList.toList(),
-                                  FFAppState().holdBillCount));
-                          FFAppState().selBill = 1;
-                        }
-                        _model.addtosavebill2 =
-                            await actions.addToHoldListprdCopy(
-                          selectedProduct,
-                          FFAppState().selBill,
-                          widget!.taxcollection!.toList(),
-                          functions.enabletaxinclusive(widget
-                              .appSettingsRecord.settingList
-                              .where((e) => e.title == 'enableInclusiveTax')
-                              .toList()
-                              .first
-                              .value),
-                        );
-                        _shouldSetState = true;
-                        _model.calculateResult23 =
-                            await actions.calSubTotalForHoldList(
-                          FFAppState().selBill.toString(),
-                          _model.addtosavebill2!.toList(),
-                        );
-                        _shouldSetState = true;
-                        _model.calbillAmt3 = await actions.calBillAmt(
-                          FFAppState().disAmt,
-                          FFAppState().delCharges,
-                        );
-                        _shouldSetState = true;
-                        _model.submitForm();
-                        FFAppState().update(() {});
-
-                        setState(() {});
-                        _productNameController.clear();
-                        await Future.delayed(Duration(milliseconds: 100));
-                        FocusScope.of(context).requestFocus(_focusNode);
-                        if (_shouldSetState) safeSetState(() {});
-                        FFAppState().update(() {});
-
-                        setState(() {});
-
-                        return;
-                      }
-                    }
-                  },
-                ),
-                suggestionsCallback: (pattern) {
-                  return widget.document.where((product) => product.name
-                      .toLowerCase()
-                      .contains(pattern.toLowerCase()));
-                },
-                itemBuilder: (context, ProductStructStruct product) {
-                  return ListTile(
-                    title: Text(product.name),
-                    subtitle:
-                        Text('\₹${product.sellingPrice.toStringAsFixed(2)}'),
-                  );
-                },
-                /* onSuggestionSelected: (ProductStructStruct document) async {
-                _productNameController.clear();
-                if (FFAppState().holdBillCount == 0) {
-                  FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                  FFAppState().addToAllBillsList(
-                      functions.generateBillDetailsJson(
-                          0.0,
-                          0.0,
-                          0.0,
-                          'CASH',
-                          0.0,
-                          0.0,
-                          FFAppState().billAmt,
-                          0.0,
-                          FFAppState().finalAmt,
-                          '0',
-                          FFAppState().itemCartList.toList(),
-                          FFAppState().holdBillCount));
-                  FFAppState().selBill = 1;
-                }
-                _model.addtosavebill = await actions.addToHoldListprdCopy(
-                  document,
-                  FFAppState().selBill,
-                  widget.taxcollection!.toList(),
-                  functions.enabletaxinclusive(
-                      widget.appSettingsRecord.inclusiveTax),
-                );
-                _model.calculateResult = await actions.calSubTotalForHoldList(
-                  FFAppState().selBill.toString(),
-                  _model.addtosavebill!.toList(),
-                );
-                _model.calbillAmt = await actions.calBillAmt(
-                  FFAppState().disAmt,
-                  FFAppState().delCharges,
-                );
-                await _model.listViewprd?.animateTo(
-                  _model.listViewprd!.position.maxScrollExtent,
-                  duration: Duration(milliseconds: 100),
-                  curve: Curves.ease,
-                );
-              },*/
-                onSuggestionSelected: (ProductStructStruct document) async {
-                  var _shouldSetState = false;
-                  if (document.stockable) {
-                    if (document.stock > 0) {
-                      if (FFAppState().prdid != document.id) {
-                        if (FFAppState().holdBillCount == 0) {
-                          FFAppState().holdBillCount =
-                              FFAppState().holdBillCount + 1;
-                          FFAppState().addToAllBillsList(
-                              functions.generateBillDetailsJson(
-                                  0.0,
-                                  0.0,
-                                  0.0,
-                                  'CASH',
-                                  0.0,
-                                  0.0,
-                                  FFAppState().billAmt,
-                                  0.0,
-                                  FFAppState().finalAmt,
-                                  '0',
-                                  FFAppState().itemCartList.toList(),
-                                  FFAppState().holdBillCount));
-                          FFAppState().selBill = 1;
-                        }
-                        _model.addtosavebill3 =
-                            await actions.addToHoldListprdCopy(
-                          document,
-                          FFAppState().selBill,
-                          widget!.taxcollection!.toList(),
-                          functions.enabletaxinclusive(widget
-                              .appSettingsRecord.settingList
-                              .where((e) => e.title == 'enableInclusiveTax')
-                              .toList()
-                              .first
-                              .value),
-                        );
-                        _shouldSetState = true;
-                        _model.calculateResult1 =
-                            await actions.calSubTotalForHoldList(
-                          FFAppState().selBill.toString(),
-                          _model.addtosavebill3!.toList(),
-                        );
-                        _shouldSetState = true;
-                        _model.calbillAmt2s = await actions.calBillAmt(
-                          FFAppState().disAmt,
-                          FFAppState().delCharges,
-                        );
-                        _shouldSetState = true;
-                        // _model.stockcheck = false;
-                        // widget.prdid = document.id;
-                        FFAppState().prdid = document.id;
-                        safeSetState(() {});
-                        await _model.listViewprd?.animateTo(
-                          _model.listViewprd!.position.maxScrollExtent,
-                          duration: Duration(milliseconds: 100),
-                          curve: Curves.ease,
-                        );
-                        if (_shouldSetState) safeSetState(() {});
-                        return;
-                      } else {
-                        if (document.stock >
-                            functions.doubleToInt(valueOrDefault<double>(
-                              getJsonField(
-                                functions
-                                    .filterBillList(FFAppState().selBill,
-                                        FFAppState().allBillsList.toList())
-                                    .where((e) =>
-                                        document.id ==
-                                        valueOrDefault<String>(
-                                          getJsonField(
-                                            e,
-                                            r'''$.id''',
-                                          )?.toString(),
-                                          '0',
-                                        ))
-                                    .toList()
-                                    .first,
-                                r'''$.quantity''',
-                              ),
-                              0.0,
-                            ))!) {
                           if (FFAppState().holdBillCount == 0) {
                             FFAppState().holdBillCount =
                                 FFAppState().holdBillCount + 1;
@@ -548,7 +383,95 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
                                     FFAppState().holdBillCount));
                             FFAppState().selBill = 1;
                           }
-                          _model.addtosavebill3d =
+                          _model.addtosavebill2 =
+                              await actions.addToHoldListprdCopy(
+                            selectedProduct,
+                            FFAppState().selBill,
+                            widget!.taxcollection!.toList(),
+                            functions.enabletaxinclusive(widget
+                                .appSettingsRecord.settingList
+                                .where((e) => e.title == 'enableInclusiveTax')
+                                .toList()
+                                .first
+                                .value),
+                          );
+                          _shouldSetState = true;
+                          _model.calculateResult23 =
+                              await actions.calSubTotalForHoldList(
+                            FFAppState().selBill.toString(),
+                            _model.addtosavebill2!.toList(),
+                          );
+                          _shouldSetState = true;
+                          _model.calbillAmt3 = await actions.calBillAmt(
+                            FFAppState().disAmt,
+                            FFAppState().delCharges,
+                          );
+                          _shouldSetState = true;
+                          _model.submitForm();
+                          FFAppState().update(() {});
+
+                          setState(() {});
+                          _productNameController.clear();
+                          await Future.delayed(Duration(milliseconds: 100));
+                          FocusScope.of(context).requestFocus(_focusNode);
+                          if (_shouldSetState) safeSetState(() {});
+                          FFAppState().update(() {});
+
+                          setState(() {});
+
+                          return;
+                        }
+                      }
+                    },
+                  ),
+                  suggestionsCallback: (pattern) {
+                    _filteredProducts = widget.document
+                        .where((product) => product.name
+                            .toLowerCase()
+                            .contains(pattern.toLowerCase()))
+                        .toList();
+                    return _filteredProducts;
+                  },
+                  itemBuilder: (context, ProductStructStruct product) {
+                    final index = _filteredProducts.indexOf(product);
+                    final isSelected = index == _selectedIndex;
+                    return ListTile(
+                      title: Text(product.name),
+                      subtitle: Text(
+                        '₹${product.sellingPrice.toStringAsFixed(2)}  Stock: ${product.stock.toStringAsFixed(2)}',
+                        style: TextStyle(
+                            color:
+                                product.stockable ? Colors.red : Colors.black),
+                      ),
+                      tileColor:
+                          isSelected ? Colors.blue.withOpacity(0.2) : null,
+                    );
+                  },
+                  onSuggestionSelected: (ProductStructStruct document) async {
+                    var _shouldSetState = false;
+                    if (document.stockable) {
+                      if (document.stock > 0) {
+                        if (FFAppState().prdid != document.id) {
+                          if (FFAppState().holdBillCount == 0) {
+                            FFAppState().holdBillCount =
+                                FFAppState().holdBillCount + 1;
+                            FFAppState().addToAllBillsList(
+                                functions.generateBillDetailsJson(
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    'CASH',
+                                    0.0,
+                                    0.0,
+                                    FFAppState().billAmt,
+                                    0.0,
+                                    FFAppState().finalAmt,
+                                    '0',
+                                    FFAppState().itemCartList.toList(),
+                                    FFAppState().holdBillCount));
+                            FFAppState().selBill = 1;
+                          }
+                          _model.addtosavebill3 =
                               await actions.addToHoldListprdCopy(
                             document,
                             FFAppState().selBill,
@@ -561,17 +484,21 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
                                 .value),
                           );
                           _shouldSetState = true;
-                          _model.calculateResult1d =
+                          _model.calculateResult1 =
                               await actions.calSubTotalForHoldList(
                             FFAppState().selBill.toString(),
-                            _model.addtosavebill3d!.toList(),
+                            _model.addtosavebill3!.toList(),
                           );
                           _shouldSetState = true;
-                          _model.calbillAmt2sd = await actions.calBillAmt(
+                          _model.calbillAmt2s = await actions.calBillAmt(
                             FFAppState().disAmt,
                             FFAppState().delCharges,
                           );
                           _shouldSetState = true;
+                          // _model.stockcheck = false;
+                          // widget.prdid = document.id;
+                          FFAppState().prdid = document.id;
+                          safeSetState(() {});
                           await _model.listViewprd?.animateTo(
                             _model.listViewprd!.position.maxScrollExtent,
                             duration: Duration(milliseconds: 100),
@@ -580,105 +507,193 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
                           if (_shouldSetState) safeSetState(() {});
                           return;
                         } else {
-                          await showDialog(
-                            context: context,
-                            builder: (alertDialogContext) {
-                              return AlertDialog(
-                                content: Text('Item Out Of Stock'),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () =>
-                                        Navigator.pop(alertDialogContext),
-                                    child: Text('Ok'),
-                                  ),
-                                ],
-                              );
-                            },
-                          );
-                          if (_shouldSetState) safeSetState(() {});
-                          return;
+                          if (document.stock >
+                              functions.doubleToInt(valueOrDefault<double>(
+                                getJsonField(
+                                  functions
+                                      .filterBillList(FFAppState().selBill,
+                                          FFAppState().allBillsList.toList())
+                                      .where((e) =>
+                                          document.id ==
+                                          valueOrDefault<String>(
+                                            getJsonField(
+                                              e,
+                                              r'''$.id''',
+                                            )?.toString(),
+                                            '0',
+                                          ))
+                                      .toList()
+                                      .first,
+                                  r'''$.quantity''',
+                                ),
+                                0.0,
+                              ))!) {
+                            if (FFAppState().holdBillCount == 0) {
+                              FFAppState().holdBillCount =
+                                  FFAppState().holdBillCount + 1;
+                              FFAppState().addToAllBillsList(
+                                  functions.generateBillDetailsJson(
+                                      0.0,
+                                      0.0,
+                                      0.0,
+                                      'CASH',
+                                      0.0,
+                                      0.0,
+                                      FFAppState().billAmt,
+                                      0.0,
+                                      FFAppState().finalAmt,
+                                      '0',
+                                      FFAppState().itemCartList.toList(),
+                                      FFAppState().holdBillCount));
+                              FFAppState().selBill = 1;
+                            }
+                            _model.addtosavebill3d =
+                                await actions.addToHoldListprdCopy(
+                              document,
+                              FFAppState().selBill,
+                              widget!.taxcollection!.toList(),
+                              functions.enabletaxinclusive(widget
+                                  .appSettingsRecord.settingList
+                                  .where((e) => e.title == 'enableInclusiveTax')
+                                  .toList()
+                                  .first
+                                  .value),
+                            );
+                            _shouldSetState = true;
+                            _model.calculateResult1d =
+                                await actions.calSubTotalForHoldList(
+                              FFAppState().selBill.toString(),
+                              _model.addtosavebill3d!.toList(),
+                            );
+                            _shouldSetState = true;
+                            _model.calbillAmt2sd = await actions.calBillAmt(
+                              FFAppState().disAmt,
+                              FFAppState().delCharges,
+                            );
+                            _shouldSetState = true;
+                            await _model.listViewprd?.animateTo(
+                              _model.listViewprd!.position.maxScrollExtent,
+                              duration: Duration(milliseconds: 100),
+                              curve: Curves.ease,
+                            );
+                            if (_shouldSetState) safeSetState(() {});
+                            return;
+                          } else {
+                            await showDialog(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  content: Text('Item Out Of Stock'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                            if (_shouldSetState) safeSetState(() {});
+                            return;
+                          }
                         }
+                      } else {
+                        await showDialog(
+                          context: context,
+                          builder: (alertDialogContext) {
+                            return AlertDialog(
+                              content: Text('Item Out Of Stock'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext),
+                                  child: Text('Ok'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                        if (_shouldSetState) safeSetState(() {});
+                        return;
                       }
                     } else {
-                      await showDialog(
-                        context: context,
-                        builder: (alertDialogContext) {
-                          return AlertDialog(
-                            content: Text('Item Out Of Stock'),
-                            actions: [
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(alertDialogContext),
-                                child: Text('Ok'),
-                              ),
-                            ],
-                          );
-                        },
+                      if (FFAppState().holdBillCount == 0) {
+                        FFAppState().holdBillCount =
+                            FFAppState().holdBillCount + 1;
+                        FFAppState().addToAllBillsList(
+                            functions.generateBillDetailsJson(
+                                0.0,
+                                0.0,
+                                0.0,
+                                'CASH',
+                                0.0,
+                                0.0,
+                                FFAppState().billAmt,
+                                0.0,
+                                FFAppState().finalAmt,
+                                '0',
+                                FFAppState().itemCartList.toList(),
+                                FFAppState().holdBillCount));
+                        FFAppState().selBill = 1;
+                      }
+                      _model.addtosavebill2 =
+                          await actions.addToHoldListprdCopy(
+                        document,
+                        FFAppState().selBill,
+                        widget!.taxcollection!.toList(),
+                        functions.enabletaxinclusive(widget
+                            .appSettingsRecord.settingList
+                            .where((e) => e.title == 'enableInclusiveTax')
+                            .toList()
+                            .first
+                            .value),
+                      );
+                      _shouldSetState = true;
+                      _model.calculateResult23 =
+                          await actions.calSubTotalForHoldList(
+                        FFAppState().selBill.toString(),
+                        _model.addtosavebill2!.toList(),
+                      );
+                      _shouldSetState = true;
+                      _model.calbillAmt3 = await actions.calBillAmt(
+                        FFAppState().disAmt,
+                        FFAppState().delCharges,
+                      );
+                      _shouldSetState = true;
+                      await _model.listViewprd?.animateTo(
+                        _model.listViewprd!.position.maxScrollExtent,
+                        duration: Duration(milliseconds: 100),
+                        curve: Curves.ease,
                       );
                       if (_shouldSetState) safeSetState(() {});
+                      FFAppState().update(() {});
+
+                      setState(() {});
                       return;
                     }
-                  } else {
-                    if (FFAppState().holdBillCount == 0) {
-                      FFAppState().holdBillCount =
-                          FFAppState().holdBillCount + 1;
-                      FFAppState().addToAllBillsList(
-                          functions.generateBillDetailsJson(
-                              0.0,
-                              0.0,
-                              0.0,
-                              'CASH',
-                              0.0,
-                              0.0,
-                              FFAppState().billAmt,
-                              0.0,
-                              FFAppState().finalAmt,
-                              '0',
-                              FFAppState().itemCartList.toList(),
-                              FFAppState().holdBillCount));
-                      FFAppState().selBill = 1;
-                    }
-                    _model.addtosavebill2 = await actions.addToHoldListprdCopy(
-                      document,
-                      FFAppState().selBill,
-                      widget!.taxcollection!.toList(),
-                      functions.enabletaxinclusive(widget
-                          .appSettingsRecord.settingList
-                          .where((e) => e.title == 'enableInclusiveTax')
-                          .toList()
-                          .first
-                          .value),
-                    );
-                    _shouldSetState = true;
-                    _model.calculateResult23 =
-                        await actions.calSubTotalForHoldList(
-                      FFAppState().selBill.toString(),
-                      _model.addtosavebill2!.toList(),
-                    );
-                    _shouldSetState = true;
-                    _model.calbillAmt3 = await actions.calBillAmt(
-                      FFAppState().disAmt,
-                      FFAppState().delCharges,
-                    );
-                    _shouldSetState = true;
-                    await _model.listViewprd?.animateTo(
-                      _model.listViewprd!.position.maxScrollExtent,
-                      duration: Duration(milliseconds: 100),
-                      curve: Curves.ease,
-                    );
+
                     if (_shouldSetState) safeSetState(() {});
-                    FFAppState().update(() {});
-
-                    setState(() {});
-                    return;
-                  }
-
-                  if (_shouldSetState) safeSetState(() {});
-                }),
+                  }),
+            ),
           ),
         ),
       ],
     );
+  }
+
+  void _refreshSuggestionsBox() {
+    _suggestionsBoxController.close();
+    Future.delayed(Duration(milliseconds: 50), () {
+      _suggestionsBoxController.open();
+    });
+  }
+
+  void _handleSuggestionSelected(ProductStructStruct suggestion) {
+    _productNameController.text = suggestion.name;
+    _selectedIndex = -1; // Reset selection
+    _suggestionsBoxController.close();
+    FocusScope.of(context).requestFocus(_focusNode); // Keep focus
   }
 }
 

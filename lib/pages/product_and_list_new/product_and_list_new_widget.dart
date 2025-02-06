@@ -344,8 +344,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
           LogicalKeyboardKey.space,
         ): VoidCallbackIntent(() async {
           var _shouldSetState = false;
-          _model.flag = true;
-          safeSetState(() {});
           if ((functions
                   .filterBillList(
                       FFAppState().selBill, FFAppState().allBillsList.toList())
@@ -994,6 +992,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
               await actions.removeFromAllBillList(
                 FFAppState().selBill,
               );
+              _model.flag = true;
+              safeSetState(() {});
               safeSetState(() {
                 _model.dropDownValueController?.value = 'CASH';
               });
