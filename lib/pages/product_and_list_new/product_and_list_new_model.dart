@@ -22,6 +22,7 @@ import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -72,6 +73,7 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final shortcutsFocusNode = FocusNode();
   // Stores action output result for [Custom Action - getProductlistHive] action in ProductAndListNew widget.
   List<ProductStructStruct>? hiveProductList;
   // Stores action output result for [Custom Action - getCategorylistHive] action in ProductAndListNew widget.
@@ -80,6 +82,42 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   bool? resDevice2Copy;
   // Stores action output result for [Custom Action - connectDevice] action in ProductAndListNew widget.
   bool? isConnected;
+  // Stores action output result for [Custom Action - filterProducts2] action in ProductAndListNew widget.
+  List<SelItemListStruct>? prdlinstnewtxCopy;
+  // Stores action output result for [Custom Action - oldbalanceplusamt] action in ProductAndListNew widget.
+  int? totalcreditCopy;
+  // Stores action output result for [Custom Action - checkInternetConnection] action in ProductAndListNew widget.
+  bool? interprdCopy;
+  // Stores action output result for [Backend Call - Create Document] action in ProductAndListNew widget.
+  InvoiceRecord? invonlineprtCopy;
+  // Stores action output result for [Custom Action - addInvoiceBillhive] action in ProductAndListNew widget.
+  InvoiceStructStruct? hiveInvoiceDataCopy;
+  // Stores action output result for [Custom Action - calShiftSummaryNew] action in ProductAndListNew widget.
+  dynamic? shiftSummarResultsNewCopy;
+  // Stores action output result for [Firestore Query - Query a collection] action in ProductAndListNew widget.
+  ShiftRecord? shiftondataprintCopy;
+  // Stores action output result for [Custom Action - hiveShiftCrud] action in ProductAndListNew widget.
+  ShiftDetailsStruct? updatedShiftDetailsCopy;
+  // Stores action output result for [Custom Action - scanPrinter] action in ProductAndListNew widget.
+  bool? resDevice2Copy2;
+  // Stores action output result for [Custom Action - connectDevice] action in ProductAndListNew widget.
+  bool? isconnectedCopy;
+  // Stores action output result for [Firestore Query - Query a collection] action in ProductAndListNew widget.
+  OutletRecord? outletdocenter;
+  // Stores action output result for [Custom Action - selectBillPrint] action in ProductAndListNew widget.
+  List<dynamic>? returnedList2Copy;
+  // Stores action output result for [Custom Action - newCustomAction] action in ProductAndListNew widget.
+  List<dynamic>? deviceCopy;
+  // Stores action output result for [Firestore Query - Query a collection] action in ProductAndListNew widget.
+  List<ServicePointOutletRecord>? spoutletCopy;
+  // Stores action output result for [Firestore Query - Query a collection] action in ProductAndListNew widget.
+  ProductRecord? stockupdateprdprtCopy;
+  // Stores action output result for [Custom Action - hivegetproductbyId] action in ProductAndListNew widget.
+  ProductStructStruct? itemprd2Copy;
+  // Stores action output result for [Custom Action - hiveProductCrud] action in ProductAndListNew widget.
+  ProductStructStruct? productupdated2Copy;
+  // Stores action output result for [Custom Action - getProductlistHive] action in ProductAndListNew widget.
+  List<ProductStructStruct>? newupdatedproductlist22Copy;
   // Model for MenuDrawer component.
   late MenuDrawerModel menuDrawerModel;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
@@ -238,6 +276,7 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
 
   @override
   void initState(BuildContext context) {
+    shortcutsFocusNode.requestFocus();
     menuDrawerModel = createModel(context, () => MenuDrawerModel());
     listViewController1 = ScrollController();
     listViewController2 = ScrollController();
