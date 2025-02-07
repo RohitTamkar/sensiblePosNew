@@ -1257,7 +1257,7 @@ class _KioskCartdineinparcelWidgetState
                                                   Text(
                                                     (FFAppState().delCharges *
                                                             FFAppState()
-                                                                .noOfItems)
+                                                                .parcelqty)
                                                         .toString(),
                                                     style: FlutterFlowTheme.of(
                                                             context)

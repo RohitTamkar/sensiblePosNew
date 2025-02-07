@@ -3528,6 +3528,12 @@ class FFAppState extends ChangeNotifier {
     _directory = value;
     prefs.setString('ff_directory', value);
   }
+
+  int _parcelqty = 0;
+  int get parcelqty => _parcelqty;
+  set parcelqty(int value) {
+    _parcelqty = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {
