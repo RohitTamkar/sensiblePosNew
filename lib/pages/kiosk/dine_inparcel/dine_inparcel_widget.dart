@@ -134,6 +134,8 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
         iconColor: FlutterFlowTheme.of(context).primaryText,
         iconSize: 16.0,
         elevation: 0.0,
+        borderColor: FlutterFlowTheme.of(context).accent2,
+        borderWidth: 0.5,
         borderRadius: BorderRadius.circular(8.0),
       ),
       chipSpacing: 8.0,
