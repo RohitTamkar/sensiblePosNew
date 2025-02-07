@@ -114,7 +114,6 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
           );
         } else {
           FFAppState().orderType = _model.choiceChipsValue!;
-          FFAppState().delCharges = 0.0;
           safeSetState(() {});
           await actions.calSubTotalkioskparcelcharge(
             FFAppState().selBill.toString(),
