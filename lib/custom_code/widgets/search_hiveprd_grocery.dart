@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom widgets
+
 import 'package:flutter/services.dart';
 
 import 'index.dart'; // Imports other custom widgets
@@ -179,7 +181,7 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
 
                         var _shouldSetState = false;
                         if (selectedProduct.stockable) {
-                          if (selectedProduct.stock > 0) {
+                          if (selectedProduct.stock > 0 || widget.purchase) {
                             if (FFAppState().prdid != selectedProduct.id) {
                               ///////////////////////////////////////////////////
                               if (FFAppState().holdBillCount == 0) {

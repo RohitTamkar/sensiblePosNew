@@ -71,6 +71,20 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
         FFAppState().orderType = _model.choiceChipsValue!;
         safeSetState(() {});
         if ('PARCEL' == widget!.parameter4?.toString()) {
+          await showDialog(
+            context: context,
+            builder: (alertDialogContext) {
+              return AlertDialog(
+                content: Text('PARCEL'),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(alertDialogContext),
+                    child: Text('Ok'),
+                  ),
+                ],
+              );
+            },
+          );
           FFAppState().delCharges = widget!.parameter5!;
           safeSetState(() {});
           _model.ddr4Copy = await actions.calSubTotalForHoldListkiosk2(
