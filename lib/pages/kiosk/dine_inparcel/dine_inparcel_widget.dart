@@ -93,6 +93,10 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
             functions.enabletaxinclusive(widget!.parameter2!),
             widget!.parameter3!,
             _model.choiceChipsValue!,
+            getJsonField(
+              widget!.parameter4,
+              r'''$''',
+            ),
           );
           _model.reusltddrCopy = await actions.calBillAmt2(
             valueOrDefault<double>(
@@ -112,6 +116,10 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
             functions.enabletaxinclusive(widget!.parameter2!),
             widget!.parameter3!,
             _model.choiceChipsValue!,
+            getJsonField(
+              widget!.parameter4,
+              r'''$''',
+            ),
           );
           _model.reusltddr67Copy = await actions.calBillAmt2(
             valueOrDefault<double>(

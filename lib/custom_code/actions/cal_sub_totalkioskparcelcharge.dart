@@ -17,6 +17,7 @@ Future<double> calSubTotalkioskparcelcharge(
   String inclusiveorexclusive,
   bool qtywiseparcelcharge,
   String ordertype,
+  dynamic listitem,
 ) async {
   double total = 0;
   double qty = 0;
