@@ -20717,6 +20717,93 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
+  // KioskCartdineinparcel
+  {
+    '56q92wzw': {
+      'en': 'Confirm Your Order',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'nl10icnc': {
+      'en': 'DINE IN',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'o4la9hrp': {
+      'en': 'PARCEL',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '5jpzrnln': {
+      'en': '₹ ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'nsx9qh4i': {
+      'en': 'Sub Total :',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'tuv50kbd': {
+      'en': '₹ ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'mp73i02j': {
+      'en': 'Proceed to Razorpay for payment',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'zmg9b5ie': {
+      'en': 'Cancel Order',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    't2xpr04x': {
+      'en': 'Parcel Charges:₹ ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'e6mvt3qa': {
+      'en': '₹ ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'vt3u56og': {
+      'en': 'Proceed to Payment',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '3oa1dxxu': {
+      'en': 'Home',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
   // OutletDetailsHeader
   {
     'dk8fulps': {
@@ -25337,6 +25424,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'snwhhnio': {
       'en': 'Print [Enter]',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
+  // dineInparcel
+  {
+    '2xviwxya': {
+      'en': 'DINE IN',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'cw9x8dee': {
+      'en': 'PARCEL',
       'hi': '',
       'kn': '',
       'mr': '',

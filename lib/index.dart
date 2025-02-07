@@ -178,3 +178,5 @@ export '/grocery_windows/credit_payment_page_copy/credit_payment_page_copy_widge
     show CreditPaymentPageCopyWidget;
 export '/pages/kiosk/kiosk_choose_payment_mode_copy/kiosk_choose_payment_mode_copy_widget.dart'
     show KioskChoosePaymentModeCopyWidget;
+export '/pages/kiosk/kiosk_cartdineinparcel/kiosk_cartdineinparcel_widget.dart'
+    show KioskCartdineinparcelWidget;

@@ -1921,7 +1921,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                   safeSetState(() {});
 
                                   context.goNamed(
-                                    'KioskCart',
+                                    'KioskCartdineinparcel',
                                     queryParameters: {
                                       'doc': serializeParam(
                                         widget!.doc,
