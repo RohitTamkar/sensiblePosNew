@@ -159,7 +159,7 @@ class _KioskCartdineinparcelWidgetState
                                       child: KioskHeaderWidget(),
                                     ),
                                   ),
-                                  Expanded(
+                                  Flexible(
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
