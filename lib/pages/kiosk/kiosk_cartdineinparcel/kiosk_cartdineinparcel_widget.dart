@@ -587,7 +587,7 @@ class _KioskCartdineinparcelWidgetState
                                                                   ),
                                                                 ),
                                                               ),
-                                                              Expanded(
+                                                              Flexible(
                                                                 flex: 8,
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
