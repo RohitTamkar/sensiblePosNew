@@ -1453,7 +1453,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                         .firstOrNull!,
                                                                                     FFAppState().selBill,
                                                                                   );
-                                                                                  await actions.calSubTotalForHoldListkiosk2(
+                                                                                  _model.ssssss = await actions.calSubTotalForHoldListkiosk2(
                                                                                     FFAppState().selBill.toString(),
                                                                                     FFAppState().allBillsList.toList(),
                                                                                     functions.enabletaxinclusive(valueOrDefault<bool>(
@@ -1691,6 +1691,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                 await actions.clearValue();
                                 FFAppState().subTotal = 0.0;
                                 FFAppState().parcelqty = 0;
+                                FFAppState().delCharges = 0.0;
                                 FFAppState().update(() {});
                                 FFAppState().finalAmt = 0.0;
                                 FFAppState().billAmt = 0.0;

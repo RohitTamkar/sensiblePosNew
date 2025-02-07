@@ -1090,6 +1090,10 @@ class _KioskCartdineinparcelWidgetState
                                               await actions.clearValue();
                                               FFAppState().subTotal = 0.0;
                                               FFAppState().parcelqty = 0;
+                                              FFAppState().delCharges = 0.0;
+                                              FFAppState().update(() {});
+                                              FFAppState().subTotal = 0.0;
+                                              FFAppState().parcelqty = 0;
                                               FFAppState().update(() {});
                                               FFAppState().finalAmt = 0.0;
                                               FFAppState().billAmt = 0.0;
