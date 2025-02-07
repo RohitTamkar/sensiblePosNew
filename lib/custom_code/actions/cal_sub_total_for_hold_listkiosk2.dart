@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<double> calSubTotalForHoldListkiosk2(
   String billNo,
   List<dynamic> allBillList,
@@ -21,48 +23,52 @@ Future<double> calSubTotalForHoldListkiosk2(
   double qty = 0;
   double tax = 0;
   double delCharges = 0;
+  double parcelQty = 0;
 
-//  print(obj.length);
   List<dynamic> itemList = [];
   if (allBillList.isNotEmpty) {
     for (int i = 0; i < allBillList.length; i++) {
-      print(allBillList[i]["billno"]);
       if (allBillList[i]["billno"].toString() == billNo) {
-        if (allBillList[i]["details"]["itemList"].length >= 0) {
-          itemList = (allBillList[i]["details"]["itemList"]);
-          if (itemList.isNotEmpty) {
-            for (int i = 0; i < itemList.length; i++) {
-              tax += itemList[i]["taxAmt"];
-              //tax = 0;
-              double tax2 = itemList[i]["taxAmt"];
-              if (inclusiveorexclusive.toLowerCase() == 'exclusive') {
-                if (itemList[i]["taxPer"] > 0.0) {
-                  total +=
-                      itemList[i]["quantity"] * itemList[i]["price"] + tax2;
-                } else {
-                  total += itemList[i]["quantity"] * itemList[i]["price"];
-                }
-              } else {
-                total += itemList[i]["quantity"] * itemList[i]["price"];
-              }
-              // total += itemList[i]["total"];
-              if (qtywiseparcelcharge) {
-                delCharges = itemList[i]["quantity"] * FFAppState().delCharges;
-                total += delCharges;
-              }
-              qty += itemList[i]["quantity"];
+        if (allBillList[i]["details"]["itemList"].isNotEmpty) {
+          itemList = allBillList[i]["details"]["itemList"];
 
-              print("total");
-              print(total);
+          for (var item in itemList) {
+            double itemTax = item["taxAmt"] ?? 0.0;
+            double itemTotal = item["quantity"] * item["price"];
+
+            // Apply tax for exclusive pricing
+            if (inclusiveorexclusive.toLowerCase() == 'exclusive' &&
+                (item["taxPer"] ?? 0.0) > 0.0) {
+              itemTotal += itemTax;
+            }
+
+            total += itemTotal;
+            tax += itemTax;
+            qty += item["quantity"];
+
+            // Handle Parcel Charges
+            if (qtywiseparcelcharge && item["ordertype"] == 'PARCEL') {
+              delCharges += item["quantity"] * FFAppState().delCharges;
+              parcelQty += item["quantity"];
             }
           }
-          FFAppState().subTotal = total.toDouble();
-          FFAppState().taxamt = tax.toDouble();
-          FFAppState().billAmt = total.toDouble();
-          FFAppState().totalQuantity = qty.toDouble();
+
+          // Update total after adding parcel charges
+          total += delCharges;
+          FFAppState().update(() {});
+
+          // Update App State
+          FFAppState().subTotal = total;
+          FFAppState().taxamt = tax;
+          FFAppState().billAmt = total;
+          FFAppState().totalQuantity = qty;
+
+          // Ensure FFAppState().parcelqty is correctly updated
           if (qtywiseparcelcharge) {
+            FFAppState().parcelqty = parcelQty.toInt();
             FFAppState().noOfItems = qty.toInt();
           } else {
+            FFAppState().parcelqty = 0;
             FFAppState().noOfItems = itemList.length;
           }
           break;
