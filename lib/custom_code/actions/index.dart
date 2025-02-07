@@ -42,6 +42,7 @@ export 'new_custom_action3_copy.dart' show newCustomAction3Copy;
 export 'cal_sub_total_copy.dart' show calSubTotalCopy;
 export 'get_platform_details.dart' show getPlatformDetails;
 export 'cal_shift_summary_new.dart' show calShiftSummaryNew;
+export 'cal_sub_totalkioskparcelcharge.dart' show calSubTotalkioskparcelcharge;
 export 'print_bill_data.dart' show printBillData;
 export 'platform_validate.dart' show platformValidate;
 export 'add_to_list_copy.dart' show addToListCopy;

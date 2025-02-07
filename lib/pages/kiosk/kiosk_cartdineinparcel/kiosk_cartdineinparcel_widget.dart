@@ -517,7 +517,7 @@ class _KioskCartdineinparcelWidgetState
                                                                                     parameter3: widget!.appsetting?.settingList?.where((e) => e.title == 'qtyWiseParcelCharges').toList()?.firstOrNull?.value,
                                                                                     parameter4: getJsonField(
                                                                                       listviewItem,
-                                                                                      r'''$.ordertype''',
+                                                                                      r'''$''',
                                                                                     ),
                                                                                     parameter5: kioskCartdineinparcelFooterRecord?.parcelCharges,
                                                                                   ),

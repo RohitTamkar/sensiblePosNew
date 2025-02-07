@@ -87,11 +87,12 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
           );
           FFAppState().delCharges = widget!.parameter5!;
           safeSetState(() {});
-          _model.ddr4Copy = await actions.calSubTotalForHoldListkiosk2(
+          await actions.calSubTotalkioskparcelcharge(
             FFAppState().selBill.toString(),
             FFAppState().allBillsList.toList(),
             functions.enabletaxinclusive(widget!.parameter2!),
             widget!.parameter3!,
+            _model.choiceChipsValue!,
           );
           _model.reusltddrCopy = await actions.calBillAmt2(
             valueOrDefault<double>(
@@ -105,11 +106,12 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
           FFAppState().orderType = _model.choiceChipsValue!;
           FFAppState().delCharges = 0.0;
           safeSetState(() {});
-          _model.ddr45Copy = await actions.calSubTotalForHoldListkiosk2(
+          await actions.calSubTotalkioskparcelcharge(
             FFAppState().selBill.toString(),
             FFAppState().allBillsList.toList(),
             functions.enabletaxinclusive(widget!.parameter2!),
             widget!.parameter3!,
+            _model.choiceChipsValue!,
           );
           _model.reusltddr67Copy = await actions.calBillAmt2(
             valueOrDefault<double>(
@@ -163,7 +165,7 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
         [
           getJsonField(
             widget!.parameter4,
-            r'''$''',
+            r'''$.ordertype''',
           ).toString()
         ],
       ),
