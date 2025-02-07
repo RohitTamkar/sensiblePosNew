@@ -1024,7 +1024,7 @@ class _KioskCartdineinparcelWidgetState
                                                                               Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
-                                                                                  Expanded(
+                                                                                  Flexible(
                                                                                     child: DineInparcelWidget(
                                                                                       key: Key('Keyw3i_${listviewIndex}_of_${listview.length}'),
                                                                                       parameter2: valueOrDefault<bool>(
