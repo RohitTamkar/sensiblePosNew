@@ -263,7 +263,7 @@ class _KioskCartdineinparcelWidgetState
                                     height: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Color(0xFFF0FFF0),
-                                      borderRadius: BorderRadius.circular(40.0),
+                                      borderRadius: BorderRadius.circular(10.0),
                                       border: Border.all(
                                         color: Color(0xFF61D36B),
                                       ),
@@ -276,7 +276,7 @@ class _KioskCartdineinparcelWidgetState
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    25.0, 25.0, 25.0, 75.0),
+                                                    10.0, 10.0, 10.0, 75.0),
                                             child: Builder(
                                               builder: (context) {
                                                 final listview = functions
@@ -380,7 +380,7 @@ class _KioskCartdineinparcelWidgetState
                                                                 ),
                                                               ),
                                                               Expanded(
-                                                                flex: 6,
+                                                                flex: 8,
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
@@ -422,7 +422,7 @@ class _KioskCartdineinparcelWidgetState
                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                                                                                       child: Text(
                                                                                         valueOrDefault<String>(
                                                                                           functions.returnTitlecase(getJsonField(
@@ -446,7 +446,7 @@ class _KioskCartdineinparcelWidgetState
                                                                                       false,
                                                                                     ))
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                                                                                         child: Text(
                                                                                           getJsonField(
                                                                                             listviewItem,
@@ -463,45 +463,64 @@ class _KioskCartdineinparcelWidgetState
                                                                                       ),
                                                                                   ],
                                                                                 ),
-                                                                                RichText(
-                                                                                  textScaler: MediaQuery.of(context).textScaler,
-                                                                                  text: TextSpan(
-                                                                                    children: [
-                                                                                      TextSpan(
-                                                                                        text: FFLocalizations.of(context).getText(
-                                                                                          '5jpzrnln' /* ₹  */,
+                                                                                Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                                                                                  child: RichText(
+                                                                                    textScaler: MediaQuery.of(context).textScaler,
+                                                                                    text: TextSpan(
+                                                                                      children: [
+                                                                                        TextSpan(
+                                                                                          text: FFLocalizations.of(context).getText(
+                                                                                            '5jpzrnln' /* ₹  */,
+                                                                                          ),
+                                                                                          style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                                color: Color(0xFF0046D3),
+                                                                                                fontSize: 13.0,
+                                                                                                letterSpacing: 0.0,
+                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
+                                                                                              ),
                                                                                         ),
-                                                                                        style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
-                                                                                              color: Color(0xFF0046D3),
-                                                                                              fontSize: 13.0,
-                                                                                              letterSpacing: 0.0,
-                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
-                                                                                            ),
-                                                                                      ),
-                                                                                      TextSpan(
-                                                                                        text: getJsonField(
-                                                                                          listviewItem,
-                                                                                          r'''$.price''',
-                                                                                        ).toString(),
-                                                                                        style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
-                                                                                              color: Color(0xFF0046D3),
-                                                                                              fontSize: 14.0,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w600,
-                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
-                                                                                            ),
-                                                                                      )
-                                                                                    ],
-                                                                                    style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
-                                                                                          color: Color(0xFF0046D3),
-                                                                                          letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
-                                                                                        ),
+                                                                                        TextSpan(
+                                                                                          text: getJsonField(
+                                                                                            listviewItem,
+                                                                                            r'''$.price''',
+                                                                                          ).toString(),
+                                                                                          style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                                color: Color(0xFF0046D3),
+                                                                                                fontSize: 14.0,
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FontWeight.w600,
+                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
+                                                                                              ),
+                                                                                        )
+                                                                                      ],
+                                                                                      style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                            color: Color(0xFF0046D3),
+                                                                                            letterSpacing: 0.0,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
+                                                                                          ),
+                                                                                    ),
+                                                                                    textAlign: TextAlign.start,
                                                                                   ),
-                                                                                  textAlign: TextAlign.start,
+                                                                                ),
+                                                                                Container(
+                                                                                  decoration: BoxDecoration(),
+                                                                                  child: DineInparcelWidget(
+                                                                                    key: Key('Keyw3i_${listviewIndex}_of_${listview.length}'),
+                                                                                    parameter2: valueOrDefault<bool>(
+                                                                                      widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
+                                                                                      false,
+                                                                                    ),
+                                                                                    parameter3: widget!.appsetting?.settingList?.where((e) => e.title == 'qtyWiseParcelCharges').toList()?.firstOrNull?.value,
+                                                                                    parameter4: getJsonField(
+                                                                                      listviewItem,
+                                                                                      r'''$.ordertype''',
+                                                                                    ),
+                                                                                    parameter5: kioskCartdineinparcelFooterRecord?.parcelCharges,
+                                                                                  ),
                                                                                 ),
                                                                               ],
                                                                             ),
@@ -516,10 +535,10 @@ class _KioskCartdineinparcelWidgetState
                                                                               CrossAxisAlignment.end,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 25.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                                                                               child: Container(
                                                                                 width: 170.0,
-                                                                                height: MediaQuery.sizeOf(context).height * 0.033,
+                                                                                height: MediaQuery.sizeOf(context).height * 0.028,
                                                                                 decoration: BoxDecoration(
                                                                                   color: Color(0xFFC6E88C),
                                                                                   borderRadius: BorderRadius.only(
@@ -587,12 +606,11 @@ class _KioskCartdineinparcelWidgetState
                                                                                             r'''$.quantity''',
                                                                                           ).toString(),
                                                                                           textAlign: TextAlign.center,
-                                                                                          style: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
-                                                                                                fontSize: 15.0,
+                                                                                          style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                                fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w600,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
+                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                               ),
                                                                                         ),
                                                                                       ),
@@ -808,24 +826,6 @@ class _KioskCartdineinparcelWidgetState
 
                                                                                     safeSetState(() {});
                                                                                   },
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                            Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              children: [
-                                                                                DineInparcelWidget(
-                                                                                  key: Key('Keyw3i_${listviewIndex}_of_${listview.length}'),
-                                                                                  parameter2: valueOrDefault<bool>(
-                                                                                    widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
-                                                                                    false,
-                                                                                  ),
-                                                                                  parameter3: widget!.appsetting?.settingList?.where((e) => e.title == 'qtyWiseParcelCharges').toList()?.firstOrNull?.value,
-                                                                                  parameter4: getJsonField(
-                                                                                    listviewItem,
-                                                                                    r'''$.ordertype''',
-                                                                                  ),
-                                                                                  parameter5: kioskCartdineinparcelFooterRecord?.parcelCharges,
                                                                                 ),
                                                                               ],
                                                                             ),

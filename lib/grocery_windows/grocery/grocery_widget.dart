@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -336,6 +337,118 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           child: TextFormField(
                             controller: _model.textFieldqtTextController,
                             focusNode: _model.textFieldqtFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.textFieldqtTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                var _shouldSetState = false;
+                                if (getJsonField(
+                                  widget!.jsonitem,
+                                  r'''$.stockable''',
+                                )) {
+                                  if (!functions.greaterThanlessgrocery(
+                                      functions.jsontoint(getJsonField(
+                                        widget!.jsonitem,
+                                        r'''$.currentStock''',
+                                      )),
+                                      functions.stringToint(_model
+                                          .textFieldqtTextController.text)!)) {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          content: Text('Item Out Of Stock !'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                    if (_shouldSetState) safeSetState(() {});
+                                    return;
+                                  }
+                                }
+                                _model.allbillistCopy =
+                                    await actions.addToHoldListGrCalculationqty(
+                                  widget!.parameter2!,
+                                  FFAppState().selBill,
+                                  widget!.parameter3!.toList(),
+                                  functions
+                                      .enabletaxinclusive(widget!.parameter4!),
+                                  widget!.unitList!.toList(),
+                                  double.parse(_model
+                                      .textFielddisPerTextController.text),
+                                  double.parse(_model
+                                      .textFielddisAmtTextController.text),
+                                  double.parse(
+                                      _model.textFieldrateTextController.text),
+                                  double.parse(
+                                      _model.textFieldqtTextController.text),
+                                  double.parse(_model
+                                      .textFieldtaxPerTextController.text),
+                                  double.parse(_model
+                                      .textFieldTaxAmtTextController.text),
+                                  _model.textFieldqtTextController.text,
+                                );
+                                _shouldSetState = true;
+                                safeSetState(() {
+                                  _model.textFielddisAmtTextController?.text =
+                                      getJsonField(
+                                    _model.allbillistCopy!
+                                        .where((e) =>
+                                            getJsonField(
+                                              widget!.jsonitem,
+                                              r'''$.id''',
+                                            ) ==
+                                            getJsonField(
+                                              e,
+                                              r'''$.id''',
+                                            ))
+                                        .toList()
+                                        .firstOrNull,
+                                    r'''$.disAmt''',
+                                  ).toString();
+                                });
+                                safeSetState(() {
+                                  _model.textFieldTaxAmtTextController?.text =
+                                      getJsonField(
+                                    _model.allbillistCopy!
+                                        .where((e) =>
+                                            getJsonField(
+                                              widget!.jsonitem,
+                                              r'''$.id''',
+                                            ) ==
+                                            getJsonField(
+                                              e,
+                                              r'''$.id''',
+                                            ))
+                                        .toList()
+                                        .firstOrNull,
+                                    r'''$.taxAmt''',
+                                  ).toString();
+                                });
+                                _model.outputCopy =
+                                    await actions.calSubTotalForGrocery(
+                                  FFAppState().selBill.toString(),
+                                  FFAppState().allBillsList.toList(),
+                                );
+                                _shouldSetState = true;
+                                _model.reuslt12Copy =
+                                    await actions.calBillAmtGrocery(
+                                  valueOrDefault<double>(
+                                    FFAppState().disAmt,
+                                    0.0,
+                                  ),
+                                  FFAppState().delCharges,
+                                );
+                                _shouldSetState = true;
+                                if (_shouldSetState) safeSetState(() {});
+                              },
+                            ),
                             onFieldSubmitted: (_) async {
                               var _shouldSetState = false;
                               if (getJsonField(
@@ -700,6 +813,90 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           child: TextFormField(
                             controller: _model.textFieldrateTextController,
                             focusNode: _model.textFieldrateFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.textFieldrateTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                _model.ratechangedCopy = await actions
+                                    .ratePriceChangedFunctiongrocery(
+                                  widget!.parameter2!,
+                                  FFAppState().selBill,
+                                  widget!.parameter3!.toList(),
+                                  functions
+                                      .enabletaxinclusive(widget!.parameter4!),
+                                  widget!.unitList!.toList(),
+                                  double.parse(_model
+                                      .textFielddisPerTextController.text),
+                                  double.parse(_model
+                                      .textFielddisAmtTextController.text),
+                                  double.parse(
+                                      _model.textFieldrateTextController.text),
+                                  double.parse(
+                                      _model.textFieldqtTextController.text),
+                                  double.parse(_model
+                                      .textFieldtaxPerTextController.text),
+                                  double.parse(_model
+                                      .textFieldTaxAmtTextController.text),
+                                );
+                                safeSetState(() {
+                                  _model.textFieldTaxAmtTextController?.text =
+                                      valueOrDefault<String>(
+                                    getJsonField(
+                                      _model.ratechangedCopy
+                                          ?.where((e) =>
+                                              getJsonField(
+                                                e,
+                                                r'''$.id''',
+                                              ) ==
+                                              getJsonField(
+                                                widget!.jsonitem,
+                                                r'''$.id''',
+                                              ))
+                                          .toList()
+                                          ?.firstOrNull,
+                                      r'''$.taxAmt''',
+                                    )?.toString(),
+                                    '0',
+                                  );
+                                });
+                                safeSetState(() {
+                                  _model.textFielddisAmtTextController?.text =
+                                      valueOrDefault<String>(
+                                    getJsonField(
+                                      _model.ratechangedCopy
+                                          ?.where((e) =>
+                                              getJsonField(
+                                                e,
+                                                r'''$.id''',
+                                              ) ==
+                                              getJsonField(
+                                                widget!.jsonitem,
+                                                r'''$.id''',
+                                              ))
+                                          .toList()
+                                          ?.firstOrNull,
+                                      r'''$.disAmt''',
+                                    )?.toString(),
+                                    '0',
+                                  );
+                                });
+                                _model.outputr2Copy =
+                                    await actions.calSubTotalForGrocery(
+                                  FFAppState().selBill.toString(),
+                                  FFAppState().allBillsList.toList(),
+                                );
+                                _model.reuslt122Copy =
+                                    await actions.calBillAmtGrocery(
+                                  valueOrDefault<double>(
+                                    FFAppState().disAmt,
+                                    0.0,
+                                  ),
+                                  FFAppState().delCharges,
+                                );
+
+                                safeSetState(() {});
+                              },
+                            ),
                             onFieldSubmitted: (_) async {
                               _model.ratechanged =
                                   await actions.ratePriceChangedFunctiongrocery(
@@ -911,6 +1108,66 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           child: TextFormField(
                             controller: _model.textFielddisPerTextController,
                             focusNode: _model.textFielddisPerFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.textFielddisPerTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                _model.itemlistCopy = await actions
+                                    .addToHoldListGrCalculationdisPer(
+                                  widget!.parameter2!,
+                                  FFAppState().selBill,
+                                  widget!.parameter3!.toList(),
+                                  functions
+                                      .enabletaxinclusive(widget!.parameter4!),
+                                  widget!.unitList!.toList(),
+                                  double.parse(_model
+                                      .textFielddisPerTextController.text),
+                                  double.parse(_model
+                                      .textFielddisAmtTextController.text),
+                                  double.parse(
+                                      _model.textFieldrateTextController.text),
+                                  double.parse(
+                                      _model.textFieldqtTextController.text),
+                                  double.parse(_model
+                                      .textFieldtaxPerTextController.text),
+                                  double.parse(_model
+                                      .textFieldTaxAmtTextController.text),
+                                );
+                                safeSetState(() {
+                                  _model.textFielddisAmtTextController?.text =
+                                      getJsonField(
+                                    _model.itemlistCopy!
+                                        .where((e) =>
+                                            getJsonField(
+                                              e,
+                                              r'''$.id''',
+                                            ) ==
+                                            getJsonField(
+                                              widget!.jsonitem,
+                                              r'''$.id''',
+                                            ))
+                                        .toList()
+                                        .firstOrNull,
+                                    r'''$.disAmt''',
+                                  ).toString();
+                                });
+                                _model.outputdisperCopy =
+                                    await actions.calSubTotalForGrocery(
+                                  FFAppState().selBill.toString(),
+                                  FFAppState().allBillsList.toList(),
+                                );
+                                _model.reuslt12ssCopy =
+                                    await actions.calBillAmtGrocery(
+                                  valueOrDefault<double>(
+                                    FFAppState().disAmt,
+                                    0.0,
+                                  ),
+                                  FFAppState().delCharges,
+                                );
+
+                                safeSetState(() {});
+                              },
+                            ),
                             onFieldSubmitted: (_) async {
                               _model.itemlist = await actions
                                   .addToHoldListGrCalculationdisPer(
@@ -1063,6 +1320,66 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           child: TextFormField(
                             controller: _model.textFielddisAmtTextController,
                             focusNode: _model.textFielddisAmtFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.textFielddisAmtTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                _model.allbillistdiscperCopy =
+                                    await actions.disAmtChangedFunctiongrocery(
+                                  widget!.parameter2!,
+                                  FFAppState().selBill,
+                                  widget!.parameter3!.toList(),
+                                  functions
+                                      .enabletaxinclusive(widget!.parameter4!),
+                                  widget!.unitList!.toList(),
+                                  double.parse(_model
+                                      .textFielddisPerTextController.text),
+                                  double.parse(_model
+                                      .textFielddisAmtTextController.text),
+                                  double.parse(
+                                      _model.textFieldrateTextController.text),
+                                  double.parse(
+                                      _model.textFieldqtTextController.text),
+                                  double.parse(_model
+                                      .textFieldtaxPerTextController.text),
+                                  double.parse(_model
+                                      .textFieldTaxAmtTextController.text),
+                                );
+                                safeSetState(() {
+                                  _model.textFielddisPerTextController?.text =
+                                      getJsonField(
+                                    _model.allbillistdiscperCopy!
+                                        .where((e) =>
+                                            getJsonField(
+                                              widget!.jsonitem,
+                                              r'''$.id''',
+                                            ) ==
+                                            getJsonField(
+                                              e,
+                                              r'''$.id''',
+                                            ))
+                                        .toList()
+                                        .firstOrNull,
+                                    r'''$.disPer''',
+                                  ).toString();
+                                });
+                                _model.output5Copy =
+                                    await actions.calSubTotalForGrocery(
+                                  FFAppState().selBill.toString(),
+                                  FFAppState().allBillsList.toList(),
+                                );
+                                _model.reuslt1245Copy =
+                                    await actions.calBillAmtGrocery(
+                                  valueOrDefault<double>(
+                                    FFAppState().disAmt,
+                                    0.0,
+                                  ),
+                                  FFAppState().delCharges,
+                                );
+
+                                safeSetState(() {});
+                              },
+                            ),
                             onFieldSubmitted: (_) async {
                               _model.allbillistdiscper =
                                   await actions.disAmtChangedFunctiongrocery(
@@ -1215,6 +1532,66 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           child: TextFormField(
                             controller: _model.textFieldtaxPerTextController,
                             focusNode: _model.textFieldtaxPerFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.textFieldtaxPerTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                _model.taxperchengedCopy =
+                                    await actions.taxPerChangedFunctiongrocery(
+                                  widget!.parameter2!,
+                                  FFAppState().selBill,
+                                  widget!.parameter3!.toList(),
+                                  functions
+                                      .enabletaxinclusive(widget!.parameter4!),
+                                  widget!.unitList!.toList(),
+                                  double.parse(_model
+                                      .textFielddisPerTextController.text),
+                                  double.parse(_model
+                                      .textFielddisAmtTextController.text),
+                                  double.parse(
+                                      _model.textFieldrateTextController.text),
+                                  double.parse(
+                                      _model.textFieldqtTextController.text),
+                                  double.parse(_model
+                                      .textFieldtaxPerTextController.text),
+                                  double.parse(_model
+                                      .textFieldTaxAmtTextController.text),
+                                );
+                                safeSetState(() {
+                                  _model.textFieldTaxAmtTextController?.text =
+                                      getJsonField(
+                                    _model.taxperchengedCopy!
+                                        .where((e) =>
+                                            getJsonField(
+                                              widget!.jsonitem,
+                                              r'''$.id''',
+                                            ) ==
+                                            getJsonField(
+                                              e,
+                                              r'''$.id''',
+                                            ))
+                                        .toList()
+                                        .firstOrNull,
+                                    r'''$.taxAmt''',
+                                  ).toString();
+                                });
+                                _model.output2Copy =
+                                    await actions.calSubTotalForGrocery(
+                                  FFAppState().selBill.toString(),
+                                  FFAppState().allBillsList.toList(),
+                                );
+                                _model.reuslt12mCopy =
+                                    await actions.calBillAmtGrocery(
+                                  valueOrDefault<double>(
+                                    FFAppState().disAmt,
+                                    0.0,
+                                  ),
+                                  FFAppState().delCharges,
+                                );
+
+                                safeSetState(() {});
+                              },
+                            ),
                             onFieldSubmitted: (_) async {
                               _model.taxperchenged =
                                   await actions.taxPerChangedFunctiongrocery(
@@ -1367,6 +1744,66 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           child: TextFormField(
                             controller: _model.textFieldTaxAmtTextController,
                             focusNode: _model.textFieldTaxAmtFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.textFieldTaxAmtTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                _model.taxamtchangedCopy =
+                                    await actions.taxAmtChangedFunctiongrocery(
+                                  widget!.parameter2!,
+                                  FFAppState().selBill,
+                                  widget!.parameter3!.toList(),
+                                  functions
+                                      .enabletaxinclusive(widget!.parameter4!),
+                                  widget!.unitList!.toList(),
+                                  double.parse(_model
+                                      .textFielddisPerTextController.text),
+                                  double.parse(_model
+                                      .textFielddisAmtTextController.text),
+                                  double.parse(
+                                      _model.textFieldrateTextController.text),
+                                  double.parse(
+                                      _model.textFieldqtTextController.text),
+                                  double.parse(_model
+                                      .textFieldtaxPerTextController.text),
+                                  double.parse(_model
+                                      .textFieldTaxAmtTextController.text),
+                                );
+                                safeSetState(() {
+                                  _model.textFieldtaxPerTextController?.text =
+                                      getJsonField(
+                                    _model.taxamtchangedCopy!
+                                        .where((e) =>
+                                            getJsonField(
+                                              widget!.jsonitem,
+                                              r'''$.id''',
+                                            ) ==
+                                            getJsonField(
+                                              e,
+                                              r'''$.id''',
+                                            ))
+                                        .toList()
+                                        .firstOrNull,
+                                    r'''$.taxPer''',
+                                  ).toString();
+                                });
+                                _model.output3Copy =
+                                    await actions.calSubTotalForGrocery(
+                                  FFAppState().selBill.toString(),
+                                  FFAppState().allBillsList.toList(),
+                                );
+                                _model.reuslt12gCopy =
+                                    await actions.calBillAmtGrocery(
+                                  valueOrDefault<double>(
+                                    FFAppState().disAmt,
+                                    0.0,
+                                  ),
+                                  FFAppState().delCharges,
+                                );
+
+                                safeSetState(() {});
+                              },
+                            ),
                             onFieldSubmitted: (_) async {
                               _model.taxamtchanged =
                                   await actions.taxAmtChangedFunctiongrocery(

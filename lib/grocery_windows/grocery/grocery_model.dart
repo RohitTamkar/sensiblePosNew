@@ -7,6 +7,7 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'grocery_widget.dart' show GroceryWidget;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -31,6 +32,12 @@ class GroceryModel extends FlutterFlowModel<GroceryWidget> {
   double? output;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldqt widget.
   double? reuslt12;
+  // Stores action output result for [Custom Action - addToHoldListGrCalculationqty] action in TextFieldqt widget.
+  List<dynamic>? allbillistCopy;
+  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFieldqt widget.
+  double? outputCopy;
+  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldqt widget.
+  double? reuslt12Copy;
   // Stores action output result for [Custom Action - addToHoldListGrCalculationqty] action in IconButton widget.
   List<dynamic>? all;
   // Stores action output result for [Custom Action - calSubTotalForGrocery] action in IconButton widget.
@@ -47,6 +54,12 @@ class GroceryModel extends FlutterFlowModel<GroceryWidget> {
   double? outputr2;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldrate widget.
   double? reuslt122;
+  // Stores action output result for [Custom Action - ratePriceChangedFunctiongrocery] action in TextFieldrate widget.
+  List<dynamic>? ratechangedCopy;
+  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFieldrate widget.
+  double? outputr2Copy;
+  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldrate widget.
+  double? reuslt122Copy;
   // State field(s) for TextFielddisPer widget.
   FocusNode? textFielddisPerFocusNode;
   TextEditingController? textFielddisPerTextController;
@@ -58,6 +71,12 @@ class GroceryModel extends FlutterFlowModel<GroceryWidget> {
   double? outputdisper;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFielddisPer widget.
   double? reuslt12ss;
+  // Stores action output result for [Custom Action - addToHoldListGrCalculationdisPer] action in TextFielddisPer widget.
+  List<dynamic>? itemlistCopy;
+  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFielddisPer widget.
+  double? outputdisperCopy;
+  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFielddisPer widget.
+  double? reuslt12ssCopy;
   // State field(s) for TextFielddisAmt widget.
   FocusNode? textFielddisAmtFocusNode;
   TextEditingController? textFielddisAmtTextController;
@@ -69,6 +88,12 @@ class GroceryModel extends FlutterFlowModel<GroceryWidget> {
   double? output5;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFielddisAmt widget.
   double? reuslt1245;
+  // Stores action output result for [Custom Action - disAmtChangedFunctiongrocery] action in TextFielddisAmt widget.
+  List<dynamic>? allbillistdiscperCopy;
+  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFielddisAmt widget.
+  double? output5Copy;
+  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFielddisAmt widget.
+  double? reuslt1245Copy;
   // State field(s) for TextFieldtaxPer widget.
   FocusNode? textFieldtaxPerFocusNode;
   TextEditingController? textFieldtaxPerTextController;
@@ -80,6 +105,12 @@ class GroceryModel extends FlutterFlowModel<GroceryWidget> {
   double? output2;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldtaxPer widget.
   double? reuslt12m;
+  // Stores action output result for [Custom Action - taxPerChangedFunctiongrocery] action in TextFieldtaxPer widget.
+  List<dynamic>? taxperchengedCopy;
+  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFieldtaxPer widget.
+  double? output2Copy;
+  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldtaxPer widget.
+  double? reuslt12mCopy;
   // State field(s) for TextFieldTaxAmt widget.
   FocusNode? textFieldTaxAmtFocusNode;
   TextEditingController? textFieldTaxAmtTextController;
@@ -91,6 +122,12 @@ class GroceryModel extends FlutterFlowModel<GroceryWidget> {
   double? output3;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldTaxAmt widget.
   double? reuslt12g;
+  // Stores action output result for [Custom Action - taxAmtChangedFunctiongrocery] action in TextFieldTaxAmt widget.
+  List<dynamic>? taxamtchangedCopy;
+  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFieldTaxAmt widget.
+  double? output3Copy;
+  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldTaxAmt widget.
+  double? reuslt12gCopy;
 
   @override
   void initState(BuildContext context) {}

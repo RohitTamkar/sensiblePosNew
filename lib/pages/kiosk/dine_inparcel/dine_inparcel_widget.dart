@@ -111,12 +111,12 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
       },
       selectedChipStyle: ChipStyle(
         backgroundColor: FlutterFlowTheme.of(context).primary,
-        textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-              color: FlutterFlowTheme.of(context).primaryBackground,
+        textStyle: FlutterFlowTheme.of(context).labelLarge.override(
+              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
               letterSpacing: 0.0,
+              fontWeight: FontWeight.w600,
               useGoogleFonts: GoogleFonts.asMap()
-                  .containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                  .containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
             ),
         iconColor: FlutterFlowTheme.of(context).secondaryBackground,
         iconSize: 16.0,
@@ -125,12 +125,11 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
       ),
       unselectedChipStyle: ChipStyle(
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-              color: FlutterFlowTheme.of(context).secondaryText,
+        textStyle: FlutterFlowTheme.of(context).labelSmall.override(
+              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
               letterSpacing: 0.0,
               useGoogleFonts: GoogleFonts.asMap()
-                  .containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                  .containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
             ),
         iconColor: FlutterFlowTheme.of(context).primaryText,
         iconSize: 16.0,
