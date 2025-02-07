@@ -1,12 +1,12 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/components/dine_inparcel_widget.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/pages/kiosk/dine_inparcel/dine_inparcel_widget.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;

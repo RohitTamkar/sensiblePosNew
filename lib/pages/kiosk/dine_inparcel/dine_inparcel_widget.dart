@@ -140,10 +140,16 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
       chipSpacing: 8.0,
       rowSpacing: 8.0,
       multiselect: false,
+      initialized: _model.choiceChipsValue != null,
       alignment: WrapAlignment.start,
       controller: _model.choiceChipsValueController ??=
           FormFieldController<List<String>>(
-        [],
+        [
+          getJsonField(
+            widget!.parameter4,
+            r'''$''',
+          ).toString()
+        ],
       ),
       wrapped: true,
     );
