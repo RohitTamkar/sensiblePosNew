@@ -70,20 +70,6 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
         safeSetState(() => _model.choiceChipsValue = val?.firstOrNull);
         FFAppState().orderType = _model.choiceChipsValue!;
         safeSetState(() {});
-        await showDialog(
-          context: context,
-          builder: (alertDialogContext) {
-            return AlertDialog(
-              content: Text('PARCEL'),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(alertDialogContext),
-                  child: Text('Ok'),
-                ),
-              ],
-            );
-          },
-        );
         if ('PARCEL' == _model.choiceChipsValue) {
           await showDialog(
             context: context,
@@ -170,10 +156,16 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
       chipSpacing: 8.0,
       rowSpacing: 8.0,
       multiselect: false,
+      initialized: _model.choiceChipsValue != null,
       alignment: WrapAlignment.start,
       controller: _model.choiceChipsValueController ??=
           FormFieldController<List<String>>(
-        [],
+        [
+          getJsonField(
+            widget!.parameter4,
+            r'''$''',
+          ).toString()
+        ],
       ),
       wrapped: true,
     );
