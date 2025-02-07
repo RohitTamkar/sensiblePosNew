@@ -19,8 +19,12 @@ class DineInparcelModel extends FlutterFlowModel<DineInparcelWidget> {
       choiceChipsValueController?.value?.firstOrNull;
   set choiceChipsValue(String? val) =>
       choiceChipsValueController?.value = val != null ? [val] : [];
+  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk2] action in ChoiceChips widget.
+  double? ddr4Copy;
   // Stores action output result for [Custom Action - calBillAmt2] action in ChoiceChips widget.
   double? reusltddrCopy;
+  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk2] action in ChoiceChips widget.
+  double? ddr45Copy;
   // Stores action output result for [Custom Action - calBillAmt2] action in ChoiceChips widget.
   double? reusltddr67Copy;
 
