@@ -70,7 +70,21 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
         safeSetState(() => _model.choiceChipsValue = val?.firstOrNull);
         FFAppState().orderType = _model.choiceChipsValue!;
         safeSetState(() {});
-        if ('PARCEL' == widget!.parameter4?.toString()) {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              content: Text('PARCEL'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+        if ('PARCEL' == _model.choiceChipsValue) {
           await showDialog(
             context: context,
             builder: (alertDialogContext) {
@@ -127,6 +141,7 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primary,
         textStyle: FlutterFlowTheme.of(context).labelLarge.override(
               fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+              color: FlutterFlowTheme.of(context).secondaryBackground,
               letterSpacing: 0.0,
               fontWeight: FontWeight.w600,
               useGoogleFonts: GoogleFonts.asMap()
@@ -155,16 +170,10 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
       chipSpacing: 8.0,
       rowSpacing: 8.0,
       multiselect: false,
-      initialized: _model.choiceChipsValue != null,
       alignment: WrapAlignment.start,
       controller: _model.choiceChipsValueController ??=
           FormFieldController<List<String>>(
-        [
-          getJsonField(
-            widget!.parameter4,
-            r'''$''',
-          ).toString()
-        ],
+        [],
       ),
       wrapped: true,
     );
