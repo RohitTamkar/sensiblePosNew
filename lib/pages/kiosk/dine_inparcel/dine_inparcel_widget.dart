@@ -143,6 +143,8 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
           );
         }
 
+        _model.updatePage(() {});
+
         safeSetState(() {});
       },
       selectedChipStyle: ChipStyle(

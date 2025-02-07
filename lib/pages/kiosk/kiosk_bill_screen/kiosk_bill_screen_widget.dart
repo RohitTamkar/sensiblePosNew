@@ -1919,33 +1919,66 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                     .isNotEmpty) {
                                   FFAppState().isBillPrinted = false;
                                   safeSetState(() {});
-
-                                  context.goNamed(
-                                    'KioskCartdineinparcel',
-                                    queryParameters: {
-                                      'doc': serializeParam(
-                                        widget!.doc,
-                                        ParamType.DocumentReference,
-                                      ),
-                                      'shiftdetails': serializeParam(
-                                        widget!.shiftdoc,
-                                        ParamType.JSON,
-                                      ),
-                                      'appsetting': serializeParam(
-                                        widget!.appsetting,
-                                        ParamType.Document,
-                                      ),
-                                      'taxcollection': serializeParam(
-                                        widget!.taxcollection,
-                                        ParamType.Document,
-                                        isList: true,
-                                      ),
-                                    }.withoutNulls,
-                                    extra: <String, dynamic>{
-                                      'appsetting': widget!.appsetting,
-                                      'taxcollection': widget!.taxcollection,
-                                    },
-                                  );
+                                  if (widget!.appsetting!.settingList
+                                      .where((e) =>
+                                          e.title == 'qtyWiseParcelCharges')
+                                      .toList()
+                                      .firstOrNull!
+                                      .value) {
+                                    context.goNamed(
+                                      'KioskCartdineinparcel',
+                                      queryParameters: {
+                                        'doc': serializeParam(
+                                          widget!.doc,
+                                          ParamType.DocumentReference,
+                                        ),
+                                        'shiftdetails': serializeParam(
+                                          widget!.shiftdoc,
+                                          ParamType.JSON,
+                                        ),
+                                        'appsetting': serializeParam(
+                                          widget!.appsetting,
+                                          ParamType.Document,
+                                        ),
+                                        'taxcollection': serializeParam(
+                                          widget!.taxcollection,
+                                          ParamType.Document,
+                                          isList: true,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        'appsetting': widget!.appsetting,
+                                        'taxcollection': widget!.taxcollection,
+                                      },
+                                    );
+                                  } else {
+                                    context.goNamed(
+                                      'KioskCart',
+                                      queryParameters: {
+                                        'doc': serializeParam(
+                                          widget!.doc,
+                                          ParamType.DocumentReference,
+                                        ),
+                                        'shiftdetails': serializeParam(
+                                          widget!.shiftdoc,
+                                          ParamType.JSON,
+                                        ),
+                                        'appsetting': serializeParam(
+                                          widget!.appsetting,
+                                          ParamType.Document,
+                                        ),
+                                        'taxcollection': serializeParam(
+                                          widget!.taxcollection,
+                                          ParamType.Document,
+                                          isList: true,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        'appsetting': widget!.appsetting,
+                                        'taxcollection': widget!.taxcollection,
+                                      },
+                                    );
+                                  }
                                 } else {
                                   await showDialog(
                                     context: context,

@@ -11,21 +11,95 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<double> calSubTotalkioskparcelcharge(
   String billNo,
   List<dynamic> allBillList,
   String inclusiveorexclusive,
   bool qtywiseparcelcharge,
   String ordertype,
-  dynamic listitem,
+  dynamic obj,
 ) async {
   double total = 0;
   double qty = 0;
   double tax = 0;
   double delCharges = 0;
-
-//  print(obj.length);
+  List<dynamic> list = FFAppState().allBillsList;
+  print(obj);
   List<dynamic> itemList = [];
+//  print(obj.length);
+
+  final data = {
+    "name": obj['name'],
+    "price": (obj['price'])!.toDouble(),
+    "quantity": obj['quantity'],
+    "total": total, // Include taxAmt for exclusive tax
+    "id": obj['id'],
+    "catId": obj['catId'],
+    "taxId": obj['taxId'],
+    "taxPer": obj['taxPer'],
+    "taxAmt": obj['taxAmt'],
+    "ordertype": ordertype,
+  };
+
+  var index;
+  var flag = false;
+  var flag1 = false;
+
+  if (list.isNotEmpty) {
+    for (int i = 0; i < list.length; i++) {
+      if (list[i]["billno"].toString() == billNo) {
+        if (list[i]["details"]["itemList"].length > 0) {
+          itemList = (list[i]["details"]["itemList"]);
+          index = i;
+          flag1 = true;
+          break;
+        } else {
+          itemList.add(data);
+          list[i]["details"]["itemList"] = itemList;
+
+          FFAppState().allBillsList = list;
+          break;
+        }
+      }
+    }
+
+    if (flag1) {
+      for (int j = 0; j < itemList.length; j++) {
+        if (itemList[j]["id"] == data["id"]) {
+          itemList[j]["ordertype"] = ordertype;
+          /*   if (inclusiveorexclusive.toLowerCase() == 'inclusive') {
+            itemList[j]["total"] = itemList[j]["quantity"] *
+                itemList[j]["price"]; // Update total for each item
+          } else {
+            */ /* itemList[j]["total"] =
+                  itemList[j]["quantity"] * itemList[j]["price"] +
+                      itemList[j]["taxAmt"];*/ /*
+            itemList[j]["total"] =
+                itemList[j]["quantity"] * itemList[j]["price"];
+          } */ // Update total for each item
+          if (qtywiseparcelcharge && itemList[j]["ordertype"] == 'PARCEL') {
+            delCharges = itemList[j]["quantity"] * FFAppState().delCharges;
+            total += delCharges;
+          }
+
+          list[index]["details"]["itemList"] = itemList;
+          FFAppState().allBillsList = list;
+          flag = true;
+          break;
+        }
+      }
+
+      if (!flag) {
+        itemList.add(data);
+        list[index]["details"]["itemList"] = itemList;
+        FFAppState().allBillsList = list;
+      }
+    }
+  }
+
+  /* List<dynamic> itemList = [];
   if (allBillList.isNotEmpty) {
     for (int i = 0; i < allBillList.length; i++) {
       print(allBillList[i]["billno"]);
@@ -71,6 +145,6 @@ Future<double> calSubTotalkioskparcelcharge(
         }
       }
     }
-  }
+  }*/
   return total.roundToDouble();
 }
