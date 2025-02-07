@@ -1,11 +1,9 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import '/pages/kiosk/dine_inparcel/dine_inparcel_widget.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:ui';
@@ -31,20 +29,6 @@ class KioskCartdineinparcelModel
 
   // Model for KioskHeader component.
   late KioskHeaderModel kioskHeaderModel;
-  // State field(s) for ChoiceChips widget.
-  FormFieldController<List<String>>? choiceChipsValueController;
-  String? get choiceChipsValue =>
-      choiceChipsValueController?.value?.firstOrNull;
-  set choiceChipsValue(String? val) =>
-      choiceChipsValueController?.value = val != null ? [val] : [];
-  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk2] action in ChoiceChips widget.
-  double? ddr4;
-  // Stores action output result for [Custom Action - calBillAmt2] action in ChoiceChips widget.
-  double? reusltddr;
-  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk2] action in ChoiceChips widget.
-  double? ddr45;
-  // Stores action output result for [Custom Action - calBillAmt2] action in ChoiceChips widget.
-  double? reusltddr67;
   // Stores action output result for [Custom Action - reduceQuantityHoldListkiosk] action in IconButton widget.
   List<dynamic>? res2cart;
   // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk2] action in IconButton widget.

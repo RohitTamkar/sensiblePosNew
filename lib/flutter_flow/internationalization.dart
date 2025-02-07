@@ -20726,20 +20726,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'nl10icnc': {
-      'en': 'DINE IN',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'o4la9hrp': {
-      'en': 'PARCEL',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
     '5jpzrnln': {
       'en': '₹ ',
       'hi': '',
