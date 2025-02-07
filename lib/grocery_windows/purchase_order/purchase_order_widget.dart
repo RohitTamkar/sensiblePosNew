@@ -36,12 +36,14 @@ class PurchaseOrderWidget extends StatefulWidget {
     this.taxDetails,
     this.userref,
     this.paymentMode,
+    this.purchase,
   });
 
   final dynamic shiftdetail;
   final List<TaxMasterRecord>? taxDetails;
   final DocumentReference? userref;
   final List<PaymentModeRecord>? paymentMode;
+  final bool? purchase;
 
   @override
   State<PurchaseOrderWidget> createState() => _PurchaseOrderWidgetState();
@@ -2775,6 +2777,8 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                       containerAppSettingsRecord!,
                                                                   unitcollection:
                                                                       purchaseOrderUnitTypeRecordList,
+                                                                  purchase:
+                                                                      true,
                                                                 ),
                                                               ),
                                                             ),

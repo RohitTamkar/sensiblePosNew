@@ -41,6 +41,7 @@ class SearchHiveprdGrocery extends StatefulWidget {
     required this.taxcollection,
     required this.appSettingsRecord,
     required this.unitcollection,
+    required this.purchase,
   }) : super(key: key);
 
   final double? width;
@@ -53,6 +54,7 @@ class SearchHiveprdGrocery extends StatefulWidget {
   final List<TaxMasterRecord> taxcollection;
   final AppSettingsRecord appSettingsRecord;
   final List<UnitTypeRecord> unitcollection;
+  final bool purchase;
 
   @override
   _SearchHiveprdGroceryState createState() => _SearchHiveprdGroceryState();

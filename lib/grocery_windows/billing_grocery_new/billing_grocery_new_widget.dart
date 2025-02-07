@@ -1524,6 +1524,11 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                         ParamType.Document,
                                                         isList: true,
                                                       ),
+                                                      'purchase':
+                                                          serializeParam(
+                                                        true,
+                                                        ParamType.bool,
+                                                      ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       'taxDetails':
@@ -2417,6 +2422,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               containerAppSettingsRecord!,
                                                                           unitcollection:
                                                                               billingGroceryNewUnitTypeRecordList,
+                                                                          purchase:
+                                                                              false,
                                                                         ),
                                                                       ),
                                                                     ),

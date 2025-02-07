@@ -2301,6 +2301,8 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       containerAppSettingsRecord!,
                                                                   unitcollection:
                                                                       editPurchaseOrderUnitTypeRecordList,
+                                                                  purchase:
+                                                                      true,
                                                                 ),
                                                               ),
                                                             ),

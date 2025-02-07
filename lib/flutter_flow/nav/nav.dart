@@ -1166,6 +1166,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   ParamType.Document,
                   isList: true,
                 ),
+                purchase: params.getParam(
+                  'purchase',
+                  ParamType.bool,
+                ),
               ),
             ),
             FFRoute(
