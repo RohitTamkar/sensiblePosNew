@@ -1809,9 +1809,22 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                 ),
                                           ),
                                           TextSpan(
-                                            text: (FFAppState().delCharges *
-                                                    FFAppState().noOfItems)
-                                                .toString(),
+                                            text: e.title ==
+                                                    'qtyWiseParcelCharges'
+                                                ? (FFAppState().delCharges *
+                                                        valueOrDefault<int>(
+                                                          FFAppState()
+                                                              .parcelqty,
+                                                          0,
+                                                        ))
+                                                    .toString()
+                                                : (FFAppState().delCharges *
+                                                        valueOrDefault<int>(
+                                                          FFAppState()
+                                                              .noOfItems,
+                                                          0,
+                                                        ))
+                                                    .toString(),
                                             style: FlutterFlowTheme.of(context)
                                                 .displayMedium
                                                 .override(
