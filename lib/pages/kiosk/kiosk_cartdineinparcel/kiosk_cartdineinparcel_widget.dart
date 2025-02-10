@@ -796,6 +796,23 @@ class _KioskCartdineinparcelWidgetState
                                                                                       listviewItem,
                                                                                       FFAppState().selBill,
                                                                                     );
+                                                                                    await actions.calSubTotalkioskparcelcharge(
+                                                                                      FFAppState().selBill.toString(),
+                                                                                      FFAppState().allBillsList.toList(),
+                                                                                      functions.enabletaxinclusive(valueOrDefault<bool>(
+                                                                                        widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
+                                                                                        false,
+                                                                                      )),
+                                                                                      widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value,
+                                                                                      getJsonField(
+                                                                                        listviewItem,
+                                                                                        r'''$.ordertype''',
+                                                                                      ).toString(),
+                                                                                      getJsonField(
+                                                                                        listviewItem,
+                                                                                        r'''$''',
+                                                                                      ),
+                                                                                    );
                                                                                     await actions.calSubTotalForHoldListkiosk2(
                                                                                       FFAppState().selBill.toString(),
                                                                                       FFAppState().allBillsList.toList(),

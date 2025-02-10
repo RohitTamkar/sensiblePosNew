@@ -71,20 +71,6 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
         FFAppState().orderType = _model.choiceChipsValue!;
         safeSetState(() {});
         if ('PARCEL' == _model.choiceChipsValue) {
-          await showDialog(
-            context: context,
-            builder: (alertDialogContext) {
-              return AlertDialog(
-                content: Text('PARCEL'),
-                actions: [
-                  TextButton(
-                    onPressed: () => Navigator.pop(alertDialogContext),
-                    child: Text('Ok'),
-                  ),
-                ],
-              );
-            },
-          );
           FFAppState().delCharges = widget!.parameter5!;
           _model.updatePage(() {});
           await actions.calSubTotalkioskparcelcharge(
@@ -114,6 +100,7 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
           );
         } else {
           FFAppState().orderType = _model.choiceChipsValue!;
+          FFAppState().delCharges = 0.0;
           _model.updatePage(() {});
           await actions.calSubTotalkioskparcelcharge(
             FFAppState().selBill.toString(),
