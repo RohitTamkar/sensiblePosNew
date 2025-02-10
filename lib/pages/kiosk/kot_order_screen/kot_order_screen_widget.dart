@@ -2651,7 +2651,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             MainAxisAlignment.end,
                                                                         children: [
                                                                           if ((prdlistItem.ordertype != null && prdlistItem.ordertype != '') &&
-                                                                              !widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value)
+                                                                              widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value)
                                                                             Padding(
                                                                               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                               child: Container(
@@ -3295,7 +3295,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       children: [
                                                                         if ((prdlistItem.ordertype != null &&
                                                                                 prdlistItem.ordertype != '') &&
-                                                                            !widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value)
+                                                                            widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value)
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
@@ -4018,10 +4018,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         MainAxisAlignment
                                                                             .end,
                                                                     children: [
-                                                                      if (prdlistItem.ordertype !=
-                                                                              null &&
-                                                                          prdlistItem.ordertype !=
-                                                                              '')
+                                                                      if ((prdlistItem.ordertype != null &&
+                                                                              prdlistItem.ordertype !=
+                                                                                  '') &&
+                                                                          widget!
+                                                                              .appsetting!
+                                                                              .settingList
+                                                                              .where((e) => e.title == 'qtyWiseParcelCharges')
+                                                                              .toList()
+                                                                              .firstOrNull!
+                                                                              .value)
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
