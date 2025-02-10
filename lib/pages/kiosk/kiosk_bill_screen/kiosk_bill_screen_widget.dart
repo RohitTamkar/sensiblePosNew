@@ -1809,8 +1809,14 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                 ),
                                           ),
                                           TextSpan(
-                                            text: e.title ==
-                                                    'qtyWiseParcelCharges'
+                                            text: widget!
+                                                    .appsetting!.settingList
+                                                    .where((e) =>
+                                                        e.title ==
+                                                        'qtyWiseParcelCharges')
+                                                    .toList()
+                                                    .firstOrNull!
+                                                    .value
                                                 ? (FFAppState().delCharges *
                                                         valueOrDefault<int>(
                                                           FFAppState()
