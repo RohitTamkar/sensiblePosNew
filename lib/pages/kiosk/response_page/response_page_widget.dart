@@ -131,7 +131,13 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                 FFAppState().disPer,
                 0.0,
               ),
-              delliveryChrg: FFAppState().delCharges * FFAppState().parcelqty,
+              delliveryChrg: widget!.appsetting!.settingList
+                      .where((e) => e.title == 'qtyWiseParcelCharges')
+                      .toList()
+                      .firstOrNull!
+                      .value
+                  ? (FFAppState().delCharges * FFAppState().parcelqty)
+                  : (FFAppState().delCharges * FFAppState().noOfItems),
               taxAmt: valueOrDefault<double>(
                 FFAppState().taxamt,
                 0.0,
@@ -177,7 +183,13 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                 FFAppState().disPer,
                 0.0,
               ),
-              delliveryChrg: FFAppState().delCharges * FFAppState().parcelqty,
+              delliveryChrg: widget!.appsetting!.settingList
+                      .where((e) => e.title == 'qtyWiseParcelCharges')
+                      .toList()
+                      .firstOrNull!
+                      .value
+                  ? (FFAppState().delCharges * FFAppState().parcelqty)
+                  : (FFAppState().delCharges * FFAppState().noOfItems),
               taxAmt: valueOrDefault<double>(
                 FFAppState().taxamt,
                 0.0,

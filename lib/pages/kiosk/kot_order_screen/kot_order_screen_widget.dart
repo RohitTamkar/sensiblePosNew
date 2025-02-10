@@ -2650,8 +2650,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         mainAxisAlignment:
                                                                             MainAxisAlignment.end,
                                                                         children: [
-                                                                          if (prdlistItem.ordertype != null &&
-                                                                              prdlistItem.ordertype != '')
+                                                                          if ((prdlistItem.ordertype != null && prdlistItem.ordertype != '') &&
+                                                                              !widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value)
                                                                             Padding(
                                                                               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                                                                               child: Container(
@@ -2666,15 +2666,6 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                                             padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                             child: Icon(
                                                                                               Icons.takeout_dining_rounded,
-                                                                                              color: FlutterFlowTheme.of(context).info,
-                                                                                              size: 18.0,
-                                                                                            ),
-                                                                                          ),
-                                                                                        if (prdlistItem.ordertype == 'DINE IN')
-                                                                                          Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
-                                                                                            child: Icon(
-                                                                                              Icons.dinner_dining_outlined,
                                                                                               color: FlutterFlowTheme.of(context).info,
                                                                                               size: 18.0,
                                                                                             ),
@@ -3302,10 +3293,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           MainAxisAlignment
                                                                               .end,
                                                                       children: [
-                                                                        if (prdlistItem.ordertype !=
-                                                                                null &&
-                                                                            prdlistItem.ordertype !=
-                                                                                '')
+                                                                        if ((prdlistItem.ordertype != null &&
+                                                                                prdlistItem.ordertype != '') &&
+                                                                            !widget!.appsetting!.settingList.where((e) => e.title == 'qtyWiseParcelCharges').toList().firstOrNull!.value)
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
@@ -3325,15 +3315,6 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                                           padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                           child: Icon(
                                                                                             Icons.takeout_dining_rounded,
-                                                                                            color: FlutterFlowTheme.of(context).info,
-                                                                                            size: 18.0,
-                                                                                          ),
-                                                                                        ),
-                                                                                      if (prdlistItem.ordertype == 'DINE IN')
-                                                                                        Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
-                                                                                          child: Icon(
-                                                                                            Icons.dinner_dining_outlined,
                                                                                             color: FlutterFlowTheme.of(context).info,
                                                                                             size: 18.0,
                                                                                           ),
@@ -4062,15 +4043,6 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                                         padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                         child: Icon(
                                                                                           Icons.takeout_dining_rounded,
-                                                                                          color: FlutterFlowTheme.of(context).info,
-                                                                                          size: 18.0,
-                                                                                        ),
-                                                                                      ),
-                                                                                    if (prdlistItem.ordertype == 'DINE IN')
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
-                                                                                        child: Icon(
-                                                                                          Icons.dinner_dining_outlined,
                                                                                           color: FlutterFlowTheme.of(context).info,
                                                                                           size: 18.0,
                                                                                         ),
