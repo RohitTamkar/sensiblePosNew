@@ -131,7 +131,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                 FFAppState().disPer,
                 0.0,
               ),
-              delliveryChrg: FFAppState().delCharges * FFAppState().noOfItems,
+              delliveryChrg: FFAppState().delCharges * FFAppState().parcelqty,
               taxAmt: valueOrDefault<double>(
                 FFAppState().taxamt,
                 0.0,
@@ -177,7 +177,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                 FFAppState().disPer,
                 0.0,
               ),
-              delliveryChrg: FFAppState().delCharges * FFAppState().noOfItems,
+              delliveryChrg: FFAppState().delCharges * FFAppState().parcelqty,
               taxAmt: valueOrDefault<double>(
                 FFAppState().taxamt,
                 0.0,

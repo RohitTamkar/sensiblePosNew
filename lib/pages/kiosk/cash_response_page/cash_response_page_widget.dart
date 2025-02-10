@@ -125,7 +125,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
               FFAppState().disPer,
               0.0,
             ),
-            delliveryChrg: FFAppState().delCharges * FFAppState().noOfItems,
+            delliveryChrg: FFAppState().delCharges * FFAppState().parcelqty,
             taxAmt: valueOrDefault<double>(
               FFAppState().taxamt,
               0.0,
@@ -171,7 +171,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
               FFAppState().disPer,
               0.0,
             ),
-            delliveryChrg: FFAppState().delCharges * FFAppState().noOfItems,
+            delliveryChrg: FFAppState().delCharges * FFAppState().parcelqty,
             taxAmt: valueOrDefault<double>(
               FFAppState().taxamt,
               0.0,
