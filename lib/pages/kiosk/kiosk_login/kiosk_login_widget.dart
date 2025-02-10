@@ -1153,7 +1153,24 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                               FFAppState().userName = _model.userProfile!.name;
                                                                                               safeSetState(() {});
                                                                                               if (containerDeviceRecord?.billingType == 'KOT') {
-                                                                                                context.pushNamed('KotOrderScreen');
+                                                                                                _model.appsettingkot = await queryAppSettingsRecordOnce(
+                                                                                                  parent: FFAppState().outletIdRef,
+                                                                                                  singleRecord: true,
+                                                                                                ).then((s) => s.firstOrNull);
+                                                                                                _shouldSetState = true;
+
+                                                                                                context.goNamed(
+                                                                                                  'KotOrderScreen',
+                                                                                                  queryParameters: {
+                                                                                                    'appsetting': serializeParam(
+                                                                                                      _model.appsettingkot,
+                                                                                                      ParamType.Document,
+                                                                                                    ),
+                                                                                                  }.withoutNulls,
+                                                                                                  extra: <String, dynamic>{
+                                                                                                    'appsetting': _model.appsettingkot,
+                                                                                                  },
+                                                                                                );
                                                                                               } else if (containerDeviceRecord?.billingType == 'TOKEN') {
                                                                                                 context.pushNamed('TokenDisplay');
                                                                                               } else {

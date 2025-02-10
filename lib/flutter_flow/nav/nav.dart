@@ -845,7 +845,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'KotOrderScreen',
               path: 'kotOrderScreen',
-              builder: (context, params) => KotOrderScreenWidget(),
+              asyncParams: {
+                'appsetting': getDoc(
+                    ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
+              },
+              builder: (context, params) => KotOrderScreenWidget(
+                appsetting: params.getParam(
+                  'appsetting',
+                  ParamType.Document,
+                ),
+              ),
             ),
             FFRoute(
               name: 'SplashScreenWindows',

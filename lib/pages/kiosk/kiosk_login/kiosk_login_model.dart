@@ -68,6 +68,8 @@ class KioskLoginModel extends FlutterFlowModel<KioskLoginWidget> {
   bool? internetconnection;
   // Stores action output result for [Custom Action - shiftDetailNewpark] action in Button widget.
   dynamic? shiftDetailsNew;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  AppSettingsRecord? appsettingkot;
 
   @override
   void initState(BuildContext context) {}
