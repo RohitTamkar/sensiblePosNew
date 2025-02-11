@@ -3,10 +3,12 @@ import '/backend/schema/structs/index.dart';
 import '/components/calender/calender_widget.dart';
 import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
@@ -14,7 +16,6 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'edit_bill_new_widget.dart' show EditBillNewWidget;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -29,9 +30,9 @@ class EditBillNewModel extends FlutterFlowModel<EditBillNewWidget> {
   List<InvoiceStructStruct>? invoicebyday;
   // Model for Header component.
   late HeaderModel headerModel;
-  // State field(s) for Expandable widget.
-  late ExpandableController expandableExpandableController;
-
+  // State field(s) for DropDown widget.
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // Stores action output result for [Custom Action - scanPrinter] action in PrintEditBill widget.
   bool? resDevice2;
   // Stores action output result for [Custom Action - newCustomAction] action in PrintEditBill widget.
@@ -67,6 +68,5 @@ class EditBillNewModel extends FlutterFlowModel<EditBillNewWidget> {
   @override
   void dispose() {
     headerModel.dispose();
-    expandableExpandableController.dispose();
   }
 }

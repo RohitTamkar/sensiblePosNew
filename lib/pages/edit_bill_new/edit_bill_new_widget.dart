@@ -3,17 +3,18 @@ import '/backend/schema/structs/index.dart';
 import '/components/calender/calender_widget.dart';
 import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -69,8 +70,6 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
       safeSetState(() {});
     });
 
-    _model.expandableExpandableController =
-        ExpandableController(initialExpanded: false);
     animationsMap.addAll({
       'containerOnActionTriggerAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
@@ -1381,274 +1380,195 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                15.0, 0.0),
-                                                    child: Container(
-                                                      width: MediaQuery.sizeOf(
-                                                                  context)
-                                                              .width *
-                                                          0.12,
-                                                      height: MediaQuery.sizeOf(
-                                                                  context)
-                                                              .height *
-                                                          0.04,
-                                                      decoration:
-                                                          BoxDecoration(),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        children: [
-                                                          Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'uvo3jen2' /* Payment Mode */,
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodySmall
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                  Flexible(
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  15.0,
+                                                                  0.0),
+                                                      child: Container(
+                                                        width:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .width *
+                                                                0.12,
+                                                        height:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height *
+                                                                0.04,
+                                                        decoration:
+                                                            BoxDecoration(),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                              children: [
+                                                                Text(
+                                                                  FFLocalizations.of(
                                                                           context)
-                                                                      .bodySmallFamily,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily),
-                                                                ),
-                                                          ),
-                                                          AutoSizeText(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'ytb0l9s5' /* : */,
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .headlineMedium
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                      .getText(
+                                                                    'uvo3jen2' /* Payment Mode */,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineMediumFamily,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineMediumFamily),
-                                                                ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: Container(
-                                                      width: double.infinity,
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                      child: ExpandableNotifier(
-                                                        controller: _model
-                                                            .expandableExpandableController,
-                                                        child: ExpandablePanel(
-                                                          header: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                FFAppState().dropDown ==
-                                                                        false
-                                                                    ? valueOrDefault<
-                                                                        String>(
-                                                                        FFAppState()
-                                                                            .invoiceStruct
-                                                                            .paymentMode,
-                                                                        '0',
-                                                                      )
-                                                                    : FFAppState()
-                                                                        .PayMode,
-                                                                'cash',
-                                                              ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                          collapsed:
-                                                              Container(),
-                                                          expanded: StreamBuilder<
-                                                              List<
-                                                                  PaymentModeRecord>>(
-                                                            stream:
-                                                                queryPaymentModeRecord(),
-                                                            builder: (context,
-                                                                snapshot) {
-                                                              // Customize what your widget looks like when it's loading.
-                                                              if (!snapshot
-                                                                  .hasData) {
-                                                                return Center(
-                                                                  child:
-                                                                      SizedBox(
-                                                                    width: 40.0,
-                                                                    height:
-                                                                        40.0,
-                                                                    child:
-                                                                        SpinKitFadingCircle(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                      size:
-                                                                          40.0,
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              }
-                                                              List<PaymentModeRecord>
-                                                                  listViewPaymentModeRecordList =
-                                                                  snapshot
-                                                                      .data!;
-
-                                                              return ListView
-                                                                  .builder(
-                                                                padding:
-                                                                    EdgeInsets
-                                                                        .zero,
-                                                                scrollDirection:
-                                                                    Axis.vertical,
-                                                                itemCount:
-                                                                    listViewPaymentModeRecordList
-                                                                        .length,
-                                                                itemBuilder:
-                                                                    (context,
-                                                                        listViewIndex) {
-                                                                  final listViewPaymentModeRecord =
-                                                                      listViewPaymentModeRecordList[
-                                                                          listViewIndex];
-                                                                  return Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
+                                                                      .bodySmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                        letterSpacing:
                                                                             0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            3.0),
-                                                                    child:
-                                                                        InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        FFAppState().PayMode =
-                                                                            listViewPaymentModeRecord.name;
-                                                                        FFAppState().dropDown =
-                                                                            true;
-                                                                        FFAppState().curMode =
-                                                                            listViewPaymentModeRecord.name;
-                                                                        FFAppState().prevMode =
-                                                                            containerInvoiceRecord!.paymentMode;
-                                                                        safeSetState(
-                                                                            () {});
-                                                                      },
-                                                                      child:
-                                                                          Material(
-                                                                        color: Colors
-                                                                            .transparent,
-                                                                        elevation:
-                                                                            3.0,
-                                                                        child:
-                                                                            Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.15,
-                                                                          height:
-                                                                              MediaQuery.sizeOf(context).height * 0.04,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          ),
-                                                                          child:
-                                                                              Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
-                                                                                0.0,
-                                                                                5.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              children: [
-                                                                                Text(
-                                                                                  listViewPaymentModeRecord.name,
-                                                                                  style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                        letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                                      ),
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                          ),
-                                                                        ),
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                       ),
-                                                                    ),
-                                                                  );
-                                                                },
-                                                              );
-                                                            },
-                                                          ),
-                                                          theme:
-                                                              ExpandableThemeData(
-                                                            tapHeaderToExpand:
-                                                                true,
-                                                            tapBodyToExpand:
-                                                                false,
-                                                            tapBodyToCollapse:
-                                                                false,
-                                                            headerAlignment:
-                                                                ExpandablePanelHeaderAlignment
-                                                                    .center,
-                                                            hasIcon: true,
-                                                          ),
+                                                                ),
+                                                                AutoSizeText(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'ytb0l9s5' /* : */,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).headlineMediumFamily,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineMediumFamily),
+                                                                      ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
                                                     ),
+                                                  ),
+                                                  StreamBuilder<
+                                                      List<PaymentModeRecord>>(
+                                                    stream:
+                                                        queryPaymentModeRecord(),
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      // Customize what your widget looks like when it's loading.
+                                                      if (!snapshot.hasData) {
+                                                        return Center(
+                                                          child: SizedBox(
+                                                            width: 40.0,
+                                                            height: 40.0,
+                                                            child:
+                                                                SpinKitFadingCircle(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              size: 40.0,
+                                                            ),
+                                                          ),
+                                                        );
+                                                      }
+                                                      List<PaymentModeRecord>
+                                                          dropDownPaymentModeRecordList =
+                                                          snapshot.data!;
+
+                                                      return FlutterFlowDropDown<
+                                                          String>(
+                                                        controller: _model
+                                                                .dropDownValueController ??=
+                                                            FormFieldController<
+                                                                String>(
+                                                          _model.dropDownValue ??=
+                                                              containerInvoiceRecord
+                                                                  ?.paymentMode,
+                                                        ),
+                                                        options:
+                                                            dropDownPaymentModeRecordList
+                                                                .map((e) =>
+                                                                    e.name)
+                                                                .toList(),
+                                                        onChanged: (val) async {
+                                                          safeSetState(() =>
+                                                              _model.dropDownValue =
+                                                                  val);
+                                                          FFAppState().PayMode =
+                                                              _model
+                                                                  .dropDownValue!;
+                                                          FFAppState()
+                                                              .dropDown = true;
+                                                          FFAppState().curMode =
+                                                              _model
+                                                                  .dropDownValue!;
+                                                          FFAppState()
+                                                                  .prevMode =
+                                                              containerInvoiceRecord!
+                                                                  .paymentMode;
+                                                          safeSetState(() {});
+                                                        },
+                                                        width: 200.0,
+                                                        height: 40.0,
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                        hintText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'oxmf0cx6' /* Select... */,
+                                                        ),
+                                                        icon: Icon(
+                                                          Icons
+                                                              .keyboard_arrow_down_rounded,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          size: 24.0,
+                                                        ),
+                                                        fillColor: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        elevation: 2.0,
+                                                        borderColor:
+                                                            Colors.transparent,
+                                                        borderWidth: 0.0,
+                                                        borderRadius: 8.0,
+                                                        margin:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    12.0,
+                                                                    0.0,
+                                                                    12.0,
+                                                                    0.0),
+                                                        hidesUnderline: true,
+                                                        isOverButton: false,
+                                                        isSearchable: false,
+                                                        isMultiSelect: false,
+                                                      );
+                                                    },
                                                   ),
                                                 ],
                                               ),
