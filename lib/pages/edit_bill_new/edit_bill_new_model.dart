@@ -53,7 +53,7 @@ class EditBillNewModel extends FlutterFlowModel<EditBillNewWidget> {
   // Stores action output result for [Custom Action - shiftIdtoInt] action in Save widget.
   int? shiftidtoInt;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Save widget.
-  ShiftDetailsStruct? getOfflineShiftdetails;
+  ShiftDetailsStruct? getOfflineShiftdetails33;
   // Stores action output result for [Custom Action - updateShiftSummaryForEB] action in Save widget.
   dynamic? shiftsummaryresult;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Save widget.

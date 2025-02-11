@@ -3334,6 +3334,137 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
+                                          var confirmDialogResponse =
+                                              await showDialog<bool>(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        content: Text(
+                                                            'Are you sure to update?'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    false),
+                                                            child:
+                                                                Text('Cancel'),
+                                                          ),
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    true),
+                                                            child:
+                                                                Text('Confirm'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  ) ??
+                                                  false;
+                                          if (confirmDialogResponse) {
+                                            _model.returnListCopy =
+                                                await actions.newCustomAction2(
+                                              getJsonField(
+                                                FFAppState()
+                                                    .selectedInvoiceJson,
+                                                r'''$.productList''',
+                                                true,
+                                              )!,
+                                            );
+
+                                            await FFAppState()
+                                                .invoiceRef!
+                                                .update({
+                                              ...createInvoiceRecordData(
+                                                paymentMode:
+                                                    FFAppState().dropDown ==
+                                                            false
+                                                        ? getJsonField(
+                                                            FFAppState()
+                                                                .selectedInvoiceJson,
+                                                            r'''$.paymentMode''',
+                                                          ).toString()
+                                                        : FFAppState().PayMode,
+                                                billAmt: getJsonField(
+                                                  FFAppState()
+                                                      .selectedInvoiceJson,
+                                                  r'''$.billAmt''',
+                                                ),
+                                                finalBillAmt: getJsonField(
+                                                  FFAppState()
+                                                      .selectedInvoiceJson,
+                                                  r'''$.finalBillAmt''',
+                                                ),
+                                              ),
+                                              ...mapToFirestore(
+                                                {
+                                                  'productList':
+                                                      getSelItemListListFirestoreData(
+                                                    _model.returnListCopy,
+                                                  ),
+                                                },
+                                              ),
+                                            });
+                                            _model.shiftListCopy =
+                                                await actions.shiftExists(
+                                              functions.getDayId(),
+                                              '1',
+                                              FFAppState().outletId,
+                                            );
+                                            _model.returnList1Copy =
+                                                await actions
+                                                    .updateShiftSummaryForEB(
+                                              FFAppState().selectedInvoiceJson,
+                                              FFAppState().curMode,
+                                              FFAppState().prevMode,
+                                              _model.shiftListCopy!,
+                                            );
+
+                                            await functions
+                                                .shiftRef(_model.shiftListCopy!,
+                                                    FFAppState().outletId)
+                                                .update(createShiftRecordData(
+                                                  totalSale: getJsonField(
+                                                    _model.returnList1Copy,
+                                                    r'''$.totalSale''',
+                                                  ),
+                                                  subTotalBill: getJsonField(
+                                                    _model.returnList1Copy,
+                                                    r'''$.subTotalSale''',
+                                                  ),
+                                                  paymentJson: getJsonField(
+                                                    _model.returnList1Copy,
+                                                    r'''$.paymentJson''',
+                                                  ).toString(),
+                                                  cashSale: getJsonField(
+                                                    _model.returnList1Copy,
+                                                    r'''$.cashSale''',
+                                                  ),
+                                                ));
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  content: Text(
+                                                      'Invoice Data Updated Sucessfully.'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            );
+                                          } else {
+                                            context.safePop();
+                                          }
+
                                           _model.returnListCopy2 =
                                               await actions.newCustomAction2(
                                             getJsonField(
@@ -3378,7 +3509,7 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                               );
                                             },
                                           );
-                                          _model.getOfflineShiftdetails =
+                                          _model.getOfflineShiftdetails33 =
                                               await actions.hiveShiftCrud(
                                             _model.shiftidtoInt,
                                             FFAppState().shiftDetails,
@@ -3390,98 +3521,98 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                             FFAppState().selectedInvoiceJson,
                                             FFAppState().curMode,
                                             FFAppState().prevMode,
-                                            _model.getOfflineShiftdetails!
+                                            _model.getOfflineShiftdetails33!
                                                 .toMap(),
                                           );
                                           FFAppState().updateShiftDetailsStruct(
                                             (e) => e
                                               ..id = valueOrDefault<String>(
-                                                _model
-                                                    .getOfflineShiftdetails?.id,
+                                                _model.getOfflineShiftdetails33
+                                                    ?.id,
                                                 '0',
                                               )
                                               ..billCount = valueOrDefault<int>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.billCount,
                                                 0,
                                               )
                                               ..dayId = valueOrDefault<String>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.dayId,
                                                 '0',
                                               )
                                               ..lastBillNo =
                                                   valueOrDefault<String>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.lastBillNo,
                                                 '0',
                                               )
                                               ..lastBillTime =
                                                   valueOrDefault<int>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.lastBillTime,
                                                 0,
                                               )
                                               ..tax = valueOrDefault<double>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.tax,
                                                 0.0,
                                               )
                                               ..deliveryCharges =
                                                   valueOrDefault<double>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.deliveryCharges,
                                                 0.0,
                                               )
                                               ..code = valueOrDefault<int>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.code,
                                                 0,
                                               )
                                               ..endTime = valueOrDefault<int>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.endTime,
                                                 0,
                                               )
                                               ..advanceAmtTotal =
                                                   valueOrDefault<double>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.advanceAmtTotal,
                                                 0.0,
                                               )
                                               ..customerReciveAmtTotal =
                                                   valueOrDefault<double>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.customerReciveAmtTotal,
                                                 0.0,
                                               )
                                               ..discount =
                                                   valueOrDefault<double>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.discount,
                                                 0.0,
                                               )
                                               ..expensesAmtTotal =
                                                   valueOrDefault<double>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.expensesAmtTotal,
                                                 0.0,
                                               )
                                               ..openingAmt =
                                                   valueOrDefault<double>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.openingAmt,
                                                 0.0,
                                               )
                                               ..receiveAmtTotal =
                                                   valueOrDefault<double>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.receiveAmtTotal,
                                                 0.0,
                                               )
                                               ..refoundAmount =
                                                   valueOrDefault<double>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.refoundAmount,
                                                 0.0,
                                               )
@@ -3491,13 +3622,13 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                               )
                                               ..roundOff =
                                                   valueOrDefault<double>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.roundOff,
                                                 0.0,
                                               )
                                               ..cashInHand =
                                                   valueOrDefault<double>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.cashInHand,
                                                 0.0,
                                               )
@@ -3506,15 +3637,15 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                 r'''$.cashSale''',
                                               )
                                               ..startTime = valueOrDefault<int>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.startTime,
                                                 0,
                                               )
                                               ..inActive = _model
-                                                  .getOfflineShiftdetails
+                                                  .getOfflineShiftdetails33
                                                   ?.inActive
                                               ..shiftNo = valueOrDefault<int>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.shiftNo,
                                                 0,
                                               )
@@ -3523,13 +3654,13 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                 r'''$.subTotalSale''',
                                               )
                                               ..userId = valueOrDefault<String>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.userId,
                                                 '0',
                                               )
                                               ..deviceId =
                                                   valueOrDefault<String>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.deviceId,
                                                 '0',
                                               )
@@ -3538,30 +3669,31 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                 r'''$.paymentJson''',
                                               ).toString()
                                               ..version = valueOrDefault<int>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.version,
                                                 0,
                                               )
                                               ..productSaleList = _model
-                                                  .getOfflineShiftdetails!
+                                                  .getOfflineShiftdetails33!
                                                   .productSaleList
                                                   .toList()
                                               ..shiftId =
                                                   valueOrDefault<String>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.shiftId,
                                                 '0',
                                               )
                                               ..synC = _model
-                                                  .getOfflineShiftdetails?.synC
+                                                  .getOfflineShiftdetails33
+                                                  ?.synC
                                               ..hivekey = valueOrDefault<int>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.hivekey,
                                                 0,
                                               )
                                               ..newIDShift =
                                                   valueOrDefault<int>(
-                                                _model.getOfflineShiftdetails
+                                                _model.getOfflineShiftdetails33
                                                     ?.newIDShift,
                                                 0,
                                               ),
@@ -3569,159 +3701,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                           safeSetState(() {});
                                           _model.newupdated =
                                               await actions.hiveShiftCrud(
-                                            _model.getOfflineShiftdetails
+                                            _model.getOfflineShiftdetails33
                                                 ?.newIDShift,
                                             FFAppState().shiftDetails,
                                             'update',
-                                          );
-                                          var confirmDialogResponse =
-                                              await showDialog<bool>(
-                                                    context: context,
-                                                    builder:
-                                                        (alertDialogContext) {
-                                                      return AlertDialog(
-                                                        content: Text(
-                                                            'Are you sure to update?'),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext,
-                                                                    false),
-                                                            child:
-                                                                Text('Cancel'),
-                                                          ),
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext,
-                                                                    true),
-                                                            child:
-                                                                Text('Confirm'),
-                                                          ),
-                                                        ],
-                                                      );
-                                                    },
-                                                  ) ??
-                                                  false;
-                                          if (confirmDialogResponse) {
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  content: Text(
-                                                      'Invoice Data Updated Sucessfully.'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
-                                                );
-                                              },
-                                            );
-                                            context.safePop();
-                                          } else {
-                                            context.safePop();
-                                          }
-
-                                          safeSetState(() {});
-                                        },
-                                        onDoubleTap: () async {
-                                          _model.returnListCopy =
-                                              await actions.newCustomAction2(
-                                            getJsonField(
-                                              FFAppState().selectedInvoiceJson,
-                                              r'''$.productList''',
-                                              true,
-                                            )!,
-                                          );
-
-                                          await FFAppState()
-                                              .invoiceRef!
-                                              .update({
-                                            ...createInvoiceRecordData(
-                                              paymentMode:
-                                                  FFAppState().dropDown == false
-                                                      ? getJsonField(
-                                                          FFAppState()
-                                                              .selectedInvoiceJson,
-                                                          r'''$.paymentMode''',
-                                                        ).toString()
-                                                      : FFAppState().PayMode,
-                                              billAmt: getJsonField(
-                                                FFAppState()
-                                                    .selectedInvoiceJson,
-                                                r'''$.billAmt''',
-                                              ),
-                                              finalBillAmt: getJsonField(
-                                                FFAppState()
-                                                    .selectedInvoiceJson,
-                                                r'''$.finalBillAmt''',
-                                              ),
-                                            ),
-                                            ...mapToFirestore(
-                                              {
-                                                'productList':
-                                                    getSelItemListListFirestoreData(
-                                                  _model.returnListCopy,
-                                                ),
-                                              },
-                                            ),
-                                          });
-                                          _model.shiftListCopy =
-                                              await actions.shiftExists(
-                                            functions.getDayId(),
-                                            '1',
-                                            FFAppState().outletId,
-                                          );
-                                          _model.returnList1Copy = await actions
-                                              .updateShiftSummaryForEB(
-                                            FFAppState().selectedInvoiceJson,
-                                            FFAppState().curMode,
-                                            FFAppState().prevMode,
-                                            _model.getOfflineShiftdetails!
-                                                .toMap(),
-                                          );
-
-                                          await functions
-                                              .shiftRef(_model.shiftListCopy!,
-                                                  FFAppState().outletId)
-                                              .update(createShiftRecordData(
-                                                totalSale: getJsonField(
-                                                  _model.returnList1Copy,
-                                                  r'''$.totalSale''',
-                                                ),
-                                                subTotalBill: getJsonField(
-                                                  _model.returnList1Copy,
-                                                  r'''$.subTotalSale''',
-                                                ),
-                                                paymentJson: getJsonField(
-                                                  _model.returnList1Copy,
-                                                  r'''$.paymentJson''',
-                                                ).toString(),
-                                                cashSale: getJsonField(
-                                                  _model.returnList1Copy,
-                                                  r'''$.cashSale''',
-                                                ),
-                                              ));
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text('updated'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
-                                              );
-                                            },
                                           );
 
                                           safeSetState(() {});
