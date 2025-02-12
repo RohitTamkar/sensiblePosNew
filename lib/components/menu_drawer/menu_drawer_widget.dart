@@ -256,7 +256,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                     ),
                                   ),
                                 ),
-                              if (false)
+                              if (containerUserProfileRecord?.role == 'admin')
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 1.5),
