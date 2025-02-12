@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
-import '/components/calender/calender_widget.dart';
 import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -15,6 +14,8 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -385,6 +386,18 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                   );
                                                   FFAppState().dropDown = false;
                                                   FFAppState().update(() {});
+                                                  _model.invref =
+                                                      await queryInvoiceRecordOnce(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
+                                                    queryBuilder:
+                                                        (invoiceRecord) =>
+                                                            invoiceRecord.where(
+                                                      'id',
+                                                      isEqualTo: invlistItem.id,
+                                                    ),
+                                                    singleRecord: true,
+                                                  ).then((s) => s.firstOrNull);
                                                   FFAppState()
                                                           .selectedInvoiceJson =
                                                       invlistItem.toMap();
@@ -394,7 +407,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                     invlistItem.id,
                                                     '0',
                                                   );
+                                                  FFAppState().invoiceRef =
+                                                      _model.invref?.reference;
                                                   FFAppState().update(() {});
+
+                                                  safeSetState(() {});
                                                 },
                                                 child: Material(
                                                   color: Colors.transparent,
@@ -601,41 +618,79 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    await showModalBottomSheet(
-                                      isScrollControlled: true,
-                                      backgroundColor: Colors.transparent,
-                                      barrierColor: Color(0x00000000),
+                                    final _datePickedDate =
+                                        await showDatePicker(
                                       context: context,
-                                      builder: (context) {
-                                        return GestureDetector(
-                                          onTap: () {
-                                            FocusScope.of(context).unfocus();
-                                            FocusManager.instance.primaryFocus
-                                                ?.unfocus();
-                                          },
-                                          child: Padding(
-                                            padding: MediaQuery.viewInsetsOf(
-                                                context),
-                                            child: CalenderWidget(
-                                              reportType: 'editbill',
-                                            ),
-                                          ),
+                                      initialDate: getCurrentTimestamp,
+                                      firstDate: DateTime(1900),
+                                      lastDate: DateTime(2050),
+                                      builder: (context, child) {
+                                        return wrapInMaterialDatePickerTheme(
+                                          context,
+                                          child!,
+                                          headerBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          headerForegroundColor:
+                                              FlutterFlowTheme.of(context).info,
+                                          headerTextStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .headlineLarge
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineLargeFamily,
+                                                fontSize: 32.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineLargeFamily),
+                                              ),
+                                          pickerBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          pickerForegroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          selectedDateTimeBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          selectedDateTimeForegroundColor:
+                                              FlutterFlowTheme.of(context).info,
+                                          actionButtonForegroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          iconSize: 24.0,
                                         );
                                       },
-                                    ).then((value) => safeSetState(() {}));
+                                    );
 
-                                    if (animationsMap[
-                                            'containerOnActionTriggerAnimation1'] !=
-                                        null) {
-                                      safeSetState(
-                                          () => hasContainerTriggered1 = true);
-                                      SchedulerBinding.instance
-                                          .addPostFrameCallback((_) async =>
-                                              await animationsMap[
-                                                      'containerOnActionTriggerAnimation1']!
-                                                  .controller
-                                                  .forward(from: 0.0));
+                                    if (_datePickedDate != null) {
+                                      safeSetState(() {
+                                        _model.datePicked = DateTime(
+                                          _datePickedDate.year,
+                                          _datePickedDate.month,
+                                          _datePickedDate.day,
+                                        );
+                                      });
                                     }
+                                    FFAppState().filterDate = functions
+                                        .selectedDayId(_model.datePicked!);
+                                    FFAppState().update(() {});
+                                    _model.invoicebyday2 =
+                                        await actions.hiveGetInvoicestoday(
+                                      FFAppState().filterDate,
+                                    );
+                                    FFAppState().invoiceList = _model
+                                        .invoicebyday2!
+                                        .toList()
+                                        .cast<InvoiceStructStruct>();
+                                    safeSetState(() {});
+
+                                    safeSetState(() {});
                                   },
                                   child: Container(
                                     width:
@@ -1405,6 +1460,9 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                         child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
                                                           children: [
                                                             Row(
                                                               mainAxisSize:
@@ -1432,25 +1490,28 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                             GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                       ),
                                                                 ),
-                                                                AutoSizeText(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'ytb0l9s5' /* : */,
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).headlineMediumFamily,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineMediumFamily),
-                                                                      ),
-                                                                ),
                                                               ],
+                                                            ),
+                                                            AutoSizeText(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'ytb0l9s5' /* : */,
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineMediumFamily,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).headlineMediumFamily),
+                                                                  ),
                                                             ),
                                                           ],
                                                         ),
@@ -3364,23 +3425,6 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                     r'''$.cashSale''',
                                                   ),
                                                 ));
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  content: Text(
-                                                      'Invoice Data Updated Sucessfully.'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
-                                                );
-                                              },
-                                            );
                                           } else {
                                             context.safePop();
                                           }
