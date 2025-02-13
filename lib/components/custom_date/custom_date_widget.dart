@@ -175,6 +175,10 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                       _datePicked1Date.day,
                                     );
                                   });
+                                } else if (_model.datePicked1 != null) {
+                                  safeSetState(() {
+                                    _model.datePicked1 = getCurrentTimestamp;
+                                  });
                                 }
                                 FFAppState().selectStartDate =
                                     _model.datePicked1!.millisecondsSinceEpoch;
@@ -331,6 +335,10 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                       _datePicked2Date.month,
                                       _datePicked2Date.day,
                                     );
+                                  });
+                                } else if (_model.datePicked2 != null) {
+                                  safeSetState(() {
+                                    _model.datePicked2 = getCurrentTimestamp;
                                   });
                                 }
                                 FFAppState().selectEndDate = functions

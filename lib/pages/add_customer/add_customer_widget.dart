@@ -3239,6 +3239,14 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                                                             .day,
                                                                       );
                                                                     });
+                                                                  } else if (_model
+                                                                          .datePicked1 !=
+                                                                      null) {
+                                                                    safeSetState(
+                                                                        () {
+                                                                      _model.datePicked1 =
+                                                                          getCurrentTimestamp;
+                                                                    });
                                                                   }
                                                                 },
                                                                 child: Material(
@@ -3392,6 +3400,14 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                                                       _datePicked2Date
                                                                           .day,
                                                                     );
+                                                                  });
+                                                                } else if (_model
+                                                                        .datePicked2 !=
+                                                                    null) {
+                                                                  safeSetState(
+                                                                      () {
+                                                                    _model.datePicked2 =
+                                                                        getCurrentTimestamp;
                                                                   });
                                                                 }
                                                               },

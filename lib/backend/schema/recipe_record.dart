@@ -36,15 +36,15 @@ class RecipeRecord extends FirestoreRecord {
   int get code => _code ?? 0;
   bool hasCode() => _code != null;
 
-  // "xyz" field.
-  List<SelItemListStruct>? _xyz;
-  List<SelItemListStruct> get xyz => _xyz ?? const [];
-  bool hasXyz() => _xyz != null;
-
   // "items" field.
   List<RecipeItemListStruct>? _items;
   List<RecipeItemListStruct> get items => _items ?? const [];
   bool hasItems() => _items != null;
+
+  // "id" field.
+  String? _id;
+  String get id => _id ?? '';
+  bool hasId() => _id != null;
 
   DocumentReference get parentReference => reference.parent.parent!;
 
@@ -53,14 +53,11 @@ class RecipeRecord extends FirestoreRecord {
     _reverseStock = snapshotData['reverseStock'] as bool?;
     _type = castToType<int>(snapshotData['type']);
     _code = castToType<int>(snapshotData['code']);
-    _xyz = getStructList(
-      snapshotData['xyz'],
-      SelItemListStruct.fromMap,
-    );
     _items = getStructList(
       snapshotData['items'],
       RecipeItemListStruct.fromMap,
     );
+    _id = snapshotData['id'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -106,6 +103,7 @@ Map<String, dynamic> createRecipeRecordData({
   bool? reverseStock,
   int? type,
   int? code,
+  String? id,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -113,6 +111,7 @@ Map<String, dynamic> createRecipeRecordData({
       'reverseStock': reverseStock,
       'type': type,
       'code': code,
+      'id': id,
     }.withoutNulls,
   );
 
@@ -129,13 +128,13 @@ class RecipeRecordDocumentEquality implements Equality<RecipeRecord> {
         e1?.reverseStock == e2?.reverseStock &&
         e1?.type == e2?.type &&
         e1?.code == e2?.code &&
-        listEquality.equals(e1?.xyz, e2?.xyz) &&
-        listEquality.equals(e1?.items, e2?.items);
+        listEquality.equals(e1?.items, e2?.items) &&
+        e1?.id == e2?.id;
   }
 
   @override
   int hash(RecipeRecord? e) => const ListEquality()
-      .hash([e?.name, e?.reverseStock, e?.type, e?.code, e?.xyz, e?.items]);
+      .hash([e?.name, e?.reverseStock, e?.type, e?.code, e?.items, e?.id]);
 
   @override
   bool isValidKey(Object? o) => o is RecipeRecord;

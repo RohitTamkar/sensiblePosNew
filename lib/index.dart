@@ -180,3 +180,4 @@ export '/pages/kiosk/kiosk_choose_payment_mode_copy/kiosk_choose_payment_mode_co
     show KioskChoosePaymentModeCopyWidget;
 export '/pages/kiosk/kiosk_cartdineinparcel/kiosk_cartdineinparcel_widget.dart'
     show KioskCartdineinparcelWidget;
+export '/pages/xyz_billing/xyz_billing_widget.dart' show XyzBillingWidget;
