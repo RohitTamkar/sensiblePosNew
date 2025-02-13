@@ -248,116 +248,166 @@ class _XyzproductCartWidgetState extends State<XyzproductCartWidget> {
                           ),
                         ),
                       Expanded(
-                        child: Container(
-                          width: 200.0,
-                          child: TextFormField(
-                            controller: _model.productQtyTextController,
-                            focusNode: _model.productQtyFocusNode,
-                            onFieldSubmitted: (_) async {
-                              _model.custqty = await actions.laudryAddCustomQty(
-                                widget!.parameter4!,
-                                FFAppState().selBill,
-                                widget!.parameter5!.toList(),
-                                functions
-                                    .enabletaxinclusive(widget!.parameter7!),
-                                double.tryParse(
-                                    _model.productQtyTextController.text),
-                              );
-                              _model.calSubtotal =
-                                  await actions.laundrycalSubTotalForHoldList(
-                                FFAppState().selBill.toString(),
-                                _model.custqty!.toList(),
-                              );
-                              _model.reuslt12CopyCopyCopy =
-                                  await actions.calBillAmt(
-                                valueOrDefault<double>(
-                                  FFAppState().disAmt,
-                                  0.0,
-                                ),
-                                FFAppState().delCharges,
-                              );
+                        child: Stack(
+                          children: [
+                            if (_model.show)
+                              Container(
+                                width: 200.0,
+                                child: TextFormField(
+                                  controller: _model.productQtyTextController,
+                                  focusNode: _model.productQtyFocusNode,
+                                  onFieldSubmitted: (_) async {
+                                    _model.custqty =
+                                        await actions.laudryAddCustomQty(
+                                      widget!.parameter4!,
+                                      FFAppState().selBill,
+                                      widget!.parameter5!.toList(),
+                                      functions.enabletaxinclusive(
+                                          widget!.parameter7!),
+                                      double.tryParse(
+                                          _model.productQtyTextController.text),
+                                    );
+                                    _model.calSubtotal = await actions
+                                        .laundrycalSubTotalForHoldList(
+                                      FFAppState().selBill.toString(),
+                                      _model.custqty!.toList(),
+                                    );
+                                    _model.reuslt12CopyCopyCopy =
+                                        await actions.calBillAmt(
+                                      valueOrDefault<double>(
+                                        FFAppState().disAmt,
+                                        0.0,
+                                      ),
+                                      FFAppState().delCharges,
+                                    );
 
-                              safeSetState(() {});
-                            },
-                            autofocus: false,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              isDense: true,
-                              labelStyle: FlutterFlowTheme.of(context)
-                                  .bodySmall
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodySmallFamily,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    fontSize: 13.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodySmallFamily),
+                                    safeSetState(() {});
+                                  },
+                                  autofocus: false,
+                                  obscureText: false,
+                                  decoration: InputDecoration(
+                                    isDense: true,
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmallFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 13.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmallFamily),
+                                        ),
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMediumFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily),
+                                        ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .accent3,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0x00000000),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    errorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    focusedErrorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    filled: true,
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
                                   ),
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMediumFamily),
+                                      ),
+                                  keyboardType:
+                                      const TextInputType.numberWithOptions(
+                                          decimal: true),
+                                  cursorColor:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  validator: _model
+                                      .productQtyTextControllerValidator
+                                      .asValidator(context),
+                                ),
+                              ),
+                            if (!_model.show)
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  safeSetState(() {
+                                    _model.productQtyTextController?.text =
+                                        valueOrDefault<String>(
+                                      widget!.parameter8?.toString(),
+                                      '0',
+                                    );
+                                  });
+                                  _model.show = true;
+                                  safeSetState(() {});
+                                },
+                                child: Text(
+                                  valueOrDefault<String>(
+                                    widget!.parameter8?.toString(),
+                                    '0',
                                   ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).accent3,
-                                  width: 1.0,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
+                                        fontSize: 25.0,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
+                                      ),
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              filled: true,
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .titleMedium
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleMediumFamily,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .titleMediumFamily),
-                                ),
-                            keyboardType: const TextInputType.numberWithOptions(
-                                decimal: true),
-                            cursorColor:
-                                FlutterFlowTheme.of(context).primaryText,
-                            validator: _model.productQtyTextControllerValidator
-                                .asValidator(context),
-                          ),
+                          ],
                         ),
                       ),
                       if (false)
