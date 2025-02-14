@@ -361,6 +361,7 @@ class _XyzproductCartWidgetState extends State<XyzproductCartWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleMediumFamily),
                                       ),
+                                  textAlign: TextAlign.center,
                                   keyboardType:
                                       const TextInputType.numberWithOptions(
                                           decimal: true),
@@ -398,7 +399,7 @@ class _XyzproductCartWidgetState extends State<XyzproductCartWidget> {
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .bodyMediumFamily,
-                                        fontSize: 25.0,
+                                        fontSize: 20.0,
                                         letterSpacing: 0.0,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(

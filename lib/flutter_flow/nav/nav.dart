@@ -1404,6 +1404,37 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   isList: true,
                 ),
               ),
+            ),
+            FFRoute(
+              name: 'xyzBillingCopy',
+              path: 'xyzBillingCopy',
+              asyncParams: {
+                'taxcollection':
+                    getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
+              },
+              builder: (context, params) => XyzBillingCopyWidget(
+                billDetails: params.getParam(
+                  'billDetails',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['OUTLET', 'INVOICE'],
+                ),
+                doc: params.getParam(
+                  'doc',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['USER_PROFILE'],
+                ),
+                shiftDetails: params.getParam(
+                  'shiftDetails',
+                  ParamType.JSON,
+                ),
+                taxcollection: params.getParam<TaxMasterRecord>(
+                  'taxcollection',
+                  ParamType.Document,
+                  isList: true,
+                ),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
