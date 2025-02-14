@@ -3534,6 +3534,16 @@ class FFAppState extends ChangeNotifier {
   set parcelqty(int value) {
     _parcelqty = value;
   }
+
+  RecipeItemListStruct _recipeitems = RecipeItemListStruct();
+  RecipeItemListStruct get recipeitems => _recipeitems;
+  set recipeitems(RecipeItemListStruct value) {
+    _recipeitems = value;
+  }
+
+  void updateRecipeitemsStruct(Function(RecipeItemListStruct) updateFn) {
+    updateFn(_recipeitems);
+  }
 }
 
 void _safeInit(Function() initializeField) {

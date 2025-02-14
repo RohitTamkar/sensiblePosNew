@@ -1300,3 +1300,15 @@ String newCustomFunction(String link) {
   Uri uri = Uri.parse(link);
   return '${uri.scheme}://${uri.host}/';
 }
+
+RecipeRecord returnrecipeprd(
+  List<RecipeRecord> recipeProductstruct,
+  ProductStructStruct productStruct,
+) {
+  return recipeProductstruct.firstWhere(
+    (recipe) => recipe.items.any(
+      (item) => item.id == productStruct.id,
+    ),
+    orElse: () => throw Exception("No matching RecipeRecord found"),
+  );
+}

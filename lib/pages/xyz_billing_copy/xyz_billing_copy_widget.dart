@@ -1403,19 +1403,22 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                             ),
                                                                       ),
-                                                                      Text(
-                                                                        productList2Item
-                                                                            .price
-                                                                            .toString(),
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .labelLarge
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
-                                                                              letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
-                                                                            ),
+                                                                      Flexible(
+                                                                        child:
+                                                                            Text(
+                                                                          productList2Item
+                                                                              .sellingPrice
+                                                                              .toString(),
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
+                                                                              ),
+                                                                        ),
                                                                       ),
                                                                     ],
                                                                   ),
@@ -1433,16 +1436,6 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                       stream: queryRecipeRecord(
                                                         parent: FFAppState()
                                                             .outletIdRef,
-                                                        queryBuilder:
-                                                            (recipeRecord) =>
-                                                                recipeRecord
-                                                                    .where(
-                                                          'id',
-                                                          isEqualTo:
-                                                              productList2Item
-                                                                  .recipeRefId,
-                                                        ),
-                                                        singleRecord: true,
                                                       ),
                                                       builder:
                                                           (context, snapshot) {
@@ -1465,17 +1458,6 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                         List<RecipeRecord>
                                                             containerRecipeRecordList =
                                                             snapshot.data!;
-                                                        // Return an empty Container when the item does not exist.
-                                                        if (snapshot
-                                                            .data!.isEmpty) {
-                                                          return Container();
-                                                        }
-                                                        final containerRecipeRecord =
-                                                            containerRecipeRecordList
-                                                                    .isNotEmpty
-                                                                ? containerRecipeRecordList
-                                                                    .first
-                                                                : null;
 
                                                         return Container(
                                                           width: 280.0,
@@ -1487,8 +1469,11 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                   .productHive
                                                                   .where((e) =>
                                                                       e.recipeRefId ==
-                                                                      containerRecipeRecord
-                                                                          ?.reference
+                                                                      functions
+                                                                          .returnrecipeprd(
+                                                                              containerRecipeRecordList.toList(),
+                                                                              productList2Item)
+                                                                          .reference
                                                                           .id)
                                                                   .toList();
 

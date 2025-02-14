@@ -70,6 +70,11 @@ class XyzBillingCopyModel extends FlutterFlowModel<XyzBillingCopyWidget> {
     updateFn(prditemrecipe ??= ProductStructStruct());
   }
 
+  RecipeItemListStruct? rescipeitems;
+  void updateRescipeitemsStruct(Function(RecipeItemListStruct) updateFn) {
+    updateFn(rescipeitems ??= RecipeItemListStruct());
+  }
+
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Custom Action - getProductlistHive] action in xyzBillingCopy widget.
