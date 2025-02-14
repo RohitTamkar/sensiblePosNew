@@ -1241,9 +1241,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                         builder: (context) {
                                           final productList2 = FFAppState()
                                               .productHive
-                                              .where((e) =>
-                                                  e.recipeRefId != null &&
-                                                  e.recipeRefId != '')
+                                              .where((e) => e.type == 0)
                                               .toList();
 
                                           return ListView.separated(
