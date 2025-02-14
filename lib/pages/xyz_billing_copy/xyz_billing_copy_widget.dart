@@ -1468,13 +1468,11 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                               final recipeVar = FFAppState()
                                                                   .productHive
                                                                   .where((e) =>
-                                                                      e.recipeRefId ==
-                                                                      functions
-                                                                          .returnrecipeprd(
-                                                                              containerRecipeRecordList.toList(),
-                                                                              productList2Item)
-                                                                          .reference
-                                                                          .id)
+                                                                      (e.recipeRefId ==
+                                                                          functions
+                                                                              .returnrecipeprd(containerRecipeRecordList.toList(), productList2Item)
+                                                                              .id) &&
+                                                                      (e.type == 0))
                                                                   .toList();
 
                                                               return ListView
