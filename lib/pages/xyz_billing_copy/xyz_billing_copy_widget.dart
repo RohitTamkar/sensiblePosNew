@@ -1428,202 +1428,150 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                     ),
                                                   ),
                                                   Expanded(
-                                                    child: StreamBuilder<
-                                                        List<RecipeRecord>>(
-                                                      stream: queryRecipeRecord(
-                                                        parent: FFAppState()
-                                                            .outletIdRef,
-                                                        queryBuilder:
-                                                            (recipeRecord) =>
-                                                                recipeRecord
-                                                                    .where(
-                                                          'id',
-                                                          isEqualTo:
-                                                              productList2Item
-                                                                  .recipeRefId,
-                                                        ),
-                                                        singleRecord: true,
-                                                      ),
-                                                      builder:
-                                                          (context, snapshot) {
-                                                        // Customize what your widget looks like when it's loading.
-                                                        if (!snapshot.hasData) {
-                                                          return Center(
-                                                            child: SizedBox(
-                                                              width: 40.0,
-                                                              height: 40.0,
-                                                              child:
-                                                                  SpinKitFadingCircle(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                                size: 40.0,
-                                                              ),
-                                                            ),
-                                                          );
-                                                        }
-                                                        List<RecipeRecord>
-                                                            containerRecipeRecordList =
-                                                            snapshot.data!;
-                                                        // Return an empty Container when the item does not exist.
-                                                        if (snapshot
-                                                            .data!.isEmpty) {
-                                                          return Container();
-                                                        }
-                                                        final containerRecipeRecord =
-                                                            containerRecipeRecordList
-                                                                    .isNotEmpty
-                                                                ? containerRecipeRecordList
-                                                                    .first
-                                                                : null;
+                                                    child: Container(
+                                                      width: 280.0,
+                                                      decoration:
+                                                          BoxDecoration(),
+                                                      child: Builder(
+                                                        builder: (context) {
+                                                          final recipeVar = FFAppState()
+                                                              .productHive
+                                                              .where((e) =>
+                                                                  e.recipeRefId ==
+                                                                  productList2Item
+                                                                      .recipeRefId)
+                                                              .toList();
 
-                                                        return Container(
-                                                          width: 280.0,
-                                                          decoration:
-                                                              BoxDecoration(),
-                                                          child: Builder(
-                                                            builder: (context) {
-                                                              final recipeVar = FFAppState()
-                                                                  .productHive
-                                                                  .where((e) =>
-                                                                      e.recipeRefId ==
-                                                                      containerRecipeRecord
-                                                                          ?.reference
-                                                                          .id)
-                                                                  .toList();
-
-                                                              return ListView
-                                                                  .separated(
-                                                                padding:
-                                                                    EdgeInsets
-                                                                        .zero,
-                                                                shrinkWrap:
-                                                                    true,
-                                                                scrollDirection:
-                                                                    Axis.vertical,
-                                                                itemCount:
-                                                                    recipeVar
-                                                                        .length,
-                                                                separatorBuilder: (_,
-                                                                        __) =>
+                                                          return ListView
+                                                              .separated(
+                                                            padding:
+                                                                EdgeInsets.zero,
+                                                            shrinkWrap: true,
+                                                            scrollDirection:
+                                                                Axis.vertical,
+                                                            itemCount: recipeVar
+                                                                .length,
+                                                            separatorBuilder:
+                                                                (_, __) =>
                                                                     SizedBox(
                                                                         height:
                                                                             5.0),
-                                                                itemBuilder:
-                                                                    (context,
-                                                                        recipeVarIndex) {
-                                                                  final recipeVarItem =
-                                                                      recipeVar[
-                                                                          recipeVarIndex];
-                                                                  return Visibility(
-                                                                    visible: !xyzBillingCopyAppSettingsRecord!
-                                                                        .settingList
-                                                                        .where((e) =>
-                                                                            e.title ==
-                                                                            'showProductImage')
-                                                                        .toList()
-                                                                        .firstOrNull!
-                                                                        .value,
+                                                            itemBuilder: (context,
+                                                                recipeVarIndex) {
+                                                              final recipeVarItem =
+                                                                  recipeVar[
+                                                                      recipeVarIndex];
+                                                              return Visibility(
+                                                                visible: !xyzBillingCopyAppSettingsRecord!
+                                                                    .settingList
+                                                                    .where((e) =>
+                                                                        e.title ==
+                                                                        'showProductImage')
+                                                                    .toList()
+                                                                    .firstOrNull!
+                                                                    .value,
+                                                                child: InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    await _model
+                                                                        .listViewprd
+                                                                        ?.animateTo(
+                                                                      _model
+                                                                          .listViewprd!
+                                                                          .position
+                                                                          .maxScrollExtent,
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              100),
+                                                                      curve: Curves
+                                                                          .ease,
+                                                                    );
+                                                                  },
+                                                                  onDoubleTap:
+                                                                      () async {},
+                                                                  onLongPress:
+                                                                      () async {},
+                                                                  child:
+                                                                      Container(
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FFAppState().productColor ==
+                                                                              productList2Item
+                                                                                  .id
+                                                                          ? FlutterFlowTheme.of(context)
+                                                                              .secondary
+                                                                          : FlutterFlowTheme.of(context)
+                                                                              .secondaryBackground,
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              5.0),
+                                                                    ),
                                                                     child:
-                                                                        InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        await _model
-                                                                            .listViewprd
-                                                                            ?.animateTo(
-                                                                          _model
-                                                                              .listViewprd!
-                                                                              .position
-                                                                              .maxScrollExtent,
-                                                                          duration:
-                                                                              Duration(milliseconds: 100),
-                                                                          curve:
-                                                                              Curves.ease,
-                                                                        );
-                                                                      },
-                                                                      onDoubleTap:
-                                                                          () async {},
-                                                                      onLongPress:
-                                                                          () async {},
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          15.0,
+                                                                          10.0,
+                                                                          15.0),
                                                                       child:
-                                                                          Container(
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color: FFAppState().productColor == productList2Item.id
-                                                                              ? FlutterFlowTheme.of(context).secondary
-                                                                              : FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(5.0),
-                                                                        ),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              10.0,
-                                                                              15.0,
-                                                                              10.0,
-                                                                              15.0),
-                                                                          child:
-                                                                              Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.center,
-                                                                            children: [
-                                                                              Text(
-                                                                                recipeVarItem.name.maybeHandleOverflow(
-                                                                                  maxChars: 25,
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        children: [
+                                                                          Text(
+                                                                            recipeVarItem.name.maybeHandleOverflow(
+                                                                              maxChars: 25,
+                                                                            ),
+                                                                            textAlign:
+                                                                                TextAlign.center,
+                                                                            style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                  fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                                  letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                                 ),
-                                                                                textAlign: TextAlign.center,
-                                                                                style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                          ),
+                                                                          if (false)
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
+                                                                              child: Text(
+                                                                                'Stock :${recipeVarItem.stock.toString()}',
+                                                                                textAlign: TextAlign.justify,
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                      color: FlutterFlowTheme.of(context).primary,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                     ),
                                                                               ),
-                                                                              if (false)
-                                                                                Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
-                                                                                  child: Text(
-                                                                                    'Stock :${recipeVarItem.stock.toString()}',
-                                                                                    textAlign: TextAlign.justify,
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                          color: FlutterFlowTheme.of(context).primary,
-                                                                                          letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                        ),
-                                                                                  ),
-                                                                                ),
-                                                                            ],
-                                                                          ),
-                                                                        ),
+                                                                            ),
+                                                                        ],
                                                                       ),
-                                                                    ).animateOnActionTrigger(
-                                                                            animationsMap[
-                                                                                'containerOnActionTriggerAnimation2']!,
-                                                                            hasBeenTriggered:
-                                                                                hasContainerTriggered2),
-                                                                  );
-                                                                },
-                                                                controller: _model
-                                                                    .listViewController3,
+                                                                    ),
+                                                                  ),
+                                                                ).animateOnActionTrigger(
+                                                                    animationsMap[
+                                                                        'containerOnActionTriggerAnimation2']!,
+                                                                    hasBeenTriggered:
+                                                                        hasContainerTriggered2),
                                                               );
                                                             },
-                                                          ),
-                                                        );
-                                                      },
+                                                            controller: _model
+                                                                .listViewController3,
+                                                          );
+                                                        },
+                                                      ),
                                                     ),
                                                   ),
                                                 ],
