@@ -1251,7 +1251,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                             scrollDirection: Axis.horizontal,
                                             itemCount: productList2.length,
                                             separatorBuilder: (_, __) =>
-                                                SizedBox(width: 15.0),
+                                                SizedBox(width: 20.0),
                                             itemBuilder:
                                                 (context, productList2Index) {
                                               final productList2Item =
@@ -1317,9 +1317,8 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                       .of(
                                                                           context)
                                                                   .primary
-                                                              : FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondary,
+                                                              : Color(
+                                                                  0xFFD2DDFF),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
@@ -1431,147 +1430,202 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                     ),
                                                   ),
                                                   Expanded(
-                                                    child: Container(
-                                                      width: 280.0,
-                                                      decoration:
-                                                          BoxDecoration(),
-                                                      child: Builder(
-                                                        builder: (context) {
-                                                          final recipeVar = FFAppState()
-                                                              .productHive
-                                                              .where((e) =>
-                                                                  e.recipeRefId ==
-                                                                  productList2Item
-                                                                      .recipeRefId)
-                                                              .toList();
+                                                    child: StreamBuilder<
+                                                        List<RecipeRecord>>(
+                                                      stream: queryRecipeRecord(
+                                                        parent: FFAppState()
+                                                            .outletIdRef,
+                                                        queryBuilder:
+                                                            (recipeRecord) =>
+                                                                recipeRecord
+                                                                    .where(
+                                                          'id',
+                                                          isEqualTo:
+                                                              productList2Item
+                                                                  .recipeRefId,
+                                                        ),
+                                                        singleRecord: true,
+                                                      ),
+                                                      builder:
+                                                          (context, snapshot) {
+                                                        // Customize what your widget looks like when it's loading.
+                                                        if (!snapshot.hasData) {
+                                                          return Center(
+                                                            child: SizedBox(
+                                                              width: 40.0,
+                                                              height: 40.0,
+                                                              child:
+                                                                  SpinKitFadingCircle(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                size: 40.0,
+                                                              ),
+                                                            ),
+                                                          );
+                                                        }
+                                                        List<RecipeRecord>
+                                                            containerRecipeRecordList =
+                                                            snapshot.data!;
+                                                        // Return an empty Container when the item does not exist.
+                                                        if (snapshot
+                                                            .data!.isEmpty) {
+                                                          return Container();
+                                                        }
+                                                        final containerRecipeRecord =
+                                                            containerRecipeRecordList
+                                                                    .isNotEmpty
+                                                                ? containerRecipeRecordList
+                                                                    .first
+                                                                : null;
 
-                                                          return ListView
-                                                              .separated(
-                                                            padding:
-                                                                EdgeInsets.zero,
-                                                            shrinkWrap: true,
-                                                            scrollDirection:
-                                                                Axis.vertical,
-                                                            itemCount: recipeVar
-                                                                .length,
-                                                            separatorBuilder:
-                                                                (_, __) =>
+                                                        return Container(
+                                                          width: 280.0,
+                                                          decoration:
+                                                              BoxDecoration(),
+                                                          child: Builder(
+                                                            builder: (context) {
+                                                              final recipeVar = FFAppState()
+                                                                  .productHive
+                                                                  .where((e) =>
+                                                                      e.recipeRefId ==
+                                                                      containerRecipeRecord
+                                                                          ?.reference
+                                                                          .id)
+                                                                  .toList();
+
+                                                              return ListView
+                                                                  .separated(
+                                                                padding:
+                                                                    EdgeInsets
+                                                                        .zero,
+                                                                shrinkWrap:
+                                                                    true,
+                                                                scrollDirection:
+                                                                    Axis.vertical,
+                                                                itemCount:
+                                                                    recipeVar
+                                                                        .length,
+                                                                separatorBuilder: (_,
+                                                                        __) =>
                                                                     SizedBox(
                                                                         height:
                                                                             5.0),
-                                                            itemBuilder: (context,
-                                                                recipeVarIndex) {
-                                                              final recipeVarItem =
-                                                                  recipeVar[
-                                                                      recipeVarIndex];
-                                                              return Visibility(
-                                                                visible: !xyzBillingCopyAppSettingsRecord!
-                                                                    .settingList
-                                                                    .where((e) =>
-                                                                        e.title ==
-                                                                        'showProductImage')
-                                                                    .toList()
-                                                                    .firstOrNull!
-                                                                    .value,
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    await _model
-                                                                        .listViewprd
-                                                                        ?.animateTo(
-                                                                      _model
-                                                                          .listViewprd!
-                                                                          .position
-                                                                          .maxScrollExtent,
-                                                                      duration: Duration(
-                                                                          milliseconds:
-                                                                              100),
-                                                                      curve: Curves
-                                                                          .ease,
-                                                                    );
-                                                                  },
-                                                                  onDoubleTap:
-                                                                      () async {},
-                                                                  onLongPress:
-                                                                      () async {},
-                                                                  child:
-                                                                      Container(
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FFAppState().productColor ==
-                                                                              productList2Item
-                                                                                  .id
-                                                                          ? FlutterFlowTheme.of(context)
-                                                                              .secondary
-                                                                          : FlutterFlowTheme.of(context)
-                                                                              .secondaryBackground,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              5.0),
-                                                                    ),
+                                                                itemBuilder:
+                                                                    (context,
+                                                                        recipeVarIndex) {
+                                                                  final recipeVarItem =
+                                                                      recipeVar[
+                                                                          recipeVarIndex];
+                                                                  return Visibility(
+                                                                    visible: !xyzBillingCopyAppSettingsRecord!
+                                                                        .settingList
+                                                                        .where((e) =>
+                                                                            e.title ==
+                                                                            'showProductImage')
+                                                                        .toList()
+                                                                        .firstOrNull!
+                                                                        .value,
                                                                     child:
-                                                                        Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          10.0,
-                                                                          15.0,
-                                                                          10.0,
-                                                                          15.0),
+                                                                        InkWell(
+                                                                      splashColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      focusColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      hoverColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      highlightColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      onTap:
+                                                                          () async {
+                                                                        await _model
+                                                                            .listViewprd
+                                                                            ?.animateTo(
+                                                                          _model
+                                                                              .listViewprd!
+                                                                              .position
+                                                                              .maxScrollExtent,
+                                                                          duration:
+                                                                              Duration(milliseconds: 100),
+                                                                          curve:
+                                                                              Curves.ease,
+                                                                        );
+                                                                      },
+                                                                      onDoubleTap:
+                                                                          () async {},
+                                                                      onLongPress:
+                                                                          () async {},
                                                                       child:
-                                                                          Column(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.center,
-                                                                        children: [
-                                                                          Text(
-                                                                            recipeVarItem.name.maybeHandleOverflow(
-                                                                              maxChars: 25,
-                                                                            ),
-                                                                            textAlign:
-                                                                                TextAlign.center,
-                                                                            style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
-                                                                                  letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
+                                                                          Container(
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color: FFAppState().productColor == productList2Item.id
+                                                                              ? FlutterFlowTheme.of(context).secondary
+                                                                              : FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              10.0,
+                                                                              15.0,
+                                                                              10.0,
+                                                                              15.0),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.center,
+                                                                            children: [
+                                                                              Text(
+                                                                                recipeVarItem.name.maybeHandleOverflow(
+                                                                                  maxChars: 25,
                                                                                 ),
-                                                                          ),
-                                                                          if (false)
-                                                                            Text(
-                                                                              'Stock :${recipeVarItem.stock.toString()}',
-                                                                              textAlign: TextAlign.justify,
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    color: FlutterFlowTheme.of(context).primary,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                textAlign: TextAlign.center,
+                                                                                style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                                      letterSpacing: 0.0,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
+                                                                                    ),
+                                                                              ),
+                                                                              if (false)
+                                                                                Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
+                                                                                  child: Text(
+                                                                                    'Stock :${recipeVarItem.stock.toString()}',
+                                                                                    textAlign: TextAlign.justify,
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                        ),
                                                                                   ),
-                                                                            ),
-                                                                        ],
+                                                                                ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
                                                                       ),
-                                                                    ),
-                                                                  ),
-                                                                ).animateOnActionTrigger(
-                                                                    animationsMap[
-                                                                        'containerOnActionTriggerAnimation2']!,
-                                                                    hasBeenTriggered:
-                                                                        hasContainerTriggered2),
+                                                                    ).animateOnActionTrigger(
+                                                                            animationsMap[
+                                                                                'containerOnActionTriggerAnimation2']!,
+                                                                            hasBeenTriggered:
+                                                                                hasContainerTriggered2),
+                                                                  );
+                                                                },
+                                                                controller: _model
+                                                                    .listViewController3,
                                                               );
                                                             },
-                                                            controller: _model
-                                                                .listViewController3,
-                                                          );
-                                                        },
-                                                      ),
+                                                          ),
+                                                        );
+                                                      },
                                                     ),
                                                   ),
                                                 ],
@@ -3272,18 +3326,25 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                         crossAxisAlignment:
                                                                             CrossAxisAlignment.start,
                                                                         children: [
-                                                                          Text(
-                                                                            valueOrDefault<String>(
-                                                                              FFAppState().setCustName,
-                                                                              'Customer Name',
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                5.0),
+                                                                            child:
+                                                                                Text(
+                                                                              valueOrDefault<String>(
+                                                                                FFAppState().setCustName,
+                                                                                'Customer Name',
+                                                                              ),
+                                                                              textAlign: TextAlign.center,
+                                                                              style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                    letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                                  ),
                                                                             ),
-                                                                            textAlign:
-                                                                                TextAlign.center,
-                                                                            style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                  letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                                ),
                                                                           ),
                                                                           Text(
                                                                             valueOrDefault<String>(
@@ -3317,27 +3378,35 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                             MainAxisAlignment
                                                                 .center,
                                                         children: [
-                                                          Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'm5n54hhs' /* Item */,
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        5.0),
+                                                            child: Text(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'm5n54hhs' /* Item */,
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodySmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodySmallFamily,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                  ),
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodySmall
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodySmallFamily,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily),
-                                                                ),
                                                           ),
                                                           Text(
                                                             FFAppState()
@@ -3371,27 +3440,35 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                             MainAxisAlignment
                                                                 .center,
                                                         children: [
-                                                          Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'kj6o73sd' /* Qty */,
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        5.0),
+                                                            child: Text(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'kj6o73sd' /* Qty */,
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodySmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodySmallFamily,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                  ),
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodySmall
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodySmallFamily,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily),
-                                                                ),
                                                           ),
                                                           Text(
                                                             valueOrDefault<
@@ -3440,26 +3517,35 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                               CrossAxisAlignment
                                                                   .end,
                                                           children: [
-                                                            Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'oj7a2m9k' /* Sub Total */,
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0),
+                                                              child: Text(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'oj7a2m9k' /* Sub Total */,
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodySmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodySmallFamily,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                    ),
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodySmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodySmallFamily,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                  ),
                                                             ),
                                                             Row(
                                                               mainAxisSize:
@@ -3718,25 +3804,31 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                     CrossAxisAlignment
                                                                         .center,
                                                                 children: [
-                                                                  Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '630tsmjx' /* Last Bill */,
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0),
+                                                                    child: Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        '630tsmjx' /* Last Bill */,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
+                                                                          ),
                                                                     ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).lineColor,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                        ),
                                                                   ),
                                                                   Row(
                                                                     mainAxisSize:
@@ -3749,15 +3841,14 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                       Text(
                                                                         FFLocalizations.of(context)
                                                                             .getText(
-                                                                          'dlq0xpoa' /* ₹ */,
+                                                                          'dlq0xpoa' /* ₹  */,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
+                                                                            .labelLarge
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                              color: FlutterFlowTheme.of(context).lineColor,
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                             ),
                                                                       ),
                                                                       Text(
@@ -3824,25 +3915,31 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                     CrossAxisAlignment
                                                                         .end,
                                                                 children: [
-                                                                  Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '6al5x0m2' /* Final Amt */,
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0),
+                                                                    child: Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        '6al5x0m2' /* Final Amt */,
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
+                                                                          ),
                                                                     ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).lineColor,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                        ),
                                                                   ),
                                                                   Row(
                                                                     mainAxisSize:
