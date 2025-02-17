@@ -1301,14 +1301,13 @@ String newCustomFunction(String link) {
   return '${uri.scheme}://${uri.host}/';
 }
 
-RecipeRecord returnrecipeprd(
+List<ProductStructStruct> returnrecipeprd(
   List<RecipeRecord> recipeProductstruct,
   ProductStructStruct productStruct,
 ) {
-  return recipeProductstruct.firstWhere(
-    (recipe) => recipe.items.any(
-      (item) => item.id == productStruct.id,
-    ),
-    orElse: () => throw Exception("No matching RecipeRecord found"),
-  );
+  return recipeProductstruct
+      .where((recipe) =>
+          recipe.itemslist.any((item) => item.id == productStruct.recipeid))
+      .map((recipe) => productStruct)
+      .toList();
 }

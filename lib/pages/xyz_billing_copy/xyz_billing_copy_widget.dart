@@ -1465,14 +1465,11 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                               BoxDecoration(),
                                                           child: Builder(
                                                             builder: (context) {
-                                                              final recipeVar = FFAppState()
-                                                                  .productHive
-                                                                  .where((e) =>
-                                                                      (e.recipeRefId ==
-                                                                          functions
-                                                                              .returnrecipeprd(containerRecipeRecordList.toList(), productList2Item)
-                                                                              .id) &&
-                                                                      (e.type == 0))
+                                                              final recipeVar = functions
+                                                                  .returnrecipeprd(
+                                                                      containerRecipeRecordList
+                                                                          .toList(),
+                                                                      productList2Item)
                                                                   .toList();
 
                                                               return ListView
