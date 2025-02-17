@@ -2319,7 +2319,8 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                         8.0),
                                                           ),
                                                         );
-                                                      }),
+                                                      }).divide(
+                                                          SizedBox(width: 4.0)),
                                                     );
                                                   },
                                                 ),
