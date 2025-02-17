@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> comboAddToHoldListprd(
   ProductStructStruct document,
   int billno,
@@ -21,7 +23,7 @@ Future<List<dynamic>> comboAddToHoldListprd(
   List<dynamic> list = FFAppState().allBillsList;
   print(document);
   List<dynamic> itemList = [];
-  double quantity = 1.0; // Default quantity
+  double quantity = qty; // Default quantity
 
   // Resolve taxId and unitId defaults if necessary
   String taxId =
@@ -74,7 +76,7 @@ Future<List<dynamic>> comboAddToHoldListprd(
       "name": document.name,
       "regionallang": document.regionalName,
       "barcode": document.barcode,
-      "price": price,
+      "price": document.sellingPrice,
       "mrpPrice": document.mrpPrice.toDouble(),
       "quantity": quantity,
       "total": double.parse(total.toStringAsFixed(2)),
@@ -95,7 +97,7 @@ Future<List<dynamic>> comboAddToHoldListprd(
       if (list[i]["billno"] == billno) {
         for (int j = 0; j < itemList.length; j++) {
           if (itemList[j]["name"] == data["name"]) {
-            itemList[j]["quantity"]++;
+            itemList[j]["quantity"] += qty;
 
             itemList[j]["disAmt"] = double.parse(
                 (disAmt * itemList[j]["quantity"]).toStringAsFixed(2));
