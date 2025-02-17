@@ -114,7 +114,7 @@ export '/pages/kiosk/kiosk_welcome/kiosk_welcome_widget.dart'
     show KioskWelcomeWidget;
 export '/pages/kiosk/kiosk_dine_parcel/kiosk_dine_parcel_widget.dart'
     show KioskDineParcelWidget;
-export '/pages/kiosk/kiosk_advertising/kiosk_advertising_widget.dart'
+export '/pages/kiosk_advertising/kiosk_advertising_widget.dart'
     show KioskAdvertisingWidget;
 export '/pages/kiosk/kiosk_login/kiosk_login_widget.dart' show KioskLoginWidget;
 export '/pages/kiosk/kiosk_splash_screen/kiosk_splash_screen_widget.dart'
