@@ -21033,34 +21033,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'zxaa8lja': {
-      'en': 'Digital',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '2qe2rhnc': {
-      'en': 'Cash',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '4aa4d0m8': {
-      'en': 'Swiggy',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'lpbyixgk': {
-      'en': 'Zomato',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
     'h5sx5gi2': {
       'en': '₹ ',
       'hi': '',
@@ -25870,13 +25842,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '5gtk9t8c': {
       'en': '₹ ',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'h4kmv5dh': {
-      'en': '50',
       'hi': '',
       'kn': '',
       'mr': '',

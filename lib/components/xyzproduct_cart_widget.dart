@@ -150,8 +150,9 @@ class _XyzproductCartWidgetState extends State<XyzproductCartWidget> {
                                 ),
                           ),
                           Text(
-                            FFLocalizations.of(context).getText(
-                              'h4kmv5dh' /* 50 */,
+                            valueOrDefault<String>(
+                              widget!.parameter2?.toString(),
+                              '0',
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall

@@ -75,6 +75,15 @@ class XyzBillingCopyModel extends FlutterFlowModel<XyzBillingCopyWidget> {
     updateFn(rescipeitems ??= RecipeItemListStruct());
   }
 
+  List<String> liststring = ['DIGITAL', 'CASH', 'SWIGGY', 'ZOMATO'];
+  void addToListstring(String item) => liststring.add(item);
+  void removeFromListstring(String item) => liststring.remove(item);
+  void removeAtIndexFromListstring(int index) => liststring.removeAt(index);
+  void insertAtIndexInListstring(int index, String item) =>
+      liststring.insert(index, item);
+  void updateListstringAtIndex(int index, Function(String) updateFn) =>
+      liststring[index] = updateFn(liststring[index]);
+
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Custom Action - getProductlistHive] action in xyzBillingCopy widget.
@@ -99,6 +108,50 @@ class XyzBillingCopyModel extends FlutterFlowModel<XyzBillingCopyWidget> {
   List<ProductStructStruct>? prdhive2refresh;
   // Stores action output result for [Custom Action - getCategorylistHive] action in Button widget.
   List<CategoryStructStruct>? catlistrefresh;
+  // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
+  List<SelItemListStruct>? prdlistsavebill;
+  // Stores action output result for [Custom Action - checkInternetConnection] action in Button widget.
+  bool? internetcon;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  InvoiceRecord? invonline;
+  // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
+  InvoiceStructStruct? hiveInvoiceDataCopyCopy;
+  // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
+  dynamic? shiftSummarResultsNew2;
+  // Stores action output result for [Custom Action - shiftIdtoInt] action in Button widget.
+  int? shiftidhive2;
+  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
+  ShiftDetailsStruct? getOfflineShiftdetails;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ShiftRecord? shiftondata;
+  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
+  ShiftDetailsStruct? updatedShift23;
+  // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
+  List<SelItemListStruct>? prdlinstnewtx;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  OutletRecord? outlecdoc;
+  // Stores action output result for [Custom Action - checkInternetConnection] action in Button widget.
+  bool? interprd;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  InvoiceRecord? invonlineprt;
+  // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
+  InvoiceStructStruct? hiveInvoiceData;
+  // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
+  dynamic? shiftSummarResultsNew;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ShiftRecord? shiftondataprint;
+  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
+  ShiftDetailsStruct? updatedShiftDetails;
+  // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
+  bool? resDevice2;
+  // Stores action output result for [Custom Action - connectDevice] action in Button widget.
+  bool? isconnected;
+  // Stores action output result for [Custom Action - selectBillPrint] action in Button widget.
+  List<dynamic>? returnedList2;
+  // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
+  List<dynamic>? device;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<ServicePointOutletRecord>? spoutlet;
   // State field(s) for ListView widget.
   ScrollController? listViewController1;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in Container widget.
@@ -123,11 +176,11 @@ class XyzBillingCopyModel extends FlutterFlowModel<XyzBillingCopyWidget> {
   double? calbillAmt3;
   // State field(s) for ListViewprd widget.
   ScrollController? listViewprd;
-  // Stores action output result for [Custom Action - removeHoldListItem] action in Icon widget.
+  // Stores action output result for [Custom Action - removeHoldListItem] action in IconButton widget.
   List<dynamic>? res20;
-  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in Icon widget.
+  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in IconButton widget.
   double? res21;
-  // Stores action output result for [Custom Action - calBillAmt] action in Icon widget.
+  // Stores action output result for [Custom Action - calBillAmt] action in IconButton widget.
   double? reuslt22;
   // Stores action output result for [Custom Action - setQuickPin] action in Button widget.
   String? one;
