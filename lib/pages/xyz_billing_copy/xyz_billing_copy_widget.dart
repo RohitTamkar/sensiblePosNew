@@ -1433,6 +1433,11 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                       FFAppState()
                                                                           .productHive
                                                                           .toList())
+                                                                  .sortedList(
+                                                                      keyOf: (e) => e
+                                                                          .name,
+                                                                      desc:
+                                                                          false)
                                                                   .toList();
 
                                                               return ListView
