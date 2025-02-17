@@ -2945,22 +2945,6 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                               .transparent,
                                                                       onTap:
                                                                           () async {
-                                                                        await showDialog(
-                                                                          context:
-                                                                              context,
-                                                                          builder:
-                                                                              (alertDialogContext) {
-                                                                            return AlertDialog(
-                                                                              content: Text(recipeVarItem.name),
-                                                                              actions: [
-                                                                                TextButton(
-                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                  child: Text('Ok'),
-                                                                                ),
-                                                                              ],
-                                                                            );
-                                                                          },
-                                                                        );
                                                                         if (FFAppState().holdBillCount ==
                                                                             0) {
                                                                           FFAppState().holdBillCount =
@@ -2981,22 +2965,6 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                           FFAppState().selBill =
                                                                               1;
                                                                         }
-                                                                        await showDialog(
-                                                                          context:
-                                                                              context,
-                                                                          builder:
-                                                                              (alertDialogContext) {
-                                                                            return AlertDialog(
-                                                                              content: Text(recipeVarItem.recipeRefId),
-                                                                              actions: [
-                                                                                TextButton(
-                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                  child: Text('Ok'),
-                                                                                ),
-                                                                              ],
-                                                                            );
-                                                                          },
-                                                                        );
                                                                         if (recipeVarItem.recipeRefId !=
                                                                                 null &&
                                                                             recipeVarItem.recipeRefId !=
@@ -3062,23 +3030,6 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                             FFAppState().selBill,
                                                                             widget!.taxcollection!.toList(),
                                                                             functions.enabletaxinclusive(xyzBillingCopyAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                          );
-                                                                          await showDialog(
-                                                                            context:
-                                                                                context,
-                                                                            builder:
-                                                                                (alertDialogContext) {
-                                                                              return AlertDialog(
-                                                                                title: Text('false'),
-                                                                                content: Text(recipeVarItem.recipeRefId),
-                                                                                actions: [
-                                                                                  TextButton(
-                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                    child: Text('Ok'),
-                                                                                  ),
-                                                                                ],
-                                                                              );
-                                                                            },
                                                                           );
                                                                           _model.calculateResult233 =
                                                                               await actions.laundrycalSubTotalForHoldList(
