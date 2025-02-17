@@ -1488,6 +1488,22 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                               .transparent,
                                                                       onTap:
                                                                           () async {
+                                                                        await showDialog(
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (alertDialogContext) {
+                                                                            return AlertDialog(
+                                                                              content: Text(recipeVarItem.name),
+                                                                              actions: [
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                  child: Text('Ok'),
+                                                                                ),
+                                                                              ],
+                                                                            );
+                                                                          },
+                                                                        );
                                                                         if (FFAppState().holdBillCount ==
                                                                             0) {
                                                                           FFAppState().holdBillCount =
@@ -1508,6 +1524,22 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                           FFAppState().selBill =
                                                                               1;
                                                                         }
+                                                                        await showDialog(
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (alertDialogContext) {
+                                                                            return AlertDialog(
+                                                                              content: Text(recipeVarItem.recipeRefId),
+                                                                              actions: [
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                  child: Text('Ok'),
+                                                                                ),
+                                                                              ],
+                                                                            );
+                                                                          },
+                                                                        );
                                                                         if (recipeVarItem.recipeRefId !=
                                                                                 null &&
                                                                             recipeVarItem.recipeRefId !=
@@ -1528,7 +1560,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                               0;
                                                                           safeSetState(
                                                                               () {});
-                                                                          while (FFAppState().startLoop >
+                                                                          while (FFAppState().startLoop <
                                                                               _model.receipeproductlist!.items.length) {
                                                                             _model.updatePrditemrecipeStruct(
                                                                               (e) => e
@@ -1541,17 +1573,21 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                                 ..stockable = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.stockable,
                                                                             );
                                                                             safeSetState(() {});
-                                                                            _model.addtosavebillresc =
-                                                                                await actions.laundryAddToHoldListprd(
+                                                                            _model.resreplist =
+                                                                                await actions.comboAddToHoldListprd(
                                                                               _model.prditemrecipe!,
                                                                               FFAppState().selBill,
                                                                               widget!.taxcollection!.toList(),
                                                                               functions.enabletaxinclusive(xyzBillingCopyAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                              valueOrDefault<double>(
+                                                                                (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.quantity,
+                                                                                0.0,
+                                                                              ),
                                                                             );
                                                                             _model.calculateResultresc =
                                                                                 await actions.laundrycalSubTotalForHoldList(
                                                                               FFAppState().selBill.toString(),
-                                                                              _model.addtosavebillresc!.toList(),
+                                                                              _model.resreplist!.toList(),
                                                                             );
                                                                             _model.calbillAmt334 =
                                                                                 await actions.calBillAmt(
@@ -1569,6 +1605,23 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                             FFAppState().selBill,
                                                                             widget!.taxcollection!.toList(),
                                                                             functions.enabletaxinclusive(xyzBillingCopyAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                          );
+                                                                          await showDialog(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (alertDialogContext) {
+                                                                              return AlertDialog(
+                                                                                title: Text('false'),
+                                                                                content: Text(recipeVarItem.recipeRefId),
+                                                                                actions: [
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                    child: Text('Ok'),
+                                                                                  ),
+                                                                                ],
+                                                                              );
+                                                                            },
                                                                           );
                                                                           _model.calculateResult233 =
                                                                               await actions.laundrycalSubTotalForHoldList(

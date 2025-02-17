@@ -109,8 +109,8 @@ class XyzBillingCopyModel extends FlutterFlowModel<XyzBillingCopyWidget> {
   ScrollController? listViewController3;
   // Stores action output result for [Firestore Query - Query a collection] action in ProductName widget.
   RecipeRecord? receipeproductlist;
-  // Stores action output result for [Custom Action - laundryAddToHoldListprd] action in ProductName widget.
-  List<dynamic>? addtosavebillresc;
+  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in ProductName widget.
+  List<dynamic>? resreplist;
   // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
   double? calculateResultresc;
   // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
