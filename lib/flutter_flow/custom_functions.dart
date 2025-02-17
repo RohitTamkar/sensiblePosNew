@@ -1302,12 +1302,23 @@ String newCustomFunction(String link) {
 }
 
 List<ProductStructStruct> returnrecipeprd(
-  List<RecipeRecord> recipeProductstruct,
+  List<RecipeRecord> recipeProductStruct,
   ProductStructStruct productStruct,
+  List<ProductStructStruct> productStructList,
 ) {
-  return recipeProductstruct
+  // Find recipes that match the given productStruct.id
+  List<RecipeRecord> matchedRecipes = recipeProductStruct
       .where((recipe) =>
-          recipe.itemslist.any((item) => item.id == productStruct.recipeid))
-      .map((recipe) => productStruct)
+          productStructList
+              .any((product) => product.recipeRefId == recipe.id) &&
+          recipe.items.any((item) => item.id == productStruct.id))
       .toList();
+
+  // Retrieve products that belong to the matched recipes
+  List<ProductStructStruct> resultProducts = productStructList
+      .where((product) =>
+          matchedRecipes.any((recipe) => product.recipeRefId == recipe.id))
+      .toList();
+
+  return resultProducts;
 }

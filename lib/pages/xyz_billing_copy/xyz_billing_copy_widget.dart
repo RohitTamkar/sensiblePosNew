@@ -1263,136 +1263,113 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
-                                                    child: InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        FFAppState()
-                                                                .catAllColor =
-                                                            Color(4292855973);
-                                                        safeSetState(() {});
-                                                        FFAppState()
-                                                                .categoryColor =
-                                                            productList2Item.id;
-                                                        FFAppState()
-                                                            .update(() {});
-                                                        _model.prdhive =
-                                                            await actions
-                                                                .getProductlistHive();
-                                                        FFAppState()
-                                                                .categoryID =
-                                                            productList2Item.id;
-                                                        safeSetState(() {});
-                                                        FFAppState().productHive = _model
-                                                            .prdhive!
-                                                            .where((e) =>
-                                                                e.categoryId ==
+                                                    child: Container(
+                                                      width: 280.0,
+                                                      height: 120.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            Color(0xFFD2DDFF),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    10.0,
+                                                                    15.0,
+                                                                    10.0,
+                                                                    15.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0),
+                                                              child: Text(
                                                                 productList2Item
-                                                                    .id)
-                                                            .toList()
-                                                            .cast<
-                                                                ProductStructStruct>();
-                                                        safeSetState(() {});
-
-                                                        safeSetState(() {});
-                                                      },
-                                                      child: Container(
-                                                        width: 280.0,
-                                                        height: 120.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FFAppState()
-                                                                      .categoryColor ==
-                                                                  productList2Item
-                                                                      .id
-                                                              ? FlutterFlowTheme
-                                                                      .of(
-                                                                          context)
-                                                                  .primary
-                                                              : Color(
-                                                                  0xFFD2DDFF),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      10.0),
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      15.0,
-                                                                      10.0,
-                                                                      15.0),
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Padding(
+                                                                    .name
+                                                                    .maybeHandleOverflow(
+                                                                  maxChars: 9,
+                                                                  replacement:
+                                                                      '…',
+                                                                ),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w600,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).titleMediumFamily),
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Flexible(
+                                                              child: Padding(
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
-                                                                            12.0),
-                                                                child: Text(
-                                                                  productList2Item
-                                                                      .name
-                                                                      .maybeHandleOverflow(
-                                                                    maxChars: 9,
-                                                                    replacement:
-                                                                        '…',
-                                                                  ),
-                                                                  textAlign:
-                                                                      TextAlign
+                                                                            3.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
                                                                           .center,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleMediumFamily,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight:
-                                                                            FontWeight.w600,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
+                                                                  children: [
+                                                                    Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'h5sx5gi2' /* ₹  */,
                                                                       ),
-                                                                ),
-                                                              ),
-                                                              Flexible(
-                                                                child: Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          3.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'h5sx5gi2' /* ₹  */,
-                                                                        ),
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
+                                                                          ),
+                                                                    ),
+                                                                    Flexible(
+                                                                      child:
+                                                                          Text(
+                                                                        productList2Item
+                                                                            .sellingPrice
+                                                                            .toString(),
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
@@ -1403,29 +1380,12 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                             ),
                                                                       ),
-                                                                      Flexible(
-                                                                        child:
-                                                                            Text(
-                                                                          productList2Item
-                                                                              .sellingPrice
-                                                                              .toString(),
-                                                                          textAlign:
-                                                                              TextAlign.center,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .labelLarge
-                                                                              .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
-                                                                                letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
+                                                                    ),
+                                                                  ],
                                                                 ),
                                                               ),
-                                                            ],
-                                                          ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
                                                     ),
@@ -1469,7 +1429,10 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                   .returnrecipeprd(
                                                                       containerRecipeRecordList
                                                                           .toList(),
-                                                                      productList2Item)
+                                                                      productList2Item,
+                                                                      FFAppState()
+                                                                          .productHive
+                                                                          .toList())
                                                                   .toList();
 
                                                               return ListView
@@ -1520,6 +1483,100 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                               .transparent,
                                                                       onTap:
                                                                           () async {
+                                                                        if (FFAppState().holdBillCount ==
+                                                                            0) {
+                                                                          FFAppState().holdBillCount =
+                                                                              FFAppState().holdBillCount + 1;
+                                                                          FFAppState().addToAllBillsList(functions.generateBillDetailsJson(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              'CASH',
+                                                                              0.0,
+                                                                              0.0,
+                                                                              FFAppState().billAmt,
+                                                                              0.0,
+                                                                              FFAppState().finalAmt,
+                                                                              '0',
+                                                                              FFAppState().itemCartList.toList(),
+                                                                              FFAppState().holdBillCount));
+                                                                          FFAppState().selBill =
+                                                                              1;
+                                                                        }
+                                                                        if (recipeVarItem.recipeRefId !=
+                                                                                null &&
+                                                                            recipeVarItem.recipeRefId !=
+                                                                                '') {
+                                                                          _model.receipeproductlist =
+                                                                              await queryRecipeRecordOnce(
+                                                                            parent:
+                                                                                FFAppState().outletIdRef,
+                                                                            queryBuilder: (recipeRecord) =>
+                                                                                recipeRecord.where(
+                                                                              'id',
+                                                                              isEqualTo: recipeVarItem.recipeRefId,
+                                                                            ),
+                                                                            singleRecord:
+                                                                                true,
+                                                                          ).then((s) => s.firstOrNull);
+                                                                          FFAppState().startLoop =
+                                                                              0;
+                                                                          safeSetState(
+                                                                              () {});
+                                                                          while (FFAppState().startLoop >
+                                                                              _model.receipeproductlist!.items.length) {
+                                                                            _model.updatePrditemrecipeStruct(
+                                                                              (e) => e
+                                                                                ..id = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.id
+                                                                                ..price = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.price
+                                                                                ..category = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.catId
+                                                                                ..name = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.name
+                                                                                ..sellingPrice = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.price
+                                                                                ..taxId = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.taxId
+                                                                                ..stockable = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.stockable,
+                                                                            );
+                                                                            safeSetState(() {});
+                                                                            _model.addtosavebillresc =
+                                                                                await actions.laundryAddToHoldListprd(
+                                                                              _model.prditemrecipe!,
+                                                                              FFAppState().selBill,
+                                                                              widget!.taxcollection!.toList(),
+                                                                              functions.enabletaxinclusive(xyzBillingCopyAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                            );
+                                                                            _model.calculateResultresc =
+                                                                                await actions.laundrycalSubTotalForHoldList(
+                                                                              FFAppState().selBill.toString(),
+                                                                              _model.addtosavebillresc!.toList(),
+                                                                            );
+                                                                            _model.calbillAmt334 =
+                                                                                await actions.calBillAmt(
+                                                                              FFAppState().disAmt,
+                                                                              FFAppState().delCharges,
+                                                                            );
+                                                                            FFAppState().startLoop =
+                                                                                FFAppState().startLoop + 1;
+                                                                            safeSetState(() {});
+                                                                          }
+                                                                        } else {
+                                                                          _model.addtosavebill22 =
+                                                                              await actions.laundryAddToHoldListprd(
+                                                                            recipeVarItem,
+                                                                            FFAppState().selBill,
+                                                                            widget!.taxcollection!.toList(),
+                                                                            functions.enabletaxinclusive(xyzBillingCopyAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                          );
+                                                                          _model.calculateResult233 =
+                                                                              await actions.laundrycalSubTotalForHoldList(
+                                                                            FFAppState().selBill.toString(),
+                                                                            _model.addtosavebill22!.toList(),
+                                                                          );
+                                                                          _model.calbillAmt3 =
+                                                                              await actions.calBillAmt(
+                                                                            FFAppState().disAmt,
+                                                                            FFAppState().delCharges,
+                                                                          );
+                                                                        }
+
                                                                         await _model
                                                                             .listViewprd
                                                                             ?.animateTo(
@@ -1532,6 +1589,9 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                           curve:
                                                                               Curves.ease,
                                                                         );
+
+                                                                        safeSetState(
+                                                                            () {});
                                                                       },
                                                                       onDoubleTap:
                                                                           () async {},

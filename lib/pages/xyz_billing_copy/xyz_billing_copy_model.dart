@@ -105,10 +105,22 @@ class XyzBillingCopyModel extends FlutterFlowModel<XyzBillingCopyWidget> {
   double? res11;
   // State field(s) for ListView widget.
   ScrollController? listViewController2;
-  // Stores action output result for [Custom Action - getProductlistHive] action in Container widget.
-  List<ProductStructStruct>? prdhive;
   // State field(s) for ListView widget.
   ScrollController? listViewController3;
+  // Stores action output result for [Firestore Query - Query a collection] action in ProductName widget.
+  RecipeRecord? receipeproductlist;
+  // Stores action output result for [Custom Action - laundryAddToHoldListprd] action in ProductName widget.
+  List<dynamic>? addtosavebillresc;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
+  double? calculateResultresc;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmt334;
+  // Stores action output result for [Custom Action - laundryAddToHoldListprd] action in ProductName widget.
+  List<dynamic>? addtosavebill22;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
+  double? calculateResult233;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmt3;
   // State field(s) for ListViewprd widget.
   ScrollController? listViewprd;
   // Stores action output result for [Custom Action - removeHoldListItem] action in Icon widget.
