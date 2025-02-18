@@ -773,7 +773,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                           .timestampToMili(
                                                               getCurrentTimestamp),
                                                       paymentJson:
-                                                          '{\"cash\":0,\"credit\":0,\"cheque\":0,\"digital\":0,\"card\":0,\"googlepay\":0,\"phonepe\":0,\"paytm\":0,\"other\":0,\"loyaltypoint\":0,\"upi_qr\":0.0}',
+                                                          '{\"cash\":0,\"credit\":0,\"cheque\":0,\"digital\":0,\"card\":0,\"googlepay\":0,\"phonepe\":0,\"paytm\":0,\"other\":0,\"loyaltypoint\":0,\"upi_qr\":0.0,\"swiggy\":0.0,\"zomato\":0.0}',
                                                       shiftNo: getJsonField(
                                                         widget!.shiftDetails,
                                                         r'''$.shiftCount''',
@@ -806,7 +806,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                                   .timestampToMili(
                                                                       getCurrentTimestamp),
                                                               paymentJson:
-                                                                  '{\"cash\":0,\"credit\":0,\"cheque\":0,\"digital\":0,\"card\":0,\"googlepay\":0,\"phonepe\":0,\"paytm\":0,\"other\":0,\"loyaltypoint\":0,\"upi_qr\":0.0}',
+                                                                  '{\"cash\":0,\"credit\":0,\"cheque\":0,\"digital\":0,\"card\":0,\"googlepay\":0,\"phonepe\":0,\"paytm\":0,\"other\":0,\"loyaltypoint\":0,\"upi_qr\":0.0,\"swiggy\":0.0,\"zomato\":0.0}',
                                                               shiftNo:
                                                                   getJsonField(
                                                                 widget!
@@ -859,7 +859,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                             containerDeviceRecord
                                                                 ?.deviceId
                                                         ..paymentJson =
-                                                            '{\"cash\":0,\"credit\":0,\"cheque\":0,\"digital\":0,\"card\":0,\"googlepay\":0,\"phonepe\":0,\"paytm\":0,\"other\":0,\"loyaltypoint\":0}'
+                                                            '{\"cash\":0,\"credit\":0,\"cheque\":0,\"digital\":0,\"card\":0,\"googlepay\":0,\"phonepe\":0,\"paytm\":0,\"other\":0,\"loyaltypoint\":0,\"upi_qr\":0.0,\"swiggy\":0.0,\"zomato\":0.0}'
                                                         ..shiftId = functions
                                                             .getShiftId(
                                                                 FFAppState()

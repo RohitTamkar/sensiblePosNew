@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:convert';
 import 'index.dart'; // Imports other custom actions
 
@@ -128,7 +130,10 @@ Future<dynamic> calShiftSummaryNew(
       paymentJsonData["other"] =
           paymentJsonData["other"].toDouble() + (payJson['OTHER'].toDouble());
     }
-
+    if (invoice.paymentMode == "DIGITAL") {
+      paymentJsonData["digital"] = paymentJsonData["digital"].toDouble() +
+          invoice.finalBillAmt.toDouble();
+    }
     var paymentJsonDataString = jsonEncode(paymentJsonData).toString();
     shift[i]["paymentJson"] = paymentJsonDataString;
   }

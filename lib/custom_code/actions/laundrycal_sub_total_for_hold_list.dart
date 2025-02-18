@@ -17,6 +17,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<double> laundrycalSubTotalForHoldList(
   String billNo,
   List<dynamic> allBillList,
@@ -26,10 +28,10 @@ Future<double> laundrycalSubTotalForHoldList(
   double tax = 0;
 
 //  print(obj.length);
+
   List<dynamic> itemList = [];
   if (allBillList.isNotEmpty) {
     for (int i = 0; i < allBillList.length; i++) {
-      print(allBillList[i]["billno"]);
       if (allBillList[i]["billno"].toString() == billNo) {
         if (allBillList[i]["details"]["itemList"].length >= 0) {
           itemList = (allBillList[i]["details"]["itemList"]);
