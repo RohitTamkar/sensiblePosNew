@@ -1393,7 +1393,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                   ),
                                                 ),
                                               ),
-                                              Expanded(
+                                              Flexible(
                                                 child: Builder(
                                                   builder: (context) {
                                                     final listpay = _model
