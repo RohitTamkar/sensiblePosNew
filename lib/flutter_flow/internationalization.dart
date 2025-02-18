@@ -16001,7 +16001,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     '9fx75m1e': {
-      'en': 'Refund',
+      'en': 'Digital',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -16043,7 +16043,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     '8kjdy39e': {
-      'en': 'Expenses(-)',
+      'en': 'Swiggy',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -16085,7 +16085,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'ubn9wbmd': {
-      'en': 'Cred.Reci(+)',
+      'en': 'Zomato',
       'hi': '',
       'kn': '',
       'mr': '',

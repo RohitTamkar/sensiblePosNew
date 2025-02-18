@@ -2517,7 +2517,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                       children: [
                                                                                         Text(
                                                                                           FFLocalizations.of(context).getText(
-                                                                                            '9fx75m1e' /* Refund */,
+                                                                                            '9fx75m1e' /* Digital */,
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -2561,7 +2561,12 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                       ),
                                                                                       Text(
                                                                                         valueOrDefault<String>(
-                                                                                          FFAppState().shiftDetails.refoundAmount.toString(),
+                                                                                          functions.paymentModeStrToJson(
+                                                                                              valueOrDefault<String>(
+                                                                                                FFAppState().shiftDetails.paymentJson,
+                                                                                                '{\"cash\":0,\"credit\":0,\"cheque\":0,\"digital\":0,\"card\":0,\"googlepay\":0,\"phonepe\":0,\"paytm\":0,\"other\":0,\"loyaltypoint\":0}',
+                                                                                              ),
+                                                                                              'digital'),
                                                                                           '0',
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
@@ -2744,7 +2749,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                       children: [
                                                                                         Text(
                                                                                           FFLocalizations.of(context).getText(
-                                                                                            '8kjdy39e' /* Expenses(-) */,
+                                                                                            '8kjdy39e' /* Swiggy */,
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -2788,7 +2793,12 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                       ),
                                                                                       Text(
                                                                                         valueOrDefault<String>(
-                                                                                          FFAppState().shiftDetails.expensesAmtTotal.toString(),
+                                                                                          functions.paymentModeStrToJson(
+                                                                                              valueOrDefault<String>(
+                                                                                                FFAppState().shiftDetails.paymentJson,
+                                                                                                '{\"cash\":0,\"credit\":0,\"cheque\":0,\"digital\":0,\"card\":0,\"googlepay\":0,\"phonepe\":0,\"paytm\":0,\"other\":0,\"loyaltypoint\":0}',
+                                                                                              ),
+                                                                                              'swiggy'),
                                                                                           '0',
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
@@ -2971,7 +2981,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                       children: [
                                                                                         Text(
                                                                                           FFLocalizations.of(context).getText(
-                                                                                            'ubn9wbmd' /* Cred.Reci(+) */,
+                                                                                            'ubn9wbmd' /* Zomato */,
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -3015,7 +3025,12 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                       ),
                                                                                       Text(
                                                                                         valueOrDefault<String>(
-                                                                                          FFAppState().shiftDetails.customerReciveAmtTotal.toString(),
+                                                                                          functions.paymentModeStrToJson(
+                                                                                              valueOrDefault<String>(
+                                                                                                FFAppState().shiftDetails.paymentJson,
+                                                                                                '{\"cash\":0,\"credit\":0,\"cheque\":0,\"digital\":0,\"card\":0,\"googlepay\":0,\"phonepe\":0,\"paytm\":0,\"other\":0,\"loyaltypoint\":0}',
+                                                                                              ),
+                                                                                              'zomato'),
                                                                                           '0',
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
