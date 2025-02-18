@@ -2277,7 +2277,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                           text: listpayItem,
                                                           options:
                                                               FFButtonOptions(
-                                                            width: 120.0,
+                                                            width: 150.0,
                                                             height:
                                                                 double.infinity,
                                                             padding:
