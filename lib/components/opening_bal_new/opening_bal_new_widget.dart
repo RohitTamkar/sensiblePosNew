@@ -983,7 +983,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                           .devicew!.settingList
                                                           .where((e) =>
                                                               e.title ==
-                                                              'enableweightScale')
+                                                              'enableCombo')
                                                           .toList()
                                                           .firstOrNull!
                                                           .value) {
