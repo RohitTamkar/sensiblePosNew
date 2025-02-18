@@ -2749,7 +2749,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
-                                  flex: 18,
+                                  flex: 22,
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),

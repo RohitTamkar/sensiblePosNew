@@ -3112,9 +3112,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                 child: Padding(
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
                                                                                                   child: Text(
-                                                                                                    categoryListItem.name.maybeHandleOverflow(
-                                                                                                      maxChars: 9,
-                                                                                                      replacement: '…',
+                                                                                                    valueOrDefault<String>(
+                                                                                                      categoryListItem.name,
+                                                                                                      'ICE CREAM BURGESR  ICE CREAM BURGESR ',
                                                                                                     ),
                                                                                                     textAlign: TextAlign.center,
                                                                                                     style: FlutterFlowTheme.of(context).labelLarge.override(
