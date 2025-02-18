@@ -1323,6 +1323,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                     'pzymhzfr' /* Save */,
                                                   ),
                                                   options: FFButtonOptions(
+                                                    width: 120.0,
                                                     height: double.infinity,
                                                     padding:
                                                         EdgeInsetsDirectional
@@ -2276,6 +2277,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                           text: listpayItem,
                                                           options:
                                                               FFButtonOptions(
+                                                            width: 120.0,
                                                             height:
                                                                 double.infinity,
                                                             padding:
@@ -2722,7 +2724,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: Container(
-                                                      width: 280.0,
+                                                      width: 150.0,
                                                       height: 120.0,
                                                       decoration: BoxDecoration(
                                                         color:
@@ -2772,6 +2774,8 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                       fontFamily:
                                                                           FlutterFlowTheme.of(context)
                                                                               .titleMediumFamily,
+                                                                      fontSize:
+                                                                          12.0,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
@@ -2834,6 +2838,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                             .labelLarge
                                                                             .override(
                                                                               fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                              fontSize: 10.0,
                                                                               letterSpacing: 0.0,
                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                             ),
@@ -2878,7 +2883,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                             snapshot.data!;
 
                                                         return Container(
-                                                          width: 280.0,
+                                                          width: 150.0,
                                                           decoration:
                                                               BoxDecoration(),
                                                           child: Builder(
@@ -3095,6 +3100,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                                 textAlign: TextAlign.center,
                                                                                 style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                                      fontSize: 12.0,
                                                                                       letterSpacing: 0.0,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                                     ),
@@ -3108,6 +3114,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                           color: FlutterFlowTheme.of(context).primary,
+                                                                                          fontSize: 10.0,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                         ),
