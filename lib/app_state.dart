@@ -3544,6 +3544,12 @@ class FFAppState extends ChangeNotifier {
   void updateRecipeitemsStruct(Function(RecipeItemListStruct) updateFn) {
     updateFn(_recipeitems);
   }
+
+  String _transactionDateTimeCard = '';
+  String get transactionDateTimeCard => _transactionDateTimeCard;
+  set transactionDateTimeCard(String value) {
+    _transactionDateTimeCard = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

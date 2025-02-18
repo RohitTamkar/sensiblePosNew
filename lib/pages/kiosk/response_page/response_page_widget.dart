@@ -122,7 +122,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               party: FFAppState().setCustName,
               invoiceDate: functions.timestampToMili(getCurrentTimestamp),
               dayId: functions.getDayId(),
-              paymentMode: 'UPI QR',
+              paymentMode: FFAppState().PayMode,
               discountAmt: valueOrDefault<double>(
                 FFAppState().disAmt,
                 0.0,
@@ -174,7 +174,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               party: FFAppState().setCustName,
               invoiceDate: functions.timestampToMili(getCurrentTimestamp),
               dayId: functions.getDayId(),
-              paymentMode: 'UPI QR',
+              paymentMode: FFAppState().PayMode,
               discountAmt: valueOrDefault<double>(
                 FFAppState().disAmt,
                 0.0,

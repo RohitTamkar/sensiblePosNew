@@ -141,6 +141,26 @@ class OutletRecord extends FirestoreRecord {
   String get dealerCode => _dealerCode ?? '';
   bool hasDealerCode() => _dealerCode != null;
 
+  // "paytmMid" field.
+  String? _paytmMid;
+  String get paytmMid => _paytmMid ?? '';
+  bool hasPaytmMid() => _paytmMid != null;
+
+  // "channelId" field.
+  String? _channelId;
+  String get channelId => _channelId ?? '';
+  bool hasChannelId() => _channelId != null;
+
+  // "paytmTid" field.
+  String? _paytmTid;
+  String get paytmTid => _paytmTid ?? '';
+  bool hasPaytmTid() => _paytmTid != null;
+
+  // "paytmCardmkey" field.
+  String? _paytmCardmkey;
+  String get paytmCardmkey => _paytmCardmkey ?? '';
+  bool hasPaytmCardmkey() => _paytmCardmkey != null;
+
   void _initializeFields() {
     _branch = snapshotData['branch'] as String?;
     _createdDate = castToType<int>(snapshotData['createdDate']);
@@ -167,6 +187,10 @@ class OutletRecord extends FirestoreRecord {
     _billingType = snapshotData['billingType'] as String?;
     _isDemo = snapshotData['isDemo'] as bool?;
     _dealerCode = snapshotData['dealerCode'] as String?;
+    _paytmMid = snapshotData['paytmMid'] as String?;
+    _channelId = snapshotData['channelId'] as String?;
+    _paytmTid = snapshotData['paytmTid'] as String?;
+    _paytmCardmkey = snapshotData['paytmCardmkey'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -228,6 +252,10 @@ Map<String, dynamic> createOutletRecordData({
   String? billingType,
   bool? isDemo,
   String? dealerCode,
+  String? paytmMid,
+  String? channelId,
+  String? paytmTid,
+  String? paytmCardmkey,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -256,6 +284,10 @@ Map<String, dynamic> createOutletRecordData({
       'billingType': billingType,
       'isDemo': isDemo,
       'dealerCode': dealerCode,
+      'paytmMid': paytmMid,
+      'channelId': channelId,
+      'paytmTid': paytmTid,
+      'paytmCardmkey': paytmCardmkey,
     }.withoutNulls,
   );
 
@@ -291,7 +323,11 @@ class OutletRecordDocumentEquality implements Equality<OutletRecord> {
         e1?.isProd == e2?.isProd &&
         e1?.billingType == e2?.billingType &&
         e1?.isDemo == e2?.isDemo &&
-        e1?.dealerCode == e2?.dealerCode;
+        e1?.dealerCode == e2?.dealerCode &&
+        e1?.paytmMid == e2?.paytmMid &&
+        e1?.channelId == e2?.channelId &&
+        e1?.paytmTid == e2?.paytmTid &&
+        e1?.paytmCardmkey == e2?.paytmCardmkey;
   }
 
   @override
@@ -320,7 +356,11 @@ class OutletRecordDocumentEquality implements Equality<OutletRecord> {
         e?.isProd,
         e?.billingType,
         e?.isDemo,
-        e?.dealerCode
+        e?.dealerCode,
+        e?.paytmMid,
+        e?.channelId,
+        e?.paytmTid,
+        e?.paytmCardmkey
       ]);
 
   @override

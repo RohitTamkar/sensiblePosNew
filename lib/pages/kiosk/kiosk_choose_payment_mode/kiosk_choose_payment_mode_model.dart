@@ -32,8 +32,8 @@ class KioskChoosePaymentModeModel
   ApiCallResponse? paymentQrResponse;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   OutletRecord? outletDOccard;
-  // Stores action output result for [Backend Call - API (createQR)] action in Button widget.
-  ApiCallResponse? paymentQrResponsecard;
+  // Stores action output result for [Backend Call - API (cardSwipeSale)] action in Button widget.
+  ApiCallResponse? cardPaymentApiResponse;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   OutletRecord? outletDOc2;
   // Stores action output result for [Backend Call - API (createQR)] action in Button widget.

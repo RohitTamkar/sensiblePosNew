@@ -97,7 +97,8 @@ export '/pages/shift_end_new2/shift_end_new2_widget.dart'
 export '/pages/edit_bill_new/edit_bill_new_widget.dart' show EditBillNewWidget;
 export '/pages/screens/print_settingkiosk/print_settingkiosk_widget.dart'
     show PrintSettingkioskWidget;
-export '/pages/kiosk_payment/kiosk_payment_widget.dart' show KioskPaymentWidget;
+export '/pages/kiosk/kiosk_payment/kiosk_payment_widget.dart'
+    show KioskPaymentWidget;
 export '/pages/kiosk/kiosk_cart/kiosk_cart_widget.dart' show KioskCartWidget;
 export '/pages/screens/barcode_printing_copy/barcode_printing_copy_widget.dart'
     show BarcodePrintingCopyWidget;
@@ -183,3 +184,5 @@ export '/pages/kiosk/kiosk_cartdineinparcel/kiosk_cartdineinparcel_widget.dart'
 export '/pages/xyz_billing/xyz_billing_widget.dart' show XyzBillingWidget;
 export '/pages/xyz_billing_copy/xyz_billing_copy_widget.dart'
     show XyzBillingCopyWidget;
+export '/pages/kiosk/kiosk_card_payment/kiosk_card_payment_widget.dart'
+    show KioskCardPaymentWidget;

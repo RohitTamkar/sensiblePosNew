@@ -2783,8 +2783,8 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: Container(
-                                                      width: 150.0,
-                                                      height: 120.0,
+                                                      width: 120.0,
+                                                      height: 90.0,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             Color(0xFFD2DDFF),
@@ -2796,10 +2796,10 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
+                                                                    8.0,
                                                                     10.0,
-                                                                    15.0,
-                                                                    10.0,
-                                                                    15.0),
+                                                                    8.0,
+                                                                    10.0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -2807,44 +2807,42 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                               MainAxisAlignment
                                                                   .center,
                                                           children: [
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          12.0),
-                                                              child: Text(
-                                                                productList2Item
-                                                                    .name
-                                                                    .maybeHandleOverflow(
-                                                                  maxChars: 9,
-                                                                  replacement:
-                                                                      '…',
+                                                            Flexible(
+                                                              child: Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            8.0),
+                                                                child: Text(
+                                                                  productList2Item
+                                                                      .name
+                                                                      .maybeHandleOverflow(
+                                                                    maxChars: 9,
+                                                                    replacement:
+                                                                        '…',
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                        fontSize:
+                                                                            12.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
+                                                                      ),
                                                                 ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleMediumFamily,
-                                                                      fontSize:
-                                                                          12.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleMediumFamily),
-                                                                    ),
                                                               ),
                                                             ),
                                                             Flexible(
@@ -2942,7 +2940,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                             snapshot.data!;
 
                                                         return Container(
-                                                          width: 150.0,
+                                                          width: 120.0,
                                                           decoration:
                                                               BoxDecoration(),
                                                           child: Builder(

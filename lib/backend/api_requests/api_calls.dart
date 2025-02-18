@@ -439,6 +439,88 @@ class SendWhatsappMsgBillPdfCall {
   }
 }
 
+class CardSwipeSaleCall {
+  static Future<ApiCallResponse> call({
+    bool? isProd,
+    String? mkey = '',
+    String? channelId = '',
+    String? paytmMid = '',
+    String? paytmTid = '',
+    String? transactionDateTime = '',
+    String? merchantTransactionId = '',
+    double? transactionAmount,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "isProd": ${isProd},
+  "mkey": "${escapeStringForJson(mkey)}",
+  "channelId": "${escapeStringForJson(channelId)}",
+  "paytmMid": "${escapeStringForJson(paytmMid)}",
+  "paytmTid": "${escapeStringForJson(paytmTid)}",
+  "transactionDateTime": "${escapeStringForJson(transactionDateTime)}",
+  "merchantTransactionId": "${escapeStringForJson(merchantTransactionId)}",
+  "transactionAmount": ${transactionAmount}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'cardSwipeSale',
+      apiUrl:
+          'https://asia-south1-sensiblebizpro.cloudfunctions.net/paytm_swap_integration/sale',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CardSaleStatusCall {
+  static Future<ApiCallResponse> call({
+    bool? isProd,
+    String? mkey = '',
+    String? channelId = '',
+    String? paytmMid = '',
+    String? paytmTid = '',
+    String? transactionDateTime = '',
+    String? merchantTransactionId = '',
+    String? outletId = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "isProd": ${isProd},
+  "mkey": "${escapeStringForJson(mkey)}",
+  "channelId": "${escapeStringForJson(channelId)}",
+  "paytmMid": "${escapeStringForJson(paytmMid)}",
+  "paytmTid": "${escapeStringForJson(paytmTid)}",
+  "transactionDateTime": "${escapeStringForJson(transactionDateTime)}",
+  "merchantTransactionId": "${escapeStringForJson(merchantTransactionId)}",
+  "outletId": "${escapeStringForJson(outletId)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'cardSaleStatus',
+      apiUrl:
+          'https://asia-south1-sensiblebizpro.cloudfunctions.net/paytm_swap_integration/saleStatus',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;
@@ -484,4 +566,15 @@ String _serializeJson(dynamic jsonVar, [bool isList = false]) {
     }
     return isList ? '[]' : '{}';
   }
+}
+
+String? escapeStringForJson(String? input) {
+  if (input == null) {
+    return null;
+  }
+  return input
+      .replaceAll('\\', '\\\\')
+      .replaceAll('"', '\\"')
+      .replaceAll('\n', '\\n')
+      .replaceAll('\t', '\\t');
 }
