@@ -103,6 +103,10 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
               StreamBuilder<List<AppSettingsRecord>>(
                 stream: queryAppSettingsRecord(
                   parent: FFAppState().outletIdRef,
+                  queryBuilder: (appSettingsRecord) => appSettingsRecord.where(
+                    'deviceId',
+                    isEqualTo: FFAppState().dId,
+                  ),
                   singleRecord: true,
                 ),
                 builder: (context, snapshot) {
