@@ -423,6 +423,210 @@ class _KioskChoosePaymentModeWidgetState
                                   borderRadius: BorderRadius.circular(30.0),
                                 ),
                               ),
+                            if (valueOrDefault<bool>(
+                              widget!.appSettings?.settingList
+                                  ?.where(
+                                      (e) => e.title == 'showCardPaymentOption')
+                                  .toList()
+                                  ?.firstOrNull
+                                  ?.value,
+                              false,
+                            ))
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 50.0, 0.0, 0.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    FFAppState().PayMode = 'UPI QR';
+                                    safeSetState(() {});
+                                    _model.outletDOccard =
+                                        await queryOutletRecordOnce(
+                                      queryBuilder: (outletRecord) =>
+                                          outletRecord.where(
+                                        'id',
+                                        isEqualTo: FFAppState().outletIdRef?.id,
+                                      ),
+                                      singleRecord: true,
+                                    ).then((s) => s.firstOrNull);
+                                    if (functions
+                                        .filterBillList(FFAppState().selBill,
+                                            FFAppState().allBillsList.toList())
+                                        .isNotEmpty) {
+                                      if (_model.outletDOccard?.merchantId !=
+                                              null &&
+                                          _model.outletDOccard?.merchantId !=
+                                              '') {
+                                        if (getJsonField(
+                                          widget!.shiftdetails,
+                                          r'''$.shiftExists''',
+                                        )) {}
+                                        FFAppState().orderId =
+                                            FFAppState().orderId + 10;
+                                        FFAppState().paytmOrderId =
+                                            valueOrDefault<String>(
+                                          'ORD-${getCurrentTimestamp.millisecondsSinceEpoch.toString()}',
+                                          '0',
+                                        );
+                                        FFAppState().outletId =
+                                            _model.outletDOccard!.id;
+                                        safeSetState(() {});
+                                        _model.paymentQrResponsecard =
+                                            await CreateQRCall.call(
+                                          mid: _model.outletDOccard?.merchantId,
+                                          orderId: FFAppState().paytmOrderId,
+                                          amount: functions
+                                              .toDecimal(FFAppState().finalAmt),
+                                          businessType: 'UPI_QR_CODE',
+                                          posId: _model.outletDOccard?.id,
+                                          mKey:
+                                              _model.outletDOccard?.merchantKey,
+                                          isProd: _model.outletDOccard?.isProd,
+                                        );
+
+                                        context.goNamed(
+                                          'KioskPayment',
+                                          queryParameters: {
+                                            'doc': serializeParam(
+                                              widget!.doc,
+                                              ParamType.DocumentReference,
+                                            ),
+                                            'shiftdetails': serializeParam(
+                                              widget!.shiftdetails,
+                                              ParamType.JSON,
+                                            ),
+                                            'qrJson': serializeParam(
+                                              (_model.paymentQrResponsecard
+                                                      ?.jsonBody ??
+                                                  ''),
+                                              ParamType.JSON,
+                                            ),
+                                            'paytmOrderId': serializeParam(
+                                              FFAppState().paytmOrderId,
+                                              ParamType.String,
+                                            ),
+                                            'isPaytm': serializeParam(
+                                              true,
+                                              ParamType.bool,
+                                            ),
+                                            'appsettings': serializeParam(
+                                              widget!.appSettings,
+                                              ParamType.Document,
+                                            ),
+                                            'taxcollection': serializeParam(
+                                              widget!.taxcollection,
+                                              ParamType.Document,
+                                              isList: true,
+                                            ),
+                                          }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            'appsettings': widget!.appSettings,
+                                            'taxcollection':
+                                                widget!.taxcollection,
+                                          },
+                                        );
+                                      } else {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              content: Text(
+                                                  'Merchant Id  Is Not Available Contact Support!'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      }
+                                    } else {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            content: Text('Cart Is Empty !'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+
+                                      context.goNamed(
+                                        'KioskBillScreen',
+                                        queryParameters: {
+                                          'doc': serializeParam(
+                                            widget!.doc,
+                                            ParamType.DocumentReference,
+                                          ),
+                                          'shiftdoc': serializeParam(
+                                            widget!.shiftdetails,
+                                            ParamType.JSON,
+                                          ),
+                                          'appsetting': serializeParam(
+                                            widget!.appSettings,
+                                            ParamType.Document,
+                                          ),
+                                          'taxcollection': serializeParam(
+                                            widget!.taxcollection,
+                                            ParamType.Document,
+                                            isList: true,
+                                          ),
+                                        }.withoutNulls,
+                                        extra: <String, dynamic>{
+                                          'appsetting': widget!.appSettings,
+                                          'taxcollection':
+                                              widget!.taxcollection,
+                                        },
+                                      );
+                                    }
+
+                                    safeSetState(() {});
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    '920v2xki' /* Card payment */,
+                                  ),
+                                  icon: Icon(
+                                    Icons.credit_card_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    size: 50.0,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: 550.0,
+                                    height: 200.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 10.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).info,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
+                                          color: Colors.white,
+                                          fontSize: 35.0,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily),
+                                        ),
+                                    elevation: 0.0,
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  ),
+                                ),
+                              ),
                             if (!valueOrDefault<bool>(
                               widget!.appSettings?.settingList
                                   ?.where(

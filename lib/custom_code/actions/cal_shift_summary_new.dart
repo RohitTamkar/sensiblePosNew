@@ -134,6 +134,16 @@ Future<dynamic> calShiftSummaryNew(
       paymentJsonData["digital"] = paymentJsonData["digital"].toDouble() +
           invoice.finalBillAmt.toDouble();
     }
+
+    if (invoice.paymentMode == "SWIGGY") {
+      paymentJsonData["swiggy"] = paymentJsonData["swiggy"].toDouble() +
+          invoice.finalBillAmt.toDouble();
+    }
+
+    if (invoice.paymentMode == "ZOMATO") {
+      paymentJsonData["zomato"] = paymentJsonData["zomato"].toDouble() +
+          invoice.finalBillAmt.toDouble();
+    }
     var paymentJsonDataString = jsonEncode(paymentJsonData).toString();
     shift[i]["paymentJson"] = paymentJsonDataString;
   }
