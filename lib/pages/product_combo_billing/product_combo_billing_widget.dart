@@ -849,6 +849,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             FFAppState().holdBillCount));
                                                                         FFAppState()
                                                                             .selBill = 1;
+                                                                        FFAppState().productColor =
+                                                                            recipeVarItem.id;
                                                                       }
                                                                       if (recipeVarItem.recipeRefId !=
                                                                               null &&
@@ -971,9 +973,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         Container(
                                                                       decoration:
                                                                           BoxDecoration(
-                                                                        color: FFAppState().productColor ==
-                                                                                productList2Item.id
-                                                                            ? FlutterFlowTheme.of(context).secondary
+                                                                        color: recipeVarItem.id ==
+                                                                                FFAppState().productColor
+                                                                            ? FlutterFlowTheme.of(context).parkingPrimary
                                                                             : FlutterFlowTheme.of(context).secondaryBackground,
                                                                         borderRadius:
                                                                             BorderRadius.circular(5.0),
@@ -998,6 +1000,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                                     fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                                     fontSize: 12.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.w600,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                                   ),
                                                                             ),
@@ -1176,8 +1179,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
+                                            color: Color(0xD4B6001A),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
@@ -1998,6 +2000,11 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                               );
                                                               _shouldSetState =
                                                                   true;
+                                                              FFAppState()
+                                                                      .billPrintFooter =
+                                                                  'KOT';
+                                                              safeSetState(
+                                                                  () {});
                                                               _model.outlecdoc =
                                                                   await queryOutletRecordOnce(
                                                                 queryBuilder:
@@ -2968,6 +2975,11 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                               );
                                                               _shouldSetState =
                                                                   true;
+                                                              FFAppState()
+                                                                      .billPrintFooter =
+                                                                  'CUSTOMER';
+                                                              safeSetState(
+                                                                  () {});
                                                               _model.outlecdoccust =
                                                                   await queryOutletRecordOnce(
                                                                 queryBuilder:
