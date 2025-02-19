@@ -21033,15 +21033,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'pzymhzfr': {
-      'en': 'Save',
+    'h5sx5gi2': {
+      'en': '₹ ',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'h5sx5gi2': {
-      'en': '₹ ',
+    'ry8nnxjj': {
+      'en': 'SWIGGY',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'a4hjv57g': {
+      'en': 'ZOMATO',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -21068,71 +21075,43 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'ksevixvq': {
-      'en': '1',
+    'rkgcizac': {
+      'en': 'Last Bill',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    '1ykuopov': {
-      'en': '4',
+    'vdg4trs1': {
+      'en': 'Clear All',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'v2tthwix': {
-      'en': '7',
+    'lo16py26': {
+      'en': '₹ ',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    '7xcmfr2j': {
-      'en': '2',
+    'oc92eaf7': {
+      'en': 'KOT ',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'ru9saczd': {
-      'en': '5',
+    'rs0d0w0p': {
+      'en': 'Customer Bill',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    '6811qt5v': {
-      'en': '8',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'd7kvkvvu': {
-      'en': '0',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'o66m1u3s': {
-      'en': '3',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '6sjhc4kl': {
-      'en': '6',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '5mas6o1c': {
-      'en': '9',
+    'w17j5ebq': {
+      'en': 'Save',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -21160,20 +21139,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'ni0alzhf': {
-      'en': '₹ ',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '630tsmjx': {
-      'en': 'Last Bill',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'dlq0xpoa': {
       'en': '₹ ',
       'hi': '',
       'kn': '',

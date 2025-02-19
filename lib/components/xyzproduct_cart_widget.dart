@@ -88,7 +88,7 @@ class _XyzproductCartWidgetState extends State<XyzproductCartWidget> {
     context.watch<FFAppState>();
 
     return Container(
-      width: MediaQuery.sizeOf(context).width * 0.8,
+      width: double.infinity,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),

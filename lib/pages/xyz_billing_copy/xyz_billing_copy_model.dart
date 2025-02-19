@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
-import '/components/discount_and_delivery_copy/discount_and_delivery_copy_widget.dart';
 import '/components/menu_drawer/menu_drawer_widget.dart';
 import '/components/xyzproduct_cart_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -20,7 +19,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -108,24 +106,34 @@ class XyzBillingCopyModel extends FlutterFlowModel<XyzBillingCopyWidget> {
   List<ProductStructStruct>? prdhive2refresh;
   // Stores action output result for [Custom Action - getCategorylistHive] action in Button widget.
   List<CategoryStructStruct>? catlistrefresh;
-  // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
-  List<SelItemListStruct>? prdlistsavebill;
-  // Stores action output result for [Custom Action - checkInternetConnection] action in Button widget.
-  bool? internetcon;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  InvoiceRecord? invonline;
-  // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
-  InvoiceStructStruct? hiveInvoiceDataCopyCopy;
-  // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
-  dynamic? shiftSummarResultsNew2;
-  // Stores action output result for [Custom Action - shiftIdtoInt] action in Button widget.
-  int? shiftidhive2;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? getOfflineShiftdetails;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  ShiftRecord? shiftondata;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? updatedShift23;
+  // State field(s) for ListView widget.
+  ScrollController? listViewController1;
+  // State field(s) for ListView widget.
+  ScrollController? listViewController2;
+  // Stores action output result for [Firestore Query - Query a collection] action in ProductName widget.
+  RecipeRecord? receipeproductlist;
+  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in ProductName widget.
+  List<dynamic>? resreplist;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
+  double? calculateResultresc;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmt334;
+  // Stores action output result for [Custom Action - laundryAddToHoldListprd] action in ProductName widget.
+  List<dynamic>? addtosavebill22;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
+  double? calculateResult233;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmt3;
+  // State field(s) for ListViewprd widget.
+  ScrollController? listViewprd;
+  // Stores action output result for [Custom Action - removeHoldListItem] action in IconButton widget.
+  List<dynamic>? res20;
+  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in IconButton widget.
+  double? res21;
+  // Stores action output result for [Custom Action - calBillAmt] action in IconButton widget.
+  double? reuslt22;
+  // State field(s) for ListView widget.
+  ScrollController? listViewController3;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlinstnewtx;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
@@ -152,64 +160,58 @@ class XyzBillingCopyModel extends FlutterFlowModel<XyzBillingCopyWidget> {
   List<dynamic>? device;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<ServicePointOutletRecord>? spoutlet;
-  // State field(s) for ListView widget.
-  ScrollController? listViewController1;
-  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in Container widget.
-  double? res11;
-  // State field(s) for ListView widget.
-  ScrollController? listViewController2;
-  // State field(s) for ListView widget.
-  ScrollController? listViewController3;
-  // Stores action output result for [Firestore Query - Query a collection] action in ProductName widget.
-  RecipeRecord? receipeproductlist;
-  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in ProductName widget.
-  List<dynamic>? resreplist;
-  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
-  double? calculateResultresc;
-  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
-  double? calbillAmt334;
-  // Stores action output result for [Custom Action - laundryAddToHoldListprd] action in ProductName widget.
-  List<dynamic>? addtosavebill22;
-  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
-  double? calculateResult233;
-  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
-  double? calbillAmt3;
-  // State field(s) for ListViewprd widget.
-  ScrollController? listViewprd;
-  // Stores action output result for [Custom Action - removeHoldListItem] action in IconButton widget.
-  List<dynamic>? res20;
-  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in IconButton widget.
-  double? res21;
-  // Stores action output result for [Custom Action - calBillAmt] action in IconButton widget.
-  double? reuslt22;
-  // Stores action output result for [Custom Action - setQuickPin] action in Button widget.
-  String? one;
-  // Stores action output result for [Custom Action - setQuickPin] action in Button widget.
-  String? four;
-  // Stores action output result for [Custom Action - setQuickPin] action in Button widget.
-  String? seven;
-  // Stores action output result for [Custom Action - setQuickPin] action in Button widget.
-  String? two;
-  // Stores action output result for [Custom Action - setQuickPin] action in Button widget.
-  String? five;
-  // Stores action output result for [Custom Action - setQuickPin] action in Button widget.
-  String? eight;
-  // Stores action output result for [Custom Action - setQuickPin] action in Button widget.
-  String? zero;
-  // Stores action output result for [Custom Action - setQuickPin] action in Button widget.
-  String? three;
-  // Stores action output result for [Custom Action - setQuickPin] action in Button widget.
-  String? six;
-  // Stores action output result for [Custom Action - setQuickPin] action in Button widget.
-  String? nine;
+  // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
+  List<SelItemListStruct>? prdlinstnewtx2;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  OutletRecord? outlecdoccust;
+  // Stores action output result for [Custom Action - checkInternetConnection] action in Button widget.
+  bool? interprdcust;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  InvoiceRecord? invonlineprtcust;
+  // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
+  InvoiceStructStruct? hiveInvoiceDatacust;
+  // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
+  dynamic? shiftSummarResultscust;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ShiftRecord? shiftondataprintcust;
+  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
+  ShiftDetailsStruct? updatedShiftDetailscust;
+  // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
+  bool? resDevice2cust;
+  // Stores action output result for [Custom Action - connectDevice] action in Button widget.
+  bool? isconnectedcust;
+  // Stores action output result for [Custom Action - selectBillPrint] action in Button widget.
+  List<dynamic>? returnedList2cust;
+  // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
+  List<dynamic>? devicecust;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<ServicePointOutletRecord>? spoutletcust;
+  // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
+  List<SelItemListStruct>? prdlistsavebill;
+  // Stores action output result for [Custom Action - checkInternetConnection] action in Button widget.
+  bool? internetcon;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  InvoiceRecord? invonline;
+  // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
+  InvoiceStructStruct? hiveInvoiceDataCopyCopy;
+  // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
+  dynamic? shiftSummarResultsNew2;
+  // Stores action output result for [Custom Action - shiftIdtoInt] action in Button widget.
+  int? shiftidhive2;
+  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
+  ShiftDetailsStruct? getOfflineShiftdetails;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ShiftRecord? shiftondata;
+  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
+  ShiftDetailsStruct? updatedShift23;
 
   @override
   void initState(BuildContext context) {
     menuDrawerModel = createModel(context, () => MenuDrawerModel());
     listViewController1 = ScrollController();
     listViewController2 = ScrollController();
-    listViewController3 = ScrollController();
     listViewprd = ScrollController();
+    listViewController3 = ScrollController();
   }
 
   @override
@@ -217,7 +219,7 @@ class XyzBillingCopyModel extends FlutterFlowModel<XyzBillingCopyWidget> {
     menuDrawerModel.dispose();
     listViewController1?.dispose();
     listViewController2?.dispose();
-    listViewController3?.dispose();
     listViewprd?.dispose();
+    listViewController3?.dispose();
   }
 }

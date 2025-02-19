@@ -453,12 +453,12 @@ class CardSwipeSaleCall {
     final ffApiRequestBody = '''
 {
   "isProd": ${isProd},
-  "mkey": "${escapeStringForJson(mkey)}",
-  "channelId": "${escapeStringForJson(channelId)}",
-  "paytmMid": "${escapeStringForJson(paytmMid)}",
-  "paytmTid": "${escapeStringForJson(paytmTid)}",
-  "transactionDateTime": "${escapeStringForJson(transactionDateTime)}",
-  "merchantTransactionId": "${escapeStringForJson(merchantTransactionId)}",
+  "mkey": "${mkey}",
+  "channelId": "${channelId}",
+  "paytmMid": "${paytmMid}",
+  "paytmTid": "${paytmTid}",
+  "transactionDateTime": "${transactionDateTime}",
+  "merchantTransactionId": "${merchantTransactionId}",
   "transactionAmount": ${transactionAmount}
 }''';
     return ApiManager.instance.makeApiCall(
@@ -466,7 +466,9 @@ class CardSwipeSaleCall {
       apiUrl:
           'https://asia-south1-sensiblebizpro.cloudfunctions.net/paytm_swap_integration/sale',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Content-Type': 'application/json',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,

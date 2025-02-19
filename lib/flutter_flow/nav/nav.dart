@@ -1407,7 +1407,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'xyzBillingCopy',
-              path: 'xyzBillingCopy',
+              path: 'productComboBilling',
               asyncParams: {
                 'taxcollection':
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
