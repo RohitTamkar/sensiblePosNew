@@ -12,7 +12,7 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'xyz_billing_copy_widget.dart' show XyzBillingCopyWidget;
+import 'product_combo_billing_widget.dart' show ProductComboBillingWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,8 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class XyzBillingCopyModel extends FlutterFlowModel<XyzBillingCopyWidget> {
+class ProductComboBillingModel
+    extends FlutterFlowModel<ProductComboBillingWidget> {
   ///  Local state fields for this page.
 
   List<CategoryStructStruct> categoryHive = [];
@@ -73,7 +74,7 @@ class XyzBillingCopyModel extends FlutterFlowModel<XyzBillingCopyWidget> {
     updateFn(rescipeitems ??= RecipeItemListStruct());
   }
 
-  List<String> liststring = ['DIGITAL', 'CASH', 'SWIGGY', 'ZOMATO'];
+  List<String> liststring = ['DIGITAL', 'CASH'];
   void addToListstring(String item) => liststring.add(item);
   void removeFromListstring(String item) => liststring.remove(item);
   void removeAtIndexFromListstring(int index) => liststring.removeAt(index);
@@ -84,13 +85,13 @@ class XyzBillingCopyModel extends FlutterFlowModel<XyzBillingCopyWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Custom Action - getProductlistHive] action in xyzBillingCopy widget.
+  // Stores action output result for [Custom Action - getProductlistHive] action in productComboBilling widget.
   List<ProductStructStruct>? hiveProductList;
-  // Stores action output result for [Custom Action - getCategorylistHive] action in xyzBillingCopy widget.
+  // Stores action output result for [Custom Action - getCategorylistHive] action in productComboBilling widget.
   List<CategoryStructStruct>? categoryListHive;
-  // Stores action output result for [Custom Action - scanPrinter] action in xyzBillingCopy widget.
+  // Stores action output result for [Custom Action - scanPrinter] action in productComboBilling widget.
   bool? resDevice2Copy;
-  // Stores action output result for [Custom Action - connectDevice] action in xyzBillingCopy widget.
+  // Stores action output result for [Custom Action - connectDevice] action in productComboBilling widget.
   bool? isConnected;
   // Model for MenuDrawer component.
   late MenuDrawerModel menuDrawerModel;

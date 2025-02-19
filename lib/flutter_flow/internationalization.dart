@@ -21017,7 +21017,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
-  // xyzBillingCopy
+  // productComboBilling
   {
     'mbgjfxqr': {
       'en': 'Admin',

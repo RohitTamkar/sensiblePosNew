@@ -20,11 +20,11 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'xyz_billing_copy_model.dart';
-export 'xyz_billing_copy_model.dart';
+import 'product_combo_billing_model.dart';
+export 'product_combo_billing_model.dart';
 
-class XyzBillingCopyWidget extends StatefulWidget {
-  const XyzBillingCopyWidget({
+class ProductComboBillingWidget extends StatefulWidget {
+  const ProductComboBillingWidget({
     super.key,
     this.billDetails,
     this.doc,
@@ -38,12 +38,13 @@ class XyzBillingCopyWidget extends StatefulWidget {
   final List<TaxMasterRecord>? taxcollection;
 
   @override
-  State<XyzBillingCopyWidget> createState() => _XyzBillingCopyWidgetState();
+  State<ProductComboBillingWidget> createState() =>
+      _ProductComboBillingWidgetState();
 }
 
-class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
+class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
     with TickerProviderStateMixin {
-  late XyzBillingCopyModel _model;
+  late ProductComboBillingModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   var hasContainerTriggered1 = false;
@@ -53,7 +54,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => XyzBillingCopyModel());
+    _model = createModel(context, () => ProductComboBillingModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -175,15 +176,15 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
             ),
           );
         }
-        List<AppSettingsRecord> xyzBillingCopyAppSettingsRecordList =
+        List<AppSettingsRecord> productComboBillingAppSettingsRecordList =
             snapshot.data!;
         // Return an empty Container when the item does not exist.
         if (snapshot.data!.isEmpty) {
           return Container();
         }
-        final xyzBillingCopyAppSettingsRecord =
-            xyzBillingCopyAppSettingsRecordList.isNotEmpty
-                ? xyzBillingCopyAppSettingsRecordList.first
+        final productComboBillingAppSettingsRecord =
+            productComboBillingAppSettingsRecordList.isNotEmpty
+                ? productComboBillingAppSettingsRecordList.first
                 : null;
 
         return Title(
@@ -781,7 +782,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                         .toList())
                                                                 .sortedList(
                                                                     keyOf: (e) =>
-                                                                        e.name,
+                                                                        e.code,
                                                                     desc: false)
                                                                 .toList();
 
@@ -807,7 +808,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                     recipeVar[
                                                                         recipeVarIndex];
                                                                 return Visibility(
-                                                                  visible: !xyzBillingCopyAppSettingsRecord!
+                                                                  visible: !productComboBillingAppSettingsRecord!
                                                                       .settingList
                                                                       .where((e) =>
                                                                           e.title ==
@@ -896,7 +897,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                             _model.prditemrecipe!,
                                                                             FFAppState().selBill,
                                                                             widget!.taxcollection!.toList(),
-                                                                            functions.enabletaxinclusive(xyzBillingCopyAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                            functions.enabletaxinclusive(productComboBillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                             valueOrDefault<double>(
                                                                               (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.quantity,
                                                                               0.0,
@@ -926,7 +927,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                           widget!
                                                                               .taxcollection!
                                                                               .toList(),
-                                                                          functions.enabletaxinclusive(xyzBillingCopyAppSettingsRecord!
+                                                                          functions.enabletaxinclusive(productComboBillingAppSettingsRecord!
                                                                               .settingList
                                                                               .where((e) => e.title == 'enableInclusiveTax')
                                                                               .toList()
@@ -1521,8 +1522,8 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                               flex: 6,
                                                                               child: XyzproductCartWidget(
                                                                                 key: Key('Keyi2r_${billIndex}_of_${bill.length}'),
-                                                                                parameter6: xyzBillingCopyAppSettingsRecord?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
-                                                                                parameter7: xyzBillingCopyAppSettingsRecord?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
+                                                                                parameter6: productComboBillingAppSettingsRecord?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
+                                                                                parameter7: productComboBillingAppSettingsRecord?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
                                                                                 parameter1: getJsonField(
                                                                                   billItem,
                                                                                   r'''$.name''',
@@ -2612,7 +2613,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                       .hiveInvoiceData!,
                                                                   FFAppState()
                                                                       .paperSize,
-                                                                  xyzBillingCopyAppSettingsRecord!,
+                                                                  productComboBillingAppSettingsRecord!,
                                                                 );
                                                                 _model.spoutlet =
                                                                     await queryServicePointOutletRecordOnce(
@@ -3583,7 +3584,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                                       .hiveInvoiceDatacust!,
                                                                   FFAppState()
                                                                       .paperSize,
-                                                                  xyzBillingCopyAppSettingsRecord!,
+                                                                  productComboBillingAppSettingsRecord!,
                                                                 );
                                                                 _model.spoutletcust =
                                                                     await queryServicePointOutletRecordOnce(
@@ -4590,7 +4591,7 @@ class _XyzBillingCopyWidgetState extends State<XyzBillingCopyWidget>
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    if (xyzBillingCopyAppSettingsRecord
+                                                    if (productComboBillingAppSettingsRecord
                                                             ?.settingList
                                                             ?.where((e) =>
                                                                 e.title ==

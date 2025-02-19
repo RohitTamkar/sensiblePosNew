@@ -988,7 +988,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                           .firstOrNull!
                                                           .value) {
                                                         context.pushNamed(
-                                                          'xyzBillingCopy',
+                                                          'productComboBilling',
                                                           queryParameters: {
                                                             'taxcollection':
                                                                 serializeParam(
@@ -1358,7 +1358,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                           .firstOrNull!
                                                           .value) {
                                                         context.pushNamed(
-                                                          'xyzBillingCopy',
+                                                          'productComboBilling',
                                                           queryParameters: {
                                                             'taxcollection':
                                                                 serializeParam(

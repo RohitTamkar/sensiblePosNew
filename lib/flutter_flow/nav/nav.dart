@@ -1406,13 +1406,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'xyzBillingCopy',
+              name: 'productComboBilling',
               path: 'productComboBilling',
               asyncParams: {
                 'taxcollection':
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
               },
-              builder: (context, params) => XyzBillingCopyWidget(
+              builder: (context, params) => ProductComboBillingWidget(
                 billDetails: params.getParam(
                   'billDetails',
                   ParamType.DocumentReference,
