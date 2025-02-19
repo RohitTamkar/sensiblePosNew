@@ -15,12 +15,14 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'product_combo_billing_widget.dart' show ProductComboBillingWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:text_search/text_search.dart';
 
 class ProductComboBillingModel
     extends FlutterFlowModel<ProductComboBillingWidget> {
@@ -215,6 +217,16 @@ class ProductComboBillingModel
   ShiftRecord? shiftondata;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
   ShiftDetailsStruct? updatedShift23;
+  // State field(s) for TextFieldsearch widget.
+  FocusNode? textFieldsearchFocusNode;
+  TextEditingController? textFieldsearchTextController;
+  String? Function(BuildContext, String?)?
+      textFieldsearchTextControllerValidator;
+  List<PartyRecord> simpleSearchResults = [];
+  // State field(s) for CustListView widget.
+  ScrollController? custListView;
+  // State field(s) for SearchListView widget.
+  ScrollController? searchListView;
 
   @override
   void initState(BuildContext context) {
@@ -223,6 +235,8 @@ class ProductComboBillingModel
     listViewController2 = ScrollController();
     listViewprd = ScrollController();
     listViewController3 = ScrollController();
+    custListView = ScrollController();
+    searchListView = ScrollController();
   }
 
   @override
@@ -232,5 +246,10 @@ class ProductComboBillingModel
     listViewController2?.dispose();
     listViewprd?.dispose();
     listViewController3?.dispose();
+    textFieldsearchFocusNode?.dispose();
+    textFieldsearchTextController?.dispose();
+
+    custListView?.dispose();
+    searchListView?.dispose();
   }
 }

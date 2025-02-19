@@ -12,6 +12,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class MenuDrawerModel extends FlutterFlowModel<MenuDrawerWidget> {
+  ///  Local state fields for this component.
+
+  bool editbill = false;
+
   @override
   void initState(BuildContext context) {}
 

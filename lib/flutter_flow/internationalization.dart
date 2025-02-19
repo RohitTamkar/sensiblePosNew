@@ -21159,6 +21159,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    '7ucwcrvp': {
+      'en': 'CUSTOMER DETAILS',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'rc17osei': {
+      'en': 'Search Customer',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'xmrmjhsa': {
+      'en': 'Balance: ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'co7awz96': {
       'en': 'Home',
       'hi': '',

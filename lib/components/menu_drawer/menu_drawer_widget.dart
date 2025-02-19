@@ -165,6 +165,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.safePop();
+                                        _model.editbill = true;
+                                        safeSetState(() {});
                                       },
                                       child: Container(
                                         width: double.infinity,
@@ -296,8 +298,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         ),
                                       ),
                                     ),
-                                  if (containerUserProfileRecord?.role ==
-                                      'admin')
+                                  if (_model.editbill)
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 1.5),
