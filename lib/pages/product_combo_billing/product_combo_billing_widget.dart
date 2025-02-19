@@ -1075,7 +1075,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                             listpayItem
                                                         ? FlutterFlowTheme.of(
                                                                 context)
-                                                            .primary
+                                                            .alternate
                                                         : FlutterFlowTheme.of(
                                                                 context)
                                                             .secondaryBackground,
@@ -1836,6 +1836,23 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             true,
                                                                       ).then((s) =>
                                                                               s.firstOrNull);
+                                                                      if (!functions
+                                                                          .isPrinterSelected(
+                                                                              FFAppState().printerDevice)!) {
+                                                                        _model.resDevice2bill =
+                                                                            await actions.scanPrinter(
+                                                                          FFAppState()
+                                                                              .posMode,
+                                                                        );
+                                                                      }
+                                                                      _model.isconnectedbill =
+                                                                          await actions
+                                                                              .connectDevice(
+                                                                        FFAppState()
+                                                                            .printerDevice,
+                                                                        FFAppState()
+                                                                            .printerIndex,
+                                                                      );
                                                                       _model.resultItembill =
                                                                           await actions
                                                                               .docToJson(
@@ -1851,8 +1868,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           .printBillnewhivegroceryBill(
                                                                         _model
                                                                             .resultItembill!,
-                                                                        FFAppState()
-                                                                            .selectedPrinterDevice
+                                                                        _model
+                                                                            .device233!
                                                                             .toList(),
                                                                         FFAppState()
                                                                             .isPrinterConnected,

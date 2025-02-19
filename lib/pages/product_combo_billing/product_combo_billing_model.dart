@@ -137,6 +137,10 @@ class ProductComboBillingModel
   ScrollController? listViewController3;
   // Stores action output result for [Firestore Query - Query a collection] action in Container widget.
   OutletRecord? outletdid2;
+  // Stores action output result for [Custom Action - scanPrinter] action in Container widget.
+  bool? resDevice2bill;
+  // Stores action output result for [Custom Action - connectDevice] action in Container widget.
+  bool? isconnectedbill;
   // Stores action output result for [Custom Action - docToJson] action in Container widget.
   dynamic? resultItembill;
   // Stores action output result for [Custom Action - newCustomAction] action in Container widget.
