@@ -135,6 +135,12 @@ class ProductComboBillingModel
   double? reuslt22;
   // State field(s) for ListView widget.
   ScrollController? listViewController3;
+  // Stores action output result for [Firestore Query - Query a collection] action in Container widget.
+  OutletRecord? outletdid2;
+  // Stores action output result for [Custom Action - docToJson] action in Container widget.
+  dynamic? resultItembill;
+  // Stores action output result for [Custom Action - newCustomAction] action in Container widget.
+  List<dynamic>? device233;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlinstnewtx;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.

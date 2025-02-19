@@ -634,12 +634,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           8.0),
                                                               child: Text(
                                                                 productList2Item
-                                                                    .name
-                                                                    .maybeHandleOverflow(
-                                                                  maxChars: 9,
-                                                                  replacement:
-                                                                      '…',
-                                                                ),
+                                                                    .name,
                                                                 textAlign:
                                                                     TextAlign
                                                                         .center,
@@ -1761,49 +1756,114 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                   final listViewInvoiceRecord =
                                                                       listViewInvoiceRecordList[
                                                                           listViewIndex];
-                                                                  return Container(
-                                                                    width: double
-                                                                        .infinity,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondary,
-                                                                    ),
+                                                                  return InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      _model.outletdid2 =
+                                                                          await queryOutletRecordOnce(
+                                                                        queryBuilder:
+                                                                            (outletRecord) =>
+                                                                                outletRecord.where(
+                                                                          'id',
+                                                                          isEqualTo: FFAppState()
+                                                                              .outletIdRef
+                                                                              ?.id,
+                                                                        ),
+                                                                        singleRecord:
+                                                                            true,
+                                                                      ).then((s) =>
+                                                                              s.firstOrNull);
+                                                                      _model.resultItembill =
+                                                                          await actions
+                                                                              .docToJson(
+                                                                        listViewInvoiceRecord,
+                                                                      );
+                                                                      _model.device233 =
+                                                                          await actions
+                                                                              .newCustomAction(
+                                                                        FFAppState()
+                                                                            .printerIndex,
+                                                                      );
+                                                                      await actions
+                                                                          .printBillnewhivegroceryBill(
+                                                                        _model
+                                                                            .resultItembill!,
+                                                                        FFAppState()
+                                                                            .selectedPrinterDevice
+                                                                            .toList(),
+                                                                        FFAppState()
+                                                                            .isPrinterConnected,
+                                                                        FFAppState()
+                                                                            .printerName,
+                                                                        getJsonField(
+                                                                          functions
+                                                                              .outletDocToJson(_model.outletdid2!),
+                                                                          r'''$''',
+                                                                        ),
+                                                                        listViewInvoiceRecord,
+                                                                        FFAppState()
+                                                                            .paperSize,
+                                                                        productComboBillingAppSettingsRecord!,
+                                                                      );
+
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    },
                                                                     child:
-                                                                        Padding(
-                                                                      padding:
-                                                                          EdgeInsets.all(
-                                                                              10.0),
+                                                                        Container(
+                                                                      width: double
+                                                                          .infinity,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondary,
+                                                                      ),
                                                                       child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.center,
-                                                                        children: [
-                                                                          Text(
-                                                                            FFLocalizations.of(context).getText(
-                                                                              'lo16py26' /* ₹  */,
+                                                                          Padding(
+                                                                        padding:
+                                                                            EdgeInsets.all(10.0),
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.center,
+                                                                          children: [
+                                                                            Text(
+                                                                              FFLocalizations.of(context).getText(
+                                                                                'lo16py26' /* ₹  */,
+                                                                              ),
+                                                                              style: FlutterFlowTheme.of(context).labelSmall.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                    letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
+                                                                                  ),
                                                                             ),
-                                                                            style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                                  letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
-                                                                                ),
-                                                                          ),
-                                                                          Text(
-                                                                            valueOrDefault<String>(
-                                                                              listViewInvoiceRecord.finalBillAmt.toString(),
-                                                                              '100',
+                                                                            Text(
+                                                                              valueOrDefault<String>(
+                                                                                listViewInvoiceRecord.finalBillAmt.toString(),
+                                                                                '100',
+                                                                              ),
+                                                                              style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                                    letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
+                                                                                  ),
                                                                             ),
-                                                                            style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
-                                                                                  letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
-                                                                                ),
-                                                                          ),
-                                                                        ],
+                                                                          ],
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   );
