@@ -1093,7 +1093,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       listpayItem
                                                                   ? FlutterFlowTheme.of(
                                                                           context)
-                                                                      .secondaryBackground
+                                                                      .primaryText
                                                                   : FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
