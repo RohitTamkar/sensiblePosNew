@@ -82,7 +82,7 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
             paytmMid: _model.outlet2?.paytmMid,
             paytmTid: _model.outlet2?.paytmTid,
             transactionDateTime: FFAppState().transactionDateTimeCard,
-            merchantTransactionId: widget!.paytmOrderId,
+            merchantTransactionId: FFAppState().paytmOrderId,
             outletId: FFAppState().outletIdRef?.id,
           );
 
@@ -538,7 +538,7 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 10.0),
                                               child: Text(
-                                                'Orderid  : ${widget!.paytmOrderId}',
+                                                'Orderid  : ${FFAppState().paytmOrderId}',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .labelLarge

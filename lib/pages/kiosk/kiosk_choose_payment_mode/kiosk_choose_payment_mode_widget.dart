@@ -471,29 +471,12 @@ class _KioskChoosePaymentModeWidgetState
                                             _model.outletDOccard!.id;
                                         FFAppState().transactionDateTimeCard =
                                             dateTimeFormat(
-                                          "y-M-d H:mm:s",
+                                          "y-MM-d H:mm:s",
                                           getCurrentTimestamp,
                                           locale: FFLocalizations.of(context)
                                               .languageCode,
                                         );
                                         safeSetState(() {});
-                                        await showDialog(
-                                          context: context,
-                                          builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title: Text(FFAppState()
-                                                  .transactionDateTimeCard),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: Text('Ok'),
-                                                ),
-                                              ],
-                                            );
-                                          },
-                                        );
                                         _model.cardPaymentApiResponse =
                                             await CardSwipeSaleCall.call(
                                           isProd: _model.outletDOccard?.isProd,
@@ -542,6 +525,10 @@ class _KioskChoosePaymentModeWidgetState
                                                   widget!.taxcollection,
                                                   ParamType.Document,
                                                   isList: true,
+                                                ),
+                                                'paytmOrderId': serializeParam(
+                                                  FFAppState().paytmOrderId,
+                                                  ParamType.String,
                                                 ),
                                               }.withoutNulls,
                                               extra: <String, dynamic>{
