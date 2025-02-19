@@ -266,6 +266,25 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                           ),
                                           singleRecord: true,
                                         ).then((s) => s.firstOrNull);
+                                        _model.apiResultf9m2Cancel =
+                                            await CardSaleStatusCall.call(
+                                          isProd: _model.outletCancel?.isProd,
+                                          mkey: _model
+                                              .outletCancel?.paytmCardmkey,
+                                          channelId:
+                                              _model.outletCancel?.channelId,
+                                          paytmMid:
+                                              _model.outletCancel?.paytmMid,
+                                          paytmTid:
+                                              _model.outletCancel?.paytmTid,
+                                          transactionDateTime: FFAppState()
+                                              .transactionDateTimeCard,
+                                          merchantTransactionId:
+                                              FFAppState().paytmOrderId,
+                                          outletId:
+                                              _model.outletCancel?.reference.id,
+                                        );
+
                                         _model.qrdocCancel =
                                             await queryQrTransactionsRecordOnce(
                                           parent: FFAppState().outletIdRef,
@@ -603,15 +622,26 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                     singleRecord: true,
                                                   ).then((s) => s.firstOrNull);
                                                   _model.apiResultf9m2 =
-                                                      await TransactionStatusAPICall
+                                                      await CardSaleStatusCall
                                                           .call(
-                                                    mid: FFAppState().mid,
-                                                    orderId: FFAppState()
-                                                        .paytmOrderId,
-                                                    mKey: _model
-                                                        .outlet?.merchantKey,
                                                     isProd:
                                                         _model.outlet?.isProd,
+                                                    mkey: _model
+                                                        .outlet?.paytmCardmkey,
+                                                    channelId: _model
+                                                        .outlet?.channelId,
+                                                    paytmMid:
+                                                        _model.outlet?.paytmMid,
+                                                    paytmTid:
+                                                        _model.outlet?.paytmTid,
+                                                    transactionDateTime:
+                                                        FFAppState()
+                                                            .transactionDateTimeCard,
+                                                    merchantTransactionId:
+                                                        FFAppState()
+                                                            .paytmOrderId,
+                                                    outletId: _model
+                                                        .outlet?.reference.id,
                                                   );
 
                                                   _model.qrdoc =

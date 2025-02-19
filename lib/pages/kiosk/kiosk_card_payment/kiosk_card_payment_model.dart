@@ -33,6 +33,8 @@ class KioskCardPaymentModel extends FlutterFlowModel<KioskCardPaymentWidget> {
   late KioskHeaderModel kioskHeaderModel;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   OutletRecord? outletCancel;
+  // Stores action output result for [Backend Call - API (cardSaleStatus)] action in Button widget.
+  ApiCallResponse? apiResultf9m2Cancel;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   QrTransactionsRecord? qrdocCancel;
   // State field(s) for Timer widget.
@@ -48,7 +50,7 @@ class KioskCardPaymentModel extends FlutterFlowModel<KioskCardPaymentWidget> {
 
   // Stores action output result for [Firestore Query - Query a collection] action in Timer widget.
   OutletRecord? outlet;
-  // Stores action output result for [Backend Call - API (transactionStatusAPI)] action in Timer widget.
+  // Stores action output result for [Backend Call - API (cardSaleStatus)] action in Timer widget.
   ApiCallResponse? apiResultf9m2;
   // Stores action output result for [Firestore Query - Query a collection] action in Timer widget.
   QrTransactionsRecord? qrdoc;
