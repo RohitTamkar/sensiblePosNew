@@ -460,7 +460,8 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                       width: double.infinity,
                                       height: double.infinity,
                                       decoration: BoxDecoration(
-                                        color: Color(0xFFF0FFF0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
                                         borderRadius:
                                             BorderRadius.circular(40.0),
                                         border: Border.all(
@@ -670,10 +671,10 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                       BorderRadius.circular(
                                                           8.0),
                                                   child: Image.asset(
-                                                    'assets/images/Animation_-_1739873167057.gif',
-                                                    width: 400.0,
+                                                    'assets/images/pos-payment-animation-download-in-lottie-json-gif-static-svg-file-formats--card-device-invoice-tool-receipt-e-commerce-shopping-animations-4204136-ezgif.com-video-to-gif-converter.gif',
+                                                    width: 500.0,
                                                     height: 500.0,
-                                                    fit: BoxFit.contain,
+                                                    fit: BoxFit.cover,
                                                   ),
                                                 ),
                                               ],
