@@ -3082,6 +3082,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           .shiftDetails,
                                                                       r'''$.shiftId''',
                                                                     ).toString(),
+                                                                    count: FFAppState()
+                                                                        .newcount,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -3163,6 +3165,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           .shiftDetails,
                                                                       r'''$.shiftId''',
                                                                     ).toString(),
+                                                                    count: FFAppState()
+                                                                        .newcount,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -4068,6 +4072,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           .shiftDetails,
                                                                       r'''$.shiftId''',
                                                                     ).toString(),
+                                                                    count: FFAppState()
+                                                                        .newcount,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -4149,6 +4155,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           .shiftDetails,
                                                                       r'''$.shiftId''',
                                                                     ).toString(),
+                                                                    count: FFAppState()
+                                                                        .newcount,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {

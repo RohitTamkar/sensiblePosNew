@@ -73,11 +73,8 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
               invoiceRecord.orderBy('invoiceDate', descending: true),
           singleRecord: true,
         ).then((s) => s.firstOrNull);
-        if (_model.invcode != null) {
-          FFAppState().newcount = valueOrDefault<int>(
-            functions.returncountnew(_model.invcode?.invoice),
-            0,
-          );
+        if (_model.invcode?.count != null) {
+          FFAppState().newcount = _model.invcode!.count;
           FFAppState().countLaundryForContinuesIncrement = valueOrDefault<int>(
             functions.returncountnewLaundry(valueOrDefault<String>(
               _model.invcode?.invoice,
