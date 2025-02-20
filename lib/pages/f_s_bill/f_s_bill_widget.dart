@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -21,6 +22,9 @@ export 'f_s_bill_model.dart';
 
 class FSBillWidget extends StatefulWidget {
   const FSBillWidget({super.key});
+
+  static String routeName = 'FSBill';
+  static String routePath = 'fSBill';
 
   @override
   State<FSBillWidget> createState() => _FSBillWidgetState();
@@ -201,7 +205,8 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                           size: 22.0,
                                         ),
                                         onPressed: () async {
-                                          context.pushNamed('AddCustomer');
+                                          context.pushNamed(
+                                              AddCustomerWidget.routeName);
                                         },
                                       ),
                                     ],
@@ -963,7 +968,8 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                       size: 26.0,
                                     ),
                                     onPressed: () async {
-                                      context.pushNamed('FullScreenBill');
+                                      context.pushNamed(
+                                          FullScreenBillWidget.routeName);
                                     },
                                   ),
                                   Text(
@@ -3541,7 +3547,8 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                           .update(() {});
 
                                                       context.pushNamed(
-                                                          'FullScreenBill');
+                                                          FullScreenBillWidget
+                                                              .routeName);
 
                                                       safeSetState(() {});
                                                     },

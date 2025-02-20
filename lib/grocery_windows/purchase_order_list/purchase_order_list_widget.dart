@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -20,6 +21,9 @@ export 'purchase_order_list_model.dart';
 
 class PurchaseOrderListWidget extends StatefulWidget {
   const PurchaseOrderListWidget({super.key});
+
+  static String routeName = 'PurchaseOrderList';
+  static String routePath = 'purchaseOrderList';
 
   @override
   State<PurchaseOrderListWidget> createState() =>
@@ -537,7 +541,8 @@ class _PurchaseOrderListWidgetState extends State<PurchaseOrderListWidget>
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                              'EditPurchaseOrder');
+                                                              EditPurchaseOrderWidget
+                                                                  .routeName);
                                                         },
                                                         child: Container(
                                                           width:
@@ -799,7 +804,7 @@ class _PurchaseOrderListWidgetState extends State<PurchaseOrderListWidget>
                                                                         onPressed:
                                                                             () async {
                                                                           context
-                                                                              .pushNamed('EditPurchaseOrder');
+                                                                              .pushNamed(EditPurchaseOrderWidget.routeName);
                                                                         },
                                                                       ),
                                                                     ],

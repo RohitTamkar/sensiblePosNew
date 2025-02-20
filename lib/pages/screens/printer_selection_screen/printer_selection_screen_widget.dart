@@ -27,6 +27,9 @@ class PrinterSelectionScreenWidget extends StatefulWidget {
 
   final DocumentReference? docHeaderRef;
 
+  static String routeName = 'PrinterSelectionScreen';
+  static String routePath = 'printerSelectionScreen';
+
   @override
   State<PrinterSelectionScreenWidget> createState() =>
       _PrinterSelectionScreenWidgetState();

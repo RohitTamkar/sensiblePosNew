@@ -22,6 +22,9 @@ export 'digital_order_model.dart';
 class DigitalOrderWidget extends StatefulWidget {
   const DigitalOrderWidget({super.key});
 
+  static String routeName = 'DigitalOrder';
+  static String routePath = 'digitalOrder';
+
   @override
   State<DigitalOrderWidget> createState() => _DigitalOrderWidgetState();
 }

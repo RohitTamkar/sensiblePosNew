@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'full_screen_q_r_widget.dart' show FullScreenQRWidget;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';

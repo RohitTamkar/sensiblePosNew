@@ -33,6 +33,9 @@ class EditBillNewWidget extends StatefulWidget {
 
   final DocumentReference? billRef;
 
+  static String routeName = 'EditBillNew';
+  static String routePath = 'editBillNew';
+
   @override
   State<EditBillNewWidget> createState() => _EditBillNewWidgetState();
 }

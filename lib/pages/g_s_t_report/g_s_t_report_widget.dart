@@ -15,6 +15,9 @@ export 'g_s_t_report_model.dart';
 class GSTReportWidget extends StatefulWidget {
   const GSTReportWidget({super.key});
 
+  static String routeName = 'GSTReport';
+  static String routePath = 'gSTReport';
+
   @override
   State<GSTReportWidget> createState() => _GSTReportWidgetState();
 }

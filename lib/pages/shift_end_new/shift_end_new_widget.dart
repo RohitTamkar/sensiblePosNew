@@ -9,6 +9,7 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -21,6 +22,9 @@ export 'shift_end_new_model.dart';
 
 class ShiftEndNewWidget extends StatefulWidget {
   const ShiftEndNewWidget({super.key});
+
+  static String routeName = 'ShiftEndNew';
+  static String routePath = 'shiftEndNew';
 
   @override
   State<ShiftEndNewWidget> createState() => _ShiftEndNewWidgetState();
@@ -3474,7 +3478,8 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                 },
                                               );
 
-                                              context.pushNamed('LoginPage');
+                                              context.pushNamed(
+                                                  LoginPageWidget.routeName);
                                             } else {
                                               return;
                                             }

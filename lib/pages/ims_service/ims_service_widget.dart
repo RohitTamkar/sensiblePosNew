@@ -14,6 +14,9 @@ export 'ims_service_model.dart';
 class ImsServiceWidget extends StatefulWidget {
   const ImsServiceWidget({super.key});
 
+  static String routeName = 'imsService';
+  static String routePath = 'imsService';
+
   @override
   State<ImsServiceWidget> createState() => _ImsServiceWidgetState();
 }

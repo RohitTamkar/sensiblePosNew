@@ -16,6 +16,9 @@ export 'subscription_new_model.dart';
 class SubscriptionNewWidget extends StatefulWidget {
   const SubscriptionNewWidget({super.key});
 
+  static String routeName = 'SubscriptionNew';
+  static String routePath = 'subscriptionNew';
+
   @override
   State<SubscriptionNewWidget> createState() => _SubscriptionNewWidgetState();
 }

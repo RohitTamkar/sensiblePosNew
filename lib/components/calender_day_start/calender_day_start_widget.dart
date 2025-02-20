@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -73,7 +74,7 @@ class _CalenderDayStartWidgetState extends State<CalenderDayStartWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('DayWiseShiftReport');
+                          context.pushNamed(DayWiseShiftReportWidget.routeName);
                         },
                         child: Text(
                           FFLocalizations.of(context).getText(

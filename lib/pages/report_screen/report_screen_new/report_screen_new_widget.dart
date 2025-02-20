@@ -9,6 +9,7 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,9 @@ class ReportScreenNewWidget extends StatefulWidget {
   final DocumentReference? doc;
   final dynamic shiftDetail;
   final List<TaxMasterRecord>? tax;
+
+  static String routeName = 'ReportScreenNew';
+  static String routePath = 'reportScreenNew';
 
   @override
   State<ReportScreenNewWidget> createState() => _ReportScreenNewWidgetState();
@@ -316,7 +320,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                           await queryPaymentModeRecordOnce();
                                       if (FFAppState().navigate == 'GROCERY') {
                                         context.goNamed(
-                                          'BillingGroceryNew',
+                                          BillingGroceryNewWidget.routeName,
                                           queryParameters: {
                                             'shiftdetail': serializeParam(
                                               _model.shiftdetail,
@@ -349,7 +353,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                           .firstOrNull!
                                           .value) {
                                         context.pushNamed(
-                                          'ProductAndListlaundrybilling',
+                                          ProductAndListlaundrybillingWidget
+                                              .routeName,
                                           queryParameters: {
                                             'billDetails': serializeParam(
                                               _model.bilinvref,
@@ -375,7 +380,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                         );
                                       } else {
                                         context.pushNamed(
-                                          'ProductAndListNew',
+                                          ProductAndListNewWidget.routeName,
                                           queryParameters: {
                                             'billDetails': serializeParam(
                                               _model.bilinvref,
@@ -527,7 +532,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                        'BillReportNew');
+                                                        BillReportNewWidget
+                                                            .routeName);
 
                                                     if (animationsMap[
                                                             'containerOnActionTriggerAnimation1'] !=
@@ -618,7 +624,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                        'CategoryReportnew');
+                                                        CategoryReportnewWidget
+                                                            .routeName);
 
                                                     if (animationsMap[
                                                             'containerOnActionTriggerAnimation2'] !=
@@ -709,8 +716,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context
-                                              .pushNamed('ProductWiseReport');
+                                          context.pushNamed(
+                                              ProductWiseReportWidget
+                                                  .routeName);
 
                                           if (animationsMap[
                                                   'containerOnActionTriggerAnimation3'] !=
@@ -914,7 +922,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'TodaySummerReportNew',
+                                                            TodaySummerReportNewWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'shift':
                                                                   serializeParam(
@@ -1031,7 +1040,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                          'ShiftEndNew');
+                                                          ShiftEndNewWidget
+                                                              .routeName);
 
                                                       if (animationsMap[
                                                               'containerOnActionTriggerAnimation5'] !=
@@ -1123,7 +1133,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                          'DayWiseShiftReport');
+                                                          DayWiseShiftReportWidget
+                                                              .routeName);
 
                                                       if (animationsMap[
                                                               'containerOnActionTriggerAnimation6'] !=

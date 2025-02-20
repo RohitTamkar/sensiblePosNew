@@ -10,6 +10,7 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
@@ -38,6 +39,9 @@ class KioskBillScreenWidget extends StatefulWidget {
   final DocumentReference? billdetails;
   final AppSettingsRecord? appsetting;
   final List<TaxMasterRecord>? taxcollection;
+
+  static String routeName = 'KioskBillScreen';
+  static String routePath = 'kioskBillScreen';
 
   @override
   State<KioskBillScreenWidget> createState() => _KioskBillScreenWidgetState();
@@ -440,7 +444,8 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                             s.firstOrNull);
 
                                                     context.pushNamed(
-                                                      'KioskBillScreen',
+                                                      KioskBillScreenWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'doc': serializeParam(
                                                           widget!.doc,
@@ -492,7 +497,8 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                     ),
                                                     onPressed: () async {
                                                       context.pushNamed(
-                                                          'printSettingkiosk');
+                                                          PrintSettingkioskWidget
+                                                              .routeName);
                                                     },
                                                   ),
                                               ],
@@ -1947,7 +1953,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                       .firstOrNull!
                                       .value) {
                                     context.goNamed(
-                                      'KioskCartdineinparcel',
+                                      KioskCartdineinparcelWidget.routeName,
                                       queryParameters: {
                                         'doc': serializeParam(
                                           widget!.doc,
@@ -1974,7 +1980,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                     );
                                   } else {
                                     context.goNamed(
-                                      'KioskCart',
+                                      KioskCartWidget.routeName,
                                       queryParameters: {
                                         'doc': serializeParam(
                                           widget!.doc,
@@ -2119,7 +2125,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                   );
 
                                   context.pushNamed(
-                                    'KioskPaymentCopy',
+                                    KioskPaymentCopyWidget.routeName,
                                     queryParameters: {
                                       'data': serializeParam(
                                         getJsonField(

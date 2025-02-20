@@ -11,6 +11,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,9 @@ export 'table_screen_model.dart';
 
 class TableScreenWidget extends StatefulWidget {
   const TableScreenWidget({super.key});
+
+  static String routeName = 'TableScreen';
+  static String routePath = 'tableScreen';
 
   @override
   State<TableScreenWidget> createState() => _TableScreenWidgetState();
@@ -218,7 +222,8 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                           size: 22.0,
                                         ),
                                         onPressed: () async {
-                                          context.pushNamed('AddCustomer');
+                                          context.pushNamed(
+                                              AddCustomerWidget.routeName);
                                         },
                                       ),
                                     ],
@@ -741,7 +746,8 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'EditCustomer',
+                                                                          EditCustomerWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'custRef':
@@ -1038,7 +1044,8 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'EditCustomer',
+                                                                          EditCustomerWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'custRef':
@@ -2276,7 +2283,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                         onLongPress:
                                                                             () async {
                                                                           context
-                                                                              .pushNamed('UpdateProduct');
+                                                                              .pushNamed(UpdateProductWidget.routeName);
                                                                         },
                                                                         child:
                                                                             Container(

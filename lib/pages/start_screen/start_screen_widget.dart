@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -14,6 +15,9 @@ export 'start_screen_model.dart';
 
 class StartScreenWidget extends StatefulWidget {
   const StartScreenWidget({super.key});
+
+  static String routeName = 'StartScreen';
+  static String routePath = 'startScreen';
 
   @override
   State<StartScreenWidget> createState() => _StartScreenWidgetState();
@@ -35,17 +39,17 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
       await actions.newCustomAction5();
       if (FFAppState().navigate == 'REGULAR') {
         if (isAndroid == true) {
-          context.pushNamed('welcomeScreenNew');
+          context.pushNamed(WelcomeScreenNewWidget.routeName);
         } else {
-          context.pushNamed('SplashScreenWindows');
+          context.pushNamed(SplashScreenWindowsWidget.routeName);
         }
       } else if (FFAppState().navigate == 'KIOSK') {
-        context.pushNamed('KioskSplashScreen');
+        context.pushNamed(KioskSplashScreenWidget.routeName);
       } else if (FFAppState().navigate == 'GROCERY') {
         if (isAndroid == true) {
-          context.pushNamed('welcomeScreenNew');
+          context.pushNamed(WelcomeScreenNewWidget.routeName);
         } else {
-          context.pushNamed('SplashScreenWindows');
+          context.pushNamed(SplashScreenWindowsWidget.routeName);
         }
       }
     });
@@ -97,9 +101,11 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                                 FFAppState().navigate = 'REGULAR';
                                 safeSetState(() {});
                                 if (isAndroid == true) {
-                                  context.pushNamed('welcomeScreenNew');
+                                  context.pushNamed(
+                                      WelcomeScreenNewWidget.routeName);
                                 } else {
-                                  context.pushNamed('SplashScreenWindows');
+                                  context.pushNamed(
+                                      SplashScreenWindowsWidget.routeName);
                                 }
                               },
                               onLongPress: () async {
@@ -211,7 +217,8 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                               FFAppState().navigate = 'KIOSK';
                               safeSetState(() {});
 
-                              context.pushNamed('KioskSplashScreen');
+                              context
+                                  .pushNamed(KioskSplashScreenWidget.routeName);
                             },
                             child: Material(
                               color: Colors.transparent,
@@ -286,7 +293,8 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                               FFAppState().navigate = 'GROCERY';
                               safeSetState(() {});
 
-                              context.pushNamed('SplashScreenWindows');
+                              context.pushNamed(
+                                  SplashScreenWindowsWidget.routeName);
                             },
                             onLongPress: () async {
                               await showModalBottomSheet(

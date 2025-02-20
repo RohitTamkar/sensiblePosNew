@@ -11,6 +11,7 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +36,9 @@ class ResponsePageWidget extends StatefulWidget {
   final dynamic shiftdetails;
   final AppSettingsRecord? appsetting;
   final List<TaxMasterRecord>? taxcoollectipon;
+
+  static String routeName = 'responsePage';
+  static String routePath = 'responsePage';
 
   @override
   State<ResponsePageWidget> createState() => _ResponsePageWidgetState();
@@ -469,7 +473,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                   .firstOrNull!
                   .value) {
                 context.goNamed(
-                  'KioskBillScreen',
+                  KioskBillScreenWidget.routeName,
                   queryParameters: {
                     'doc': serializeParam(
                       _model.outletdoc?.userRef,
@@ -496,7 +500,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                 );
               } else {
                 context.goNamed(
-                  'KioskDineParcel',
+                  KioskDineParcelWidget.routeName,
                   queryParameters: {
                     'userdoc': serializeParam(
                       _model.outletdoc?.userRef,
@@ -524,7 +528,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               }
             } else {
               context.goNamed(
-                'KioskAdvertising',
+                KioskAdvertisingWidget.routeName,
                 queryParameters: {
                   'userDoc': serializeParam(
                     _model.outletdoc?.userRef,
@@ -569,7 +573,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               },
             );
 
-            context.pushNamed('printSettingkiosk');
+            context.pushNamed(PrintSettingkioskWidget.routeName);
           }
         } else {
           await Future.delayed(const Duration(milliseconds: 2000));
@@ -614,7 +618,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                 .firstOrNull!
                 .value) {
               context.goNamed(
-                'KioskBillScreen',
+                KioskBillScreenWidget.routeName,
                 queryParameters: {
                   'doc': serializeParam(
                     _model.outletdoc?.userRef,
@@ -641,7 +645,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               );
             } else {
               context.goNamed(
-                'KioskDineParcel',
+                KioskDineParcelWidget.routeName,
                 queryParameters: {
                   'userdoc': serializeParam(
                     _model.outletdoc?.userRef,
@@ -669,7 +673,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
             }
           } else {
             context.goNamed(
-              'KioskAdvertising',
+              KioskAdvertisingWidget.routeName,
               queryParameters: {
                 'userDoc': serializeParam(
                   _model.outletdoc?.userRef,
@@ -1003,7 +1007,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                                     _shouldSetState = true;
 
                                     context.pushNamed(
-                                      'KioskDineParcel',
+                                      KioskDineParcelWidget.routeName,
                                       queryParameters: {
                                         'userdoc': serializeParam(
                                           _model.outletdocCopy?.userRef,
@@ -1050,7 +1054,8 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                                       },
                                     );
 
-                                    context.pushNamed('printSettingkiosk');
+                                    context.pushNamed(
+                                        PrintSettingkioskWidget.routeName);
                                   }
 
                                   if (_shouldSetState) safeSetState(() {});

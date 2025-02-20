@@ -21,6 +21,9 @@ export 'wi_fi_setting_model.dart';
 class WiFiSettingWidget extends StatefulWidget {
   const WiFiSettingWidget({super.key});
 
+  static String routeName = 'WiFiSetting';
+  static String routePath = 'wiFiSetting';
+
   @override
   State<WiFiSettingWidget> createState() => _WiFiSettingWidgetState();
 }

@@ -19,6 +19,9 @@ export 'day_wise_shift_report_model.dart';
 class DayWiseShiftReportWidget extends StatefulWidget {
   const DayWiseShiftReportWidget({super.key});
 
+  static String routeName = 'DayWiseShiftReport';
+  static String routePath = 'dayWiseShiftReport';
+
   @override
   State<DayWiseShiftReportWidget> createState() =>
       _DayWiseShiftReportWidgetState();

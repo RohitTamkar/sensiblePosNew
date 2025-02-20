@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -16,6 +17,9 @@ export 'full_screen_q_r_model.dart';
 
 class FullScreenQRWidget extends StatefulWidget {
   const FullScreenQRWidget({super.key});
+
+  static String routeName = 'FullScreenQR';
+  static String routePath = 'fullScreenQR';
 
   @override
   State<FullScreenQRWidget> createState() => _FullScreenQRWidgetState();
@@ -735,7 +739,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context.pushNamed('FSQR');
+                                      context.pushNamed(FsqrWidget.routeName);
                                     },
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -1605,7 +1609,8 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                 highlightColor:
                                                     Colors.transparent,
                                                 onTap: () async {
-                                                  context.pushNamed('FSQR');
+                                                  context.pushNamed(
+                                                      FsqrWidget.routeName);
                                                 },
                                                 child: Container(
                                                   width:

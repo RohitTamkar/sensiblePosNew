@@ -31,6 +31,9 @@ class MiniKioskDineParcelWidget extends StatefulWidget {
   final AppSettingsRecord? appSetting;
   final List<TaxMasterRecord>? taxcollection;
 
+  static String routeName = 'MiniKioskDineParcel';
+  static String routePath = 'miniKioskDineParcel';
+
   @override
   State<MiniKioskDineParcelWidget> createState() =>
       _MiniKioskDineParcelWidgetState();

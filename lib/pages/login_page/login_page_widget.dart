@@ -11,6 +11,7 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,9 @@ class LoginPageWidget extends StatefulWidget {
   });
 
   final String? deviceDocId;
+
+  static String routeName = 'LoginPage';
+  static String routePath = 'loginPage';
 
   @override
   State<LoginPageWidget> createState() => _LoginPageWidgetState();
@@ -152,7 +156,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('DigitalOrder');
+                              context.pushNamed(DigitalOrderWidget.routeName);
                             },
                             child: Image.asset(
                               'assets/images/Sensible_Connect_Logo_2.png',
@@ -1181,7 +1185,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                         _shouldSetState = true;
 
                                                                                         context.pushNamed(
-                                                                                          'LoadingScreen',
+                                                                                          LoadingScreenWidget.routeName,
                                                                                           queryParameters: {
                                                                                             'shiftDoc': serializeParam(
                                                                                               _model.shiftJson,
@@ -2524,7 +2528,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   );
 
                                                                                   context.pushNamed(
-                                                                                    'LoadingScreen',
+                                                                                    LoadingScreenWidget.routeName,
                                                                                     queryParameters: {
                                                                                       'shiftDoc': serializeParam(
                                                                                         _model.shiftJsonCopy,
@@ -2875,7 +2879,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       size: 27.0,
                                     ),
                                     onPressed: () async {
-                                      context.pushNamed('SettingHomepage');
+                                      context.pushNamed(
+                                          SettingHomepageWidget.routeName);
                                     },
                                   ),
                                 ),

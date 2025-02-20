@@ -22,6 +22,9 @@ export 'credit_paymentpurchase_model.dart';
 class CreditPaymentpurchaseWidget extends StatefulWidget {
   const CreditPaymentpurchaseWidget({super.key});
 
+  static String routeName = 'CreditPaymentpurchase';
+  static String routePath = 'creditPaymentpurchase';
+
   @override
   State<CreditPaymentpurchaseWidget> createState() =>
       _CreditPaymentpurchaseWidgetState();

@@ -16,6 +16,9 @@ export 'weightscalesetting_model.dart';
 class WeightscalesettingWidget extends StatefulWidget {
   const WeightscalesettingWidget({super.key});
 
+  static String routeName = 'weightscalesetting';
+  static String routePath = 'weightscalesetting';
+
   @override
   State<WeightscalesettingWidget> createState() =>
       _WeightscalesettingWidgetState();

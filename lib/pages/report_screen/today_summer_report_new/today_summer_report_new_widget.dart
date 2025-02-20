@@ -23,6 +23,9 @@ class TodaySummerReportNewWidget extends StatefulWidget {
 
   final List<ShiftRecord>? shift;
 
+  static String routeName = 'TodaySummerReportNew';
+  static String routePath = 'todaySummerReportNew';
+
   @override
   State<TodaySummerReportNewWidget> createState() =>
       _TodaySummerReportNewWidgetState();

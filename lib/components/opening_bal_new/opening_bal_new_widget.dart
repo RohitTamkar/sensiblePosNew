@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -951,7 +952,8 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                         .firstOrNull!
                                                         .value) {
                                                       context.pushNamed(
-                                                        'ProductAndListlaundrybilling',
+                                                        ProductAndListlaundrybillingWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'doc': serializeParam(
                                                             widget!.doc,
@@ -988,7 +990,8 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                           .firstOrNull!
                                                           .value) {
                                                         context.pushNamed(
-                                                          'productComboBilling',
+                                                          ProductComboBillingWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'taxcollection':
                                                                 serializeParam(
@@ -1022,7 +1025,8 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                                 .navigate ==
                                                             'GROCERY') {
                                                           context.pushNamed(
-                                                            'BillingGroceryNew',
+                                                            BillingGroceryNewWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'shiftdetail':
                                                                   serializeParam(
@@ -1063,7 +1067,8 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                           );
                                                         } else {
                                                           context.pushNamed(
-                                                            'ProductAndListNew',
+                                                            ProductAndListNewWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'doc':
                                                                   serializeParam(
@@ -1321,7 +1326,8 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                         .firstOrNull!
                                                         .value) {
                                                       context.pushNamed(
-                                                        'ProductAndListlaundrybilling',
+                                                        ProductAndListlaundrybillingWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'doc': serializeParam(
                                                             widget!.doc,
@@ -1358,7 +1364,8 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                           .firstOrNull!
                                                           .value) {
                                                         context.pushNamed(
-                                                          'productComboBilling',
+                                                          ProductComboBillingWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'taxcollection':
                                                                 serializeParam(
@@ -1392,7 +1399,8 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                                 .navigate ==
                                                             'GROCERY') {
                                                           context.pushNamed(
-                                                            'BillingGroceryNew',
+                                                            BillingGroceryNewWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'shiftdetail':
                                                                   serializeParam(
@@ -1433,7 +1441,8 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                           );
                                                         } else {
                                                           context.pushNamed(
-                                                            'ProductAndListNew',
+                                                            ProductAndListNewWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'doc':
                                                                   serializeParam(

@@ -19,6 +19,9 @@ export 'product_sale_testing_model.dart';
 class ProductSaleTestingWidget extends StatefulWidget {
   const ProductSaleTestingWidget({super.key});
 
+  static String routeName = 'productSaleTesting';
+  static String routePath = 'productSaleTesting';
+
   @override
   State<ProductSaleTestingWidget> createState() =>
       _ProductSaleTestingWidgetState();

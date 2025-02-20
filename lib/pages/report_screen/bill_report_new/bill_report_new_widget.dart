@@ -9,6 +9,7 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -21,6 +22,9 @@ export 'bill_report_new_model.dart';
 
 class BillReportNewWidget extends StatefulWidget {
   const BillReportNewWidget({super.key});
+
+  static String routeName = 'BillReportNew';
+  static String routePath = 'billReportNew';
 
   @override
   State<BillReportNewWidget> createState() => _BillReportNewWidgetState();
@@ -728,7 +732,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                           Colors.transparent,
                                                       onTap: () async {
                                                         context.pushNamed(
-                                                          'Bill',
+                                                          BillWidget.routeName,
                                                           queryParameters: {
                                                             'docRef':
                                                                 serializeParam(
@@ -1000,7 +1004,8 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'Bill',
+                                                                          BillWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'docRef':

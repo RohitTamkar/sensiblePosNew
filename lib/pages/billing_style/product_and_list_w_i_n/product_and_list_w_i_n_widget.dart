@@ -12,6 +12,7 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -36,6 +37,9 @@ class ProductAndListWINWidget extends StatefulWidget {
   final DocumentReference? billDetails;
   final DocumentReference? doc;
   final dynamic shiftDetails;
+
+  static String routeName = 'ProductAndListWIN';
+  static String routePath = 'productAndListWIN';
 
   @override
   State<ProductAndListWINWidget> createState() =>
@@ -397,7 +401,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                       size: 22.0,
                                     ),
                                     onPressed: () async {
-                                      context.pushNamed('AddCustomer');
+                                      context.pushNamed(
+                                          AddCustomerWidget.routeName);
                                     },
                                   ),
                                 ],

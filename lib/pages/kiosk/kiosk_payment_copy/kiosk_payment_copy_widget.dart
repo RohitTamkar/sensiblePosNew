@@ -9,6 +9,7 @@ import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:ui';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -25,6 +26,9 @@ class KioskPaymentCopyWidget extends StatefulWidget {
   });
 
   final String? data;
+
+  static String routeName = 'KioskPaymentCopy';
+  static String routePath = 'kioskPaymentCopy';
 
   @override
   State<KioskPaymentCopyWidget> createState() => _KioskPaymentCopyWidgetState();
@@ -167,7 +171,8 @@ class _KioskPaymentCopyWidgetState extends State<KioskPaymentCopyWidget> {
                                               size: 40.0,
                                             ),
                                             onPressed: () async {
-                                              context.pushNamed('KioskCart');
+                                              context.pushNamed(
+                                                  KioskCartWidget.routeName);
                                             },
                                           ),
                                         ),

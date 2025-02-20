@@ -19,6 +19,9 @@ export 'regular_app_setting_model.dart';
 class RegularAppSettingWidget extends StatefulWidget {
   const RegularAppSettingWidget({super.key});
 
+  static String routeName = 'RegularAppSetting';
+  static String routePath = 'regularAppSetting';
+
   @override
   State<RegularAppSettingWidget> createState() =>
       _RegularAppSettingWidgetState();

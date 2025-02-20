@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:math';
 import 'dart:ui';
+import '/index.dart';
 import 'kiosk_dine_parcel_widget.dart' show KioskDineParcelWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';

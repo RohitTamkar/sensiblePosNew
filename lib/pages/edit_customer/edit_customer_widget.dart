@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/foundation.dart';
@@ -26,6 +27,9 @@ class EditCustomerWidget extends StatefulWidget {
   });
 
   final DocumentReference? custRef;
+
+  static String routeName = 'EditCustomer';
+  static String routePath = 'editCustomer';
 
   @override
   State<EditCustomerWidget> createState() => _EditCustomerWidgetState();
@@ -124,7 +128,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                   size: 30.0,
                 ),
                 onPressed: () async {
-                  context.pushNamed('AddCustomer');
+                  context.pushNamed(AddCustomerWidget.routeName);
                 },
               ),
             ),
@@ -247,7 +251,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                           size: 22.0,
                                         ),
                                         onPressed: () async {
-                                          context.pushNamed('AddCustomer');
+                                          context.pushNamed(
+                                              AddCustomerWidget.routeName);
                                         },
                                       ),
                                     ],
@@ -742,7 +747,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                       () async {
                                                                     context
                                                                         .pushNamed(
-                                                                      'EditCustomer',
+                                                                      EditCustomerWidget
+                                                                          .routeName,
                                                                       queryParameters:
                                                                           {
                                                                         'custRef':
@@ -818,7 +824,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 .update(() {});
 
                                                             context.pushNamed(
-                                                              'EditCustomer',
+                                                              EditCustomerWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'custRef':
                                                                     serializeParam(
@@ -1051,7 +1058,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'EditCustomer',
+                                                                        EditCustomerWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'custRef':

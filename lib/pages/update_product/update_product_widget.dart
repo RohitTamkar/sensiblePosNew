@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -27,6 +28,9 @@ class UpdateProductWidget extends StatefulWidget {
   });
 
   final DocumentReference? productRef;
+
+  static String routeName = 'UpdateProduct';
+  static String routePath = 'updateProduct';
 
   @override
   State<UpdateProductWidget> createState() => _UpdateProductWidgetState();
@@ -137,7 +141,7 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                   FFAppState().codeLenght = _model.len!;
                   FFAppState().update(() {});
 
-                  context.pushNamed('AddProduct');
+                  context.pushNamed(AddProductWidget.routeName);
 
                   safeSetState(() {});
                 },
@@ -462,7 +466,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                             .update(() {});
 
                                                         context.pushNamed(
-                                                          'UpdateProduct',
+                                                          UpdateProductWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'productRef':
                                                                 serializeParam(
@@ -600,7 +605,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                               .update(() {});
 
                                                           context.pushNamed(
-                                                            'UpdateProduct',
+                                                            UpdateProductWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'productRef':
                                                                   serializeParam(

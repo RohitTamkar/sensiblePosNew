@@ -13,6 +13,9 @@ export 'dummytest_model.dart';
 class DummytestWidget extends StatefulWidget {
   const DummytestWidget({super.key});
 
+  static String routeName = 'dummytest';
+  static String routePath = 'dummytest';
+
   @override
   State<DummytestWidget> createState() => _DummytestWidgetState();
 }

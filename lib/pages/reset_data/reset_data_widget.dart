@@ -15,6 +15,9 @@ export 'reset_data_model.dart';
 class ResetDataWidget extends StatefulWidget {
   const ResetDataWidget({super.key});
 
+  static String routeName = 'ResetData';
+  static String routePath = 'resetData';
+
   @override
   State<ResetDataWidget> createState() => _ResetDataWidgetState();
 }

@@ -25,6 +25,9 @@ class BillWidget extends StatefulWidget {
 
   final DocumentReference? docRef;
 
+  static String routeName = 'Bill';
+  static String routePath = 'bill';
+
   @override
   State<BillWidget> createState() => _BillWidgetState();
 }

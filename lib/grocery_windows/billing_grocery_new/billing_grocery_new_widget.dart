@@ -16,6 +16,7 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -43,6 +44,9 @@ class BillingGroceryNewWidget extends StatefulWidget {
   final List<TaxMasterRecord>? taxDetails;
   final DocumentReference? userref;
   final List<PaymentModeRecord>? paymentMode;
+
+  static String routeName = 'BillingGroceryNew';
+  static String routePath = 'billingGroceryNew';
 
   @override
   State<BillingGroceryNewWidget> createState() =>
@@ -947,7 +951,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                                         FFAppState().isCustListShown = true;
                                                                                         FFAppState().update(() {});
 
-                                                                                        context.pushNamed('CreditPaymentPage');
+                                                                                        context.pushNamed(CreditPaymentPageWidget.routeName);
                                                                                       },
                                                                                     ),
                                                                                   ),
@@ -1176,7 +1180,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                                     ),
                                                                                     onPressed: () async {
                                                                                       context.pushNamed(
-                                                                                        'EditCustomer',
+                                                                                        EditCustomerWidget.routeName,
                                                                                         queryParameters: {
                                                                                           'custRef': serializeParam(
                                                                                             listItem.reference,
@@ -1500,7 +1504,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   context.pushNamed(
-                                                    'purchaseOrder',
+                                                    PurchaseOrderWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'shiftdetail':
                                                           serializeParam(
@@ -1601,7 +1606,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   context.pushNamed(
-                                                    'BillingGroceryNew',
+                                                    BillingGroceryNewWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'shiftdetail':
                                                           serializeParam(
@@ -1697,7 +1703,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   context.pushNamed(
-                                                    'ReportScreenNew',
+                                                    ReportScreenNewWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'doc': serializeParam(
                                                         widget!.userref,
@@ -1843,7 +1850,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   context.pushNamed(
-                                                      'printSettingkiosk');
+                                                      PrintSettingkioskWidget
+                                                          .routeName);
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
@@ -1906,7 +1914,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   context.pushNamed(
-                                                      'AppSettingNewPos');
+                                                      AppSettingNewPosWidget
+                                                          .routeName);
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
@@ -4423,7 +4432,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                     }
 
                                                     context.pushNamed(
-                                                        'customerLedgerreport');
+                                                        CustomerLedgerreportWidget
+                                                            .routeName);
                                                   },
                                                   child: Row(
                                                     mainAxisSize:

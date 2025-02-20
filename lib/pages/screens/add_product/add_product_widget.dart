@@ -19,6 +19,9 @@ export 'add_product_model.dart';
 class AddProductWidget extends StatefulWidget {
   const AddProductWidget({super.key});
 
+  static String routeName = 'AddProduct';
+  static String routePath = 'addProduct';
+
   @override
   State<AddProductWidget> createState() => _AddProductWidgetState();
 }

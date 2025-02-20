@@ -18,6 +18,9 @@ export 'product_wise_report_model.dart';
 class ProductWiseReportWidget extends StatefulWidget {
   const ProductWiseReportWidget({super.key});
 
+  static String routeName = 'ProductWiseReport';
+  static String routePath = 'productWiseReport';
+
   @override
   State<ProductWiseReportWidget> createState() =>
       _ProductWiseReportWidgetState();

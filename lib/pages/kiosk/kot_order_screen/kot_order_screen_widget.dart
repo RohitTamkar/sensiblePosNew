@@ -31,6 +31,9 @@ class KotOrderScreenWidget extends StatefulWidget {
 
   final AppSettingsRecord? appsetting;
 
+  static String routeName = 'KotOrderScreen';
+  static String routePath = 'kotOrderScreen';
+
   @override
   State<KotOrderScreenWidget> createState() => _KotOrderScreenWidgetState();
 }

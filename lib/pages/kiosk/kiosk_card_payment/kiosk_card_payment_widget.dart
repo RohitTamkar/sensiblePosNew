@@ -10,6 +10,7 @@ import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
@@ -41,6 +42,9 @@ class KioskCardPaymentWidget extends StatefulWidget {
   final bool? isPaytm;
   final AppSettingsRecord? appsettings;
   final List<TaxMasterRecord>? taxcollection;
+
+  static String routeName = 'KioskCardPayment';
+  static String routePath = 'kioskCardPayment';
 
   @override
   State<KioskCardPaymentWidget> createState() => _KioskCardPaymentWidgetState();
@@ -154,7 +158,7 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onLongPress: () async {
-                                  context.pushNamed('KioskLogin');
+                                  context.pushNamed(KioskLoginWidget.routeName);
                                 },
                                 child: wrapWithModel(
                                   model: _model.kioskHeaderModel,
@@ -194,7 +198,8 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                               size: 40.0,
                                             ),
                                             onPressed: () async {
-                                              context.pushNamed('KioskCart');
+                                              context.pushNamed(
+                                                  KioskCartWidget.routeName);
                                             },
                                           ),
                                         ),
@@ -751,7 +756,8 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                             ?.cancel();
 
                                                         context.pushNamed(
-                                                          'responsePage',
+                                                          ResponsePageWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'doc':
                                                                 serializeParam(
@@ -797,7 +803,8 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                                 ?.resultStatus ==
                                                             'FAIL') {
                                                           context.pushNamed(
-                                                            'responsePage',
+                                                            ResponsePageWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'doc':
                                                                   serializeParam(

@@ -14,6 +14,9 @@ export 'onboarding_screen_model.dart';
 class OnboardingScreenWidget extends StatefulWidget {
   const OnboardingScreenWidget({super.key});
 
+  static String routeName = 'OnboardingScreen';
+  static String routePath = 'onboardingScreen';
+
   @override
   State<OnboardingScreenWidget> createState() => _OnboardingScreenWidgetState();
 }

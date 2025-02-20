@@ -45,6 +45,9 @@ class ProductAndListlaundrybillingWidget extends StatefulWidget {
   final dynamic shiftDetails;
   final List<TaxMasterRecord>? taxcollection;
 
+  static String routeName = 'ProductAndListlaundrybilling';
+  static String routePath = 'productAndListlaundrybilling';
+
   @override
   State<ProductAndListlaundrybillingWidget> createState() =>
       _ProductAndListlaundrybillingWidgetState();

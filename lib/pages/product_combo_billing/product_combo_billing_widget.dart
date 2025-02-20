@@ -12,6 +12,7 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -38,6 +39,9 @@ class ProductComboBillingWidget extends StatefulWidget {
   final DocumentReference? doc;
   final dynamic shiftDetails;
   final List<TaxMasterRecord>? taxcollection;
+
+  static String routeName = 'productComboBilling';
+  static String routePath = 'productComboBilling';
 
   @override
   State<ProductComboBillingWidget> createState() =>
@@ -354,8 +358,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                 size: 22.0,
                                               ),
                                               onPressed: () async {
-                                                context
-                                                    .pushNamed('AddCustomer');
+                                                context.pushNamed(
+                                                    AddCustomerWidget
+                                                        .routeName);
                                               },
                                             ),
                                           ],
@@ -883,7 +888,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                               FFAppState().customer = true;
                                                                               FFAppState().update(() {});
 
-                                                                              context.pushNamed('CreditPaymentPage');
+                                                                              context.pushNamed(CreditPaymentPageWidget.routeName);
                                                                             },
                                                                           ),
                                                                         ),
@@ -1127,7 +1132,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                                 FFAppState().customer = true;
                                                                                 FFAppState().update(() {});
 
-                                                                                context.pushNamed('CreditPaymentPage');
+                                                                                context.pushNamed(CreditPaymentPageWidget.routeName);
                                                                               },
                                                                             ),
                                                                           ),
@@ -1793,7 +1798,15 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             .selBill = 1;
                                                                         FFAppState().productColor =
                                                                             recipeVarItem.id;
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      } else {
+                                                                        FFAppState().productColor =
+                                                                            recipeVarItem.id;
+                                                                        safeSetState(
+                                                                            () {});
                                                                       }
+
                                                                       if (recipeVarItem.recipeRefId !=
                                                                               null &&
                                                                           recipeVarItem.recipeRefId !=
@@ -1907,10 +1920,6 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       safeSetState(
                                                                           () {});
                                                                     },
-                                                                    onDoubleTap:
-                                                                        () async {},
-                                                                    onLongPress:
-                                                                        () async {},
                                                                     child:
                                                                         Container(
                                                                       decoration:

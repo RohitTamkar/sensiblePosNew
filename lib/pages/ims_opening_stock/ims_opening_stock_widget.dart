@@ -14,6 +14,9 @@ export 'ims_opening_stock_model.dart';
 class ImsOpeningStockWidget extends StatefulWidget {
   const ImsOpeningStockWidget({super.key});
 
+  static String routeName = 'imsOpeningStock';
+  static String routePath = 'imsOpeningStock';
+
   @override
   State<ImsOpeningStockWidget> createState() => _ImsOpeningStockWidgetState();
 }

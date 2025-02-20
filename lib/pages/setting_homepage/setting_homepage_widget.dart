@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -21,6 +22,9 @@ export 'setting_homepage_model.dart';
 
 class SettingHomepageWidget extends StatefulWidget {
   const SettingHomepageWidget({super.key});
+
+  static String routeName = 'SettingHomepage';
+  static String routePath = 'settingHomepage';
 
   @override
   State<SettingHomepageWidget> createState() => _SettingHomepageWidgetState();
@@ -368,10 +372,12 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('AppSettingNewPos');
+                                          context.pushNamed(
+                                              AppSettingNewPosWidget.routeName);
                                         },
                                         onLongPress: () async {
-                                          context.pushNamed('AppSettingNew');
+                                          context.pushNamed(
+                                              AppSettingNewWidget.routeName);
                                         },
                                         child: Container(
                                           width:
@@ -444,7 +450,9 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.goNamed('weightscalesetting');
+                                          context.goNamed(
+                                              WeightscalesettingWidget
+                                                  .routeName);
                                         },
                                         child: Container(
                                           width:
@@ -995,7 +1003,8 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('SubscriptionNew');
+                                          context.pushNamed(
+                                              SubscriptionNewWidget.routeName);
                                         },
                                         child: Container(
                                           width:
@@ -1079,7 +1088,8 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('ResetData');
+                                          context.pushNamed(
+                                              ResetDataWidget.routeName);
                                         },
                                         child: Container(
                                           width:

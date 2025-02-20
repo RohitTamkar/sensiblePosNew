@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -20,6 +21,9 @@ export 'goods_received_model.dart';
 
 class GoodsReceivedWidget extends StatefulWidget {
   const GoodsReceivedWidget({super.key});
+
+  static String routeName = 'GoodsReceived';
+  static String routePath = 'goodsReceived';
 
   @override
   State<GoodsReceivedWidget> createState() => _GoodsReceivedWidgetState();
@@ -4078,7 +4082,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                  'BarcodePrinting');
+                                                                  BarcodePrintingWidget
+                                                                      .routeName);
                                                             },
                                                             child: Container(
                                                               width: double

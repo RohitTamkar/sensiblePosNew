@@ -8,6 +8,7 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -20,6 +21,9 @@ export 'welcome_screen_model.dart';
 
 class WelcomeScreenWidget extends StatefulWidget {
   const WelcomeScreenWidget({super.key});
+
+  static String routeName = 'welcomeScreen';
+  static String routePath = 'welcomeScreen';
 
   @override
   State<WelcomeScreenWidget> createState() => _WelcomeScreenWidgetState();
@@ -363,7 +367,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                       _shouldSetState = true;
                       if (_model.result1 == true) {
                         context.pushNamed(
-                          'LoginPage',
+                          LoginPageWidget.routeName,
                           queryParameters: {
                             'deviceDocId': serializeParam(
                               _model.res,
@@ -397,7 +401,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                         }
 
                         context.pushNamed(
-                          'LoginPage',
+                          LoginPageWidget.routeName,
                           queryParameters: {
                             'deviceDocId': serializeParam(
                               FFAppState().dId,

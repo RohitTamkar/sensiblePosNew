@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -16,6 +17,9 @@ export 'full_screen_bill_model.dart';
 
 class FullScreenBillWidget extends StatefulWidget {
   const FullScreenBillWidget({super.key});
+
+  static String routeName = 'FullScreenBill';
+  static String routePath = 'fullScreenBill';
 
   @override
   State<FullScreenBillWidget> createState() => _FullScreenBillWidgetState();
@@ -733,7 +737,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context.pushNamed('FSBill');
+                                      context.pushNamed(FSBillWidget.routeName);
                                     },
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
@@ -1604,7 +1608,8 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                 highlightColor:
                                                     Colors.transparent,
                                                 onTap: () async {
-                                                  context.pushNamed('FSBill');
+                                                  context.pushNamed(
+                                                      FSBillWidget.routeName);
                                                 },
                                                 child: Container(
                                                   width:

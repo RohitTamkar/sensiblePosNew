@@ -15,6 +15,7 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -44,6 +45,9 @@ class PurchaseOrderWidget extends StatefulWidget {
   final DocumentReference? userref;
   final List<PaymentModeRecord>? paymentMode;
   final bool? purchase;
+
+  static String routeName = 'purchaseOrder';
+  static String routePath = 'purchaseOrder';
 
   @override
   State<PurchaseOrderWidget> createState() => _PurchaseOrderWidgetState();
@@ -861,7 +865,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                               FFAppState().isCustListShown = true;
                                                                               FFAppState().update(() {});
 
-                                                                              context.pushNamed('CreditPaymentpurchase');
+                                                                              context.pushNamed(CreditPaymentpurchaseWidget.routeName);
                                                                             },
                                                                           ),
                                                                         ),
@@ -1147,7 +1151,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                               FFAppState().isCustListShown = true;
                                                                               FFAppState().update(() {});
 
-                                                                              context.pushNamed('CreditPaymentpurchase');
+                                                                              context.pushNamed(CreditPaymentpurchaseWidget.routeName);
                                                                             },
                                                                           ),
                                                                         ),
@@ -1610,7 +1614,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                         child: FFButtonWidget(
                                           onPressed: () async {
                                             context.pushNamed(
-                                              'BillingGroceryNew',
+                                              BillingGroceryNewWidget.routeName,
                                               queryParameters: {
                                                 'shiftdetail': serializeParam(
                                                   widget!.shiftdetail,
@@ -1804,8 +1808,9 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                       Expanded(
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            context
-                                                .pushNamed('printSettingkiosk');
+                                            context.pushNamed(
+                                                PrintSettingkioskWidget
+                                                    .routeName);
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
@@ -1858,8 +1863,9 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                       Expanded(
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            context
-                                                .pushNamed('AppSettingNewPos');
+                                            context.pushNamed(
+                                                AppSettingNewPosWidget
+                                                    .routeName);
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
@@ -1912,8 +1918,9 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                       Expanded(
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            context
-                                                .pushNamed('PurchaseOrderList');
+                                            context.pushNamed(
+                                                PurchaseOrderListWidget
+                                                    .routeName);
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
@@ -5076,7 +5083,8 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                             }
 
                                             context.pushNamed(
-                                                'customerLedgerreport');
+                                                CustomerLedgerreportWidget
+                                                    .routeName);
                                           },
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,

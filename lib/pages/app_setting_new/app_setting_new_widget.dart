@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -18,6 +19,9 @@ export 'app_setting_new_model.dart';
 
 class AppSettingNewWidget extends StatefulWidget {
   const AppSettingNewWidget({super.key});
+
+  static String routeName = 'AppSettingNew';
+  static String routePath = 'appSettingNew';
 
   @override
   State<AppSettingNewWidget> createState() => _AppSettingNewWidgetState();
@@ -7845,7 +7849,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                               ),
                                             );
 
-                                            context.pushNamed('LoginPageNew');
+                                            context.pushNamed(
+                                                LoginPageNewWidget.routeName);
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(

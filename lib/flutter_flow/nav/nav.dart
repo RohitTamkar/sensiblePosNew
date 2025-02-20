@@ -8,13 +8,14 @@ import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 
-import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/lat_lng.dart';
 import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'serialization_util.dart';
+
+import '/index.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -50,53 +51,53 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => StartScreenWidget(),
           routes: [
             FFRoute(
-              name: 'welcomeScreen',
-              path: 'welcomeScreen',
+              name: WelcomeScreenWidget.routeName,
+              path: WelcomeScreenWidget.routePath,
               builder: (context, params) => WelcomeScreenWidget(),
             ),
             FFRoute(
-              name: 'WiFiSetting',
-              path: 'wiFiSetting',
+              name: WiFiSettingWidget.routeName,
+              path: WiFiSettingWidget.routePath,
               builder: (context, params) => WiFiSettingWidget(),
             ),
             FFRoute(
-              name: 'SettingHomepage',
-              path: 'settingHomepage',
+              name: SettingHomepageWidget.routeName,
+              path: SettingHomepageWidget.routePath,
               builder: (context, params) => SettingHomepageWidget(),
             ),
             FFRoute(
-              name: 'ResetData',
-              path: 'resetData',
+              name: ResetDataWidget.routeName,
+              path: ResetDataWidget.routePath,
               builder: (context, params) => ResetDataWidget(),
             ),
             FFRoute(
-              name: 'CategoryReport',
-              path: 'categoryReport',
+              name: CategoryReportWidget.routeName,
+              path: CategoryReportWidget.routePath,
               builder: (context, params) => CategoryReportWidget(),
             ),
             FFRoute(
-              name: 'SubscriptionNew',
-              path: 'subscriptionNew',
+              name: SubscriptionNewWidget.routeName,
+              path: SubscriptionNewWidget.routePath,
               builder: (context, params) => SubscriptionNewWidget(),
             ),
             FFRoute(
-              name: 'ShiftEndNew',
-              path: 'shiftEndNew',
+              name: ShiftEndNewWidget.routeName,
+              path: ShiftEndNewWidget.routePath,
               builder: (context, params) => ShiftEndNewWidget(),
             ),
             FFRoute(
-              name: 'BillReportNew',
-              path: 'billReportNew',
+              name: BillReportNewWidget.routeName,
+              path: BillReportNewWidget.routePath,
               builder: (context, params) => BillReportNewWidget(),
             ),
             FFRoute(
-              name: 'AppSetting',
-              path: 'appSetting',
+              name: AppSettingWidget.routeName,
+              path: AppSettingWidget.routePath,
               builder: (context, params) => AppSettingWidget(),
             ),
             FFRoute(
-              name: 'ReportScreenNew',
-              path: 'reportScreenNew',
+              name: ReportScreenNewWidget.routeName,
+              path: ReportScreenNewWidget.routePath,
               asyncParams: {
                 'tax': getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
               },
@@ -125,43 +126,43 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'GSTReport',
-              path: 'gSTReport',
+              name: GSTReportWidget.routeName,
+              path: GSTReportWidget.routePath,
               builder: (context, params) => GSTReportWidget(),
             ),
             FFRoute(
-              name: 'PrintOptions',
-              path: 'printOptions',
+              name: PrintOptionsWidget.routeName,
+              path: PrintOptionsWidget.routePath,
               builder: (context, params) => PrintOptionsWidget(),
             ),
             FFRoute(
-              name: 'PaymentScreen',
-              path: 'paymentScreen',
+              name: PaymentScreenWidget.routeName,
+              path: PaymentScreenWidget.routePath,
               builder: (context, params) => PaymentScreenWidget(),
             ),
             FFRoute(
-              name: 'SystemUpdate',
-              path: 'systemUpdate',
+              name: SystemUpdateWidget.routeName,
+              path: SystemUpdateWidget.routePath,
               builder: (context, params) => SystemUpdateWidget(),
             ),
             FFRoute(
-              name: 'AddProduct',
-              path: 'addProduct',
+              name: AddProductWidget.routeName,
+              path: AddProductWidget.routePath,
               builder: (context, params) => AddProductWidget(),
             ),
             FFRoute(
-              name: 'AddCustomer',
-              path: 'addCustomer',
+              name: AddCustomerWidget.routeName,
+              path: AddCustomerWidget.routePath,
               builder: (context, params) => AddCustomerWidget(),
             ),
             FFRoute(
-              name: 'LoginPageSetting',
-              path: 'loginPageSetting',
+              name: LoginPageSettingWidget.routeName,
+              path: LoginPageSettingWidget.routePath,
               builder: (context, params) => LoginPageSettingWidget(),
             ),
             FFRoute(
-              name: 'TodaySummerReportNew',
-              path: 'todaySummerReportNew',
+              name: TodaySummerReportNewWidget.routeName,
+              path: TodaySummerReportNewWidget.routePath,
               asyncParams: {
                 'shift':
                     getDocList(['OUTLET', 'SHIFT'], ShiftRecord.fromSnapshot),
@@ -175,8 +176,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'FSQR',
-              path: 'fsqr',
+              name: FsqrWidget.routeName,
+              path: FsqrWidget.routePath,
               builder: (context, params) => FsqrWidget(
                 json: params.getParam(
                   'json',
@@ -189,13 +190,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'ProductWiseReport',
-              path: 'productWiseReport',
+              name: ProductWiseReportWidget.routeName,
+              path: ProductWiseReportWidget.routePath,
               builder: (context, params) => ProductWiseReportWidget(),
             ),
             FFRoute(
-              name: 'Bill',
-              path: 'bill',
+              name: BillWidget.routeName,
+              path: BillWidget.routePath,
               builder: (context, params) => BillWidget(
                 docRef: params.getParam(
                   'docRef',
@@ -206,28 +207,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'TableScreen',
-              path: 'tableScreen',
+              name: TableScreenWidget.routeName,
+              path: TableScreenWidget.routePath,
               builder: (context, params) => TableScreenWidget(),
             ),
             FFRoute(
-              name: 'DayWiseShiftReport',
-              path: 'dayWiseShiftReport',
+              name: DayWiseShiftReportWidget.routeName,
+              path: DayWiseShiftReportWidget.routePath,
               builder: (context, params) => DayWiseShiftReportWidget(),
             ),
             FFRoute(
-              name: 'FullScreenQR',
-              path: 'fullScreenQR',
+              name: FullScreenQRWidget.routeName,
+              path: FullScreenQRWidget.routePath,
               builder: (context, params) => FullScreenQRWidget(),
             ),
             FFRoute(
-              name: 'FullScreenBill',
-              path: 'fullScreenBill',
+              name: FullScreenBillWidget.routeName,
+              path: FullScreenBillWidget.routePath,
               builder: (context, params) => FullScreenBillWidget(),
             ),
             FFRoute(
-              name: 'PrinterSelectionScreen',
-              path: 'printerSelectionScreen',
+              name: PrinterSelectionScreenWidget.routeName,
+              path: PrinterSelectionScreenWidget.routePath,
               builder: (context, params) => PrinterSelectionScreenWidget(
                 docHeaderRef: params.getParam(
                   'docHeaderRef',
@@ -238,18 +239,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'FSBill',
-              path: 'fSBill',
+              name: FSBillWidget.routeName,
+              path: FSBillWidget.routePath,
               builder: (context, params) => FSBillWidget(),
             ),
             FFRoute(
-              name: 'BarcodePrinting',
-              path: 'barcodePrinting',
+              name: BarcodePrintingWidget.routeName,
+              path: BarcodePrintingWidget.routePath,
               builder: (context, params) => BarcodePrintingWidget(),
             ),
             FFRoute(
-              name: 'UpdateProduct',
-              path: 'updateProduct',
+              name: UpdateProductWidget.routeName,
+              path: UpdateProductWidget.routePath,
               builder: (context, params) => UpdateProductWidget(
                 productRef: params.getParam(
                   'productRef',
@@ -260,8 +261,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'EditCustomer',
-              path: 'editCustomer',
+              name: EditCustomerWidget.routeName,
+              path: EditCustomerWidget.routePath,
               builder: (context, params) => EditCustomerWidget(
                 custRef: params.getParam(
                   'custRef',
@@ -272,13 +273,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'AppSettingNew',
-              path: 'appSettingNew',
+              name: AppSettingNewWidget.routeName,
+              path: AppSettingNewWidget.routePath,
               builder: (context, params) => AppSettingNewWidget(),
             ),
             FFRoute(
-              name: 'LoadingScreen',
-              path: 'loadingScreen',
+              name: LoadingScreenWidget.routeName,
+              path: LoadingScreenWidget.routePath,
               asyncParams: {
                 'appSettingDoc': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -301,18 +302,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'DigitalOrder',
-              path: 'digitalOrder',
+              name: DigitalOrderWidget.routeName,
+              path: DigitalOrderWidget.routePath,
               builder: (context, params) => DigitalOrderWidget(),
             ),
             FFRoute(
-              name: 'RegularAppSetting',
-              path: 'regularAppSetting',
+              name: RegularAppSettingWidget.routeName,
+              path: RegularAppSettingWidget.routePath,
               builder: (context, params) => RegularAppSettingWidget(),
             ),
             FFRoute(
-              name: 'LoginPage',
-              path: 'loginPage',
+              name: LoginPageWidget.routeName,
+              path: LoginPageWidget.routePath,
               builder: (context, params) => LoginPageWidget(
                 deviceDocId: params.getParam(
                   'deviceDocId',
@@ -321,8 +322,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'EditBill',
-              path: 'editBill',
+              name: EditBillWidget.routeName,
+              path: EditBillWidget.routePath,
               builder: (context, params) => EditBillWidget(
                 billRef: params.getParam(
                   'billRef',
@@ -333,18 +334,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'imsInwardOutward',
-              path: 'imsInwardOutward',
+              name: ImsInwardOutwardWidget.routeName,
+              path: ImsInwardOutwardWidget.routePath,
               builder: (context, params) => ImsInwardOutwardWidget(),
             ),
             FFRoute(
-              name: 'imsProduction',
-              path: 'imsProduction',
+              name: ImsProductionWidget.routeName,
+              path: ImsProductionWidget.routePath,
               builder: (context, params) => ImsProductionWidget(),
             ),
             FFRoute(
-              name: 'ProductAndList',
-              path: 'productAndList',
+              name: ProductAndListWidget.routeName,
+              path: ProductAndListWidget.routePath,
               builder: (context, params) => ProductAndListWidget(
                 billDetails: params.getParam(
                   'billDetails',
@@ -365,43 +366,43 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'imsService',
-              path: 'imsService',
+              name: ImsServiceWidget.routeName,
+              path: ImsServiceWidget.routePath,
               builder: (context, params) => ImsServiceWidget(),
             ),
             FFRoute(
-              name: 'GoodsReceived',
-              path: 'goodsReceived',
+              name: GoodsReceivedWidget.routeName,
+              path: GoodsReceivedWidget.routePath,
               builder: (context, params) => GoodsReceivedWidget(),
             ),
             FFRoute(
-              name: 'imsOpeningStock',
-              path: 'imsOpeningStock',
+              name: ImsOpeningStockWidget.routeName,
+              path: ImsOpeningStockWidget.routePath,
               builder: (context, params) => ImsOpeningStockWidget(),
             ),
             FFRoute(
-              name: 'StartScreen',
-              path: 'startScreen',
+              name: StartScreenWidget.routeName,
+              path: StartScreenWidget.routePath,
               builder: (context, params) => StartScreenWidget(),
             ),
             FFRoute(
-              name: 'productSaleTesting',
-              path: 'productSaleTesting',
+              name: ProductSaleTestingWidget.routeName,
+              path: ProductSaleTestingWidget.routePath,
               builder: (context, params) => ProductSaleTestingWidget(),
             ),
             FFRoute(
-              name: 'categorySaleReport',
-              path: 'categorySaleReport',
+              name: CategorySaleReportWidget.routeName,
+              path: CategorySaleReportWidget.routePath,
               builder: (context, params) => CategorySaleReportWidget(),
             ),
             FFRoute(
-              name: 'OnboardingScreen',
-              path: 'onboardingScreen',
+              name: OnboardingScreenWidget.routeName,
+              path: OnboardingScreenWidget.routePath,
               builder: (context, params) => OnboardingScreenWidget(),
             ),
             FFRoute(
-              name: 'ProductAndListWIN',
-              path: 'productAndListWIN',
+              name: ProductAndListWINWidget.routeName,
+              path: ProductAndListWINWidget.routePath,
               builder: (context, params) => ProductAndListWINWidget(
                 billDetails: params.getParam(
                   'billDetails',
@@ -422,13 +423,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'welcomeScreenNew',
-              path: 'welcomeScreenNew',
+              name: WelcomeScreenNewWidget.routeName,
+              path: WelcomeScreenNewWidget.routePath,
               builder: (context, params) => WelcomeScreenNewWidget(),
             ),
             FFRoute(
-              name: 'LoginPageNew',
-              path: 'loginPageNew',
+              name: LoginPageNewWidget.routeName,
+              path: LoginPageNewWidget.routePath,
               builder: (context, params) => LoginPageNewWidget(
                 billDetails: params.getParam(
                   'billDetails',
@@ -449,8 +450,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'loadingScreenNew',
-              path: 'loadingScreenNew',
+              name: LoadingScreenNewWidget.routeName,
+              path: LoadingScreenNewWidget.routePath,
               asyncParams: {
                 'appSettingDoc': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -479,8 +480,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'ProductAndListNew',
-              path: 'productAndListNew',
+              name: ProductAndListNewWidget.routeName,
+              path: ProductAndListNewWidget.routePath,
               asyncParams: {
                 'taxcollection':
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
@@ -510,8 +511,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'UpdateProductNew',
-              path: 'updateProductNew',
+              name: UpdateProductNewWidget.routeName,
+              path: UpdateProductNewWidget.routePath,
               builder: (context, params) => UpdateProductNewWidget(
                 hivekey: params.getParam(
                   'hivekey',
@@ -520,18 +521,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'AddProductNewPos',
-              path: 'addProductNew',
+              name: AddProductNewPosWidget.routeName,
+              path: AddProductNewPosWidget.routePath,
               builder: (context, params) => AddProductNewPosWidget(),
             ),
             FFRoute(
-              name: 'ShiftEndNew2',
-              path: 'shiftEndNew2',
+              name: ShiftEndNew2Widget.routeName,
+              path: ShiftEndNew2Widget.routePath,
               builder: (context, params) => ShiftEndNew2Widget(),
             ),
             FFRoute(
-              name: 'EditBillNew',
-              path: 'editBillNew',
+              name: EditBillNewWidget.routeName,
+              path: EditBillNewWidget.routePath,
               builder: (context, params) => EditBillNewWidget(
                 billRef: params.getParam(
                   'billRef',
@@ -542,13 +543,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'printSettingkiosk',
-              path: 'printSettingkiosk',
+              name: PrintSettingkioskWidget.routeName,
+              path: PrintSettingkioskWidget.routePath,
               builder: (context, params) => PrintSettingkioskWidget(),
             ),
             FFRoute(
-              name: 'KioskPayment',
-              path: 'kioskPayment',
+              name: KioskPaymentWidget.routeName,
+              path: KioskPaymentWidget.routePath,
               asyncParams: {
                 'appsettings': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -590,8 +591,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'KioskCart',
-              path: 'kioskCart',
+              name: KioskCartWidget.routeName,
+              path: KioskCartWidget.routePath,
               asyncParams: {
                 'appsetting': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -621,18 +622,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'BarcodePrintingCopy',
-              path: 'barcodePrintingCopy',
+              name: BarcodePrintingCopyWidget.routeName,
+              path: BarcodePrintingCopyWidget.routePath,
               builder: (context, params) => BarcodePrintingCopyWidget(),
             ),
             FFRoute(
-              name: 'AboutUs',
-              path: 'aboutUs',
+              name: AboutUsWidget.routeName,
+              path: AboutUsWidget.routePath,
               builder: (context, params) => AboutUsWidget(),
             ),
             FFRoute(
-              name: 'KioskBillScreen',
-              path: 'kioskBillScreen',
+              name: KioskBillScreenWidget.routeName,
+              path: KioskBillScreenWidget.routePath,
               asyncParams: {
                 'appsetting': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -668,23 +669,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'dummytest',
-              path: 'dummytest',
+              name: DummytestWidget.routeName,
+              path: DummytestWidget.routePath,
               builder: (context, params) => DummytestWidget(),
             ),
             FFRoute(
-              name: 'demo',
-              path: 'demo',
+              name: DemoWidget.routeName,
+              path: DemoWidget.routePath,
               builder: (context, params) => DemoWidget(),
             ),
             FFRoute(
-              name: 'imsDashboardCopy',
-              path: 'imsDashboardCopy',
+              name: ImsDashboardCopyWidget.routeName,
+              path: ImsDashboardCopyWidget.routePath,
               builder: (context, params) => ImsDashboardCopyWidget(),
             ),
             FFRoute(
-              name: 'responsePage',
-              path: 'responsePage',
+              name: ResponsePageWidget.routeName,
+              path: ResponsePageWidget.routePath,
               asyncParams: {
                 'doc': getDoc(['OUTLET', 'QR_TRANSACTIONS'],
                     QrTransactionsRecord.fromSnapshot),
@@ -714,13 +715,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'KioskWelcome',
-              path: 'kioskWelcome',
+              name: KioskWelcomeWidget.routeName,
+              path: KioskWelcomeWidget.routePath,
               builder: (context, params) => KioskWelcomeWidget(),
             ),
             FFRoute(
-              name: 'KioskDineParcel',
-              path: 'kioskDineParcel',
+              name: KioskDineParcelWidget.routeName,
+              path: KioskDineParcelWidget.routePath,
               asyncParams: {
                 'appSetting': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -750,8 +751,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'KioskAdvertising',
-              path: 'kioskAdvertising',
+              name: KioskAdvertisingWidget.routeName,
+              path: KioskAdvertisingWidget.routePath,
               asyncParams: {
                 'appsetting': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -781,8 +782,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'KioskLogin',
-              path: 'kioskLogin',
+              name: KioskLoginWidget.routeName,
+              path: KioskLoginWidget.routePath,
               builder: (context, params) => KioskLoginWidget(
                 billDetails: params.getParam(
                   'billDetails',
@@ -803,13 +804,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'KioskSplashScreen',
-              path: 'kioskSplashScreen',
+              name: KioskSplashScreenWidget.routeName,
+              path: KioskSplashScreenWidget.routePath,
               builder: (context, params) => KioskSplashScreenWidget(),
             ),
             FFRoute(
-              name: 'loadingScreenkiosknew',
-              path: 'loadingScreenkiosknew',
+              name: LoadingScreenkiosknewWidget.routeName,
+              path: LoadingScreenkiosknewWidget.routePath,
               asyncParams: {
                 'appSettingDoc': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -838,13 +839,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'labeltest',
-              path: 'labeltest',
+              name: LabeltestWidget.routeName,
+              path: LabeltestWidget.routePath,
               builder: (context, params) => LabeltestWidget(),
             ),
             FFRoute(
-              name: 'KotOrderScreen',
-              path: 'kotOrderScreen',
+              name: KotOrderScreenWidget.routeName,
+              path: KotOrderScreenWidget.routePath,
               asyncParams: {
                 'appsetting': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -857,28 +858,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'SplashScreenWindows',
-              path: 'splashScreenWindows',
+              name: SplashScreenWindowsWidget.routeName,
+              path: SplashScreenWindowsWidget.routePath,
               builder: (context, params) => SplashScreenWindowsWidget(),
             ),
             FFRoute(
-              name: 'WindowsLogin',
-              path: 'windowsLogin',
+              name: WindowsLoginWidget.routeName,
+              path: WindowsLoginWidget.routePath,
               builder: (context, params) => WindowsLoginWidget(),
             ),
             FFRoute(
-              name: 'TokenDisplay',
-              path: 'tokenDisplay',
+              name: TokenDisplayWidget.routeName,
+              path: TokenDisplayWidget.routePath,
               builder: (context, params) => TokenDisplayWidget(),
             ),
             FFRoute(
-              name: 'AppSettingNewPos',
-              path: 'appSettingNewPos',
+              name: AppSettingNewPosWidget.routeName,
+              path: AppSettingNewPosWidget.routePath,
               builder: (context, params) => AppSettingNewPosWidget(),
             ),
             FFRoute(
-              name: 'MiniKioskDineParcel',
-              path: 'miniKioskDineParcel',
+              name: MiniKioskDineParcelWidget.routeName,
+              path: MiniKioskDineParcelWidget.routePath,
               asyncParams: {
                 'appSetting': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -908,8 +909,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'KioskDineParcelCopy',
-              path: 'kioskDineParcelCopy',
+              name: KioskDineParcelCopyWidget.routeName,
+              path: KioskDineParcelCopyWidget.routePath,
               asyncParams: {
                 'appSetting': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -939,18 +940,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'miniKioskToken',
-              path: 'miniKioskToken',
+              name: MiniKioskTokenWidget.routeName,
+              path: MiniKioskTokenWidget.routePath,
               builder: (context, params) => MiniKioskTokenWidget(),
             ),
             FFRoute(
-              name: 'MKPrinterSetting',
-              path: 'mKPrinterSetting',
+              name: MKPrinterSettingWidget.routeName,
+              path: MKPrinterSettingWidget.routePath,
               builder: (context, params) => MKPrinterSettingWidget(),
             ),
             FFRoute(
-              name: 'responsePageCopy',
-              path: 'responsePageCopy',
+              name: ResponsePageCopyWidget.routeName,
+              path: ResponsePageCopyWidget.routePath,
               asyncParams: {
                 'doc': getDoc(['OUTLET', 'QR_TRANSACTIONS'],
                     QrTransactionsRecord.fromSnapshot),
@@ -980,8 +981,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'phonePeQr',
-              path: 'phonePeQr',
+              name: PhonePeQrWidget.routeName,
+              path: PhonePeQrWidget.routePath,
               builder: (context, params) => PhonePeQrWidget(
                 data: params.getParam(
                   'data',
@@ -990,8 +991,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'BillingGroceryNew',
-              path: 'billingGroceryNew',
+              name: BillingGroceryNewWidget.routeName,
+              path: BillingGroceryNewWidget.routePath,
               asyncParams: {
                 'taxDetails':
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
@@ -1022,8 +1023,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'KioskPaymentCopy',
-              path: 'kioskPaymentCopy',
+              name: KioskPaymentCopyWidget.routeName,
+              path: KioskPaymentCopyWidget.routePath,
               builder: (context, params) => KioskPaymentCopyWidget(
                 data: params.getParam(
                   'data',
@@ -1032,8 +1033,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'KioskChoosePaymentMode',
-              path: 'kioskChoosePaymentMode',
+              name: KioskChoosePaymentModeWidget.routeName,
+              path: KioskChoosePaymentModeWidget.routePath,
               asyncParams: {
                 'appSettings': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -1075,8 +1076,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'cashResponsePage',
-              path: 'cashResponsePage',
+              name: CashResponsePageWidget.routeName,
+              path: CashResponsePageWidget.routePath,
               asyncParams: {
                 'appsetting': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -1100,18 +1101,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'CreditPaymentPage',
-              path: 'creditPaymentPage',
+              name: CreditPaymentPageWidget.routeName,
+              path: CreditPaymentPageWidget.routePath,
               builder: (context, params) => CreditPaymentPageWidget(),
             ),
             FFRoute(
-              name: 'customerLedgerreport',
-              path: 'customerLedgerreport',
+              name: CustomerLedgerreportWidget.routeName,
+              path: CustomerLedgerreportWidget.routePath,
               builder: (context, params) => CustomerLedgerreportWidget(),
             ),
             FFRoute(
-              name: 'ProductAndListNewCopy',
-              path: 'productAndListNewCopy',
+              name: ProductAndListNewCopyWidget.routeName,
+              path: ProductAndListNewCopyWidget.routePath,
               asyncParams: {
                 'taxcollection':
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
@@ -1141,13 +1142,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'CategoryReportnew',
-              path: 'categoryReportnew',
+              name: CategoryReportnewWidget.routeName,
+              path: CategoryReportnewWidget.routePath,
               builder: (context, params) => CategoryReportnewWidget(),
             ),
             FFRoute(
-              name: 'purchaseOrder',
-              path: 'purchaseOrder',
+              name: PurchaseOrderWidget.routeName,
+              path: PurchaseOrderWidget.routePath,
               asyncParams: {
                 'taxDetails':
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
@@ -1182,13 +1183,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'PurchaseOrderList',
-              path: 'purchaseOrderList',
+              name: PurchaseOrderListWidget.routeName,
+              path: PurchaseOrderListWidget.routePath,
               builder: (context, params) => PurchaseOrderListWidget(),
             ),
             FFRoute(
-              name: 'EditPurchaseOrder',
-              path: 'editPurchaseOrder',
+              name: EditPurchaseOrderWidget.routeName,
+              path: EditPurchaseOrderWidget.routePath,
               asyncParams: {
                 'taxDetails':
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
@@ -1219,13 +1220,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'CreditPaymentpurchase',
-              path: 'creditPaymentpurchase',
+              name: CreditPaymentpurchaseWidget.routeName,
+              path: CreditPaymentpurchaseWidget.routePath,
               builder: (context, params) => CreditPaymentpurchaseWidget(),
             ),
             FFRoute(
-              name: 'kioskCustomerInfo',
-              path: 'kioskCustomerInfo',
+              name: KioskCustomerInfoWidget.routeName,
+              path: KioskCustomerInfoWidget.routePath,
               asyncParams: {
                 'appSetting': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -1255,13 +1256,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'weightscalesetting',
-              path: 'weightscalesetting',
+              name: WeightscalesettingWidget.routeName,
+              path: WeightscalesettingWidget.routePath,
               builder: (context, params) => WeightscalesettingWidget(),
             ),
             FFRoute(
-              name: 'ProductAndListlaundrybilling',
-              path: 'productAndListlaundrybilling',
+              name: ProductAndListlaundrybillingWidget.routeName,
+              path: ProductAndListlaundrybillingWidget.routePath,
               asyncParams: {
                 'taxcollection':
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
@@ -1291,18 +1292,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'testWidget',
-              path: 'testWidget',
+              name: TestWidgetWidget.routeName,
+              path: TestWidgetWidget.routePath,
               builder: (context, params) => TestWidgetWidget(),
             ),
             FFRoute(
-              name: 'CreditPaymentPageCopy',
-              path: 'creditPaymentPageCopy',
+              name: CreditPaymentPageCopyWidget.routeName,
+              path: CreditPaymentPageCopyWidget.routePath,
               builder: (context, params) => CreditPaymentPageCopyWidget(),
             ),
             FFRoute(
-              name: 'KioskChoosePaymentModeCopy',
-              path: 'kioskChoosePaymentModeCopy',
+              name: KioskChoosePaymentModeCopyWidget.routeName,
+              path: KioskChoosePaymentModeCopyWidget.routePath,
               asyncParams: {
                 'appSettings': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -1344,8 +1345,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'KioskCartdineinparcel',
-              path: 'kioskCartdineinparcel',
+              name: KioskCartdineinparcelWidget.routeName,
+              path: KioskCartdineinparcelWidget.routePath,
               asyncParams: {
                 'appsetting': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
@@ -1375,8 +1376,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'xyzBilling',
-              path: 'xyzBilling',
+              name: XyzBillingWidget.routeName,
+              path: XyzBillingWidget.routePath,
               asyncParams: {
                 'taxcollection':
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
@@ -1406,8 +1407,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'productComboBilling',
-              path: 'productComboBilling',
+              name: ProductComboBillingWidget.routeName,
+              path: ProductComboBillingWidget.routePath,
               asyncParams: {
                 'taxcollection':
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
@@ -1437,8 +1438,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'KioskCardPayment',
-              path: 'kioskCardPayment',
+              name: KioskCardPaymentWidget.routeName,
+              path: KioskCardPaymentWidget.routePath,
               asyncParams: {
                 'appsettings': getDoc(
                     ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),

@@ -10,6 +10,7 @@ import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'kiosk_card_payment_widget.dart' show KioskCardPaymentWidget;
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

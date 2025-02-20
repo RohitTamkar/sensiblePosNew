@@ -14,6 +14,9 @@ export 'barcode_printing_copy_model.dart';
 class BarcodePrintingCopyWidget extends StatefulWidget {
   const BarcodePrintingCopyWidget({super.key});
 
+  static String routeName = 'BarcodePrintingCopy';
+  static String routePath = 'barcodePrintingCopy';
+
   @override
   State<BarcodePrintingCopyWidget> createState() =>
       _BarcodePrintingCopyWidgetState();

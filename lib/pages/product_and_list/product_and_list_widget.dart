@@ -14,6 +14,7 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
@@ -40,6 +41,9 @@ class ProductAndListWidget extends StatefulWidget {
   final DocumentReference? billDetails;
   final DocumentReference? doc;
   final dynamic shiftDetails;
+
+  static String routeName = 'ProductAndList';
+  static String routePath = 'productAndList';
 
   @override
   State<ProductAndListWidget> createState() => _ProductAndListWidgetState();
@@ -467,7 +471,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                               size: 22.0,
                                             ),
                                             onPressed: () async {
-                                              context.pushNamed('AddCustomer');
+                                              context.pushNamed(
+                                                  AddCustomerWidget.routeName);
                                             },
                                           ),
                                         ],
@@ -982,7 +987,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                           onPressed:
                                                                               () async {
                                                                             context.pushNamed(
-                                                                              'EditCustomer',
+                                                                              EditCustomerWidget.routeName,
                                                                               queryParameters: {
                                                                                 'custRef': serializeParam(
                                                                                   containerVarItem.reference,
@@ -1265,7 +1270,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                           onPressed:
                                                                               () async {
                                                                             context.pushNamed(
-                                                                              'EditCustomer',
+                                                                              EditCustomerWidget.routeName,
                                                                               queryParameters: {
                                                                                 'custRef': serializeParam(
                                                                                   listItem.reference,
@@ -1344,7 +1349,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context.pushNamed('GoodsReceived');
+                                      context.pushNamed(
+                                          GoodsReceivedWidget.routeName);
                                     },
                                     child: Image.asset(
                                       'assets/images/IMG_20220412_140945.png',
@@ -2570,7 +2576,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                               },
                                                                                               onLongPress: () async {
                                                                                                 context.pushNamed(
-                                                                                                  'UpdateProduct',
+                                                                                                  UpdateProductWidget.routeName,
                                                                                                   queryParameters: {
                                                                                                     'productRef': serializeParam(
                                                                                                       gridViewProductRecord.reference,
@@ -2678,7 +2684,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                               },
                                                                                               onLongPress: () async {
                                                                                                 context.pushNamed(
-                                                                                                  'UpdateProduct',
+                                                                                                  UpdateProductWidget.routeName,
                                                                                                   queryParameters: {
                                                                                                     'productRef': serializeParam(
                                                                                                       gridViewProductRecord.reference,
@@ -2800,7 +2806,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                               },
                                                                                               onLongPress: () async {
                                                                                                 context.pushNamed(
-                                                                                                  'UpdateProduct',
+                                                                                                  UpdateProductWidget.routeName,
                                                                                                   queryParameters: {
                                                                                                     'productRef': serializeParam(
                                                                                                       gridViewProductRecord.reference,

@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -22,6 +23,9 @@ export 'payment_screen_model.dart';
 
 class PaymentScreenWidget extends StatefulWidget {
   const PaymentScreenWidget({super.key});
+
+  static String routeName = 'PaymentScreen';
+  static String routePath = 'paymentScreen';
 
   @override
   State<PaymentScreenWidget> createState() => _PaymentScreenWidgetState();
@@ -232,7 +236,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                           size: 22.0,
                                         ),
                                         onPressed: () async {
-                                          context.pushNamed('AddCustomer');
+                                          context.pushNamed(
+                                              AddCustomerWidget.routeName);
                                         },
                                       ),
                                     ],
@@ -767,7 +772,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               .delete();
 
                                                                           context
-                                                                              .pushNamed('welcomeScreen');
+                                                                              .pushNamed(WelcomeScreenWidget.routeName);
                                                                         } else {
                                                                           context
                                                                               .pop();
@@ -801,7 +806,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'EditCustomer',
+                                                                          EditCustomerWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'custRef':
@@ -1159,7 +1165,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'EditCustomer',
+                                                                          EditCustomerWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'custRef':

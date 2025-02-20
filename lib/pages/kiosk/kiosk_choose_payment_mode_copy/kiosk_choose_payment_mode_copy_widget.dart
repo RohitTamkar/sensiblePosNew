@@ -9,6 +9,7 @@ import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -40,6 +41,9 @@ class KioskChoosePaymentModeCopyWidget extends StatefulWidget {
   final dynamic qrJson;
   final String? paytmOrderId;
   final bool? isPaytm;
+
+  static String routeName = 'KioskChoosePaymentModeCopy';
+  static String routePath = 'kioskChoosePaymentModeCopy';
 
   @override
   State<KioskChoosePaymentModeCopyWidget> createState() =>
@@ -183,7 +187,7 @@ class _KioskChoosePaymentModeCopyWidgetState
                             ),
                             onPressed: () async {
                               context.goNamed(
-                                'KioskBillScreen',
+                                KioskBillScreenWidget.routeName,
                                 queryParameters: {
                                   'doc': serializeParam(
                                     widget!.doc,
@@ -341,7 +345,7 @@ class _KioskChoosePaymentModeCopyWidgetState
                                       );
 
                                       context.goNamed(
-                                        'KioskPayment',
+                                        KioskPaymentWidget.routeName,
                                         queryParameters: {
                                           'doc': serializeParam(
                                             widget!.doc,
@@ -417,7 +421,7 @@ class _KioskChoosePaymentModeCopyWidgetState
                                     );
 
                                     context.goNamed(
-                                      'KioskBillScreen',
+                                      KioskBillScreenWidget.routeName,
                                       queryParameters: {
                                         'doc': serializeParam(
                                           widget!.doc,
@@ -607,7 +611,7 @@ class _KioskChoosePaymentModeCopyWidgetState
                                         );
 
                                         context.goNamed(
-                                          'cashResponsePage',
+                                          CashResponsePageWidget.routeName,
                                           queryParameters: {
                                             'shiftdetails': serializeParam(
                                               widget!.shiftdetails,
@@ -666,7 +670,7 @@ class _KioskChoosePaymentModeCopyWidgetState
                                       );
 
                                       context.goNamed(
-                                        'KioskBillScreen',
+                                        KioskBillScreenWidget.routeName,
                                         queryParameters: {
                                           'doc': serializeParam(
                                             widget!.doc,

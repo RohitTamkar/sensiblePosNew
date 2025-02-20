@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'dart:ui';
+import '/index.dart';
 import 'dart:math' as math;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
@@ -30,6 +31,9 @@ class KioskDineParcelCopyWidget extends StatefulWidget {
   final dynamic shiftdoc;
   final AppSettingsRecord? appSetting;
   final List<TaxMasterRecord>? taxcollection;
+
+  static String routeName = 'KioskDineParcelCopy';
+  static String routePath = 'kioskDineParcelCopy';
 
   @override
   State<KioskDineParcelCopyWidget> createState() =>
@@ -185,7 +189,7 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                             safeSetState(() {});
 
                             context.pushNamed(
-                              'KioskBillScreen',
+                              KioskBillScreenWidget.routeName,
                               queryParameters: {
                                 'doc': serializeParam(
                                   widget!.userdoc,
@@ -297,7 +301,7 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                               safeSetState(() {});
 
                               context.pushNamed(
-                                'KioskBillScreen',
+                                KioskBillScreenWidget.routeName,
                                 queryParameters: {
                                   'doc': serializeParam(
                                     widget!.userdoc,

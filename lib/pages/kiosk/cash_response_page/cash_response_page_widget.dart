@@ -9,6 +9,7 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,9 @@ class CashResponsePageWidget extends StatefulWidget {
   final dynamic shiftdetails;
   final AppSettingsRecord? appsetting;
   final List<TaxMasterRecord>? taxcoollectipon;
+
+  static String routeName = 'cashResponsePage';
+  static String routePath = 'cashResponsePage';
 
   @override
   State<CashResponsePageWidget> createState() => _CashResponsePageWidgetState();
@@ -499,7 +503,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                 .firstOrNull!
                 .value) {
               context.goNamed(
-                'KioskBillScreen',
+                KioskBillScreenWidget.routeName,
                 queryParameters: {
                   'doc': serializeParam(
                     _model.outletdoc?.userRef,
@@ -526,7 +530,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
               );
             } else {
               context.goNamed(
-                'KioskDineParcel',
+                KioskDineParcelWidget.routeName,
                 queryParameters: {
                   'userdoc': serializeParam(
                     _model.outletdoc?.userRef,
@@ -554,7 +558,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
             }
           } else {
             context.goNamed(
-              'KioskAdvertising',
+              KioskAdvertisingWidget.routeName,
               queryParameters: {
                 'userDoc': serializeParam(
                   _model.outletdoc?.userRef,
@@ -599,7 +603,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
             },
           );
 
-          context.pushNamed('printSettingkiosk');
+          context.pushNamed(PrintSettingkioskWidget.routeName);
 
           return;
         }
@@ -871,7 +875,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                                   _shouldSetState = true;
 
                                   context.pushNamed(
-                                    'KioskDineParcel',
+                                    KioskDineParcelWidget.routeName,
                                     queryParameters: {
                                       'userdoc': serializeParam(
                                         _model.outletdocCopy?.userRef,
@@ -917,7 +921,8 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                                     },
                                   );
 
-                                  context.pushNamed('printSettingkiosk');
+                                  context.pushNamed(
+                                      PrintSettingkioskWidget.routeName);
                                 }
 
                                 if (_shouldSetState) safeSetState(() {});

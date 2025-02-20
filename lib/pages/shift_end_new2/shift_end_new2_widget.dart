@@ -8,6 +8,7 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -19,6 +20,9 @@ export 'shift_end_new2_model.dart';
 
 class ShiftEndNew2Widget extends StatefulWidget {
   const ShiftEndNew2Widget({super.key});
+
+  static String routeName = 'ShiftEndNew2';
+  static String routePath = 'shiftEndNew2';
 
   @override
   State<ShiftEndNew2Widget> createState() => _ShiftEndNew2WidgetState();
@@ -3794,9 +3798,11 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                           FFAppState().quickPin = '';
                                           FFAppState().update(() {});
                                           if (isAndroid == true) {
-                                            context.pushNamed('LoginPageNew');
+                                            context.pushNamed(
+                                                LoginPageNewWidget.routeName);
                                           } else {
-                                            context.pushNamed('WindowsLogin');
+                                            context.pushNamed(
+                                                WindowsLoginWidget.routeName);
                                           }
                                         } else {
                                           if (_shouldSetState)

@@ -14,6 +14,7 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
@@ -42,6 +43,9 @@ class ProductAndListNewCopyWidget extends StatefulWidget {
   final DocumentReference? doc;
   final dynamic shiftDetails;
   final List<TaxMasterRecord>? taxcollection;
+
+  static String routeName = 'ProductAndListNewCopy';
+  static String routePath = 'productAndListNewCopy';
 
   @override
   State<ProductAndListNewCopyWidget> createState() =>
@@ -528,8 +532,9 @@ class _ProductAndListNewCopyWidgetState
                                                 size: 22.0,
                                               ),
                                               onPressed: () async {
-                                                context
-                                                    .pushNamed('AddCustomer');
+                                                context.pushNamed(
+                                                    AddCustomerWidget
+                                                        .routeName);
                                               },
                                             ),
                                           ],
@@ -1045,7 +1050,7 @@ class _ProductAndListNewCopyWidgetState
                                                                             onPressed:
                                                                                 () async {
                                                                               context.pushNamed(
-                                                                                'EditCustomer',
+                                                                                EditCustomerWidget.routeName,
                                                                                 queryParameters: {
                                                                                   'custRef': serializeParam(
                                                                                     containerVarItem.reference,
@@ -1310,7 +1315,7 @@ class _ProductAndListNewCopyWidgetState
                                                                             onPressed:
                                                                                 () async {
                                                                               context.pushNamed(
-                                                                                'EditCustomer',
+                                                                                EditCustomerWidget.routeName,
                                                                                 queryParameters: {
                                                                                   'custRef': serializeParam(
                                                                                     listItem.reference,

@@ -10,6 +10,7 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
@@ -34,6 +35,9 @@ class KioskLoginWidget extends StatefulWidget {
   final DocumentReference? billDetails;
   final DocumentReference? doc;
   final dynamic shiftDetails;
+
+  static String routeName = 'KioskLogin';
+  static String routePath = 'kioskLogin';
 
   @override
   State<KioskLoginWidget> createState() => _KioskLoginWidgetState();
@@ -1160,7 +1164,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                                 _shouldSetState = true;
 
                                                                                                 context.goNamed(
-                                                                                                  'KotOrderScreen',
+                                                                                                  KotOrderScreenWidget.routeName,
                                                                                                   queryParameters: {
                                                                                                     'appsetting': serializeParam(
                                                                                                       _model.appsettingkot,
@@ -1172,10 +1176,10 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                                   },
                                                                                                 );
                                                                                               } else if (containerDeviceRecord?.billingType == 'TOKEN') {
-                                                                                                context.pushNamed('TokenDisplay');
+                                                                                                context.pushNamed(TokenDisplayWidget.routeName);
                                                                                               } else {
                                                                                                 context.pushNamed(
-                                                                                                  'loadingScreenkiosknew',
+                                                                                                  LoadingScreenkiosknewWidget.routeName,
                                                                                                   queryParameters: {
                                                                                                     'shiftDoc': serializeParam(
                                                                                                       _model.shiftdetailskiosknew,
@@ -1252,7 +1256,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                             },
                                                                                           );
 
-                                                                                          context.pushNamed('KioskLogin');
+                                                                                          context.pushNamed(KioskLoginWidget.routeName);
                                                                                         }
                                                                                       } else {
                                                                                         await showDialog(
@@ -1776,7 +1780,8 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                   size: 27.0,
                                 ),
                                 onPressed: () async {
-                                  context.pushNamed('printSettingkiosk');
+                                  context.pushNamed(
+                                      PrintSettingkioskWidget.routeName);
                                 },
                               ),
                             ),
@@ -1873,7 +1878,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onLongPress: () async {
-                                context.pushNamed('dummytest');
+                                context.pushNamed(DummytestWidget.routeName);
                               },
                               child: FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
@@ -1887,7 +1892,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                   size: 27.0,
                                 ),
                                 onPressed: () async {
-                                  context.pushNamed('AboutUs');
+                                  context.pushNamed(AboutUsWidget.routeName);
                                 },
                               ),
                             ),

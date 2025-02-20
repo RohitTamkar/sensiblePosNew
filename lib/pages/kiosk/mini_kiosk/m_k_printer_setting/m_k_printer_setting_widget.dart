@@ -17,6 +17,9 @@ export 'm_k_printer_setting_model.dart';
 class MKPrinterSettingWidget extends StatefulWidget {
   const MKPrinterSettingWidget({super.key});
 
+  static String routeName = 'MKPrinterSetting';
+  static String routePath = 'mKPrinterSetting';
+
   @override
   State<MKPrinterSettingWidget> createState() => _MKPrinterSettingWidgetState();
 }

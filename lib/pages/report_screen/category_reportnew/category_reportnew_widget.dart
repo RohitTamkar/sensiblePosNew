@@ -19,6 +19,9 @@ export 'category_reportnew_model.dart';
 class CategoryReportnewWidget extends StatefulWidget {
   const CategoryReportnewWidget({super.key});
 
+  static String routeName = 'CategoryReportnew';
+  static String routePath = 'categoryReportnew';
+
   @override
   State<CategoryReportnewWidget> createState() =>
       _CategoryReportnewWidgetState();

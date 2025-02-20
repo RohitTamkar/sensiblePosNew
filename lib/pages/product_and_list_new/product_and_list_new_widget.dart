@@ -15,6 +15,7 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
@@ -44,6 +45,9 @@ class ProductAndListNewWidget extends StatefulWidget {
   final DocumentReference? doc;
   final dynamic shiftDetails;
   final List<TaxMasterRecord>? taxcollection;
+
+  static String routeName = 'ProductAndListNew';
+  static String routePath = 'productAndListNew';
 
   @override
   State<ProductAndListNewWidget> createState() =>
@@ -1285,7 +1289,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                       ),
                                                       onPressed: () async {
                                                         context.pushNamed(
-                                                            'AddCustomer');
+                                                            AddCustomerWidget
+                                                                .routeName);
                                                       },
                                                     ),
                                                   ],
@@ -1795,7 +1800,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                       FFAppState().customer = true;
                                                                                       FFAppState().update(() {});
 
-                                                                                      context.pushNamed('CreditPaymentPage');
+                                                                                      context.pushNamed(CreditPaymentPageWidget.routeName);
                                                                                     },
                                                                                   ),
                                                                                 ),
@@ -2024,7 +2029,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                       FFAppState().customer = true;
                                                                                       FFAppState().update(() {});
 
-                                                                                      context.pushNamed('CreditPaymentPage');
+                                                                                      context.pushNamed(CreditPaymentPageWidget.routeName);
                                                                                     },
                                                                                   ),
                                                                                 ),

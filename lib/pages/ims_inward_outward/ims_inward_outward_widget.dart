@@ -14,6 +14,9 @@ export 'ims_inward_outward_model.dart';
 class ImsInwardOutwardWidget extends StatefulWidget {
   const ImsInwardOutwardWidget({super.key});
 
+  static String routeName = 'imsInwardOutward';
+  static String routePath = 'imsInwardOutward';
+
   @override
   State<ImsInwardOutwardWidget> createState() => _ImsInwardOutwardWidgetState();
 }

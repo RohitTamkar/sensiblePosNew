@@ -9,6 +9,7 @@ import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
@@ -33,6 +34,9 @@ class KioskCartdineinparcelWidget extends StatefulWidget {
   final dynamic shiftdetails;
   final AppSettingsRecord? appsetting;
   final List<TaxMasterRecord>? taxcollection;
+
+  static String routeName = 'KioskCartdineinparcel';
+  static String routePath = 'kioskCartdineinparcel';
 
   @override
   State<KioskCartdineinparcelWidget> createState() =>
@@ -186,7 +190,7 @@ class _KioskCartdineinparcelWidgetState
                                             ),
                                             onPressed: () async {
                                               context.goNamed(
-                                                'KioskBillScreen',
+                                                KioskBillScreenWidget.routeName,
                                                 queryParameters: {
                                                   'doc': serializeParam(
                                                     widget!.doc,
@@ -925,7 +929,8 @@ class _KioskCartdineinparcelWidgetState
                                                   );
 
                                                   context.pushNamed(
-                                                    'KioskPayment',
+                                                    KioskPaymentWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'doc': serializeParam(
                                                         widget!.doc,
@@ -1105,7 +1110,7 @@ class _KioskCartdineinparcelWidgetState
                                               FFAppState().update(() {});
 
                                               context.pushNamed(
-                                                'KioskBillScreen',
+                                                KioskBillScreenWidget.routeName,
                                                 queryParameters: {
                                                   'doc': serializeParam(
                                                     widget!.doc,
@@ -1386,7 +1391,8 @@ class _KioskCartdineinparcelWidgetState
                                                                   .toList())
                                                           .isNotEmpty) {
                                                         context.goNamed(
-                                                          'KioskChoosePaymentMode',
+                                                          KioskChoosePaymentModeWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'doc':
                                                                 serializeParam(
@@ -1459,7 +1465,8 @@ class _KioskCartdineinparcelWidgetState
                                                         );
 
                                                         context.goNamed(
-                                                          'KioskBillScreen',
+                                                          KioskBillScreenWidget
+                                                              .routeName,
                                                           queryParameters: {
                                                             'doc':
                                                                 serializeParam(

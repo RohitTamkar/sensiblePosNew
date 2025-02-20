@@ -40,6 +40,9 @@ class XyzBillingWidget extends StatefulWidget {
   final dynamic shiftDetails;
   final List<TaxMasterRecord>? taxcollection;
 
+  static String routeName = 'xyzBilling';
+  static String routePath = 'xyzBilling';
+
   @override
   State<XyzBillingWidget> createState() => _XyzBillingWidgetState();
 }

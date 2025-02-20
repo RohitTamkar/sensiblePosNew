@@ -29,6 +29,9 @@ class LoadingScreenWidget extends StatefulWidget {
   final DocumentReference? userDoc;
   final AppSettingsRecord? appSettingDoc;
 
+  static String routeName = 'LoadingScreen';
+  static String routePath = 'loadingScreen';
+
   @override
   State<LoadingScreenWidget> createState() => _LoadingScreenWidgetState();
 }

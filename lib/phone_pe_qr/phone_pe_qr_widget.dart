@@ -19,6 +19,9 @@ class PhonePeQrWidget extends StatefulWidget {
 
   final String? data;
 
+  static String routeName = 'phonePeQr';
+  static String routePath = 'phonePeQr';
+
   @override
   State<PhonePeQrWidget> createState() => _PhonePeQrWidgetState();
 }

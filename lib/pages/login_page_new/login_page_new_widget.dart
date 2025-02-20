@@ -11,6 +11,7 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
@@ -35,6 +36,9 @@ class LoginPageNewWidget extends StatefulWidget {
   final DocumentReference? billDetails;
   final DocumentReference? doc;
   final dynamic shiftDetails;
+
+  static String routeName = 'LoginPageNew';
+  static String routePath = 'loginPageNew';
 
   @override
   State<LoginPageNewWidget> createState() => _LoginPageNewWidgetState();
@@ -114,7 +118,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onDoubleTap: () async {
-                              context.pushNamed('labeltest');
+                              context.pushNamed(LabeltestWidget.routeName);
                             },
                             child: Image.asset(
                               'assets/images/Sensible_Connect_Logo_2.png',
@@ -1173,7 +1177,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                             _shouldSetState = true;
 
                                                                                             context.pushNamed(
-                                                                                              'loadingScreenNew',
+                                                                                              LoadingScreenNewWidget.routeName,
                                                                                               queryParameters: {
                                                                                                 'shiftDoc': serializeParam(
                                                                                                   _model.shiftdetailsnewonline,
@@ -1248,7 +1252,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                           },
                                                                                         );
 
-                                                                                        context.pushNamed('LoginPageNew');
+                                                                                        context.pushNamed(LoginPageNewWidget.routeName);
                                                                                       }
                                                                                     } else {
                                                                                       await showDialog(
@@ -1760,7 +1764,8 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                         size: 27.0,
                                       ),
                                       onPressed: () async {
-                                        context.pushNamed('printSettingkiosk');
+                                        context.pushNamed(
+                                            PrintSettingkioskWidget.routeName);
                                       },
                                     ),
                                   ),
@@ -1866,7 +1871,8 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                       size: 27.0,
                                     ),
                                     onPressed: () async {
-                                      context.pushNamed('AboutUs');
+                                      context
+                                          .pushNamed(AboutUsWidget.routeName);
                                     },
                                   ),
                                 ),

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,9 @@ export 'print_options_model.dart';
 
 class PrintOptionsWidget extends StatefulWidget {
   const PrintOptionsWidget({super.key});
+
+  static String routeName = 'PrintOptions';
+  static String routePath = 'printOptions';
 
   @override
   State<PrintOptionsWidget> createState() => _PrintOptionsWidgetState();
@@ -99,7 +103,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                       size: 26.0,
                                     ),
                                     onPressed: () async {
-                                      context.pushNamed('SettingHomepage');
+                                      context.pushNamed(
+                                          SettingHomepageWidget.routeName);
                                     },
                                   ),
                                   Text(

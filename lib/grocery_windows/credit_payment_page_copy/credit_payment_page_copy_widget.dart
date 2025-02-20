@@ -22,6 +22,9 @@ export 'credit_payment_page_copy_model.dart';
 class CreditPaymentPageCopyWidget extends StatefulWidget {
   const CreditPaymentPageCopyWidget({super.key});
 
+  static String routeName = 'CreditPaymentPageCopy';
+  static String routePath = 'creditPaymentPageCopy';
+
   @override
   State<CreditPaymentPageCopyWidget> createState() =>
       _CreditPaymentPageCopyWidgetState();

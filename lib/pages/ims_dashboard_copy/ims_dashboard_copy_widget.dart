@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,6 +12,9 @@ export 'ims_dashboard_copy_model.dart';
 
 class ImsDashboardCopyWidget extends StatefulWidget {
   const ImsDashboardCopyWidget({super.key});
+
+  static String routeName = 'imsDashboardCopy';
+  static String routePath = 'imsDashboardCopy';
 
   @override
   State<ImsDashboardCopyWidget> createState() => _ImsDashboardCopyWidgetState();
@@ -67,7 +71,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('GoodsReceived');
+                              context.pushNamed(GoodsReceivedWidget.routeName);
                             },
                             child: Material(
                               color: Colors.transparent,
@@ -138,7 +142,8 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('imsInwardOutward');
+                              context
+                                  .pushNamed(ImsInwardOutwardWidget.routeName);
                             },
                             child: Material(
                               color: Colors.transparent,
@@ -276,7 +281,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('imsService');
+                              context.pushNamed(ImsServiceWidget.routeName);
                             },
                             child: Material(
                               color: Colors.transparent,
@@ -347,7 +352,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('imsProduction');
+                              context.pushNamed(ImsProductionWidget.routeName);
                             },
                             child: Material(
                               color: Colors.transparent,
@@ -418,7 +423,8 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('imsOpeningStock');
+                              context
+                                  .pushNamed(ImsOpeningStockWidget.routeName);
                             },
                             child: Material(
                               color: Colors.transparent,

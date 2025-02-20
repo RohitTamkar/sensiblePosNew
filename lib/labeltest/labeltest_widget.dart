@@ -17,6 +17,9 @@ export 'labeltest_model.dart';
 class LabeltestWidget extends StatefulWidget {
   const LabeltestWidget({super.key});
 
+  static String routeName = 'labeltest';
+  static String routePath = 'labeltest';
+
   @override
   State<LabeltestWidget> createState() => _LabeltestWidgetState();
 }

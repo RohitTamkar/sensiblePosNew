@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -146,7 +147,7 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
             child: FFButtonWidget(
               onPressed: () async {
                 context.pushNamed(
-                  'BillingGroceryNew',
+                  BillingGroceryNewWidget.routeName,
                   queryParameters: {
                     'shiftdetail': serializeParam(
                       widget!.shiftdetails,
@@ -209,7 +210,7 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
           Expanded(
             child: FFButtonWidget(
               onPressed: () async {
-                context.pushNamed('ReportScreenNew');
+                context.pushNamed(ReportScreenNewWidget.routeName);
               },
               text: FFLocalizations.of(context).getText(
                 'uirfxvxn' /* Report */,
@@ -283,7 +284,7 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
           Expanded(
             child: FFButtonWidget(
               onPressed: () async {
-                context.pushNamed('printSettingkiosk');
+                context.pushNamed(PrintSettingkioskWidget.routeName);
               },
               text: FFLocalizations.of(context).getText(
                 'u7ti7eko' /* Print Settings */,
@@ -320,7 +321,7 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
           Expanded(
             child: FFButtonWidget(
               onPressed: () async {
-                context.pushNamed('AppSettingNewPos');
+                context.pushNamed(AppSettingNewPosWidget.routeName);
               },
               text: FFLocalizations.of(context).getText(
                 'h6cu660m' /* Settings */,

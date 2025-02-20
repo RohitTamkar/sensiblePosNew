@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'dart:ui';
+import '/index.dart';
 import 'dart:math' as math;
 import 'kiosk_dine_parcel_copy_widget.dart' show KioskDineParcelCopyWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';

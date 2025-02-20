@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'dart:ui';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -15,6 +16,9 @@ export 'kiosk_splash_screen_model.dart';
 
 class KioskSplashScreenWidget extends StatefulWidget {
   const KioskSplashScreenWidget({super.key});
+
+  static String routeName = 'KioskSplashScreen';
+  static String routePath = 'kioskSplashScreen';
 
   @override
   State<KioskSplashScreenWidget> createState() =>
@@ -38,7 +42,7 @@ class _KioskSplashScreenWidgetState extends State<KioskSplashScreenWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await Future.delayed(const Duration(milliseconds: 2000));
 
-      context.pushNamed('KioskWelcome');
+      context.pushNamed(KioskWelcomeWidget.routeName);
     });
 
     animationsMap.addAll({

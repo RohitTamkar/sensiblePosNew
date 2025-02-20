@@ -21,6 +21,9 @@ export 'add_customer_model.dart';
 class AddCustomerWidget extends StatefulWidget {
   const AddCustomerWidget({super.key});
 
+  static String routeName = 'AddCustomer';
+  static String routePath = 'addCustomer';
+
   @override
   State<AddCustomerWidget> createState() => _AddCustomerWidgetState();
 }

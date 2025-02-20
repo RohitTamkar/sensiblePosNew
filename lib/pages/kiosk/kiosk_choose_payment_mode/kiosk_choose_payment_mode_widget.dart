@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,9 @@ class KioskChoosePaymentModeWidget extends StatefulWidget {
   final dynamic qrJson;
   final String? paytmOrderId;
   final bool? isPaytm;
+
+  static String routeName = 'KioskChoosePaymentMode';
+  static String routePath = 'kioskChoosePaymentMode';
 
   @override
   State<KioskChoosePaymentModeWidget> createState() =>
@@ -130,7 +134,7 @@ class _KioskChoosePaymentModeWidgetState
                             ),
                             onPressed: () async {
                               context.goNamed(
-                                'KioskBillScreen',
+                                KioskBillScreenWidget.routeName,
                                 queryParameters: {
                                   'doc': serializeParam(
                                     widget!.doc,
@@ -284,7 +288,7 @@ class _KioskChoosePaymentModeWidgetState
                                       );
 
                                       context.goNamed(
-                                        'KioskPayment',
+                                        KioskPaymentWidget.routeName,
                                         queryParameters: {
                                           'doc': serializeParam(
                                             widget!.doc,
@@ -360,7 +364,7 @@ class _KioskChoosePaymentModeWidgetState
                                     );
 
                                     context.goNamed(
-                                      'KioskBillScreen',
+                                      KioskBillScreenWidget.routeName,
                                       queryParameters: {
                                         'doc': serializeParam(
                                           widget!.doc,
@@ -507,7 +511,7 @@ class _KioskChoosePaymentModeWidgetState
                                                 r'''$.body.resultInfo.resultStatus''',
                                               ).toString()) {
                                             context.pushNamed(
-                                              'KioskCardPayment',
+                                              KioskCardPaymentWidget.routeName,
                                               queryParameters: {
                                                 'doc': serializeParam(
                                                   widget!.doc,
@@ -618,7 +622,7 @@ class _KioskChoosePaymentModeWidgetState
                                       );
 
                                       context.goNamed(
-                                        'KioskBillScreen',
+                                        KioskBillScreenWidget.routeName,
                                         queryParameters: {
                                           'doc': serializeParam(
                                             widget!.doc,
@@ -772,7 +776,7 @@ class _KioskChoosePaymentModeWidgetState
                                       );
 
                                       context.goNamed(
-                                        'cashResponsePage',
+                                        CashResponsePageWidget.routeName,
                                         queryParameters: {
                                           'shiftdetails': serializeParam(
                                             widget!.shiftdetails,
@@ -830,7 +834,7 @@ class _KioskChoosePaymentModeWidgetState
                                     );
 
                                     context.goNamed(
-                                      'KioskBillScreen',
+                                      KioskBillScreenWidget.routeName,
                                       queryParameters: {
                                         'doc': serializeParam(
                                           widget!.doc,

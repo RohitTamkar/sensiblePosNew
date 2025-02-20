@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -25,6 +26,9 @@ class KioskCustomerInfoWidget extends StatefulWidget {
   final dynamic shiftdoc;
   final AppSettingsRecord? appSetting;
   final List<TaxMasterRecord>? taxcollection;
+
+  static String routeName = 'kioskCustomerInfo';
+  static String routePath = 'kioskCustomerInfo';
 
   @override
   State<KioskCustomerInfoWidget> createState() =>
@@ -366,7 +370,7 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                         safeSetState(() {});
 
                                         context.pushNamed(
-                                          'KioskBillScreen',
+                                          KioskBillScreenWidget.routeName,
                                           queryParameters: {
                                             'shiftdoc': serializeParam(
                                               widget!.shiftdoc,
@@ -464,7 +468,7 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                         ));
 
                                         context.pushNamed(
-                                          'KioskBillScreen',
+                                          KioskBillScreenWidget.routeName,
                                           queryParameters: {
                                             'shiftdoc': serializeParam(
                                               widget!.shiftdoc,

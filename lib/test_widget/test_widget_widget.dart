@@ -14,6 +14,9 @@ export 'test_widget_model.dart';
 class TestWidgetWidget extends StatefulWidget {
   const TestWidgetWidget({super.key});
 
+  static String routeName = 'testWidget';
+  static String routePath = 'testWidget';
+
   @override
   State<TestWidgetWidget> createState() => _TestWidgetWidgetState();
 }

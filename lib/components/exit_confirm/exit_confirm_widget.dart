@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -90,9 +91,9 @@ class _ExitConfirmWidgetState extends State<ExitConfirmWidget> {
                       FFAppState().quickPin = '';
                       FFAppState().update(() {});
                       if (isAndroid == true) {
-                        context.pushNamed('LoginPageNew');
+                        context.pushNamed(LoginPageNewWidget.routeName);
                       } else {
-                        context.pushNamed('WindowsLogin');
+                        context.pushNamed(WindowsLoginWidget.routeName);
                       }
 
                       safeSetState(() {});

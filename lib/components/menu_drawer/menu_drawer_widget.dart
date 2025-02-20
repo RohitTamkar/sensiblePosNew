@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -237,7 +238,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('FullScreenBill');
+                                          context.pushNamed(
+                                              FullScreenBillWidget.routeName);
                                         },
                                         child: Container(
                                           width: double.infinity,
@@ -309,7 +311,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'EditBillNew',
+                                            EditBillNewWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -398,7 +400,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           context.pushNamed(
-                                            'EditPurchaseOrder',
+                                            EditPurchaseOrderWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -493,7 +495,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                           FFAppState().update(() {});
 
                                           context.pushNamed(
-                                            'purchaseOrder',
+                                            PurchaseOrderWidget.routeName,
                                             queryParameters: {
                                               'shiftdetail': serializeParam(
                                                 widget!.shiftDetails,
@@ -596,7 +598,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         safeSetState(() {});
 
                                         context.pushNamed(
-                                          'ReportScreenNew',
+                                          ReportScreenNewWidget.routeName,
                                           queryParameters: {
                                             'billDetails': serializeParam(
                                               widget!.billdetails,
@@ -659,7 +661,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                      'ReportScreenNew');
+                                                      ReportScreenNewWidget
+                                                          .routeName);
                                                 },
                                                 child: Text(
                                                   FFLocalizations.of(context)
@@ -701,7 +704,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('PaymentScreen');
+                                          context.pushNamed(
+                                              PaymentScreenWidget.routeName);
                                         },
                                         child: Container(
                                           width: double.infinity,
@@ -773,7 +777,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                            'PrinterSelectionScreen');
+                                            PrinterSelectionScreenWidget
+                                                .routeName);
                                       },
                                       child: Container(
                                         width: double.infinity,
@@ -814,7 +819,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                      'PrinterSelectionScreen');
+                                                      PrinterSelectionScreenWidget
+                                                          .routeName);
                                                 },
                                                 child: Text(
                                                   FFLocalizations.of(context)
@@ -855,7 +861,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        context.pushNamed('SettingHomepage');
+                                        context.pushNamed(
+                                            SettingHomepageWidget.routeName);
                                       },
                                       child: Container(
                                         width: double.infinity,
@@ -939,7 +946,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('BarcodePrinting');
+                                          context.pushNamed(
+                                              BarcodePrintingWidget.routeName);
                                         },
                                         child: Container(
                                           width: double.infinity,
@@ -1010,7 +1018,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'ShiftEndNew2',
+                                          ShiftEndNew2Widget.routeName,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -1091,7 +1099,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('StartScreen');
+                                          context.pushNamed(
+                                              StartScreenWidget.routeName);
                                         },
                                         child: Container(
                                           width: double.infinity,

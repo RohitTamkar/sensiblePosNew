@@ -20,6 +20,9 @@ export 'app_setting_model.dart';
 class AppSettingWidget extends StatefulWidget {
   const AppSettingWidget({super.key});
 
+  static String routeName = 'AppSetting';
+  static String routePath = 'appSetting';
+
   @override
   State<AppSettingWidget> createState() => _AppSettingWidgetState();
 }

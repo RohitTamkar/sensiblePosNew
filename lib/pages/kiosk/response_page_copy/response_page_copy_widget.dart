@@ -12,6 +12,7 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +37,9 @@ class ResponsePageCopyWidget extends StatefulWidget {
   final dynamic shiftdetails;
   final AppSettingsRecord? appsetting;
   final List<TaxMasterRecord>? taxcoollectipon;
+
+  static String routeName = 'responsePageCopy';
+  static String routePath = 'responsePageCopy';
 
   @override
   State<ResponsePageCopyWidget> createState() => _ResponsePageCopyWidgetState();
@@ -353,7 +357,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
             _model.taxmaster = await queryTaxMasterRecordOnce();
 
             context.pushNamed(
-              'KioskAdvertising',
+              KioskAdvertisingWidget.routeName,
               queryParameters: {
                 'userDoc': serializeParam(
                   _model.outletdoc?.userRef,
@@ -397,7 +401,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
               },
             );
 
-            context.pushNamed('printSettingkiosk');
+            context.pushNamed(PrintSettingkioskWidget.routeName);
           }
         } else {
           await Future.delayed(const Duration(milliseconds: 2000));
@@ -433,7 +437,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
           FFAppState().update(() {});
 
           context.pushNamed(
-            'KioskAdvertising',
+            KioskAdvertisingWidget.routeName,
             queryParameters: {
               'userDoc': serializeParam(
                 _model.outletdoc?.userRef,
@@ -763,7 +767,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                           _shouldSetState = true;
 
                                           context.pushNamed(
-                                            'KioskDineParcel',
+                                            KioskDineParcelWidget.routeName,
                                             queryParameters: {
                                               'userdoc': serializeParam(
                                                 _model.outletdocCopy?.userRef,
@@ -815,8 +819,9 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                             },
                                           );
 
-                                          context
-                                              .pushNamed('printSettingkiosk');
+                                          context.pushNamed(
+                                              PrintSettingkioskWidget
+                                                  .routeName);
                                         }
 
                                         if (_shouldSetState)

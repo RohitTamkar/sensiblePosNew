@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,6 +16,9 @@ export 'login_page_setting_model.dart';
 
 class LoginPageSettingWidget extends StatefulWidget {
   const LoginPageSettingWidget({super.key});
+
+  static String routeName = 'LoginPageSetting';
+  static String routePath = 'loginPageSetting';
 
   @override
   State<LoginPageSettingWidget> createState() => _LoginPageSettingWidgetState();
@@ -94,7 +98,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                       size: 26.0,
                                     ),
                                     onPressed: () async {
-                                      context.pushNamed('LoginPage');
+                                      context
+                                          .pushNamed(LoginPageWidget.routeName);
                                     },
                                   ),
                                   Text(
@@ -617,7 +622,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context.pushNamed('WiFiSetting');
+                                            context.pushNamed(
+                                                WiFiSettingWidget.routeName);
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -723,7 +729,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                               size: 18.0,
                                             ),
                                             onPressed: () async {
-                                              context.pushNamed('WiFiSetting');
+                                              context.pushNamed(
+                                                  WiFiSettingWidget.routeName);
                                             },
                                           ),
                                           FlutterFlowIconButton(
@@ -858,8 +865,9 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context
-                                                .pushNamed('SubscriptionNew');
+                                            context.pushNamed(
+                                                SubscriptionNewWidget
+                                                    .routeName);
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -922,7 +930,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                   ),
                                                   onPressed: () async {
                                                     context.pushNamed(
-                                                        'SubscriptionNew');
+                                                        SubscriptionNewWidget
+                                                            .routeName);
                                                   },
                                                 ),
                                               ],
@@ -939,7 +948,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context.pushNamed('SystemUpdate');
+                                            context.pushNamed(
+                                                SystemUpdateWidget.routeName);
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -1002,7 +1012,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                   ),
                                                   onPressed: () async {
                                                     context.pushNamed(
-                                                        'SystemUpdate');
+                                                        SystemUpdateWidget
+                                                            .routeName);
                                                   },
                                                 ),
                                               ],
@@ -1019,7 +1030,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context.pushNamed('ResetData');
+                                            context.pushNamed(
+                                                ResetDataWidget.routeName);
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -1081,8 +1093,9 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                     size: 24.0,
                                                   ),
                                                   onPressed: () async {
-                                                    context
-                                                        .pushNamed('ResetData');
+                                                    context.pushNamed(
+                                                        ResetDataWidget
+                                                            .routeName);
                                                   },
                                                 ),
                                               ],

@@ -18,6 +18,9 @@ export 'token_display_model.dart';
 class TokenDisplayWidget extends StatefulWidget {
   const TokenDisplayWidget({super.key});
 
+  static String routeName = 'TokenDisplay';
+  static String routePath = 'tokenDisplay';
+
   @override
   State<TokenDisplayWidget> createState() => _TokenDisplayWidgetState();
 }

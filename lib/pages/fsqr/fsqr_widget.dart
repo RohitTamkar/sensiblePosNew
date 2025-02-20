@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -20,6 +21,9 @@ class FsqrWidget extends StatefulWidget {
 
   final dynamic json;
   final String? orderId;
+
+  static String routeName = 'FSQR';
+  static String routePath = 'fsqr';
 
   @override
   State<FsqrWidget> createState() => _FsqrWidgetState();
@@ -133,7 +137,7 @@ class _FsqrWidgetState extends State<FsqrWidget> {
                                           _model.listViewPreviousSnapshot)) {
                                 () async {
                                   context.pushNamed(
-                                    'responsePage',
+                                    ResponsePageWidget.routeName,
                                     queryParameters: {
                                       'doc': serializeParam(
                                         listViewQrTransactionsRecord,

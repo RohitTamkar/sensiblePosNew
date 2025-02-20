@@ -12,6 +12,9 @@ export 'demo_model.dart';
 class DemoWidget extends StatefulWidget {
   const DemoWidget({super.key});
 
+  static String routeName = 'demo';
+  static String routePath = 'demo';
+
   @override
   State<DemoWidget> createState() => _DemoWidgetState();
 }

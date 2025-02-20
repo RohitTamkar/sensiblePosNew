@@ -14,6 +14,9 @@ export 'ims_production_model.dart';
 class ImsProductionWidget extends StatefulWidget {
   const ImsProductionWidget({super.key});
 
+  static String routeName = 'imsProduction';
+  static String routePath = 'imsProduction';
+
   @override
   State<ImsProductionWidget> createState() => _ImsProductionWidgetState();
 }

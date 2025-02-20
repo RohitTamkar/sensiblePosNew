@@ -17,6 +17,9 @@ export 'print_settingkiosk_model.dart';
 class PrintSettingkioskWidget extends StatefulWidget {
   const PrintSettingkioskWidget({super.key});
 
+  static String routeName = 'printSettingkiosk';
+  static String routePath = 'printSettingkiosk';
+
   @override
   State<PrintSettingkioskWidget> createState() =>
       _PrintSettingkioskWidgetState();

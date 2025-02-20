@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
+import '/index.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -26,6 +27,9 @@ class UpdateProductNewWidget extends StatefulWidget {
   });
 
   final int? hivekey;
+
+  static String routeName = 'UpdateProductNew';
+  static String routePath = 'updateProductNew';
 
   @override
   State<UpdateProductNewWidget> createState() => _UpdateProductNewWidgetState();
@@ -208,7 +212,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                       FFAppState().codeLenght = _model.len!;
                       FFAppState().update(() {});
 
-                      context.pushNamed('AddProductNewPos');
+                      context.pushNamed(AddProductNewPosWidget.routeName);
 
                       safeSetState(() {});
                     },
@@ -510,7 +514,8 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                             .update(() {});
 
                                                         context.pushNamed(
-                                                            'UpdateProductNew');
+                                                            UpdateProductNewWidget
+                                                                .routeName);
                                                       },
                                                       child: Card(
                                                         clipBehavior: Clip
@@ -638,7 +643,8 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                               .update(() {});
 
                                                           context.pushNamed(
-                                                              'UpdateProductNew');
+                                                              UpdateProductNewWidget
+                                                                  .routeName);
                                                         },
                                                         child: Card(
                                                           clipBehavior: Clip

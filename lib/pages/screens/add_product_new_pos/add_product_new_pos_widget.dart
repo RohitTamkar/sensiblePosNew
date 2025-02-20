@@ -20,6 +20,9 @@ export 'add_product_new_pos_model.dart';
 class AddProductNewPosWidget extends StatefulWidget {
   const AddProductNewPosWidget({super.key});
 
+  static String routeName = 'AddProductNewPos';
+  static String routePath = 'addProductNew';
+
   @override
   State<AddProductNewPosWidget> createState() => _AddProductNewPosWidgetState();
 }

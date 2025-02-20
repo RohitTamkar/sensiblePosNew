@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -15,6 +16,9 @@ export 'mini_kiosk_token_model.dart';
 
 class MiniKioskTokenWidget extends StatefulWidget {
   const MiniKioskTokenWidget({super.key});
+
+  static String routeName = 'miniKioskToken';
+  static String routePath = 'miniKioskToken';
 
   @override
   State<MiniKioskTokenWidget> createState() => _MiniKioskTokenWidgetState();
@@ -73,7 +77,7 @@ class _MiniKioskTokenWidgetState extends State<MiniKioskTokenWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed('MKPrinterSetting');
+                          context.pushNamed(MKPrinterSettingWidget.routeName);
                         },
                         text: FFLocalizations.of(context).getText(
                           'dua10qwt' /* printer setting */,

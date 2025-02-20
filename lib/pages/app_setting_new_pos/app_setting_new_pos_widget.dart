@@ -18,6 +18,9 @@ export 'app_setting_new_pos_model.dart';
 class AppSettingNewPosWidget extends StatefulWidget {
   const AppSettingNewPosWidget({super.key});
 
+  static String routeName = 'AppSettingNewPos';
+  static String routePath = 'appSettingNewPos';
+
   @override
   State<AppSettingNewPosWidget> createState() => _AppSettingNewPosWidgetState();
 }

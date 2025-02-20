@@ -6,6 +6,7 @@ import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -30,6 +31,9 @@ class KioskAdvertisingWidget extends StatefulWidget {
   final dynamic shiftdoc;
   final AppSettingsRecord? appsetting;
   final List<TaxMasterRecord>? taxcollection;
+
+  static String routeName = 'KioskAdvertising';
+  static String routePath = 'kioskAdvertising';
 
   @override
   State<KioskAdvertisingWidget> createState() => _KioskAdvertisingWidgetState();
@@ -223,7 +227,7 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                         safeSetState(() {});
 
                                         context.goNamed(
-                                          'KioskBillScreen',
+                                          KioskBillScreenWidget.routeName,
                                           queryParameters: {
                                             'doc': serializeParam(
                                               widget!.userDoc,
@@ -251,7 +255,7 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                         );
                                       } else {
                                         context.goNamed(
-                                          'KioskDineParcel',
+                                          KioskDineParcelWidget.routeName,
                                           queryParameters: {
                                             'userdoc': serializeParam(
                                               widget!.userDoc,

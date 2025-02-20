@@ -9,6 +9,7 @@ import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'kiosk_choose_payment_mode_copy_widget.dart'
     show KioskChoosePaymentModeCopyWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';

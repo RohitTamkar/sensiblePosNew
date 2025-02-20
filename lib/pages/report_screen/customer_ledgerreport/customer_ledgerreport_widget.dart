@@ -24,6 +24,9 @@ export 'customer_ledgerreport_model.dart';
 class CustomerLedgerreportWidget extends StatefulWidget {
   const CustomerLedgerreportWidget({super.key});
 
+  static String routeName = 'customerLedgerreport';
+  static String routePath = 'customerLedgerreport';
+
   @override
   State<CustomerLedgerreportWidget> createState() =>
       _CustomerLedgerreportWidgetState();

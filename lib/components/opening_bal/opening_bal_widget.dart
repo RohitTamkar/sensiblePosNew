@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -137,7 +138,8 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                      'ProductAndListWIN');
+                                                      ProductAndListWINWidget
+                                                          .routeName);
                                                 },
                                                 child: Text(
                                                   FFLocalizations.of(context)
@@ -865,7 +867,8 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                                 if (_model.platform ==
                                                     'windows') {
                                                   context.pushNamed(
-                                                      'ProductAndListWIN');
+                                                      ProductAndListWINWidget
+                                                          .routeName);
 
                                                   if (_shouldSetState)
                                                     safeSetState(() {});
@@ -951,7 +954,8 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                                 }
 
                                                 context.pushNamed(
-                                                  'ProductAndList',
+                                                  ProductAndListWidget
+                                                      .routeName,
                                                   queryParameters: {
                                                     'doc': serializeParam(
                                                       widget!.doc,
@@ -978,7 +982,8 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                                 FFAppState().update(() {});
 
                                                 context.pushNamed(
-                                                  'ProductAndList',
+                                                  ProductAndListWidget
+                                                      .routeName,
                                                   queryParameters: {
                                                     'doc': serializeParam(
                                                       widget!.doc,
