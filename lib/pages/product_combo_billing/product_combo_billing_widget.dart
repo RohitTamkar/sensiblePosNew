@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/grocery_windows/add_customer_grocery/add_customer_grocery_widget.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
@@ -358,9 +359,32 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                 size: 22.0,
                                               ),
                                               onPressed: () async {
-                                                context.pushNamed(
-                                                    AddCustomerWidget
-                                                        .routeName);
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child:
+                                                            AddCustomerGroceryWidget(),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
                                               },
                                             ),
                                           ],
