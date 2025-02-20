@@ -3400,7 +3400,7 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                 await actions.shiftExists(
                                               functions.getDayId(),
                                               '1',
-                                              FFAppState().outletId,
+                                              FFAppState().outletIdRef!.id,
                                             );
                                             _model.returnList1Copy =
                                                 await actions
