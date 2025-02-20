@@ -3412,8 +3412,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                             );
 
                                             await functions
-                                                .shiftRef(_model.shiftListCopy!,
-                                                    FFAppState().outletId)
+                                                .shiftRef(
+                                                    _model.shiftListCopy!,
+                                                    FFAppState()
+                                                        .outletIdRef!
+                                                        .id)
                                                 .update(createShiftRecordData(
                                                   totalSale: getJsonField(
                                                     _model.returnList1Copy,
