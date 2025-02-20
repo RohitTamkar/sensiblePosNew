@@ -3495,8 +3495,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                             FFAppState().selectedInvoiceJson,
                                             FFAppState().curMode,
                                             FFAppState().prevMode,
-                                            _model.getOfflineShiftdetails33!
-                                                .toMap(),
+                                            getJsonField(
+                                              _model.getOfflineShiftdetails33!
+                                                  .toMap(),
+                                              r'''$''',
+                                            ),
                                           );
                                           FFAppState().updateShiftDetailsStruct(
                                             (e) => e
