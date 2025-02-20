@@ -3764,6 +3764,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                 FFAppState()
                                                                     .prdid = '';
                                                                 FFAppState()
+                                                                    .productColor = '';
+                                                                FFAppState()
                                                                     .update(
                                                                         () {});
                                                                 FFAppState()
@@ -4739,6 +4741,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     .noOfItems = 0;
                                                                 FFAppState()
                                                                     .prdid = '';
+                                                                FFAppState()
+                                                                    .productColor = '';
                                                                 FFAppState()
                                                                     .update(
                                                                         () {});
