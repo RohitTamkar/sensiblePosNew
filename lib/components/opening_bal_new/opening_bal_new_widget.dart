@@ -775,10 +775,8 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                               getCurrentTimestamp),
                                                       paymentJson:
                                                           '{\"cash\":0,\"credit\":0,\"cheque\":0,\"digital\":0,\"card\":0,\"googlepay\":0,\"phonepe\":0,\"paytm\":0,\"other\":0,\"loyaltypoint\":0,\"upi_qr\":0.0,\"swiggy\":0.0,\"zomato\":0.0}',
-                                                      shiftNo: getJsonField(
-                                                        widget!.shiftDetails,
-                                                        r'''$.shiftCount''',
-                                                      ),
+                                                      shiftNo: FFAppState()
+                                                          .shiftCount,
                                                     ));
                                                     _model.shiftDoc1 = ShiftRecord
                                                         .getDocumentFromData(
@@ -809,11 +807,8 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                               paymentJson:
                                                                   '{\"cash\":0,\"credit\":0,\"cheque\":0,\"digital\":0,\"card\":0,\"googlepay\":0,\"phonepe\":0,\"paytm\":0,\"other\":0,\"loyaltypoint\":0,\"upi_qr\":0.0,\"swiggy\":0.0,\"zomato\":0.0}',
                                                               shiftNo:
-                                                                  getJsonField(
-                                                                widget!
-                                                                    .shiftDetails,
-                                                                r'''$.shiftCount''',
-                                                              ),
+                                                                  FFAppState()
+                                                                      .shiftCount,
                                                             ),
                                                             shiftRecordReference);
                                                     _shouldSetState = true;
@@ -852,7 +847,8 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                             .timestampToMili(
                                                                 getCurrentTimestamp)
                                                         ..inActive = true
-                                                        ..shiftNo = 0
+                                                        ..shiftNo = FFAppState()
+                                                            .shiftCount
                                                         ..subTotalBill = 0.0
                                                         ..userId =
                                                             widget!.doc?.id
