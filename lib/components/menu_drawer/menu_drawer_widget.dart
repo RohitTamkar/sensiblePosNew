@@ -166,6 +166,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.safePop();
+                                      },
+                                      onLongPress: () async {
                                         _model.editbill = true;
                                         safeSetState(() {});
                                       },
