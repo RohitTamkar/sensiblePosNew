@@ -3016,9 +3016,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                 await invoiceRecordReference
                                                                     .set({
                                                                   ...createInvoiceRecordData(
-                                                                    invoice: functions
-                                                                        .genInvoiceNumyear(
-                                                                            FFAppState().newcount),
+                                                                    invoice: functions.genInvoiceNum(
+                                                                        FFAppState()
+                                                                            .newcount,
+                                                                        FFAppState()
+                                                                            .shiftDetails
+                                                                            .shiftNo),
                                                                     party: valueOrDefault<
                                                                         String>(
                                                                       FFAppState()
@@ -3094,9 +3097,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     InvoiceRecord
                                                                         .getDocumentFromData({
                                                                   ...createInvoiceRecordData(
-                                                                    invoice: functions
-                                                                        .genInvoiceNumyear(
-                                                                            FFAppState().newcount),
+                                                                    invoice: functions.genInvoiceNum(
+                                                                        FFAppState()
+                                                                            .newcount,
+                                                                        FFAppState()
+                                                                            .shiftDetails
+                                                                            .shiftNo),
                                                                     party: valueOrDefault<
                                                                         String>(
                                                                       FFAppState()
@@ -3188,9 +3194,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       .invonlineprt!
                                                                       .reference
                                                                       .id,
-                                                                  functions.genInvoiceNumyear(
+                                                                  functions.genInvoiceNum(
                                                                       FFAppState()
-                                                                          .newcount),
+                                                                          .newcount,
+                                                                      FFAppState()
+                                                                          .shiftDetails
+                                                                          .shiftNo),
                                                                   valueOrDefault<
                                                                       String>(
                                                                     FFAppState()
@@ -3993,9 +4002,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                 await invoiceRecordReference
                                                                     .set({
                                                                   ...createInvoiceRecordData(
-                                                                    invoice: functions
-                                                                        .genInvoiceNumyear(
-                                                                            FFAppState().newcount),
+                                                                    invoice: functions.genInvoiceNum(
+                                                                        FFAppState()
+                                                                            .newcount,
+                                                                        FFAppState()
+                                                                            .shiftDetails
+                                                                            .shiftNo),
                                                                     party: valueOrDefault<
                                                                         String>(
                                                                       FFAppState()
@@ -4071,9 +4083,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     InvoiceRecord
                                                                         .getDocumentFromData({
                                                                   ...createInvoiceRecordData(
-                                                                    invoice: functions
-                                                                        .genInvoiceNumyear(
-                                                                            FFAppState().newcount),
+                                                                    invoice: functions.genInvoiceNum(
+                                                                        FFAppState()
+                                                                            .newcount,
+                                                                        FFAppState()
+                                                                            .shiftDetails
+                                                                            .shiftNo),
                                                                     party: valueOrDefault<
                                                                         String>(
                                                                       FFAppState()
@@ -4165,9 +4180,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       .invonlineprtcust!
                                                                       .reference
                                                                       .id,
-                                                                  functions.genInvoiceNumyear(
+                                                                  functions.genInvoiceNum(
                                                                       FFAppState()
-                                                                          .newcount),
+                                                                          .newcount,
+                                                                      FFAppState()
+                                                                          .shiftDetails
+                                                                          .shiftNo),
                                                                   valueOrDefault<
                                                                       String>(
                                                                     FFAppState()
