@@ -3084,6 +3084,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     ).toString(),
                                                                     count: FFAppState()
                                                                         .newcount,
+                                                                    source:
+                                                                        'KOT',
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -3167,6 +3169,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     ).toString(),
                                                                     count: FFAppState()
                                                                         .newcount,
+                                                                    source:
+                                                                        'KOT',
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -4074,6 +4078,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     ).toString(),
                                                                     count: FFAppState()
                                                                         .newcount,
+                                                                    source:
+                                                                        'CUSTOMER',
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -4157,6 +4163,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     ).toString(),
                                                                     count: FFAppState()
                                                                         .newcount,
+                                                                    source:
+                                                                        'CUSTOMER',
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {

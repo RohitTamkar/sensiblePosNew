@@ -2845,83 +2845,330 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                 Expanded(
                                   child: Stack(
                                     children: [
-                                      Container(
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                0.75,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
+                                      if (getJsonField(
+                                            FFAppState().selectedInvoiceJson,
+                                            r'''$.productList''',
+                                          ) ==
+                                          null)
+                                        Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              0.75,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                          ),
                                         ),
-                                      ),
-                                      Container(
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                0.75,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                        ),
-                                        child: Builder(
-                                          builder: (context) {
-                                            final list3 = getJsonField(
-                                              FFAppState().selectedInvoiceJson,
-                                              r'''$.productList''',
-                                            ).toList();
+                                      if (getJsonField(
+                                            FFAppState().selectedInvoiceJson,
+                                            r'''$.productList''',
+                                          ) !=
+                                          null)
+                                        Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              0.75,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                          ),
+                                          child: Builder(
+                                            builder: (context) {
+                                              final list3 = getJsonField(
+                                                FFAppState()
+                                                    .selectedInvoiceJson,
+                                                r'''$.productList''',
+                                              ).toList();
 
-                                            return ListView.builder(
-                                              padding: EdgeInsets.zero,
-                                              scrollDirection: Axis.vertical,
-                                              itemCount: list3.length,
-                                              itemBuilder:
-                                                  (context, list3Index) {
-                                                final list3Item =
-                                                    list3[list3Index];
-                                                return Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 4.0),
-                                                  child: Container(
-                                                    width: MediaQuery.sizeOf(
-                                                                context)
-                                                            .width *
-                                                        0.41,
-                                                    height: MediaQuery.sizeOf(
-                                                                context)
-                                                            .height *
-                                                        0.083,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .primaryBackground,
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Expanded(
-                                                              flex: 25,
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            2.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                              return ListView.builder(
+                                                padding: EdgeInsets.zero,
+                                                scrollDirection: Axis.vertical,
+                                                itemCount: list3.length,
+                                                itemBuilder:
+                                                    (context, list3Index) {
+                                                  final list3Item =
+                                                      list3[list3Index];
+                                                  return Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 4.0),
+                                                    child: Container(
+                                                      width: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width *
+                                                          0.41,
+                                                      height: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .height *
+                                                          0.083,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Expanded(
+                                                                flex: 25,
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          2.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      Container(
+                                                                    height: MediaQuery.sizeOf(context)
+                                                                            .height *
+                                                                        0.083,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryBackground,
+                                                                    ),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          3.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.start,
+                                                                        children: [
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                2.0),
+                                                                            child:
+                                                                                Text(
+                                                                              getJsonField(
+                                                                                list3Item,
+                                                                                r'''$.name''',
+                                                                              ).toString(),
+                                                                              textAlign: TextAlign.start,
+                                                                              style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                                    color: getJsonField(
+                                                                                              list3Item,
+                                                                                              r'''$.isDeletedItem''',
+                                                                                            ) ==
+                                                                                            true
+                                                                                        ? FlutterFlowTheme.of(context).primary
+                                                                                        : FlutterFlowTheme.of(context).primaryText,
+                                                                                    letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
+                                                                                  ),
+                                                                            ),
+                                                                          ),
+                                                                          Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Text(
+                                                                                FFLocalizations.of(context).getText(
+                                                                                  '083pegpe' /* ₹  */,
+                                                                                ),
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                      fontSize: 13.0,
+                                                                                      letterSpacing: 0.0,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                    ),
+                                                                              ),
+                                                                              Text(
+                                                                                getJsonField(
+                                                                                  list3Item,
+                                                                                  r'''$.price''',
+                                                                                ).toString(),
+                                                                                textAlign: TextAlign.center,
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                      color: getJsonField(
+                                                                                                list3Item,
+                                                                                                r'''$.isDeletedItem''',
+                                                                                              ) ==
+                                                                                              true
+                                                                                          ? FlutterFlowTheme.of(context).primary
+                                                                                          : FlutterFlowTheme.of(context).primaryText,
+                                                                                      fontSize: 13.0,
+                                                                                      letterSpacing: 0.0,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                    ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              Expanded(
+                                                                flex: 8,
+                                                                child:
+                                                                    Container(
+                                                                  height: MediaQuery.sizeOf(
+                                                                              context)
+                                                                          .height *
+                                                                      0.083,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                  ),
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    children: [
+                                                                      Expanded(
+                                                                        flex: 7,
+                                                                        child:
+                                                                            InkWell(
+                                                                          splashColor:
+                                                                              Colors.transparent,
+                                                                          focusColor:
+                                                                              Colors.transparent,
+                                                                          hoverColor:
+                                                                              Colors.transparent,
+                                                                          highlightColor:
+                                                                              Colors.transparent,
+                                                                          onTap:
+                                                                              () async {
+                                                                            _model.res1 =
+                                                                                await actions.reduceQuantityEB(
+                                                                              getJsonField(
+                                                                                list3Item,
+                                                                                r'''$''',
+                                                                              ),
+                                                                            );
+                                                                            await actions.calSubTotalCopy(
+                                                                              FFAppState().selectedInvoiceJson,
+                                                                            );
+
+                                                                            safeSetState(() {});
+                                                                          },
+                                                                          child:
+                                                                              Material(
+                                                                            color:
+                                                                                Colors.transparent,
+                                                                            elevation:
+                                                                                5.0,
+                                                                            shape:
+                                                                                RoundedRectangleBorder(
+                                                                              borderRadius: BorderRadius.only(
+                                                                                bottomLeft: Radius.circular(5.0),
+                                                                                bottomRight: Radius.circular(0.0),
+                                                                                topLeft: Radius.circular(5.0),
+                                                                                topRight: Radius.circular(0.0),
+                                                                              ),
+                                                                            ),
+                                                                            child:
+                                                                                Container(
+                                                                              width: 100.0,
+                                                                              height: MediaQuery.sizeOf(context).height * 0.08,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                borderRadius: BorderRadius.only(
+                                                                                  bottomLeft: Radius.circular(5.0),
+                                                                                  bottomRight: Radius.circular(0.0),
+                                                                                  topLeft: Radius.circular(5.0),
+                                                                                  topRight: Radius.circular(0.0),
+                                                                                ),
+                                                                              ),
+                                                                              child: Icon(
+                                                                                Icons.remove,
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                size: 18.0,
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ).animateOnActionTrigger(animationsMap['containerOnActionTriggerAnimation3']!,
+                                                                                hasBeenTriggered: hasContainerTriggered3),
+                                                                      ),
+                                                                      Expanded(
+                                                                        flex:
+                                                                            11,
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              100.0,
+                                                                          height:
+                                                                              MediaQuery.sizeOf(context).height * 0.083,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.center,
+                                                                            children: [
+                                                                              Align(
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                child: Text(
+                                                                                  getJsonField(
+                                                                                    list3Item,
+                                                                                    r'''$.quantity''',
+                                                                                  ).toString(),
+                                                                                  textAlign: TextAlign.center,
+                                                                                  style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                        color: getJsonField(
+                                                                                                  list3Item,
+                                                                                                  r'''$.isDeletedItem''',
+                                                                                                ) ==
+                                                                                                true
+                                                                                            ? FlutterFlowTheme.of(context).primary
+                                                                                            : FlutterFlowTheme.of(context).primaryText,
+                                                                                        fontSize: 13.0,
+                                                                                        letterSpacing: 0.0,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                                      ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              Expanded(
+                                                                flex: 5,
                                                                 child:
                                                                     Container(
                                                                   height: MediaQuery.sizeOf(
@@ -2934,381 +3181,136 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                             context)
                                                                         .secondaryBackground,
                                                                   ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            3.0,
-                                                                            0.0,
+                                                                  child: Align(
+                                                                    alignment:
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .center,
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .start,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              2.0),
-                                                                          child:
-                                                                              Text(
-                                                                            getJsonField(
-                                                                              list3Item,
-                                                                              r'''$.name''',
-                                                                            ).toString(),
-                                                                            textAlign:
-                                                                                TextAlign.start,
-                                                                            style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
-                                                                                  color: getJsonField(
-                                                                                            list3Item,
-                                                                                            r'''$.isDeletedItem''',
-                                                                                          ) ==
-                                                                                          true
-                                                                                      ? FlutterFlowTheme.of(context).primary
-                                                                                      : FlutterFlowTheme.of(context).primaryText,
-                                                                                  letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          children: [
-                                                                            Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                '083pegpe' /* ₹  */,
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    fontSize: 13.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                            Text(
-                                                                              getJsonField(
-                                                                                list3Item,
-                                                                                r'''$.price''',
-                                                                              ).toString(),
-                                                                              textAlign: TextAlign.center,
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    color: getJsonField(
-                                                                                              list3Item,
-                                                                                              r'''$.isDeletedItem''',
-                                                                                            ) ==
-                                                                                            true
-                                                                                        ? FlutterFlowTheme.of(context).primary
-                                                                                        : FlutterFlowTheme.of(context).primaryText,
-                                                                                    fontSize: 13.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Expanded(
-                                                              flex: 8,
-                                                              child: Container(
-                                                                height: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .height *
-                                                                    0.083,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                                ),
-                                                                child: Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Expanded(
-                                                                      flex: 7,
-                                                                      child:
-                                                                          InkWell(
-                                                                        splashColor:
-                                                                            Colors.transparent,
-                                                                        focusColor:
-                                                                            Colors.transparent,
-                                                                        hoverColor:
-                                                                            Colors.transparent,
-                                                                        highlightColor:
-                                                                            Colors.transparent,
-                                                                        onTap:
-                                                                            () async {
-                                                                          _model.res1 =
-                                                                              await actions.reduceQuantityEB(
-                                                                            getJsonField(
-                                                                              list3Item,
-                                                                              r'''$''',
-                                                                            ),
-                                                                          );
-                                                                          await actions
-                                                                              .calSubTotalCopy(
-                                                                            FFAppState().selectedInvoiceJson,
-                                                                          );
-
-                                                                          safeSetState(
-                                                                              () {});
-                                                                        },
-                                                                        child:
-                                                                            Material(
-                                                                          color:
-                                                                              Colors.transparent,
-                                                                          elevation:
-                                                                              5.0,
-                                                                          shape:
-                                                                              RoundedRectangleBorder(
-                                                                            borderRadius:
-                                                                                BorderRadius.only(
-                                                                              bottomLeft: Radius.circular(5.0),
-                                                                              bottomRight: Radius.circular(0.0),
-                                                                              topLeft: Radius.circular(5.0),
-                                                                              topRight: Radius.circular(0.0),
-                                                                            ),
-                                                                          ),
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                100.0,
-                                                                            height:
-                                                                                MediaQuery.sizeOf(context).height * 0.08,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              borderRadius: BorderRadius.only(
-                                                                                bottomLeft: Radius.circular(5.0),
-                                                                                bottomRight: Radius.circular(0.0),
-                                                                                topLeft: Radius.circular(5.0),
-                                                                                topRight: Radius.circular(0.0),
-                                                                              ),
-                                                                            ),
-                                                                            child:
-                                                                                Icon(
-                                                                              Icons.remove,
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              size: 18.0,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ).animateOnActionTrigger(
-                                                                              animationsMap['containerOnActionTriggerAnimation3']!,
-                                                                              hasBeenTriggered: hasContainerTriggered3),
-                                                                    ),
-                                                                    Expanded(
-                                                                      flex: 11,
-                                                                      child:
-                                                                          Container(
-                                                                        width:
-                                                                            100.0,
-                                                                        height: MediaQuery.sizeOf(context).height *
-                                                                            0.083,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryBackground,
-                                                                        ),
-                                                                        child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Align(
-                                                                              alignment: AlignmentDirectional(0.0, 0.0),
-                                                                              child: Text(
+                                                                    child: Text(
+                                                                      functions
+                                                                          .getTotal(
+                                                                              valueOrDefault<double>(
                                                                                 getJsonField(
                                                                                   list3Item,
                                                                                   r'''$.quantity''',
-                                                                                ).toString(),
-                                                                                textAlign: TextAlign.center,
-                                                                                style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                      color: getJsonField(
-                                                                                                list3Item,
-                                                                                                r'''$.isDeletedItem''',
-                                                                                              ) ==
-                                                                                              true
-                                                                                          ? FlutterFlowTheme.of(context).primary
-                                                                                          : FlutterFlowTheme.of(context).primaryText,
-                                                                                      fontSize: 13.0,
-                                                                                      letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                                    ),
+                                                                                ),
+                                                                                0.0,
                                                                               ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      ),
+                                                                              valueOrDefault<double>(
+                                                                                getJsonField(
+                                                                                  list3Item,
+                                                                                  r'''$.price''',
+                                                                                ),
+                                                                                0.0,
+                                                                              ))
+                                                                          .toString(),
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                            color: getJsonField(
+                                                                                      list3Item,
+                                                                                      r'''$.isDeletedItem''',
+                                                                                    ) ==
+                                                                                    true
+                                                                                ? FlutterFlowTheme.of(context).primary
+                                                                                : FlutterFlowTheme.of(context).primaryText,
+                                                                            fontSize:
+                                                                                13.0,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                          ),
                                                                     ),
-                                                                  ],
+                                                                  ),
                                                                 ),
                                                               ),
-                                                            ),
-                                                            Expanded(
-                                                              flex: 5,
-                                                              child: Container(
-                                                                height: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .height *
-                                                                    0.083,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                ),
-                                                                child: Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
+                                                              Expanded(
+                                                                flex: 3,
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
                                                                           0.0,
+                                                                          0.0,
+                                                                          2.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    functions
-                                                                        .getTotal(
-                                                                            valueOrDefault<double>(
-                                                                              getJsonField(
-                                                                                list3Item,
-                                                                                r'''$.quantity''',
-                                                                              ),
-                                                                              0.0,
-                                                                            ),
-                                                                            valueOrDefault<double>(
-                                                                              getJsonField(
-                                                                                list3Item,
-                                                                                r'''$.price''',
-                                                                              ),
-                                                                              0.0,
-                                                                            ))
-                                                                        .toString(),
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                          color: getJsonField(
-                                                                                    list3Item,
-                                                                                    r'''$.isDeletedItem''',
-                                                                                  ) ==
-                                                                                  true
-                                                                              ? FlutterFlowTheme.of(context).primary
-                                                                              : FlutterFlowTheme.of(context).primaryText,
-                                                                          fontSize:
-                                                                              13.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                  child:
+                                                                      InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      await actions
+                                                                          .removeFromEB(
+                                                                        getJsonField(
+                                                                          list3Item,
+                                                                          r'''$''',
                                                                         ),
-                                                                  ),
+                                                                      );
+                                                                      _model.zzz =
+                                                                          await actions
+                                                                              .calSubTotalCopy(
+                                                                        FFAppState()
+                                                                            .selectedInvoiceJson,
+                                                                      );
+
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    },
+                                                                    child:
+                                                                        Container(
+                                                                      height: MediaQuery.sizeOf(context)
+                                                                              .height *
+                                                                          0.08,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
+                                                                      child:
+                                                                          Icon(
+                                                                        Icons
+                                                                            .delete,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                        size:
+                                                                            18.0,
+                                                                      ),
+                                                                    ),
+                                                                  ).animateOnActionTrigger(
+                                                                          animationsMap[
+                                                                              'containerOnActionTriggerAnimation4']!,
+                                                                          hasBeenTriggered:
+                                                                              hasContainerTriggered4),
                                                                 ),
                                                               ),
-                                                            ),
-                                                            Expanded(
-                                                              flex: 3,
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0,
-                                                                            0.0),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    await actions
-                                                                        .removeFromEB(
-                                                                      getJsonField(
-                                                                        list3Item,
-                                                                        r'''$''',
-                                                                      ),
-                                                                    );
-                                                                    _model.zzz =
-                                                                        await actions
-                                                                            .calSubTotalCopy(
-                                                                      FFAppState()
-                                                                          .selectedInvoiceJson,
-                                                                    );
-
-                                                                    safeSetState(
-                                                                        () {});
-                                                                  },
-                                                                  child:
-                                                                      Container(
-                                                                    height: MediaQuery.sizeOf(context)
-                                                                            .height *
-                                                                        0.08,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .delete,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                      size:
-                                                                          18.0,
-                                                                    ),
-                                                                  ),
-                                                                ).animateOnActionTrigger(
-                                                                    animationsMap[
-                                                                        'containerOnActionTriggerAnimation4']!,
-                                                                    hasBeenTriggered:
-                                                                        hasContainerTriggered4),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ],
+                                                            ],
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
-                                                  ),
-                                                );
-                                              },
-                                            );
-                                          },
+                                                  );
+                                                },
+                                              );
+                                            },
+                                          ),
                                         ),
-                                      ),
                                     ],
                                   ),
                                 ),

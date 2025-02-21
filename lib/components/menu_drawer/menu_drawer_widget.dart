@@ -312,8 +312,14 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
+                                          FFAppState().invoice =
+                                              functions.genInvoiceNum(1, 1);
+                                          FFAppState().filterDate =
+                                              functions.getDayId();
+                                          FFAppState().update(() {});
+
                                           context.pushNamed(
-                                            EditBillNewWidget.routeName,
+                                            EditBillWidget.routeName,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
@@ -325,12 +331,6 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                               ),
                                             },
                                           );
-
-                                          FFAppState().invoice =
-                                              functions.genInvoiceNum(1, 1);
-                                          FFAppState().filterDate =
-                                              functions.getDayId();
-                                          FFAppState().update(() {});
                                         },
                                         child: Container(
                                           width: double.infinity,

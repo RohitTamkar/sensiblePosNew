@@ -11140,6 +11140,34 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'm6ftz5hg': {
+      'en': 'Select...',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'q96qojla': {
+      'en': 'Search...',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'nxrieh5c': {
+      'en': 'CASH',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'ujud8lol': {
+      'en': 'DIGITAL',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'xcg00irv': {
       'en': 'Tax Amount',
       'hi': '',
@@ -11289,6 +11317,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'aq7lrizd': {
       'en': '₹ ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'l5doebib': {
+      'en': 'Delete Bill',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -18314,6 +18349,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zsxrmuif': {
       'en': 'UPI Payment',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'b4zgkn34': {
+      'en': 'OR',
       'hi': '',
       'kn': '',
       'mr': '',

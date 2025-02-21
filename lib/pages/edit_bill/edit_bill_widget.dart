@@ -1,19 +1,20 @@
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
-import '/components/calender/calender_widget.dart';
 import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:expandable/expandable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -67,8 +68,6 @@ class _EditBillWidgetState extends State<EditBillWidget>
       FFAppState().update(() {});
     });
 
-    _model.expandableExpandableController =
-        ExpandableController(initialExpanded: false);
     animationsMap.addAll({
       'containerOnActionTriggerAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
@@ -657,41 +656,72 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    await showModalBottomSheet(
-                                      isScrollControlled: true,
-                                      backgroundColor: Colors.transparent,
-                                      barrierColor: Color(0x00000000),
+                                    final _datePickedDate =
+                                        await showDatePicker(
                                       context: context,
-                                      builder: (context) {
-                                        return GestureDetector(
-                                          onTap: () {
-                                            FocusScope.of(context).unfocus();
-                                            FocusManager.instance.primaryFocus
-                                                ?.unfocus();
-                                          },
-                                          child: Padding(
-                                            padding: MediaQuery.viewInsetsOf(
-                                                context),
-                                            child: CalenderWidget(
-                                              reportType: 'editbill',
-                                            ),
-                                          ),
+                                      initialDate: getCurrentTimestamp,
+                                      firstDate: DateTime(1900),
+                                      lastDate: DateTime(2050),
+                                      builder: (context, child) {
+                                        return wrapInMaterialDatePickerTheme(
+                                          context,
+                                          child!,
+                                          headerBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          headerForegroundColor:
+                                              FlutterFlowTheme.of(context).info,
+                                          headerTextStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .headlineLarge
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineLargeFamily,
+                                                fontSize: 32.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineLargeFamily),
+                                              ),
+                                          pickerBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          pickerForegroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          selectedDateTimeBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          selectedDateTimeForegroundColor:
+                                              FlutterFlowTheme.of(context).info,
+                                          actionButtonForegroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          iconSize: 24.0,
                                         );
                                       },
-                                    ).then((value) => safeSetState(() {}));
+                                    );
 
-                                    if (animationsMap[
-                                            'containerOnActionTriggerAnimation1'] !=
-                                        null) {
-                                      safeSetState(
-                                          () => hasContainerTriggered1 = true);
-                                      SchedulerBinding.instance
-                                          .addPostFrameCallback((_) async =>
-                                              await animationsMap[
-                                                      'containerOnActionTriggerAnimation1']!
-                                                  .controller
-                                                  .forward(from: 0.0));
+                                    if (_datePickedDate != null) {
+                                      safeSetState(() {
+                                        _model.datePicked = DateTime(
+                                          _datePickedDate.year,
+                                          _datePickedDate.month,
+                                          _datePickedDate.day,
+                                        );
+                                      });
+                                    } else if (_model.datePicked != null) {
+                                      safeSetState(() {
+                                        _model.datePicked = getCurrentTimestamp;
+                                      });
                                     }
+                                    FFAppState().filterDate = functions
+                                        .selectedDayId(_model.datePicked!);
+                                    FFAppState().update(() {});
                                   },
                                   child: Container(
                                     width:
@@ -1483,198 +1513,80 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       ),
                                                     ),
                                                   ),
-                                                  Expanded(
-                                                    child: Container(
-                                                      width: double.infinity,
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                      child: ExpandableNotifier(
-                                                        controller: _model
-                                                            .expandableExpandableController,
-                                                        child: ExpandablePanel(
-                                                          header: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                FFAppState().dropDown ==
-                                                                        false
-                                                                    ? containerInvoiceRecord
-                                                                        ?.paymentMode
-                                                                    : FFAppState()
-                                                                        .PayMode,
-                                                                'cash',
-                                                              ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                          collapsed:
-                                                              Container(),
-                                                          expanded: StreamBuilder<
-                                                              List<
-                                                                  PaymentModeRecord>>(
-                                                            stream:
-                                                                queryPaymentModeRecord(),
-                                                            builder: (context,
-                                                                snapshot) {
-                                                              // Customize what your widget looks like when it's loading.
-                                                              if (!snapshot
-                                                                  .hasData) {
-                                                                return Center(
-                                                                  child:
-                                                                      SizedBox(
-                                                                    width: 40.0,
-                                                                    height:
-                                                                        40.0,
-                                                                    child:
-                                                                        SpinKitFadingCircle(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                      size:
-                                                                          40.0,
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              }
-                                                              List<PaymentModeRecord>
-                                                                  listViewPaymentModeRecordList =
-                                                                  snapshot
-                                                                      .data!;
-
-                                                              return ListView
-                                                                  .builder(
-                                                                padding:
-                                                                    EdgeInsets
-                                                                        .zero,
-                                                                scrollDirection:
-                                                                    Axis.vertical,
-                                                                itemCount:
-                                                                    listViewPaymentModeRecordList
-                                                                        .length,
-                                                                itemBuilder:
-                                                                    (context,
-                                                                        listViewIndex) {
-                                                                  final listViewPaymentModeRecord =
-                                                                      listViewPaymentModeRecordList[
-                                                                          listViewIndex];
-                                                                  return Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            3.0),
-                                                                    child:
-                                                                        InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        FFAppState().PayMode =
-                                                                            listViewPaymentModeRecord.name;
-                                                                        FFAppState().dropDown =
-                                                                            true;
-                                                                        FFAppState().curMode =
-                                                                            listViewPaymentModeRecord.name;
-                                                                        FFAppState().prevMode =
-                                                                            containerInvoiceRecord!.paymentMode;
-                                                                        safeSetState(
-                                                                            () {});
-                                                                      },
-                                                                      child:
-                                                                          Material(
-                                                                        color: Colors
-                                                                            .transparent,
-                                                                        elevation:
-                                                                            3.0,
-                                                                        child:
-                                                                            Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.15,
-                                                                          height:
-                                                                              MediaQuery.sizeOf(context).height * 0.04,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          ),
-                                                                          child:
-                                                                              Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
-                                                                                0.0,
-                                                                                5.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              children: [
-                                                                                Text(
-                                                                                  listViewPaymentModeRecord.name,
-                                                                                  style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                        letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                                      ),
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  );
-                                                                },
-                                                              );
-                                                            },
-                                                          ),
-                                                          theme:
-                                                              ExpandableThemeData(
-                                                            tapHeaderToExpand:
-                                                                true,
-                                                            tapBodyToExpand:
-                                                                false,
-                                                            tapBodyToCollapse:
-                                                                false,
-                                                            headerAlignment:
-                                                                ExpandablePanelHeaderAlignment
-                                                                    .center,
-                                                            hasIcon: true,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                  FlutterFlowDropDown<String>(
+                                                    controller: _model
+                                                            .dropDownValueController ??=
+                                                        FormFieldController<
+                                                            String>(
+                                                      _model.dropDownValue ??=
+                                                          containerInvoiceRecord
+                                                              ?.paymentMode,
                                                     ),
+                                                    options: [
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'nxrieh5c' /* CASH */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'ujud8lol' /* DIGITAL */,
+                                                      )
+                                                    ],
+                                                    onChanged: (val) =>
+                                                        safeSetState(() => _model
+                                                                .dropDownValue =
+                                                            val),
+                                                    width: 200.0,
+                                                    height: 40.0,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                        ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'm6ftz5hg' /* Select... */,
+                                                    ),
+                                                    icon: Icon(
+                                                      Icons
+                                                          .keyboard_arrow_down_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 24.0,
+                                                    ),
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
+                                                    elevation: 2.0,
+                                                    borderColor:
+                                                        Colors.transparent,
+                                                    borderWidth: 0.0,
+                                                    borderRadius: 8.0,
+                                                    margin:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(12.0, 0.0,
+                                                                12.0, 0.0),
+                                                    hidesUnderline: true,
+                                                    isOverButton: false,
+                                                    isSearchable: false,
+                                                    isMultiSelect: false,
                                                   ),
                                                 ],
                                               ),
@@ -2855,7 +2767,11 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                 Expanded(
                                   child: Stack(
                                     children: [
-                                      if (_model.resultItem == null)
+                                      if (getJsonField(
+                                            FFAppState().selectedInvoiceJson,
+                                            r'''$.productList''',
+                                          ) ==
+                                          null)
                                         Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -2868,7 +2784,11 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 .primaryBackground,
                                           ),
                                         ),
-                                      if (_model.resultItem != null)
+                                      if (getJsonField(
+                                            FFAppState().selectedInvoiceJson,
+                                            r'''$.productList''',
+                                          ) !=
+                                          null)
                                         Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -3316,6 +3236,44 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                     ],
                                   ),
                                 ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 10.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () {
+                                      print('Button pressed ...');
+                                    },
+                                    text: FFLocalizations.of(context).getText(
+                                      'l5doebib' /* Delete Bill */,
+                                    ),
+                                    options: FFButtonOptions(
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).warning,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily),
+                                          ),
+                                      elevation: 0.0,
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                  ),
+                                ),
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -3371,7 +3329,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                               await actions.shiftExists(
                                             functions.getDayId(),
                                             '1',
-                                            FFAppState().outletId,
+                                            FFAppState().outletIdRef!.id,
                                           );
                                           _model.returnList1 = await actions
                                               .updateShiftSummaryForEB(
@@ -3383,7 +3341,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
 
                                           await functions
                                               .shiftRef(_model.shiftList!,
-                                                  FFAppState().outletId)
+                                                  FFAppState().outletIdRef!.id)
                                               .update(createShiftRecordData(
                                                 totalSale: getJsonField(
                                                   _model.returnList1,
