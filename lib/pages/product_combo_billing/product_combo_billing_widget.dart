@@ -1617,7 +1617,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           FlutterFlowTheme.of(context)
                                                                               .titleMediumFamily,
                                                                       fontSize:
-                                                                          12.0,
+                                                                          15.0,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
@@ -1684,7 +1684,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             fontFamily:
                                                                                 FlutterFlowTheme.of(context).labelLargeFamily,
                                                                             fontSize:
-                                                                                10.0,
+                                                                                12.0,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
