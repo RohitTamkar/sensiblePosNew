@@ -53,18 +53,6 @@ class EditBillNewModel extends FlutterFlowModel<EditBillNewWidget> {
   dynamic? shiftListCopy;
   // Stores action output result for [Custom Action - updateShiftSummaryForEB] action in Save widget.
   dynamic? returnList1Copy;
-  // Stores action output result for [Custom Action - newCustomAction2] action in Save widget.
-  List<SelItemListStruct>? returnListCopy2;
-  // Stores action output result for [Custom Action - hiveInvoiceCrud] action in Save widget.
-  InvoiceStructStruct? updated;
-  // Stores action output result for [Custom Action - shiftIdtoInt] action in Save widget.
-  int? shiftidtoInt;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Save widget.
-  ShiftDetailsStruct? getOfflineShiftdetails33;
-  // Stores action output result for [Custom Action - updateShiftSummaryForEB] action in Save widget.
-  dynamic? shiftsummaryresult;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Save widget.
-  ShiftDetailsStruct? newupdated;
 
   @override
   void initState(BuildContext context) {
