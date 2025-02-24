@@ -19,6 +19,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 import 'dart:async';
@@ -682,11 +684,10 @@ Future printBillnewhivegroceryBill(
                 bold: false,
                 align: PosAlign.center));
       }
-
       bytes += generator.text(
           "Grand Total:" + invoiceDetails.finalBillAmt.toString(),
           styles: PosStyles(
-              height: PosTextSize.size2,
+              height: PosTextSize.size1,
               width: PosTextSize.size2,
               align: PosAlign.right));
 

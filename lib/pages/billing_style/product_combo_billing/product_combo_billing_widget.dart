@@ -3764,6 +3764,10 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                 FFAppState()
                                                                     .productColor = '';
                                                                 FFAppState()
+                                                                    .PayMode = '';
+                                                                FFAppState()
+                                                                    .billPrintFooter = '';
+                                                                FFAppState()
                                                                     .update(
                                                                         () {});
                                                                 FFAppState()

@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 Future<double> calBillAmt(
   double disAmt,
   double delChargs,
@@ -31,7 +33,7 @@ Future<double> calBillAmt(
   print("==================================================================");
   print(FFAppState().finalAmt);
   // FFAppState().subTotal = billAmt;
-
+  FFAppState().update(() {});
   print(billAmt);
   return billAmt.roundToDouble();
 }
