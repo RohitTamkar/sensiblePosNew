@@ -25949,6 +25949,30 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
+  // textFieldCombo
+  {
+    'j1brs25y': {
+      'en': 'Hello World',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'w6zqa6q2': {
+      'en': 'Qty',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'pshrganl': {
+      'en': 'Enter Manually',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
   // Miscellaneous
   {
     'c0tsq8sj': {

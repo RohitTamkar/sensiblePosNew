@@ -1,13 +1,14 @@
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/menu_drawer/menu_drawer_widget.dart';
-import '/components/xyzproduct_cart_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/grocery_windows/add_customer_grocery/add_customer_grocery_widget.dart';
+import '/pages/billing_style/text_field_combo/text_field_combo_widget.dart';
+import '/pages/billing_style/xyzproduct_cart/xyzproduct_cart_widget.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
@@ -1736,264 +1737,244 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                         width: 130.0,
                                                         decoration:
                                                             BoxDecoration(),
-                                                        child: Builder(
-                                                          builder: (context) {
-                                                            final recipeVar = functions
-                                                                .returnrecipeprd(
-                                                                    containerRecipeRecordList
-                                                                        .toList(),
-                                                                    productList2Item,
-                                                                    FFAppState()
-                                                                        .productHive
-                                                                        .toList())
-                                                                .sortedList(
-                                                                    keyOf: (e) =>
-                                                                        e.code,
-                                                                    desc: false)
-                                                                .toList();
-
-                                                            return ListView
-                                                                .separated(
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .zero,
-                                                              shrinkWrap: true,
-                                                              scrollDirection:
-                                                                  Axis.vertical,
-                                                              itemCount:
-                                                                  recipeVar
-                                                                      .length,
-                                                              separatorBuilder: (_,
-                                                                      __) =>
-                                                                  SizedBox(
-                                                                      height:
-                                                                          5.0),
-                                                              itemBuilder: (context,
-                                                                  recipeVarIndex) {
-                                                                final recipeVarItem =
-                                                                    recipeVar[
-                                                                        recipeVarIndex];
-                                                                return Visibility(
-                                                                  visible: !productComboBillingAppSettingsRecord!
-                                                                      .settingList
-                                                                      .where((e) =>
-                                                                          e.title ==
-                                                                          'showProductImage')
-                                                                      .toList()
-                                                                      .firstOrNull!
-                                                                      .value,
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      if (FFAppState()
-                                                                              .holdBillCount ==
-                                                                          0) {
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Builder(
+                                                              builder:
+                                                                  (context) {
+                                                                final recipeVar = functions
+                                                                    .returnrecipeprd(
+                                                                        containerRecipeRecordList
+                                                                            .toList(),
+                                                                        productList2Item,
                                                                         FFAppState()
-                                                                            .holdBillCount = FFAppState()
-                                                                                .holdBillCount +
-                                                                            1;
-                                                                        FFAppState().addToAllBillsList(functions.generateBillDetailsJson(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            'CASH',
-                                                                            0.0,
-                                                                            0.0,
-                                                                            FFAppState().billAmt,
-                                                                            0.0,
-                                                                            FFAppState().finalAmt,
-                                                                            '0',
-                                                                            FFAppState().itemCartList.toList(),
-                                                                            FFAppState().holdBillCount));
-                                                                        FFAppState()
-                                                                            .selBill = 1;
-                                                                        FFAppState().productColor =
-                                                                            recipeVarItem.id;
-                                                                        safeSetState(
-                                                                            () {});
-                                                                      } else {
-                                                                        FFAppState().productColor =
-                                                                            recipeVarItem.id;
-                                                                        safeSetState(
-                                                                            () {});
-                                                                      }
+                                                                            .productHive
+                                                                            .toList())
+                                                                    .sortedList(
+                                                                        keyOf: (e) => e
+                                                                            .code,
+                                                                        desc:
+                                                                            false)
+                                                                    .toList();
 
-                                                                      if (recipeVarItem.recipeRefId !=
-                                                                              null &&
-                                                                          recipeVarItem.recipeRefId !=
-                                                                              '') {
-                                                                        _model.receipeproductlist =
-                                                                            await queryRecipeRecordOnce(
-                                                                          parent:
-                                                                              FFAppState().outletIdRef,
-                                                                          queryBuilder: (recipeRecord) =>
-                                                                              recipeRecord.where(
-                                                                            'id',
-                                                                            isEqualTo:
-                                                                                recipeVarItem.recipeRefId,
-                                                                          ),
-                                                                          singleRecord:
-                                                                              true,
-                                                                        ).then((s) =>
-                                                                                s.firstOrNull);
-                                                                        FFAppState()
-                                                                            .startLoop = 0;
-                                                                        safeSetState(
-                                                                            () {});
-                                                                        while (FFAppState().startLoop <
-                                                                            _model.receipeproductlist!.items.length) {
-                                                                          _model
-                                                                              .updatePrditemrecipeStruct(
-                                                                            (e) => e
-                                                                              ..id = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.id
-                                                                              ..price = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.price
-                                                                              ..category = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.catId
-                                                                              ..name = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.name
-                                                                              ..sellingPrice = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.price
-                                                                              ..taxId = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.taxId
-                                                                              ..stockable = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.stockable,
-                                                                          );
-                                                                          safeSetState(
-                                                                              () {});
-                                                                          _model.resreplist =
-                                                                              await actions.comboAddToHoldListprd(
-                                                                            _model.prditemrecipe!,
-                                                                            FFAppState().selBill,
-                                                                            widget!.taxcollection!.toList(),
-                                                                            functions.enabletaxinclusive(productComboBillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                            valueOrDefault<double>(
-                                                                              (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.quantity,
-                                                                              0.0,
-                                                                            ),
-                                                                          );
-                                                                          _model.calculateResultresc =
-                                                                              await actions.laundrycalSubTotalForHoldList(
-                                                                            FFAppState().selBill.toString(),
-                                                                            _model.resreplist!.toList(),
-                                                                          );
-                                                                          _model.calbillAmt334 =
-                                                                              await actions.calBillAmt(
-                                                                            FFAppState().disAmt,
-                                                                            FFAppState().delCharges,
-                                                                          );
-                                                                          FFAppState().startLoop =
-                                                                              FFAppState().startLoop + 1;
-                                                                          safeSetState(
-                                                                              () {});
-                                                                        }
-                                                                      } else {
-                                                                        _model.addtosavebill22 =
-                                                                            await actions.laundryAddToHoldListprd(
-                                                                          recipeVarItem,
-                                                                          FFAppState()
-                                                                              .selBill,
-                                                                          widget!
-                                                                              .taxcollection!
-                                                                              .toList(),
-                                                                          functions.enabletaxinclusive(productComboBillingAppSettingsRecord!
-                                                                              .settingList
-                                                                              .where((e) => e.title == 'enableInclusiveTax')
-                                                                              .toList()
-                                                                              .firstOrNull!
-                                                                              .value),
-                                                                        );
-                                                                        _model.calculateResult233 =
-                                                                            await actions.laundrycalSubTotalForHoldList(
-                                                                          FFAppState()
-                                                                              .selBill
-                                                                              .toString(),
-                                                                          _model
-                                                                              .addtosavebill22!
-                                                                              .toList(),
-                                                                        );
-                                                                        _model.calbillAmt3 =
-                                                                            await actions.calBillAmt(
-                                                                          FFAppState()
-                                                                              .disAmt,
-                                                                          FFAppState()
-                                                                              .delCharges,
-                                                                        );
-                                                                      }
-
-                                                                      await _model
-                                                                          .listViewprd
-                                                                          ?.animateTo(
-                                                                        _model
-                                                                            .listViewprd!
-                                                                            .position
-                                                                            .maxScrollExtent,
-                                                                        duration:
-                                                                            Duration(milliseconds: 100),
-                                                                        curve: Curves
-                                                                            .ease,
-                                                                      );
-
-                                                                      safeSetState(
-                                                                          () {});
-                                                                    },
-                                                                    child:
-                                                                        Container(
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: recipeVarItem.id ==
-                                                                                FFAppState().productColor
-                                                                            ? FlutterFlowTheme.of(context).parkingPrimary
-                                                                            : FlutterFlowTheme.of(context).secondaryBackground,
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(5.0),
-                                                                      ),
+                                                                return ListView
+                                                                    .separated(
+                                                                  padding:
+                                                                      EdgeInsets
+                                                                          .zero,
+                                                                  shrinkWrap:
+                                                                      true,
+                                                                  scrollDirection:
+                                                                      Axis.vertical,
+                                                                  itemCount:
+                                                                      recipeVar
+                                                                          .length,
+                                                                  separatorBuilder: (_,
+                                                                          __) =>
+                                                                      SizedBox(
+                                                                          height:
+                                                                              5.0),
+                                                                  itemBuilder:
+                                                                      (context,
+                                                                          recipeVarIndex) {
+                                                                    final recipeVarItem =
+                                                                        recipeVar[
+                                                                            recipeVarIndex];
+                                                                    return Visibility(
+                                                                      visible: !productComboBillingAppSettingsRecord!
+                                                                          .settingList
+                                                                          .where((e) =>
+                                                                              e.title ==
+                                                                              'showProductImage')
+                                                                          .toList()
+                                                                          .firstOrNull!
+                                                                          .value,
                                                                       child:
-                                                                          Padding(
-                                                                        padding:
-                                                                            EdgeInsets.all(10.0),
-                                                                        child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              recipeVarItem.name.maybeHandleOverflow(
-                                                                                maxChars: 25,
+                                                                          InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          if (FFAppState().holdBillCount ==
+                                                                              0) {
+                                                                            FFAppState().holdBillCount =
+                                                                                FFAppState().holdBillCount + 1;
+                                                                            FFAppState().addToAllBillsList(functions.generateBillDetailsJson(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                'CASH',
+                                                                                0.0,
+                                                                                0.0,
+                                                                                FFAppState().billAmt,
+                                                                                0.0,
+                                                                                FFAppState().finalAmt,
+                                                                                '0',
+                                                                                FFAppState().itemCartList.toList(),
+                                                                                FFAppState().holdBillCount));
+                                                                            FFAppState().selBill =
+                                                                                1;
+                                                                            FFAppState().productColor =
+                                                                                recipeVarItem.id;
+                                                                            safeSetState(() {});
+                                                                          } else {
+                                                                            FFAppState().productColor =
+                                                                                recipeVarItem.id;
+                                                                            safeSetState(() {});
+                                                                          }
+
+                                                                          if (recipeVarItem.recipeRefId != null &&
+                                                                              recipeVarItem.recipeRefId != '') {
+                                                                            _model.receipeproductlist =
+                                                                                await queryRecipeRecordOnce(
+                                                                              parent: FFAppState().outletIdRef,
+                                                                              queryBuilder: (recipeRecord) => recipeRecord.where(
+                                                                                'id',
+                                                                                isEqualTo: recipeVarItem.recipeRefId,
                                                                               ),
-                                                                              textAlign: TextAlign.center,
-                                                                              style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
-                                                                                    fontSize: 12.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.w600,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
+                                                                              singleRecord: true,
+                                                                            ).then((s) => s.firstOrNull);
+                                                                            FFAppState().startLoop =
+                                                                                0;
+                                                                            safeSetState(() {});
+                                                                            while (FFAppState().startLoop <
+                                                                                _model.receipeproductlist!.items.length) {
+                                                                              _model.updatePrditemrecipeStruct(
+                                                                                (e) => e
+                                                                                  ..id = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.id
+                                                                                  ..price = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.price
+                                                                                  ..category = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.catId
+                                                                                  ..name = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.name
+                                                                                  ..sellingPrice = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.price
+                                                                                  ..taxId = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.taxId
+                                                                                  ..stockable = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.stockable,
+                                                                              );
+                                                                              safeSetState(() {});
+                                                                              _model.resreplist = await actions.comboAddToHoldListprd(
+                                                                                _model.prditemrecipe!,
+                                                                                FFAppState().selBill,
+                                                                                widget!.taxcollection!.toList(),
+                                                                                functions.enabletaxinclusive(productComboBillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                valueOrDefault<double>(
+                                                                                  (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.quantity,
+                                                                                  0.0,
+                                                                                ),
+                                                                              );
+                                                                              _model.calculateResultresc = await actions.laundrycalSubTotalForHoldList(
+                                                                                FFAppState().selBill.toString(),
+                                                                                _model.resreplist!.toList(),
+                                                                              );
+                                                                              _model.calbillAmt334 = await actions.calBillAmt(
+                                                                                FFAppState().disAmt,
+                                                                                FFAppState().delCharges,
+                                                                              );
+                                                                              FFAppState().startLoop = FFAppState().startLoop + 1;
+                                                                              safeSetState(() {});
+                                                                            }
+                                                                          } else {
+                                                                            _model.addtosavebill22 =
+                                                                                await actions.laundryAddToHoldListprd(
+                                                                              recipeVarItem,
+                                                                              FFAppState().selBill,
+                                                                              widget!.taxcollection!.toList(),
+                                                                              functions.enabletaxinclusive(productComboBillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                            );
+                                                                            _model.calculateResult233 =
+                                                                                await actions.laundrycalSubTotalForHoldList(
+                                                                              FFAppState().selBill.toString(),
+                                                                              _model.addtosavebill22!.toList(),
+                                                                            );
+                                                                            _model.calbillAmt3 =
+                                                                                await actions.calBillAmt(
+                                                                              FFAppState().disAmt,
+                                                                              FFAppState().delCharges,
+                                                                            );
+                                                                          }
+
+                                                                          await _model
+                                                                              .listViewprd
+                                                                              ?.animateTo(
+                                                                            _model.listViewprd!.position.maxScrollExtent,
+                                                                            duration:
+                                                                                Duration(milliseconds: 100),
+                                                                            curve:
+                                                                                Curves.ease,
+                                                                          );
+
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        },
+                                                                        child:
+                                                                            Container(
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color: recipeVarItem.id == FFAppState().productColor
+                                                                                ? FlutterFlowTheme.of(context).parkingPrimary
+                                                                                : FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(5.0),
+                                                                          ),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                EdgeInsets.all(10.0),
+                                                                            child:
+                                                                                Column(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                              children: [
+                                                                                Text(
+                                                                                  recipeVarItem.name.maybeHandleOverflow(
+                                                                                    maxChars: 25,
                                                                                   ),
+                                                                                  textAlign: TextAlign.center,
+                                                                                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                        fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                                        fontSize: 12.0,
+                                                                                        letterSpacing: 0.0,
+                                                                                        fontWeight: FontWeight.w600,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
+                                                                                      ),
+                                                                                ),
+                                                                              ],
                                                                             ),
-                                                                          ],
+                                                                          ),
                                                                         ),
-                                                                      ),
-                                                                    ),
-                                                                  ).animateOnActionTrigger(
-                                                                          animationsMap[
-                                                                              'containerOnActionTriggerAnimation2']!,
-                                                                          hasBeenTriggered:
-                                                                              hasContainerTriggered2),
+                                                                      ).animateOnActionTrigger(
+                                                                              animationsMap['containerOnActionTriggerAnimation2']!,
+                                                                              hasBeenTriggered: hasContainerTriggered2),
+                                                                    );
+                                                                  },
+                                                                  controller: _model
+                                                                      .listViewController2,
                                                                 );
                                                               },
-                                                              controller: _model
-                                                                  .listViewController2,
-                                                            );
-                                                          },
+                                                            ),
+                                                            TextFieldComboWidget(
+                                                              key: Key(
+                                                                  'Keyc5o_${productList2Index}_of_${productList2.length}'),
+                                                              parameter1:
+                                                                  productList2Item,
+                                                              parameter2: widget!
+                                                                  .taxcollection!,
+                                                              parameter3: productComboBillingAppSettingsRecord
+                                                                  ?.settingList
+                                                                  ?.where((e) =>
+                                                                      e.title ==
+                                                                      'enableInclusiveTax')
+                                                                  .toList()
+                                                                  ?.firstOrNull
+                                                                  ?.value,
+                                                            ),
+                                                          ],
                                                         ),
                                                       );
                                                     },
