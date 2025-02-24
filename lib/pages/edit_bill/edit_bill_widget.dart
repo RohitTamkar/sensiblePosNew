@@ -450,10 +450,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 if (listViewInvoiceRecord
                                                         .source ==
                                                     'CUSTOMER') {
-                                                  _model.customerbill = true;
+                                                  _model.customerbill = false;
                                                   safeSetState(() {});
                                                 } else {
-                                                  _model.customerbill = false;
+                                                  _model.customerbill = true;
                                                   safeSetState(() {});
                                                 }
 
