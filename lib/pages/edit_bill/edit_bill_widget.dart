@@ -19,6 +19,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:provider/provider.dart';
@@ -367,6 +368,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             .filterDate
                                                         : null,
                                                   )
+                                                  .where(
+                                                    'isDeleted',
+                                                    isEqualTo: true,
+                                                  )
                                                   .orderBy('invoiceDate',
                                                       descending: true),
                                               parent: FFAppState().outletIdRef),
@@ -442,6 +447,15 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 FFAppState().editBillListColor =
                                                     listViewInvoiceRecord.id;
                                                 FFAppState().update(() {});
+                                                if (listViewInvoiceRecord
+                                                        .source ==
+                                                    'CUSTOMER') {
+                                                  _model.customerbill = true;
+                                                  safeSetState(() {});
+                                                } else {
+                                                  _model.customerbill = false;
+                                                  safeSetState(() {});
+                                                }
 
                                                 safeSetState(() {});
                                               },
@@ -638,6 +652,27 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             ],
                                                           ),
                                                         ),
+                                                        if (valueOrDefault<
+                                                            bool>(
+                                                          listViewInvoiceRecord
+                                                                  .source ==
+                                                              'CUSTOMER',
+                                                          false,
+                                                        ))
+                                                          Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              FaIcon(
+                                                                FontAwesomeIcons
+                                                                    .userLock,
+                                                                color: Color(
+                                                                    0xFF19A621),
+                                                                size: 24.0,
+                                                              ),
+                                                            ],
+                                                          ),
                                                       ],
                                                     ),
                                                   ),
@@ -3240,8 +3275,126 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      if (_model.customerbill) {
+                                        var confirmDialogResponse =
+                                            await showDialog<bool>(
+                                                  context: context,
+                                                  builder:
+                                                      (alertDialogContext) {
+                                                    return AlertDialog(
+                                                      content: Text(
+                                                          'Are you sure  to delete bill'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  false),
+                                                          child: Text('Cancel'),
+                                                        ),
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  true),
+                                                          child:
+                                                              Text('Confirm'),
+                                                        ),
+                                                      ],
+                                                    );
+                                                  },
+                                                ) ??
+                                                false;
+                                        if (confirmDialogResponse) {
+                                          _model.returnListCopy =
+                                              await actions.newCustomAction2(
+                                            getJsonField(
+                                              FFAppState().selectedInvoiceJson,
+                                              r'''$.productList''',
+                                              true,
+                                            )!,
+                                          );
+
+                                          await FFAppState()
+                                              .invoiceRef!
+                                              .update(createInvoiceRecordData(
+                                                isDeleted: true,
+                                              ));
+                                          _model.shiftListCopy =
+                                              await actions.shiftExists(
+                                            functions.getDayId(),
+                                            '1',
+                                            FFAppState().outletIdRef!.id,
+                                          );
+                                          _model.returnList1Copy = await actions
+                                              .updateShiftSummaryFordeletebill(
+                                            FFAppState().selectedInvoiceJson,
+                                            FFAppState().curMode,
+                                            FFAppState().prevMode,
+                                            _model.shiftListCopy!,
+                                          );
+
+                                          await functions
+                                              .shiftRef(_model.shiftListCopy!,
+                                                  FFAppState().outletIdRef!.id)
+                                              .update(createShiftRecordData(
+                                                totalSale: getJsonField(
+                                                  _model.returnList1Copy,
+                                                  r'''$.totalSale''',
+                                                ),
+                                                subTotalBill: getJsonField(
+                                                  _model.returnList1Copy,
+                                                  r'''$.subTotalSale''',
+                                                ),
+                                                paymentJson: getJsonField(
+                                                  _model.returnList1Copy,
+                                                  r'''$.paymentJson''',
+                                                ).toString(),
+                                                cashSale: getJsonField(
+                                                  _model.returnList1Copy,
+                                                  r'''$.cashSale''',
+                                                ),
+                                              ));
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                title: Text(
+                                                    'Invoice Updated  Successfully'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                        }
+                                      } else {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              title: Text(
+                                                  'This Is the Customer Bill You Cannot Delete Or Edit'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      }
+
+                                      safeSetState(() {});
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'l5doebib' /* Delete Bill */,
@@ -3284,98 +3437,157 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          _model.returnList =
-                                              await actions.newCustomAction2(
-                                            getJsonField(
-                                              FFAppState().selectedInvoiceJson,
-                                              r'''$.productList''',
-                                              true,
-                                            )!,
-                                          );
+                                          if (_model.customerbill) {
+                                            var confirmDialogResponse =
+                                                await showDialog<bool>(
+                                                      context: context,
+                                                      builder:
+                                                          (alertDialogContext) {
+                                                        return AlertDialog(
+                                                          content: Text(
+                                                              'Are you sure  to edit bill'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext,
+                                                                      false),
+                                                              child: Text(
+                                                                  'Cancel'),
+                                                            ),
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext,
+                                                                      true),
+                                                              child: Text(
+                                                                  'Confirm'),
+                                                            ),
+                                                          ],
+                                                        );
+                                                      },
+                                                    ) ??
+                                                    false;
+                                            if (confirmDialogResponse) {
+                                              _model.returnList = await actions
+                                                  .newCustomAction2(
+                                                getJsonField(
+                                                  FFAppState()
+                                                      .selectedInvoiceJson,
+                                                  r'''$.productList''',
+                                                  true,
+                                                )!,
+                                              );
 
-                                          await FFAppState()
-                                              .invoiceRef!
-                                              .update({
-                                            ...createInvoiceRecordData(
-                                              paymentMode:
-                                                  FFAppState().dropDown == false
+                                              await FFAppState()
+                                                  .invoiceRef!
+                                                  .update({
+                                                ...createInvoiceRecordData(
+                                                  paymentMode: FFAppState()
+                                                              .dropDown ==
+                                                          false
                                                       ? getJsonField(
                                                           FFAppState()
                                                               .selectedInvoiceJson,
                                                           r'''$.paymentMode''',
                                                         ).toString()
                                                       : FFAppState().PayMode,
-                                              billAmt: getJsonField(
-                                                FFAppState()
-                                                    .selectedInvoiceJson,
-                                                r'''$.billAmt''',
-                                              ),
-                                              finalBillAmt: getJsonField(
-                                                FFAppState()
-                                                    .selectedInvoiceJson,
-                                                r'''$.finalBillAmt''',
-                                              ),
-                                            ),
-                                            ...mapToFirestore(
-                                              {
-                                                'productList':
-                                                    getSelItemListListFirestoreData(
-                                                  _model.returnList,
-                                                ),
-                                              },
-                                            ),
-                                          });
-                                          _model.shiftList =
-                                              await actions.shiftExists(
-                                            functions.getDayId(),
-                                            '1',
-                                            FFAppState().outletIdRef!.id,
-                                          );
-                                          _model.returnList1 = await actions
-                                              .updateShiftSummaryForEB(
-                                            FFAppState().selectedInvoiceJson,
-                                            FFAppState().curMode,
-                                            FFAppState().prevMode,
-                                            _model.shiftList!,
-                                          );
-
-                                          await functions
-                                              .shiftRef(_model.shiftList!,
-                                                  FFAppState().outletIdRef!.id)
-                                              .update(createShiftRecordData(
-                                                totalSale: getJsonField(
-                                                  _model.returnList1,
-                                                  r'''$.totalSale''',
-                                                ),
-                                                subTotalBill: getJsonField(
-                                                  _model.returnList1,
-                                                  r'''$.subTotalSale''',
-                                                ),
-                                                paymentJson: getJsonField(
-                                                  _model.returnList1,
-                                                  r'''$.paymentJson''',
-                                                ).toString(),
-                                                cashSale: getJsonField(
-                                                  _model.returnList1,
-                                                  r'''$.cashSale''',
-                                                ),
-                                              ));
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text('updated'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
+                                                  billAmt: getJsonField(
+                                                    FFAppState()
+                                                        .selectedInvoiceJson,
+                                                    r'''$.billAmt''',
                                                   ),
-                                                ],
+                                                  finalBillAmt: getJsonField(
+                                                    FFAppState()
+                                                        .selectedInvoiceJson,
+                                                    r'''$.finalBillAmt''',
+                                                  ),
+                                                ),
+                                                ...mapToFirestore(
+                                                  {
+                                                    'productList':
+                                                        getSelItemListListFirestoreData(
+                                                      _model.returnList,
+                                                    ),
+                                                  },
+                                                ),
+                                              });
+                                              _model.shiftList =
+                                                  await actions.shiftExists(
+                                                functions.getDayId(),
+                                                '1',
+                                                FFAppState().outletIdRef!.id,
                                               );
-                                            },
-                                          );
+                                              _model.returnList1 = await actions
+                                                  .updateShiftSummaryForEB(
+                                                FFAppState()
+                                                    .selectedInvoiceJson,
+                                                FFAppState().curMode,
+                                                FFAppState().prevMode,
+                                                _model.shiftList!,
+                                              );
+
+                                              await functions
+                                                  .shiftRef(
+                                                      _model.shiftList!,
+                                                      FFAppState()
+                                                          .outletIdRef!
+                                                          .id)
+                                                  .update(createShiftRecordData(
+                                                    totalSale: getJsonField(
+                                                      _model.returnList1,
+                                                      r'''$.totalSale''',
+                                                    ),
+                                                    subTotalBill: getJsonField(
+                                                      _model.returnList1,
+                                                      r'''$.subTotalSale''',
+                                                    ),
+                                                    paymentJson: getJsonField(
+                                                      _model.returnList1,
+                                                      r'''$.paymentJson''',
+                                                    ).toString(),
+                                                    cashSale: getJsonField(
+                                                      _model.returnList1,
+                                                      r'''$.cashSale''',
+                                                    ),
+                                                  ));
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    title: Text(
+                                                        'Invoice Updated  Successfully'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              );
+                                            }
+                                          } else {
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: Text(
+                                                      'This Is the Customer Bill You Cannot Delete Or Edit'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            );
+                                          }
 
                                           safeSetState(() {});
                                         },

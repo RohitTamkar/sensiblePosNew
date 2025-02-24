@@ -20,11 +20,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:provider/provider.dart';
 
 class EditBillModel extends FlutterFlowModel<EditBillWidget> {
+  ///  Local state fields for this page.
+
+  bool customerbill = false;
+
   ///  State fields for stateful widgets in this page.
 
   // Model for Header component.
@@ -49,6 +54,12 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
   List<dynamic>? res1;
   // Stores action output result for [Custom Action - calSubTotalCopy] action in Delete widget.
   double? zzz;
+  // Stores action output result for [Custom Action - newCustomAction2] action in Button widget.
+  List<SelItemListStruct>? returnListCopy;
+  // Stores action output result for [Custom Action - shiftExists] action in Button widget.
+  dynamic? shiftListCopy;
+  // Stores action output result for [Custom Action - updateShiftSummaryFordeletebill] action in Button widget.
+  dynamic? returnList1Copy;
   // Stores action output result for [Custom Action - newCustomAction2] action in Save widget.
   List<SelItemListStruct>? returnList;
   // Stores action output result for [Custom Action - shiftExists] action in Save widget.

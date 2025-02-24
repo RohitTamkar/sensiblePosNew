@@ -1,5 +1,7 @@
 export 'check_platform.dart' show checkPlatform;
 export 'cal_bill_amt2.dart' show calBillAmt2;
+export 'update_shift_summary_fordeletebill.dart'
+    show updateShiftSummaryFordeletebill;
 export 'combo_add_to_hold_listprd.dart' show comboAddToHoldListprd;
 export 'calculate_mixpaymentamt.dart' show calculateMixpaymentamt;
 export 'print_billnewhive.dart' show printBillnewhive;
