@@ -378,6 +378,37 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                             'taxcollection': _model.tax,
                                           },
                                         );
+                                      } else if (_model.aappsetting!.settingList
+                                          .where(
+                                              (e) => e.title == 'enableCombo')
+                                          .toList()
+                                          .firstOrNull!
+                                          .value) {
+                                        context.pushNamed(
+                                          ProductComboBillingWidget.routeName,
+                                          queryParameters: {
+                                            'taxcollection': serializeParam(
+                                              _model.tax,
+                                              ParamType.Document,
+                                              isList: true,
+                                            ),
+                                            'billDetails': serializeParam(
+                                              _model.bilinvref,
+                                              ParamType.DocumentReference,
+                                            ),
+                                            'doc': serializeParam(
+                                              _model.userdoc,
+                                              ParamType.DocumentReference,
+                                            ),
+                                            'shiftDetails': serializeParam(
+                                              _model.shiftdetail,
+                                              ParamType.JSON,
+                                            ),
+                                          }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            'taxcollection': _model.tax,
+                                          },
+                                        );
                                       } else {
                                         context.pushNamed(
                                           ProductAndListNewWidget.routeName,
