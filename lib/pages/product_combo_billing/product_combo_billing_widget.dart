@@ -1584,9 +1584,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   8.0,
-                                                                  10.0,
+                                                                  5.0,
                                                                   8.0,
-                                                                  10.0),
+                                                                  5.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
