@@ -108,10 +108,61 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
                 FFAppState().disAmt,
                 FFAppState().delCharges,
               );
+              safeSetState(() {
+                _model.textController?.clear();
+              });
+
+              _model.updatePage(() {});
 
               safeSetState(() {});
             },
           ),
+          onFieldSubmitted: (_) async {
+            if (FFAppState().holdBillCount == 0) {
+              FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+              FFAppState().addToAllBillsList(functions.generateBillDetailsJson(
+                  0.0,
+                  0.0,
+                  0.0,
+                  'CASH',
+                  0.0,
+                  0.0,
+                  FFAppState().billAmt,
+                  0.0,
+                  FFAppState().finalAmt,
+                  '0',
+                  FFAppState().itemCartList.toList(),
+                  FFAppState().holdBillCount));
+              FFAppState().selBill = 1;
+              safeSetState(() {});
+            }
+            _model.resreplist23textCopy = await actions.comboAddToHoldListprd(
+              widget!.parameter1!,
+              FFAppState().selBill,
+              widget!.parameter2!.toList(),
+              functions.enabletaxinclusive(widget!.parameter3!),
+              valueOrDefault<double>(
+                double.tryParse(_model.textController.text),
+                0.0,
+              ),
+            );
+            _model.calculateResultresctextCopy =
+                await actions.laundrycalSubTotalForHoldList(
+              FFAppState().selBill.toString(),
+              _model.resreplist23textCopy!.toList(),
+            );
+            _model.calbillAmt334textcopy = await actions.calBillAmt(
+              FFAppState().disAmt,
+              FFAppState().delCharges,
+            );
+            safeSetState(() {
+              _model.textController?.clear();
+            });
+
+            _model.updatePage(() {});
+
+            safeSetState(() {});
+          },
           autofocus: false,
           obscureText: false,
           decoration: InputDecoration(
