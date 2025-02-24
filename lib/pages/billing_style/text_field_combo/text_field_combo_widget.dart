@@ -108,11 +108,11 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
                 FFAppState().disAmt,
                 FFAppState().delCharges,
               );
+
+              FFAppState().update(() {});
               safeSetState(() {
                 _model.textController?.clear();
               });
-
-              _model.updatePage(() {});
 
               safeSetState(() {});
             },
@@ -155,11 +155,11 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
               FFAppState().disAmt,
               FFAppState().delCharges,
             );
+
+            FFAppState().update(() {});
             safeSetState(() {
               _model.textController?.clear();
             });
-
-            _model.updatePage(() {});
 
             safeSetState(() {});
           },
