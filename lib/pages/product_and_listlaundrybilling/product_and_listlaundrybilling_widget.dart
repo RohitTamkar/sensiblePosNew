@@ -3812,6 +3812,8 @@ class _ProductAndListlaundrybillingWidgetState
                                                                     shiftId: '',
                                                                     weight: FFAppState()
                                                                         .weight,
+                                                                    isDeleted:
+                                                                        false,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -3889,6 +3891,8 @@ class _ProductAndListlaundrybillingWidgetState
                                                                     shiftId: '',
                                                                     weight: FFAppState()
                                                                         .weight,
+                                                                    isDeleted:
+                                                                        false,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -5216,6 +5220,8 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           '',
                                                                       weight: FFAppState()
                                                                           .weight,
+                                                                      isDeleted:
+                                                                          false,
                                                                     ),
                                                                     ...mapToFirestore(
                                                                       {
@@ -5294,6 +5300,8 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           '',
                                                                       weight: FFAppState()
                                                                           .weight,
+                                                                      isDeleted:
+                                                                          false,
                                                                     ),
                                                                     ...mapToFirestore(
                                                                       {

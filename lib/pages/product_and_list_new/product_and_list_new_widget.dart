@@ -6127,6 +6127,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             ),
                                                                             shiftId:
                                                                                 '',
+                                                                            isDeleted:
+                                                                                false,
                                                                           ),
                                                                           ...mapToFirestore(
                                                                             {
@@ -6183,6 +6185,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             ),
                                                                             shiftId:
                                                                                 '',
+                                                                            isDeleted:
+                                                                                false,
                                                                           ),
                                                                           ...mapToFirestore(
                                                                             {
@@ -7003,6 +7007,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 0.0,
                                                                               ),
                                                                               shiftId: '',
+                                                                              isDeleted: false,
                                                                             ),
                                                                             ...mapToFirestore(
                                                                               {
@@ -7046,6 +7051,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 0.0,
                                                                               ),
                                                                               shiftId: '',
+                                                                              isDeleted: false,
                                                                             ),
                                                                             ...mapToFirestore(
                                                                               {

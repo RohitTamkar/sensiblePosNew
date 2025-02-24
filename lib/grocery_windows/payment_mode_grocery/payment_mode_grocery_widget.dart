@@ -3499,6 +3499,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 FFAppState().currentMobile,
                                                 '0',
                                               ),
+                                              isDeleted: false,
                                             ),
                                             ...mapToFirestore(
                                               {
@@ -3561,6 +3562,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 FFAppState().currentMobile,
                                                 '0',
                                               ),
+                                              isDeleted: false,
                                             ),
                                             ...mapToFirestore(
                                               {
@@ -4387,6 +4389,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 r'''$.shiftId''',
                                               ).toString(),
                                               count: FFAppState().newcount,
+                                              isDeleted: false,
                                             ),
                                             ...mapToFirestore(
                                               {
@@ -4446,6 +4449,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 r'''$.shiftId''',
                                               ).toString(),
                                               count: FFAppState().newcount,
+                                              isDeleted: false,
                                             ),
                                             ...mapToFirestore(
                                               {

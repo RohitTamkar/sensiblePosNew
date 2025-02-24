@@ -3067,6 +3067,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         .newcount,
                                                                     source:
                                                                         'KOT',
+                                                                    isDeleted:
+                                                                        false,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -3152,6 +3154,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         .newcount,
                                                                     source:
                                                                         'KOT',
+                                                                    isDeleted:
+                                                                        false,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -4065,6 +4069,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         .newcount,
                                                                     source:
                                                                         'CUSTOMER',
+                                                                    isDeleted:
+                                                                        false,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -4150,6 +4156,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         .newcount,
                                                                     source:
                                                                         'CUSTOMER',
+                                                                    isDeleted:
+                                                                        false,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
