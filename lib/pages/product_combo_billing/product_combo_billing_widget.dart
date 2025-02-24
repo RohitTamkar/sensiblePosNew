@@ -1571,7 +1571,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: Container(
-                                                    width: 120.0,
+                                                    width: 130.0,
                                                     height: 90.0,
                                                     decoration: BoxDecoration(
                                                       color: Color(0xFFD2DDFF),
@@ -1733,7 +1733,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                           snapshot.data!;
 
                                                       return Container(
-                                                        width: 120.0,
+                                                        width: 130.0,
                                                         decoration:
                                                             BoxDecoration(),
                                                         child: Builder(
