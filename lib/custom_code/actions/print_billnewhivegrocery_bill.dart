@@ -17,6 +17,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 import 'dart:async';
@@ -88,7 +90,7 @@ Future printBillnewhivegroceryBill(
   // changes according to size
   if (size == 46) {
     billColumn3 =
-        "ITEM_NAME              QTY     RATE     TOTAL "; // 20, 8, 9, 9 (46)
+        "NO ITEM_NAME             QTY    RATE     TOTAL"; // 20, 8, 9, 9 (46)
     billColumn4 = "NO   ITEM_NAME      QTY  RATE  DIS%      TOTAL";
     taxColumn3 = "TAX%      TAXABLE     CGST     SGST     TAXAMT";
 
@@ -224,47 +226,112 @@ Future printBillnewhivegroceryBill(
       String printLine = '';
       String dateString = '';
       String serialTemp =
-          'Serial no: ' + returncountnew(invoiceDetails.invoice).toString();
+          'Serial no: ' + lastBillCount(FFAppState().count).toString();
+      if (appSetting.settingList.any((setting) =>
+          setting.title == 'enableCombo' && setting.value == true)) {
+        if (invoiceDetails.source == "KOT") {
+          bytes += generator.text("NEW KOT",
+              styles: PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size2,
+                  bold: true,
+                  align: PosAlign.center));
+          bytes += generator.text(
+              "-----------------------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
+        }
 
-      final DateTime now = DateTime.now();
-      final DateFormat formatter = DateFormat('dd-MM-yyyy');
-      final String formatted = formatter.format(now);
-      dateString = formatted.toString();
-      printLine = serialTemp;
-      for (int i = 1;
-          i <= (size - (serialTemp.length + dateString.length));
-          i++) {
-        printLine += " ";
-      }
+        String printLine = '';
+        String dateString = '';
+        // String serialTemp = 'Token no: ' + FFAppState().count.toString();
+        final DateTime now = DateTime.now();
+        final DateFormat formatter = DateFormat('dd-MM-yyyy');
+        final String formatted = formatter.format(now);
+        dateString = formatted.toString();
+        // printLine = serialTemp;
+        for (int i = 1; i <= (size - (dateString.length)); i++) {
+          printLine += " ";
+        }
 
-      printLine += dateString;
+        printLine += dateString;
 
-      bytes += generator.text(printLine,
+        /*    bytes += generator.text(printLine,
           styles: const PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
-              bold: false));
-      printLine = '';
-      final DateTime now1 =
-          DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
-      final DateFormat formatter1 = DateFormat('h:mm:ss');
-      final String formatted1 = formatter1.format(now1);
+              bold: true));*/
 
-      String dateTimeString = formatted1.toString();
-      String billNo = 'Bill No: ' + invoiceDetails.invoice.toString();
-      printLine = billNo;
-      for (int i = 1;
-          i <= (size - (billNo.length + dateTimeString.length));
-          i++) {
-        printLine += " ";
+        printLine = '';
+        final DateTime now1 = DateTime.now();
+        final DateFormat formatter1 = DateFormat('dd-MM-yyyy h:mm a');
+        final String formatted1 = formatter1.format(now1);
+
+        String dateTimeString = formatted1.toString();
+        String billNo = 'Bill No:' + invoiceDetails.invoice.toString();
+        printLine = billNo;
+        for (int i = 1;
+            i <= (size - (billNo.length + dateTimeString.length));
+            i++) {
+          printLine += " ";
+        }
+        printLine += dateTimeString;
+
+        bytes += generator.text(printLine,
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: true));
+      } else {
+        String printLine = '';
+        String dateString = '';
+        String serialTemp =
+            'Serial no: ' + returncountnew(invoiceDetails.invoice).toString();
+
+        final DateTime now =
+            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
+        final DateFormat formatter = DateFormat('dd-MM-yyyy');
+        final String formatted = formatter.format(now);
+        dateString = formatted.toString();
+        printLine = serialTemp;
+        for (int i = 1;
+            i <= (size - (serialTemp.length + dateString.length));
+            i++) {
+          printLine += " ";
+        }
+
+        printLine += dateString;
+
+        bytes += generator.text(printLine,
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false));
+        printLine = '';
+        final DateTime now1 =
+            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
+        final DateFormat formatter1 = DateFormat('h:mm:ss');
+        final String formatted1 = formatter1.format(now1);
+
+        String dateTimeString = formatted1.toString();
+        String billNo = 'Bill No: ' + invoiceDetails.invoice.toString();
+        printLine = billNo;
+        for (int i = 1;
+            i <= (size - (billNo.length + dateTimeString.length));
+            i++) {
+          printLine += " ";
+        }
+        printLine += dateTimeString;
+
+        bytes += generator.text(printLine,
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false));
       }
-      printLine += dateTimeString;
-
-      bytes += generator.text(printLine,
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false));
 
       bytes += generator.text("-----------------------------------------------",
           styles: const PosStyles(
