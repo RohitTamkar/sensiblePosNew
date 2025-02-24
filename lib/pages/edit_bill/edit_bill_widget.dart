@@ -370,7 +370,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   )
                                                   .where(
                                                     'isDeleted',
-                                                    isEqualTo: true,
+                                                    isEqualTo: false,
                                                   )
                                                   .orderBy('invoiceDate',
                                                       descending: true),
