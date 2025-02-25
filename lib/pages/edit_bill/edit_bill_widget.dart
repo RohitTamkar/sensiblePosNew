@@ -446,6 +446,9 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 );
                                                 FFAppState().editBillListColor =
                                                     listViewInvoiceRecord.id;
+                                                FFAppState().curMode =
+                                                    listViewInvoiceRecord
+                                                        .paymentMode;
                                                 FFAppState().update(() {});
                                                 if (listViewInvoiceRecord
                                                         .source ==
@@ -1569,10 +1572,14 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                         'ujud8lol' /* DIGITAL */,
                                                       )
                                                     ],
-                                                    onChanged: (val) =>
-                                                        safeSetState(() => _model
-                                                                .dropDownValue =
-                                                            val),
+                                                    onChanged: (val) async {
+                                                      safeSetState(() => _model
+                                                          .dropDownValue = val);
+                                                      FFAppState().prevMode =
+                                                          FFAppState().curMode;
+                                                      FFAppState().curMode = '';
+                                                      safeSetState(() {});
+                                                    },
                                                     width: 200.0,
                                                     height: 40.0,
                                                     textStyle: FlutterFlowTheme
@@ -3483,15 +3490,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   .invoiceRef!
                                                   .update({
                                                 ...createInvoiceRecordData(
-                                                  paymentMode: FFAppState()
-                                                              .dropDown ==
-                                                          false
-                                                      ? getJsonField(
-                                                          FFAppState()
-                                                              .selectedInvoiceJson,
-                                                          r'''$.paymentMode''',
-                                                        ).toString()
-                                                      : FFAppState().PayMode,
+                                                  paymentMode:
+                                                      FFAppState().curMode,
                                                   billAmt: getJsonField(
                                                     FFAppState()
                                                         .selectedInvoiceJson,
