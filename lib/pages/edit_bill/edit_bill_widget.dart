@@ -478,6 +478,12 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     listViewInvoiceRecord
                                                         .paymentMode;
                                                 FFAppState().update(() {});
+                                                safeSetState(() {
+                                                  _model.dropDownValueController
+                                                          ?.value =
+                                                      listViewInvoiceRecord
+                                                          .paymentMode;
+                                                });
                                                 if (listViewInvoiceRecord
                                                         .source ==
                                                     'CUSTOMER') {
