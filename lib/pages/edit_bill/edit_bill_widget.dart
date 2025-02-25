@@ -3363,6 +3363,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   _model.returnList1Copy,
                                                   r'''$.cashSale''',
                                                 ),
+                                                billCount: getJsonField(
+                                                  _model.returnList1Copy,
+                                                  r'''$.billCount''',
+                                                ),
                                               ));
                                           await showDialog(
                                             context: context,
