@@ -2856,9 +2856,6 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             source:
                                                                                 'CUSTOMER',
                                                                           ));
-
-                                                                          safeSetState(
-                                                                              () {});
                                                                           if (!functions
                                                                               .isPrinterSelected(FFAppState().printerDevice)!) {
                                                                             _model.resDevice2billCopy =
@@ -3364,6 +3361,11 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                 );
                                                                 _shouldSetState =
                                                                     true;
+                                                                _model.addToInvoices(
+                                                                    _model
+                                                                        .invonlineprt!);
+                                                                safeSetState(
+                                                                    () {});
                                                               } else {
                                                                 await showDialog(
                                                                   context:
@@ -4364,6 +4366,11 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                 );
                                                                 _shouldSetState =
                                                                     true;
+                                                                _model.addToInvoices(
+                                                                    _model
+                                                                        .invonlineprtcust!);
+                                                                safeSetState(
+                                                                    () {});
                                                               } else {
                                                                 await showDialog(
                                                                   context:
