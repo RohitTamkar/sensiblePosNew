@@ -446,7 +446,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 );
                                                 FFAppState().editBillListColor =
                                                     listViewInvoiceRecord.id;
-                                                FFAppState().curMode =
+                                                FFAppState().prevMode =
                                                     listViewInvoiceRecord
                                                         .paymentMode;
                                                 FFAppState().update(() {});
