@@ -829,7 +829,7 @@ class _TodaySummerReportNewWidgetState
                                                                                           children: [
                                                                                             Text(
                                                                                               FFLocalizations.of(context).getText(
-                                                                                                'xei5xaes' /* Credit */,
+                                                                                                'xei5xaes' /* Digital */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                                     fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,

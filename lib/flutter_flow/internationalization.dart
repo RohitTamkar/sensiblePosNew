@@ -4912,7 +4912,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'xei5xaes': {
-      'en': 'Credit',
+      'en': 'Digital',
       'hi': '',
       'kn': '',
       'mr': '',
