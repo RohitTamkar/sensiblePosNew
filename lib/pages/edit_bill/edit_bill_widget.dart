@@ -882,8 +882,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                       parent: FFAppState().outletIdRef,
                                       queryBuilder: (invoiceRecord) =>
                                           invoiceRecord.where(
-                                        'invoice',
-                                        isEqualTo: FFAppState().invoice,
+                                        'id',
+                                        isEqualTo: FFAppState().invoiceRef?.id,
                                       ),
                                       singleRecord: true,
                                     ),
