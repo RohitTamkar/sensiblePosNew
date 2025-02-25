@@ -1576,9 +1576,12 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       safeSetState(() => _model
                                                           .dropDownValue = val);
                                                       FFAppState().prevMode =
-                                                          FFAppState().curMode;
+                                                          containerInvoiceRecord!
+                                                              .paymentMode;
                                                       FFAppState().curMode =
                                                           _model.dropDownValue!;
+                                                      FFAppState().dropDown =
+                                                          true;
                                                       safeSetState(() {});
                                                     },
                                                     width: 200.0,
