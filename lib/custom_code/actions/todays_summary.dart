@@ -46,6 +46,7 @@ Future<dynamic> todaysSummary(List<ShiftRecord> dataList) async {
     "cash": 0.0,
     "card": 0.0,
     "cheque": 0.0,
+    "digital": 0.0,
     "credit": 0.0,
     "paytm": 0.0,
     "phonepe": 0.0,
@@ -104,7 +105,7 @@ Future<dynamic> todaysSummary(List<ShiftRecord> dataList) async {
       shiftList[0]["card"] = payment[0]["card"];
       shiftList[0]["cash"] = payment[0]["cash"];
       shiftList[0]["credit"] = payment[0]["credit"];
-
+      shiftList[0]["digital"] = payment[0]["digital"];
       var paymentJsonDataString = jsonEncode(payment[0]).toString();
       shiftList[0]["paymentJson"] = paymentJsonDataString;
       //

@@ -875,7 +875,7 @@ class _TodaySummerReportNewWidgetState
                                                                                                   _model.json,
                                                                                                   r'''$.paymentJson''',
                                                                                                 ).toString(),
-                                                                                                'credit'),
+                                                                                                'digital'),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                   letterSpacing: 0.0,
