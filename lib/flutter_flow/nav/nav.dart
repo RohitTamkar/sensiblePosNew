@@ -324,12 +324,30 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: EditBillWidget.routeName,
               path: EditBillWidget.routePath,
+              asyncParams: {
+                'appsetting': getDoc(
+                    ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
+                'tax': getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
+              },
               builder: (context, params) => EditBillWidget(
                 billRef: params.getParam(
                   'billRef',
                   ParamType.DocumentReference,
                   isList: false,
                   collectionNamePath: ['OUTLET', 'INVOICE'],
+                ),
+                appsetting: params.getParam(
+                  'appsetting',
+                  ParamType.Document,
+                ),
+                tax: params.getParam<TaxMasterRecord>(
+                  'tax',
+                  ParamType.Document,
+                  isList: true,
+                ),
+                shift: params.getParam(
+                  'shift',
+                  ParamType.JSON,
                 ),
               ),
             ),

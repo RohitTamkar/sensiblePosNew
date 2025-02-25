@@ -12,9 +12,11 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'edit_bill_widget.dart' show EditBillWidget;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -60,6 +62,10 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
   dynamic? shiftListCopy;
   // Stores action output result for [Custom Action - updateShiftSummaryFordeletebill] action in Button widget.
   dynamic? returnList1Copy;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<ShiftRecord>? shiftsummary;
+  // Stores action output result for [Custom Action - shiftDetailNewpark] action in Button widget.
+  dynamic? shiftdetailsnewonline;
   // Stores action output result for [Custom Action - newCustomAction2] action in Save widget.
   List<SelItemListStruct>? returnList;
   // Stores action output result for [Custom Action - shiftExists] action in Save widget.

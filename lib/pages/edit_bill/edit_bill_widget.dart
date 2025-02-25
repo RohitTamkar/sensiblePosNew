@@ -12,8 +12,10 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -30,9 +32,15 @@ class EditBillWidget extends StatefulWidget {
   const EditBillWidget({
     super.key,
     this.billRef,
+    this.appsetting,
+    this.tax,
+    this.shift,
   });
 
   final DocumentReference? billRef;
+  final AppSettingsRecord? appsetting;
+  final List<TaxMasterRecord>? tax;
+  final dynamic shift;
 
   static String routeName = 'EditBill';
   static String routePath = 'editBill';
@@ -235,7 +243,27 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                     size: 25.0,
                                   ),
                                   onPressed: () async {
-                                    context.safePop();
+                                    context.pushNamed(
+                                      ProductComboBillingWidget.routeName,
+                                      queryParameters: {
+                                        'billDetails': serializeParam(
+                                          widget!.billRef,
+                                          ParamType.DocumentReference,
+                                        ),
+                                        'shiftDetails': serializeParam(
+                                          FFAppState().shiftdetails,
+                                          ParamType.JSON,
+                                        ),
+                                        'taxcollection': serializeParam(
+                                          widget!.tax,
+                                          ParamType.Document,
+                                          isList: true,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        'taxcollection': widget!.tax,
+                                      },
+                                    );
                                   },
                                 ),
                                 AutoSizeText(
@@ -3376,7 +3404,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
                                                 title: Text(
-                                                    'Invoice Updated  Successfully'),
+                                                    'Invoice Deleted  Successfully!'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
@@ -3389,6 +3417,21 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             },
                                           );
                                         }
+                                        _model.shiftsummary =
+                                            await queryShiftRecordOnce(
+                                          parent: FFAppState().outletIdRef,
+                                          queryBuilder: (shiftRecord) =>
+                                              shiftRecord.orderBy('dayId',
+                                                  descending: true),
+                                          limit: 5,
+                                        );
+                                        _model.shiftdetailsnewonline =
+                                            await actions.shiftDetailNewpark(
+                                          _model.shiftsummary?.toList(),
+                                        );
+                                        FFAppState().shiftdetails =
+                                            _model.shiftdetailsnewonline!;
+                                        safeSetState(() {});
                                       } else {
                                         await showDialog(
                                           context: context,
