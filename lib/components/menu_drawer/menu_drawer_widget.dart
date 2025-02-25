@@ -101,8 +101,13 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 context.safePop();
                               },
                               onLongPress: () async {
-                                _model.editbill = true;
-                                safeSetState(() {});
+                                if (_model.editbill) {
+                                  _model.editbill = false;
+                                  safeSetState(() {});
+                                } else {
+                                  _model.editbill = true;
+                                  safeSetState(() {});
+                                }
                               },
                               child: Container(
                                 width: double.infinity,
