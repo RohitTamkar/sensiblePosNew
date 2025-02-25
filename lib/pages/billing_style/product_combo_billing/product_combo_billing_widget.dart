@@ -77,12 +77,20 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
       FFAppState().shiftDetailsJson = widget!.shiftDetails!;
       safeSetState(() {});
       _model.hiveProductList = await actions.getProductlistHive();
-      _model.categoryListHive = await actions.getCategorylistHive();
       FFAppState().productHive =
           _model.hiveProductList!.toList().cast<ProductStructStruct>();
       safeSetState(() {});
-      FFAppState().categoryHive =
-          _model.categoryListHive!.toList().cast<CategoryStructStruct>();
+      _model.invoiceslist20 = await queryInvoiceRecordOnce(
+        parent: FFAppState().outletIdRef,
+        queryBuilder: (invoiceRecord) => invoiceRecord
+            .where(
+              'isDeleted',
+              isEqualTo: false,
+            )
+            .orderBy('invoiceDate', descending: true),
+        limit: 10,
+      );
+      _model.invoices = _model.invoiceslist20!.toList().cast<InvoiceRecord>();
       safeSetState(() {});
       if (!functions.isPrinterSelected(FFAppState().printerDevice)!) {
         _model.resDevice2Copy = await actions.scanPrinter(
@@ -2412,6 +2420,80 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                   height: 100.0,
                                                                   decoration:
                                                                       BoxDecoration(),
+                                                                  child:
+                                                                      InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      var confirmDialogResponse = await showDialog<
+                                                                              bool>(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (alertDialogContext) {
+                                                                              return AlertDialog(
+                                                                                title: Text('Delete All Bills..?'),
+                                                                                content: Text('Are you sure you want to delete all Bills..'),
+                                                                                actions: [
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                    child: Text('cancle'),
+                                                                                  ),
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                    child: Text('confirm'),
+                                                                                  ),
+                                                                                ],
+                                                                              );
+                                                                            },
+                                                                          ) ??
+                                                                          false;
+                                                                      if (confirmDialogResponse) {
+                                                                        FFAppState()
+                                                                            .holdBillCount = 0;
+                                                                        FFAppState().allBillsList =
+                                                                            [];
+                                                                        FFAppState()
+                                                                            .update(() {});
+                                                                        FFAppState().itemCartList =
+                                                                            [];
+                                                                        FFAppState()
+                                                                            .update(() {});
+                                                                        await actions
+                                                                            .clearValue();
+                                                                        FFAppState()
+                                                                            .noOfItems = 0;
+                                                                        FFAppState()
+                                                                            .update(() {});
+                                                                        FFAppState().prdid =
+                                                                            '';
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      } else {
+                                                                        return;
+                                                                      }
+                                                                    },
+                                                                    child: Icon(
+                                                                      Icons
+                                                                          .delete_forever_outlined,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      size:
+                                                                          24.0,
+                                                                    ),
+                                                                  ),
                                                                 ),
                                                               ),
                                                             ],
@@ -2605,18 +2687,16 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       builder:
                                                                           (alertDialogContext) {
                                                                         return AlertDialog(
-                                                                          title:
-                                                                              Text('Delete All Bills..?'),
                                                                           content:
-                                                                              Text('Are you sure you want to delete all Bills..'),
+                                                                              Text('Are You Sure To Clear All Invoices ?'),
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                              child: Text('cancle'),
+                                                                              child: Text('Cancel'),
                                                                             ),
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                              child: Text('confirm'),
+                                                                              child: Text('Confirm'),
                                                                             ),
                                                                           ],
                                                                         );
@@ -2624,31 +2704,10 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     ) ??
                                                                     false;
                                                             if (confirmDialogResponse) {
-                                                              FFAppState()
-                                                                  .holdBillCount = 0;
-                                                              FFAppState()
-                                                                  .allBillsList = [];
-                                                              FFAppState()
-                                                                  .update(
-                                                                      () {});
-                                                              FFAppState()
-                                                                  .itemCartList = [];
-                                                              FFAppState()
-                                                                  .update(
-                                                                      () {});
-                                                              await actions
-                                                                  .clearValue();
-                                                              FFAppState()
-                                                                  .noOfItems = 0;
-                                                              FFAppState()
-                                                                  .update(
-                                                                      () {});
-                                                              FFAppState()
-                                                                  .prdid = '';
+                                                              _model.invoices =
+                                                                  [];
                                                               safeSetState(
                                                                   () {});
-                                                            } else {
-                                                              return;
                                                             }
                                                           },
                                                           text: FFLocalizations
@@ -2705,46 +2764,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                           ),
                                                         ),
                                                         Expanded(
-                                                          child: StreamBuilder<
-                                                              List<
-                                                                  InvoiceRecord>>(
-                                                            stream:
-                                                                queryInvoiceRecord(
-                                                              parent: FFAppState()
-                                                                  .outletIdRef,
-                                                              queryBuilder: (invoiceRecord) =>
-                                                                  invoiceRecord.orderBy(
-                                                                      'invoiceDate',
-                                                                      descending:
-                                                                          true),
-                                                              limit: 9,
-                                                            ),
-                                                            builder: (context,
-                                                                snapshot) {
-                                                              // Customize what your widget looks like when it's loading.
-                                                              if (!snapshot
-                                                                  .hasData) {
-                                                                return Center(
-                                                                  child:
-                                                                      SizedBox(
-                                                                    width: 40.0,
-                                                                    height:
-                                                                        40.0,
-                                                                    child:
-                                                                        SpinKitFadingCircle(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                      size:
-                                                                          40.0,
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              }
-                                                              List<InvoiceRecord>
-                                                                  listViewInvoiceRecordList =
-                                                                  snapshot
-                                                                      .data!;
+                                                          child: Builder(
+                                                            builder: (context) {
+                                                              final invlist =
+                                                                  _model
+                                                                      .invoices
+                                                                      .toList();
 
                                                               return ListView
                                                                   .separated(
@@ -2756,7 +2781,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                 scrollDirection:
                                                                     Axis.vertical,
                                                                 itemCount:
-                                                                    listViewInvoiceRecordList
+                                                                    invlist
                                                                         .length,
                                                                 separatorBuilder: (_,
                                                                         __) =>
@@ -2765,134 +2790,215 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             5.0),
                                                                 itemBuilder:
                                                                     (context,
-                                                                        listViewIndex) {
-                                                                  final listViewInvoiceRecord =
-                                                                      listViewInvoiceRecordList[
-                                                                          listViewIndex];
-                                                                  return InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      _model.outletdid2 =
-                                                                          await queryOutletRecordOnce(
-                                                                        queryBuilder:
-                                                                            (outletRecord) =>
-                                                                                outletRecord.where(
-                                                                          'id',
-                                                                          isEqualTo: FFAppState()
-                                                                              .outletIdRef
-                                                                              ?.id,
-                                                                        ),
-                                                                        singleRecord:
-                                                                            true,
-                                                                      ).then((s) =>
-                                                                              s.firstOrNull);
-                                                                      if (!functions
-                                                                          .isPrinterSelected(
-                                                                              FFAppState().printerDevice)!) {
-                                                                        _model.resDevice2bill =
-                                                                            await actions.scanPrinter(
-                                                                          FFAppState()
-                                                                              .posMode,
-                                                                        );
-                                                                      }
-                                                                      _model.isconnectedbill =
-                                                                          await actions
-                                                                              .connectDevice(
-                                                                        FFAppState()
-                                                                            .printerDevice,
-                                                                        FFAppState()
-                                                                            .printerIndex,
-                                                                      );
-                                                                      _model.resultItembill =
-                                                                          await actions
-                                                                              .docToJson(
-                                                                        listViewInvoiceRecord,
-                                                                      );
-                                                                      _model.device233 =
-                                                                          await actions
-                                                                              .newCustomAction(
-                                                                        FFAppState()
-                                                                            .printerIndex,
-                                                                      );
-                                                                      await actions
-                                                                          .printBillnewhivegroceryBill(
-                                                                        _model
-                                                                            .resultItembill!,
-                                                                        _model
-                                                                            .device233!
-                                                                            .toList(),
-                                                                        FFAppState()
-                                                                            .isPrinterConnected,
-                                                                        FFAppState()
-                                                                            .printerName,
-                                                                        getJsonField(
-                                                                          functions
-                                                                              .outletDocToJson(_model.outletdid2!),
-                                                                          r'''$''',
-                                                                        ),
-                                                                        listViewInvoiceRecord,
-                                                                        FFAppState()
-                                                                            .paperSize,
-                                                                        productComboBillingAppSettingsRecord!,
-                                                                      );
-
-                                                                      safeSetState(
-                                                                          () {});
-                                                                    },
+                                                                        invlistIndex) {
+                                                                  final invlistItem =
+                                                                      invlist[
+                                                                          invlistIndex];
+                                                                  return Container(
+                                                                    width: double
+                                                                        .infinity,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                    ),
                                                                     child:
-                                                                        Container(
-                                                                      width: double
-                                                                          .infinity,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondary,
-                                                                      ),
+                                                                        InkWell(
+                                                                      splashColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      focusColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      hoverColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      highlightColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      onDoubleTap:
+                                                                          () async {
+                                                                        var confirmDialogResponse = await showDialog<bool>(
+                                                                              context: context,
+                                                                              builder: (alertDialogContext) {
+                                                                                return AlertDialog(
+                                                                                  content: Text('Are you sure you can convert this bill into a customer bill?'),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                      child: Text('Cancel'),
+                                                                                    ),
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                      child: Text('Confirm'),
+                                                                                    ),
+                                                                                  ],
+                                                                                );
+                                                                              },
+                                                                            ) ??
+                                                                            false;
+                                                                        if (confirmDialogResponse) {
+                                                                          _model.outletdid2Copy =
+                                                                              await queryOutletRecordOnce(
+                                                                            queryBuilder: (outletRecord) =>
+                                                                                outletRecord.where(
+                                                                              'id',
+                                                                              isEqualTo: FFAppState().outletIdRef?.id,
+                                                                            ),
+                                                                            singleRecord:
+                                                                                true,
+                                                                          ).then((s) => s.firstOrNull);
+
+                                                                          await invlistItem
+                                                                              .reference
+                                                                              .update(createInvoiceRecordData(
+                                                                            source:
+                                                                                'CUSTOMER',
+                                                                          ));
+
+                                                                          safeSetState(
+                                                                              () {});
+                                                                          if (!functions
+                                                                              .isPrinterSelected(FFAppState().printerDevice)!) {
+                                                                            _model.resDevice2billCopy =
+                                                                                await actions.scanPrinter(
+                                                                              FFAppState().posMode,
+                                                                            );
+                                                                          }
+                                                                          _model.isconnectedbillCopy =
+                                                                              await actions.connectDevice(
+                                                                            FFAppState().printerDevice,
+                                                                            FFAppState().printerIndex,
+                                                                          );
+                                                                          _model.resultItembillCopy =
+                                                                              await actions.docToJson(
+                                                                            invlistItem,
+                                                                          );
+                                                                          _model.device233Copy =
+                                                                              await actions.newCustomAction(
+                                                                            FFAppState().printerIndex,
+                                                                          );
+                                                                          await actions
+                                                                              .printBillnewhivegroceryBill(
+                                                                            _model.resultItembillCopy!,
+                                                                            _model.device233Copy!.toList(),
+                                                                            FFAppState().isPrinterConnected,
+                                                                            FFAppState().printerName,
+                                                                            getJsonField(
+                                                                              functions.outletDocToJson(_model.outletdid2Copy!),
+                                                                              r'''$''',
+                                                                            ),
+                                                                            invlistItem,
+                                                                            FFAppState().paperSize,
+                                                                            productComboBillingAppSettingsRecord!,
+                                                                          );
+                                                                          _model.invoiceslist =
+                                                                              await queryInvoiceRecordOnce(
+                                                                            parent:
+                                                                                FFAppState().outletIdRef,
+                                                                            queryBuilder: (invoiceRecord) => invoiceRecord
+                                                                                .where(
+                                                                                  'isDeleted',
+                                                                                  isEqualTo: false,
+                                                                                )
+                                                                                .orderBy('invoiceDate', descending: true),
+                                                                            limit:
+                                                                                10,
+                                                                          );
+                                                                          _model.invoices = _model
+                                                                              .invoiceslist!
+                                                                              .toList()
+                                                                              .cast<InvoiceRecord>();
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        }
+
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      },
                                                                       child:
-                                                                          Padding(
-                                                                        padding:
-                                                                            EdgeInsets.all(10.0),
-                                                                        child:
-                                                                            Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                'lo16py26' /* ₹  */,
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
-                                                                                  ),
+                                                                          FFButtonWidget(
+                                                                        onPressed:
+                                                                            () async {
+                                                                          _model.outletdid2 =
+                                                                              await queryOutletRecordOnce(
+                                                                            queryBuilder: (outletRecord) =>
+                                                                                outletRecord.where(
+                                                                              'id',
+                                                                              isEqualTo: FFAppState().outletIdRef?.id,
                                                                             ),
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                listViewInvoiceRecord.finalBillAmt.toString(),
-                                                                                '100',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
-                                                                                  ),
+                                                                            singleRecord:
+                                                                                true,
+                                                                          ).then((s) => s.firstOrNull);
+                                                                          if (!functions
+                                                                              .isPrinterSelected(FFAppState().printerDevice)!) {
+                                                                            _model.resDevice2bill =
+                                                                                await actions.scanPrinter(
+                                                                              FFAppState().posMode,
+                                                                            );
+                                                                          }
+                                                                          _model.isconnectedbill =
+                                                                              await actions.connectDevice(
+                                                                            FFAppState().printerDevice,
+                                                                            FFAppState().printerIndex,
+                                                                          );
+                                                                          _model.resultItembill =
+                                                                              await actions.docToJson(
+                                                                            invlistItem,
+                                                                          );
+                                                                          _model.device233 =
+                                                                              await actions.newCustomAction(
+                                                                            FFAppState().printerIndex,
+                                                                          );
+                                                                          await actions
+                                                                              .printBillnewhivegroceryBill(
+                                                                            _model.resultItembill!,
+                                                                            _model.device233!.toList(),
+                                                                            FFAppState().isPrinterConnected,
+                                                                            FFAppState().printerName,
+                                                                            getJsonField(
+                                                                              functions.outletDocToJson(_model.outletdid2!),
+                                                                              r'''$''',
                                                                             ),
-                                                                          ],
+                                                                            invlistItem,
+                                                                            FFAppState().paperSize,
+                                                                            productComboBillingAppSettingsRecord!,
+                                                                          );
+
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        },
+                                                                        text:
+                                                                            '₹ ${invlistItem.finalBillAmt.toString()}',
+                                                                        options:
+                                                                            FFButtonOptions(
+                                                                          height:
+                                                                              40.0,
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              16.0,
+                                                                              0.0,
+                                                                              16.0,
+                                                                              0.0),
+                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondary,
+                                                                          textStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                color: Colors.white,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                              ),
+                                                                          elevation:
+                                                                              0.0,
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(8.0),
                                                                         ),
                                                                       ),
                                                                     ),

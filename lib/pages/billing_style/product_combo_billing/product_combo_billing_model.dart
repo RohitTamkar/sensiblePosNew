@@ -88,12 +88,21 @@ class ProductComboBillingModel
   void updateListstringAtIndex(int index, Function(String) updateFn) =>
       liststring[index] = updateFn(liststring[index]);
 
+  List<InvoiceRecord> invoices = [];
+  void addToInvoices(InvoiceRecord item) => invoices.add(item);
+  void removeFromInvoices(InvoiceRecord item) => invoices.remove(item);
+  void removeAtIndexFromInvoices(int index) => invoices.removeAt(index);
+  void insertAtIndexInInvoices(int index, InvoiceRecord item) =>
+      invoices.insert(index, item);
+  void updateInvoicesAtIndex(int index, Function(InvoiceRecord) updateFn) =>
+      invoices[index] = updateFn(invoices[index]);
+
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Custom Action - getProductlistHive] action in productComboBilling widget.
   List<ProductStructStruct>? hiveProductList;
-  // Stores action output result for [Custom Action - getCategorylistHive] action in productComboBilling widget.
-  List<CategoryStructStruct>? categoryListHive;
+  // Stores action output result for [Firestore Query - Query a collection] action in productComboBilling widget.
+  List<InvoiceRecord>? invoiceslist20;
   // Stores action output result for [Custom Action - scanPrinter] action in productComboBilling widget.
   bool? resDevice2Copy;
   // Stores action output result for [Custom Action - connectDevice] action in productComboBilling widget.
@@ -140,16 +149,28 @@ class ProductComboBillingModel
   double? reuslt22;
   // State field(s) for ListView widget.
   ScrollController? listViewController3;
-  // Stores action output result for [Firestore Query - Query a collection] action in Container widget.
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   OutletRecord? outletdid2;
-  // Stores action output result for [Custom Action - scanPrinter] action in Container widget.
+  // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
   bool? resDevice2bill;
-  // Stores action output result for [Custom Action - connectDevice] action in Container widget.
+  // Stores action output result for [Custom Action - connectDevice] action in Button widget.
   bool? isconnectedbill;
-  // Stores action output result for [Custom Action - docToJson] action in Container widget.
+  // Stores action output result for [Custom Action - docToJson] action in Button widget.
   dynamic? resultItembill;
-  // Stores action output result for [Custom Action - newCustomAction] action in Container widget.
+  // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
   List<dynamic>? device233;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  OutletRecord? outletdid2Copy;
+  // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
+  bool? resDevice2billCopy;
+  // Stores action output result for [Custom Action - connectDevice] action in Button widget.
+  bool? isconnectedbillCopy;
+  // Stores action output result for [Custom Action - docToJson] action in Button widget.
+  dynamic? resultItembillCopy;
+  // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
+  List<dynamic>? device233Copy;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<InvoiceRecord>? invoiceslist;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlinstnewtx;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.

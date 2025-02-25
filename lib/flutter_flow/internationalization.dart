@@ -21131,13 +21131,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'lo16py26': {
-      'en': '₹ ',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
     'oc92eaf7': {
       'en': 'KOT ',
       'hi': '',
