@@ -1552,6 +1552,10 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                         final productList2 = FFAppState()
                                             .productHive
                                             .where((e) => e.type == 0)
+                                            .toList()
+                                            .sortedList(
+                                                keyOf: (e) => e.code,
+                                                desc: false)
                                             .toList();
 
                                         return ListView.separated(
