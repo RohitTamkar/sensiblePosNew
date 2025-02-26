@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<double> calBillAmtGroceryPay(
   double disAmt,
   double delChargs,
@@ -38,8 +40,10 @@ Future<double> calBillAmtGroceryPay(
     double taxAmtPerItem = (inclusiveorexclusive.toLowerCase() == 'inclusive')
         ? (billAmt * gstPer) / (100.0 + gstPer)
         : (billAmt * gstPer) / 100.0;
-    FFAppState().taxAmtPay = taxAmtPerItem;
-    billAmt += taxAmtPerItem;
+    FFAppState().taxAmtPay = double.parse(taxAmtPerItem.toStringAsFixed(2));
+    if (inclusiveorexclusive.toLowerCase() == 'exclusive') {
+      billAmt += taxAmtPerItem;
+    }
   }
   FFAppState().finalAmt = billAmt.roundToDouble();
   //FFAppState().disPer = disPer.toDouble();

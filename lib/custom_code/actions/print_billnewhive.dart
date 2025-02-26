@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -216,7 +218,8 @@ Future printBillnewhive(
         String printLine = '';
         String dateString = '';
         // String serialTemp = 'Token no: ' + FFAppState().count.toString();
-        final DateTime now = DateTime.now();
+        final DateTime now =
+            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
         final DateFormat formatter = DateFormat('dd-MM-yyyy');
         final String formatted = formatter.format(now);
         dateString = formatted.toString();
@@ -234,7 +237,8 @@ Future printBillnewhive(
               bold: true));*/
 
         printLine = '';
-        final DateTime now1 = DateTime.now();
+        final DateTime now1 =
+            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
         final DateFormat formatter1 = DateFormat('dd-MM-yyyy h:mm a');
         final String formatted1 = formatter1.format(now1);
 
@@ -257,7 +261,8 @@ Future printBillnewhive(
         String dateString = '';
         String serialTemp =
             'Serial no: ' + lastBillCount(FFAppState().count).toString();
-        final DateTime now = DateTime.now();
+        final DateTime now =
+            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
         final DateFormat formatter = DateFormat('dd-MM-yyyy');
         final String formatted = formatter.format(now);
         dateString = formatted.toString();
@@ -276,7 +281,8 @@ Future printBillnewhive(
                 width: PosTextSize.size1,
                 bold: false));
         printLine = '';
-        final DateTime now1 = DateTime.now();
+        final DateTime now1 =
+            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
         final DateFormat formatter1 = DateFormat('h:mm:ss');
         final String formatted1 = formatter1.format(now1);
 
@@ -372,28 +378,50 @@ Future printBillnewhive(
               bold: false,
               align: PosAlign.center));
 
-      int len = invoiceDetails.productList!.length;
-      String itemsNo = "Items :" + len.toString();
-      printLine = itemsNo;
-      String subTotal = "Sub total:" +
-          ((invoiceDetails.billAmt - invoiceDetails.taxAmt).toStringAsFixed(2))
-              .toString();
-      for (int i = 1; i <= (size - (itemsNo.length + subTotal.length)); i++) {
-        printLine += " ";
+      if (FFAppState().billPrintFooter != "KOT" &&
+          FFAppState().billPrintFooter != "CUSTOMER") {
+        int len = invoiceDetails.productList!.length;
+        String itemsNo = "Items :" + len.toString();
+        printLine = itemsNo;
+        String subTotal = "Sub total:" +
+            ((invoiceDetails.billAmt - invoiceDetails.taxAmt)
+                    .toStringAsFixed(2))
+                .toString();
+        for (int i = 1; i <= (size - (itemsNo.length + subTotal.length)); i++) {
+          printLine += " ";
+        }
+        printLine += subTotal;
+        bytes += generator.text(printLine,
+            styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                align: PosAlign.left));
+      } else {
+        int len = invoiceDetails.productList!.length;
+        String itemsNo = "Items :" + len.toString();
+        printLine = itemsNo;
+        String subTotal = "Sub total:" +
+            ((invoiceDetails.billAmt).toStringAsFixed(2)).toString();
+        for (int i = 1; i <= (size - (itemsNo.length + subTotal.length)); i++) {
+          printLine += " ";
+        }
+        printLine += subTotal;
+        bytes += generator.text(printLine,
+            styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                align: PosAlign.left));
       }
-      printLine += subTotal;
-      bytes += generator.text(printLine,
-          styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              align: PosAlign.left));
-
-      bytes += generator.text("-----------------------------------------------",
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              align: PosAlign.center));
+      if (FFAppState().billPrintFooter != "KOT" &&
+          FFAppState().billPrintFooter != "CUSTOMER") {
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+      }
 
       if (invoiceDetails.roundOff != 0) {
         bytes += generator.row([
@@ -426,36 +454,39 @@ Future printBillnewhive(
                 bold: false,
                 align: PosAlign.center));
       }
-      if (invoiceDetails.taxAmt != 0) {
-        bytes += generator.row([
-          PosColumn(
-            text: "Tax : ",
-            width: 6,
-            styles: PosStyles(
-                fontType: PosFontType.fontA,
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.left),
-          ),
-          PosColumn(
-            text: invoiceDetails.taxAmt.toStringAsFixed(2),
-            width: 6,
-            styles: PosStyles(
-                fontType: PosFontType.fontA,
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.right),
-          )
-        ]);
-        bytes += generator.text(
-            "-----------------------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
+      if (FFAppState().billPrintFooter != "KOT" &&
+          FFAppState().billPrintFooter != "CUSTOMER") {
+        if (invoiceDetails.taxAmt != 0) {
+          bytes += generator.row([
+            PosColumn(
+              text: "Tax : ",
+              width: 6,
+              styles: PosStyles(
+                  fontType: PosFontType.fontA,
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.left),
+            ),
+            PosColumn(
+              text: invoiceDetails.taxAmt.toStringAsFixed(2),
+              width: 6,
+              styles: PosStyles(
+                  fontType: PosFontType.fontA,
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.right),
+            )
+          ]);
+          bytes += generator.text(
+              "-----------------------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
+        }
       }
       if (invoiceDetails.delliveryChrg != 0) {
         bytes += generator.row([
@@ -522,13 +553,14 @@ Future printBillnewhive(
                 align: PosAlign.center));
       }
 
-      bytes += generator.text("Grand Total:" + FFAppState().finalAmt.toString(),
-          styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size2,
-              align: PosAlign.right));
       if (FFAppState().billPrintFooter != "KOT" &&
           FFAppState().billPrintFooter != "CUSTOMER") {
+        bytes += generator.text(
+            "Grand Total:" + FFAppState().finalAmt.toString(),
+            styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size2,
+                align: PosAlign.right));
         bytes += generator.text(
             "-----------------------------------------------",
             styles: const PosStyles(
@@ -559,206 +591,314 @@ Future printBillnewhive(
               align: PosAlign.center));*/
 
       //////////////////////////////TAX//////////////////////////////////////
+      if (appSetting.settingList.any((setting) =>
+          setting.title == 'enablegstontotal' && setting.value == true)) {
+        if (invoiceDetails.taxAmt != 0) {
+          // Check if tax is inclusive or exclusive
+          bool isTaxInclusive = appSetting.settingList.any((setting) =>
+              setting.title == 'enableInclusiveTax' && setting.value == true);
 
-      if (invoiceDetails.taxAmt != 0) {
-        if (appSetting.settingList.any((setting) =>
-            setting.title == 'enableInclusiveTax' && setting.value == true)) {
-          bytes += generator.text("Tax Details ( All Inclusive )",
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: false,
-                  align: PosAlign.center));
-        } else {
-          bytes += generator.text("Tax Details ( All Exclusive )",
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: false,
-                  align: PosAlign.center));
-        }
+          // Tax rate (e.g., 5% -> 5)
+          double taxRate = FFAppState().fsTaxAMt;
 
-        bytes += generator.text(
-            "-----------------------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
+          // Total bill amount
+          double billAmount = FFAppState().billAmt;
 
-        bytes += generator.text(taxColumn3,
-            styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              //align: PosAlign.center
-            ));
-
-        bytes += generator.text(
-            "-----------------------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
-
-        Map<String, Map<String, double>> taxMap = {};
-// Initialize running totals
-        double taxableAmtTotal = 0;
-        double cgstTotal = 0;
-        double sgstTotal = 0;
-        double taxAmtTotal = 0;
-        for (int i = 0; i < obj["itemList"].length; i++) {
-          String taxPer = obj["itemList"][i]["taxPer"].toString();
-          double price = double.parse(obj["itemList"][i]["price"].toString());
-          double qty = double.parse(obj["itemList"][i]["quantity"].toString());
-          double taxableAmt = price * qty;
-          double totalTax =
-              double.parse(obj["itemList"][i]["taxAmt"].toString());
-
-          /*String taxPer = obj["itemList"][i]["taxPer"].toString();
-  double taxableAmt = double.parse(obj["itemList"][i]["price"].toString());
-  double totalTax = double.parse(obj["itemList"][i]["taxAmt"].toString());*/
-          if (taxMap.containsKey(taxPer)) {
-            taxMap[taxPer]!["taxable"] =
-                (taxMap[taxPer]!["taxable"] ?? 0) + taxableAmt;
-            taxMap[taxPer]!["totalTax"] =
-                (taxMap[taxPer]!["totalTax"] ?? 0) + totalTax;
+          // Calculate taxable amount
+          double taxableAmt;
+          if (isTaxInclusive) {
+            // Tax is inclusive: taxableAmt = billAmount / (1 + taxRate/100)
+            taxableAmt = billAmount / (1 + (taxRate / 100));
           } else {
-            taxMap[taxPer] = {
-              "taxable": taxableAmt,
-              "totalTax": totalTax,
-            };
+            // Tax is exclusive: taxableAmt = billAmount
+            taxableAmt = billAmount;
           }
 
-          // Update running totals
-          taxableAmtTotal += taxableAmt;
-          cgstTotal += totalTax / 2;
-          sgstTotal += totalTax / 2;
-          taxAmtTotal += totalTax;
+          // Calculate total tax amount
+          double totalTax = taxableAmt * (taxRate / 100);
+
+          // Calculate CGST and SGST (each is half of total tax)
+          double cgst = totalTax / 2;
+          double sgst = totalTax / 2;
+
+          // Format the output strings
+          String cgstString =
+              "CGST@(${taxRate / 2}%): ${cgst.toStringAsFixed(2)}";
+          String sgstString =
+              "SGST@(${taxRate / 2}%): ${sgst.toStringAsFixed(2)}";
+          String totalTaxString =
+              "TaxAmt(${taxRate}%): ${totalTax.toStringAsFixed(2)}";
+          String taxableString = "TaxableAmt: ${taxableAmt.toStringAsFixed(2)}";
+
+          // Add tax details to the output
+          /*   bytes += generator.text(
+              isTaxInclusive
+                  ? "Tax Details ( All Inclusive )"
+                  : "Tax Details ( All Exclusive )",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.right));
+
+          bytes += generator.text(
+              "-----------------------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
+*/
+          // Add formatted tax details
+          bytes += generator.text(cgstString,
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.right));
+
+          bytes += generator.text(sgstString,
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.right));
+
+          bytes += generator.text(taxableString,
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.right));
+          bytes += generator.text(totalTaxString,
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.right));
+
+          bytes += generator.text(
+              "-----------------------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
+          bytes += generator.text(
+              "Grand Total:" + FFAppState().finalAmt.toString(),
+              styles: PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size2,
+                  align: PosAlign.right));
+          bytes += generator.text(
+              "-----------------------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
         }
+      } else {
+        if (invoiceDetails.taxAmt != 0) {
+          if (appSetting.settingList.any((setting) =>
+              setting.title == 'enableInclusiveTax' && setting.value == true)) {
+            bytes += generator.text("Tax Details ( All Inclusive )",
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: false,
+                    align: PosAlign.center));
+          } else {
+            bytes += generator.text("Tax Details ( All Exclusive )",
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: false,
+                    align: PosAlign.center));
+          }
+
+          bytes += generator.text(
+              "-----------------------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
+
+          bytes += generator.text(taxColumn3,
+              styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                //align: PosAlign.center
+              ));
+
+          bytes += generator.text(
+              "-----------------------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
+
+          Map<String, Map<String, double>> taxMap = {};
+// Initialize running totals
+          double taxableAmtTotal = 0;
+          double cgstTotal = 0;
+          double sgstTotal = 0;
+          double taxAmtTotal = 0;
+          for (int i = 0; i < obj["itemList"].length; i++) {
+            String taxPer = obj["itemList"][i]["taxPer"].toString();
+            double price = double.parse(obj["itemList"][i]["price"].toString());
+            double qty =
+                double.parse(obj["itemList"][i]["quantity"].toString());
+            double taxableAmt = price * qty;
+            double totalTax =
+                double.parse(obj["itemList"][i]["taxAmt"].toString());
+
+            /*String taxPer = obj["itemList"][i]["taxPer"].toString();
+  double taxableAmt = double.parse(obj["itemList"][i]["price"].toString());
+  double totalTax = double.parse(obj["itemList"][i]["taxAmt"].toString());*/
+            if (taxMap.containsKey(taxPer)) {
+              taxMap[taxPer]!["taxable"] =
+                  (taxMap[taxPer]!["taxable"] ?? 0) + taxableAmt;
+              taxMap[taxPer]!["totalTax"] =
+                  (taxMap[taxPer]!["totalTax"] ?? 0) + totalTax;
+            } else {
+              taxMap[taxPer] = {
+                "taxable": taxableAmt,
+                "totalTax": totalTax,
+              };
+            }
+
+            // Update running totals
+            taxableAmtTotal += taxableAmt;
+            cgstTotal += totalTax / 2;
+            sgstTotal += totalTax / 2;
+            taxAmtTotal += totalTax;
+          }
 
 // Generating rows for each tax group
-        taxMap.forEach((taxPer, values) {
-          double totalTax = values["totalTax"]!;
-          double cgstAmt = totalTax / 2;
-          double sgstAmt = totalTax / 2;
+          taxMap.forEach((taxPer, values) {
+            double totalTax = values["totalTax"]!;
+            double cgstAmt = totalTax / 2;
+            double sgstAmt = totalTax / 2;
 
+            bytes += generator.row([
+              PosColumn(
+                text: taxPer,
+                width: 3,
+                styles: PosStyles(
+                  fontType: PosFontType.fontA,
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                ),
+              ),
+              PosColumn(
+                text: values["taxable"]!.toString(),
+                width: 3,
+                styles: PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                ),
+              ),
+              PosColumn(
+                text: cgstAmt.toStringAsFixed(2),
+                width: 2,
+                styles: PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                ),
+              ),
+              PosColumn(
+                text: sgstAmt.toStringAsFixed(2),
+                width: 2,
+                styles: PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                ),
+              ),
+              PosColumn(
+                text: totalTax.toStringAsFixed(2),
+                width: 2,
+                styles: PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                ),
+              ),
+            ]);
+          });
+
+          bytes += generator.text(
+              "-----------------------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
           bytes += generator.row([
             PosColumn(
-              text: taxPer,
+              text: "Total",
               width: 3,
               styles: PosStyles(
                 fontType: PosFontType.fontA,
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: false,
+                bold: true,
               ),
             ),
             PosColumn(
-              text: values["taxable"]!.toString(),
+              text: taxableAmtTotal.toStringAsFixed(2),
               width: 3,
               styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: false,
+                bold: true,
               ),
             ),
             PosColumn(
-              text: cgstAmt.toStringAsFixed(2),
+              text: cgstTotal.toStringAsFixed(2),
               width: 2,
               styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: false,
+                bold: true,
               ),
             ),
             PosColumn(
-              text: sgstAmt.toStringAsFixed(2),
+              text: sgstTotal.toStringAsFixed(2),
               width: 2,
               styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: false,
+                bold: true,
               ),
             ),
             PosColumn(
-              text: totalTax.toStringAsFixed(2),
+              text: taxAmtTotal.toStringAsFixed(2),
               width: 2,
               styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: false,
+                bold: true,
               ),
             ),
           ]);
-        });
-
-        bytes += generator.text(
-            "-----------------------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
-        bytes += generator.row([
-          PosColumn(
-            text: "Total",
-            width: 3,
-            styles: PosStyles(
-              fontType: PosFontType.fontA,
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: true,
-            ),
-          ),
-          PosColumn(
-            text: taxableAmtTotal.toStringAsFixed(2),
-            width: 3,
-            styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: true,
-            ),
-          ),
-          PosColumn(
-            text: cgstTotal.toStringAsFixed(2),
-            width: 2,
-            styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: true,
-            ),
-          ),
-          PosColumn(
-            text: sgstTotal.toStringAsFixed(2),
-            width: 2,
-            styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: true,
-            ),
-          ),
-          PosColumn(
-            text: taxAmtTotal.toStringAsFixed(2),
-            width: 2,
-            styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: true,
-            ),
-          ),
-        ]);
-        bytes += generator.text(
-            "-----------------------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
-        ////////////////////////////////////////////////////////////////////
+          bytes += generator.text(
+              "-----------------------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
+          ////////////////////////////////////////////////////////////////////
+        }
       }
-
       if (FFAppState().setCustName.isNotEmpty) {
         QuerySnapshot querySnapshotparty;
         querySnapshotparty = await FirebaseFirestore.instance
@@ -903,9 +1043,11 @@ Future printBillnewhive(
               align: PosAlign.center));
     }
   } else if (size == 32) {
-    billColumn3 = "ITEM_NAME    QTY    RATE  TOTAL"; //(32)
-    //
-    taxColumn3 = "TAX% TAXABLE  CGST  SGST  TAXAMT";
+    billColumn3 =
+        "ITEM         QTY  RATE  TOTAL "; // Adjusted for 32 characters
+    taxColumn3 =
+        "TAX%  TAXABLE  CGST  SGST  TAXAMT"; // Adjusted for 32 characters
+
     if (data.length > 0) {
       obj = data[0]["details"];
       String header;
@@ -922,122 +1064,122 @@ Future printBillnewhive(
           .collection('HEADER')
           .get();
       for (var doc in querySnapshot.docs) {
-        print(doc);
-        /*  if (doc["recepitLogoUrl"] != null && doc["recepitLogoUrl"].isNotEmpty) {
-          final ByteData data =
-              await NetworkAssetBundle(Uri.parse(doc["recepitLogoUrl"]))
-                  .load("");
-          final Uint8List imgBytes = data.buffer.asUint8List();
-          final img.Image image = img.decodeImage(imgBytes)!;
-
-          //   bytes += generator.imageRaster(image, imageFn: PosImageFn.graphics);
-          bytes += generator.image(image);
-          // bytes += generator.imageRaster(image);
-        }   */
-        if (doc["title"] != null && doc["title"].isNotEmpty) {
-          bytes += generator.text(doc["title"],
-              styles: PosStyles(
-                  height: PosTextSize.size2,
-                  width: PosTextSize.size2,
-                  align: PosAlign.center));
-        }
-        if (doc["address"] != null && doc["address"].isNotEmpty) {
-          bytes += generator.text(doc["address"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["gstNo"] != null && doc["gstNo"].isNotEmpty) {
-          bytes += generator.text(doc["gstNo"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["contactNo"] != null && doc["contactNo"].isNotEmpty) {
-          bytes += generator.text(doc["contactNo"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["email"] != null && doc["email"].isNotEmpty) {
-          bytes += generator.text(doc["email"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["serialNo"] != null && doc["serialNo"].isNotEmpty) {
-          bytes += generator.text(doc["serialNo"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["taxInvoice"] != null && doc["taxInvoice"].isNotEmpty) {
-          bytes += generator.text(doc["taxInvoice"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["bankName"] != null && doc["bankName"].isNotEmpty) {
-          bytes += generator.text(doc["bankName"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["bankBranch"] != null && doc["bankBranch"].isNotEmpty) {
-          bytes += generator.text(doc["bankBranch"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-
-        if (doc["accountNumber"] != null && doc["accountNumber"].isNotEmpty) {
-          bytes += generator.text(doc["accountNumber"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["ifscCode"] != null && doc["ifscCode"].isNotEmpty) {
-          bytes += generator.text(doc["ifscCode"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["subtitleAddress"] != null &&
-            doc["subtitleAddress"].isNotEmpty) {
-          bytes += generator.text(doc["subtitleAddress"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
+        if (FFAppState().billPrintFooter != "KOT") {
+          if (doc["title"] != null && doc["title"].isNotEmpty) {
+            bytes += generator.text(doc["title"],
+                styles: PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    align: PosAlign.center));
+          }
+          if (doc["address"] != null && doc["address"].isNotEmpty) {
+            bytes += generator.text(doc["address"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["gstNo"] != null && doc["gstNo"].isNotEmpty) {
+            bytes += generator.text(doc["gstNo"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["contactNo"] != null && doc["contactNo"].isNotEmpty) {
+            bytes += generator.text(doc["contactNo"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["email"] != null && doc["email"].isNotEmpty) {
+            bytes += generator.text(doc["email"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["serialNo"] != null && doc["serialNo"].isNotEmpty) {
+            bytes += generator.text(doc["serialNo"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["taxInvoice"] != null && doc["taxInvoice"].isNotEmpty) {
+            bytes += generator.text(doc["taxInvoice"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["bankName"] != null && doc["bankName"].isNotEmpty) {
+            bytes += generator.text(doc["bankName"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["bankBranch"] != null && doc["bankBranch"].isNotEmpty) {
+            bytes += generator.text(doc["bankBranch"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["accountNumber"] != null && doc["accountNumber"].isNotEmpty) {
+            bytes += generator.text(doc["accountNumber"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["ifscCode"] != null && doc["ifscCode"].isNotEmpty) {
+            bytes += generator.text(doc["ifscCode"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["subtitleAddress"] != null &&
+              doc["subtitleAddress"].isNotEmpty) {
+            bytes += generator.text(doc["subtitleAddress"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
         }
       }
+
       bytes += generator.text(FFAppState().orderType,
           styles: const PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: true,
               align: PosAlign.center));
+
+      if (FFAppState().billPrintFooter == "KOT") {
+        bytes += generator.text("NEW KOT",
+            styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: true,
+                align: PosAlign.center));
+      }
+
       bytes += generator.text("--------------------------------",
           styles: const PosStyles(
               height: PosTextSize.size1,
@@ -1046,47 +1188,72 @@ Future printBillnewhive(
               align: PosAlign.center));
 
       String printLine = '';
-      String dateString = '';
-      String serialTemp = 'Serial no: ' + FFAppState().count.toString();
 
-      final DateTime now = DateTime.now();
-      final DateFormat formatter = DateFormat('dd-MM-yyyy');
-      final String formatted = formatter.format(now);
-      dateString = formatted.toString();
-      printLine = serialTemp;
-      for (int i = 1;
-          i <= (size - (serialTemp.length + dateString.length));
-          i++) {
-        printLine += " ";
+      if (FFAppState().billPrintFooter == "KOT" ||
+          FFAppState().billPrintFooter == "CUSTOMER") {
+        String dateString = '';
+        final DateTime now =
+            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
+        final DateFormat formatter = DateFormat('dd-MM-yyyy  h:mm a');
+        final String formatted = formatter.format(now);
+        dateString = formatted.toString();
+
+        printLine = dateString;
+        bytes += generator.text(printLine,
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                align: PosAlign.center,
+                bold: true));
+
+        printLine = '';
+        final DateTime now1 =
+            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
+        final DateFormat formatter1 = DateFormat('dd-MM-yyyy h:mm a');
+        final String formatted1 = formatter1.format(now1);
+
+        String dateTimeString = formatted1.toString();
+        String billNo = 'Bill No:' + invoiceDetails.invoice.toString();
+        printLine = billNo;
+        bytes += generator.text(printLine,
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                align: PosAlign.center,
+                bold: true));
+      } else {
+        String dateString = '';
+        String serialTemp =
+            'Serial no: ' + lastBillCount(FFAppState().count).toString();
+        final DateTime now =
+            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
+        final DateFormat formatter = DateFormat('dd-MM-yyyy');
+        final String formatted = formatter.format(now);
+        dateString = formatted.toString();
+        printLine = serialTemp + " " + dateString;
+
+        bytes += generator.text(printLine,
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false));
+
+        printLine = '';
+        final DateTime now1 =
+            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
+        final DateFormat formatter1 = DateFormat('h:mm:ss');
+        final String formatted1 = formatter1.format(now1);
+
+        String dateTimeString = formatted1.toString();
+        String billNo = 'Bill No: ' + invoiceDetails.invoice.toString();
+        printLine = billNo + " " + dateTimeString;
+
+        bytes += generator.text(printLine,
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false));
       }
-
-      printLine += dateString;
-
-      bytes += generator.text(printLine,
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false));
-      printLine = '';
-      final DateTime now1 = DateTime.now();
-      final DateFormat formatter1 = DateFormat(' h:mm:ss');
-      final String formatted1 = formatter1.format(now1);
-
-      String dateTimeString = formatted1.toString();
-      String billNo = 'Bill No: ' + invoiceDetails.invoice.toString();
-      printLine = billNo;
-      for (int i = 1;
-          i <= (size - (billNo.length + dateTimeString.length));
-          i++) {
-        printLine += " ";
-      }
-      printLine += dateTimeString;
-
-      bytes += generator.text(printLine,
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false));
 
       bytes += generator.text("--------------------------------",
           styles: const PosStyles(
@@ -1097,10 +1264,10 @@ Future printBillnewhive(
 
       bytes += generator.text(billColumn3,
           styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              align: PosAlign.center));
+            height: PosTextSize.size1,
+            width: PosTextSize.size1,
+            bold: false,
+          ));
 
       bytes += generator.text("--------------------------------",
           styles: const PosStyles(
@@ -1113,53 +1280,40 @@ Future printBillnewhive(
         bytes += generator.row([
           PosColumn(
             text: obj["itemList"][i]["name"].toString(),
-            width: 12,
+            width: 5,
             styles: PosStyles(
-              //  fontType: PosFontType.fontA,
-
+              fontType: PosFontType.fontA,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              //align: PosAlign.left
             ),
-          )
-        ]);
-        bytes += generator.row([
-          PosColumn(
-            text: '',
-            width: 3,
-            styles: PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.right),
           ),
           PosColumn(
             text: obj["itemList"][i]["quantity"].toString(),
-            width: 3,
+            width: 2,
             styles: PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.right),
+              height: PosTextSize.size1,
+              width: PosTextSize.size1,
+              bold: false,
+            ),
           ),
           PosColumn(
             text: obj["itemList"][i]["price"].toString(),
-            width: 3,
+            width: 2,
             styles: PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.right),
+              height: PosTextSize.size1,
+              width: PosTextSize.size1,
+              bold: false,
+            ),
           ),
           PosColumn(
             text: obj["itemList"][i]["total"].toString(),
             width: 3,
             styles: PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.right),
+              height: PosTextSize.size1,
+              width: PosTextSize.size1,
+              bold: false,
+            ),
           )
         ]);
       }
@@ -1171,34 +1325,56 @@ Future printBillnewhive(
               bold: false,
               align: PosAlign.center));
 
-      int len = invoiceDetails.productList!.length;
-      String itemsNo = "Items :" + len.toString();
-      printLine = itemsNo;
-      String subTotal = "Sub total:" +
-          ((invoiceDetails.billAmt - invoiceDetails.taxAmt).toStringAsFixed(2))
-              .toString();
-      for (int i = 1; i <= (size - (itemsNo.length + subTotal.length)); i++) {
-        printLine += " ";
+      if (FFAppState().billPrintFooter != "KOT" &&
+          FFAppState().billPrintFooter != "CUSTOMER") {
+        int len = invoiceDetails.productList!.length;
+        String itemsNo = "Items :" + len.toString();
+        printLine = itemsNo;
+        String subTotal = "Sub total:" +
+            ((invoiceDetails.billAmt - invoiceDetails.taxAmt)
+                    .toStringAsFixed(2))
+                .toString();
+        for (int i = 1; i <= (size - (itemsNo.length + subTotal.length)); i++) {
+          printLine += " ";
+        }
+        printLine += subTotal;
+        bytes += generator.text(printLine,
+            styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                align: PosAlign.left));
+      } else {
+        int len = invoiceDetails.productList!.length;
+        String itemsNo = "Items :" + len.toString();
+        printLine = itemsNo;
+        String subTotal = "Sub total:" +
+            ((invoiceDetails.billAmt).toStringAsFixed(2)).toString();
+        for (int i = 1; i <= (size - (itemsNo.length + subTotal.length)); i++) {
+          printLine += " ";
+        }
+        printLine += subTotal;
+        bytes += generator.text(printLine,
+            styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                align: PosAlign.left));
       }
-      printLine += subTotal;
-      bytes += generator.text(printLine,
-          styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              align: PosAlign.left));
 
-      bytes += generator.text("--------------------------------",
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              align: PosAlign.center));
-//
+      if (FFAppState().billPrintFooter != "KOT" &&
+          FFAppState().billPrintFooter != "CUSTOMER") {
+        bytes += generator.text("--------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+      }
+
       if (invoiceDetails.roundOff != 0) {
         bytes += generator.row([
           PosColumn(
             text: "Round Off:",
-            width: 6,
+            width: 12,
             styles: PosStyles(
                 fontType: PosFontType.fontA,
                 height: PosTextSize.size1,
@@ -1208,7 +1384,7 @@ Future printBillnewhive(
           ),
           PosColumn(
             text: invoiceDetails.roundOff.toString(),
-            width: 6,
+            width: 12,
             styles: PosStyles(
                 fontType: PosFontType.fontA,
                 height: PosTextSize.size1,
@@ -1224,41 +1400,46 @@ Future printBillnewhive(
                 bold: false,
                 align: PosAlign.center));
       }
-      if (invoiceDetails.taxAmt != 0) {
-        bytes += generator.row([
-          PosColumn(
-            text: "Tax : ",
-            width: 6,
-            styles: PosStyles(
-                fontType: PosFontType.fontA,
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.left),
-          ),
-          PosColumn(
-            text: invoiceDetails.taxAmt.toStringAsFixed(2),
-            width: 6,
-            styles: PosStyles(
-                fontType: PosFontType.fontA,
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.right),
-          )
-        ]);
-        bytes += generator.text("--------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
+
+      if (FFAppState().billPrintFooter != "KOT" &&
+          FFAppState().billPrintFooter != "CUSTOMER") {
+        if (invoiceDetails.taxAmt != 0) {
+          bytes += generator.row([
+            PosColumn(
+              text: "Tax : ",
+              width: 12,
+              styles: PosStyles(
+                  fontType: PosFontType.fontA,
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.left),
+            ),
+            PosColumn(
+              text: invoiceDetails.taxAmt.toStringAsFixed(2),
+              width: 12,
+              styles: PosStyles(
+                  fontType: PosFontType.fontA,
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.right),
+            )
+          ]);
+          bytes += generator.text("--------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
+        }
       }
+
       if (invoiceDetails.delliveryChrg != 0) {
         bytes += generator.row([
           PosColumn(
             text: "Delivery Charges: ",
-            width: 8,
+            width: 16,
             styles: PosStyles(
                 fontType: PosFontType.fontA,
                 height: PosTextSize.size1,
@@ -1268,7 +1449,7 @@ Future printBillnewhive(
           ),
           PosColumn(
             text: invoiceDetails.delliveryChrg.toString(),
-            width: 4,
+            width: 8,
             styles: PosStyles(
                 fontType: PosFontType.fontA,
                 height: PosTextSize.size1,
@@ -1284,12 +1465,13 @@ Future printBillnewhive(
                 bold: false,
                 align: PosAlign.center));
       }
+
       int disPer = invoiceDetails.discountPer!.round();
       if (invoiceDetails.discountAmt != 0) {
         bytes += generator.row([
           PosColumn(
             text: "Discount (" + disPer.toString() + "%): ",
-            width: 8,
+            width: 16,
             styles: PosStyles(
                 fontType: PosFontType.fontA,
                 height: PosTextSize.size1,
@@ -1299,7 +1481,7 @@ Future printBillnewhive(
           ),
           PosColumn(
             text: invoiceDetails.discountAmt.toString(),
-            width: 4,
+            width: 8,
             styles: PosStyles(
                 fontType: PosFontType.fontA,
                 height: PosTextSize.size1,
@@ -1308,6 +1490,7 @@ Future printBillnewhive(
                 align: PosAlign.right),
           )
         ]);
+
         bytes += generator.text("--------------------------------",
             styles: const PosStyles(
                 height: PosTextSize.size1,
@@ -1316,12 +1499,29 @@ Future printBillnewhive(
                 align: PosAlign.center));
       }
 
-      //
-      bytes += generator.text("NET :" + FFAppState().finalAmt.toString(),
-          styles: PosStyles(
-              height: PosTextSize.size2,
-              width: PosTextSize.size2,
-              align: PosAlign.right));
+      if (FFAppState().billPrintFooter != "KOT" &&
+          FFAppState().billPrintFooter != "CUSTOMER") {
+        bytes += generator.text(
+            "Grand Total:" + FFAppState().finalAmt.toString(),
+            styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                align: PosAlign.right));
+        bytes += generator.text("--------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+
+        bytes += generator.text(
+            "PAYMENT MODE :" + invoiceDetails.paymentMode.toString(),
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+      }
 
       bytes += generator.text("--------------------------------",
           styles: const PosStyles(
@@ -1329,243 +1529,296 @@ Future printBillnewhive(
               width: PosTextSize.size1,
               bold: false,
               align: PosAlign.center));
-
-      bytes += generator.text(
-          "PAYMENT MODE :" + invoiceDetails.paymentMode.toString(),
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              align: PosAlign.center));
-
-      bytes += generator.text("--------------------------------",
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              align: PosAlign.center));
-
-      /*bytes += generator.text(FFAppState().billPrintFooter.toString(),
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              align: PosAlign.center));*/
-      /*  bytes += generator.text("--------------------------------",
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              align: PosAlign.center));*/
 
       //////////////////////////////TAX//////////////////////////////////////
+      if (appSetting.settingList.any((setting) =>
+          setting.title == 'enablegstontotal' && setting.value == true)) {
+        if (invoiceDetails.taxAmt != 0) {
+          bool isTaxInclusive = appSetting.settingList.any((setting) =>
+              setting.title == 'enableInclusiveTax' && setting.value == true);
 
-      if (invoiceDetails.taxAmt != 0) {
-        if (appSetting.settingList.any((setting) =>
-            setting.title == 'enableInclusiveTax' && setting.value == true)) {
-          bytes += generator.text("Tax Details ( All Inclusive )",
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: false,
-                  align: PosAlign.center));
-        } else {
-          bytes += generator.text("Tax Details ( All Exclusive )",
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: false,
-                  align: PosAlign.center));
-        }
-        bytes += generator.text("--------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
-        bytes += generator.text(taxColumn3,
-            styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              //align: PosAlign.center
-            ));
+          double taxRate = FFAppState().fsTaxAMt;
+          double billAmount = FFAppState().billAmt;
 
-        bytes += generator.text("--------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
-
-        Map<String, Map<String, double>> taxMap = {};
-// Initialize running totals
-        double taxableAmtTotal = 0;
-        double cgstTotal = 0;
-        double sgstTotal = 0;
-        double taxAmtTotal = 0;
-        for (int i = 0; i < obj["itemList"].length; i++) {
-          String taxPer = obj["itemList"][i]["taxPer"].toString();
-          double price = double.parse(obj["itemList"][i]["price"].toString());
-          double qty = double.parse(obj["itemList"][i]["quantity"].toString());
-          double taxableAmt = price * qty;
-          double totalTax =
-              double.parse(obj["itemList"][i]["taxAmt"].toString());
-
-          /*String taxPer = obj["itemList"][i]["taxPer"].toString();
-  double taxableAmt = double.parse(obj["itemList"][i]["price"].toString());
-  double totalTax = double.parse(obj["itemList"][i]["taxAmt"].toString());
-
-    if (taxMap.containsKey(taxPer)) {
-    taxMap[taxPer]!["taxable"] = (taxMap[taxPer]!["taxable"] ?? 0) + taxableAmt;
-    taxMap[taxPer]!["totalTax"] = (taxMap[taxPer]!["totalTax"] ?? 0) + totalTax;
-  } else {
-    taxMap[taxPer] = {
-      "taxable": taxableAmt,
-      "totalTax": totalTax,
-    };
-  }
-  */
-
-          if (taxMap.containsKey(taxPer)) {
-            taxMap[taxPer]!["taxable"] =
-                (taxMap[taxPer]!["taxable"] ?? 0) + taxableAmt;
-            taxMap[taxPer]!["totalTax"] =
-                (taxMap[taxPer]!["totalTax"] ?? 0) + totalTax;
+          double taxableAmt;
+          if (isTaxInclusive) {
+            taxableAmt = billAmount / (1 + (taxRate / 100));
           } else {
-            taxMap[taxPer] = {
-              "taxable": taxableAmt,
-              "totalTax": totalTax,
-            };
+            taxableAmt = billAmount;
           }
 
-          // Update running totals
-          taxableAmtTotal += taxableAmt;
-          cgstTotal += totalTax / 2;
-          sgstTotal += totalTax / 2;
-          taxAmtTotal += totalTax;
-        }
+          double totalTax = taxableAmt * (taxRate / 100);
+          double cgst = totalTax / 2;
+          double sgst = totalTax / 2;
 
-// Generating rows for each tax group
-        taxMap.forEach((taxPer, values) {
-          double totalTax = values["totalTax"]!;
-          double cgstAmt = totalTax / 2;
-          double sgstAmt = totalTax / 2;
+          String cgstString =
+              "CGST@(${taxRate / 2}%): ${cgst.toStringAsFixed(2)}";
+          String sgstString =
+              "SGST@(${taxRate / 2}%): ${sgst.toStringAsFixed(2)}";
+          String totalTaxString =
+              "TaxAmt(${taxRate}%): ${totalTax.toStringAsFixed(2)}";
+          String taxableString = "TaxableAmt: ${taxableAmt.toStringAsFixed(2)}";
+
+          /* bytes += generator.text(
+              isTaxInclusive
+                  ? "Tax Details ( Inclusive )"
+                  : "Tax Details ( Exclusive )",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.right));
+
+          bytes += generator.text("--------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
+*/
+          bytes += generator.text(cgstString,
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.right));
+
+          bytes += generator.text(sgstString,
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.right));
+
+          bytes += generator.text(taxableString,
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.right));
+
+          bytes += generator.text(totalTaxString,
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.right));
+
+          bytes += generator.text("--------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
+
+          bytes += generator.text(
+              "Grand Total:" + FFAppState().finalAmt.toString(),
+              styles: PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  align: PosAlign.right));
+
+          bytes += generator.text("--------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
+        }
+      } else {
+        if (invoiceDetails.taxAmt != 0) {
+          if (appSetting.settingList.any((setting) =>
+              setting.title == 'enableInclusiveTax' && setting.value == true)) {
+            bytes += generator.text("Tax Details ( Inclusive )",
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: false,
+                    align: PosAlign.center));
+          } else {
+            bytes += generator.text("Tax Details ( Exclusive )",
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: false,
+                    align: PosAlign.center));
+          }
+
+          bytes += generator.text("--------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
+
+          bytes += generator.text(taxColumn3,
+              styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+              ));
+
+          bytes += generator.text("--------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
+
+          Map<String, Map<String, double>> taxMap = {};
+          double taxableAmtTotal = 0;
+          double cgstTotal = 0;
+          double sgstTotal = 0;
+          double taxAmtTotal = 0;
+
+          for (int i = 0; i < obj["itemList"].length; i++) {
+            String taxPer = obj["itemList"][i]["taxPer"].toString();
+            double price = double.parse(obj["itemList"][i]["price"].toString());
+            double qty =
+                double.parse(obj["itemList"][i]["quantity"].toString());
+            double taxableAmt = price * qty;
+            double totalTax =
+                double.parse(obj["itemList"][i]["taxAmt"].toString());
+
+            if (taxMap.containsKey(taxPer)) {
+              taxMap[taxPer]!["taxable"] =
+                  (taxMap[taxPer]!["taxable"] ?? 0) + taxableAmt;
+              taxMap[taxPer]!["totalTax"] =
+                  (taxMap[taxPer]!["totalTax"] ?? 0) + totalTax;
+            } else {
+              taxMap[taxPer] = {
+                "taxable": taxableAmt,
+                "totalTax": totalTax,
+              };
+            }
+
+            taxableAmtTotal += taxableAmt;
+            cgstTotal += totalTax / 2;
+            sgstTotal += totalTax / 2;
+            taxAmtTotal += totalTax;
+          }
+
+          taxMap.forEach((taxPer, values) {
+            double totalTax = values["totalTax"]!;
+            double cgstAmt = totalTax / 2;
+            double sgstAmt = totalTax / 2;
+
+            bytes += generator.row([
+              PosColumn(
+                text: taxPer,
+                width: 3,
+                styles: PosStyles(
+                  fontType: PosFontType.fontA,
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                ),
+              ),
+              PosColumn(
+                text: values["taxable"]!.toString(),
+                width: 6,
+                styles: PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                ),
+              ),
+              PosColumn(
+                text: cgstAmt.toStringAsFixed(2),
+                width: 4,
+                styles: PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                ),
+              ),
+              PosColumn(
+                text: sgstAmt.toStringAsFixed(2),
+                width: 4,
+                styles: PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                ),
+              ),
+              PosColumn(
+                text: totalTax.toStringAsFixed(2),
+                width: 4,
+                styles: PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                ),
+              ),
+            ]);
+          });
+
+          bytes += generator.text("--------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
 
           bytes += generator.row([
             PosColumn(
-              text: taxPer,
+              text: "Total",
               width: 3,
               styles: PosStyles(
                 fontType: PosFontType.fontA,
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: false,
+                bold: true,
               ),
             ),
             PosColumn(
-              text: values["taxable"]!.toString(),
-              width: 3,
+              text: taxableAmtTotal.toStringAsFixed(2),
+              width: 6,
               styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: false,
+                bold: true,
               ),
             ),
             PosColumn(
-              text: cgstAmt.toStringAsFixed(2),
-              width: 2,
+              text: cgstTotal.toStringAsFixed(2),
+              width: 4,
               styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: false,
+                bold: true,
               ),
             ),
             PosColumn(
-              text: sgstAmt.toStringAsFixed(2),
-              width: 2,
+              text: sgstTotal.toStringAsFixed(2),
+              width: 4,
               styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: false,
+                bold: true,
               ),
             ),
             PosColumn(
-              text: totalTax.toStringAsFixed(2),
-              width: 2,
+              text: taxAmtTotal.toStringAsFixed(2),
+              width: 4,
               styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: false,
+                bold: true,
               ),
             ),
           ]);
-        });
 
-        bytes += generator.text("--------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
-        bytes += generator.row([
-          PosColumn(
-            text: "Total",
-            width: 3,
-            styles: PosStyles(
-              fontType: PosFontType.fontA,
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: true,
-            ),
-          ),
-          PosColumn(
-            text: taxableAmtTotal.toString(),
-            width: 3,
-            styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: true,
-            ),
-          ),
-          PosColumn(
-            text: cgstTotal.toStringAsFixed(2),
-            width: 2,
-            styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: true,
-            ),
-          ),
-          PosColumn(
-            text: sgstTotal.toStringAsFixed(2),
-            width: 2,
-            styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: true,
-            ),
-          ),
-          PosColumn(
-            text: taxAmtTotal.toStringAsFixed(2),
-            width: 2,
-            styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: true,
-            ),
-          ),
-        ]);
-        bytes += generator.text("--------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
+          bytes += generator.text("--------------------------------",
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: false,
+                  align: PosAlign.center));
+        }
       }
-      ////////////////////////////////////////////////////////////////////
 
-      if (invoiceDetails.paymentMode.toString() == 'CREDIT') {
+      if (FFAppState().setCustName.isNotEmpty) {
         QuerySnapshot querySnapshotparty;
         querySnapshotparty = await FirebaseFirestore.instance
             .collection('OUTLET')
@@ -1630,12 +1883,21 @@ Future printBillnewhive(
                 align: PosAlign.center));
       }
 
-      /*    bytes += generator.text("** THANK YOU ! VISIT AGAIN !! **",
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              align: PosAlign.center));*/
+      if (FFAppState().billPrintFooter == "KOT") {
+        bytes += generator.text("THIS KOT IS ONLY FOR HOTEL PURPOSED",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+        bytes += generator.text("--------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+      }
+
       QuerySnapshot querySnapshot2;
       querySnapshot2 = await FirebaseFirestore.instance
           .collection('OUTLET')
@@ -1643,7 +1905,6 @@ Future printBillnewhive(
           .collection('FOOTER')
           .get();
       for (var doc in querySnapshot2.docs) {
-        print(doc);
         if (doc["footerText1"] != null && doc["footerText1"].isNotEmpty) {
           bytes += generator.text(doc["footerText1"],
               styles: PosStyles(
@@ -1685,10 +1946,10 @@ Future printBillnewhive(
         }
       }
     } else {
-      bytes += generator.text('Test Print',
+      bytes += generator.text('TEST Print',
           styles: PosStyles(
-              height: PosTextSize.size2,
-              width: PosTextSize.size2,
+              height: PosTextSize.size1,
+              width: PosTextSize.size1,
               align: PosAlign.center));
     }
   }
