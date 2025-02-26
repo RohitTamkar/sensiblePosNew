@@ -739,7 +739,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                 child: Checkbox(
                                                                   value: _model
                                                                           .checkboxValueMap[
-                                                                      listViewInvoiceRecord] ??= true,
+                                                                      listViewInvoiceRecord] ??= false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -1315,26 +1315,28 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       ),
                                                     ),
                                                   ),
-                                                  Text(
-                                                    functions.milisecToTimestamp(
-                                                        containerInvoiceRecord
-                                                            ?.invoiceDate),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmallFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallFamily),
-                                                        ),
+                                                  Flexible(
+                                                    child: Text(
+                                                      functions.milisecToTimestamp(
+                                                          containerInvoiceRecord
+                                                              ?.invoiceDate),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily),
+                                                              ),
+                                                    ),
                                                   ),
                                                 ],
                                               ),
@@ -1650,88 +1652,96 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       ),
                                                     ),
                                                   ),
-                                                  FlutterFlowDropDown<String>(
-                                                    controller: _model
-                                                            .dropDownValueController ??=
-                                                        FormFieldController<
-                                                            String>(
-                                                      _model.dropDownValue ??=
-                                                          containerInvoiceRecord
-                                                              ?.paymentMode,
-                                                    ),
-                                                    options: [
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'nxrieh5c' /* CASH */,
+                                                  Flexible(
+                                                    child: FlutterFlowDropDown<
+                                                        String>(
+                                                      controller: _model
+                                                              .dropDownValueController ??=
+                                                          FormFieldController<
+                                                              String>(
+                                                        _model.dropDownValue ??=
+                                                            containerInvoiceRecord
+                                                                ?.paymentMode,
                                                       ),
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'ujud8lol' /* DIGITAL */,
-                                                      )
-                                                    ],
-                                                    onChanged: (val) async {
-                                                      safeSetState(() => _model
-                                                          .dropDownValue = val);
-                                                      FFAppState().prevMode =
-                                                          containerInvoiceRecord!
-                                                              .paymentMode;
-                                                      FFAppState().curMode =
-                                                          _model.dropDownValue!;
-                                                      FFAppState().dropDown =
-                                                          true;
-                                                      safeSetState(() {});
-                                                    },
-                                                    width: 200.0,
-                                                    height: 40.0,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily),
-                                                        ),
-                                                    hintText:
+                                                      options: [
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'm6ftz5hg' /* Select... */,
-                                                    ),
-                                                    icon: Icon(
-                                                      Icons
-                                                          .keyboard_arrow_down_rounded,
-                                                      color:
+                                                          'nxrieh5c' /* CASH */,
+                                                        ),
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'ujud8lol' /* DIGITAL */,
+                                                        )
+                                                      ],
+                                                      onChanged: (val) async {
+                                                        safeSetState(() => _model
+                                                                .dropDownValue =
+                                                            val);
+                                                        FFAppState().prevMode =
+                                                            containerInvoiceRecord!
+                                                                .paymentMode;
+                                                        FFAppState().curMode =
+                                                            _model
+                                                                .dropDownValue!;
+                                                        FFAppState().dropDown =
+                                                            true;
+                                                        safeSetState(() {});
+                                                      },
+                                                      width: 200.0,
+                                                      height: 40.0,
+                                                      textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .secondaryText,
-                                                      size: 24.0,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                      hintText:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'm6ftz5hg' /* Select... */,
+                                                      ),
+                                                      icon: Icon(
+                                                        Icons
+                                                            .keyboard_arrow_down_rounded,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        size: 24.0,
+                                                      ),
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      elevation: 2.0,
+                                                      borderColor:
+                                                          Colors.transparent,
+                                                      borderWidth: 0.0,
+                                                      borderRadius: 8.0,
+                                                      margin:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  12.0,
+                                                                  0.0,
+                                                                  12.0,
+                                                                  0.0),
+                                                      hidesUnderline: true,
+                                                      isOverButton: false,
+                                                      isSearchable: false,
+                                                      isMultiSelect: false,
                                                     ),
-                                                    fillColor: FlutterFlowTheme
-                                                            .of(context)
-                                                        .secondaryBackground,
-                                                    elevation: 2.0,
-                                                    borderColor:
-                                                        Colors.transparent,
-                                                    borderWidth: 0.0,
-                                                    borderRadius: 8.0,
-                                                    margin:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(12.0, 0.0,
-                                                                12.0, 0.0),
-                                                    hidesUnderline: true,
-                                                    isOverButton: false,
-                                                    isSearchable: false,
-                                                    isMultiSelect: false,
                                                   ),
                                                 ],
                                               ),
