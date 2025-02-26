@@ -3066,6 +3066,21 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                               );
                                                               _shouldSetState =
                                                                   true;
+                                                              await actions
+                                                                  .calBillAmtGroceryPay(
+                                                                0.0,
+                                                                0.0,
+                                                                FFAppState()
+                                                                    .fsTaxAMt,
+                                                                functions.enabletaxinclusive(productComboBillingAppSettingsRecord!
+                                                                    .settingList
+                                                                    .where((e) =>
+                                                                        e.title ==
+                                                                        'enableInclusiveTax')
+                                                                    .toList()
+                                                                    .firstOrNull!
+                                                                    .value),
+                                                              );
                                                               FFAppState()
                                                                       .billPrintFooter =
                                                                   'KOT';
@@ -3151,8 +3166,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           .delCharges,
                                                                       0.0,
                                                                     ),
-                                                                    taxAmt: FFAppState()
-                                                                        .taxamt,
+                                                                    taxAmt: valueOrDefault<
+                                                                        double>(
+                                                                      FFAppState()
+                                                                          .taxAmtPay,
+                                                                      0.0,
+                                                                    ),
                                                                     billAmt:
                                                                         valueOrDefault<
                                                                             double>(
@@ -3179,6 +3198,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         'KOT',
                                                                     isDeleted:
                                                                         false,
+                                                                    taxPer: FFAppState()
+                                                                        .fsTaxAMt,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -3238,8 +3259,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           .delCharges,
                                                                       0.0,
                                                                     ),
-                                                                    taxAmt: FFAppState()
-                                                                        .taxamt,
+                                                                    taxAmt: valueOrDefault<
+                                                                        double>(
+                                                                      FFAppState()
+                                                                          .taxAmtPay,
+                                                                      0.0,
+                                                                    ),
                                                                     billAmt:
                                                                         valueOrDefault<
                                                                             double>(
@@ -3266,6 +3291,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         'KOT',
                                                                     isDeleted:
                                                                         false,
+                                                                    taxPer: FFAppState()
+                                                                        .fsTaxAMt,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -3336,7 +3363,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     0.0,
                                                                   ),
                                                                   FFAppState()
-                                                                      .taxamt,
+                                                                      .taxAmtPay,
                                                                   valueOrDefault<
                                                                       double>(
                                                                     FFAppState()
@@ -4071,6 +4098,21 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                               );
                                                               _shouldSetState =
                                                                   true;
+                                                              await actions
+                                                                  .calBillAmtGroceryPay(
+                                                                0.0,
+                                                                0.0,
+                                                                FFAppState()
+                                                                    .fsTaxAMt,
+                                                                functions.enabletaxinclusive(productComboBillingAppSettingsRecord!
+                                                                    .settingList
+                                                                    .where((e) =>
+                                                                        e.title ==
+                                                                        'enableInclusiveTax')
+                                                                    .toList()
+                                                                    .firstOrNull!
+                                                                    .value),
+                                                              );
                                                               FFAppState()
                                                                       .billPrintFooter =
                                                                   'CUSTOMER';
@@ -4156,8 +4198,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           .delCharges,
                                                                       0.0,
                                                                     ),
-                                                                    taxAmt: FFAppState()
-                                                                        .taxamt,
+                                                                    taxAmt: valueOrDefault<
+                                                                        double>(
+                                                                      FFAppState()
+                                                                          .taxAmtPay,
+                                                                      0.0,
+                                                                    ),
                                                                     billAmt:
                                                                         valueOrDefault<
                                                                             double>(
@@ -4184,6 +4230,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         'CUSTOMER',
                                                                     isDeleted:
                                                                         false,
+                                                                    taxPer: FFAppState()
+                                                                        .fsTaxAMt,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -4243,8 +4291,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           .delCharges,
                                                                       0.0,
                                                                     ),
-                                                                    taxAmt: FFAppState()
-                                                                        .taxamt,
+                                                                    taxAmt: valueOrDefault<
+                                                                        double>(
+                                                                      FFAppState()
+                                                                          .taxAmtPay,
+                                                                      0.0,
+                                                                    ),
                                                                     billAmt:
                                                                         valueOrDefault<
                                                                             double>(
@@ -4271,6 +4323,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         'CUSTOMER',
                                                                     isDeleted:
                                                                         false,
+                                                                    taxPer: FFAppState()
+                                                                        .fsTaxAMt,
                                                                   ),
                                                                   ...mapToFirestore(
                                                                     {
@@ -4341,7 +4395,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     0.0,
                                                                   ),
                                                                   FFAppState()
-                                                                      .taxamt,
+                                                                      .taxAmtPay,
                                                                   valueOrDefault<
                                                                       double>(
                                                                     FFAppState()

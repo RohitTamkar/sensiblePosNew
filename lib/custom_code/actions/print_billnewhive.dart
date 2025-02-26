@@ -9,20 +9,6 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -223,12 +209,9 @@ Future printBillnewhive(
               width: PosTextSize.size1,
               bold: false,
               align: PosAlign.center));
-
       String printLine = '';
-      String dateString = '';
-      String serialTemp =
-          'Serial no: ' + lastBillCount(FFAppState().count).toString();
-      if (FFAppState().billPrintFooter == "KOT" &&
+
+      if (FFAppState().billPrintFooter == "KOT" ||
           FFAppState().billPrintFooter == "CUSTOMER") {
         String printLine = '';
         String dateString = '';
@@ -271,6 +254,9 @@ Future printBillnewhive(
                 width: PosTextSize.size1,
                 bold: true));
       } else {
+        String dateString = '';
+        String serialTemp =
+            'Serial no: ' + lastBillCount(FFAppState().count).toString();
         final DateTime now = DateTime.now();
         final DateFormat formatter = DateFormat('dd-MM-yyyy');
         final String formatted = formatter.format(now);
@@ -839,6 +825,21 @@ Future printBillnewhive(
                 align: PosAlign.center));
       }
 
+      if (FFAppState().billPrintFooter == "KOT") {
+        bytes += generator.text("THIS KOT IS ONLY FOR HOTEL PURPOSED",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+      }
       /* bytes += generator.text("** THANK YOU ! VISIT AGAIN !! **",
           styles: const PosStyles(
               height: PosTextSize.size1,

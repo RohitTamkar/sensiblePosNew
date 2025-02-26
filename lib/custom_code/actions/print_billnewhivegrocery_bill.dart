@@ -11,18 +11,6 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
 // Imports other custom actions
 
 import 'dart:async';
@@ -234,8 +222,8 @@ Future printBillnewhivegroceryBill(
       String dateString = '';
       String serialTemp =
           'Serial no: ' + lastBillCount(FFAppState().count).toString();
-      if (appSetting.settingList.any((setting) =>
-          setting.title == 'enableCombo' && setting.value == true)) {
+      if (invoiceDetails.source == "KOT" ||
+          invoiceDetails.source == "CUSTOMER") {
         if (invoiceDetails.source == "KOT") {
           bytes += generator.text("NEW KOT",
               styles: PosStyles(
@@ -998,7 +986,21 @@ Future printBillnewhivegroceryBill(
                 bold: false,
                 align: PosAlign.center));*/
       }
-
+      if (invoiceDetails.source == "KOT") {
+        bytes += generator.text("THIS KOT IS ONLY FOR HOTEL PURPOSED",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+      }
       /* bytes += generator.text("** THANK YOU ! VISIT AGAIN !! **",
           styles: const PosStyles(
               height: PosTextSize.size1,
