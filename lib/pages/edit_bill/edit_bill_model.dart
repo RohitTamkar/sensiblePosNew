@@ -32,6 +32,15 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
 
   bool customerbill = false;
 
+  List<InvoiceRecord> invoiceslist = [];
+  void addToInvoiceslist(InvoiceRecord item) => invoiceslist.add(item);
+  void removeFromInvoiceslist(InvoiceRecord item) => invoiceslist.remove(item);
+  void removeAtIndexFromInvoiceslist(int index) => invoiceslist.removeAt(index);
+  void insertAtIndexInInvoiceslist(int index, InvoiceRecord item) =>
+      invoiceslist.insert(index, item);
+  void updateInvoiceslistAtIndex(int index, Function(InvoiceRecord) updateFn) =>
+      invoiceslist[index] = updateFn(invoiceslist[index]);
+
   ///  State fields for stateful widgets in this page.
 
   // Model for Header component.
@@ -44,6 +53,11 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
 
   // Stores action output result for [Custom Action - docToJson] action in Container widget.
   dynamic? resultItem;
+  // State field(s) for Checkbox widget.
+  Map<InvoiceRecord, bool> checkboxValueMap = {};
+  List<InvoiceRecord> get checkboxCheckedItems =>
+      checkboxValueMap.entries.where((e) => e.value).map((e) => e.key).toList();
+
   DateTime? datePicked;
   // State field(s) for DropDown widget.
   String? dropDownValue;
@@ -72,6 +86,10 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
   dynamic? shiftList;
   // Stores action output result for [Custom Action - updateShiftSummaryForEB] action in Save widget.
   dynamic? returnList1;
+  // Stores action output result for [Firestore Query - Query a collection] action in Save widget.
+  List<ShiftRecord>? shiftsummary2;
+  // Stores action output result for [Custom Action - shiftDetailNewpark] action in Save widget.
+  dynamic? shiftdetailsnewonline2;
 
   @override
   void initState(BuildContext context) {
