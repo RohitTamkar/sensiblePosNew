@@ -2766,10 +2766,13 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                         Expanded(
                                                           child: Builder(
                                                             builder: (context) {
-                                                              final invlist =
-                                                                  _model
-                                                                      .invoices
-                                                                      .toList();
+                                                              final invlist = _model
+                                                                  .invoices
+                                                                  .sortedList(
+                                                                      keyOf: (e) =>
+                                                                          e.invoiceDate,
+                                                                      desc: true)
+                                                                  .toList();
 
                                                               return ListView
                                                                   .separated(
