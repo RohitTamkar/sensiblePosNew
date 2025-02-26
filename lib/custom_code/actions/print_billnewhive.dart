@@ -21,6 +21,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -101,102 +103,104 @@ Future printBillnewhive(
           bytes += generator.image(image);
           // bytes += generator.imageRaster(image);
         }*/
-        if (doc["title"] != null && doc["title"].isNotEmpty) {
-          bytes += generator.text(doc["title"],
-              styles: PosStyles(
-                  height: PosTextSize.size2,
-                  width: PosTextSize.size2,
-                  align: PosAlign.center));
-        }
-        if (doc["address"] != null && doc["address"].isNotEmpty) {
-          bytes += generator.text(doc["address"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["gstNo"] != null && doc["gstNo"].isNotEmpty) {
-          bytes += generator.text(doc["gstNo"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["contactNo"] != null && doc["contactNo"].isNotEmpty) {
-          bytes += generator.text(doc["contactNo"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["email"] != null && doc["email"].isNotEmpty) {
-          bytes += generator.text(doc["email"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["serialNo"] != null && doc["serialNo"].isNotEmpty) {
-          bytes += generator.text(doc["serialNo"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["taxInvoice"] != null && doc["taxInvoice"].isNotEmpty) {
-          bytes += generator.text(doc["taxInvoice"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["bankName"] != null && doc["bankName"].isNotEmpty) {
-          bytes += generator.text(doc["bankName"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["bankBranch"] != null && doc["bankBranch"].isNotEmpty) {
-          bytes += generator.text(doc["bankBranch"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
+        if (FFAppState().billPrintFooter != "KOT") {
+          if (doc["title"] != null && doc["title"].isNotEmpty) {
+            bytes += generator.text(doc["title"],
+                styles: PosStyles(
+                    height: PosTextSize.size2,
+                    width: PosTextSize.size2,
+                    align: PosAlign.center));
+          }
+          if (doc["address"] != null && doc["address"].isNotEmpty) {
+            bytes += generator.text(doc["address"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["gstNo"] != null && doc["gstNo"].isNotEmpty) {
+            bytes += generator.text(doc["gstNo"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["contactNo"] != null && doc["contactNo"].isNotEmpty) {
+            bytes += generator.text(doc["contactNo"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["email"] != null && doc["email"].isNotEmpty) {
+            bytes += generator.text(doc["email"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["serialNo"] != null && doc["serialNo"].isNotEmpty) {
+            bytes += generator.text(doc["serialNo"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["taxInvoice"] != null && doc["taxInvoice"].isNotEmpty) {
+            bytes += generator.text(doc["taxInvoice"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["bankName"] != null && doc["bankName"].isNotEmpty) {
+            bytes += generator.text(doc["bankName"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["bankBranch"] != null && doc["bankBranch"].isNotEmpty) {
+            bytes += generator.text(doc["bankBranch"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
 
-        if (doc["accountNumber"] != null && doc["accountNumber"].isNotEmpty) {
-          bytes += generator.text(doc["accountNumber"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["ifscCode"] != null && doc["ifscCode"].isNotEmpty) {
-          bytes += generator.text(doc["ifscCode"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["subtitleAddress"] != null &&
-            doc["subtitleAddress"].isNotEmpty) {
-          bytes += generator.text(doc["subtitleAddress"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
+          if (doc["accountNumber"] != null && doc["accountNumber"].isNotEmpty) {
+            bytes += generator.text(doc["accountNumber"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["ifscCode"] != null && doc["ifscCode"].isNotEmpty) {
+            bytes += generator.text(doc["ifscCode"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["subtitleAddress"] != null &&
+              doc["subtitleAddress"].isNotEmpty) {
+            bytes += generator.text(doc["subtitleAddress"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
         }
       }
       bytes += generator.text(FFAppState().orderType,
@@ -224,7 +228,8 @@ Future printBillnewhive(
       String dateString = '';
       String serialTemp =
           'Serial no: ' + lastBillCount(FFAppState().count).toString();
-      if (FFAppState().billPrintFooter == "KOT") {
+      if (FFAppState().billPrintFooter == "KOT" &&
+          FFAppState().billPrintFooter == "CUSTOMER") {
         String printLine = '';
         String dateString = '';
         // String serialTemp = 'Token no: ' + FFAppState().count.toString();
@@ -536,22 +541,24 @@ Future printBillnewhive(
               height: PosTextSize.size1,
               width: PosTextSize.size2,
               align: PosAlign.right));
+      if (FFAppState().billPrintFooter != "KOT" &&
+          FFAppState().billPrintFooter != "CUSTOMER") {
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
 
-      bytes += generator.text("-----------------------------------------------",
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              align: PosAlign.center));
-
-      bytes += generator.text(
-          "PAYMENT MODE :" + invoiceDetails.paymentMode.toString(),
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              align: PosAlign.center));
-
+        bytes += generator.text(
+            "PAYMENT MODE :" + invoiceDetails.paymentMode.toString(),
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+      }
       bytes += generator.text("-----------------------------------------------",
           styles: const PosStyles(
               height: PosTextSize.size1,

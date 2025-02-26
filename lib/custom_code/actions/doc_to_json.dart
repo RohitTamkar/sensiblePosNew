@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<dynamic> docToJson(InvoiceRecord? data) async {
   // Add your function code here!
   List<dynamic> objList = [];
@@ -25,11 +27,11 @@ Future<dynamic> docToJson(InvoiceRecord? data) async {
         "id": item.id,
         "catId": item.catId,
         "isDeletedItem": item.isDeletedItem,
-        "taxId": item.isDeletedItem,
-        "taxPer": item.isDeletedItem,
-        "taxAmt": item.isDeletedItem,
-        "disPer": item.isDeletedItem,
-        "disAmt": item.isDeletedItem,
+        "taxId": item.taxId,
+        "taxPer": item.taxPer,
+        "taxAmt": item.taxAmt,
+        "disPer": item.disPer,
+        "disAmt": item.disAmt,
       });
     });
     objList.add({
@@ -47,7 +49,7 @@ Future<dynamic> docToJson(InvoiceRecord? data) async {
       "reference": data.reference,
       "taxAmt": data.taxAmt,
       "roundOff": data.roundOff,
-      "productList": temp
+      "itemList": temp
     });
     print("result Item");
     print(objList[0]);
