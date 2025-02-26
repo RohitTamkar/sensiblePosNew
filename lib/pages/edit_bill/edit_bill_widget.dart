@@ -2885,7 +2885,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                               final list3 = getJsonField(
                                                 FFAppState()
                                                     .selectedInvoiceJson,
-                                                r'''$.productList''',
+                                                r'''$.itemList''',
                                               ).toList();
 
                                               return ListView.builder(
@@ -3356,7 +3356,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                               await actions.newCustomAction2(
                                             getJsonField(
                                               FFAppState().selectedInvoiceJson,
-                                              r'''$.productList''',
+                                              r'''$.itemList''',
                                               true,
                                             )!,
                                           );
@@ -3538,7 +3538,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 getJsonField(
                                                   FFAppState()
                                                       .selectedInvoiceJson,
-                                                  r'''$.productList''',
+                                                  r'''$.itemList''',
                                                   true,
                                                 )!,
                                               );
