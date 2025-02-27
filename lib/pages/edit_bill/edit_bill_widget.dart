@@ -3149,16 +3149,32 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                               Colors.transparent,
                                                                           onTap:
                                                                               () async {
-                                                                            _model.res1 =
-                                                                                await actions.reduceQuantityEB(
-                                                                              getJsonField(
-                                                                                list3Item,
-                                                                                r'''$''',
-                                                                              ),
-                                                                            );
-                                                                            await actions.calSubTotalCopy(
-                                                                              FFAppState().selectedInvoiceJson,
-                                                                            );
+                                                                            if (_model.customerbill) {
+                                                                              _model.res1 = await actions.reduceQuantityEB(
+                                                                                getJsonField(
+                                                                                  list3Item,
+                                                                                  r'''$''',
+                                                                                ),
+                                                                              );
+                                                                              await actions.calSubTotalCopy(
+                                                                                FFAppState().selectedInvoiceJson,
+                                                                              );
+                                                                            } else {
+                                                                              await showDialog(
+                                                                                context: context,
+                                                                                builder: (alertDialogContext) {
+                                                                                  return AlertDialog(
+                                                                                    title: Text('This Is the Customer Bill You Cannot Delete Or Edit'),
+                                                                                    actions: [
+                                                                                      TextButton(
+                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                        child: Text('Ok'),
+                                                                                      ),
+                                                                                    ],
+                                                                                  );
+                                                                                },
+                                                                              );
+                                                                            }
 
                                                                             safeSetState(() {});
                                                                           },
@@ -3341,19 +3357,38 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                             .transparent,
                                                                     onTap:
                                                                         () async {
-                                                                      await actions
-                                                                          .removeFromEB(
-                                                                        getJsonField(
-                                                                          list3Item,
-                                                                          r'''$''',
-                                                                        ),
-                                                                      );
-                                                                      _model.zzz =
-                                                                          await actions
-                                                                              .calSubTotalCopy(
-                                                                        FFAppState()
-                                                                            .selectedInvoiceJson,
-                                                                      );
+                                                                      if (_model
+                                                                          .customerbill) {
+                                                                        await actions
+                                                                            .removeFromEB(
+                                                                          getJsonField(
+                                                                            list3Item,
+                                                                            r'''$''',
+                                                                          ),
+                                                                        );
+                                                                        _model.zzz =
+                                                                            await actions.calSubTotalCopy(
+                                                                          FFAppState()
+                                                                              .selectedInvoiceJson,
+                                                                        );
+                                                                      } else {
+                                                                        await showDialog(
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (alertDialogContext) {
+                                                                            return AlertDialog(
+                                                                              title: Text('This Is the Customer Bill You Cannot Delete Or Edit'),
+                                                                              actions: [
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                  child: Text('Ok'),
+                                                                                ),
+                                                                              ],
+                                                                            );
+                                                                          },
+                                                                        );
+                                                                      }
 
                                                                       safeSetState(
                                                                           () {});
@@ -4236,6 +4271,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                         );
                                         FFAppState().shiftdetails =
                                             _model.shiftdetailsnewonlineCopy!;
+                                        safeSetState(() {});
+                                        _model.invoiceslist = [];
                                         safeSetState(() {});
 
                                         safeSetState(() {});

@@ -49,7 +49,6 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
 
   PagingController<DocumentSnapshot?, InvoiceRecord>? listViewPagingController1;
   Query? listViewPagingQuery1;
-  List<StreamSubscription?> listViewStreamSubscriptions1 = [];
 
   // Stores action output result for [Custom Action - docToJson] action in Container widget.
   dynamic? resultItem;
@@ -109,7 +108,7 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
   @override
   void dispose() {
     headerModel.dispose();
-    listViewStreamSubscriptions1.forEach((s) => s?.cancel());
+
     listViewPagingController1?.dispose();
   }
 
@@ -138,10 +137,9 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
           parent: parent,
           queryBuilder: (_) => listViewPagingQuery1 ??= query,
           nextPageMarker: nextPageMarker,
-          streamSubscriptions: listViewStreamSubscriptions1,
           controller: controller,
           pageSize: 25,
-          isStream: true,
+          isStream: false,
         ),
       );
   }

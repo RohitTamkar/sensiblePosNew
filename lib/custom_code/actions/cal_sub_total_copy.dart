@@ -20,9 +20,9 @@ Future<double> calSubTotalCopy(dynamic obj) async {
   FFAppState().updatedInvoiceJson = {"finalBillAmt": obj["finalBillAmt"]};
 
   List<dynamic> itemList = [];
-  itemList = obj["productList"];
+  itemList = obj["itemList"];
 
-  for (int i = 0; i < obj["productList"].length; i++) {
+  for (int i = 0; i < obj["itemList"].length; i++) {
     total += itemList[i]["quantity"] * itemList[i]["price"];
     qty += itemList[i]["quantity"];
     print(total);
