@@ -2932,7 +2932,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                     children: [
                                       if (getJsonField(
                                             FFAppState().selectedInvoiceJson,
-                                            r'''$.productList''',
+                                            r'''$.itemList''',
                                           ) ==
                                           null)
                                         Container(
@@ -2949,7 +2949,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                         ),
                                       if (getJsonField(
                                             FFAppState().selectedInvoiceJson,
-                                            r'''$.productList''',
+                                            r'''$.itemList''',
                                           ) !=
                                           null)
                                         Container(
@@ -4200,6 +4200,9 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     r'''$.billCount''',
                                                   ),
                                                 ));
+                                            FFAppState().startLoop =
+                                                FFAppState().startLoop + 1;
+                                            safeSetState(() {});
                                           }
                                           await showDialog(
                                             context: context,
