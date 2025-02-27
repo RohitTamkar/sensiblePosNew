@@ -2866,27 +2866,6 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                               FFAppState().printerDevice,
                                                                               FFAppState().printerIndex,
                                                                             );
-                                                                            _model.resultItembillCopy =
-                                                                                await actions.docToJson(
-                                                                              invlistItem,
-                                                                            );
-                                                                            _model.device233Copy =
-                                                                                await actions.newCustomAction(
-                                                                              FFAppState().printerIndex,
-                                                                            );
-                                                                            await actions.printBillnewhivegroceryBill(
-                                                                              _model.resultItembillCopy!,
-                                                                              _model.device233Copy!.toList(),
-                                                                              FFAppState().isPrinterConnected,
-                                                                              FFAppState().printerName,
-                                                                              getJsonField(
-                                                                                functions.outletDocToJson(_model.outletdid2Copy!),
-                                                                                r'''$''',
-                                                                              ),
-                                                                              invlistItem,
-                                                                              FFAppState().paperSize,
-                                                                              productComboBillingAppSettingsRecord!,
-                                                                            );
                                                                             _model.invoiceslist =
                                                                                 await queryInvoiceRecordOnce(
                                                                               parent: FFAppState().outletIdRef,
@@ -2898,9 +2877,17 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                                   .orderBy('invoiceDate', descending: true),
                                                                               limit: 10,
                                                                             );
+                                                                            _model.resultItembillCopy =
+                                                                                await actions.docToJson(
+                                                                              invlistItem,
+                                                                            );
                                                                             _model.invoices =
                                                                                 _model.invoiceslist!.toList().cast<InvoiceRecord>();
                                                                             safeSetState(() {});
+                                                                            _model.device233Copy =
+                                                                                await actions.newCustomAction(
+                                                                              FFAppState().printerIndex,
+                                                                            );
                                                                           }
                                                                         } else {
                                                                           await showDialog(
