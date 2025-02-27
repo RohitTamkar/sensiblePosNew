@@ -15,29 +15,29 @@ Future<List<dynamic>> reduceQuantityEB(dynamic obj) async {
   List<dynamic> itemList = [];
 
   itemList.add(FFAppState().selectedInvoiceJson);
-  if (itemList[0]["productList"].isNotEmpty) {
-    var index = itemList[0]["productList"].indexOf(obj);
-    if (itemList[0]["productList"][index]["quantity"] > 0) {
-      itemList[0]["productList"][index]["quantity"]--;
-      itemList[0]["productList"][index]["total"] = itemList[0]["productList"]
-              [index]["quantity"] *
-          itemList[0]["productList"][index]["price"];
+  if (itemList[0]["itemList"].isNotEmpty) {
+    var index = itemList[0]["itemList"].indexOf(obj);
+    if (itemList[0]["itemList"][index]["quantity"] > 0) {
+      itemList[0]["itemList"][index]["quantity"]--;
+      itemList[0]["itemList"][index]["total"] = itemList[0]["itemList"][index]
+              ["quantity"] *
+          itemList[0]["itemList"][index]["price"];
 
       FFAppState().selectedInvoiceJson = itemList[0];
 
       print(itemList);
-    } else if (itemList[0]["productList"][index]["quantity"] <= 0) {
-      itemList[0]["productList"][index]["isDeletedItem"] = true;
-      itemList[0]["productList"][index]["quantity"] = 0;
-      itemList[0]["productList"][index]["total"] = 0;
+    } else if (itemList[0]["itemList"][index]["quantity"] <= 0) {
+      itemList[0]["itemList"][index]["isDeletedItem"] = true;
+      itemList[0]["itemList"][index]["quantity"] = 0;
+      itemList[0]["itemList"][index]["total"] = 0;
 
       FFAppState().selectedInvoiceJson = itemList[0];
 
       print(itemList);
     } else {
-      itemList[0]["productList"][index]["isDeletedItem"] = true;
-      itemList[0]["productList"][index]["quantity"] = 0;
-      itemList[0]["productList"][index]["total"] = 0;
+      itemList[0]["itemList"][index]["isDeletedItem"] = true;
+      itemList[0]["itemList"][index]["quantity"] = 0;
+      itemList[0]["itemList"][index]["total"] = 0;
       FFAppState().selectedInvoiceJson = itemList[0];
 
       print(itemList);

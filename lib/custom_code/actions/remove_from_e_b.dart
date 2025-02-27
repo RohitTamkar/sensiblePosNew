@@ -14,7 +14,7 @@ Future removeFromEB(dynamic obj) async {
   List<dynamic> itemList = [];
   itemList.add(FFAppState().selectedInvoiceJson);
   if (itemList[0]["itemList"].isNotEmpty) {
-    var index = itemList[0]["productList"].indexOf(obj);
+    var index = itemList[0]["itemList"].indexOf(obj);
     itemList[0]["itemList"][index]["isDeletedItem"] = true;
     itemList[0]["itemList"][index]["quantity"] = 0.0;
     itemList[0]["itemList"][index]["total"] = 0.0;
