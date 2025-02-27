@@ -477,6 +477,9 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 FFAppState().prevMode =
                                                     listViewInvoiceRecord
                                                         .paymentMode;
+                                                FFAppState().shiftDate =
+                                                    listViewInvoiceRecord
+                                                        .shiftId;
                                                 FFAppState().update(() {});
                                                 safeSetState(() {
                                                   _model.dropDownValueController
@@ -3446,10 +3449,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                               .update(createInvoiceRecordData(
                                                 isDeleted: true,
                                               ));
-                                          _model.shiftListCopy =
-                                              await actions.shiftExists(
-                                            functions.getDayId(),
-                                            '1',
+                                          _model.shiftlist2 =
+                                              await actions.shiftExistseditbill(
+                                            FFAppState().shiftDate,
+                                            FFAppState().shiftDate,
                                             FFAppState().outletIdRef!.id,
                                           );
                                           _model.returnList1Copy = await actions
@@ -3457,11 +3460,11 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             FFAppState().selectedInvoiceJson,
                                             FFAppState().curMode,
                                             FFAppState().prevMode,
-                                            _model.shiftListCopy!,
+                                            _model.shiftlist2!,
                                           );
 
                                           await functions
-                                              .shiftRef(_model.shiftListCopy!,
+                                              .shiftRef(_model.shiftlist2!,
                                                   FFAppState().outletIdRef!.id)
                                               .update(createShiftRecordData(
                                                 totalSale: getJsonField(
@@ -4070,15 +4073,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                 mainAxisSize:
                                                                     MainAxisSize
                                                                         .max,
-                                                                children: [
-                                                                  Icon(
-                                                                    Icons
-                                                                        .delete_forever_sharp,
-                                                                    color: Color(
-                                                                        0xFF19A621),
-                                                                    size: 24.0,
-                                                                  ),
-                                                                ],
+                                                                children: [],
                                                               ),
                                                             ],
                                                           ),
@@ -4098,9 +4093,152 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FFButtonWidget(
-                                      onPressed: () async {},
+                                      onPressed: () async {
+                                        var confirmDialogResponse =
+                                            await showDialog<bool>(
+                                                  context: context,
+                                                  builder:
+                                                      (alertDialogContext) {
+                                                    return AlertDialog(
+                                                      content: Text(
+                                                          'Are you sure  to delete bill'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  false),
+                                                          child: Text('Cancel'),
+                                                        ),
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  true),
+                                                          child:
+                                                              Text('Confirm'),
+                                                        ),
+                                                      ],
+                                                    );
+                                                  },
+                                                ) ??
+                                                false;
+                                        if (confirmDialogResponse) {
+                                          FFAppState().startLoop = 0;
+                                          safeSetState(() {});
+                                          while (FFAppState().startLoop <
+                                              _model.invoiceslist.length) {
+                                            _model.resultItemloop =
+                                                await actions.docToJson(
+                                              _model.invoiceslist
+                                                  .elementAtOrNull(
+                                                      FFAppState().startLoop),
+                                            );
+                                            FFAppState().selectedInvoiceJson =
+                                                _model.resultItemloop!;
+                                            FFAppState().prevMode = _model
+                                                .invoiceslist
+                                                .elementAtOrNull(
+                                                    FFAppState().startLoop)!
+                                                .paymentMode;
+                                            FFAppState().update(() {});
+
+                                            await _model.invoiceslist
+                                                .elementAtOrNull(
+                                                    FFAppState().startLoop)!
+                                                .reference
+                                                .update(createInvoiceRecordData(
+                                                  isDeleted: true,
+                                                ));
+                                            _model.shiftListeditbill =
+                                                await actions
+                                                    .shiftExistseditbill(
+                                              _model.invoiceslist
+                                                  .elementAtOrNull(
+                                                      FFAppState().startLoop)!
+                                                  .dayId,
+                                              _model.invoiceslist
+                                                  .elementAtOrNull(
+                                                      FFAppState().startLoop)!
+                                                  .shiftId,
+                                              FFAppState().outletIdRef!.id,
+                                            );
+                                            _model.returnList1editbill =
+                                                await actions
+                                                    .updateShiftSummaryFordeletebill(
+                                              FFAppState().selectedInvoiceJson,
+                                              FFAppState().curMode,
+                                              FFAppState().prevMode,
+                                              _model.shiftListeditbill!,
+                                            );
+
+                                            await functions
+                                                .shiftRef(
+                                                    _model.shiftListeditbill!,
+                                                    FFAppState()
+                                                        .outletIdRef!
+                                                        .id)
+                                                .update(createShiftRecordData(
+                                                  totalSale: getJsonField(
+                                                    _model.returnList1editbill,
+                                                    r'''$.totalSale''',
+                                                  ),
+                                                  subTotalBill: getJsonField(
+                                                    _model.returnList1editbill,
+                                                    r'''$.subTotalSale''',
+                                                  ),
+                                                  paymentJson: getJsonField(
+                                                    _model.returnList1editbill,
+                                                    r'''$.paymentJson''',
+                                                  ).toString(),
+                                                  cashSale: getJsonField(
+                                                    _model.returnList1editbill,
+                                                    r'''$.cashSale''',
+                                                  ),
+                                                  billCount: getJsonField(
+                                                    _model.returnList1editbill,
+                                                    r'''$.billCount''',
+                                                  ),
+                                                ));
+                                          }
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                title: Text(
+                                                    'Invoice Deleted  Successfully!'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                        }
+                                        _model.shiftsummaryCopy =
+                                            await queryShiftRecordOnce(
+                                          parent: FFAppState().outletIdRef,
+                                          queryBuilder: (shiftRecord) =>
+                                              shiftRecord.orderBy('dayId',
+                                                  descending: true),
+                                          limit: 5,
+                                        );
+                                        _model.shiftdetailsnewonlineCopy =
+                                            await actions.shiftDetailNewpark(
+                                          _model.shiftsummaryCopy?.toList(),
+                                        );
+                                        FFAppState().shiftdetails =
+                                            _model.shiftdetailsnewonlineCopy!;
+                                        safeSetState(() {});
+
+                                        safeSetState(() {});
+                                      },
                                       text: FFLocalizations.of(context).getText(
-                                        'utt60fpp' /* Delete Bill */,
+                                        'utt60fpp' /* Delete Seleted Bills */,
                                       ),
                                       options: FFButtonOptions(
                                         height: 40.0,
@@ -4110,7 +4248,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
-                                            .warning,
+                                            .alternate,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(

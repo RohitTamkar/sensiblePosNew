@@ -11407,7 +11407,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'utt60fpp': {
-      'en': 'Delete Bill',
+      'en': 'Delete Seleted Bills',
       'hi': '',
       'kn': '',
       'mr': '',

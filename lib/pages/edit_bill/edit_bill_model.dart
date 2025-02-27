@@ -72,8 +72,8 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
   double? zzz;
   // Stores action output result for [Custom Action - newCustomAction2] action in Button widget.
   List<SelItemListStruct>? returnListCopy;
-  // Stores action output result for [Custom Action - shiftExists] action in Button widget.
-  dynamic? shiftListCopy;
+  // Stores action output result for [Custom Action - shiftExistseditbill] action in Button widget.
+  dynamic? shiftlist2;
   // Stores action output result for [Custom Action - updateShiftSummaryFordeletebill] action in Button widget.
   dynamic? returnList1Copy;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
@@ -90,6 +90,16 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
   List<ShiftRecord>? shiftsummary2;
   // Stores action output result for [Custom Action - shiftDetailNewpark] action in Save widget.
   dynamic? shiftdetailsnewonline2;
+  // Stores action output result for [Custom Action - docToJson] action in Button widget.
+  dynamic? resultItemloop;
+  // Stores action output result for [Custom Action - shiftExistseditbill] action in Button widget.
+  dynamic? shiftListeditbill;
+  // Stores action output result for [Custom Action - updateShiftSummaryFordeletebill] action in Button widget.
+  dynamic? returnList1editbill;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<ShiftRecord>? shiftsummaryCopy;
+  // Stores action output result for [Custom Action - shiftDetailNewpark] action in Button widget.
+  dynamic? shiftdetailsnewonlineCopy;
 
   @override
   void initState(BuildContext context) {
