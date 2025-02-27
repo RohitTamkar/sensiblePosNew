@@ -24,7 +24,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:provider/provider.dart';
 
 class EditBillModel extends FlutterFlowModel<EditBillWidget> {
@@ -45,11 +44,6 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
 
   // Model for Header component.
   late HeaderModel headerModel;
-  // State field(s) for ListView widget.
-
-  PagingController<DocumentSnapshot?, InvoiceRecord>? listViewPagingController1;
-  Query? listViewPagingQuery1;
-
   // Stores action output result for [Custom Action - docToJson] action in Container widget.
   dynamic? resultItem;
   // State field(s) for Checkbox widget.
@@ -108,39 +102,5 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
   @override
   void dispose() {
     headerModel.dispose();
-
-    listViewPagingController1?.dispose();
-  }
-
-  /// Additional helper methods.
-  PagingController<DocumentSnapshot?, InvoiceRecord> setListViewController1(
-    Query query, {
-    DocumentReference<Object?>? parent,
-  }) {
-    listViewPagingController1 ??= _createListViewController1(query, parent);
-    if (listViewPagingQuery1 != query) {
-      listViewPagingQuery1 = query;
-      listViewPagingController1?.refresh();
-    }
-    return listViewPagingController1!;
-  }
-
-  PagingController<DocumentSnapshot?, InvoiceRecord> _createListViewController1(
-    Query query,
-    DocumentReference<Object?>? parent,
-  ) {
-    final controller =
-        PagingController<DocumentSnapshot?, InvoiceRecord>(firstPageKey: null);
-    return controller
-      ..addPageRequestListener(
-        (nextPageMarker) => queryInvoiceRecordPage(
-          parent: parent,
-          queryBuilder: (_) => listViewPagingQuery1 ??= query,
-          nextPageMarker: nextPageMarker,
-          controller: controller,
-          pageSize: 25,
-          isStream: false,
-        ),
-      );
   }
 }

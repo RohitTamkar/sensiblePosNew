@@ -23,7 +23,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:provider/provider.dart';
 import 'edit_bill_model.dart';
 export 'edit_bill_model.dart';
@@ -380,413 +379,379 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                   ),
                                   child: Padding(
                                     padding: EdgeInsets.all(2.0),
-                                    child: PagedListView<
-                                        DocumentSnapshot<Object?>?,
-                                        InvoiceRecord>(
-                                      pagingController:
-                                          _model.setListViewController1(
-                                              InvoiceRecord.collection(
-                                                      FFAppState().outletIdRef)
-                                                  .where(
-                                                    'dayId',
-                                                    isEqualTo: FFAppState()
-                                                                .filterDate !=
-                                                            ''
-                                                        ? FFAppState()
-                                                            .filterDate
-                                                        : null,
-                                                  )
-                                                  .where(
-                                                    'isDeleted',
-                                                    isEqualTo: false,
-                                                  )
-                                                  .orderBy('invoiceDate',
-                                                      descending: true),
-                                              parent: FFAppState().outletIdRef),
-                                      padding: EdgeInsets.zero,
-                                      reverse: false,
-                                      scrollDirection: Axis.vertical,
-                                      builderDelegate:
-                                          PagedChildBuilderDelegate<
-                                              InvoiceRecord>(
-                                        // Customize what your widget looks like when it's loading the first page.
-                                        firstPageProgressIndicatorBuilder:
-                                            (_) => Center(
-                                          child: SizedBox(
-                                            width: 40.0,
-                                            height: 40.0,
-                                            child: SpinKitFadingCircle(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              size: 40.0,
+                                    child: StreamBuilder<List<InvoiceRecord>>(
+                                      stream: queryInvoiceRecord(
+                                        parent: FFAppState().outletIdRef,
+                                        queryBuilder: (invoiceRecord) =>
+                                            invoiceRecord
+                                                .where(
+                                                  'dayId',
+                                                  isEqualTo:
+                                                      FFAppState().filterDate,
+                                                )
+                                                .where(
+                                                  'isDeleted',
+                                                  isEqualTo: false,
+                                                )
+                                                .orderBy('invoiceDate',
+                                                    descending: true),
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 40.0,
+                                              height: 40.0,
+                                              child: SpinKitFadingCircle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                size: 40.0,
+                                              ),
                                             ),
-                                          ),
-                                        ),
-                                        // Customize what your widget looks like when it's loading another page.
-                                        newPageProgressIndicatorBuilder: (_) =>
-                                            Center(
-                                          child: SizedBox(
-                                            width: 40.0,
-                                            height: 40.0,
-                                            child: SpinKitFadingCircle(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              size: 40.0,
-                                            ),
-                                          ),
-                                        ),
+                                          );
+                                        }
+                                        List<InvoiceRecord>
+                                            listViewInvoiceRecordList =
+                                            snapshot.data!;
 
-                                        itemBuilder:
-                                            (context, _, listViewIndex) {
-                                          final listViewInvoiceRecord = _model
-                                              .listViewPagingController1!
-                                              .itemList![listViewIndex];
-                                          return Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 7.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                FFAppState().invoice =
-                                                    listViewInvoiceRecord
-                                                        .invoice;
-                                                FFAppState().invoiceRef =
-                                                    listViewInvoiceRecord
-                                                        .reference;
-                                                FFAppState().dropDown = false;
-                                                FFAppState().update(() {});
-                                                _model.resultItem =
-                                                    await actions.docToJson(
-                                                  listViewInvoiceRecord,
-                                                );
-                                                FFAppState()
-                                                        .selectedInvoiceJson =
-                                                    getJsonField(
-                                                  _model.resultItem,
-                                                  r'''$''',
-                                                );
-                                                FFAppState().editBillListColor =
-                                                    listViewInvoiceRecord.id;
-                                                FFAppState().prevMode =
-                                                    listViewInvoiceRecord
-                                                        .paymentMode;
-                                                FFAppState().shiftDate =
-                                                    listViewInvoiceRecord
-                                                        .shiftId;
-                                                FFAppState().update(() {});
-                                                safeSetState(() {
-                                                  _model.dropDownValueController
-                                                          ?.value =
+                                        return ListView.builder(
+                                          padding: EdgeInsets.zero,
+                                          scrollDirection: Axis.vertical,
+                                          itemCount:
+                                              listViewInvoiceRecordList.length,
+                                          itemBuilder:
+                                              (context, listViewIndex) {
+                                            final listViewInvoiceRecord =
+                                                listViewInvoiceRecordList[
+                                                    listViewIndex];
+                                            return Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 7.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  FFAppState().invoice =
+                                                      listViewInvoiceRecord
+                                                          .invoice;
+                                                  FFAppState().invoiceRef =
+                                                      listViewInvoiceRecord
+                                                          .reference;
+                                                  FFAppState().dropDown = false;
+                                                  FFAppState().update(() {});
+                                                  _model.resultItem =
+                                                      await actions.docToJson(
+                                                    listViewInvoiceRecord,
+                                                  );
+                                                  FFAppState()
+                                                          .selectedInvoiceJson =
+                                                      getJsonField(
+                                                    _model.resultItem,
+                                                    r'''$''',
+                                                  );
+                                                  FFAppState()
+                                                          .editBillListColor =
+                                                      listViewInvoiceRecord.id;
+                                                  FFAppState().prevMode =
                                                       listViewInvoiceRecord
                                                           .paymentMode;
-                                                });
-                                                if (listViewInvoiceRecord
-                                                        .source ==
-                                                    'CUSTOMER') {
-                                                  _model.customerbill = false;
-                                                  safeSetState(() {});
-                                                } else {
-                                                  _model.customerbill = true;
-                                                  safeSetState(() {});
-                                                }
+                                                  FFAppState().shiftDate =
+                                                      listViewInvoiceRecord
+                                                          .shiftId;
+                                                  FFAppState().update(() {});
+                                                  safeSetState(() {
+                                                    _model.dropDownValueController
+                                                            ?.value =
+                                                        listViewInvoiceRecord
+                                                            .paymentMode;
+                                                  });
+                                                  if (listViewInvoiceRecord
+                                                          .source ==
+                                                      'CUSTOMER') {
+                                                    _model.customerbill = false;
+                                                    safeSetState(() {});
+                                                  } else {
+                                                    _model.customerbill = true;
+                                                    safeSetState(() {});
+                                                  }
 
-                                                safeSetState(() {});
-                                              },
-                                              child: Material(
-                                                color: Colors.transparent,
-                                                elevation: 1.0,
-                                                child: Container(
-                                                  width:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          1.0,
-                                                  height:
-                                                      MediaQuery.sizeOf(context)
-                                                              .height *
-                                                          0.1,
-                                                  decoration: BoxDecoration(
-                                                    color: FFAppState()
-                                                                .editBillListColor ==
-                                                            listViewInvoiceRecord
-                                                                .id
-                                                        ? FlutterFlowTheme.of(
+                                                  safeSetState(() {});
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 1.0,
+                                                  child: Container(
+                                                    width: MediaQuery.sizeOf(
                                                                 context)
-                                                            .customColor2
-                                                        : FlutterFlowTheme.of(
+                                                            .width *
+                                                        1.0,
+                                                    height: MediaQuery.sizeOf(
                                                                 context)
-                                                            .primaryBackground,
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  1.0),
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceAround,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'fpjheqde' /* Bill No */,
+                                                            .height *
+                                                        0.1,
+                                                    decoration: BoxDecoration(
+                                                      color: FFAppState()
+                                                                  .editBillListColor ==
+                                                              listViewInvoiceRecord
+                                                                  .id
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .customColor2
+                                                          : FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBackground,
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsets.all(5.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    1.0),
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceAround,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'fpjheqde' /* Bill No */,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                      ),
                                                                 ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodySmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                    ),
-                                                              ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'fo5i9pni' /* Date */,
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'fo5i9pni' /* Date */,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                      ),
                                                                 ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodySmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                    ),
-                                                              ),
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'brb7t7uw' /* Amount */,
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'brb7t7uw' /* Amount */,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                      ),
                                                                 ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodySmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                    ),
-                                                              ),
-                                                            ],
+                                                              ],
+                                                            ),
                                                           ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      4.0,
-                                                                      1.0,
-                                                                      1.0,
-                                                                      1.0),
-                                                          child: Column(
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        4.0,
+                                                                        1.0,
+                                                                        1.0,
+                                                                        1.0),
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceAround,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Text(
+                                                                  listViewInvoiceRecord
+                                                                      .invoice,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                      ),
+                                                                ),
+                                                                Text(
+                                                                  functions.milisecToTimestamp(
+                                                                      listViewInvoiceRecord
+                                                                          .invoiceDate),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                      ),
+                                                                ),
+                                                                Text(
+                                                                  listViewInvoiceRecord
+                                                                      .finalBillAmt
+                                                                      .toString(),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                      ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                          Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
                                                                     .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceAround,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
                                                             children: [
-                                                              Text(
+                                                              if (valueOrDefault<
+                                                                  bool>(
                                                                 listViewInvoiceRecord
-                                                                    .invoice,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily,
+                                                                        .source ==
+                                                                    'CUSTOMER',
+                                                                false,
+                                                              ))
+                                                                FaIcon(
+                                                                  FontAwesomeIcons
+                                                                      .userLock,
+                                                                  color: Color(
+                                                                      0xFF19A621),
+                                                                  size: 24.0,
+                                                                ),
+                                                              if (valueOrDefault<
+                                                                  bool>(
+                                                                listViewInvoiceRecord
+                                                                        .source !=
+                                                                    'CUSTOMER',
+                                                                false,
+                                                              ))
+                                                                Theme(
+                                                                  data:
+                                                                      ThemeData(
+                                                                    checkboxTheme:
+                                                                        CheckboxThemeData(
+                                                                      visualDensity:
+                                                                          VisualDensity
+                                                                              .compact,
+                                                                      materialTapTargetSize:
+                                                                          MaterialTapTargetSize
+                                                                              .shrinkWrap,
+                                                                      shape:
+                                                                          RoundedRectangleBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(4.0),
+                                                                      ),
+                                                                    ),
+                                                                    unselectedWidgetColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .alternate,
+                                                                  ),
+                                                                  child:
+                                                                      Checkbox(
+                                                                    value: _model
+                                                                            .checkboxValueMap[
+                                                                        listViewInvoiceRecord] ??= false,
+                                                                    onChanged:
+                                                                        (newValue) async {
+                                                                      safeSetState(() =>
+                                                                          _model.checkboxValueMap[listViewInvoiceRecord] =
+                                                                              newValue!);
+                                                                      if (newValue!) {
+                                                                        _model.addToInvoiceslist(
+                                                                            listViewInvoiceRecord);
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      } else {
+                                                                        _model.removeFromInvoiceslist(
+                                                                            listViewInvoiceRecord);
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      }
+                                                                    },
+                                                                    side:
+                                                                        BorderSide(
+                                                                      width: 2,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .primary,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                          .alternate,
                                                                     ),
-                                                              ),
-                                                              Text(
-                                                                functions.milisecToTimestamp(
-                                                                    listViewInvoiceRecord
-                                                                        .invoiceDate),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                    ),
-                                                              ),
-                                                              Text(
-                                                                listViewInvoiceRecord
-                                                                    .finalBillAmt
-                                                                    .toString(),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                    ),
-                                                              ),
+                                                                    activeColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                    checkColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                  ),
+                                                                ),
                                                             ],
                                                           ),
-                                                        ),
-                                                        Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            if (valueOrDefault<
-                                                                bool>(
-                                                              listViewInvoiceRecord
-                                                                      .source ==
-                                                                  'CUSTOMER',
-                                                              false,
-                                                            ))
-                                                              FaIcon(
-                                                                FontAwesomeIcons
-                                                                    .userLock,
-                                                                color: Color(
-                                                                    0xFF19A621),
-                                                                size: 24.0,
-                                                              ),
-                                                            if (valueOrDefault<
-                                                                bool>(
-                                                              listViewInvoiceRecord
-                                                                      .source !=
-                                                                  'CUSTOMER',
-                                                              false,
-                                                            ))
-                                                              Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .compact,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .shrinkWrap,
-                                                                    shape:
-                                                                        RoundedRectangleBorder(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              4.0),
-                                                                    ),
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child: Checkbox(
-                                                                  value: _model
-                                                                          .checkboxValueMap[
-                                                                      listViewInvoiceRecord] ??= false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxValueMap[listViewInvoiceRecord] =
-                                                                            newValue!);
-                                                                    if (newValue!) {
-                                                                      _model.addToInvoiceslist(
-                                                                          listViewInvoiceRecord);
-                                                                      safeSetState(
-                                                                          () {});
-                                                                    } else {
-                                                                      _model.removeFromInvoiceslist(
-                                                                          listViewInvoiceRecord);
-                                                                      safeSetState(
-                                                                          () {});
-                                                                    }
-                                                                  },
-                                                                  side:
-                                                                      BorderSide(
-                                                                    width: 2,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .alternate,
-                                                                  ),
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                ),
-                                                              ),
-                                                          ],
-                                                        ),
-                                                      ],
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                          );
-                                        },
-                                      ),
+                                            );
+                                          },
+                                        );
+                                      },
                                     ),
                                   ),
                                 ),
