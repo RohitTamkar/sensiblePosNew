@@ -4199,6 +4199,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     _model.returnList1editbill,
                                                     r'''$.billCount''',
                                                   ),
+                                                  tax: getJsonField(
+                                                    _model.returnList1editbill,
+                                                    r'''$.tax''',
+                                                  ),
                                                 ));
                                             FFAppState().startLoop =
                                                 FFAppState().startLoop + 1;
