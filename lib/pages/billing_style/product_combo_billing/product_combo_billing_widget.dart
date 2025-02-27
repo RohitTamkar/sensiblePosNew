@@ -2822,96 +2822,103 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                               .transparent,
                                                                       onDoubleTap:
                                                                           () async {
-                                                                        var confirmDialogResponse = await showDialog<bool>(
-                                                                              context: context,
-                                                                              builder: (alertDialogContext) {
-                                                                                return AlertDialog(
-                                                                                  content: Text('Are you sure you can convert this bill into a customer bill?'),
-                                                                                  actions: [
-                                                                                    TextButton(
-                                                                                      onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                      child: Text('Cancel'),
-                                                                                    ),
-                                                                                    TextButton(
-                                                                                      onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                      child: Text('Confirm'),
-                                                                                    ),
-                                                                                  ],
-                                                                                );
-                                                                              },
-                                                                            ) ??
-                                                                            false;
-                                                                        if (confirmDialogResponse) {
-                                                                          _model.outletdid2Copy =
-                                                                              await queryOutletRecordOnce(
-                                                                            queryBuilder: (outletRecord) =>
-                                                                                outletRecord.where(
-                                                                              'id',
-                                                                              isEqualTo: FFAppState().outletIdRef?.id,
-                                                                            ),
-                                                                            singleRecord:
-                                                                                true,
-                                                                          ).then((s) => s.firstOrNull);
+                                                                        if (invlistItem.source ==
+                                                                            'KOT') {
+                                                                          var confirmDialogResponse = await showDialog<bool>(
+                                                                                context: context,
+                                                                                builder: (alertDialogContext) {
+                                                                                  return AlertDialog(
+                                                                                    content: Text('Are you sure you can convert this bill into a customer bill?'),
+                                                                                    actions: [
+                                                                                      TextButton(
+                                                                                        onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                        child: Text('Cancel'),
+                                                                                      ),
+                                                                                      TextButton(
+                                                                                        onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                        child: Text('Confirm'),
+                                                                                      ),
+                                                                                    ],
+                                                                                  );
+                                                                                },
+                                                                              ) ??
+                                                                              false;
+                                                                          if (confirmDialogResponse) {
+                                                                            _model.outletdid2Copy =
+                                                                                await queryOutletRecordOnce(
+                                                                              queryBuilder: (outletRecord) => outletRecord.where(
+                                                                                'id',
+                                                                                isEqualTo: FFAppState().outletIdRef?.id,
+                                                                              ),
+                                                                              singleRecord: true,
+                                                                            ).then((s) => s.firstOrNull);
 
-                                                                          await invlistItem
-                                                                              .reference
-                                                                              .update(createInvoiceRecordData(
-                                                                            source:
-                                                                                'CUSTOMER',
-                                                                          ));
-                                                                          if (!functions
-                                                                              .isPrinterSelected(FFAppState().printerDevice)!) {
-                                                                            _model.resDevice2billCopy =
-                                                                                await actions.scanPrinter(
-                                                                              FFAppState().posMode,
+                                                                            await invlistItem.reference.update(createInvoiceRecordData(
+                                                                              source: 'CUSTOMER',
+                                                                            ));
+                                                                            if (!functions.isPrinterSelected(FFAppState().printerDevice)!) {
+                                                                              _model.resDevice2billCopy = await actions.scanPrinter(
+                                                                                FFAppState().posMode,
+                                                                              );
+                                                                            }
+                                                                            _model.isconnectedbillCopy =
+                                                                                await actions.connectDevice(
+                                                                              FFAppState().printerDevice,
+                                                                              FFAppState().printerIndex,
                                                                             );
+                                                                            _model.resultItembillCopy =
+                                                                                await actions.docToJson(
+                                                                              invlistItem,
+                                                                            );
+                                                                            _model.device233Copy =
+                                                                                await actions.newCustomAction(
+                                                                              FFAppState().printerIndex,
+                                                                            );
+                                                                            await actions.printBillnewhivegroceryBill(
+                                                                              _model.resultItembillCopy!,
+                                                                              _model.device233Copy!.toList(),
+                                                                              FFAppState().isPrinterConnected,
+                                                                              FFAppState().printerName,
+                                                                              getJsonField(
+                                                                                functions.outletDocToJson(_model.outletdid2Copy!),
+                                                                                r'''$''',
+                                                                              ),
+                                                                              invlistItem,
+                                                                              FFAppState().paperSize,
+                                                                              productComboBillingAppSettingsRecord!,
+                                                                            );
+                                                                            _model.invoiceslist =
+                                                                                await queryInvoiceRecordOnce(
+                                                                              parent: FFAppState().outletIdRef,
+                                                                              queryBuilder: (invoiceRecord) => invoiceRecord
+                                                                                  .where(
+                                                                                    'isDeleted',
+                                                                                    isEqualTo: false,
+                                                                                  )
+                                                                                  .orderBy('invoiceDate', descending: true),
+                                                                              limit: 10,
+                                                                            );
+                                                                            _model.invoices =
+                                                                                _model.invoiceslist!.toList().cast<InvoiceRecord>();
+                                                                            safeSetState(() {});
                                                                           }
-                                                                          _model.isconnectedbillCopy =
-                                                                              await actions.connectDevice(
-                                                                            FFAppState().printerDevice,
-                                                                            FFAppState().printerIndex,
+                                                                        } else {
+                                                                          await showDialog(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (alertDialogContext) {
+                                                                              return AlertDialog(
+                                                                                content: Text('This Is Alreday Customer Bill !'),
+                                                                                actions: [
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                    child: Text('Ok'),
+                                                                                  ),
+                                                                                ],
+                                                                              );
+                                                                            },
                                                                           );
-                                                                          _model.resultItembillCopy =
-                                                                              await actions.docToJson(
-                                                                            invlistItem,
-                                                                          );
-                                                                          _model.device233Copy =
-                                                                              await actions.newCustomAction(
-                                                                            FFAppState().printerIndex,
-                                                                          );
-                                                                          await actions
-                                                                              .printBillnewhivegroceryBill(
-                                                                            _model.resultItembillCopy!,
-                                                                            _model.device233Copy!.toList(),
-                                                                            FFAppState().isPrinterConnected,
-                                                                            FFAppState().printerName,
-                                                                            getJsonField(
-                                                                              functions.outletDocToJson(_model.outletdid2Copy!),
-                                                                              r'''$''',
-                                                                            ),
-                                                                            invlistItem,
-                                                                            FFAppState().paperSize,
-                                                                            productComboBillingAppSettingsRecord!,
-                                                                          );
-                                                                          _model.invoiceslist =
-                                                                              await queryInvoiceRecordOnce(
-                                                                            parent:
-                                                                                FFAppState().outletIdRef,
-                                                                            queryBuilder: (invoiceRecord) => invoiceRecord
-                                                                                .where(
-                                                                                  'isDeleted',
-                                                                                  isEqualTo: false,
-                                                                                )
-                                                                                .orderBy('invoiceDate', descending: true),
-                                                                            limit:
-                                                                                10,
-                                                                          );
-                                                                          _model.invoices = _model
-                                                                              .invoiceslist!
-                                                                              .toList()
-                                                                              .cast<InvoiceRecord>();
-                                                                          safeSetState(
-                                                                              () {});
                                                                         }
 
                                                                         safeSetState(

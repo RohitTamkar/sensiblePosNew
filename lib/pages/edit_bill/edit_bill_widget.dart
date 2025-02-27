@@ -4101,7 +4101,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       (alertDialogContext) {
                                                     return AlertDialog(
                                                       content: Text(
-                                                          'Are you sure  to delete bill'),
+                                                          'Are you sure  to delete bills'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
