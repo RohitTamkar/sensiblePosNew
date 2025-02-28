@@ -1441,6 +1441,29 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                           8.0),
                                                 ),
                                               ),
+                                              if (productComboBillingAppSettingsRecord
+                                                      ?.settingList
+                                                      ?.where((e) =>
+                                                          e.title ==
+                                                          'enableLedDisplay')
+                                                      .toList()
+                                                      ?.firstOrNull
+                                                      ?.value ??
+                                                  true)
+                                                Container(
+                                                  width: 100.0,
+                                                  height: 100.0,
+                                                  child: custom_widgets
+                                                      .PdLedCustomerdisplay(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    amount: FFAppState()
+                                                        .finalAmt
+                                                        .toString(),
+                                                    displayString: 'TOTAL',
+                                                    port: 'COM1',
+                                                  ),
+                                                ),
                                             ],
                                           ),
                                         ),
