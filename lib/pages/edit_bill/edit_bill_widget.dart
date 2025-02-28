@@ -4759,7 +4759,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       selectedbillscustomInvoiceRecordList
                                                           .sortedList(
                                                               keyOf: (e) =>
-                                                                  e.invoice,
+                                                                  e.invoiceDate,
                                                               desc: false)
                                                           .map((e) => e.invoice)
                                                           .toList(),
@@ -4855,7 +4855,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     selectedbillscustomInvoiceRecordList
                                                         .sortedList(
                                                             keyOf: (e) =>
-                                                                e.invoice,
+                                                                e.invoiceDate,
                                                             desc: true)
                                                         .map((e) => e.invoice)
                                                         .toList(),
