@@ -3675,6 +3675,11 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             );
                                             FFAppState().shiftdetails =
                                                 _model.shiftdetailsnewonline!;
+                                            FFAppState().billcount =
+                                                getJsonField(
+                                              _model.shiftdetailsnewonline,
+                                              r'''$.billCount''',
+                                            );
                                             safeSetState(() {});
                                           } else {
                                             await showDialog(
@@ -3899,6 +3904,11 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 FFAppState().shiftdetails =
                                                     _model
                                                         .shiftdetailsnewonline2!;
+                                                FFAppState().billcount =
+                                                    getJsonField(
+                                                  _model.shiftdetailsnewonline2,
+                                                  r'''$.billCount''',
+                                                );
                                                 safeSetState(() {});
                                               } else {
                                                 await showDialog(
@@ -4426,6 +4436,11 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             );
                                             FFAppState().shiftdetails = _model
                                                 .shiftdetailsnewonlineCopy!;
+                                            FFAppState().billcount =
+                                                getJsonField(
+                                              _model.shiftdetailsnewonlineCopy,
+                                              r'''$.billCount''',
+                                            );
                                             safeSetState(() {});
                                             _model.invoiceslist = [];
                                             safeSetState(() {});
@@ -5132,6 +5147,12 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 );
                                                 FFAppState().shiftdetails = _model
                                                     .shiftdetailsnewonlineCustom!;
+                                                FFAppState().billcount =
+                                                    getJsonField(
+                                                  _model
+                                                      .shiftdetailsnewonlineCustom,
+                                                  r'''$.billCount''',
+                                                );
                                                 safeSetState(() {});
                                                 _model.invoiceslist = [];
                                                 safeSetState(() {});
