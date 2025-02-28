@@ -4739,6 +4739,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                           String>(null),
                                                   options:
                                                       selectedbillscustomInvoiceRecordList
+                                                          .sortedList(
+                                                              keyOf: (e) =>
+                                                                  e.invoice,
+                                                              desc: false)
                                                           .map((e) => e.invoice)
                                                           .toList(),
                                                   onChanged: (val) =>
@@ -4831,6 +4835,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                         null),
                                                 options:
                                                     selectedbillscustomInvoiceRecordList
+                                                        .sortedList(
+                                                            keyOf: (e) =>
+                                                                e.invoice,
+                                                            desc: true)
                                                         .map((e) => e.invoice)
                                                         .toList(),
                                                 onChanged: (val) =>
@@ -4949,107 +4957,116 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       FFAppState().startLoop <
                                                           _model.invoiceslist
                                                               .length) {
-                                                    _model.resultItemloopcustom =
-                                                        await actions.docToJson(
-                                                      selectedbillscustomInvoiceRecordList
+                                                    if (selectedbillscustomInvoiceRecordList
+                                                            .elementAtOrNull(
+                                                                FFAppState()
+                                                                    .startLoop)
+                                                            ?.source ==
+                                                        'KOT') {
+                                                      _model.resultItemloopcustom =
+                                                          await actions
+                                                              .docToJson(
+                                                        selectedbillscustomInvoiceRecordList
+                                                            .elementAtOrNull(
+                                                                FFAppState()
+                                                                    .startLoop),
+                                                      );
+                                                      FFAppState()
+                                                              .selectedInvoiceJson =
+                                                          _model
+                                                              .resultItemloopcustom!;
+                                                      FFAppState().prevMode =
+                                                          selectedbillscustomInvoiceRecordList
+                                                              .elementAtOrNull(
+                                                                  FFAppState()
+                                                                      .startLoop)!
+                                                              .paymentMode;
+                                                      FFAppState()
+                                                          .update(() {});
+
+                                                      await selectedbillscustomInvoiceRecordList
                                                           .elementAtOrNull(
                                                               FFAppState()
-                                                                  .startLoop),
-                                                    );
-                                                    FFAppState()
-                                                            .selectedInvoiceJson =
-                                                        _model
-                                                            .resultItemloopcustom!;
-                                                    FFAppState().prevMode =
+                                                                  .startLoop)!
+                                                          .reference
+                                                          .update(
+                                                              createInvoiceRecordData(
+                                                            isDeleted: true,
+                                                          ));
+                                                      _model.shiftListeditbillcustom =
+                                                          await actions
+                                                              .shiftExistseditbill(
                                                         selectedbillscustomInvoiceRecordList
                                                             .elementAtOrNull(
                                                                 FFAppState()
                                                                     .startLoop)!
-                                                            .paymentMode;
-                                                    FFAppState().update(() {});
+                                                            .dayId,
+                                                        selectedbillscustomInvoiceRecordList
+                                                            .elementAtOrNull(
+                                                                FFAppState()
+                                                                    .startLoop)!
+                                                            .shiftId,
+                                                        FFAppState()
+                                                            .outletIdRef!
+                                                            .id,
+                                                      );
+                                                      _model.returnList1editbillcustom =
+                                                          await actions
+                                                              .updateShiftSummaryFordeletebill(
+                                                        FFAppState()
+                                                            .selectedInvoiceJson,
+                                                        FFAppState().curMode,
+                                                        FFAppState().prevMode,
+                                                        _model
+                                                            .shiftListeditbillcustom!,
+                                                      );
 
-                                                    await selectedbillscustomInvoiceRecordList
-                                                        .elementAtOrNull(
-                                                            FFAppState()
-                                                                .startLoop)!
-                                                        .reference
-                                                        .update(
-                                                            createInvoiceRecordData(
-                                                          isDeleted: true,
-                                                        ));
-                                                    _model.shiftListeditbillcustom =
-                                                        await actions
-                                                            .shiftExistseditbill(
-                                                      selectedbillscustomInvoiceRecordList
-                                                          .elementAtOrNull(
+                                                      await functions
+                                                          .shiftRef(
+                                                              _model
+                                                                  .shiftListeditbillcustom!,
                                                               FFAppState()
-                                                                  .startLoop)!
-                                                          .dayId,
-                                                      selectedbillscustomInvoiceRecordList
-                                                          .elementAtOrNull(
-                                                              FFAppState()
-                                                                  .startLoop)!
-                                                          .shiftId,
-                                                      FFAppState()
-                                                          .outletIdRef!
-                                                          .id,
-                                                    );
-                                                    _model.returnList1editbillcustom =
-                                                        await actions
-                                                            .updateShiftSummaryFordeletebill(
-                                                      FFAppState()
-                                                          .selectedInvoiceJson,
-                                                      FFAppState().curMode,
-                                                      FFAppState().prevMode,
-                                                      _model
-                                                          .shiftListeditbillcustom!,
-                                                    );
-
-                                                    await functions
-                                                        .shiftRef(
-                                                            _model
-                                                                .shiftListeditbillcustom!,
-                                                            FFAppState()
-                                                                .outletIdRef!
-                                                                .id)
-                                                        .update(
-                                                            createShiftRecordData(
-                                                          totalSale:
-                                                              getJsonField(
-                                                            _model
-                                                                .returnList1editbillcustom,
-                                                            r'''$.totalSale''',
-                                                          ),
-                                                          subTotalBill:
-                                                              getJsonField(
-                                                            _model
-                                                                .returnList1editbillcustom,
-                                                            r'''$.subTotalSale''',
-                                                          ),
-                                                          paymentJson:
-                                                              getJsonField(
-                                                            _model
-                                                                .returnList1editbillcustom,
-                                                            r'''$.paymentJson''',
-                                                          ).toString(),
-                                                          cashSale:
-                                                              getJsonField(
-                                                            _model
-                                                                .returnList1editbillcustom,
-                                                            r'''$.cashSale''',
-                                                          ),
-                                                          billCount:
-                                                              getJsonField(
-                                                            _model
-                                                                .returnList1editbillcustom,
-                                                            r'''$.billCount''',
-                                                          ),
-                                                          tax: getJsonField(
-                                                            _model
-                                                                .returnList1editbillcustom,
-                                                            r'''$.tax''',
-                                                          ),
-                                                        ));
+                                                                  .outletIdRef!
+                                                                  .id)
+                                                          .update(
+                                                              createShiftRecordData(
+                                                            totalSale:
+                                                                getJsonField(
+                                                              _model
+                                                                  .shiftListeditbillcustom,
+                                                              r'''$.totalSale''',
+                                                            ),
+                                                            subTotalBill:
+                                                                getJsonField(
+                                                              _model
+                                                                  .shiftListeditbillcustom,
+                                                              r'''$.subTotalSale''',
+                                                            ),
+                                                            paymentJson:
+                                                                getJsonField(
+                                                              _model
+                                                                  .shiftListeditbillcustom,
+                                                              r'''$.paymentJson''',
+                                                            ).toString(),
+                                                            cashSale:
+                                                                getJsonField(
+                                                              _model
+                                                                  .shiftListeditbillcustom,
+                                                              r'''$.cashSale''',
+                                                            ),
+                                                            billCount:
+                                                                getJsonField(
+                                                              _model
+                                                                  .shiftListeditbillcustom,
+                                                              r'''$.billCount''',
+                                                            ),
+                                                            tax: getJsonField(
+                                                              _model
+                                                                  .shiftListeditbillcustom,
+                                                              r'''$.tax''',
+                                                            ),
+                                                          ));
+                                                    }
                                                     FFAppState().startLoop =
                                                         FFAppState().startLoop +
                                                             1;
