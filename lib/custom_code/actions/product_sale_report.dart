@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> productSaleReport(
   String dayId,
   String outletId,
@@ -30,6 +32,7 @@ Future<List<dynamic>> productSaleReport(
       .doc(outletId)
       .collection('INVOICE')
       .where('dayId', isEqualTo: dayId)
+      .where('isDeleted', isEqualTo: false)
       .get()
       .then((value) => value);
   if (querySnapshot.size == 0) {

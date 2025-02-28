@@ -666,6 +666,10 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                           FFAppState()
                                                               .selectEndDate,
                                                     )
+                                                    .where(
+                                                      'isDeleted',
+                                                      isEqualTo: false,
+                                                    )
                                                     .orderBy('invoiceDate',
                                                         descending: true),
                                                 parent:
