@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<dynamic> updateShiftSummaryForEB(
   dynamic newInvoice,
   String currentMode,
@@ -114,6 +116,16 @@ Future<dynamic> updateShiftSummaryForEB(
                           newInvoice["finalBillAmt"]!.toDouble())
                       : 0);
 
+      paymentJsonData["digital"] = paymentJsonData["digital"].toDouble() +
+          (prevMode == "DIGITAL"
+              ? -reducePaymentTotal
+              : currentMode == "DIGITAL"
+                  ? addPaymentTotal
+                  : newInvoice["paymentMode"] == "DIGITAL"
+                      ? -(invoice["finalBillAmt"]!.toDouble() -
+                          newInvoice["finalBillAmt"]!.toDouble())
+                      : 0);
+
       var paymentJsonDataString = jsonEncode(paymentJsonData).toString();
       shift[i]["paymentJson"] = paymentJsonDataString;
     }
@@ -202,11 +214,23 @@ Future<dynamic> updateShiftSummaryForEB(
                           newInvoice["finalBillAmt"]!.toDouble())
                       : 0);
 
+      paymentJsonData["digital"] = paymentJsonData["digital"].toDouble() +
+          (prevMode == "DIGITAL"
+              ? -reducePaymentTotal
+              : currentMode == "DIGITAL"
+                  ? addPaymentTotal
+                  : newInvoice["paymentMode"] == "DIGITAL"
+                      ? -(invoice["finalBillAmt"]!.toDouble() -
+                          newInvoice["finalBillAmt"]!.toDouble())
+                      : 0);
+
       var paymentJsonDataString = jsonEncode(paymentJsonData).toString();
       shift[i]["paymentJson"] = paymentJsonDataString;
+      shift[0]["totalSale"] =
+          (shift[0]["totalSale"] - invoice["finalBillAmt"]) +
+              newInvoice["finalBillAmt"];
     }
-    shift[0]["totalSale"] = (shift[0]["totalSale"] - invoice["finalBillAmt"]) +
-        newInvoice["finalBillAmt"];
+
     FFAppState().curMode = "";
     FFAppState().prevMode = "";
     FFAppState().updatedInvoiceJson = "";

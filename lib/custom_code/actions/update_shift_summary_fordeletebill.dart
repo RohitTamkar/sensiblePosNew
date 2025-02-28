@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<dynamic> updateShiftSummaryFordeletebill(
   dynamic newInvoice,
   String currentMode,
@@ -20,9 +22,8 @@ Future<dynamic> updateShiftSummaryFordeletebill(
   dynamic invoice;
   double reducePaymentTotal = 0.0;
 
-  if (FFAppState().updatedInvoiceJson == null) {
-    reducePaymentTotal = newInvoice["finalBillAmt"]!.toDouble();
-  } else if (FFAppState().updatedInvoiceJson == "") {
+  if (FFAppState().updatedInvoiceJson == null ||
+      FFAppState().updatedInvoiceJson == "") {
     reducePaymentTotal = newInvoice["finalBillAmt"]!.toDouble();
   } else {
     invoice = FFAppState().updatedInvoiceJson;
@@ -33,184 +34,88 @@ Future<dynamic> updateShiftSummaryFordeletebill(
 
   List<dynamic> shift = [];
   shift.add(shift1);
-  if (reducePaymentTotal == addPaymentTotal) {
-    for (int i = 0; i < shift.length; i++) {
-      final paymentJsonData = jsonDecode(shift[i]["paymentJson"]);
 
-      paymentJsonData["cash"] = paymentJsonData["cash"].toDouble() +
-          (prevMode == "CASH"
-              ? -reducePaymentTotal
-              : currentMode == "CASH"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "CASH"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
-      shift[0]["cashSale"] = paymentJsonData["cash"];
-      paymentJsonData["credit"] = paymentJsonData["credit"].toDouble() +
-          (prevMode == "CREDIT"
-              ? -reducePaymentTotal
-              : currentMode == "CREDIT"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "CREDIT"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
+  for (int i = 0; i < shift.length; i++) {
+    final paymentJsonData = jsonDecode(shift[i]["paymentJson"]);
 
-      paymentJsonData["googlepay"] = paymentJsonData["googlepay"].toDouble() +
-          (prevMode == "GOOGLEPAY"
-              ? -reducePaymentTotal
-              : currentMode == "GOOGLEPAY"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "GOOGLEPAY"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
+    // Adjust payment methods based on the previous and current modes
+    paymentJsonData["cash"] = paymentJsonData["cash"].toDouble() +
+        (prevMode == "CASH"
+            ? -reducePaymentTotal
+            : currentMode == "CASH"
+                ? addPaymentTotal
+                : 0);
 
-      paymentJsonData["other"] = paymentJsonData["other"].toDouble() +
-          (prevMode == "OTHER"
-              ? -reducePaymentTotal
-              : currentMode == "OTHER"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "OTHER"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
-      paymentJsonData["cheque"] = paymentJsonData["cheque"].toDouble() +
-          (prevMode == "CHEQUE"
-              ? -reducePaymentTotal
-              : currentMode == "CHEQUE"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "CHEQUE"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
-      paymentJsonData["phonepe"] = paymentJsonData["phonepe"].toDouble() +
-          (prevMode == "PHONEPE"
-              ? (-reducePaymentTotal)
-              : currentMode == "PHONEPE"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "PHONEPE"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
-      paymentJsonData["paytm"] = paymentJsonData["paytm"].toDouble() +
-          (prevMode == "PAYTM"
-              ? -reducePaymentTotal
-              : currentMode == "PAYTM"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "PAYTM"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
+    paymentJsonData["credit"] = paymentJsonData["credit"].toDouble() +
+        (prevMode == "CREDIT"
+            ? -reducePaymentTotal
+            : currentMode == "CREDIT"
+                ? addPaymentTotal
+                : 0);
 
-      paymentJsonData["card"] = paymentJsonData["card"].toDouble() +
-          (prevMode == "CARD"
-              ? -reducePaymentTotal
-              : currentMode == "CARD"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "CARD"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
+    paymentJsonData["googlepay"] = paymentJsonData["googlepay"].toDouble() +
+        (prevMode == "GOOGLEPAY"
+            ? -reducePaymentTotal
+            : currentMode == "GOOGLEPAY"
+                ? addPaymentTotal
+                : 0);
 
-      var paymentJsonDataString = jsonEncode(paymentJsonData).toString();
-      shift[i]["paymentJson"] = paymentJsonDataString;
-    }
-    // shift[0]["totalSale"] = (shift[0]["totalSale"] - invoice["finalBillAmt"]) +newInvoice["finalBillAmt"];
-    FFAppState().curMode = "";
-    FFAppState().prevMode = "";
-    FFAppState().updatedInvoiceJson = "";
-  } else {
-    for (int i = 0; i < shift.length; i++) {
-      final paymentJsonData = jsonDecode(shift[i]["paymentJson"]);
+    paymentJsonData["other"] = paymentJsonData["other"].toDouble() +
+        (prevMode == "OTHER"
+            ? -reducePaymentTotal
+            : currentMode == "OTHER"
+                ? addPaymentTotal
+                : 0);
 
-      paymentJsonData["cash"] = paymentJsonData["cash"].toDouble() +
-          (prevMode == "CASH"
-              ? -reducePaymentTotal
-              : currentMode == "CASH"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "CASH"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
-      shift[0]["cashSale"] = paymentJsonData["cash"];
-      paymentJsonData["credit"] = paymentJsonData["credit"].toDouble() +
-          (prevMode == "CREDIT"
-              ? -reducePaymentTotal
-              : currentMode == "CREDIT"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "CREDIT"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
+    paymentJsonData["cheque"] = paymentJsonData["cheque"].toDouble() +
+        (prevMode == "CHEQUE"
+            ? -reducePaymentTotal
+            : currentMode == "CHEQUE"
+                ? addPaymentTotal
+                : 0);
 
-      paymentJsonData["googlepay"] = paymentJsonData["googlepay"].toDouble() +
-          (prevMode == "GOOGLEPAY"
-              ? -reducePaymentTotal
-              : currentMode == "GOOGLEPAY"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "GOOGLEPAY"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
+    paymentJsonData["phonepe"] = paymentJsonData["phonepe"].toDouble() +
+        (prevMode == "PHONEPE"
+            ? -reducePaymentTotal
+            : currentMode == "PHONEPE"
+                ? addPaymentTotal
+                : 0);
 
-      paymentJsonData["other"] = paymentJsonData["other"].toDouble() +
-          (prevMode == "OTHER"
-              ? -reducePaymentTotal
-              : currentMode == "OTHER"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "OTHER"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
-      paymentJsonData["cheque"] = paymentJsonData["cheque"].toDouble() +
-          (prevMode == "CHEQUE"
-              ? -reducePaymentTotal
-              : currentMode == "CHEQUE"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "CHEQUE"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
-      paymentJsonData["phonepe"] = paymentJsonData["phonepe"].toDouble() +
-          (prevMode == "PHONEPE"
-              ? -reducePaymentTotal
-              : currentMode == "PHONEPE"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "PHONEPE"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
-      paymentJsonData["paytm"] = paymentJsonData["paytm"].toDouble() +
-          (prevMode == "PAYTM"
-              ? -reducePaymentTotal
-              : currentMode == "PAYTM"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "PAYTM"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
+    paymentJsonData["paytm"] = paymentJsonData["paytm"].toDouble() +
+        (prevMode == "PAYTM"
+            ? -reducePaymentTotal
+            : currentMode == "PAYTM"
+                ? addPaymentTotal
+                : 0);
 
-      paymentJsonData["card"] = paymentJsonData["card"].toDouble() +
-          (prevMode == "CARD"
-              ? -reducePaymentTotal
-              : currentMode == "CARD"
-                  ? addPaymentTotal
-                  : newInvoice["paymentMode"] == "CARD"
-                      ? -(invoice["finalBillAmt"]!.toDouble() -
-                          newInvoice["finalBillAmt"]!.toDouble())
-                      : 0);
+    paymentJsonData["card"] = paymentJsonData["card"].toDouble() +
+        (prevMode == "CARD"
+            ? -reducePaymentTotal
+            : currentMode == "CARD"
+                ? addPaymentTotal
+                : 0);
+    paymentJsonData["digital"] = paymentJsonData["digital"].toDouble() +
+        (prevMode == "DIGITAL"
+            ? -reducePaymentTotal
+            : currentMode == "DIGITAL"
+                ? addPaymentTotal
+                : 0);
 
-      var paymentJsonDataString = jsonEncode(paymentJsonData).toString();
-      shift[i]["paymentJson"] = paymentJsonDataString;
-    }
-    shift[0]["totalSale"] = (shift[0]["totalSale"] - invoice["finalBillAmt"]) +
-        newInvoice["finalBillAmt"];
-    FFAppState().curMode = "";
-    FFAppState().prevMode = "";
-    FFAppState().updatedInvoiceJson = "";
+    // Update the paymentJson in the shift
+    var paymentJsonDataString = jsonEncode(paymentJsonData).toString();
+    shift[i]["paymentJson"] = paymentJsonDataString;
   }
+  shift[0]["billCount"] = shift[0]["billCount"] - 1;
+  shift[0]["tax"] = double.parse(
+      (shift[0]["tax"] - newInvoice["taxAmt"]!.toDouble()).toStringAsFixed(2));
+  shift[0]["cashSale"] = shift[0]["cashSale"] - reducePaymentTotal;
+  // Adjust the total sale in the shift
+  shift[0]["totalSale"] = shift[0]["totalSale"].toDouble() - reducePaymentTotal;
+
+  // Reset the state
+  FFAppState().curMode = "";
+  FFAppState().prevMode = "";
+  FFAppState().updatedInvoiceJson = "";
 
   return shift[0];
 }

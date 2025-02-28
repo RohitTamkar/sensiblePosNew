@@ -4290,6 +4290,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     false;
                                             if (confirmDialogResponse) {
                                               FFAppState().startLoop = 0;
+                                              FFAppState().endLoop =
+                                                  _model.invoiceslist.length;
                                               safeSetState(() {});
                                               while (FFAppState().startLoop <
                                                   _model.invoiceslist.length) {
@@ -4405,6 +4407,9 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   );
                                                 },
                                               );
+                                              FFAppState().startLoop = 0;
+                                              FFAppState().endLoop = 0;
+                                              safeSetState(() {});
                                             }
                                             _model.shiftsummaryCopy =
                                                 await queryShiftRecordOnce(
@@ -4551,31 +4556,44 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                AutoSizeText(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'qxy7k5s8' /* Custom Bill Select */,
+                                                InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onLongPress: () async {
+                                                    FFAppState().startLoop = 0;
+                                                    safeSetState(() {});
+                                                  },
+                                                  child: AutoSizeText(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'qxy7k5s8' /* Custom Bill Select */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .lineColor,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmallFamily),
+                                                        ),
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .headlineSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmallFamily,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .lineColor,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmallFamily),
-                                                      ),
                                                 ),
                                               ],
                                             ),
@@ -4952,11 +4970,14 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                         false;
                                                 if (confirmDialogResponse) {
                                                   FFAppState().startLoop = 0;
+                                                  FFAppState().endLoop =
+                                                      selectedbillscustomInvoiceRecordList
+                                                          .length;
                                                   safeSetState(() {});
-                                                  while (
-                                                      FFAppState().startLoop <
-                                                          _model.invoiceslist
-                                                              .length) {
+                                                  while (FFAppState()
+                                                          .startLoop <
+                                                      selectedbillscustomInvoiceRecordList
+                                                          .length) {
                                                     if (selectedbillscustomInvoiceRecordList
                                                             .elementAtOrNull(
                                                                 FFAppState()
@@ -5072,6 +5093,9 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             1;
                                                     safeSetState(() {});
                                                   }
+                                                  FFAppState().startLoop = 0;
+                                                  FFAppState().endLoop = 0;
+                                                  safeSetState(() {});
                                                   await showDialog(
                                                     context: context,
                                                     builder:
@@ -5203,9 +5227,18 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: CircularPercentIndicator(
-                                    percent: functions.gerProgressValue(
-                                        FFAppState().startLoop,
-                                        FFAppState().endLoop),
+                                    percent: valueOrDefault<double>(
+                                      functions.gerProgressValue(
+                                          valueOrDefault<int>(
+                                            FFAppState().startLoop,
+                                            0,
+                                          ),
+                                          valueOrDefault<int>(
+                                            FFAppState().endLoop,
+                                            0,
+                                          )),
+                                      0.3,
+                                    ),
                                     radius: 160.0,
                                     lineWidth: 15.0,
                                     animation: true,
@@ -5215,7 +5248,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).accent4,
                                     center: Text(
-                                      FFAppState().startLoop.toString(),
+                                      valueOrDefault<String>(
+                                        FFAppState().startLoop.toString(),
+                                        '0',
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(

@@ -1324,8 +1324,11 @@ List<ProductStructStruct> returnrecipeprd(
 }
 
 double gerProgressValue(
-  int percentage,
-  int totalProduct,
+  int current,
+  int total,
 ) {
-  return (percentage / totalProduct);
+  if (total <= 0) {
+    return 0.0; // Prevent division by zero
+  }
+  return current / total;
 }

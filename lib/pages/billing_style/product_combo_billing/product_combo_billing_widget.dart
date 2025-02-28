@@ -1891,6 +1891,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                               FFAppState().startLoop = FFAppState().startLoop + 1;
                                                                               safeSetState(() {});
                                                                             }
+                                                                            FFAppState().startLoop =
+                                                                                0;
+                                                                            safeSetState(() {});
                                                                           } else {
                                                                             _model.addtosavebill22 =
                                                                                 await actions.laundryAddToHoldListprd(
@@ -2887,6 +2890,20 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             _model.device233Copy =
                                                                                 await actions.newCustomAction(
                                                                               FFAppState().printerIndex,
+                                                                            );
+                                                                            await showDialog(
+                                                                              context: context,
+                                                                              builder: (alertDialogContext) {
+                                                                                return AlertDialog(
+                                                                                  content: Text('The bill has been successfully converted into a customer bill.'),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                      child: Text('Ok'),
+                                                                                    ),
+                                                                                  ],
+                                                                                );
+                                                                              },
                                                                             );
                                                                           }
                                                                         } else {
