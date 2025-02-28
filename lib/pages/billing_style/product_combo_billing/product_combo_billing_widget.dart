@@ -3049,6 +3049,11 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     FFAppState()
                                                                             .newcount +
                                                                         1;
+                                                                FFAppState()
+                                                                        .billcount =
+                                                                    FFAppState()
+                                                                            .billcount +
+                                                                        1;
                                                                 safeSetState(
                                                                     () {});
                                                               } else {
@@ -3061,6 +3066,11 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         .newcount =
                                                                     FFAppState()
                                                                             .newcount +
+                                                                        1;
+                                                                FFAppState()
+                                                                        .billcount =
+                                                                    FFAppState()
+                                                                            .billcount +
                                                                         1;
                                                                 safeSetState(
                                                                     () {});
@@ -3454,9 +3464,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     ..billCount =
                                                                         valueOrDefault<
                                                                             int>(
-                                                                      functions.lastBillCount(FFAppState()
-                                                                          .shiftDetails
-                                                                          .billCount),
+                                                                      FFAppState()
+                                                                          .billcount,
                                                                       0,
                                                                     )
                                                                     ..totalSale =
@@ -3630,14 +3639,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       .reference
                                                                       .update(
                                                                           createShiftRecordData(
-                                                                    billCount:
-                                                                        valueOrDefault<
-                                                                            int>(
-                                                                      functions.lastBillCount(FFAppState()
-                                                                          .shiftDetails
-                                                                          .billCount),
-                                                                      0,
-                                                                    ),
+                                                                    billCount: FFAppState()
+                                                                        .shiftDetails
+                                                                        .billCount,
                                                                     dayId:
                                                                         getJsonField(
                                                                       _model
@@ -4081,6 +4085,11 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     FFAppState()
                                                                             .newcount +
                                                                         1;
+                                                                FFAppState()
+                                                                        .billcount =
+                                                                    FFAppState()
+                                                                            .billcount +
+                                                                        1;
                                                                 safeSetState(
                                                                     () {});
                                                               } else {
@@ -4093,6 +4102,11 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         .newcount =
                                                                     FFAppState()
                                                                             .newcount +
+                                                                        1;
+                                                                FFAppState()
+                                                                        .billcount =
+                                                                    FFAppState()
+                                                                            .billcount +
                                                                         1;
                                                                 safeSetState(
                                                                     () {});
@@ -4486,9 +4500,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     ..billCount =
                                                                         valueOrDefault<
                                                                             int>(
-                                                                      functions.lastBillCount(FFAppState()
-                                                                          .shiftDetails
-                                                                          .billCount),
+                                                                      FFAppState()
+                                                                          .billcount,
                                                                       0,
                                                                     )
                                                                     ..totalSale =
@@ -4662,14 +4675,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       .reference
                                                                       .update(
                                                                           createShiftRecordData(
-                                                                    billCount:
-                                                                        valueOrDefault<
-                                                                            int>(
-                                                                      functions.lastBillCount(FFAppState()
-                                                                          .shiftDetails
-                                                                          .billCount),
-                                                                      0,
-                                                                    ),
+                                                                    billCount: FFAppState()
+                                                                        .shiftDetails
+                                                                        .billCount,
                                                                     dayId:
                                                                         getJsonField(
                                                                       _model
