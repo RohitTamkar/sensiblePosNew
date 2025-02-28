@@ -2877,13 +2877,13 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                                   .orderBy('invoiceDate', descending: true),
                                                                               limit: 10,
                                                                             );
+                                                                            _model.invoices =
+                                                                                _model.invoiceslist!.toList().cast<InvoiceRecord>();
+                                                                            safeSetState(() {});
                                                                             _model.resultItembillCopy =
                                                                                 await actions.docToJson(
                                                                               invlistItem,
                                                                             );
-                                                                            _model.invoices =
-                                                                                _model.invoiceslist!.toList().cast<InvoiceRecord>();
-                                                                            safeSetState(() {});
                                                                             _model.device233Copy =
                                                                                 await actions.newCustomAction(
                                                                               FFAppState().printerIndex,

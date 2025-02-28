@@ -24,6 +24,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 
 class EditBillModel extends FlutterFlowModel<EditBillWidget> {
@@ -40,6 +41,10 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
   void updateInvoiceslistAtIndex(int index, Function(InvoiceRecord) updateFn) =>
       invoiceslist[index] = updateFn(invoiceslist[index]);
 
+  DateTime? date;
+
+  bool showcustombills = false;
+
   ///  State fields for stateful widgets in this page.
 
   // Model for Header component.
@@ -51,10 +56,10 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
   List<InvoiceRecord> get checkboxCheckedItems =>
       checkboxValueMap.entries.where((e) => e.value).map((e) => e.key).toList();
 
-  DateTime? datePicked;
+  DateTime? datePicked1;
   // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  String? dropDownValue1;
+  FormFieldController<String>? dropDownValueController1;
   // Stores action output result for [Custom Action - scanPrinter] action in PrintEditBill widget.
   bool? resDevice2;
   // Stores action output result for [Custom Action - newCustomAction] action in PrintEditBill widget.
@@ -93,6 +98,23 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
   List<ShiftRecord>? shiftsummaryCopy;
   // Stores action output result for [Custom Action - shiftDetailNewpark] action in Button widget.
   dynamic? shiftdetailsnewonlineCopy;
+  DateTime? datePicked2;
+  // State field(s) for DropDown widget.
+  String? dropDownValue2;
+  FormFieldController<String>? dropDownValueController2;
+  // State field(s) for DropDown widget.
+  String? dropDownValue3;
+  FormFieldController<String>? dropDownValueController3;
+  // Stores action output result for [Custom Action - docToJson] action in Button widget.
+  dynamic? resultItemloopcustom;
+  // Stores action output result for [Custom Action - shiftExistseditbill] action in Button widget.
+  dynamic? shiftListeditbillcustom;
+  // Stores action output result for [Custom Action - updateShiftSummaryFordeletebill] action in Button widget.
+  dynamic? returnList1editbillcustom;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<ShiftRecord>? omtcustom;
+  // Stores action output result for [Custom Action - shiftDetailNewpark] action in Button widget.
+  dynamic? shiftdetailsnewonlineCustom;
 
   @override
   void initState(BuildContext context) {
