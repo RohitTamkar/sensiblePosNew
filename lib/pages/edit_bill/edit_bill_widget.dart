@@ -636,7 +636,9 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                       CrossAxisAlignment
                                                                           .start,
                                                                   children: [
-                                                                    Text(
+                                                                    SelectionArea(
+                                                                        child:
+                                                                            Text(
                                                                       listViewInvoiceRecord
                                                                           .invoice,
                                                                       style: FlutterFlowTheme.of(
@@ -652,7 +654,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                             useGoogleFonts:
                                                                                 GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                           ),
-                                                                    ),
+                                                                    )),
                                                                     Text(
                                                                       functions.milisecToTimestamp(
                                                                           listViewInvoiceRecord
