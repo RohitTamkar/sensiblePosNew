@@ -48,10 +48,10 @@ Future<List<InvoiceRecord>> mergeBills(List<InvoiceRecord> invoiceList) async {
           "${date}${shiftId}${kotCountMap[shiftKey]!.toString().padLeft(2, '0')}";
 
       // Update the invoice number
-      invoiceRec.invoice =
-          newInvoiceNo; // Use the correct field name `invoiceNo`
-
-      // Add the updated KOT invoice to the merged list
+      invoiceRec.reference.update(createInvoiceRecordData(
+        invoice: newInvoiceNo,
+      ));
+      //Add the updated KOT invoice to the merged list
       mergedInvoices.add(invoiceRec);
     }
   }

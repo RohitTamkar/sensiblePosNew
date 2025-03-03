@@ -5108,6 +5108,11 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             1;
                                                     safeSetState(() {});
                                                   }
+                                                  _model.mergedbills =
+                                                      await actions.mergeBills(
+                                                    selectedbillscustomInvoiceRecordList
+                                                        .toList(),
+                                                  );
                                                   FFAppState().startLoop = 0;
                                                   FFAppState().endLoop = 0;
                                                   safeSetState(() {});
