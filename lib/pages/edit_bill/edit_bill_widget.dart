@@ -407,7 +407,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       'isDeleted',
                                                       isEqualTo: false,
                                                     )
-                                                    .orderBy('invoiceDate'),
+                                                    .orderBy('count'),
                                           ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
@@ -4773,7 +4773,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       selectedbillscustomInvoiceRecordList
                                                           .sortedList(
                                                               keyOf: (e) =>
-                                                                  e.invoiceDate,
+                                                                  e.count,
                                                               desc: false)
                                                           .map((e) => e.invoice)
                                                           .toList(),
@@ -4869,7 +4869,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     selectedbillscustomInvoiceRecordList
                                                         .sortedList(
                                                             keyOf: (e) =>
-                                                                e.invoiceDate,
+                                                                e.count,
                                                             desc: true)
                                                         .map((e) => e.invoice)
                                                         .toList(),
