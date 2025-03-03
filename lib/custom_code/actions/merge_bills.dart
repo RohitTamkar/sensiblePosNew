@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<InvoiceRecord>> mergeBills(List<InvoiceRecord> invoiceList) async {
   // Create a list to store the final merged invoices
   List<InvoiceRecord> mergedInvoices = [];
@@ -39,17 +41,19 @@ Future<List<InvoiceRecord>> mergeBills(List<InvoiceRecord> invoiceList) async {
 
       // Extract date and shift ID from shiftId
       var shiftIdParts = invoiceRec.shiftId.split("-");
-      var date =
-          shiftIdParts[2] + shiftIdParts[1] + shiftIdParts[0]; // yyyymmdd
+      var date = shiftIdParts[2] +
+          shiftIdParts[1] +
+          shiftIdParts[0]; // yyyymmdd // ddmmyyyy
       var shiftId = shiftIdParts[3]; // shift number
 
       // Generate the new invoice number
       var newInvoiceNo =
-          "${date}${shiftId}${kotCountMap[shiftKey]!.toString().padLeft(2, '0')}";
+          "${date}${shiftId}${kotCountMap[shiftKey]!.toString()}";
 
       // Update the invoice number
       invoiceRec.reference.update(createInvoiceRecordData(
         invoice: newInvoiceNo,
+        count: kotCountMap[shiftKey],
       ));
       //Add the updated KOT invoice to the merged list
       mergedInvoices.add(invoiceRec);
