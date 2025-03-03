@@ -407,8 +407,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       'isDeleted',
                                                       isEqualTo: false,
                                                     )
-                                                    .orderBy('invoiceDate',
-                                                        descending: true),
+                                                    .orderBy('invoiceDate'),
                                           ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
@@ -5203,6 +5202,67 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                               ),
+                                            ),
+                                          ),
+                                          FFButtonWidget(
+                                            onPressed: () async {
+                                              _model.ivnlisted =
+                                                  await queryInvoiceRecordOnce(
+                                                parent:
+                                                    FFAppState().outletIdRef,
+                                                queryBuilder: (invoiceRecord) =>
+                                                    invoiceRecord.where(
+                                                  'dayId',
+                                                  isEqualTo: dateTimeFormat(
+                                                    "yyyy-mm-dd",
+                                                    _model.date,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
+                                                ),
+                                              );
+                                              _model.returnedbills =
+                                                  await actions.mergeBills(
+                                                _model.ivnlisted!.toList(),
+                                              );
+
+                                              safeSetState(() {});
+                                            },
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'nrhn55wx' /* Merge Bills */,
+                                            ),
+                                            options: FFButtonOptions(
+                                              height: 40.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 16.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
+                                                        color: Colors.white,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
+                                                      ),
+                                              elevation: 0.0,
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
                                           ),
                                         ],

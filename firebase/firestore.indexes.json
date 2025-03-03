@@ -14,6 +14,24 @@
         },
         {
           "fieldPath": "invoiceDate",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "INVOICE",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "isDeleted",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "dayId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "invoiceDate",
           "order": "DESCENDING"
         }
       ]
