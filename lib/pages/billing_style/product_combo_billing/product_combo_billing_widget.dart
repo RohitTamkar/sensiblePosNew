@@ -79,6 +79,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
       _model.hiveProductList = await actions.getProductlistHive();
       FFAppState().productHive =
           _model.hiveProductList!.toList().cast<ProductStructStruct>();
+      FFAppState().startLoop = 0;
       safeSetState(() {});
       _model.invoiceslist20 = await queryInvoiceRecordOnce(
         parent: FFAppState().outletIdRef,
