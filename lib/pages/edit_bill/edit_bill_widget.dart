@@ -4505,7 +4505,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             .where(
                                               'dayId',
                                               isEqualTo: dateTimeFormat(
-                                                "yyyy-mm-dd",
+                                                "yyyy-MM-dd",
                                                 _model.date,
                                                 locale:
                                                     FFLocalizations.of(context)
@@ -5214,7 +5214,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     invoiceRecord.where(
                                                   'dayId',
                                                   isEqualTo: dateTimeFormat(
-                                                    "yyyy-mm-dd",
+                                                    "yyyy-MM-dd",
                                                     _model.date,
                                                     locale: FFLocalizations.of(
                                                             context)
