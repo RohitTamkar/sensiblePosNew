@@ -4773,6 +4773,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                               context)
                                                           .bodyMediumFamily,
                                                   letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w800,
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()
                                                       .containsKey(
@@ -5021,17 +5022,16 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             invoiceRecord
                                                                 .where(
                                                                   'invoiceDate',
-                                                                  isGreaterThanOrEqualTo:
+                                                                  isGreaterThan:
                                                                       _model
                                                                           .drop1
                                                                           ?.invoiceDate,
                                                                 )
                                                                 .where(
                                                                   'invoiceDate',
-                                                                  isLessThanOrEqualTo:
-                                                                      _model
-                                                                          .drop2
-                                                                          ?.invoiceDate,
+                                                                  isLessThan: _model
+                                                                      .drop2
+                                                                      ?.invoiceDate,
                                                                 ),
                                                   );
                                                   var confirmDialogResponse =
