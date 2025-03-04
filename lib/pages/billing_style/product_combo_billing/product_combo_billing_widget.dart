@@ -2853,26 +2853,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           () async {
                                                                         if (invlistItem.source ==
                                                                             'KOT') {
-                                                                          var confirmDialogResponse = await showDialog<bool>(
-                                                                                context: context,
-                                                                                builder: (alertDialogContext) {
-                                                                                  return AlertDialog(
-                                                                                    content: Text('Are you sure you can convert this bill into a customer bill?'),
-                                                                                    actions: [
-                                                                                      TextButton(
-                                                                                        onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                        child: Text('Cancel'),
-                                                                                      ),
-                                                                                      TextButton(
-                                                                                        onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                        child: Text('Confirm'),
-                                                                                      ),
-                                                                                    ],
-                                                                                  );
-                                                                                },
-                                                                              ) ??
-                                                                              false;
-                                                                          if (confirmDialogResponse) {
+                                                                          if (true) {
                                                                             _model.outletdid2Copy =
                                                                                 await queryOutletRecordOnce(
                                                                               queryBuilder: (outletRecord) => outletRecord.where(
@@ -2909,27 +2890,35 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             _model.invoices =
                                                                                 _model.invoiceslist!.toList().cast<InvoiceRecord>();
                                                                             safeSetState(() {});
+                                                                            _model.invoicecusrt =
+                                                                                await queryInvoiceRecordOnce(
+                                                                              parent: FFAppState().outletIdRef,
+                                                                              queryBuilder: (invoiceRecord) => invoiceRecord.where(
+                                                                                'id',
+                                                                                isEqualTo: invlistItem.id,
+                                                                              ),
+                                                                              singleRecord: true,
+                                                                            ).then((s) => s.firstOrNull);
                                                                             _model.resultItembillCopy =
                                                                                 await actions.docToJson(
-                                                                              invlistItem,
+                                                                              _model.invoicecusrt,
                                                                             );
                                                                             _model.device233Copy =
                                                                                 await actions.newCustomAction(
                                                                               FFAppState().printerIndex,
                                                                             );
-                                                                            await showDialog(
-                                                                              context: context,
-                                                                              builder: (alertDialogContext) {
-                                                                                return AlertDialog(
-                                                                                  content: Text('The bill has been successfully converted into a customer bill.'),
-                                                                                  actions: [
-                                                                                    TextButton(
-                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                      child: Text('Ok'),
-                                                                                    ),
-                                                                                  ],
-                                                                                );
-                                                                              },
+                                                                            await actions.printBillnewhivegroceryBill(
+                                                                              _model.resultItembillCopy!,
+                                                                              _model.device233Copy!.toList(),
+                                                                              FFAppState().isPrinterConnected,
+                                                                              FFAppState().printerName,
+                                                                              getJsonField(
+                                                                                functions.outletDocToJson(_model.outletdid2Copy!),
+                                                                                r'''$''',
+                                                                              ),
+                                                                              invlistItem,
+                                                                              FFAppState().paperSize,
+                                                                              productComboBillingAppSettingsRecord!,
                                                                             );
                                                                           }
                                                                         } else {
@@ -2939,7 +2928,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             builder:
                                                                                 (alertDialogContext) {
                                                                               return AlertDialog(
-                                                                                content: Text('This Is Alreday Customer Bill !'),
+                                                                                content: Text('This Is Customer Bill !'),
                                                                                 actions: [
                                                                                   TextButton(
                                                                                     onPressed: () => Navigator.pop(alertDialogContext),
@@ -2957,55 +2946,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       child:
                                                                           FFButtonWidget(
                                                                         onPressed:
-                                                                            () async {
-                                                                          _model.outletdid2 =
-                                                                              await queryOutletRecordOnce(
-                                                                            queryBuilder: (outletRecord) =>
-                                                                                outletRecord.where(
-                                                                              'id',
-                                                                              isEqualTo: FFAppState().outletIdRef?.id,
-                                                                            ),
-                                                                            singleRecord:
-                                                                                true,
-                                                                          ).then((s) => s.firstOrNull);
-                                                                          if (!functions
-                                                                              .isPrinterSelected(FFAppState().printerDevice)!) {
-                                                                            _model.resDevice2bill =
-                                                                                await actions.scanPrinter(
-                                                                              FFAppState().posMode,
-                                                                            );
-                                                                          }
-                                                                          _model.isconnectedbill =
-                                                                              await actions.connectDevice(
-                                                                            FFAppState().printerDevice,
-                                                                            FFAppState().printerIndex,
-                                                                          );
-                                                                          _model.resultItembill =
-                                                                              await actions.docToJson(
-                                                                            invlistItem,
-                                                                          );
-                                                                          _model.device233 =
-                                                                              await actions.newCustomAction(
-                                                                            FFAppState().printerIndex,
-                                                                          );
-                                                                          await actions
-                                                                              .printBillnewhivegroceryBill(
-                                                                            _model.resultItembill!,
-                                                                            _model.device233!.toList(),
-                                                                            FFAppState().isPrinterConnected,
-                                                                            FFAppState().printerName,
-                                                                            getJsonField(
-                                                                              functions.outletDocToJson(_model.outletdid2!),
-                                                                              r'''$''',
-                                                                            ),
-                                                                            invlistItem,
-                                                                            FFAppState().paperSize,
-                                                                            productComboBillingAppSettingsRecord!,
-                                                                          );
-
-                                                                          safeSetState(
-                                                                              () {});
-                                                                        },
+                                                                            () async {},
                                                                         text:
                                                                             '₹ ${invlistItem.finalBillAmt.toString()}',
                                                                         options:
@@ -3051,15 +2992,21 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                           onPressed: () async {
                                                             var _shouldSetState =
                                                                 false;
-                                                            if (functions
-                                                                    .filterBillList(
-                                                                        FFAppState()
-                                                                            .selBill,
-                                                                        FFAppState()
-                                                                            .allBillsList
-                                                                            .toList())
-                                                                    .length >
-                                                                0) {
+                                                            if ((functions
+                                                                        .filterBillList(
+                                                                            FFAppState()
+                                                                                .selBill,
+                                                                            FFAppState()
+                                                                                .allBillsList
+                                                                                .toList())
+                                                                        .length >
+                                                                    0) &&
+                                                                (FFAppState()
+                                                                            .PayMode !=
+                                                                        null &&
+                                                                    FFAppState()
+                                                                            .PayMode !=
+                                                                        '')) {
                                                               if (getJsonField(
                                                                 FFAppState()
                                                                     .shiftDetailsJson,
@@ -3953,6 +3900,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                 FFAppState()
                                                                     .billPrintFooter = '';
                                                                 FFAppState()
+                                                                    .PayMode = '';
+                                                                FFAppState()
                                                                     .update(
                                                                         () {});
                                                                 FFAppState()
@@ -4008,7 +3957,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     (alertDialogContext) {
                                                                   return AlertDialog(
                                                                     content: Text(
-                                                                        'Cart List is Empty!'),
+                                                                        'Select Payment Mode !'),
                                                                     actions: [
                                                                       TextButton(
                                                                         onPressed:
@@ -4087,15 +4036,21 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                           onPressed: () async {
                                                             var _shouldSetState =
                                                                 false;
-                                                            if (functions
-                                                                    .filterBillList(
-                                                                        FFAppState()
-                                                                            .selBill,
-                                                                        FFAppState()
-                                                                            .allBillsList
-                                                                            .toList())
-                                                                    .length >
-                                                                0) {
+                                                            if ((functions
+                                                                        .filterBillList(
+                                                                            FFAppState()
+                                                                                .selBill,
+                                                                            FFAppState()
+                                                                                .allBillsList
+                                                                                .toList())
+                                                                        .length >
+                                                                    0) &&
+                                                                (FFAppState()
+                                                                            .PayMode !=
+                                                                        null &&
+                                                                    FFAppState()
+                                                                            .PayMode !=
+                                                                        '')) {
                                                               if (getJsonField(
                                                                 FFAppState()
                                                                     .shiftDetailsJson,
@@ -5004,6 +4959,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                 FFAppState()
                                                                     .billPrintFooter = '';
                                                                 FFAppState()
+                                                                    .PayMode = '';
+                                                                FFAppState()
                                                                     .update(
                                                                         () {});
                                                                 if (_shouldSetState)
@@ -5045,7 +5002,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     (alertDialogContext) {
                                                                   return AlertDialog(
                                                                     content: Text(
-                                                                        'Cart List is Empty!'),
+                                                                        'Select Payment Mode !'),
                                                                     actions: [
                                                                       TextButton(
                                                                         onPressed:

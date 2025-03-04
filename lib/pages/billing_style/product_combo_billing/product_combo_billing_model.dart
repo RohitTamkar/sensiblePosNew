@@ -150,16 +150,6 @@ class ProductComboBillingModel
   // State field(s) for ListView widget.
   ScrollController? listViewController3;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  OutletRecord? outletdid2;
-  // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
-  bool? resDevice2bill;
-  // Stores action output result for [Custom Action - connectDevice] action in Button widget.
-  bool? isconnectedbill;
-  // Stores action output result for [Custom Action - docToJson] action in Button widget.
-  dynamic? resultItembill;
-  // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
-  List<dynamic>? device233;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   OutletRecord? outletdid2Copy;
   // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
   bool? resDevice2billCopy;
@@ -167,6 +157,8 @@ class ProductComboBillingModel
   bool? isconnectedbillCopy;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<InvoiceRecord>? invoiceslist;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  InvoiceRecord? invoicecusrt;
   // Stores action output result for [Custom Action - docToJson] action in Button widget.
   dynamic? resultItembillCopy;
   // Stores action output result for [Custom Action - newCustomAction] action in Button widget.

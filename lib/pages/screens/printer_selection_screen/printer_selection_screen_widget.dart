@@ -48,7 +48,7 @@ class _PrinterSelectionScreenWidgetState
 
     _model.tabBarController = TabController(
       vsync: this,
-      length: 4,
+      length: 3,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
     _model.switchValue = FFAppState().ethernetPrint;
@@ -573,17 +573,10 @@ class _PrinterSelectionScreenWidgetState
                                                 '0gghyark' /* FOOTER */,
                                               ),
                                             ),
-                                            Tab(
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'ijovelax' /* LOGO */,
-                                              ),
-                                            ),
                                           ],
                                           controller: _model.tabBarController,
                                           onTap: (i) async {
                                             [
-                                              () async {},
                                               () async {},
                                               () async {},
                                               () async {}
@@ -1982,7 +1975,7 @@ class _PrinterSelectionScreenWidgetState
                                                             Align(
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      -0.75,
+                                                                      -0.55,
                                                                       0.0),
                                                               child: Row(
                                                                 mainAxisSize:
@@ -1992,29 +1985,23 @@ class _PrinterSelectionScreenWidgetState
                                                                     MainAxisAlignment
                                                                         .spaceAround,
                                                                 children: [
-                                                                  Align(
-                                                                    alignment:
-                                                                        AlignmentDirectional(
-                                                                            -0.4,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      FFLocalizations.of(
-                                                                              context)
-                                                                          .getText(
-                                                                        'b9c9xrul' /* SERIAL NO  */,
-                                                                      ),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                          ),
+                                                                  Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'f0t5v3l0' /* BILL NO: */,
                                                                     ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                        ),
                                                                   ),
                                                                   Align(
                                                                     alignment:
@@ -2043,40 +2030,6 @@ class _PrinterSelectionScreenWidgetState
                                                                             ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  AlignmentDirectional(
-                                                                      -0.55,
-                                                                      0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceAround,
-                                                                children: [
-                                                                  Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'f0t5v3l0' /* BILL NO: */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                        ),
                                                                   ),
                                                                   Align(
                                                                     alignment:
@@ -4642,7 +4595,7 @@ class _PrinterSelectionScreenWidgetState
                                                                 Align(
                                                                   alignment:
                                                                       AlignmentDirectional(
-                                                                          -0.75,
+                                                                          -0.55,
                                                                           0.0),
                                                                   child: Row(
                                                                     mainAxisSize:
@@ -4652,24 +4605,18 @@ class _PrinterSelectionScreenWidgetState
                                                                         MainAxisAlignment
                                                                             .spaceAround,
                                                                     children: [
-                                                                      Align(
-                                                                        alignment: AlignmentDirectional(
-                                                                            -0.4,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          FFLocalizations.of(context)
-                                                                              .getText(
-                                                                            '3cdp48t1' /* SERIAL NO  */,
-                                                                          ),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                              ),
+                                                                      Text(
+                                                                        FFLocalizations.of(context)
+                                                                            .getText(
+                                                                          'vy2nmv6i' /* BILL NO: */,
                                                                         ),
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                              letterSpacing: 0.0,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                            ),
                                                                       ),
                                                                       Align(
                                                                         alignment: AlignmentDirectional(
@@ -4694,35 +4641,6 @@ class _PrinterSelectionScreenWidgetState
                                                                                 ),
                                                                           ),
                                                                         ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                                Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          -0.55,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceAround,
-                                                                    children: [
-                                                                      Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'vy2nmv6i' /* BILL NO: */,
-                                                                        ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                              letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                            ),
                                                                       ),
                                                                       Align(
                                                                         alignment: AlignmentDirectional(
@@ -5408,10 +5326,10 @@ class _PrinterSelectionScreenWidgetState
                                                                     ],
                                                                     onChanged: (val) =>
                                                                         safeSetState(() =>
-                                                                            _model.checkboxGroupValues1 =
+                                                                            _model.checkboxGroupValues =
                                                                                 val),
                                                                     controller: _model
-                                                                            .checkboxGroupValueController1 ??=
+                                                                            .checkboxGroupValueController ??=
                                                                         FormFieldController<
                                                                             List<String>>(
                                                                       [],
@@ -5443,7 +5361,7 @@ class _PrinterSelectionScreenWidgetState
                                                                             0.0,
                                                                             0.0),
                                                                     initialized:
-                                                                        _model.checkboxGroupValues1 !=
+                                                                        _model.checkboxGroupValues !=
                                                                             null,
                                                                   ),
                                                                 ),
@@ -6459,53 +6377,6 @@ class _PrinterSelectionScreenWidgetState
                                                                     ),
                                                                     Align(
                                                                       alignment: AlignmentDirectional(
-                                                                          -0.75,
-                                                                          0.0),
-                                                                      child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceAround,
-                                                                        children: [
-                                                                          Align(
-                                                                            alignment:
-                                                                                AlignmentDirectional(-0.4, 0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                'cupcznth' /* SERIAL NO  */,
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                          Align(
-                                                                            alignment:
-                                                                                AlignmentDirectional(0.55, 0.0),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(175.0, 0.0, 0.0, 0.0),
-                                                                              child: Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  '27eiuj7k' /* DATE */,
-                                                                                ),
-                                                                                style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                      letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                                    ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
-                                                                    Align(
-                                                                      alignment: AlignmentDirectional(
                                                                           -0.55,
                                                                           0.0),
                                                                       child:
@@ -6524,6 +6395,24 @@ class _PrinterSelectionScreenWidgetState
                                                                                   letterSpacing: 0.0,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
+                                                                          ),
+                                                                          Align(
+                                                                            alignment:
+                                                                                AlignmentDirectional(0.55, 0.0),
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(175.0, 0.0, 0.0, 0.0),
+                                                                              child: Text(
+                                                                                FFLocalizations.of(context).getText(
+                                                                                  '27eiuj7k' /* DATE */,
+                                                                                ),
+                                                                                style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      letterSpacing: 0.0,
+                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                                    ),
+                                                                              ),
+                                                                            ),
                                                                           ),
                                                                           Align(
                                                                             alignment:
@@ -6832,7 +6721,7 @@ class _PrinterSelectionScreenWidgetState
                                                                         children: [
                                                                           Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              '1t0ddnzl' /* NET : */,
+                                                                              '1t0ddnzl' /* Grand Total : */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -7044,1140 +6933,6 @@ class _PrinterSelectionScreenWidgetState
                                                     ),
                                                   ),
                                                 ],
-                                              ),
-                                            ),
-                                            Visibility(
-                                              visible: false,
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 8.0, 0.0, 7.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceAround,
-                                                  children: [
-                                                    Expanded(
-                                                      flex: 3,
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
-                                                        child: Container(
-                                                          width:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .width *
-                                                                  0.55,
-                                                          height:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .height *
-                                                                  0.71,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                            border: Border.all(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .customColor1,
-                                                            ),
-                                                          ),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsets.all(
-                                                                    3.0),
-                                                            child:
-                                                                SingleChildScrollView(
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceBetween,
-                                                                children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            10.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            5.0),
-                                                                    child:
-                                                                        FlutterFlowCheckboxGroup(
-                                                                      options: [
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'qeakrsl5' /* In Progress   */,
-                                                                        )
-                                                                      ],
-                                                                      onChanged:
-                                                                          (val) =>
-                                                                              safeSetState(() => _model.checkboxGroupValues2 = val),
-                                                                      controller: _model
-                                                                              .checkboxGroupValueController2 ??=
-                                                                          FormFieldController<
-                                                                              List<String>>(
-                                                                        [],
-                                                                      ),
-                                                                      activeColor:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .primary,
-                                                                      checkColor:
-                                                                          Colors
-                                                                              .white,
-                                                                      checkboxBorderColor:
-                                                                          Color(
-                                                                              0xFF95A1AC),
-                                                                      textStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                          ),
-                                                                      labelPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      initialized:
-                                                                          _model.checkboxGroupValues2 !=
-                                                                              null,
-                                                                    ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            25.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .center,
-                                                                      children: [
-                                                                        Container(
-                                                                          width:
-                                                                              160.0,
-                                                                          height:
-                                                                              160.0,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).customColor2,
-                                                                            border:
-                                                                                Border.all(
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            15.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .center,
-                                                                      children: [
-                                                                        FFButtonWidget(
-                                                                          onPressed:
-                                                                              () {
-                                                                            print('ButtonSyncLogo pressed ...');
-                                                                          },
-                                                                          text:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            'j113zy8p' /* Sync Logo */,
-                                                                          ),
-                                                                          options:
-                                                                              FFButtonOptions(
-                                                                            width:
-                                                                                180.0,
-                                                                            height:
-                                                                                40.0,
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondary,
-                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                  color: FlutterFlowTheme.of(context).lineColor,
-                                                                                  letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                                ),
-                                                                            elevation:
-                                                                                3.0,
-                                                                            borderSide:
-                                                                                BorderSide(
-                                                                              color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                            ),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(0.0),
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Expanded(
-                                                      flex: 2,
-                                                      child: Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                0.0, 0.0),
-                                                        child: Container(
-                                                          width:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .width *
-                                                                  0.4,
-                                                          height:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .height *
-                                                                  0.71,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                            border: Border.all(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .customColor1,
-                                                              width: 1.0,
-                                                            ),
-                                                          ),
-                                                          child: Container(
-                                                            width: MediaQuery
-                                                                        .sizeOf(
-                                                                            context)
-                                                                    .width *
-                                                                0.4,
-                                                            height: MediaQuery
-                                                                        .sizeOf(
-                                                                            context)
-                                                                    .height *
-                                                                0.71,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                              border:
-                                                                  Border.all(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .customColor1,
-                                                                width: 2.0,
-                                                              ),
-                                                            ),
-                                                            child: Align(
-                                                              alignment:
-                                                                  AlignmentDirectional(
-                                                                      0.0,
-                                                                      -0.9),
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsets
-                                                                        .all(
-                                                                            3.0),
-                                                                child:
-                                                                    SingleChildScrollView(
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      if (containerHeaderRecord?.title !=
-                                                                              null &&
-                                                                          containerHeaderRecord?.title !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                containerHeaderRecord?.title,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    fontSize: 22.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.bold,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (containerHeaderRecord?.subtitleAddress !=
-                                                                              null &&
-                                                                          containerHeaderRecord?.subtitleAddress !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                containerHeaderRecord?.subtitleAddress,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (containerHeaderRecord?.address !=
-                                                                              null &&
-                                                                          containerHeaderRecord?.address !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                containerHeaderRecord?.address,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (containerHeaderRecord?.gstNo !=
-                                                                              null &&
-                                                                          containerHeaderRecord?.gstNo !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                containerHeaderRecord?.gstNo,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (containerHeaderRecord?.contactNo !=
-                                                                              null &&
-                                                                          containerHeaderRecord?.contactNo !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                containerHeaderRecord?.contactNo,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (containerHeaderRecord?.email !=
-                                                                              null &&
-                                                                          containerHeaderRecord?.email !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                containerHeaderRecord?.email,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (containerHeaderRecord?.serialNo !=
-                                                                              null &&
-                                                                          containerHeaderRecord?.serialNo !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                containerHeaderRecord?.serialNo,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (containerHeaderRecord?.taxInvoice !=
-                                                                              null &&
-                                                                          containerHeaderRecord?.taxInvoice !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                containerHeaderRecord?.taxInvoice,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (containerHeaderRecord?.bankName !=
-                                                                              null &&
-                                                                          containerHeaderRecord?.bankName !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                containerHeaderRecord?.bankName,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (containerHeaderRecord?.bankBranch !=
-                                                                              null &&
-                                                                          containerHeaderRecord?.bankBranch !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                containerHeaderRecord?.bankBranch,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (containerHeaderRecord?.ifscCode !=
-                                                                              null &&
-                                                                          containerHeaderRecord?.ifscCode !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                containerHeaderRecord?.ifscCode,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (containerHeaderRecord?.accountNumber !=
-                                                                              null &&
-                                                                          containerHeaderRecord?.accountNumber !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                containerHeaderRecord?.accountNumber,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      Divider(
-                                                                        thickness:
-                                                                            0.5,
-                                                                        indent:
-                                                                            0.0,
-                                                                        endIndent:
-                                                                            0.0,
-                                                                        color: Color(
-                                                                            0xFFD4D1D1),
-                                                                      ),
-                                                                      Align(
-                                                                        alignment: AlignmentDirectional(
-                                                                            -0.75,
-                                                                            0.0),
-                                                                        child:
-                                                                            Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.spaceAround,
-                                                                          children: [
-                                                                            Align(
-                                                                              alignment: AlignmentDirectional(-0.4, 0.0),
-                                                                              child: Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'gfc3xqaa' /* SERIAL NO  */,
-                                                                                ),
-                                                                                style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                      letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                                    ),
-                                                                              ),
-                                                                            ),
-                                                                            Align(
-                                                                              alignment: AlignmentDirectional(0.55, 0.0),
-                                                                              child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(175.0, 0.0, 0.0, 0.0),
-                                                                                child: Text(
-                                                                                  FFLocalizations.of(context).getText(
-                                                                                    'anold0qj' /* DATE */,
-                                                                                  ),
-                                                                                  style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                        letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                                      ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      ),
-                                                                      Align(
-                                                                        alignment: AlignmentDirectional(
-                                                                            -0.55,
-                                                                            0.0),
-                                                                        child:
-                                                                            Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.spaceAround,
-                                                                          children: [
-                                                                            Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                '3tpjnqms' /* BILL NO: */,
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                                  ),
-                                                                            ),
-                                                                            Align(
-                                                                              alignment: AlignmentDirectional(0.55, 0.0),
-                                                                              child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(188.0, 0.0, 0.0, 0.0),
-                                                                                child: Text(
-                                                                                  FFLocalizations.of(context).getText(
-                                                                                    '9d7h3pnd' /* TIME */,
-                                                                                  ),
-                                                                                  style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                        letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                                      ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      ),
-                                                                      Divider(
-                                                                        thickness:
-                                                                            0.5,
-                                                                        indent:
-                                                                            0.0,
-                                                                        endIndent:
-                                                                            0.0,
-                                                                        color: Color(
-                                                                            0xFFD4D1D1),
-                                                                      ),
-                                                                      Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceAround,
-                                                                        children: [
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                'u4b40icu' /* ITEM NAME */,
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                          Align(
-                                                                            alignment:
-                                                                                AlignmentDirectional(0.55, 0.0),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(70.0, 0.0, 0.0, 0.0),
-                                                                              child: Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'lj7czqnl' /* QTY */,
-                                                                                ),
-                                                                                style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                      color: FlutterFlowTheme.of(context).primaryText,
-                                                                                      letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                    ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                30.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                'rwkh9svg' /* RATE */,
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                20.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                'ybsjng1b' /* AMT */,
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                      Divider(
-                                                                        thickness:
-                                                                            0.5,
-                                                                        indent:
-                                                                            0.0,
-                                                                        endIndent:
-                                                                            0.0,
-                                                                        color: Color(
-                                                                            0xFFD4D1D1),
-                                                                      ),
-                                                                      Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceAround,
-                                                                        children: [
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                '6u1inmti' /* ITEM 1 */,
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                          Align(
-                                                                            alignment:
-                                                                                AlignmentDirectional(0.55, 0.0),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(100.0, 0.0, 0.0, 0.0),
-                                                                              child: Text(
-                                                                                FFLocalizations.of(context).getText(
-                                                                                  'fgly5lkm' /* 2.00 */,
-                                                                                ),
-                                                                                style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                      letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                    ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                32.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                '6m6qb1by' /* 10.00 */,
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                30.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                'a1p38s9h' /* 20.00 */,
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                      Divider(
-                                                                        thickness:
-                                                                            0.5,
-                                                                        indent:
-                                                                            0.0,
-                                                                        endIndent:
-                                                                            0.0,
-                                                                        color: Color(
-                                                                            0xFFD4D1D1),
-                                                                      ),
-                                                                      Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceBetween,
-                                                                        children: [
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                37.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                'fjrbcb8k' /* Item : 1 */,
-                                                                              ),
-                                                                              textAlign: TextAlign.start,
-                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                34.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                'sf7b32ys' /* Sub total : 20.00 */,
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                      Divider(
-                                                                        thickness:
-                                                                            0.5,
-                                                                        indent:
-                                                                            0.0,
-                                                                        endIndent:
-                                                                            0.0,
-                                                                        color: Color(
-                                                                            0xFFD4D1D1),
-                                                                      ),
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            3.0,
-                                                                            0.0,
-                                                                            30.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.end,
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                'uce3ccvx' /* NET : */,
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    fontSize: 28.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.w600,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                  ),
-                                                                            ),
-                                                                            Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                'tjmtejnk' /* 20.00 */,
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    fontSize: 28.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      ),
-                                                                      Divider(
-                                                                        thickness:
-                                                                            0.5,
-                                                                        indent:
-                                                                            0.0,
-                                                                        endIndent:
-                                                                            0.0,
-                                                                        color: Color(
-                                                                            0xFFD4D1D1),
-                                                                      ),
-                                                                      Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.center,
-                                                                        children: [
-                                                                          Align(
-                                                                            alignment:
-                                                                                AlignmentDirectional(0.0, 0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              FFLocalizations.of(context).getText(
-                                                                                'cmbsus94' /* PAYMENT MODE : */,
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                    color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                          Text(
-                                                                            FFLocalizations.of(context).getText(
-                                                                              'wgjagh9x' /* CASH */,
-                                                                            ),
-                                                                            style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                  color: FlutterFlowTheme.of(context).primaryText,
-                                                                                  letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                      Divider(
-                                                                        thickness:
-                                                                            0.5,
-                                                                        indent:
-                                                                            0.0,
-                                                                        endIndent:
-                                                                            0.0,
-                                                                        color: Color(
-                                                                            0xFFD4D1D1),
-                                                                      ),
-                                                                      if (printerSelectionScreenFooterRecord?.footerText1 !=
-                                                                              null &&
-                                                                          printerSelectionScreenFooterRecord?.footerText1 !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                printerSelectionScreenFooterRecord?.footerText1,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (printerSelectionScreenFooterRecord?.footerText2 !=
-                                                                              null &&
-                                                                          printerSelectionScreenFooterRecord?.footerText2 !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                printerSelectionScreenFooterRecord?.footerText2,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (printerSelectionScreenFooterRecord?.footerText3 !=
-                                                                              null &&
-                                                                          printerSelectionScreenFooterRecord?.footerText3 !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                printerSelectionScreenFooterRecord?.footerText3,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (printerSelectionScreenFooterRecord?.footerText4 !=
-                                                                              null &&
-                                                                          printerSelectionScreenFooterRecord?.footerText4 !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                printerSelectionScreenFooterRecord?.footerText4,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      if (printerSelectionScreenFooterRecord?.footerText5 !=
-                                                                              null &&
-                                                                          printerSelectionScreenFooterRecord?.footerText5 !=
-                                                                              '')
-                                                                        Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                printerSelectionScreenFooterRecord?.footerText5,
-                                                                                '0',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                    letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
                                               ),
                                             ),
                                           ],
