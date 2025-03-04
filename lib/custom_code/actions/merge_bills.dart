@@ -18,6 +18,24 @@ Future<List<InvoiceRecord>> mergeBills(List<InvoiceRecord> invoiceList) async {
   // Track the count of KOT invoices for each shift
   Map<String, int> kotCountMap = {};
 
+  // Track the count used by customer invoices for each shift
+  Map<String, Set<int>> customerCountMap = {};
+
+  // First pass: Process customer invoices to track their counts
+  for (var invoiceRec in invoiceList) {
+    if (invoiceRec.source.toLowerCase() == "customer" &&
+        !invoiceRec.isDeleted) {
+      String shiftKey = invoiceRec.shiftId;
+      customerCountMap[shiftKey] ??= Set<int>();
+
+      // Extract the count from the customer invoice number (last character)
+      int customerCount = int.parse(
+          invoiceRec.invoice.substring(invoiceRec.invoice.length - 1));
+      customerCountMap[shiftKey]!.add(customerCount);
+    }
+  }
+
+  // Second pass: Process KOT invoices
   for (var invoiceRec in invoiceList) {
     // Skip deleted invoices
     if (invoiceRec.isDeleted) {
@@ -25,11 +43,11 @@ Future<List<InvoiceRecord>> mergeBills(List<InvoiceRecord> invoiceList) async {
     }
 
     // If the invoice is a customer invoice, add it to the merged list as is
-    if (invoiceRec.source == "customer") {
+    if (invoiceRec.source.toLowerCase() == "customer") {
       mergedInvoices.add(invoiceRec);
     }
     // If the invoice is a KOT invoice, process it
-    else if (invoiceRec.source == "KOT") {
+    else if (invoiceRec.source.toLowerCase() == "kot") {
       // Generate a key for the shift
       String shiftKey = invoiceRec.shiftId;
 
@@ -39,11 +57,16 @@ Future<List<InvoiceRecord>> mergeBills(List<InvoiceRecord> invoiceList) async {
       // Increment the count for this shift
       kotCountMap[shiftKey] = kotCountMap[shiftKey]! + 1;
 
+      // If the count is already used by a customer invoice, skip it
+      while (customerCountMap[shiftKey]?.contains(kotCountMap[shiftKey]!) ??
+          false) {
+        kotCountMap[shiftKey] = kotCountMap[shiftKey]! + 1;
+      }
+
       // Extract date and shift ID from shiftId
       var shiftIdParts = invoiceRec.shiftId.split("-");
-      var date = shiftIdParts[2] +
-          shiftIdParts[1] +
-          shiftIdParts[0]; // yyyymmdd // ddmmyyyy
+      var date =
+          shiftIdParts[2] + shiftIdParts[1] + shiftIdParts[0]; // ddmmyyyy
       var shiftId = shiftIdParts[3]; // shift number
 
       // Generate the new invoice number
@@ -55,7 +78,8 @@ Future<List<InvoiceRecord>> mergeBills(List<InvoiceRecord> invoiceList) async {
         invoice: newInvoiceNo,
         count: kotCountMap[shiftKey],
       ));
-      //Add the updated KOT invoice to the merged list
+
+      // Add the updated KOT invoice to the merged list
       mergedInvoices.add(invoiceRec);
     }
   }

@@ -105,14 +105,18 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue3;
   FormFieldController<String>? dropDownValueController3;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  InvoiceRecord? drop1;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  InvoiceRecord? drop2;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<InvoiceRecord>? invoicecustombills;
   // Stores action output result for [Custom Action - docToJson] action in Button widget.
   dynamic? resultItemloopcustom;
   // Stores action output result for [Custom Action - shiftExistseditbill] action in Button widget.
   dynamic? shiftListeditbillcustom;
   // Stores action output result for [Custom Action - updateShiftSummaryFordeletebill] action in Button widget.
   dynamic? returnList1editbillcustom;
-  // Stores action output result for [Custom Action - mergeBills] action in Button widget.
-  List<InvoiceRecord>? mergedbills;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<ShiftRecord>? omtcustom;
   // Stores action output result for [Custom Action - shiftDetailNewpark] action in Button widget.

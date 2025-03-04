@@ -3643,23 +3643,6 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       r'''$.billCount''',
                                                     ),
                                                   ));
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: Text(
-                                                        'Invoice Deleted  Successfully!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
-                                              );
                                             }
                                             _model.shiftsummary =
                                                 await queryShiftRecordOnce(
@@ -3682,6 +3665,23 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                               r'''$.billCount''',
                                             );
                                             safeSetState(() {});
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: Text(
+                                                      'Invoice Deleted  Successfully!'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            );
                                           } else {
                                             await showDialog(
                                               context: context,
@@ -4401,23 +4401,6 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     FFAppState().startLoop + 1;
                                                 safeSetState(() {});
                                               }
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: Text(
-                                                        'Invoice Deleted  Successfully!'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
-                                              );
                                               FFAppState().startLoop = 0;
                                               FFAppState().endLoop = 0;
                                               safeSetState(() {});
@@ -4445,6 +4428,23 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             safeSetState(() {});
                                             _model.invoiceslist = [];
                                             safeSetState(() {});
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: Text(
+                                                      'Invoice Deleted  Successfully!'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            );
 
                                             safeSetState(() {});
                                           },
@@ -4757,6 +4757,30 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                               ],
                                             ),
                                           ),
+                                          Text(
+                                            'Selected Date: ${dateTimeFormat(
+                                              "dd-mm-yyyy",
+                                              _model.date,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            )}',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
+                                                  letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
+                                                ),
+                                          ),
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
@@ -4954,168 +4978,256 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     0.0, 20.0, 0.0, 10.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                var confirmDialogResponse =
-                                                    await showDialog<bool>(
-                                                          context: context,
-                                                          builder:
-                                                              (alertDialogContext) {
-                                                            return AlertDialog(
-                                                              content: Text(
-                                                                  'Are you sure  to delete bills'),
-                                                              actions: [
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          false),
-                                                                  child: Text(
-                                                                      'Cancel'),
+                                                if ((_model.dropDownValue2 !=
+                                                            null &&
+                                                        _model.dropDownValue2 !=
+                                                            '') &&
+                                                    (_model.dropDownValue3 !=
+                                                            null &&
+                                                        _model.dropDownValue3 !=
+                                                            '')) {
+                                                  _model.drop1 =
+                                                      await queryInvoiceRecordOnce(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
+                                                    queryBuilder:
+                                                        (invoiceRecord) =>
+                                                            invoiceRecord.where(
+                                                      'invoice',
+                                                      isEqualTo:
+                                                          _model.dropDownValue2,
+                                                    ),
+                                                    singleRecord: true,
+                                                  ).then((s) => s.firstOrNull);
+                                                  _model.drop2 =
+                                                      await queryInvoiceRecordOnce(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
+                                                    queryBuilder:
+                                                        (invoiceRecord) =>
+                                                            invoiceRecord.where(
+                                                      'invoice',
+                                                      isEqualTo:
+                                                          _model.dropDownValue3,
+                                                    ),
+                                                    singleRecord: true,
+                                                  ).then((s) => s.firstOrNull);
+                                                  _model.invoicecustombills =
+                                                      await queryInvoiceRecordOnce(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
+                                                    queryBuilder:
+                                                        (invoiceRecord) =>
+                                                            invoiceRecord
+                                                                .where(
+                                                                  'invoiceDate',
+                                                                  isGreaterThanOrEqualTo:
+                                                                      _model
+                                                                          .drop1
+                                                                          ?.invoiceDate,
+                                                                )
+                                                                .where(
+                                                                  'invoiceDate',
+                                                                  isLessThanOrEqualTo:
+                                                                      _model
+                                                                          .drop2
+                                                                          ?.invoiceDate,
                                                                 ),
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          true),
-                                                                  child: Text(
-                                                                      'Confirm'),
-                                                                ),
-                                                              ],
-                                                            );
-                                                          },
-                                                        ) ??
-                                                        false;
-                                                if (confirmDialogResponse) {
-                                                  FFAppState().startLoop = 0;
-                                                  FFAppState().endLoop =
-                                                      selectedbillscustomInvoiceRecordList
-                                                          .length;
-                                                  safeSetState(() {});
-                                                  while (FFAppState()
-                                                          .startLoop <
-                                                      selectedbillscustomInvoiceRecordList
-                                                          .length) {
-                                                    if (selectedbillscustomInvoiceRecordList
-                                                            .elementAtOrNull(
-                                                                FFAppState()
-                                                                    .startLoop)
-                                                            ?.source ==
-                                                        'KOT') {
-                                                      _model.resultItemloopcustom =
-                                                          await actions
-                                                              .docToJson(
-                                                        selectedbillscustomInvoiceRecordList
-                                                            .elementAtOrNull(
-                                                                FFAppState()
-                                                                    .startLoop),
-                                                      );
-                                                      FFAppState()
-                                                              .selectedInvoiceJson =
+                                                  );
+                                                  var confirmDialogResponse =
+                                                      await showDialog<bool>(
+                                                            context: context,
+                                                            builder:
+                                                                (alertDialogContext) {
+                                                              return AlertDialog(
+                                                                content: Text(
+                                                                    'Are you sure  to delete bills'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            false),
+                                                                    child: Text(
+                                                                        'Cancel'),
+                                                                  ),
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            true),
+                                                                    child: Text(
+                                                                        'Confirm'),
+                                                                  ),
+                                                                ],
+                                                              );
+                                                            },
+                                                          ) ??
+                                                          false;
+                                                  if (confirmDialogResponse) {
+                                                    FFAppState().startLoop = 0;
+                                                    FFAppState().endLoop =
+                                                        _model
+                                                            .invoicecustombills!
+                                                            .length;
+                                                    safeSetState(() {});
+                                                    while (FFAppState()
+                                                            .startLoop <
+                                                        _model
+                                                            .invoicecustombills!
+                                                            .length) {
+                                                      if (_model
+                                                              .invoicecustombills
+                                                              ?.elementAtOrNull(
+                                                                  FFAppState()
+                                                                      .startLoop)
+                                                              ?.source ==
+                                                          'KOT') {
+                                                        _model.resultItemloopcustom =
+                                                            await actions
+                                                                .docToJson(
                                                           _model
-                                                              .resultItemloopcustom!;
-                                                      FFAppState().prevMode =
-                                                          selectedbillscustomInvoiceRecordList
+                                                              .invoicecustombills
+                                                              ?.elementAtOrNull(
+                                                                  FFAppState()
+                                                                      .startLoop),
+                                                        );
+                                                        FFAppState()
+                                                                .selectedInvoiceJson =
+                                                            _model
+                                                                .resultItemloopcustom!;
+                                                        FFAppState().prevMode = _model
+                                                            .invoicecustombills!
+                                                            .elementAtOrNull(
+                                                                FFAppState()
+                                                                    .startLoop)!
+                                                            .paymentMode;
+                                                        FFAppState()
+                                                            .update(() {});
+
+                                                        await _model
+                                                            .invoicecustombills!
+                                                            .elementAtOrNull(
+                                                                FFAppState()
+                                                                    .startLoop)!
+                                                            .reference
+                                                            .update(
+                                                                createInvoiceRecordData(
+                                                              isDeleted: true,
+                                                            ));
+                                                        _model.shiftListeditbillcustom =
+                                                            await actions
+                                                                .shiftExistseditbill(
+                                                          _model
+                                                              .invoicecustombills!
                                                               .elementAtOrNull(
                                                                   FFAppState()
                                                                       .startLoop)!
-                                                              .paymentMode;
-                                                      FFAppState()
-                                                          .update(() {});
+                                                              .dayId,
+                                                          _model
+                                                              .invoicecustombills!
+                                                              .elementAtOrNull(
+                                                                  FFAppState()
+                                                                      .startLoop)!
+                                                              .shiftId,
+                                                          FFAppState()
+                                                              .outletIdRef!
+                                                              .id,
+                                                        );
+                                                        _model.returnList1editbillcustom =
+                                                            await actions
+                                                                .updateShiftSummaryFordeletebill(
+                                                          FFAppState()
+                                                              .selectedInvoiceJson,
+                                                          FFAppState().curMode,
+                                                          FFAppState().prevMode,
+                                                          _model
+                                                              .shiftListeditbillcustom!,
+                                                        );
 
-                                                      await selectedbillscustomInvoiceRecordList
-                                                          .elementAtOrNull(
-                                                              FFAppState()
-                                                                  .startLoop)!
-                                                          .reference
-                                                          .update(
-                                                              createInvoiceRecordData(
-                                                            isDeleted: true,
-                                                          ));
-                                                      _model.shiftListeditbillcustom =
-                                                          await actions
-                                                              .shiftExistseditbill(
-                                                        selectedbillscustomInvoiceRecordList
-                                                            .elementAtOrNull(
+                                                        await functions
+                                                            .shiftRef(
+                                                                _model
+                                                                    .shiftListeditbillcustom!,
                                                                 FFAppState()
-                                                                    .startLoop)!
-                                                            .dayId,
-                                                        selectedbillscustomInvoiceRecordList
-                                                            .elementAtOrNull(
-                                                                FFAppState()
-                                                                    .startLoop)!
-                                                            .shiftId,
-                                                        FFAppState()
-                                                            .outletIdRef!
-                                                            .id,
-                                                      );
-                                                      _model.returnList1editbillcustom =
-                                                          await actions
-                                                              .updateShiftSummaryFordeletebill(
-                                                        FFAppState()
-                                                            .selectedInvoiceJson,
-                                                        FFAppState().curMode,
-                                                        FFAppState().prevMode,
-                                                        _model
-                                                            .shiftListeditbillcustom!,
-                                                      );
-
-                                                      await functions
-                                                          .shiftRef(
-                                                              _model
-                                                                  .shiftListeditbillcustom!,
-                                                              FFAppState()
-                                                                  .outletIdRef!
-                                                                  .id)
-                                                          .update(
-                                                              createShiftRecordData(
-                                                            totalSale:
-                                                                getJsonField(
-                                                              _model
-                                                                  .shiftListeditbillcustom,
-                                                              r'''$.totalSale''',
-                                                            ),
-                                                            subTotalBill:
-                                                                getJsonField(
-                                                              _model
-                                                                  .shiftListeditbillcustom,
-                                                              r'''$.subTotalSale''',
-                                                            ),
-                                                            paymentJson:
-                                                                getJsonField(
-                                                              _model
-                                                                  .shiftListeditbillcustom,
-                                                              r'''$.paymentJson''',
-                                                            ).toString(),
-                                                            cashSale:
-                                                                getJsonField(
-                                                              _model
-                                                                  .shiftListeditbillcustom,
-                                                              r'''$.cashSale''',
-                                                            ),
-                                                            billCount:
-                                                                getJsonField(
-                                                              _model
-                                                                  .shiftListeditbillcustom,
-                                                              r'''$.billCount''',
-                                                            ),
-                                                            tax: getJsonField(
-                                                              _model
-                                                                  .shiftListeditbillcustom,
-                                                              r'''$.tax''',
-                                                            ),
-                                                          ));
+                                                                    .outletIdRef!
+                                                                    .id)
+                                                            .update(
+                                                                createShiftRecordData(
+                                                              totalSale:
+                                                                  getJsonField(
+                                                                _model
+                                                                    .shiftListeditbillcustom,
+                                                                r'''$.totalSale''',
+                                                              ),
+                                                              subTotalBill:
+                                                                  getJsonField(
+                                                                _model
+                                                                    .shiftListeditbillcustom,
+                                                                r'''$.subTotalSale''',
+                                                              ),
+                                                              paymentJson:
+                                                                  getJsonField(
+                                                                _model
+                                                                    .shiftListeditbillcustom,
+                                                                r'''$.paymentJson''',
+                                                              ).toString(),
+                                                              cashSale:
+                                                                  getJsonField(
+                                                                _model
+                                                                    .shiftListeditbillcustom,
+                                                                r'''$.cashSale''',
+                                                              ),
+                                                              billCount:
+                                                                  getJsonField(
+                                                                _model
+                                                                    .shiftListeditbillcustom,
+                                                                r'''$.billCount''',
+                                                              ),
+                                                              tax: getJsonField(
+                                                                _model
+                                                                    .shiftListeditbillcustom,
+                                                                r'''$.tax''',
+                                                              ),
+                                                            ));
+                                                      }
+                                                      FFAppState().startLoop =
+                                                          FFAppState()
+                                                                  .startLoop +
+                                                              1;
+                                                      safeSetState(() {});
                                                     }
-                                                    FFAppState().startLoop =
-                                                        FFAppState().startLoop +
-                                                            1;
+                                                    FFAppState().startLoop = 0;
+                                                    FFAppState().endLoop = 0;
                                                     safeSetState(() {});
                                                   }
-                                                  _model.mergedbills =
-                                                      await actions.mergeBills(
-                                                    selectedbillscustomInvoiceRecordList
-                                                        .toList(),
+                                                  _model.omtcustom =
+                                                      await queryShiftRecordOnce(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
+                                                    queryBuilder:
+                                                        (shiftRecord) =>
+                                                            shiftRecord.orderBy(
+                                                                'dayId',
+                                                                descending:
+                                                                    true),
+                                                    limit: 5,
                                                   );
-                                                  FFAppState().startLoop = 0;
-                                                  FFAppState().endLoop = 0;
+                                                  _model.shiftdetailsnewonlineCustom =
+                                                      await actions
+                                                          .shiftDetailNewpark(
+                                                    _model.omtcustom?.toList(),
+                                                  );
+                                                  FFAppState().shiftdetails = _model
+                                                      .shiftdetailsnewonlineCustom!;
+                                                  FFAppState().billcount =
+                                                      getJsonField(
+                                                    _model
+                                                        .shiftdetailsnewonlineCustom,
+                                                    r'''$.billCount''',
+                                                  );
+                                                  safeSetState(() {});
+                                                  _model.invoiceslist = [];
                                                   safeSetState(() {});
                                                   await showDialog(
                                                     context: context,
@@ -5135,33 +5247,26 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       );
                                                     },
                                                   );
+                                                } else {
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        title: Text(
+                                                            'Select Start  Bill  & End Bill !'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext),
+                                                            child: Text('Ok'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  );
                                                 }
-                                                _model.omtcustom =
-                                                    await queryShiftRecordOnce(
-                                                  parent:
-                                                      FFAppState().outletIdRef,
-                                                  queryBuilder: (shiftRecord) =>
-                                                      shiftRecord.orderBy(
-                                                          'dayId',
-                                                          descending: true),
-                                                  limit: 5,
-                                                );
-                                                _model.shiftdetailsnewonlineCustom =
-                                                    await actions
-                                                        .shiftDetailNewpark(
-                                                  _model.omtcustom?.toList(),
-                                                );
-                                                FFAppState().shiftdetails = _model
-                                                    .shiftdetailsnewonlineCustom!;
-                                                FFAppState().billcount =
-                                                    getJsonField(
-                                                  _model
-                                                      .shiftdetailsnewonlineCustom,
-                                                  r'''$.billCount''',
-                                                );
-                                                safeSetState(() {});
-                                                _model.invoiceslist = [];
-                                                safeSetState(() {});
 
                                                 safeSetState(() {});
                                               },
