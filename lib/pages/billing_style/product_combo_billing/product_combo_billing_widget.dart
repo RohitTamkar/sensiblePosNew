@@ -2876,26 +2876,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                               FFAppState().printerDevice,
                                                                               FFAppState().printerIndex,
                                                                             );
-                                                                            _model.invoiceslist =
-                                                                                await queryInvoiceRecordOnce(
-                                                                              parent: FFAppState().outletIdRef,
-                                                                              queryBuilder: (invoiceRecord) => invoiceRecord
-                                                                                  .where(
-                                                                                    'isDeleted',
-                                                                                    isEqualTo: false,
-                                                                                  )
-                                                                                  .orderBy('invoiceDate', descending: true),
-                                                                              limit: 10,
-                                                                            );
-                                                                            _model.invoices =
-                                                                                _model.invoiceslist!.toList().cast<InvoiceRecord>();
-                                                                            safeSetState(() {});
                                                                             _model.invoicecusrt =
                                                                                 await queryInvoiceRecordOnce(
                                                                               parent: FFAppState().outletIdRef,
                                                                               queryBuilder: (invoiceRecord) => invoiceRecord.where(
                                                                                 'id',
-                                                                                isEqualTo: invlistItem.id,
+                                                                                isEqualTo: invlistItem.reference.id,
                                                                               ),
                                                                               singleRecord: true,
                                                                             ).then((s) => s.firstOrNull);
@@ -2920,6 +2906,20 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                               FFAppState().paperSize,
                                                                               productComboBillingAppSettingsRecord!,
                                                                             );
+                                                                            _model.invoiceslist =
+                                                                                await queryInvoiceRecordOnce(
+                                                                              parent: FFAppState().outletIdRef,
+                                                                              queryBuilder: (invoiceRecord) => invoiceRecord
+                                                                                  .where(
+                                                                                    'isDeleted',
+                                                                                    isEqualTo: false,
+                                                                                  )
+                                                                                  .orderBy('invoiceDate', descending: true),
+                                                                              limit: 10,
+                                                                            );
+                                                                            _model.invoices =
+                                                                                _model.invoiceslist!.toList().cast<InvoiceRecord>();
+                                                                            safeSetState(() {});
                                                                           }
                                                                         } else {
                                                                           await showDialog(

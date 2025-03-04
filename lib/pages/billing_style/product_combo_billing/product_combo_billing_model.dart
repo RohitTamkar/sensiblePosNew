@@ -156,13 +156,13 @@ class ProductComboBillingModel
   // Stores action output result for [Custom Action - connectDevice] action in Button widget.
   bool? isconnectedbillCopy;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  List<InvoiceRecord>? invoiceslist;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   InvoiceRecord? invoicecusrt;
   // Stores action output result for [Custom Action - docToJson] action in Button widget.
   dynamic? resultItembillCopy;
   // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
   List<dynamic>? device233Copy;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<InvoiceRecord>? invoiceslist;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlinstnewtx;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
