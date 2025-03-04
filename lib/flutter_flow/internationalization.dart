@@ -6567,7 +6567,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     '6g5yq2u1': {
-      'en': 'NET :',
+      'en': 'Grand Total :',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -6854,7 +6854,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'm3f2tksn': {
-      'en': 'NET :',
+      'en': 'Grand Total :',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -7072,6 +7072,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'hpzwprty': {
       'en': 'CASH',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'ihc4e4r0': {
+      'en': 'LOGO',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'kh4g8fsq': {
+      'en': 'Sync Logo',
       'hi': '',
       'kn': '',
       'mr': '',
