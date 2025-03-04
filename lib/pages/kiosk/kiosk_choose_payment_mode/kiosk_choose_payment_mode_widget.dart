@@ -419,9 +419,10 @@ class _KioskChoosePaymentModeWidgetState
                                 borderRadius: BorderRadius.circular(30.0),
                               ),
                             ),
-                          if (!valueOrDefault<bool>(
+                          if (valueOrDefault<bool>(
                             widget!.appSettings?.settingList
-                                ?.where((e) => e.title == 'hideUpiPaymentMode')
+                                ?.where(
+                                    (e) => e.title == 'showCardPaymentOption')
                                 .toList()
                                 ?.firstOrNull
                                 ?.value,
