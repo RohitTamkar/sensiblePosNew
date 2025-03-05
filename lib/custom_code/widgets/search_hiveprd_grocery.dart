@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom widgets
 
+import 'index.dart'; // Imports other custom widgets
+
 import 'package:flutter/services.dart';
 
 import 'index.dart'; // Imports other custom widgets
@@ -183,7 +185,6 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                         if (selectedProduct.stockable) {
                           if (selectedProduct.stock > 0 || widget.purchase) {
                             if (FFAppState().prdid != selectedProduct.id) {
-                              ///////////////////////////////////////////////////
                               if (FFAppState().holdBillCount == 0) {
                                 FFAppState().holdBillCount =
                                     FFAppState().holdBillCount + 1;
@@ -483,7 +484,7 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                   onSuggestionSelected: (ProductStructStruct document) async {
                     var _shouldSetState = false;
                     if (document.stockable) {
-                      if (document.stock > 0) {
+                      if (document.stock > 0 || widget.purchase) {
                         if (FFAppState().prdid != document.id) {
                           ///////////////////////////////////////////////////////////
                           if (FFAppState().holdBillCount == 0) {

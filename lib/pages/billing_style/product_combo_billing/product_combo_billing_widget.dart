@@ -1859,8 +1859,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             .stockable) {
                                                                           if (productList2Item.stock >
                                                                               0) {
-                                                                            if (FFAppState().prdid !=
-                                                                                productList2Item.id) {
+                                                                            if (false) {
                                                                               if (FFAppState().holdBillCount == 0) {
                                                                                 FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
                                                                                 FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
