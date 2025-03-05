@@ -1733,31 +1733,32 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                               ),
                                                             ),
                                                           ),
-                                                          Text(
-                                                            'Stock:${valueOrDefault<String>(
-                                                              productList2Item
-                                                                  .stock
-                                                                  .toString(),
-                                                              '0',
-                                                            )}',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily,
-                                                                  color: Color(
-                                                                      0xFF830D1C),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily),
-                                                                ),
-                                                          ),
+                                                          if (productList2Item
+                                                              .stockable)
+                                                            Text(
+                                                              'Stock:${valueOrDefault<String>(
+                                                                productList2Item
+                                                                    .stock
+                                                                    .toString(),
+                                                                '0',
+                                                              )}',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
+                                                                    color: Color(
+                                                                        0xFF830D1C),
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                  ),
+                                                            ),
                                                         ],
                                                       ),
                                                     ),
