@@ -122,10 +122,6 @@ class ProductComboBillingModel
   List<ProductStructStruct>? prdhive2refresh;
   // Stores action output result for [Custom Action - getCategorylistHive] action in Button widget.
   List<CategoryStructStruct>? catlistrefresh;
-  // State field(s) for ListView widget.
-  ScrollController? listViewController1;
-  // State field(s) for ListView widget.
-  ScrollController? listViewController2;
   // Stores action output result for [Firestore Query - Query a collection] action in ProductName widget.
   RecipeRecord? receipeproductlist;
   // Stores action output result for [Custom Action - comboAddToHoldListprd] action in ProductName widget.
@@ -143,55 +139,37 @@ class ProductComboBillingModel
   // Stores action output result for [Firestore Query - Query a collection] action in ProductName widget.
   RecipeRecord? receipeproductliststock;
   // Stores action output result for [Custom Action - comboAddToHoldListprd] action in ProductName widget.
-  List<dynamic>? resrepliststock;
+  List<dynamic>? resreplistStock;
   // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
-  double? calculateResultstock2;
-  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
-  double? calbillAmt3stock;
-  // Stores action output result for [Custom Action - laundryAddToHoldListprd] action in ProductName widget.
-  List<dynamic>? addtosavebillstock;
-  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
-  double? calculateResultstock;
+  double? calculateResultrestock;
   // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
   double? calbillAmtstock;
-  // Stores action output result for [Firestore Query - Query a collection] action in ProductName widget.
-  RecipeRecord? receipeproductliststock2;
-  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in ProductName widget.
-  List<dynamic>? resrepliststock2;
-  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
-  double? calculateResultstock22;
-  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
-  double? calbillAmt3stock2;
   // Stores action output result for [Custom Action - laundryAddToHoldListprd] action in ProductName widget.
-  List<dynamic>? addtosavebillstock2;
+  List<dynamic>? addtosavebill22st;
   // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
-  double? calculateResultstock222;
+  double? calculateResultst;
   // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
-  double? calbillAmtstock22;
+  double? calbillAmtst;
   // Stores action output result for [Firestore Query - Query a collection] action in ProductName widget.
-  RecipeRecord? receipeproductliststock33;
+  RecipeRecord? receipeproductlistno;
   // Stores action output result for [Custom Action - comboAddToHoldListprd] action in ProductName widget.
-  List<dynamic>? resrepliststock3;
+  List<dynamic>? resreplistStockno;
   // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
-  double? calculateResultstock33;
+  double? calculateResultrestockno;
   // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
-  double? calbillAmt3stock33;
+  double? calbillAmtstockno;
   // Stores action output result for [Custom Action - laundryAddToHoldListprd] action in ProductName widget.
-  List<dynamic>? addtosavebillstock3;
+  List<dynamic>? addtosavebill22stno;
   // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
-  double? calculateResultstock3;
+  double? calculateResultstno;
   // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
-  double? calbillAmtstock3;
-  // State field(s) for ListViewprd widget.
-  ScrollController? listViewprd;
+  double? calbillAmtstno;
   // Stores action output result for [Custom Action - removeHoldListItem] action in IconButton widget.
   List<dynamic>? res20;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in IconButton widget.
   double? res21;
   // Stores action output result for [Custom Action - calBillAmt] action in IconButton widget.
   double? reuslt22;
-  // State field(s) for ListView widget.
-  ScrollController? listViewController3;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   OutletRecord? outletdid2Copy;
   // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
@@ -282,33 +260,16 @@ class ProductComboBillingModel
   String? Function(BuildContext, String?)?
       textFieldsearchTextControllerValidator;
   List<PartyRecord> simpleSearchResults = [];
-  // State field(s) for CustListView widget.
-  ScrollController? custListView;
-  // State field(s) for SearchListView widget.
-  ScrollController? searchListView;
 
   @override
   void initState(BuildContext context) {
     menuDrawerModel = createModel(context, () => MenuDrawerModel());
-    listViewController1 = ScrollController();
-    listViewController2 = ScrollController();
-    listViewprd = ScrollController();
-    listViewController3 = ScrollController();
-    custListView = ScrollController();
-    searchListView = ScrollController();
   }
 
   @override
   void dispose() {
     menuDrawerModel.dispose();
-    listViewController1?.dispose();
-    listViewController2?.dispose();
-    listViewprd?.dispose();
-    listViewController3?.dispose();
     textFieldsearchFocusNode?.dispose();
     textFieldsearchTextController?.dispose();
-
-    custListView?.dispose();
-    searchListView?.dispose();
   }
 }

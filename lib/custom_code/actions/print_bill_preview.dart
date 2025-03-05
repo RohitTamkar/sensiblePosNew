@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:typed_data';
 
 import 'package:flutter/services.dart';
@@ -88,8 +90,8 @@ Future printBillPreview(
       if (doc["title"] != null && doc["title"].isNotEmpty) {
         bytes += generator.text(doc["title"],
             styles: PosStyles(
-                height: PosTextSize.size2,
-                width: PosTextSize.size2,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
                 align: PosAlign.center));
       }
       if (doc["address"] != null && doc["address"].isNotEmpty) {
@@ -182,29 +184,6 @@ Future printBillPreview(
                 align: PosAlign.center));
       }
     }
-    /*   bytes += generator.text("SK's CAFE",
-        styles: PosStyles(
-            height: PosTextSize.size2,
-            width: PosTextSize.size2,
-            align: PosAlign.center));
-    bytes += generator.text("4 Anand Complex",
-        styles: const PosStyles(
-            height: PosTextSize.size1,
-            width: PosTextSize.size1,
-            bold: true,
-            align: PosAlign.center));
-    bytes += generator.text("Alkapuri Society",
-        styles: const PosStyles(
-            height: PosTextSize.size1,
-            width: PosTextSize.size1,
-            bold: true,
-            align: PosAlign.center));
-    bytes += generator.text("Maharashtra 411038",
-        styles: const PosStyles(
-            height: PosTextSize.size1,
-            width: PosTextSize.size1,
-            bold: true,
-            align: PosAlign.center));*/
 
     bytes += generator.text("--------------------------------",
         styles: const PosStyles(
@@ -224,7 +203,10 @@ Future printBillPreview(
 
     bytes += generator.text(printLine,
         styles: const PosStyles(
-            height: PosTextSize.size1, width: PosTextSize.size1, bold: true));
+            height: PosTextSize.size1,
+            width: PosTextSize.size1,
+            bold: true,
+            align: PosAlign.center));
     printLine = '';
 
     String dateTimeString = '03:35:50 pm';
@@ -237,7 +219,10 @@ Future printBillPreview(
 
     bytes += generator.text(printLine,
         styles: const PosStyles(
-            height: PosTextSize.size1, width: PosTextSize.size1, bold: true));
+            height: PosTextSize.size1,
+            width: PosTextSize.size1,
+            bold: true,
+            align: PosAlign.center));
 
     bytes += generator.text("--------------------------------",
         styles: const PosStyles(
@@ -275,11 +260,11 @@ Future printBillPreview(
             width: PosTextSize.size1,
             bold: true,
             align: PosAlign.center));
-    bytes += generator.text("NET TOTAL : 00 ",
+    bytes += generator.text("GRAND TOTAL : 00 ",
         styles: PosStyles(
-            height: PosTextSize.size2,
-            width: PosTextSize.size2,
-            align: PosAlign.right));
+            height: PosTextSize.size1,
+            width: PosTextSize.size1,
+            align: PosAlign.center));
     bytes += generator.text("--------------------------------",
         styles: const PosStyles(
             height: PosTextSize.size1,
@@ -297,7 +282,7 @@ Future printBillPreview(
             height: PosTextSize.size1,
             width: PosTextSize.size1,
             bold: true,
-            align: PosAlign.right));
+            align: PosAlign.center));
     final List<int> barData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 4];
     bytes += generator.barcode(Barcode.upcA(barData));
     //bytes += generator.qrcode('Rohit', align: PosAlign.center);

@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 import 'dart:async';
@@ -1194,7 +1196,7 @@ Future printBillnewhivegroceryBill(
     }
   } else if (size == 32) {
     billColumn3 =
-        "ITEM         QTY  RATE  TOTAL "; // Adjusted for 32 characters
+        "   ITEM       QTY  RATE  TOTAL"; // Adjusted for 32 characters
     taxColumn3 =
         "TAX%  TAXABLE  CGST  SGST  TAXAMT"; // Adjusted for 32 characters
 
@@ -1414,10 +1416,10 @@ Future printBillnewhivegroceryBill(
 
       bytes += generator.text(billColumn3,
           styles: const PosStyles(
-            height: PosTextSize.size1,
-            width: PosTextSize.size1,
-            bold: false,
-          ));
+              height: PosTextSize.size1,
+              width: PosTextSize.size1,
+              bold: false,
+              align: PosAlign.center));
 
       bytes += generator.text("--------------------------------",
           styles: const PosStyles(
@@ -1432,38 +1434,38 @@ Future printBillnewhivegroceryBill(
             text: obj["itemList"][i]["name"].toString(),
             width: 5,
             styles: PosStyles(
-              fontType: PosFontType.fontA,
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-            ),
+                fontType: PosFontType.fontA,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center),
           ),
           PosColumn(
             text: obj["itemList"][i]["quantity"].toString(),
             width: 2,
             styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-            ),
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center),
           ),
           PosColumn(
             text: obj["itemList"][i]["price"].toString(),
             width: 2,
             styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-            ),
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center),
           ),
           PosColumn(
             text: obj["itemList"][i]["total"].toString(),
             width: 3,
             styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-            ),
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center),
           )
         ]);
       }
@@ -1492,7 +1494,7 @@ Future printBillnewhivegroceryBill(
             styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                align: PosAlign.left));
+                align: PosAlign.center));
       } else {
         int len = invoiceDetails.productList!.length;
         String itemsNo = "Items :" + len.toString();
@@ -1507,7 +1509,7 @@ Future printBillnewhivegroceryBill(
             styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                align: PosAlign.left));
+                align: PosAlign.center));
       }
 
       if (invoiceDetails.source != "KOT" &&
@@ -1731,28 +1733,28 @@ Future printBillnewhivegroceryBill(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
                   bold: false,
-                  align: PosAlign.right));
+                  align: PosAlign.center));
 
           bytes += generator.text(sgstString,
               styles: const PosStyles(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
                   bold: false,
-                  align: PosAlign.right));
+                  align: PosAlign.center));
 
           bytes += generator.text(taxableString,
               styles: const PosStyles(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
                   bold: false,
-                  align: PosAlign.right));
+                  align: PosAlign.center));
 
           bytes += generator.text(totalTaxString,
               styles: const PosStyles(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
                   bold: false,
-                  align: PosAlign.right));
+                  align: PosAlign.center));
 
           bytes += generator.text("--------------------------------",
               styles: const PosStyles(
@@ -1766,7 +1768,7 @@ Future printBillnewhivegroceryBill(
               styles: PosStyles(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
-                  align: PosAlign.right));
+                  align: PosAlign.center));
 
           bytes += generator.text("--------------------------------",
               styles: const PosStyles(
