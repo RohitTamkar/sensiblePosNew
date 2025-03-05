@@ -1859,7 +1859,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             .stockable) {
                                                                           if (productList2Item.stock >
                                                                               0) {
-                                                                            if (productList2Item.stock ==
+                                                                            if (productList2Item.stock >=
                                                                                 valueOrDefault<int>(
                                                                                   functions.doubleToInt(double.parse(recipeVarItem.name) +
                                                                                       valueOrDefault<double>(
