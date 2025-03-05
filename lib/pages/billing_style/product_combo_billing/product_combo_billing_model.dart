@@ -140,6 +140,48 @@ class ProductComboBillingModel
   double? calculateResult233;
   // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
   double? calbillAmt3;
+  // Stores action output result for [Firestore Query - Query a collection] action in ProductName widget.
+  RecipeRecord? receipeproductliststock;
+  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in ProductName widget.
+  List<dynamic>? resrepliststock;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
+  double? calculateResultstock2;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmt3stock;
+  // Stores action output result for [Custom Action - laundryAddToHoldListprd] action in ProductName widget.
+  List<dynamic>? addtosavebillstock;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
+  double? calculateResultstock;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmtstock;
+  // Stores action output result for [Firestore Query - Query a collection] action in ProductName widget.
+  RecipeRecord? receipeproductliststock2;
+  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in ProductName widget.
+  List<dynamic>? resrepliststock2;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
+  double? calculateResultstock22;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmt3stock2;
+  // Stores action output result for [Custom Action - laundryAddToHoldListprd] action in ProductName widget.
+  List<dynamic>? addtosavebillstock2;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
+  double? calculateResultstock222;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmtstock22;
+  // Stores action output result for [Firestore Query - Query a collection] action in ProductName widget.
+  RecipeRecord? receipeproductliststock33;
+  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in ProductName widget.
+  List<dynamic>? resrepliststock3;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
+  double? calculateResultstock33;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmt3stock33;
+  // Stores action output result for [Custom Action - laundryAddToHoldListprd] action in ProductName widget.
+  List<dynamic>? addtosavebillstock3;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
+  double? calculateResultstock3;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmtstock3;
   // State field(s) for ListViewprd widget.
   ScrollController? listViewprd;
   // Stores action output result for [Custom Action - removeHoldListItem] action in IconButton widget.

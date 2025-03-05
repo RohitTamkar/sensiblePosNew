@@ -44,7 +44,54 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
+    _model.textFieldFocusNode!.addListener(
+      () async {
+        if (FFAppState().holdBillCount == 0) {
+          FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+          FFAppState().addToAllBillsList(functions.generateBillDetailsJson(
+              0.0,
+              0.0,
+              0.0,
+              'CASH',
+              0.0,
+              0.0,
+              FFAppState().billAmt,
+              0.0,
+              FFAppState().finalAmt,
+              '0',
+              FFAppState().itemCartList.toList(),
+              FFAppState().holdBillCount));
+          FFAppState().selBill = 1;
+          safeSetState(() {});
+        }
+        _model.resreplist23focuschange = await actions.comboAddToHoldListprd(
+          widget!.parameter1!,
+          FFAppState().selBill,
+          widget!.parameter2!.toList(),
+          functions.enabletaxinclusive(widget!.parameter3!),
+          valueOrDefault<double>(
+            double.tryParse(_model.textController.text),
+            0.0,
+          ),
+        );
+        _model.calculateResultrescfocuschange =
+            await actions.laundrycalSubTotalForHoldList(
+          FFAppState().selBill.toString(),
+          _model.resreplist23focuschange!.toList(),
+        );
+        _model.calbillAmt3focuschange = await actions.calBillAmt(
+          FFAppState().disAmt,
+          FFAppState().delCharges,
+        );
 
+        FFAppState().update(() {});
+        safeSetState(() {
+          _model.textController?.clear();
+        });
+
+        safeSetState(() {});
+      },
+    );
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
