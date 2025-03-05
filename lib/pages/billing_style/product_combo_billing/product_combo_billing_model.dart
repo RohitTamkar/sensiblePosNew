@@ -123,20 +123,6 @@ class ProductComboBillingModel
   // Stores action output result for [Custom Action - getCategorylistHive] action in Button widget.
   List<CategoryStructStruct>? catlistrefresh;
   // Stores action output result for [Firestore Query - Query a collection] action in ProductName widget.
-  RecipeRecord? receipeproductlist;
-  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in ProductName widget.
-  List<dynamic>? resreplist;
-  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
-  double? calculateResultresc;
-  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
-  double? calbillAmt334;
-  // Stores action output result for [Custom Action - laundryAddToHoldListprd] action in ProductName widget.
-  List<dynamic>? addtosavebill22;
-  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
-  double? calculateResult233;
-  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
-  double? calbillAmt3;
-  // Stores action output result for [Firestore Query - Query a collection] action in ProductName widget.
   RecipeRecord? receipeproductliststock;
   // Stores action output result for [Custom Action - comboAddToHoldListprd] action in ProductName widget.
   List<dynamic>? resreplistStock;

@@ -1859,7 +1859,30 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             .stockable) {
                                                                           if (productList2Item.stock >
                                                                               0) {
-                                                                            if (false) {
+                                                                            if (productList2Item.stock ==
+                                                                                valueOrDefault<int>(
+                                                                                  functions.doubleToInt(double.parse(recipeVarItem.name) +
+                                                                                      valueOrDefault<double>(
+                                                                                        getJsonField(
+                                                                                          functions
+                                                                                              .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
+                                                                                              .where((e) =>
+                                                                                                  productList2Item.id ==
+                                                                                                  valueOrDefault<String>(
+                                                                                                    getJsonField(
+                                                                                                      e,
+                                                                                                      r'''$.id''',
+                                                                                                    )?.toString(),
+                                                                                                    '0',
+                                                                                                  ))
+                                                                                              .toList()
+                                                                                              .firstOrNull,
+                                                                                          r'''$.quantity''',
+                                                                                        ),
+                                                                                        0.0,
+                                                                                      )),
+                                                                                  0,
+                                                                                )) {
                                                                               if (FFAppState().holdBillCount == 0) {
                                                                                 FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
                                                                                 FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
@@ -1872,7 +1895,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                               }
 
                                                                               if (recipeVarItem.recipeRefId != null && recipeVarItem.recipeRefId != '') {
-                                                                                _model.receipeproductlist = await queryRecipeRecordOnce(
+                                                                                _model.receipeproductliststock = await queryRecipeRecordOnce(
                                                                                   parent: FFAppState().outletIdRef,
                                                                                   queryBuilder: (recipeRecord) => recipeRecord.where(
                                                                                     'id',
@@ -1883,35 +1906,32 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                                 _shouldSetState = true;
                                                                                 FFAppState().startLoop = 0;
                                                                                 safeSetState(() {});
-                                                                                while (FFAppState().startLoop < _model.receipeproductlist!.items.length) {
+                                                                                while (FFAppState().startLoop < _model.receipeproductliststock!.items.length) {
                                                                                   _model.updatePrditemrecipeStruct(
                                                                                     (e) => e
-                                                                                      ..id = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.id
-                                                                                      ..price = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.price
-                                                                                      ..category = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.catId
-                                                                                      ..name = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.name
-                                                                                      ..sellingPrice = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.price
-                                                                                      ..taxId = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.taxId
-                                                                                      ..stockable = (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.stockable,
+                                                                                      ..id = (_model.receipeproductliststock?.items?.elementAtOrNull(FFAppState().startLoop))?.id
+                                                                                      ..price = (_model.receipeproductliststock?.items?.elementAtOrNull(FFAppState().startLoop))?.price
+                                                                                      ..category = (_model.receipeproductliststock?.items?.elementAtOrNull(FFAppState().startLoop))?.catId
+                                                                                      ..name = (_model.receipeproductliststock?.items?.elementAtOrNull(FFAppState().startLoop))?.name
+                                                                                      ..sellingPrice = (_model.receipeproductliststock?.items?.elementAtOrNull(FFAppState().startLoop))?.price
+                                                                                      ..taxId = (_model.receipeproductliststock?.items?.elementAtOrNull(FFAppState().startLoop))?.taxId
+                                                                                      ..stockable = (_model.receipeproductliststock?.items?.elementAtOrNull(FFAppState().startLoop))?.stockable,
                                                                                   );
                                                                                   safeSetState(() {});
-                                                                                  _model.resreplist = await actions.comboAddToHoldListprd(
+                                                                                  _model.resreplistStock = await actions.comboAddToHoldListprd(
                                                                                     _model.prditemrecipe!,
                                                                                     FFAppState().selBill,
                                                                                     widget!.taxcollection!.toList(),
                                                                                     functions.enabletaxinclusive(productComboBillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                                    valueOrDefault<double>(
-                                                                                      (_model.receipeproductlist?.items?.elementAtOrNull(FFAppState().startLoop))?.quantity,
-                                                                                      0.0,
-                                                                                    ),
+                                                                                    _model.receipeproductliststock!.items.elementAtOrNull(FFAppState().startLoop)!.quantity,
                                                                                   );
                                                                                   _shouldSetState = true;
-                                                                                  _model.calculateResultresc = await actions.laundrycalSubTotalForHoldList(
+                                                                                  _model.calculateResultrestock = await actions.laundrycalSubTotalForHoldList(
                                                                                     FFAppState().selBill.toString(),
-                                                                                    _model.resreplist!.toList(),
+                                                                                    _model.resreplistStock!.toList(),
                                                                                   );
                                                                                   _shouldSetState = true;
-                                                                                  _model.calbillAmt334 = await actions.calBillAmt(
+                                                                                  _model.calbillAmtstock = await actions.calBillAmt(
                                                                                     FFAppState().disAmt,
                                                                                     FFAppState().delCharges,
                                                                                   );
@@ -1922,148 +1942,43 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                                 FFAppState().startLoop = 0;
                                                                                 FFAppState().endLoop = 0;
                                                                                 safeSetState(() {});
-                                                                                FFAppState().prdid = productList2Item.id;
-                                                                                safeSetState(() {});
                                                                               } else {
-                                                                                _model.addtosavebill22 = await actions.laundryAddToHoldListprd(
+                                                                                _model.addtosavebill22st = await actions.laundryAddToHoldListprd(
                                                                                   recipeVarItem,
                                                                                   FFAppState().selBill,
                                                                                   widget!.taxcollection!.toList(),
                                                                                   functions.enabletaxinclusive(productComboBillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                 );
                                                                                 _shouldSetState = true;
-                                                                                _model.calculateResult233 = await actions.laundrycalSubTotalForHoldList(
+                                                                                _model.calculateResultst = await actions.laundrycalSubTotalForHoldList(
                                                                                   FFAppState().selBill.toString(),
-                                                                                  _model.addtosavebill22!.toList(),
+                                                                                  _model.addtosavebill22st!.toList(),
                                                                                 );
                                                                                 _shouldSetState = true;
-                                                                                _model.calbillAmt3 = await actions.calBillAmt(
+                                                                                _model.calbillAmtst = await actions.calBillAmt(
                                                                                   FFAppState().disAmt,
                                                                                   FFAppState().delCharges,
                                                                                 );
                                                                                 _shouldSetState = true;
                                                                               }
                                                                             } else {
-                                                                              if (productList2Item.stock >
-                                                                                  valueOrDefault<int>(
-                                                                                    functions.doubleToInt(double.parse(recipeVarItem.name) +
-                                                                                        valueOrDefault<double>(
-                                                                                          getJsonField(
-                                                                                            functions
-                                                                                                .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
-                                                                                                .where((e) =>
-                                                                                                    productList2Item.id ==
-                                                                                                    valueOrDefault<String>(
-                                                                                                      getJsonField(
-                                                                                                        e,
-                                                                                                        r'''$.id''',
-                                                                                                      )?.toString(),
-                                                                                                      '0',
-                                                                                                    ))
-                                                                                                .toList()
-                                                                                                .firstOrNull,
-                                                                                            r'''$.quantity''',
-                                                                                          ),
-                                                                                          0.0,
-                                                                                        )),
-                                                                                    0,
-                                                                                  )) {
-                                                                                if (FFAppState().holdBillCount == 0) {
-                                                                                  FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                                                                                  FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
-                                                                                  FFAppState().selBill = 1;
-                                                                                  FFAppState().productColor = recipeVarItem.id;
-                                                                                  safeSetState(() {});
-                                                                                } else {
-                                                                                  FFAppState().productColor = recipeVarItem.id;
-                                                                                  safeSetState(() {});
-                                                                                }
-
-                                                                                if (recipeVarItem.recipeRefId != null && recipeVarItem.recipeRefId != '') {
-                                                                                  _model.receipeproductliststock = await queryRecipeRecordOnce(
-                                                                                    parent: FFAppState().outletIdRef,
-                                                                                    queryBuilder: (recipeRecord) => recipeRecord.where(
-                                                                                      'id',
-                                                                                      isEqualTo: recipeVarItem.recipeRefId,
-                                                                                    ),
-                                                                                    singleRecord: true,
-                                                                                  ).then((s) => s.firstOrNull);
-                                                                                  _shouldSetState = true;
-                                                                                  FFAppState().startLoop = 0;
-                                                                                  safeSetState(() {});
-                                                                                  while (FFAppState().startLoop < _model.receipeproductliststock!.items.length) {
-                                                                                    _model.updatePrditemrecipeStruct(
-                                                                                      (e) => e
-                                                                                        ..id = (_model.receipeproductliststock?.items?.elementAtOrNull(FFAppState().startLoop))?.id
-                                                                                        ..price = (_model.receipeproductliststock?.items?.elementAtOrNull(FFAppState().startLoop))?.price
-                                                                                        ..category = (_model.receipeproductliststock?.items?.elementAtOrNull(FFAppState().startLoop))?.catId
-                                                                                        ..name = (_model.receipeproductliststock?.items?.elementAtOrNull(FFAppState().startLoop))?.name
-                                                                                        ..sellingPrice = (_model.receipeproductliststock?.items?.elementAtOrNull(FFAppState().startLoop))?.price
-                                                                                        ..taxId = (_model.receipeproductliststock?.items?.elementAtOrNull(FFAppState().startLoop))?.taxId
-                                                                                        ..stockable = (_model.receipeproductliststock?.items?.elementAtOrNull(FFAppState().startLoop))?.stockable,
-                                                                                    );
-                                                                                    safeSetState(() {});
-                                                                                    _model.resreplistStock = await actions.comboAddToHoldListprd(
-                                                                                      _model.prditemrecipe!,
-                                                                                      FFAppState().selBill,
-                                                                                      widget!.taxcollection!.toList(),
-                                                                                      functions.enabletaxinclusive(productComboBillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                                      _model.receipeproductliststock!.items.elementAtOrNull(FFAppState().startLoop)!.quantity,
-                                                                                    );
-                                                                                    _shouldSetState = true;
-                                                                                    _model.calculateResultrestock = await actions.laundrycalSubTotalForHoldList(
-                                                                                      FFAppState().selBill.toString(),
-                                                                                      _model.resreplistStock!.toList(),
-                                                                                    );
-                                                                                    _shouldSetState = true;
-                                                                                    _model.calbillAmtstock = await actions.calBillAmt(
-                                                                                      FFAppState().disAmt,
-                                                                                      FFAppState().delCharges,
-                                                                                    );
-                                                                                    _shouldSetState = true;
-                                                                                    FFAppState().startLoop = FFAppState().startLoop + 1;
-                                                                                    safeSetState(() {});
-                                                                                  }
-                                                                                  FFAppState().startLoop = 0;
-                                                                                  FFAppState().endLoop = 0;
-                                                                                  safeSetState(() {});
-                                                                                } else {
-                                                                                  _model.addtosavebill22st = await actions.laundryAddToHoldListprd(
-                                                                                    recipeVarItem,
-                                                                                    FFAppState().selBill,
-                                                                                    widget!.taxcollection!.toList(),
-                                                                                    functions.enabletaxinclusive(productComboBillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                              await showDialog(
+                                                                                context: context,
+                                                                                builder: (alertDialogContext) {
+                                                                                  return AlertDialog(
+                                                                                    content: Text('Item Out Of  Stock'),
+                                                                                    actions: [
+                                                                                      TextButton(
+                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                        child: Text('Ok'),
+                                                                                      ),
+                                                                                    ],
                                                                                   );
-                                                                                  _shouldSetState = true;
-                                                                                  _model.calculateResultst = await actions.laundrycalSubTotalForHoldList(
-                                                                                    FFAppState().selBill.toString(),
-                                                                                    _model.addtosavebill22st!.toList(),
-                                                                                  );
-                                                                                  _shouldSetState = true;
-                                                                                  _model.calbillAmtst = await actions.calBillAmt(
-                                                                                    FFAppState().disAmt,
-                                                                                    FFAppState().delCharges,
-                                                                                  );
-                                                                                  _shouldSetState = true;
-                                                                                }
-                                                                              } else {
-                                                                                await showDialog(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      content: Text('Item Out Of  Stock'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                          child: Text('Ok'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                );
-                                                                                if (_shouldSetState) safeSetState(() {});
-                                                                                return;
-                                                                              }
+                                                                                },
+                                                                              );
+                                                                              if (_shouldSetState)
+                                                                                safeSetState(() {});
+                                                                              return;
                                                                             }
                                                                           } else {
                                                                             await showDialog(
