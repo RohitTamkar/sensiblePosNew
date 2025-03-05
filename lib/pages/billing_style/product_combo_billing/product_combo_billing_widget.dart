@@ -1945,25 +1945,29 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                               }
                                                                             } else {
                                                                               if (productList2Item.stock >
-                                                                                  functions.doubleToInt(valueOrDefault<double>(
-                                                                                    getJsonField(
-                                                                                      functions
-                                                                                          .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
-                                                                                          .where((e) =>
-                                                                                              productList2Item.id ==
-                                                                                              valueOrDefault<String>(
-                                                                                                getJsonField(
-                                                                                                  e,
-                                                                                                  r'''$.id''',
-                                                                                                )?.toString(),
-                                                                                                '0',
-                                                                                              ))
-                                                                                          .toList()
-                                                                                          .firstOrNull,
-                                                                                      r'''$.quantity''',
-                                                                                    ),
-                                                                                    0.0,
-                                                                                  ))!) {
+                                                                                  valueOrDefault<int>(
+                                                                                    functions.doubleToInt(double.parse(recipeVarItem.name) +
+                                                                                        valueOrDefault<double>(
+                                                                                          getJsonField(
+                                                                                            functions
+                                                                                                .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
+                                                                                                .where((e) =>
+                                                                                                    productList2Item.id ==
+                                                                                                    valueOrDefault<String>(
+                                                                                                      getJsonField(
+                                                                                                        e,
+                                                                                                        r'''$.id''',
+                                                                                                      )?.toString(),
+                                                                                                      '0',
+                                                                                                    ))
+                                                                                                .toList()
+                                                                                                .firstOrNull,
+                                                                                            r'''$.quantity''',
+                                                                                          ),
+                                                                                          0.0,
+                                                                                        )),
+                                                                                    0,
+                                                                                  )) {
                                                                                 if (FFAppState().holdBillCount == 0) {
                                                                                   FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
                                                                                   FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
