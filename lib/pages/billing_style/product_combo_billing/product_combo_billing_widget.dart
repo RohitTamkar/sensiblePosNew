@@ -1923,6 +1923,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                                 FFAppState().startLoop = 0;
                                                                                 FFAppState().endLoop = 0;
                                                                                 safeSetState(() {});
+                                                                                FFAppState().prdid = productList2Item.id;
+                                                                                safeSetState(() {});
                                                                               } else {
                                                                                 _model.addtosavebill22 = await actions.laundryAddToHoldListprd(
                                                                                   recipeVarItem,
