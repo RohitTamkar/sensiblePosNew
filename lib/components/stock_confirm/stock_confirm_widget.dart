@@ -87,8 +87,8 @@ class _StockConfirmWidgetState extends State<StockConfirmWidget> {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            Navigator.pop(context);
                           },
                           text: FFLocalizations.of(context).getText(
                             'nc3vp3s8' /* OK */,

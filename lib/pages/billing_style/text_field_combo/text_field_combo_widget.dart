@@ -49,7 +49,9 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
     _model.textFieldFocusNode!.addListener(
       () async {
         var _shouldSetState = false;
-        if (widget!.parameter1!.stockable) {
+        if ((widget!.parameter1?.stockable == true) &&
+            (_model.textController.text != null &&
+                _model.textController.text != '')) {
           if (widget!.parameter1!.stock > 0) {
             if (widget!.parameter1!.stock >=
                 valueOrDefault<int>(
