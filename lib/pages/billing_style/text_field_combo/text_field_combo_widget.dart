@@ -47,50 +47,166 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
     _model.textFieldFocusNode ??= FocusNode();
     _model.textFieldFocusNode!.addListener(
       () async {
-        if (FFAppState().holdBillCount == 0) {
-          FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-          FFAppState().addToAllBillsList(functions.generateBillDetailsJson(
+        var _shouldSetState = false;
+        if (widget!.parameter1!.stockable) {
+          if (widget!.parameter1!.stock > 0) {
+            if (widget!.parameter1!.stock >=
+                valueOrDefault<int>(
+                  functions.doubleToInt(
+                      double.parse(widget!.parameter1!.stock.toString()) +
+                          valueOrDefault<double>(
+                            getJsonField(
+                              functions
+                                  .filterBillList(FFAppState().selBill,
+                                      FFAppState().allBillsList.toList())
+                                  .where((e) =>
+                                      widget!.parameter1?.id ==
+                                      valueOrDefault<String>(
+                                        getJsonField(
+                                          e,
+                                          r'''$.id''',
+                                        )?.toString()?.toString(),
+                                        '0',
+                                      ))
+                                  .toList()
+                                  .firstOrNull,
+                              r'''$.quantity''',
+                            ),
+                            0.0,
+                          )),
+                  0,
+                )) {
+              if (FFAppState().holdBillCount == 0) {
+                FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                FFAppState().addToAllBillsList(
+                    functions.generateBillDetailsJson(
+                        0.0,
+                        0.0,
+                        0.0,
+                        'CASH',
+                        0.0,
+                        0.0,
+                        FFAppState().billAmt,
+                        0.0,
+                        FFAppState().finalAmt,
+                        '0',
+                        FFAppState().itemCartList.toList(),
+                        FFAppState().holdBillCount));
+                FFAppState().selBill = 1;
+                safeSetState(() {});
+              }
+              _model.resreplist23textstock13 =
+                  await actions.comboAddToHoldListprd(
+                widget!.parameter1!,
+                FFAppState().selBill,
+                widget!.parameter2!.toList(),
+                functions.enabletaxinclusive(widget!.parameter3!),
+                valueOrDefault<double>(
+                  double.tryParse(_model.textController.text),
+                  0.0,
+                ),
+              );
+              _shouldSetState = true;
+              _model.resrepliststock14 =
+                  await actions.laundrycalSubTotalForHoldList(
+                FFAppState().selBill.toString(),
+                _model.resreplist23textstock13!.toList(),
+              );
+              _shouldSetState = true;
+              _model.calbillAmt33stock3556 = await actions.calBillAmt(
+                FFAppState().disAmt,
+                FFAppState().delCharges,
+              );
+              _shouldSetState = true;
+
+              FFAppState().update(() {});
+              safeSetState(() {
+                _model.textController?.clear();
+              });
+            } else {
+              await showDialog(
+                context: context,
+                builder: (alertDialogContext) {
+                  return AlertDialog(
+                    content: Text('Item Out Of  Stock'),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(alertDialogContext),
+                        child: Text('Ok'),
+                      ),
+                    ],
+                  );
+                },
+              );
+              if (_shouldSetState) safeSetState(() {});
+              return;
+            }
+          } else {
+            await showDialog(
+              context: context,
+              builder: (alertDialogContext) {
+                return AlertDialog(
+                  content: Text('Item Out Of Stock'),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(alertDialogContext),
+                      child: Text('Ok'),
+                    ),
+                  ],
+                );
+              },
+            );
+            if (_shouldSetState) safeSetState(() {});
+            return;
+          }
+        } else {
+          if (FFAppState().holdBillCount == 0) {
+            FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+            FFAppState().addToAllBillsList(functions.generateBillDetailsJson(
+                0.0,
+                0.0,
+                0.0,
+                'CASH',
+                0.0,
+                0.0,
+                FFAppState().billAmt,
+                0.0,
+                FFAppState().finalAmt,
+                '0',
+                FFAppState().itemCartList.toList(),
+                FFAppState().holdBillCount));
+            FFAppState().selBill = 1;
+            safeSetState(() {});
+          }
+          _model.resreplist23textstock8 = await actions.comboAddToHoldListprd(
+            widget!.parameter1!,
+            FFAppState().selBill,
+            widget!.parameter2!.toList(),
+            functions.enabletaxinclusive(widget!.parameter3!),
+            valueOrDefault<double>(
+              double.tryParse(_model.textController.text),
               0.0,
-              0.0,
-              0.0,
-              'CASH',
-              0.0,
-              0.0,
-              FFAppState().billAmt,
-              0.0,
-              FFAppState().finalAmt,
-              '0',
-              FFAppState().itemCartList.toList(),
-              FFAppState().holdBillCount));
-          FFAppState().selBill = 1;
-          safeSetState(() {});
+            ),
+          );
+          _shouldSetState = true;
+          _model.resrepliststock8 = await actions.laundrycalSubTotalForHoldList(
+            FFAppState().selBill.toString(),
+            _model.resreplist23textstock8!.toList(),
+          );
+          _shouldSetState = true;
+          _model.calbillAmt33stock8 = await actions.calBillAmt(
+            FFAppState().disAmt,
+            FFAppState().delCharges,
+          );
+          _shouldSetState = true;
+
+          FFAppState().update(() {});
+          safeSetState(() {
+            _model.textController?.clear();
+          });
         }
-        _model.resreplist23focuschange = await actions.comboAddToHoldListprd(
-          widget!.parameter1!,
-          FFAppState().selBill,
-          widget!.parameter2!.toList(),
-          functions.enabletaxinclusive(widget!.parameter3!),
-          valueOrDefault<double>(
-            double.tryParse(_model.textController.text),
-            0.0,
-          ),
-        );
-        _model.calculateResultrescfocuschange =
-            await actions.laundrycalSubTotalForHoldList(
-          FFAppState().selBill.toString(),
-          _model.resreplist23focuschange!.toList(),
-        );
-        _model.calbillAmt3focuschange = await actions.calBillAmt(
-          FFAppState().disAmt,
-          FFAppState().delCharges,
-        );
 
-        FFAppState().update(() {});
-        safeSetState(() {
-          _model.textController?.clear();
-        });
-
-        safeSetState(() {});
+        if (_shouldSetState) safeSetState(() {});
       },
     );
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -118,6 +234,287 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
             '_model.textController',
             Duration(milliseconds: 2000),
             () async {
+              var _shouldSetState = false;
+              if (widget!.parameter1!.stockable) {
+                if (widget!.parameter1!.stock > 0) {
+                  if (widget!.parameter1!.stock >=
+                      valueOrDefault<int>(
+                        functions.doubleToInt(
+                            double.parse(widget!.parameter1!.stock.toString()) +
+                                valueOrDefault<double>(
+                                  getJsonField(
+                                    functions
+                                        .filterBillList(FFAppState().selBill,
+                                            FFAppState().allBillsList.toList())
+                                        .where((e) =>
+                                            widget!.parameter1?.id ==
+                                            valueOrDefault<String>(
+                                              getJsonField(
+                                                e,
+                                                r'''$.id''',
+                                              )?.toString(),
+                                              '0',
+                                            ))
+                                        .toList()
+                                        .firstOrNull,
+                                    r'''$.quantity''',
+                                  ),
+                                  0.0,
+                                )),
+                        0,
+                      )) {
+                    if (FFAppState().holdBillCount == 0) {
+                      FFAppState().holdBillCount =
+                          FFAppState().holdBillCount + 1;
+                      FFAppState().addToAllBillsList(
+                          functions.generateBillDetailsJson(
+                              0.0,
+                              0.0,
+                              0.0,
+                              'CASH',
+                              0.0,
+                              0.0,
+                              FFAppState().billAmt,
+                              0.0,
+                              FFAppState().finalAmt,
+                              '0',
+                              FFAppState().itemCartList.toList(),
+                              FFAppState().holdBillCount));
+                      FFAppState().selBill = 1;
+                      safeSetState(() {});
+                    }
+                    _model.resreplist23textstock6 =
+                        await actions.comboAddToHoldListprd(
+                      widget!.parameter1!,
+                      FFAppState().selBill,
+                      widget!.parameter2!.toList(),
+                      functions.enabletaxinclusive(widget!.parameter3!),
+                      valueOrDefault<double>(
+                        double.tryParse(_model.textController.text),
+                        0.0,
+                      ),
+                    );
+                    _shouldSetState = true;
+                    _model.resrepliststock16 =
+                        await actions.laundrycalSubTotalForHoldList(
+                      FFAppState().selBill.toString(),
+                      _model.resreplist23textstock6!.toList(),
+                    );
+                    _shouldSetState = true;
+                    _model.calbillAmt33stock6 = await actions.calBillAmt(
+                      FFAppState().disAmt,
+                      FFAppState().delCharges,
+                    );
+                    _shouldSetState = true;
+
+                    FFAppState().update(() {});
+                    safeSetState(() {
+                      _model.textController?.clear();
+                    });
+                  } else {
+                    await showDialog(
+                      context: context,
+                      builder: (alertDialogContext) {
+                        return AlertDialog(
+                          content: Text('Item Out Of  Stock'),
+                          actions: [
+                            TextButton(
+                              onPressed: () =>
+                                  Navigator.pop(alertDialogContext),
+                              child: Text('Ok'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                    if (_shouldSetState) safeSetState(() {});
+                    return;
+                  }
+                } else {
+                  await showDialog(
+                    context: context,
+                    builder: (alertDialogContext) {
+                      return AlertDialog(
+                        content: Text('Item Out Of Stock'),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(alertDialogContext),
+                            child: Text('Ok'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                  if (_shouldSetState) safeSetState(() {});
+                  return;
+                }
+              } else {
+                if (FFAppState().holdBillCount == 0) {
+                  FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                  FFAppState().addToAllBillsList(
+                      functions.generateBillDetailsJson(
+                          0.0,
+                          0.0,
+                          0.0,
+                          'CASH',
+                          0.0,
+                          0.0,
+                          FFAppState().billAmt,
+                          0.0,
+                          FFAppState().finalAmt,
+                          '0',
+                          FFAppState().itemCartList.toList(),
+                          FFAppState().holdBillCount));
+                  FFAppState().selBill = 1;
+                  safeSetState(() {});
+                }
+                _model.resreplist23textstock7 =
+                    await actions.comboAddToHoldListprd(
+                  widget!.parameter1!,
+                  FFAppState().selBill,
+                  widget!.parameter2!.toList(),
+                  functions.enabletaxinclusive(widget!.parameter3!),
+                  valueOrDefault<double>(
+                    double.tryParse(_model.textController.text),
+                    0.0,
+                  ),
+                );
+                _shouldSetState = true;
+                _model.resrepliststock7 =
+                    await actions.laundrycalSubTotalForHoldList(
+                  FFAppState().selBill.toString(),
+                  _model.resreplist23textstock7!.toList(),
+                );
+                _shouldSetState = true;
+                _model.calbillAmt33stock7 = await actions.calBillAmt(
+                  FFAppState().disAmt,
+                  FFAppState().delCharges,
+                );
+                _shouldSetState = true;
+
+                FFAppState().update(() {});
+                safeSetState(() {
+                  _model.textController?.clear();
+                });
+              }
+
+              if (_shouldSetState) safeSetState(() {});
+            },
+          ),
+          onFieldSubmitted: (_) async {
+            var _shouldSetState = false;
+            if (widget!.parameter1!.stockable) {
+              if (widget!.parameter1!.stock > 0) {
+                if (widget!.parameter1!.stock >=
+                    valueOrDefault<int>(
+                      functions.doubleToInt(
+                          double.parse(widget!.parameter1!.stock.toString()) +
+                              valueOrDefault<double>(
+                                getJsonField(
+                                  functions
+                                      .filterBillList(FFAppState().selBill,
+                                          FFAppState().allBillsList.toList())
+                                      .where((e) =>
+                                          widget!.parameter1?.id ==
+                                          valueOrDefault<String>(
+                                            getJsonField(
+                                              e,
+                                              r'''$.id''',
+                                            )?.toString(),
+                                            '0',
+                                          ))
+                                      .toList()
+                                      .firstOrNull,
+                                  r'''$.quantity''',
+                                ),
+                                0.0,
+                              )),
+                      0,
+                    )) {
+                  if (FFAppState().holdBillCount == 0) {
+                    FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                    FFAppState().addToAllBillsList(
+                        functions.generateBillDetailsJson(
+                            0.0,
+                            0.0,
+                            0.0,
+                            'CASH',
+                            0.0,
+                            0.0,
+                            FFAppState().billAmt,
+                            0.0,
+                            FFAppState().finalAmt,
+                            '0',
+                            FFAppState().itemCartList.toList(),
+                            FFAppState().holdBillCount));
+                    FFAppState().selBill = 1;
+                    safeSetState(() {});
+                  }
+                  _model.resreplist23textstock1 =
+                      await actions.comboAddToHoldListprd(
+                    widget!.parameter1!,
+                    FFAppState().selBill,
+                    widget!.parameter2!.toList(),
+                    functions.enabletaxinclusive(widget!.parameter3!),
+                    valueOrDefault<double>(
+                      double.tryParse(_model.textController.text),
+                      0.0,
+                    ),
+                  );
+                  _shouldSetState = true;
+                  _model.resrepliststock1 =
+                      await actions.laundrycalSubTotalForHoldList(
+                    FFAppState().selBill.toString(),
+                    _model.resreplist23textstock1!.toList(),
+                  );
+                  _shouldSetState = true;
+                  _model.calbillAmt33stock1 = await actions.calBillAmt(
+                    FFAppState().disAmt,
+                    FFAppState().delCharges,
+                  );
+                  _shouldSetState = true;
+
+                  FFAppState().update(() {});
+                  safeSetState(() {
+                    _model.textController?.clear();
+                  });
+                } else {
+                  await showDialog(
+                    context: context,
+                    builder: (alertDialogContext) {
+                      return AlertDialog(
+                        content: Text('Item Out Of  Stock'),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(alertDialogContext),
+                            child: Text('Ok'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                  if (_shouldSetState) safeSetState(() {});
+                  return;
+                }
+              } else {
+                await showDialog(
+                  context: context,
+                  builder: (alertDialogContext) {
+                    return AlertDialog(
+                      content: Text('Item Out Of Stock'),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(alertDialogContext),
+                          child: Text('Ok'),
+                        ),
+                      ],
+                    );
+                  },
+                );
+                if (_shouldSetState) safeSetState(() {});
+                return;
+              }
+            } else {
               if (FFAppState().holdBillCount == 0) {
                 FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
                 FFAppState().addToAllBillsList(
@@ -137,7 +534,8 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
                 FFAppState().selBill = 1;
                 safeSetState(() {});
               }
-              _model.resreplist23text = await actions.comboAddToHoldListprd(
+              _model.resreplist23textstock2 =
+                  await actions.comboAddToHoldListprd(
                 widget!.parameter1!,
                 FFAppState().selBill,
                 widget!.parameter2!.toList(),
@@ -147,25 +545,27 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
                   0.0,
                 ),
               );
-              _model.calculateResultresctext =
+              _shouldSetState = true;
+              _model.resrepliststock2 =
                   await actions.laundrycalSubTotalForHoldList(
                 FFAppState().selBill.toString(),
-                _model.resreplist23text!.toList(),
+                _model.resreplist23textstock2!.toList(),
               );
-              _model.calbillAmt334text = await actions.calBillAmt(
+              _shouldSetState = true;
+              _model.calbillAmt33stock2 = await actions.calBillAmt(
                 FFAppState().disAmt,
                 FFAppState().delCharges,
               );
+              _shouldSetState = true;
 
               FFAppState().update(() {});
               safeSetState(() {
                 _model.textController?.clear();
               });
+            }
 
-              safeSetState(() {});
-            },
-          ),
-          onFieldSubmitted: (_) async {},
+            if (_shouldSetState) safeSetState(() {});
+          },
           autofocus: false,
           obscureText: false,
           decoration: InputDecoration(

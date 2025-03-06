@@ -20,17 +20,41 @@ class TextFieldComboModel extends FlutterFlowModel<TextFieldComboWidget> {
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   // Stores action output result for [Custom Action - comboAddToHoldListprd] action in TextField widget.
-  List<dynamic>? resreplist23text;
+  List<dynamic>? resreplist23textstock1;
   // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in TextField widget.
-  double? calculateResultresctext;
+  double? resrepliststock1;
   // Stores action output result for [Custom Action - calBillAmt] action in TextField widget.
-  double? calbillAmt334text;
+  double? calbillAmt33stock1;
   // Stores action output result for [Custom Action - comboAddToHoldListprd] action in TextField widget.
-  List<dynamic>? resreplist23focuschange;
+  List<dynamic>? resreplist23textstock2;
   // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in TextField widget.
-  double? calculateResultrescfocuschange;
+  double? resrepliststock2;
   // Stores action output result for [Custom Action - calBillAmt] action in TextField widget.
-  double? calbillAmt3focuschange;
+  double? calbillAmt33stock2;
+  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in TextField widget.
+  List<dynamic>? resreplist23textstock6;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in TextField widget.
+  double? resrepliststock16;
+  // Stores action output result for [Custom Action - calBillAmt] action in TextField widget.
+  double? calbillAmt33stock6;
+  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in TextField widget.
+  List<dynamic>? resreplist23textstock7;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in TextField widget.
+  double? resrepliststock7;
+  // Stores action output result for [Custom Action - calBillAmt] action in TextField widget.
+  double? calbillAmt33stock7;
+  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in TextField widget.
+  List<dynamic>? resreplist23textstock13;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in TextField widget.
+  double? resrepliststock14;
+  // Stores action output result for [Custom Action - calBillAmt] action in TextField widget.
+  double? calbillAmt33stock3556;
+  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in TextField widget.
+  List<dynamic>? resreplist23textstock8;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in TextField widget.
+  double? resrepliststock8;
+  // Stores action output result for [Custom Action - calBillAmt] action in TextField widget.
+  double? calbillAmt33stock8;
 
   @override
   void initState(BuildContext context) {}

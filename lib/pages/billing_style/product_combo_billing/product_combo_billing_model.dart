@@ -196,6 +196,14 @@ class ProductComboBillingModel
   List<dynamic>? device;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<ServicePointOutletRecord>? spoutlet;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ProductRecord? stockupdateprdprt;
+  // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
+  ProductStructStruct? itemprd2;
+  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
+  ProductStructStruct? productupdated2;
+  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
+  List<ProductStructStruct>? newupdatedproductlist22;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlinstnewtx2;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
@@ -222,6 +230,14 @@ class ProductComboBillingModel
   List<dynamic>? devicecust;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<ServicePointOutletRecord>? spoutletcust;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ProductRecord? stockupdateprdprt2cust;
+  // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
+  ProductStructStruct? itemprdcust;
+  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
+  ProductStructStruct? productupdatedcust;
+  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
+  List<ProductStructStruct>? customergetphive;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlistsavebill;
   // Stores action output result for [Custom Action - checkInternetConnection] action in Button widget.
