@@ -75,9 +75,7 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
             Duration(milliseconds: 2000),
             () async {
               var _shouldSetState = false;
-              if ((widget!.parameter1?.stockable == true) &&
-                  (_model.textController.text != null &&
-                      _model.textController.text != '')) {
+              if (widget!.parameter1!.stockable) {
                 if (widget!.parameter1!.stock > 0) {
                   if (widget!.parameter1!.stock >=
                       valueOrDefault<int>(
@@ -245,9 +243,7 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
           ),
           onFieldSubmitted: (_) async {
             var _shouldSetState = false;
-            if ((widget!.parameter1?.stockable == true) &&
-                (_model.textController.text != null &&
-                    _model.textController.text != '')) {
+            if (widget!.parameter1!.stockable) {
               if (widget!.parameter1!.stock > 0) {
                 if (widget!.parameter1!.stock >=
                     valueOrDefault<int>(
