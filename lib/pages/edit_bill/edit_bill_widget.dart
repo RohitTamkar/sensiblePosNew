@@ -5034,6 +5034,11 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                       _model
                                                                           .drop2
                                                                           ?.invoiceDate,
+                                                                )
+                                                                .where(
+                                                                  'isDeleted',
+                                                                  isEqualTo:
+                                                                      false,
                                                                 ),
                                                   );
                                                   await showDialog(
@@ -5041,6 +5046,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     builder:
                                                         (alertDialogContext) {
                                                       return AlertDialog(
+                                                        content: Text(_model
+                                                            .invoicecustombills!
+                                                            .length
+                                                            .toString()),
                                                         actions: [
                                                           TextButton(
                                                             onPressed: () =>
