@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
+import '/components/stock_confirm/stock_confirm_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
@@ -124,38 +125,36 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
                 _model.textController?.clear();
               });
             } else {
-              await showDialog(
+              await showModalBottomSheet(
+                isScrollControlled: true,
+                backgroundColor: Colors.transparent,
+                enableDrag: false,
                 context: context,
-                builder: (alertDialogContext) {
-                  return AlertDialog(
-                    content: Text('Item Out Of  Stock'),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(alertDialogContext),
-                        child: Text('Ok'),
-                      ),
-                    ],
+                builder: (context) {
+                  return Padding(
+                    padding: MediaQuery.viewInsetsOf(context),
+                    child: StockConfirmWidget(),
                   );
                 },
-              );
+              ).then((value) => safeSetState(() {}));
+
               if (_shouldSetState) safeSetState(() {});
               return;
             }
           } else {
-            await showDialog(
+            await showModalBottomSheet(
+              isScrollControlled: true,
+              backgroundColor: Colors.transparent,
+              enableDrag: false,
               context: context,
-              builder: (alertDialogContext) {
-                return AlertDialog(
-                  content: Text('Item Out Of Stock'),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(alertDialogContext),
-                      child: Text('Ok'),
-                    ),
-                  ],
+              builder: (context) {
+                return Padding(
+                  padding: MediaQuery.viewInsetsOf(context),
+                  child: StockConfirmWidget(),
                 );
               },
-            );
+            ).then((value) => safeSetState(() {}));
+
             if (_shouldSetState) safeSetState(() {});
             return;
           }
@@ -312,39 +311,36 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
                       _model.textController?.clear();
                     });
                   } else {
-                    await showDialog(
+                    await showModalBottomSheet(
+                      isScrollControlled: true,
+                      backgroundColor: Colors.transparent,
+                      enableDrag: false,
                       context: context,
-                      builder: (alertDialogContext) {
-                        return AlertDialog(
-                          content: Text('Item Out Of  Stock'),
-                          actions: [
-                            TextButton(
-                              onPressed: () =>
-                                  Navigator.pop(alertDialogContext),
-                              child: Text('Ok'),
-                            ),
-                          ],
+                      builder: (context) {
+                        return Padding(
+                          padding: MediaQuery.viewInsetsOf(context),
+                          child: StockConfirmWidget(),
                         );
                       },
-                    );
+                    ).then((value) => safeSetState(() {}));
+
                     if (_shouldSetState) safeSetState(() {});
                     return;
                   }
                 } else {
-                  await showDialog(
+                  await showModalBottomSheet(
+                    isScrollControlled: true,
+                    backgroundColor: Colors.transparent,
+                    enableDrag: false,
                     context: context,
-                    builder: (alertDialogContext) {
-                      return AlertDialog(
-                        content: Text('Item Out Of Stock'),
-                        actions: [
-                          TextButton(
-                            onPressed: () => Navigator.pop(alertDialogContext),
-                            child: Text('Ok'),
-                          ),
-                        ],
+                    builder: (context) {
+                      return Padding(
+                        padding: MediaQuery.viewInsetsOf(context),
+                        child: StockConfirmWidget(),
                       );
                     },
-                  );
+                  ).then((value) => safeSetState(() {}));
+
                   if (_shouldSetState) safeSetState(() {});
                   return;
                 }
@@ -479,38 +475,36 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
                     _model.textController?.clear();
                   });
                 } else {
-                  await showDialog(
+                  await showModalBottomSheet(
+                    isScrollControlled: true,
+                    backgroundColor: Colors.transparent,
+                    enableDrag: false,
                     context: context,
-                    builder: (alertDialogContext) {
-                      return AlertDialog(
-                        content: Text('Item Out Of  Stock'),
-                        actions: [
-                          TextButton(
-                            onPressed: () => Navigator.pop(alertDialogContext),
-                            child: Text('Ok'),
-                          ),
-                        ],
+                    builder: (context) {
+                      return Padding(
+                        padding: MediaQuery.viewInsetsOf(context),
+                        child: StockConfirmWidget(),
                       );
                     },
-                  );
+                  ).then((value) => safeSetState(() {}));
+
                   if (_shouldSetState) safeSetState(() {});
                   return;
                 }
               } else {
-                await showDialog(
+                await showModalBottomSheet(
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  enableDrag: false,
                   context: context,
-                  builder: (alertDialogContext) {
-                    return AlertDialog(
-                      content: Text('Item Out Of Stock'),
-                      actions: [
-                        TextButton(
-                          onPressed: () => Navigator.pop(alertDialogContext),
-                          child: Text('Ok'),
-                        ),
-                      ],
+                  builder: (context) {
+                    return Padding(
+                      padding: MediaQuery.viewInsetsOf(context),
+                      child: StockConfirmWidget(),
                     );
                   },
-                );
+                ).then((value) => safeSetState(() {}));
+
                 if (_shouldSetState) safeSetState(() {});
                 return;
               }

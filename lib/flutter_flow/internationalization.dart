@@ -26011,6 +26011,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
+  // stockConfirm
+  {
+    'bh6tczof': {
+      'en': 'Item Out Of Stock',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'nc3vp3s8': {
+      'en': 'OK',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
   // Miscellaneous
   {
     'c0tsq8sj': {
