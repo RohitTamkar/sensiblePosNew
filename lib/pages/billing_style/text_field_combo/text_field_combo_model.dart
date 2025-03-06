@@ -44,18 +44,6 @@ class TextFieldComboModel extends FlutterFlowModel<TextFieldComboWidget> {
   double? resrepliststock7;
   // Stores action output result for [Custom Action - calBillAmt] action in TextField widget.
   double? calbillAmt33stock7;
-  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in TextField widget.
-  List<dynamic>? resreplist23textstock13;
-  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in TextField widget.
-  double? resrepliststock14;
-  // Stores action output result for [Custom Action - calBillAmt] action in TextField widget.
-  double? calbillAmt33stock3556;
-  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in TextField widget.
-  List<dynamic>? resreplist23textstock8;
-  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in TextField widget.
-  double? resrepliststock8;
-  // Stores action output result for [Custom Action - calBillAmt] action in TextField widget.
-  double? calbillAmt33stock8;
 
   @override
   void initState(BuildContext context) {}
