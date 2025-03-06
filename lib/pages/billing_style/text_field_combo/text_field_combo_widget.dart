@@ -161,50 +161,54 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
             return;
           }
         } else {
-          if (FFAppState().holdBillCount == 0) {
-            FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-            FFAppState().addToAllBillsList(functions.generateBillDetailsJson(
+          if (_model.textController.text != null &&
+              _model.textController.text != '') {
+            if (FFAppState().holdBillCount == 0) {
+              FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+              FFAppState().addToAllBillsList(functions.generateBillDetailsJson(
+                  0.0,
+                  0.0,
+                  0.0,
+                  'CASH',
+                  0.0,
+                  0.0,
+                  FFAppState().billAmt,
+                  0.0,
+                  FFAppState().finalAmt,
+                  '0',
+                  FFAppState().itemCartList.toList(),
+                  FFAppState().holdBillCount));
+              FFAppState().selBill = 1;
+              safeSetState(() {});
+            }
+            _model.resreplist23textstock8 = await actions.comboAddToHoldListprd(
+              widget!.parameter1!,
+              FFAppState().selBill,
+              widget!.parameter2!.toList(),
+              functions.enabletaxinclusive(widget!.parameter3!),
+              valueOrDefault<double>(
+                double.tryParse(_model.textController.text),
                 0.0,
-                0.0,
-                0.0,
-                'CASH',
-                0.0,
-                0.0,
-                FFAppState().billAmt,
-                0.0,
-                FFAppState().finalAmt,
-                '0',
-                FFAppState().itemCartList.toList(),
-                FFAppState().holdBillCount));
-            FFAppState().selBill = 1;
-            safeSetState(() {});
-          }
-          _model.resreplist23textstock8 = await actions.comboAddToHoldListprd(
-            widget!.parameter1!,
-            FFAppState().selBill,
-            widget!.parameter2!.toList(),
-            functions.enabletaxinclusive(widget!.parameter3!),
-            valueOrDefault<double>(
-              double.tryParse(_model.textController.text),
-              0.0,
-            ),
-          );
-          _shouldSetState = true;
-          _model.resrepliststock8 = await actions.laundrycalSubTotalForHoldList(
-            FFAppState().selBill.toString(),
-            _model.resreplist23textstock8!.toList(),
-          );
-          _shouldSetState = true;
-          _model.calbillAmt33stock8 = await actions.calBillAmt(
-            FFAppState().disAmt,
-            FFAppState().delCharges,
-          );
-          _shouldSetState = true;
+              ),
+            );
+            _shouldSetState = true;
+            _model.resrepliststock8 =
+                await actions.laundrycalSubTotalForHoldList(
+              FFAppState().selBill.toString(),
+              _model.resreplist23textstock8!.toList(),
+            );
+            _shouldSetState = true;
+            _model.calbillAmt33stock8 = await actions.calBillAmt(
+              FFAppState().disAmt,
+              FFAppState().delCharges,
+            );
+            _shouldSetState = true;
 
-          FFAppState().update(() {});
-          safeSetState(() {
-            _model.textController?.clear();
-          });
+            FFAppState().update(() {});
+            safeSetState(() {
+              _model.textController?.clear();
+            });
+          }
         }
 
         if (_shouldSetState) safeSetState(() {});
@@ -236,7 +240,9 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
             Duration(milliseconds: 2000),
             () async {
               var _shouldSetState = false;
-              if (widget!.parameter1!.stockable) {
+              if ((widget!.parameter1?.stockable == true) &&
+                  (_model.textController.text != null &&
+                      _model.textController.text != '')) {
                 if (widget!.parameter1!.stock > 0) {
                   if (widget!.parameter1!.stock >=
                       valueOrDefault<int>(
@@ -347,53 +353,56 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
                   return;
                 }
               } else {
-                if (FFAppState().holdBillCount == 0) {
-                  FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                  FFAppState().addToAllBillsList(
-                      functions.generateBillDetailsJson(
-                          0.0,
-                          0.0,
-                          0.0,
-                          'CASH',
-                          0.0,
-                          0.0,
-                          FFAppState().billAmt,
-                          0.0,
-                          FFAppState().finalAmt,
-                          '0',
-                          FFAppState().itemCartList.toList(),
-                          FFAppState().holdBillCount));
-                  FFAppState().selBill = 1;
-                  safeSetState(() {});
-                }
-                _model.resreplist23textstock7 =
-                    await actions.comboAddToHoldListprd(
-                  widget!.parameter1!,
-                  FFAppState().selBill,
-                  widget!.parameter2!.toList(),
-                  functions.enabletaxinclusive(widget!.parameter3!),
-                  valueOrDefault<double>(
-                    double.tryParse(_model.textController.text),
-                    0.0,
-                  ),
-                );
-                _shouldSetState = true;
-                _model.resrepliststock7 =
-                    await actions.laundrycalSubTotalForHoldList(
-                  FFAppState().selBill.toString(),
-                  _model.resreplist23textstock7!.toList(),
-                );
-                _shouldSetState = true;
-                _model.calbillAmt33stock7 = await actions.calBillAmt(
-                  FFAppState().disAmt,
-                  FFAppState().delCharges,
-                );
-                _shouldSetState = true;
+                if (_model.textController.text != null &&
+                    _model.textController.text != '') {
+                  if (FFAppState().holdBillCount == 0) {
+                    FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                    FFAppState().addToAllBillsList(
+                        functions.generateBillDetailsJson(
+                            0.0,
+                            0.0,
+                            0.0,
+                            'CASH',
+                            0.0,
+                            0.0,
+                            FFAppState().billAmt,
+                            0.0,
+                            FFAppState().finalAmt,
+                            '0',
+                            FFAppState().itemCartList.toList(),
+                            FFAppState().holdBillCount));
+                    FFAppState().selBill = 1;
+                    safeSetState(() {});
+                  }
+                  _model.resreplist23textstock7 =
+                      await actions.comboAddToHoldListprd(
+                    widget!.parameter1!,
+                    FFAppState().selBill,
+                    widget!.parameter2!.toList(),
+                    functions.enabletaxinclusive(widget!.parameter3!),
+                    valueOrDefault<double>(
+                      double.tryParse(_model.textController.text),
+                      0.0,
+                    ),
+                  );
+                  _shouldSetState = true;
+                  _model.resrepliststock7 =
+                      await actions.laundrycalSubTotalForHoldList(
+                    FFAppState().selBill.toString(),
+                    _model.resreplist23textstock7!.toList(),
+                  );
+                  _shouldSetState = true;
+                  _model.calbillAmt33stock7 = await actions.calBillAmt(
+                    FFAppState().disAmt,
+                    FFAppState().delCharges,
+                  );
+                  _shouldSetState = true;
 
-                FFAppState().update(() {});
-                safeSetState(() {
-                  _model.textController?.clear();
-                });
+                  FFAppState().update(() {});
+                  safeSetState(() {
+                    _model.textController?.clear();
+                  });
+                }
               }
 
               if (_shouldSetState) safeSetState(() {});
@@ -401,7 +410,9 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
           ),
           onFieldSubmitted: (_) async {
             var _shouldSetState = false;
-            if (widget!.parameter1!.stockable) {
+            if ((widget!.parameter1?.stockable == true) &&
+                (_model.textController.text != null &&
+                    _model.textController.text != '')) {
               if (widget!.parameter1!.stock > 0) {
                 if (widget!.parameter1!.stock >=
                     valueOrDefault<int>(
@@ -511,53 +522,56 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
                 return;
               }
             } else {
-              if (FFAppState().holdBillCount == 0) {
-                FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                FFAppState().addToAllBillsList(
-                    functions.generateBillDetailsJson(
-                        0.0,
-                        0.0,
-                        0.0,
-                        'CASH',
-                        0.0,
-                        0.0,
-                        FFAppState().billAmt,
-                        0.0,
-                        FFAppState().finalAmt,
-                        '0',
-                        FFAppState().itemCartList.toList(),
-                        FFAppState().holdBillCount));
-                FFAppState().selBill = 1;
-                safeSetState(() {});
-              }
-              _model.resreplist23textstock2 =
-                  await actions.comboAddToHoldListprd(
-                widget!.parameter1!,
-                FFAppState().selBill,
-                widget!.parameter2!.toList(),
-                functions.enabletaxinclusive(widget!.parameter3!),
-                valueOrDefault<double>(
-                  double.tryParse(_model.textController.text),
-                  0.0,
-                ),
-              );
-              _shouldSetState = true;
-              _model.resrepliststock2 =
-                  await actions.laundrycalSubTotalForHoldList(
-                FFAppState().selBill.toString(),
-                _model.resreplist23textstock2!.toList(),
-              );
-              _shouldSetState = true;
-              _model.calbillAmt33stock2 = await actions.calBillAmt(
-                FFAppState().disAmt,
-                FFAppState().delCharges,
-              );
-              _shouldSetState = true;
+              if (_model.textController.text != null &&
+                  _model.textController.text != '') {
+                if (FFAppState().holdBillCount == 0) {
+                  FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                  FFAppState().addToAllBillsList(
+                      functions.generateBillDetailsJson(
+                          0.0,
+                          0.0,
+                          0.0,
+                          'CASH',
+                          0.0,
+                          0.0,
+                          FFAppState().billAmt,
+                          0.0,
+                          FFAppState().finalAmt,
+                          '0',
+                          FFAppState().itemCartList.toList(),
+                          FFAppState().holdBillCount));
+                  FFAppState().selBill = 1;
+                  safeSetState(() {});
+                }
+                _model.resreplist23textstock2 =
+                    await actions.comboAddToHoldListprd(
+                  widget!.parameter1!,
+                  FFAppState().selBill,
+                  widget!.parameter2!.toList(),
+                  functions.enabletaxinclusive(widget!.parameter3!),
+                  valueOrDefault<double>(
+                    double.tryParse(_model.textController.text),
+                    0.0,
+                  ),
+                );
+                _shouldSetState = true;
+                _model.resrepliststock2 =
+                    await actions.laundrycalSubTotalForHoldList(
+                  FFAppState().selBill.toString(),
+                  _model.resreplist23textstock2!.toList(),
+                );
+                _shouldSetState = true;
+                _model.calbillAmt33stock2 = await actions.calBillAmt(
+                  FFAppState().disAmt,
+                  FFAppState().delCharges,
+                );
+                _shouldSetState = true;
 
-              FFAppState().update(() {});
-              safeSetState(() {
-                _model.textController?.clear();
-              });
+                FFAppState().update(() {});
+                safeSetState(() {
+                  _model.textController?.clear();
+                });
+              }
             }
 
             if (_shouldSetState) safeSetState(() {});
