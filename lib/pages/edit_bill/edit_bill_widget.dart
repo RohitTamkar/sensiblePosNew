@@ -5023,17 +5023,34 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             invoiceRecord
                                                                 .where(
                                                                   'invoiceDate',
-                                                                  isGreaterThan:
+                                                                  isGreaterThanOrEqualTo:
                                                                       _model
                                                                           .drop1
                                                                           ?.invoiceDate,
                                                                 )
                                                                 .where(
                                                                   'invoiceDate',
-                                                                  isLessThan: _model
-                                                                      .drop2
-                                                                      ?.invoiceDate,
+                                                                  isLessThanOrEqualTo:
+                                                                      _model
+                                                                          .drop2
+                                                                          ?.invoiceDate,
                                                                 ),
+                                                  );
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext),
+                                                            child: Text('Ok'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
                                                   );
                                                   var confirmDialogResponse =
                                                       await showDialog<bool>(
