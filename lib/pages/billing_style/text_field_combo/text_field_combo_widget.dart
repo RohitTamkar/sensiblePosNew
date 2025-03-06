@@ -248,7 +248,7 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
                 if (widget!.parameter1!.stock >=
                     valueOrDefault<int>(
                       functions.doubleToInt(
-                          double.parse(widget!.parameter1!.stock.toString()) +
+                          double.parse(_model.textController.text) +
                               valueOrDefault<double>(
                                 getJsonField(
                                   functions
