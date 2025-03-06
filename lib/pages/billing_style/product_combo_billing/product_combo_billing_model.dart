@@ -178,14 +178,10 @@ class ProductComboBillingModel
   bool? interprd;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   InvoiceRecord? invonlineprt;
-  // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
-  InvoiceStructStruct? hiveInvoiceData;
-  // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
+  // Stores action output result for [Custom Action - calShiftSummary] action in Button widget.
   dynamic? shiftSummarResultsNew;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   ShiftRecord? shiftondataprint;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? updatedShiftDetails;
   // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
   bool? resDevice2;
   // Stores action output result for [Custom Action - connectDevice] action in Button widget.
@@ -194,8 +190,6 @@ class ProductComboBillingModel
   List<dynamic>? returnedList2;
   // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
   List<dynamic>? device;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  List<ServicePointOutletRecord>? spoutlet;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   ProductRecord? stockupdateprdprt;
   // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
@@ -212,14 +206,10 @@ class ProductComboBillingModel
   bool? interprdcust;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   InvoiceRecord? invonlineprtcust;
-  // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
-  InvoiceStructStruct? hiveInvoiceDatacust;
-  // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
+  // Stores action output result for [Custom Action - calShiftSummary] action in Button widget.
   dynamic? shiftSummarResultscust;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   ShiftRecord? shiftondataprintcust;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? updatedShiftDetailscust;
   // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
   bool? resDevice2cust;
   // Stores action output result for [Custom Action - connectDevice] action in Button widget.
@@ -228,8 +218,6 @@ class ProductComboBillingModel
   List<dynamic>? returnedList2cust;
   // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
   List<dynamic>? devicecust;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  List<ServicePointOutletRecord>? spoutletcust;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   ProductRecord? stockupdateprdprt2cust;
   // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.

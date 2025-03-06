@@ -3466,80 +3466,6 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       ?.reference
                                                                       .id,
                                                                 ));
-                                                                _model.hiveInvoiceData =
-                                                                    await actions
-                                                                        .addInvoiceBillhive(
-                                                                  _model
-                                                                      .invonlineprt!
-                                                                      .reference
-                                                                      .id,
-                                                                  functions.genInvoiceNum(
-                                                                      FFAppState()
-                                                                          .newcount,
-                                                                      FFAppState()
-                                                                          .shiftDetails
-                                                                          .shiftNo),
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    FFAppState()
-                                                                        .setCustRef
-                                                                        ?.id,
-                                                                    'NA',
-                                                                  ),
-                                                                  functions
-                                                                      .timestampToMili(
-                                                                          getCurrentTimestamp),
-                                                                  functions
-                                                                      .getDayId(),
-                                                                  FFAppState()
-                                                                      .PayMode,
-                                                                  valueOrDefault<
-                                                                      double>(
-                                                                    FFAppState()
-                                                                        .disAmt,
-                                                                    0.0,
-                                                                  ),
-                                                                  valueOrDefault<
-                                                                      double>(
-                                                                    FFAppState()
-                                                                        .disPer,
-                                                                    0.0,
-                                                                  ),
-                                                                  valueOrDefault<
-                                                                      double>(
-                                                                    FFAppState()
-                                                                        .delCharges,
-                                                                    0.0,
-                                                                  ),
-                                                                  FFAppState()
-                                                                      .taxAmtPay,
-                                                                  valueOrDefault<
-                                                                      double>(
-                                                                    FFAppState()
-                                                                        .billAmt,
-                                                                    0.0,
-                                                                  ),
-                                                                  valueOrDefault<
-                                                                      double>(
-                                                                    FFAppState()
-                                                                        .finalAmt,
-                                                                    0.0,
-                                                                  ),
-                                                                  0.0,
-                                                                  _model
-                                                                      .prdlinstnewtx
-                                                                      ?.toList(),
-                                                                  getJsonField(
-                                                                    FFAppState()
-                                                                        .shiftDetailsJson,
-                                                                    r'''$.shiftId''',
-                                                                  ).toString(),
-                                                                  true,
-                                                                  FFAppState()
-                                                                      .invoiceStructVersion,
-                                                                );
-                                                                _shouldSetState =
-                                                                    true;
                                                                 _model.addToInvoices(
                                                                     _model
                                                                         .invonlineprt!);
@@ -3578,9 +3504,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                               )) {
                                                                 _model.shiftSummarResultsNew =
                                                                     await actions
-                                                                        .calShiftSummaryNew(
+                                                                        .calShiftSummary(
                                                                   _model
-                                                                      .hiveInvoiceData!,
+                                                                      .invonlineprt!,
                                                                   FFAppState()
                                                                       .shiftDetailsJson,
                                                                 );
@@ -3872,18 +3798,6 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       r'''$.shiftId''',
                                                                     ).toString(),
                                                                   ));
-                                                                  _model.updatedShiftDetails =
-                                                                      await actions
-                                                                          .hiveShiftCrud(
-                                                                    FFAppState()
-                                                                        .shiftDetails
-                                                                        .newIDShift,
-                                                                    FFAppState()
-                                                                        .shiftDetails,
-                                                                    'update',
-                                                                  );
-                                                                  _shouldSetState =
-                                                                      true;
                                                                 } else {
                                                                   await showDialog(
                                                                     context:
@@ -3990,7 +3904,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                 _shouldSetState =
                                                                     true;
                                                                 await actions
-                                                                    .printBillnewhive(
+                                                                    .printBillnewhive2(
                                                                   _model
                                                                       .returnedList2!
                                                                       .toList(),
@@ -4007,18 +3921,11 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     r'''$''',
                                                                   ),
                                                                   _model
-                                                                      .hiveInvoiceData!,
+                                                                      .invonlineprt!,
                                                                   FFAppState()
                                                                       .paperSize,
                                                                   productComboBillingAppSettingsRecord!,
                                                                 );
-                                                                _model.spoutlet =
-                                                                    await queryServicePointOutletRecordOnce(
-                                                                  parent: FFAppState()
-                                                                      .outletIdRef,
-                                                                );
-                                                                _shouldSetState =
-                                                                    true;
                                                                 if (productComboBillingAppSettingsRecord!
                                                                     .settingList
                                                                     .where((e) =>
@@ -4282,8 +4189,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     0.0;
                                                                 FFAppState()
                                                                         .count =
-                                                                    _model
-                                                                        .updatedShiftDetails!
+                                                                    FFAppState()
+                                                                        .shiftDetails
                                                                         .billCount;
                                                                 FFAppState()
                                                                     .update(
@@ -4725,80 +4632,6 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       ?.reference
                                                                       .id,
                                                                 ));
-                                                                _model.hiveInvoiceDatacust =
-                                                                    await actions
-                                                                        .addInvoiceBillhive(
-                                                                  _model
-                                                                      .invonlineprtcust!
-                                                                      .reference
-                                                                      .id,
-                                                                  functions.genInvoiceNum(
-                                                                      FFAppState()
-                                                                          .newcount,
-                                                                      FFAppState()
-                                                                          .shiftDetails
-                                                                          .shiftNo),
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    FFAppState()
-                                                                        .setCustRef
-                                                                        ?.id,
-                                                                    'NA',
-                                                                  ),
-                                                                  functions
-                                                                      .timestampToMili(
-                                                                          getCurrentTimestamp),
-                                                                  functions
-                                                                      .getDayId(),
-                                                                  FFAppState()
-                                                                      .PayMode,
-                                                                  valueOrDefault<
-                                                                      double>(
-                                                                    FFAppState()
-                                                                        .disAmt,
-                                                                    0.0,
-                                                                  ),
-                                                                  valueOrDefault<
-                                                                      double>(
-                                                                    FFAppState()
-                                                                        .disPer,
-                                                                    0.0,
-                                                                  ),
-                                                                  valueOrDefault<
-                                                                      double>(
-                                                                    FFAppState()
-                                                                        .delCharges,
-                                                                    0.0,
-                                                                  ),
-                                                                  FFAppState()
-                                                                      .taxAmtPay,
-                                                                  valueOrDefault<
-                                                                      double>(
-                                                                    FFAppState()
-                                                                        .billAmt,
-                                                                    0.0,
-                                                                  ),
-                                                                  valueOrDefault<
-                                                                      double>(
-                                                                    FFAppState()
-                                                                        .finalAmt,
-                                                                    0.0,
-                                                                  ),
-                                                                  0.0,
-                                                                  _model
-                                                                      .prdlinstnewtx2
-                                                                      ?.toList(),
-                                                                  getJsonField(
-                                                                    FFAppState()
-                                                                        .shiftDetailsJson,
-                                                                    r'''$.shiftId''',
-                                                                  ).toString(),
-                                                                  true,
-                                                                  FFAppState()
-                                                                      .invoiceStructVersion,
-                                                                );
-                                                                _shouldSetState =
-                                                                    true;
                                                                 _model.addToInvoices(
                                                                     _model
                                                                         .invonlineprtcust!);
@@ -4837,9 +4670,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                               )) {
                                                                 _model.shiftSummarResultscust =
                                                                     await actions
-                                                                        .calShiftSummaryNew(
+                                                                        .calShiftSummary(
                                                                   _model
-                                                                      .hiveInvoiceDatacust!,
+                                                                      .invonlineprtcust!,
                                                                   FFAppState()
                                                                       .shiftDetailsJson,
                                                                 );
@@ -5131,18 +4964,6 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       r'''$.shiftId''',
                                                                     ).toString(),
                                                                   ));
-                                                                  _model.updatedShiftDetailscust =
-                                                                      await actions
-                                                                          .hiveShiftCrud(
-                                                                    FFAppState()
-                                                                        .shiftDetails
-                                                                        .newIDShift,
-                                                                    FFAppState()
-                                                                        .shiftDetails,
-                                                                    'update',
-                                                                  );
-                                                                  _shouldSetState =
-                                                                      true;
                                                                 } else {
                                                                   await showDialog(
                                                                     context:
@@ -5249,7 +5070,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                 _shouldSetState =
                                                                     true;
                                                                 await actions
-                                                                    .printBillnewhive(
+                                                                    .printBillnewhive2(
                                                                   _model
                                                                       .returnedList2cust!
                                                                       .toList(),
@@ -5267,18 +5088,11 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     r'''$''',
                                                                   ),
                                                                   _model
-                                                                      .hiveInvoiceDatacust!,
+                                                                      .invonlineprtcust!,
                                                                   FFAppState()
                                                                       .paperSize,
                                                                   productComboBillingAppSettingsRecord!,
                                                                 );
-                                                                _model.spoutletcust =
-                                                                    await queryServicePointOutletRecordOnce(
-                                                                  parent: FFAppState()
-                                                                      .outletIdRef,
-                                                                );
-                                                                _shouldSetState =
-                                                                    true;
                                                                 if (productComboBillingAppSettingsRecord!
                                                                     .settingList
                                                                     .where((e) =>
@@ -5536,8 +5350,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     0.0;
                                                                 FFAppState()
                                                                         .count =
-                                                                    _model
-                                                                        .updatedShiftDetailscust!
+                                                                    FFAppState()
+                                                                        .shiftDetails
                                                                         .billCount;
                                                                 FFAppState()
                                                                     .billPrintFooter = '';

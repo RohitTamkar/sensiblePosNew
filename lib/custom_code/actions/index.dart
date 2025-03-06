@@ -9,6 +9,7 @@ export 'print_billnewhive.dart' show printBillnewhive;
 export 'cal_shift_summary_newgrocery_print.dart'
     show calShiftSummaryNewgroceryPrint;
 export 'laudry_add_custom_qty.dart' show laudryAddCustomQty;
+export 'print_billnewhive2.dart' show printBillnewhive2;
 export 'cal_bill_amt_grocery_pay.dart' show calBillAmtGroceryPay;
 export 'print_bill_format_two.dart' show printBillFormatTwo;
 export 'print_k_o_twithusbkioskhive.dart' show printKOTwithusbkioskhive;

@@ -93,7 +93,10 @@ Future<dynamic> calShiftSummary(
         (invoice.paymentMode == "UPI QR"
             ? invoice.finalBillAmt!.toDouble()
             : 0);
-
+    if (invoice.paymentMode == "DIGITAL") {
+      paymentJsonData["digital"] = paymentJsonData["digital"].toDouble() +
+          invoice.finalBillAmt.toDouble();
+    }
     var paymentJsonDataString = jsonEncode(paymentJsonData).toString();
     shift[i]["paymentJson"] = paymentJsonDataString;
   }
