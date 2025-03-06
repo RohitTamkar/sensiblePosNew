@@ -5041,26 +5041,6 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                       false,
                                                                 ),
                                                   );
-                                                  await showDialog(
-                                                    context: context,
-                                                    builder:
-                                                        (alertDialogContext) {
-                                                      return AlertDialog(
-                                                        content: Text(_model
-                                                            .invoicecustombills!
-                                                            .length
-                                                            .toString()),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext),
-                                                            child: Text('Ok'),
-                                                          ),
-                                                        ],
-                                                      );
-                                                    },
-                                                  );
                                                   var confirmDialogResponse =
                                                       await showDialog<bool>(
                                                             context: context,
