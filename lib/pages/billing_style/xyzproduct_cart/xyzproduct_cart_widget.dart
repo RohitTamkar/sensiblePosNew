@@ -73,7 +73,7 @@ class _XyzproductCartWidgetState extends State<XyzproductCartWidget> {
 
     _model.productQtyTextController ??= TextEditingController();
     _model.productQtyFocusNode ??= FocusNode();
-    _model.productQtyFocusNode!.addListener(() => safeSetState(() {}));
+
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 

@@ -6,6 +6,7 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -164,52 +165,7 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
               safeSetState(() {});
             },
           ),
-          onFieldSubmitted: (_) async {
-            if (FFAppState().holdBillCount == 0) {
-              FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-              FFAppState().addToAllBillsList(functions.generateBillDetailsJson(
-                  0.0,
-                  0.0,
-                  0.0,
-                  'CASH',
-                  0.0,
-                  0.0,
-                  FFAppState().billAmt,
-                  0.0,
-                  FFAppState().finalAmt,
-                  '0',
-                  FFAppState().itemCartList.toList(),
-                  FFAppState().holdBillCount));
-              FFAppState().selBill = 1;
-              safeSetState(() {});
-            }
-            _model.resreplist23textCopy = await actions.comboAddToHoldListprd(
-              widget!.parameter1!,
-              FFAppState().selBill,
-              widget!.parameter2!.toList(),
-              functions.enabletaxinclusive(widget!.parameter3!),
-              valueOrDefault<double>(
-                double.tryParse(_model.textController.text),
-                0.0,
-              ),
-            );
-            _model.calculateResultresctextCopy =
-                await actions.laundrycalSubTotalForHoldList(
-              FFAppState().selBill.toString(),
-              _model.resreplist23textCopy!.toList(),
-            );
-            _model.calbillAmt334textcopy = await actions.calBillAmt(
-              FFAppState().disAmt,
-              FFAppState().delCharges,
-            );
-
-            FFAppState().update(() {});
-            safeSetState(() {
-              _model.textController?.clear();
-            });
-
-            safeSetState(() {});
-          },
+          onFieldSubmitted: (_) async {},
           autofocus: false,
           obscureText: false,
           decoration: InputDecoration(
@@ -277,6 +233,7 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
           keyboardType: TextInputType.number,
           cursorColor: FlutterFlowTheme.of(context).primaryText,
           validator: _model.textControllerValidator.asValidator(context),
+          inputFormatters: [FilteringTextInputFormatter.allow(RegExp('[0-9]'))],
         ),
       ),
     );

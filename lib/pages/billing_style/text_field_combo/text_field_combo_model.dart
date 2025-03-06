@@ -7,6 +7,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'text_field_combo_widget.dart' show TextFieldComboWidget;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -24,12 +25,6 @@ class TextFieldComboModel extends FlutterFlowModel<TextFieldComboWidget> {
   double? calculateResultresctext;
   // Stores action output result for [Custom Action - calBillAmt] action in TextField widget.
   double? calbillAmt334text;
-  // Stores action output result for [Custom Action - comboAddToHoldListprd] action in TextField widget.
-  List<dynamic>? resreplist23textCopy;
-  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in TextField widget.
-  double? calculateResultresctextCopy;
-  // Stores action output result for [Custom Action - calBillAmt] action in TextField widget.
-  double? calbillAmt334textcopy;
   // Stores action output result for [Custom Action - comboAddToHoldListprd] action in TextField widget.
   List<dynamic>? resreplist23focuschange;
   // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in TextField widget.
