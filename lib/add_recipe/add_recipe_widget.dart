@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -90,7 +91,7 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                               ),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 15.0, 10.0, 15.0),
+                                    10.0, 5.0, 10.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -188,28 +189,18 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                             ),
                                       ),
                                     ),
-                                    Expanded(
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          '4c260cw9' /* Delete */,
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelSmall
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelSmallFamily,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w600,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelSmallFamily),
-                                            ),
+                                    FlutterFlowIconButton(
+                                      borderRadius: 8.0,
+                                      buttonSize: 45.0,
+                                      icon: Icon(
+                                        Icons.delete_forever,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        size: 21.0,
                                       ),
+                                      onPressed: () {
+                                        print('IconButton pressed ...');
+                                      },
                                     ),
                                   ].divide(SizedBox(width: 10.0)),
                                 ),
@@ -380,29 +371,21 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                                 ),
                                           ),
                                         ),
-                                        Expanded(
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'lgaf0krl' /* Delete */,
-                                            ),
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelSmall
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelSmallFamily,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w600,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelSmallFamily),
-                                                ),
+                                        FlutterFlowIconButton(
+                                          borderRadius: 8.0,
+                                          buttonSize: 45.0,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          icon: Icon(
+                                            Icons.delete_forever,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            size: 21.0,
                                           ),
+                                          onPressed: () {
+                                            print('IconButton pressed ...');
+                                          },
                                         ),
                                       ].divide(SizedBox(width: 10.0)),
                                     ),
@@ -410,6 +393,36 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                 ),
                               ),
                             ].divide(SizedBox(height: 5.0)),
+                          ),
+                          FFButtonWidget(
+                            onPressed: () {
+                              print('Button pressed ...');
+                            },
+                            text: FFLocalizations.of(context).getText(
+                              '703k4xa6' /* Button */,
+                            ),
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
+                                  ),
+                              elevation: 0.0,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
                           ),
                         ],
                       ),

@@ -3163,7 +3163,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Builder(
                                                                                   builder: (context) {
-                                                                                    final productList = FFAppState().productHive.sortedList(keyOf: (e) => e.code, desc: false).toList();
+                                                                                    final productList = (productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'sortProductByCode').toList().firstOrNull!.value ? FFAppState().productHive.sortedList(keyOf: (e) => e.code, desc: false) : FFAppState().productHive.sortedList(keyOf: (e) => e.name, desc: false)).toList();
                                                                                     if (productList.isEmpty) {
                                                                                       return Center(
                                                                                         child: Image.asset(

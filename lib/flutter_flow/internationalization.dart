@@ -21340,13 +21340,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    '4c260cw9': {
-      'en': 'Delete',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
     'kquicqbx': {
       'en': 'Select...',
       'hi': '',
@@ -21403,8 +21396,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'lgaf0krl': {
-      'en': 'Delete',
+    '703k4xa6': {
+      'en': 'Button',
       'hi': '',
       'kn': '',
       'mr': '',
