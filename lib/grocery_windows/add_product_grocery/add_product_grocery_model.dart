@@ -89,6 +89,8 @@ class AddProductGroceryModel extends FlutterFlowModel<AddProductGroceryWidget> {
   bool? checkboxListTileValue1;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue2;
+  // State field(s) for CheckboxListTile widget.
+  bool? checkboxListTileValue3;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode13;
   TextEditingController? textController13;

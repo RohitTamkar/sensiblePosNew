@@ -1497,6 +1497,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   isList: true,
                 ),
               ),
+            ),
+            FFRoute(
+              name: AddRecipeWidget.routeName,
+              path: AddRecipeWidget.routePath,
+              builder: (context, params) => AddRecipeWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

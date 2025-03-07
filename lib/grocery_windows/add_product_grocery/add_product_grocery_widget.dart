@@ -2179,6 +2179,67 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         ),
                       ),
                     ),
+                    Expanded(
+                      child: Container(
+                        width: 300.0,
+                        decoration: BoxDecoration(),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Material(
+                              color: Colors.transparent,
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    visualDensity: VisualDensity.compact,
+                                    materialTapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap,
+                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: CheckboxListTile(
+                                  value: _model.checkboxListTileValue3 ??=
+                                      false,
+                                  onChanged: (newValue) async {
+                                    safeSetState(() => _model
+                                        .checkboxListTileValue3 = newValue!);
+                                  },
+                                  title: Text(
+                                    FFLocalizations.of(context).getText(
+                                      '0crxmva7' /* Purchasable  */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLargeFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleLargeFamily),
+                                        ),
+                                  ),
+                                  tileColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  dense: false,
+                                  controlAffinity:
+                                      ListTileControlAffinity.leading,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ].divide(SizedBox(width: 25.0)),
                 ),
               ),
@@ -2780,6 +2841,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                               int.tryParse(_model.textController12.text),
                           isEnable: true,
                           type: 0,
+                          purchasable: _model.checkboxListTileValue3,
                         ));
                         _model.proDoc = ProductRecord.getDocumentFromData(
                             createProductRecordData(
@@ -2816,6 +2878,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   int.tryParse(_model.textController12.text),
                               isEnable: true,
                               type: 0,
+                              purchasable: _model.checkboxListTileValue3,
                             ),
                             productRecordReference);
                         _shouldSetState = true;

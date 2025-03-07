@@ -3082,7 +3082,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   decoration: BoxDecoration(),
                                                                                   child: Builder(
                                                                                     builder: (context) {
-                                                                                      final categoryList = FFAppState().categoryHive.sortedList(keyOf: (e) => e.name, desc: false).toList();
+                                                                                      final categoryList = (productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'sortCategoryByCode').toList().firstOrNull!.value ? FFAppState().categoryHive.sortedList(keyOf: (e) => e.code, desc: false) : FFAppState().categoryHive.sortedList(keyOf: (e) => e.name, desc: false)).toList();
 
                                                                                       return ListView.builder(
                                                                                         padding: EdgeInsets.zero,

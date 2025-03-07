@@ -191,6 +191,11 @@ class ProductRecord extends FirestoreRecord {
   String get serviceRefId => _serviceRefId ?? '';
   bool hasServiceRefId() => _serviceRefId != null;
 
+  // "purchasable" field.
+  bool? _purchasable;
+  bool get purchasable => _purchasable ?? false;
+  bool hasPurchasable() => _purchasable != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -229,6 +234,7 @@ class ProductRecord extends FirestoreRecord {
     _isEnable = snapshotData['isEnable'] as bool?;
     _currentStock = castToType<int>(snapshotData['currentStock']);
     _serviceRefId = snapshotData['serviceRefId'] as String?;
+    _purchasable = snapshotData['purchasable'] as bool?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -305,6 +311,7 @@ Map<String, dynamic> createProductRecordData({
   bool? isEnable,
   int? currentStock,
   String? serviceRefId,
+  bool? purchasable,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -342,6 +349,7 @@ Map<String, dynamic> createProductRecordData({
       'isEnable': isEnable,
       'currentStock': currentStock,
       'serviceRefId': serviceRefId,
+      'purchasable': purchasable,
     }.withoutNulls,
   );
 
@@ -388,7 +396,8 @@ class ProductRecordDocumentEquality implements Equality<ProductRecord> {
         e1?.subCategoryRef == e2?.subCategoryRef &&
         e1?.isEnable == e2?.isEnable &&
         e1?.currentStock == e2?.currentStock &&
-        e1?.serviceRefId == e2?.serviceRefId;
+        e1?.serviceRefId == e2?.serviceRefId &&
+        e1?.purchasable == e2?.purchasable;
   }
 
   @override
@@ -427,7 +436,8 @@ class ProductRecordDocumentEquality implements Equality<ProductRecord> {
         e?.subCategoryRef,
         e?.isEnable,
         e?.currentStock,
-        e?.serviceRefId
+        e?.serviceRefId,
+        e?.purchasable
       ]);
 
   @override
