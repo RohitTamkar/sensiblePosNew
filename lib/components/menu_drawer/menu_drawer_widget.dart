@@ -552,6 +552,9 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                   },
                                 );
                               },
+                              onLongPress: () async {
+                                context.pushNamed(AddRecipeWidget.routeName);
+                              },
                               child: Container(
                                 width: double.infinity,
                                 height:

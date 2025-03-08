@@ -186,4 +186,5 @@ export '/pages/product_combo_billing/product_combo_billing_widget.dart'
     show ProductComboBillingWidget;
 export '/pages/kiosk/kiosk_card_payment/kiosk_card_payment_widget.dart'
     show KioskCardPaymentWidget;
-export '/add_recipe/add_recipe_widget.dart' show AddRecipeWidget;
+export '/pages/billing_style/add_recipe/add_recipe_widget.dart'
+    show AddRecipeWidget;

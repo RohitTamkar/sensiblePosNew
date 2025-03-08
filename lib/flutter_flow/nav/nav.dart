@@ -1501,7 +1501,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: AddRecipeWidget.routeName,
               path: AddRecipeWidget.routePath,
-              builder: (context, params) => AddRecipeWidget(),
+              builder: (context, params) => AddRecipeWidget(
+                itemlist: params.getParam(
+                  'itemlist',
+                  ParamType.DataStruct,
+                  isList: false,
+                  structBuilder: RecipeItemListStruct.fromSerializableMap,
+                ),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
