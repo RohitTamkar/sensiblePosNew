@@ -527,10 +527,9 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                     ),
                                     FFButtonWidget(
                                       onPressed: () async {
-                                        _model.updateItemlistAtIndex(
-                                          _model.itemlist.length + 1,
-                                          (e) => e..name = '',
-                                        );
+                                        _model.insertAtIndexInItemlist(
+                                            _model.itemlist.length + 1,
+                                            widget!.itemlist!);
                                         safeSetState(() {});
                                       },
                                       text: FFLocalizations.of(context).getText(
