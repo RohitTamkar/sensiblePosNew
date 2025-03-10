@@ -2924,43 +2924,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                             ..id = _model.proDoc?.reference.id,
                         );
                         safeSetState(() {});
-                        _model.createddocument = await actions.hiveProductCrud(
-                          9999,
-                          FFAppState().productHiveput,
-                          'create',
-                        );
-                        _shouldSetState = true;
-                        _model.hiveProductList =
-                            await actions.getProductlistHive();
-                        _shouldSetState = true;
-                        FFAppState().productHive = _model.hiveProductList!
-                            .toList()
-                            .cast<ProductStructStruct>();
-                        safeSetState(() {});
                         Navigator.pop(context);
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              'Product Added  Successfully...!',
-                              style: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .titleSmallFamily,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .titleSmallFamily),
-                                  ),
-                            ),
-                            duration: Duration(milliseconds: 1950),
-                            backgroundColor:
-                                FlutterFlowTheme.of(context).alternate,
-                          ),
-                        );
                       } else {
                         if (_shouldSetState) safeSetState(() {});
                         return;

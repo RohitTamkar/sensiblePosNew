@@ -115,10 +115,6 @@ class AddProductGroceryModel extends FlutterFlowModel<AddProductGroceryWidget> {
   CategoryRecord? catref;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   ProductRecord? proDoc;
-  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
-  ProductStructStruct? createddocument;
-  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
-  List<ProductStructStruct>? hiveProductList;
 
   @override
   void initState(BuildContext context) {}
