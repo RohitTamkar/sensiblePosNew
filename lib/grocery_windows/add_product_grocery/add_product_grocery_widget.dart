@@ -1,5 +1,4 @@
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -8,7 +7,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -2887,43 +2885,6 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                             .update(createProductRecordData(
                           id: _model.proDoc?.reference.id,
                         ));
-                        FFAppState().updateProductHiveputStruct(
-                          (e) => e
-                            ..price =
-                                double.tryParse(_model.textController7.text)
-                            ..category = _model.dropDownValue1
-                            ..code = random_data.randomInteger(0, 1000)
-                            ..name = _model.textController1.text
-                            ..sellingPrice =
-                                double.tryParse(_model.textController7.text)
-                            ..mrpPrice =
-                                double.tryParse(_model.textController9.text)
-                            ..purchasePrice =
-                                double.tryParse(_model.textController8.text)
-                            ..regionalName = _model.textController2.text
-                            ..barcode = _model.textController3.text
-                            ..hsncode =
-                                int.tryParse(_model.textController6.text)
-                            ..searchcode =
-                                int.tryParse(_model.textController4.text)
-                            ..shortName = _model.textController5.text
-                            ..weightable = _model.checkboxListTileValue1
-                            ..stockable = _model.checkboxListTileValue2
-                            ..discountPer =
-                                double.tryParse(_model.textController10.text)
-                            ..discountAmt =
-                                double.tryParse(_model.textController11.text)
-                            ..isDeleted = false
-                            ..synC = false
-                            ..version = FFAppState().productStructVersion
-                            ..categoryId = _model.dropDownValue1
-                            ..taxId = _model.dropDownValue2
-                            ..unitId = _model.dropDownValue3
-                            ..serviceOutletId = _model.dropDownValue4
-                            ..stock = int.tryParse(_model.textController12.text)
-                            ..id = _model.proDoc?.reference.id,
-                        );
-                        safeSetState(() {});
                         Navigator.pop(context);
                       } else {
                         if (_shouldSetState) safeSetState(() {});

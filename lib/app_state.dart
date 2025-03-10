@@ -3550,6 +3550,35 @@ class FFAppState extends ChangeNotifier {
   set transactionDateTimeCard(String value) {
     _transactionDateTimeCard = value;
   }
+
+  List<RecipeItemListStruct> _recipeItemList = [];
+  List<RecipeItemListStruct> get recipeItemList => _recipeItemList;
+  set recipeItemList(List<RecipeItemListStruct> value) {
+    _recipeItemList = value;
+  }
+
+  void addToRecipeItemList(RecipeItemListStruct value) {
+    recipeItemList.add(value);
+  }
+
+  void removeFromRecipeItemList(RecipeItemListStruct value) {
+    recipeItemList.remove(value);
+  }
+
+  void removeAtIndexFromRecipeItemList(int index) {
+    recipeItemList.removeAt(index);
+  }
+
+  void updateRecipeItemListAtIndex(
+    int index,
+    RecipeItemListStruct Function(RecipeItemListStruct) updateFn,
+  ) {
+    recipeItemList[index] = updateFn(_recipeItemList[index]);
+  }
+
+  void insertAtIndexInRecipeItemList(int index, RecipeItemListStruct value) {
+    recipeItemList.insert(index, value);
+  }
 }
 
 void _safeInit(Function() initializeField) {

@@ -522,8 +522,9 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                   children: [
                                     Builder(
                                       builder: (context) {
-                                        final rawMaterial =
-                                            _model.itemlist.toList();
+                                        final rawMaterial = FFAppState()
+                                            .recipeItemList
+                                            .toList();
 
                                         return ListView.separated(
                                           padding: EdgeInsets.zero,
@@ -566,6 +567,9 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                                                 .map((e) =>
                                                                     e.name)
                                                                 .toList(),
+                                                        parameter2:
+                                                            rawMaterialItem,
+                                                        index: rawMaterialIndex,
                                                       ),
                                                     ),
                                                     FlutterFlowIconButton(

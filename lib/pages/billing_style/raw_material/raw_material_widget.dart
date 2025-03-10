@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -15,9 +16,13 @@ class RawMaterialWidget extends StatefulWidget {
   const RawMaterialWidget({
     super.key,
     this.parameter1,
+    this.parameter2,
+    this.index,
   });
 
   final List<String>? parameter1;
+  final RecipeItemListStruct? parameter2;
+  final int? index;
 
   @override
   State<RawMaterialWidget> createState() => _RawMaterialWidgetState();
@@ -43,7 +48,11 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
+          _model.textController1?.text = FFLocalizations.of(context).getText(
+            'peubv9ia' /* 1 */,
+          );
+        }));
   }
 
   @override
@@ -66,8 +75,19 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
               controller: _model.dropDownValueController1 ??=
                   FormFieldController<String>(null),
               options: widget!.parameter1!,
-              onChanged: (val) =>
-                  safeSetState(() => _model.dropDownValue1 = val),
+              onChanged: (val) async {
+                safeSetState(() => _model.dropDownValue1 = val);
+                FFAppState().updateRecipeItemListAtIndex(
+                  widget!.index!,
+                  (e) => e
+                    ..name = _model.dropDownValue1
+                    ..price = widget!.parameter2?.price
+                    ..quantity = double.tryParse(_model.textController1.text)
+                    ..id = widget!.parameter2?.id
+                    ..catId = widget!.parameter2?.catId,
+                );
+                safeSetState(() {});
+              },
               width: 200.0,
               height: 45.0,
               textStyle: FlutterFlowTheme.of(context).labelSmall.override(
@@ -193,8 +213,20 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
                       FormFieldController<String>(null),
                   options:
                       dropDownUnitTypeRecordList.map((e) => e.name).toList(),
-                  onChanged: (val) =>
-                      safeSetState(() => _model.dropDownValue2 = val),
+                  onChanged: (val) async {
+                    safeSetState(() => _model.dropDownValue2 = val);
+                    FFAppState().updateRecipeItemListAtIndex(
+                      widget!.index!,
+                      (e) => e
+                        ..name = _model.dropDownValue1
+                        ..price = widget!.parameter2?.price
+                        ..quantity =
+                            double.tryParse(_model.textController1.text)
+                        ..id = widget!.parameter2?.id
+                        ..catId = widget!.parameter2?.catId,
+                    );
+                    safeSetState(() {});
+                  },
                   width: 200.0,
                   height: 45.0,
                   textStyle: FlutterFlowTheme.of(context).labelSmall.override(
