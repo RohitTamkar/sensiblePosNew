@@ -132,6 +132,7 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                     name: _model.dropDownValue,
                                     reverseStock: true,
                                     type: 1,
+                                    productId: _model.dropDownValue,
                                   ),
                                   ...mapToFirestore(
                                     {
@@ -148,6 +149,7 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                     name: _model.dropDownValue,
                                     reverseStock: true,
                                     type: 1,
+                                    productId: _model.dropDownValue,
                                   ),
                                   ...mapToFirestore(
                                     {
@@ -163,6 +165,22 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                     .update(createRecipeRecordData(
                                   id: _model.itemslist?.reference.id,
                                 ));
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      content:
+                                          Text('Recipe Saved  Successfully !'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
                               }
                               FFAppState().recipeitems = RecipeItemListStruct();
                               FFAppState().recipeItemList = [];
@@ -274,8 +292,18 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                     FlutterFlowDropDown<String>(
                                       controller:
                                           _model.dropDownValueController ??=
-                                              FormFieldController<String>(null),
-                                      options: containerProductRecordList
+                                              FormFieldController<String>(
+                                        _model.dropDownValue ??= '',
+                                      ),
+                                      options: List<String>.from(
+                                          containerProductRecordList
+                                              .where((e) =>
+                                                  !e.purchasable &&
+                                                  (e.type == 0))
+                                              .toList()
+                                              .map((e) => e.reference.id)
+                                              .toList()),
+                                      optionLabels: containerProductRecordList
                                           .where((e) =>
                                               !e.purchasable && (e.type == 0))
                                           .toList()

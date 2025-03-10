@@ -46,6 +46,11 @@ class RecipeRecord extends FirestoreRecord {
   String get id => _id ?? '';
   bool hasId() => _id != null;
 
+  // "productId" field.
+  String? _productId;
+  String get productId => _productId ?? '';
+  bool hasProductId() => _productId != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -58,6 +63,7 @@ class RecipeRecord extends FirestoreRecord {
       RecipeItemListStruct.fromMap,
     );
     _id = snapshotData['id'] as String?;
+    _productId = snapshotData['productId'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -104,6 +110,7 @@ Map<String, dynamic> createRecipeRecordData({
   int? type,
   int? code,
   String? id,
+  String? productId,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -112,6 +119,7 @@ Map<String, dynamic> createRecipeRecordData({
       'type': type,
       'code': code,
       'id': id,
+      'productId': productId,
     }.withoutNulls,
   );
 
@@ -129,12 +137,20 @@ class RecipeRecordDocumentEquality implements Equality<RecipeRecord> {
         e1?.type == e2?.type &&
         e1?.code == e2?.code &&
         listEquality.equals(e1?.items, e2?.items) &&
-        e1?.id == e2?.id;
+        e1?.id == e2?.id &&
+        e1?.productId == e2?.productId;
   }
 
   @override
-  int hash(RecipeRecord? e) => const ListEquality()
-      .hash([e?.name, e?.reverseStock, e?.type, e?.code, e?.items, e?.id]);
+  int hash(RecipeRecord? e) => const ListEquality().hash([
+        e?.name,
+        e?.reverseStock,
+        e?.type,
+        e?.code,
+        e?.items,
+        e?.id,
+        e?.productId
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is RecipeRecord;
