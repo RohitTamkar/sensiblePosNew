@@ -188,3 +188,5 @@ export '/pages/kiosk/kiosk_card_payment/kiosk_card_payment_widget.dart'
     show KioskCardPaymentWidget;
 export '/pages/billing_style/add_recipe/add_recipe_widget.dart'
     show AddRecipeWidget;
+export '/pages/billing_style/add_recipe_copy/add_recipe_copy_widget.dart'
+    show AddRecipeCopyWidget;
