@@ -86,7 +86,7 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
                     ..id = widget!.parameter2?.id
                     ..catId = widget!.parameter2?.catId,
                 );
-                safeSetState(() {});
+                FFAppState().update(() {});
               },
               width: 200.0,
               height: 45.0,
