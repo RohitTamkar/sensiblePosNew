@@ -653,13 +653,8 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                         FFAppState().updateRecipeitemsStruct(
                                           (e) => e..name = 'Select',
                                         );
-                                        FFAppState()
-                                            .insertAtIndexInRecipeItemList(
-                                                FFAppState()
-                                                        .recipeItemList
-                                                        .length +
-                                                    0,
-                                                FFAppState().recipeitems);
+                                        FFAppState().addToRecipeItemList(
+                                            FFAppState().recipeitems);
                                         safeSetState(() {});
                                       },
                                       text: FFLocalizations.of(context).getText(
