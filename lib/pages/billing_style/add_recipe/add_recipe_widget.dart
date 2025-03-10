@@ -10,6 +10,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/grocery_windows/add_product_grocery/add_product_grocery_widget.dart';
 import '/pages/billing_style/raw_material/raw_material_widget.dart';
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -121,8 +122,53 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                             ],
                           ),
                           FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              if (FFAppState().recipeItemList.isNotEmpty) {
+                                var recipeRecordReference =
+                                    RecipeRecord.createDoc(
+                                        FFAppState().outletIdRef!);
+                                await recipeRecordReference.set({
+                                  ...createRecipeRecordData(
+                                    name: _model.dropDownValue,
+                                    reverseStock: true,
+                                    type: 1,
+                                  ),
+                                  ...mapToFirestore(
+                                    {
+                                      'items':
+                                          getRecipeItemListListFirestoreData(
+                                        FFAppState().recipeItemList,
+                                      ),
+                                    },
+                                  ),
+                                });
+                                _model.itemslist =
+                                    RecipeRecord.getDocumentFromData({
+                                  ...createRecipeRecordData(
+                                    name: _model.dropDownValue,
+                                    reverseStock: true,
+                                    type: 1,
+                                  ),
+                                  ...mapToFirestore(
+                                    {
+                                      'items':
+                                          getRecipeItemListListFirestoreData(
+                                        FFAppState().recipeItemList,
+                                      ),
+                                    },
+                                  ),
+                                }, recipeRecordReference);
+
+                                await _model.itemslist!.reference
+                                    .update(createRecipeRecordData(
+                                  id: _model.itemslist?.reference.id,
+                                ));
+                              }
+                              FFAppState().recipeitems = RecipeItemListStruct();
+                              FFAppState().recipeItemList = [];
+                              safeSetState(() {});
+
+                              safeSetState(() {});
                             },
                             text: FFLocalizations.of(context).getText(
                               '4g37j3k1' /* Save */,
@@ -230,7 +276,8 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                           _model.dropDownValueController ??=
                                               FormFieldController<String>(null),
                                       options: containerProductRecordList
-                                          .where((e) => !e.purchasable)
+                                          .where((e) =>
+                                              !e.purchasable && (e.type == 0))
                                           .toList()
                                           .map((e) => e.name)
                                           .toList(),
@@ -279,7 +326,7 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          50.0, 0.0, 0.0, 0.0),
+                                          30.0, 0.0, 0.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           await showModalBottomSheet(

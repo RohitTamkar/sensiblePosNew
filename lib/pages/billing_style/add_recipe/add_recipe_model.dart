@@ -11,6 +11,7 @@ import '/grocery_windows/add_product_grocery/add_product_grocery_widget.dart';
 import '/pages/billing_style/raw_material/raw_material_widget.dart';
 import 'dart:ui';
 import 'add_recipe_widget.dart' show AddRecipeWidget;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -36,6 +37,8 @@ class AddRecipeModel extends FlutterFlowModel<AddRecipeWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  RecipeRecord? itemslist;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;

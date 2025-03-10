@@ -182,7 +182,7 @@ export '/pages/kiosk/kiosk_choose_payment_mode_copy/kiosk_choose_payment_mode_co
 export '/pages/kiosk/kiosk_cartdineinparcel/kiosk_cartdineinparcel_widget.dart'
     show KioskCartdineinparcelWidget;
 export '/pages/xyz_billing/xyz_billing_widget.dart' show XyzBillingWidget;
-export '/pages/product_combo_billing/product_combo_billing_widget.dart'
+export '/pages/billing_style/product_combo_billing/product_combo_billing_widget.dart'
     show ProductComboBillingWidget;
 export '/pages/kiosk/kiosk_card_payment/kiosk_card_payment_widget.dart'
     show KioskCardPaymentWidget;
