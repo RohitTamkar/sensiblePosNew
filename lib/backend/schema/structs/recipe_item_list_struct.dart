@@ -21,6 +21,9 @@ class RecipeItemListStruct extends FFFirebaseStruct {
     String? catId,
     int? currentStock,
     bool? stockable,
+    String? unit,
+    String? unitid,
+    String? note,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _name = name,
         _price = price,
@@ -33,6 +36,9 @@ class RecipeItemListStruct extends FFFirebaseStruct {
         _catId = catId,
         _currentStock = currentStock,
         _stockable = stockable,
+        _unit = unit,
+        _unitid = unitid,
+        _note = note,
         super(firestoreUtilData);
 
   // "name" field.
@@ -125,6 +131,27 @@ class RecipeItemListStruct extends FFFirebaseStruct {
 
   bool hasStockable() => _stockable != null;
 
+  // "unit" field.
+  String? _unit;
+  String get unit => _unit ?? '';
+  set unit(String? val) => _unit = val;
+
+  bool hasUnit() => _unit != null;
+
+  // "unitid" field.
+  String? _unitid;
+  String get unitid => _unitid ?? '';
+  set unitid(String? val) => _unitid = val;
+
+  bool hasUnitid() => _unitid != null;
+
+  // "note" field.
+  String? _note;
+  String get note => _note ?? '';
+  set note(String? val) => _note = val;
+
+  bool hasNote() => _note != null;
+
   static RecipeItemListStruct fromMap(Map<String, dynamic> data) =>
       RecipeItemListStruct(
         name: data['name'] as String?,
@@ -138,6 +165,9 @@ class RecipeItemListStruct extends FFFirebaseStruct {
         catId: data['catId'] as String?,
         currentStock: castToType<int>(data['currentStock']),
         stockable: data['stockable'] as bool?,
+        unit: data['unit'] as String?,
+        unitid: data['unitid'] as String?,
+        note: data['note'] as String?,
       );
 
   static RecipeItemListStruct? maybeFromMap(dynamic data) => data is Map
@@ -156,6 +186,9 @@ class RecipeItemListStruct extends FFFirebaseStruct {
         'catId': _catId,
         'currentStock': _currentStock,
         'stockable': _stockable,
+        'unit': _unit,
+        'unitid': _unitid,
+        'note': _note,
       }.withoutNulls;
 
   @override
@@ -203,6 +236,18 @@ class RecipeItemListStruct extends FFFirebaseStruct {
         'stockable': serializeParam(
           _stockable,
           ParamType.bool,
+        ),
+        'unit': serializeParam(
+          _unit,
+          ParamType.String,
+        ),
+        'unitid': serializeParam(
+          _unitid,
+          ParamType.String,
+        ),
+        'note': serializeParam(
+          _note,
+          ParamType.String,
         ),
       }.withoutNulls;
 
@@ -263,6 +308,21 @@ class RecipeItemListStruct extends FFFirebaseStruct {
           ParamType.bool,
           false,
         ),
+        unit: deserializeParam(
+          data['unit'],
+          ParamType.String,
+          false,
+        ),
+        unitid: deserializeParam(
+          data['unitid'],
+          ParamType.String,
+          false,
+        ),
+        note: deserializeParam(
+          data['note'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -281,7 +341,10 @@ class RecipeItemListStruct extends FFFirebaseStruct {
         taxId == other.taxId &&
         catId == other.catId &&
         currentStock == other.currentStock &&
-        stockable == other.stockable;
+        stockable == other.stockable &&
+        unit == other.unit &&
+        unitid == other.unitid &&
+        note == other.note;
   }
 
   @override
@@ -296,7 +359,10 @@ class RecipeItemListStruct extends FFFirebaseStruct {
         taxId,
         catId,
         currentStock,
-        stockable
+        stockable,
+        unit,
+        unitid,
+        note
       ]);
 }
 
@@ -312,6 +378,9 @@ RecipeItemListStruct createRecipeItemListStruct({
   String? catId,
   int? currentStock,
   bool? stockable,
+  String? unit,
+  String? unitid,
+  String? note,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -329,6 +398,9 @@ RecipeItemListStruct createRecipeItemListStruct({
       catId: catId,
       currentStock: currentStock,
       stockable: stockable,
+      unit: unit,
+      unitid: unitid,
+      note: note,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,

@@ -42,17 +42,15 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
     super.initState();
     _model = createModel(context, () => RawMaterialModel());
 
-    _model.textController1 ??= TextEditingController();
+    _model.textController1 ??=
+        TextEditingController(text: widget!.parameter2?.quantity?.toString());
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
+    _model.textController2 ??=
+        TextEditingController(text: widget!.parameter2?.note);
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
-          _model.textController1?.text = FFLocalizations.of(context).getText(
-            'peubv9ia' /* 1 */,
-          );
-        }));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -73,7 +71,9 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
             flex: 5,
             child: FlutterFlowDropDown<String>(
               controller: _model.dropDownValueController1 ??=
-                  FormFieldController<String>(null),
+                  FormFieldController<String>(
+                _model.dropDownValue1 ??= widget!.parameter2?.name,
+              ),
               options: widget!.parameter1!,
               onChanged: (val) async {
                 safeSetState(() => _model.dropDownValue1 = val);
@@ -210,7 +210,9 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
 
                 return FlutterFlowDropDown<String>(
                   controller: _model.dropDownValueController2 ??=
-                      FormFieldController<String>(null),
+                      FormFieldController<String>(
+                    _model.dropDownValue2 ??= widget!.parameter2?.unit,
+                  ),
                   options:
                       dropDownUnitTypeRecordList.map((e) => e.name).toList(),
                   onChanged: (val) async {
