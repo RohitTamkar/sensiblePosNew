@@ -3948,17 +3948,13 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         await queryProductRecordOnce(
                                                                       parent: FFAppState()
                                                                           .outletIdRef,
-                                                                      queryBuilder: (productRecord) => productRecord
-                                                                          .where(
-                                                                            'id',
-                                                                            isEqualTo:
-                                                                                (_model.invonlineprt?.productList?.elementAtOrNull(FFAppState().startLoop))?.id,
-                                                                          )
-                                                                          .where(
-                                                                            'stockable',
-                                                                            isEqualTo:
-                                                                                true,
-                                                                          ),
+                                                                      queryBuilder:
+                                                                          (productRecord) =>
+                                                                              productRecord.where(
+                                                                        'id',
+                                                                        isEqualTo:
+                                                                            (_model.invonlineprt?.productList?.elementAtOrNull(FFAppState().startLoop))?.id,
+                                                                      ),
                                                                       singleRecord:
                                                                           true,
                                                                     ).then((s) =>
