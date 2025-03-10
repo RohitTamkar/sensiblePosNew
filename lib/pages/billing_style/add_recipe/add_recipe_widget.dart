@@ -656,6 +656,9 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                         FFAppState().addToRecipeItemList(
                                             FFAppState().recipeitems);
                                         safeSetState(() {});
+                                        FFAppState().recipeitems =
+                                            RecipeItemListStruct();
+                                        safeSetState(() {});
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         '703k4xa6' /* Add Material */,
