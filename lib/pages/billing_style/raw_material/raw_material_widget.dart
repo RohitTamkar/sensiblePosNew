@@ -123,6 +123,20 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
               child: TextFormField(
                 controller: _model.textController1,
                 focusNode: _model.textFieldFocusNode1,
+                onFieldSubmitted: (_) async {
+                  FFAppState().updateRecipeItemListAtIndex(
+                    widget!.index!,
+                    (e) => e
+                      ..name = _model.dropDownValue1
+                      ..price = widget!.parameter2?.price
+                      ..quantity = double.tryParse(_model.textController1.text)
+                      ..id = widget!.parameter2?.id
+                      ..catId = widget!.parameter2?.catId
+                      ..unit = _model.dropDownValue2
+                      ..note = _model.textController2.text,
+                  );
+                  safeSetState(() {});
+                },
                 autofocus: false,
                 obscureText: false,
                 decoration: InputDecoration(
@@ -225,7 +239,9 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
                         ..quantity =
                             double.tryParse(_model.textController1.text)
                         ..id = widget!.parameter2?.id
-                        ..catId = widget!.parameter2?.catId,
+                        ..catId = widget!.parameter2?.catId
+                        ..unit = _model.dropDownValue2
+                        ..note = _model.textController2.text,
                     );
                     safeSetState(() {});
                   },
