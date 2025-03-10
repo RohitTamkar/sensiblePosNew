@@ -21326,85 +21326,127 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'e8ufl3c8': {
+    '9k1qczv6': {
       'en': 'Select Product',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'cjrd3qme': {
+    '5y3yn88z': {
       'en': 'Select...',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'p55a2np9': {
+    'gk9co8il': {
       'en': 'Search...',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'iq6qrfiy': {
+    'jepj8qop': {
       'en': 'Option 1',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'uk61h2de': {
+    'kw2gf4kp': {
       'en': 'Option 2',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    '30y4cyos': {
+    'nosxvnmi': {
       'en': 'Option 3',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'ljkdclra': {
+    'njzie0w8': {
       'en': 'Add Product',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    's6jh11x5': {
+    '6nil5vuv': {
       'en': 'Raw Material',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'jevdotd1': {
+    '0h1b3woc': {
       'en': 'Quantity ',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'rbhy2voy': {
+    '7p2l4ong': {
       'en': 'Unit',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'sf1wkryt': {
+    'ho1w1j56': {
       'en': 'Comment',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    '703k4xa6': {
+    'ghwwabme': {
       'en': 'Add Material',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'hjkrxoeg': {
+      'en': 'Recipe Name',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'iix5h703': {
+      'en': 'Raw Material',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '2fnpey48': {
+      'en': 'Raw Material',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '3ich98ls': {
+      'en': 'Quantity ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'zxvtrt9q': {
+      'en': 'Unit',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'bhkuu062': {
+      'en': 'Comment',
       'hi': '',
       'kn': '',
       'mr': '',
