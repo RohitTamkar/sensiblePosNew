@@ -634,8 +634,8 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                                         size: 21.0,
                                                       ),
                                                       onPressed: () async {
-                                                        _model
-                                                            .removeFromItemlist(
+                                                        FFAppState()
+                                                            .removeFromRecipeItemList(
                                                                 rawMaterialItem);
                                                         safeSetState(() {});
                                                       },
