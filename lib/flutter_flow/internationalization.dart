@@ -21319,7 +21319,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'ljkdclra': {
+    '4g37j3k1': {
       'en': 'Save',
       'hi': '',
       'kn': '',
@@ -21363,6 +21363,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '30y4cyos': {
       'en': 'Option 3',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'ljkdclra': {
+      'en': 'Add Product',
       'hi': '',
       'kn': '',
       'mr': '',

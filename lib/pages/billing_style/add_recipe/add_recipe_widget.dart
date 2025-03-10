@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/grocery_windows/add_product_grocery/add_product_grocery_widget.dart';
 import '/pages/billing_style/raw_material/raw_material_widget.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -124,7 +125,7 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                               print('Button pressed ...');
                             },
                             text: FFLocalizations.of(context).getText(
-                              'ljkdclra' /* Save */,
+                              '4g37j3k1' /* Save */,
                             ),
                             options: FFButtonOptions(
                               height: 40.0,
@@ -275,6 +276,77 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                       isOverButton: false,
                                       isSearchable: false,
                                       isMultiSelect: false,
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          50.0, 0.0, 0.0, 0.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          await showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor: Colors.transparent,
+                                            enableDrag: false,
+                                            context: context,
+                                            builder: (context) {
+                                              return GestureDetector(
+                                                onTap: () {
+                                                  FocusScope.of(context)
+                                                      .unfocus();
+                                                  FocusManager
+                                                      .instance.primaryFocus
+                                                      ?.unfocus();
+                                                },
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      AddProductGroceryWidget(),
+                                                ),
+                                              );
+                                            },
+                                          ).then(
+                                              (value) => safeSetState(() {}));
+                                        },
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'ljkdclra' /* Add Product */,
+                                        ),
+                                        icon: Icon(
+                                          Icons.add,
+                                          size: 15.0,
+                                        ),
+                                        options: FFButtonOptions(
+                                          height: 40.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  20.0, 0.0, 20.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .labelLarge
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLargeFamily,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeFamily),
+                                              ),
+                                          elevation: 0.0,
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -532,7 +604,7 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                         );
                                         safeSetState(() {});
                                         _model.insertAtIndexInItemlist(
-                                            _model.itemlist.length + 1,
+                                            _model.itemlist.length + 0,
                                             _model.recipelist!);
                                         safeSetState(() {});
                                       },
