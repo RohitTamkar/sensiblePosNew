@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> productSaleReport(
   String dayId,
   String outletId,
@@ -47,7 +49,7 @@ Future<List<dynamic>> productSaleReport(
         List<dynamic> tempPrd = querySnapshot.docs[x]["productList"];
 
         double purPriceTotal =
-            tempPrd[i]["purchasePrice"] * tempPrd[i]["quantity"];
+            tempPrd[i]["purchasePrice"] ?? 0 * tempPrd[i]["quantity"];
         double costTotal =
             tempPrd[i]["total"] - purPriceTotal; // Profit/Loss (prls)
         docObj.add({
