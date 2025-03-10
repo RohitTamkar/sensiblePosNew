@@ -21421,7 +21421,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // AddRecipeCopy
   {
     'kh8npccc': {
-      'en': 'Add Recipe ',
+      'en': 'Add Recipe 2',
       'hi': '',
       'kn': '',
       'mr': '',

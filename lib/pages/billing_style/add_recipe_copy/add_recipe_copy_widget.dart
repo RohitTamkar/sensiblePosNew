@@ -103,7 +103,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                               ),
                               Text(
                                 FFLocalizations.of(context).getText(
-                                  'kh8npccc' /* Add Recipe  */,
+                                  'kh8npccc' /* Add Recipe 2 */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
