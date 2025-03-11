@@ -11,9 +11,8 @@ import 'package:flutter/material.dart';
 
 Future updateProductStock(
   RecipeRecord recipeitmelist,
+  SelItemListStruct sellitem,
 ) async {
-  // Iterate through each item in the recipe item list
-
   List<ProductRecord> productlist;
   for (var item in recipeitmelist.items) {
     // Find the corresponding product in the product list

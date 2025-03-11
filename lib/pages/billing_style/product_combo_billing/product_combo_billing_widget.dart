@@ -3968,6 +3968,10 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           .updateProductStock(
                                                                         _model
                                                                             .recipe!,
+                                                                        _model
+                                                                            .invonlineprt!
+                                                                            .productList
+                                                                            .elementAtOrNull(FFAppState().startLoop)!,
                                                                       );
                                                                       FFAppState()
                                                                           .productHive = [];
@@ -4992,6 +4996,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           .updateProductStock(
                                                                         _model
                                                                             .recipecust!,
+                                                                        (_model
+                                                                            .prdlinstnewtx2!
+                                                                            .elementAtOrNull(FFAppState().startLoop))!,
                                                                       );
                                                                       FFAppState()
                                                                           .productHive = [];
