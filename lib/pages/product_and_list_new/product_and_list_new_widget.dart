@@ -6675,6 +6675,16 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               ProductStructStruct();
                                                                           safeSetState(
                                                                               () {});
+                                                                          _model.newupdatedproductlist2Copy =
+                                                                              await actions.getProductlistHive();
+                                                                          _shouldSetState =
+                                                                              true;
+                                                                          FFAppState().productHive = _model
+                                                                              .newupdatedproductlist2Copy!
+                                                                              .toList()
+                                                                              .cast<ProductStructStruct>();
+                                                                          safeSetState(
+                                                                              () {});
                                                                         }
                                                                         FFAppState()
                                                                             .startLoop = FFAppState()
@@ -6683,18 +6693,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         safeSetState(
                                                                             () {});
                                                                       }
-                                                                      _model.newupdatedproductlist2Copy =
-                                                                          await actions
-                                                                              .getProductlistHive();
-                                                                      _shouldSetState =
-                                                                          true;
-                                                                      FFAppState().productHive = _model
-                                                                          .newupdatedproductlist2Copy!
-                                                                          .toList()
-                                                                          .cast<
-                                                                              ProductStructStruct>();
-                                                                      safeSetState(
-                                                                          () {});
                                                                     }
                                                                     await actions
                                                                         .removeFromAllBillList(
