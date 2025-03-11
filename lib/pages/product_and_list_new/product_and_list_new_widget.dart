@@ -2472,6 +2472,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           0.0));
                                                     }
                                                   },
+                                                  onLongPress: () async {
+                                                    context.pushNamed(
+                                                        SelectpaymentModeWidget
+                                                            .routeName);
+                                                  },
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
                                                                 context)
@@ -3626,7 +3631,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                           Expanded(
                                                                                                             child: Container(
                                                                                                               width: double.infinity,
-                                                                                                              height: MediaQuery.sizeOf(context).height * 0.12,
+                                                                                                              height: MediaQuery.sizeOf(context).height * 0.14,
                                                                                                               decoration: BoxDecoration(
                                                                                                                 color: Color(0x1A000000),
                                                                                                                 image: DecorationImage(
@@ -3707,7 +3712,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                                     ),
                                                                                                                                     Flexible(
                                                                                                                                       child: Text(
-                                                                                                                                        productListItem.sellingPrice.toString(),
+                                                                                                                                        valueOrDefault<String>(
+                                                                                                                                          productListItem.sellingPrice.toString(),
+                                                                                                                                          '120',
+                                                                                                                                        ),
                                                                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                                                               fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                                                               color: FlutterFlowTheme.of(context).primaryBtnText,
@@ -3719,6 +3727,19 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                                   ],
                                                                                                                                 ),
                                                                                                                               ),
+                                                                                                                              if (productListItem.stockable)
+                                                                                                                                Flexible(
+                                                                                                                                  child: Text(
+                                                                                                                                    'Stock :${productListItem.stock.toString()}',
+                                                                                                                                    textAlign: TextAlign.justify,
+                                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                                          color: FlutterFlowTheme.of(context).parkingPrimary,
+                                                                                                                                          letterSpacing: 0.0,
+                                                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                                                                        ),
+                                                                                                                                  ),
+                                                                                                                                ),
                                                                                                                             ],
                                                                                                                           ),
                                                                                                                         ),
@@ -5536,138 +5557,123 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       )
                                                                     ],
                                                                   ),
-                                                                  child: StreamBuilder<
-                                                                      List<
-                                                                          PaymentModeRecord>>(
-                                                                    stream:
-                                                                        queryPaymentModeRecord(),
-                                                                    builder:
-                                                                        (context,
-                                                                            snapshot) {
-                                                                      // Customize what your widget looks like when it's loading.
-                                                                      if (!snapshot
-                                                                          .hasData) {
-                                                                        return Center(
-                                                                          child:
-                                                                              SizedBox(
-                                                                            width:
-                                                                                20.0,
-                                                                            height:
-                                                                                20.0,
-                                                                            child:
-                                                                                CircularProgressIndicator(
-                                                                              valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                Color(0x00B6001A),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        );
-                                                                      }
-                                                                      List<PaymentModeRecord>
-                                                                          dropDownPaymentModeRecordList =
-                                                                          snapshot
-                                                                              .data!;
-
-                                                                      return FlutterFlowDropDown<
+                                                                  child:
+                                                                      FlutterFlowDropDown<
                                                                           String>(
-                                                                        controller:
-                                                                            _model.dropDownValueController ??=
-                                                                                FormFieldController<String>(
-                                                                          _model.dropDownValue ??=
-                                                                              FFAppState().defPayMode,
-                                                                        ),
-                                                                        options: dropDownPaymentModeRecordList
-                                                                            .map((e) =>
-                                                                                e.name)
-                                                                            .toList(),
-                                                                        onChanged:
-                                                                            (val) async {
-                                                                          safeSetState(() =>
-                                                                              _model.dropDownValue = val);
-                                                                          FFAppState().PayMode =
-                                                                              _model.dropDownValue!;
-                                                                          safeSetState(
-                                                                              () {});
-                                                                          _model.returntrue =
-                                                                              await actions.paymentmodemix(
-                                                                            FFAppState().PayMode,
-                                                                          );
-                                                                          if (_model
-                                                                              .returntrue!) {
-                                                                            await showModalBottomSheet(
-                                                                              isScrollControlled: true,
-                                                                              backgroundColor: Colors.transparent,
-                                                                              context: context,
-                                                                              builder: (context) {
-                                                                                return GestureDetector(
-                                                                                  onTap: () {
-                                                                                    FocusScope.of(context).unfocus();
-                                                                                    FocusManager.instance.primaryFocus?.unfocus();
-                                                                                  },
-                                                                                  child: Padding(
-                                                                                    padding: MediaQuery.viewInsetsOf(context),
-                                                                                    child: Container(
-                                                                                      height: 360.0,
-                                                                                      child: MixPaymentModeWidget(
-                                                                                        appsetting: productAndListNewAppSettingsRecord,
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
-                                                                                );
+                                                                    controller: _model
+                                                                            .dropDownValueController ??=
+                                                                        FormFieldController<
+                                                                            String>(
+                                                                      _model.dropDownValue ??=
+                                                                          FFAppState()
+                                                                              .defPayMode,
+                                                                    ),
+                                                                    options:
+                                                                        FFAppState()
+                                                                            .paymentmodenew,
+                                                                    onChanged:
+                                                                        (val) async {
+                                                                      safeSetState(() =>
+                                                                          _model.dropDownValue =
+                                                                              val);
+                                                                      FFAppState()
+                                                                              .PayMode =
+                                                                          _model
+                                                                              .dropDownValue!;
+                                                                      safeSetState(
+                                                                          () {});
+                                                                      _model.returntrue =
+                                                                          await actions
+                                                                              .paymentmodemix(
+                                                                        FFAppState()
+                                                                            .PayMode,
+                                                                      );
+                                                                      if (_model
+                                                                          .returntrue!) {
+                                                                        await showModalBottomSheet(
+                                                                          isScrollControlled:
+                                                                              true,
+                                                                          backgroundColor:
+                                                                              Colors.transparent,
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (context) {
+                                                                            return GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
                                                                               },
-                                                                            ).then((value) =>
-                                                                                safeSetState(() {}));
-                                                                          }
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: Container(
+                                                                                  height: 360.0,
+                                                                                  child: MixPaymentModeWidget(
+                                                                                    appsetting: productAndListNewAppSettingsRecord,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            );
+                                                                          },
+                                                                        ).then((value) =>
+                                                                            safeSetState(() {}));
+                                                                      }
 
-                                                                          safeSetState(
-                                                                              () {});
-                                                                        },
-                                                                        width: double
-                                                                            .infinity,
-                                                                        height:
-                                                                            double.infinity,
-                                                                        textStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                              color: FlutterFlowTheme.of(context).lineColor,
-                                                                              letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                            ),
-                                                                        hintText:
-                                                                            FFLocalizations.of(context).getText(
-                                                                          'diniwpb5' /* Pay Mode */,
-                                                                        ),
-                                                                        icon:
-                                                                            Icon(
-                                                                          Icons
-                                                                              .keyboard_arrow_down,
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    },
+                                                                    width: double
+                                                                        .infinity,
+                                                                    height: double
+                                                                        .infinity,
+                                                                    textStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).lineColor,
-                                                                          size:
-                                                                              22.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                         ),
-                                                                        elevation:
-                                                                            2.0,
-                                                                        borderColor:
-                                                                            Colors.transparent,
-                                                                        borderWidth:
-                                                                            0.0,
-                                                                        borderRadius:
-                                                                            0.0,
-                                                                        margin: EdgeInsetsDirectional.fromSTEB(
+                                                                    hintText: FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'diniwpb5' /* Pay Mode */,
+                                                                    ),
+                                                                    icon: Icon(
+                                                                      Icons
+                                                                          .keyboard_arrow_down,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .lineColor,
+                                                                      size:
+                                                                          22.0,
+                                                                    ),
+                                                                    elevation:
+                                                                        2.0,
+                                                                    borderColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    borderWidth:
+                                                                        0.0,
+                                                                    borderRadius:
+                                                                        0.0,
+                                                                    margin: EdgeInsetsDirectional
+                                                                        .fromSTEB(
                                                                             7.0,
                                                                             4.0,
                                                                             5.0,
                                                                             4.0),
-                                                                        hidesUnderline:
-                                                                            true,
-                                                                        isSearchable:
-                                                                            false,
-                                                                        isMultiSelect:
-                                                                            false,
-                                                                      );
-                                                                    },
+                                                                    hidesUnderline:
+                                                                        true,
+                                                                    isSearchable:
+                                                                        false,
+                                                                    isMultiSelect:
+                                                                        false,
                                                                   ),
                                                                 ),
                                                               ),
@@ -5852,96 +5858,115 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       hasContainerTriggered7),
                                                             ),
                                                           ),
-                                                        if (productAndListNewAppSettingsRecord
-                                                                ?.upiButton ??
-                                                            true)
-                                                          Expanded(
-                                                            flex: 8,
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          1.0,
-                                                                          0.0),
-                                                              child: InkWell(
-                                                                splashColor: Colors
-                                                                    .transparent,
-                                                                focusColor: Colors
-                                                                    .transparent,
-                                                                hoverColor: Colors
-                                                                    .transparent,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                onTap:
-                                                                    () async {
-                                                                  if (animationsMap[
-                                                                          'containerOnActionTriggerAnimation8'] !=
-                                                                      null) {
-                                                                    safeSetState(() =>
-                                                                        hasContainerTriggered8 =
-                                                                            true);
-                                                                    SchedulerBinding.instance.addPostFrameCallback((_) async => await animationsMap[
-                                                                            'containerOnActionTriggerAnimation8']!
-                                                                        .controller
-                                                                        .forward(
-                                                                            from:
-                                                                                0.0));
+                                                        Expanded(
+                                                          flex: 8,
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        1.0,
+                                                                        0.0),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                if (true) {
+                                                                  if (getJsonField(
+                                                                    FFAppState()
+                                                                        .shiftDetailsJson,
+                                                                    r'''$.shiftExists''',
+                                                                  )) {
+                                                                    FFAppState()
+                                                                            .count =
+                                                                        FFAppState().count +
+                                                                            1;
+                                                                    FFAppState()
+                                                                            .newcount =
+                                                                        FFAppState().newcount +
+                                                                            1;
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    FFAppState()
+                                                                            .count =
+                                                                        FFAppState().count +
+                                                                            1;
+                                                                    FFAppState()
+                                                                            .newcount =
+                                                                        FFAppState().newcount +
+                                                                            1;
+                                                                    safeSetState(
+                                                                        () {});
                                                                   }
-                                                                },
-                                                                child:
-                                                                    Container(
-                                                                  width: MediaQuery.sizeOf(
-                                                                              context)
-                                                                          .width *
-                                                                      0.15,
-                                                                  height: MediaQuery.sizeOf(
-                                                                              context)
-                                                                          .height *
-                                                                      0.085,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
+                                                                }
+                                                              },
+                                                              child: Container(
+                                                                width: MediaQuery.sizeOf(
                                                                             context)
-                                                                        .primary,
-                                                                  ),
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      Text(
-                                                                        FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'rv8n2nbf' /* UPI */,
-                                                                        ),
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .headlineSmall
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
-                                                                              color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                              letterSpacing: 0.0,
-                                                                              fontWeight: FontWeight.w600,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
-                                                                            ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
+                                                                        .width *
+                                                                    0.15,
+                                                                height: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .height *
+                                                                    0.085,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
                                                                 ),
-                                                              ).animateOnActionTrigger(
-                                                                  animationsMap[
-                                                                      'containerOnActionTriggerAnimation8']!,
-                                                                  hasBeenTriggered:
-                                                                      hasContainerTriggered8),
-                                                            ),
+                                                                child: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .center,
+                                                                  children: [
+                                                                    Text(
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .getText(
+                                                                        'rv8n2nbf' /* UPI */,
+                                                                      ),
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primaryBtnText,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
+                                                                          ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ).animateOnActionTrigger(
+                                                                animationsMap[
+                                                                    'containerOnActionTriggerAnimation8']!,
+                                                                hasBeenTriggered:
+                                                                    hasContainerTriggered8),
                                                           ),
+                                                        ),
                                                         if (productAndListNewAppSettingsRecord
                                                                 ?.settingList
                                                                 ?.where((e) =>

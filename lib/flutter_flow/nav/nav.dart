@@ -1511,18 +1511,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: AddRecipeCopyWidget.routeName,
-              path: AddRecipeCopyWidget.routePath,
-              builder: (context, params) => AddRecipeCopyWidget(
-                itemlist: params.getParam(
-                  'itemlist',
-                  ParamType.DataStruct,
-                  isList: false,
-                  structBuilder: RecipeItemListStruct.fromSerializableMap,
-                ),
-              ),
-            ),
-            FFRoute(
               name: AddRecipeTESTWidget.routeName,
               path: AddRecipeTESTWidget.routePath,
               builder: (context, params) => AddRecipeTESTWidget(

@@ -104,7 +104,7 @@ class _AddRecipeTESTWidgetState extends State<AddRecipeTESTWidget> {
                               ),
                               Text(
                                 FFLocalizations.of(context).getText(
-                                  'cq508oyf' /* Add Recipe 3 */,
+                                  'cq508oyf' /* Add Recipe  */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
