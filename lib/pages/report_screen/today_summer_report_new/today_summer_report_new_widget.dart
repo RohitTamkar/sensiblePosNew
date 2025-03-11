@@ -1580,17 +1580,21 @@ class _TodaySummerReportNewWidgetState
                                                                                                   ),
                                                                                             ),
                                                                                           ),
-                                                                                          Text(
-                                                                                            getJsonField(
-                                                                                              _model.json,
-                                                                                              r'''$.upi''',
-                                                                                            ).toString(),
-                                                                                            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
-                                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineMediumFamily),
-                                                                                                ),
+                                                                                          Flexible(
+                                                                                            child: Text(
+                                                                                              functions.paymentModeStrToJson(
+                                                                                                  getJsonField(
+                                                                                                    _model.json,
+                                                                                                    r'''$.paymentJson''',
+                                                                                                  ).toString(),
+                                                                                                  'digital'),
+                                                                                              style: FlutterFlowTheme.of(context).headlineMedium.override(
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
+                                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineMediumFamily),
+                                                                                                  ),
+                                                                                            ),
                                                                                           ),
                                                                                         ],
                                                                                       ),
