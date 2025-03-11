@@ -6134,12 +6134,12 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         true;
 
                                                                     await _model
-                                                                        .invonlineprtCopy!
+                                                                        .invonlineCopy!
                                                                         .reference
                                                                         .update(
                                                                             createInvoiceRecordData(
                                                                       id: _model
-                                                                          .invonlineprtCopy
+                                                                          .invonlineCopy
                                                                           ?.reference
                                                                           .id,
                                                                     ));
@@ -6147,7 +6147,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         await actions
                                                                             .addInvoiceBillhive(
                                                                       _model
-                                                                          .invonlineprtCopy!
+                                                                          .invonlineCopy!
                                                                           .reference
                                                                           .id,
                                                                       functions.genInvoiceNumyear(
