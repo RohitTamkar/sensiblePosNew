@@ -1526,6 +1526,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: SelectpaymentModeWidget.routeName,
               path: SelectpaymentModeWidget.routePath,
               builder: (context, params) => SelectpaymentModeWidget(),
+            ),
+            FFRoute(
+              name: ClosingstockReportWidget.routeName,
+              path: ClosingstockReportWidget.routePath,
+              builder: (context, params) => ClosingstockReportWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

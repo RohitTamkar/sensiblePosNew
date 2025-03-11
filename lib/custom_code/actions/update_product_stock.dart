@@ -13,7 +13,6 @@ Future updateProductStock(
   RecipeRecord recipeitmelist,
   SelItemListStruct sellitem,
 ) async {
-  List<ProductRecord> productlist;
   for (var item in recipeitmelist.items) {
     // Find the corresponding product in the product list
     QuerySnapshot querySnapshot;
@@ -25,9 +24,9 @@ Future updateProductStock(
         .get();
     for (var doc in querySnapshot.docs) {
       // If the product is found and is stockable, update its stock
-      if (doc != null && item.stockable == true) {
+      if (doc != null) {
         // Subtract the quantity from the product's stock
-        int stock = (doc["currentStock"] - item.quantity) as int;
+        int stock = (doc["currentStock"] - (item.quantity).toInt());
         doc.reference.update(createProductRecordData(
           currentStock: stock,
         ));

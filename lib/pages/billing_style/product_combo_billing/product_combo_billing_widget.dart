@@ -3973,6 +3973,21 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             .productList
                                                                             .elementAtOrNull(FFAppState().startLoop)!,
                                                                       );
+                                                                      _model
+                                                                          .updateStockprdStruct(
+                                                                        (e) => e
+                                                                          ..name =
+                                                                              (_model.invonlineprt?.productList?.elementAtOrNull(FFAppState().startLoop))?.name
+                                                                          ..reqStock =
+                                                                              (_model.invonlineprt?.productList?.elementAtOrNull(FFAppState().startLoop))?.quantity
+                                                                          ..id =
+                                                                              (_model.invonlineprt?.productList?.elementAtOrNull(FFAppState().startLoop))?.id,
+                                                                      );
+                                                                      _model.addToStockprdlist(
+                                                                          _model
+                                                                              .stockprd!);
+                                                                      safeSetState(
+                                                                          () {});
                                                                       FFAppState()
                                                                           .productHive = [];
                                                                       FFAppState()
@@ -3988,6 +4003,94 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     safeSetState(
                                                                         () {});
                                                                   }
+
+                                                                  var stockSummaryRecordReference =
+                                                                      StockSummaryRecord.createDoc(
+                                                                          FFAppState()
+                                                                              .outletIdRef!);
+                                                                  await stockSummaryRecordReference
+                                                                      .set({
+                                                                    ...createStockSummaryRecordData(
+                                                                      createdBy: FFAppState()
+                                                                          .userdoc
+                                                                          ?.id,
+                                                                      status:
+                                                                          'OUT',
+                                                                      dayId:
+                                                                          dateTimeFormat(
+                                                                        "yyyy-MM-dd",
+                                                                        getCurrentTimestamp,
+                                                                        locale:
+                                                                            FFLocalizations.of(context).languageCode,
+                                                                      ),
+                                                                      monthId:
+                                                                          dateTimeFormat(
+                                                                        "yyyy-mm",
+                                                                        getCurrentTimestamp,
+                                                                        locale:
+                                                                            FFLocalizations.of(context).languageCode,
+                                                                      ),
+                                                                      createdAt:
+                                                                          getCurrentTimestamp,
+                                                                      stockType:
+                                                                          'OUT',
+                                                                    ),
+                                                                    ...mapToFirestore(
+                                                                      {
+                                                                        'productListMap':
+                                                                            getProductListStockListFirestoreData(
+                                                                          _model
+                                                                              .stockprdlist,
+                                                                        ),
+                                                                      },
+                                                                    ),
+                                                                  });
+                                                                  _model.doc =
+                                                                      StockSummaryRecord
+                                                                          .getDocumentFromData({
+                                                                    ...createStockSummaryRecordData(
+                                                                      createdBy: FFAppState()
+                                                                          .userdoc
+                                                                          ?.id,
+                                                                      status:
+                                                                          'OUT',
+                                                                      dayId:
+                                                                          dateTimeFormat(
+                                                                        "yyyy-MM-dd",
+                                                                        getCurrentTimestamp,
+                                                                        locale:
+                                                                            FFLocalizations.of(context).languageCode,
+                                                                      ),
+                                                                      monthId:
+                                                                          dateTimeFormat(
+                                                                        "yyyy-mm",
+                                                                        getCurrentTimestamp,
+                                                                        locale:
+                                                                            FFLocalizations.of(context).languageCode,
+                                                                      ),
+                                                                      createdAt:
+                                                                          getCurrentTimestamp,
+                                                                      stockType:
+                                                                          'OUT',
+                                                                    ),
+                                                                    ...mapToFirestore(
+                                                                      {
+                                                                        'productListMap':
+                                                                            getProductListStockListFirestoreData(
+                                                                          _model
+                                                                              .stockprdlist,
+                                                                        ),
+                                                                      },
+                                                                    ),
+                                                                  }, stockSummaryRecordReference);
+                                                                  _shouldSetState =
+                                                                      true;
+                                                                  _model.stockprd =
+                                                                      null;
+                                                                  _model.stockprdlist =
+                                                                      [];
+                                                                  safeSetState(
+                                                                      () {});
                                                                   _model.newupdatedproductlist22 =
                                                                       await actions
                                                                           .getProductlistHive();
@@ -5000,6 +5103,21 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             .prdlinstnewtx2!
                                                                             .elementAtOrNull(FFAppState().startLoop))!,
                                                                       );
+                                                                      _model
+                                                                          .updateStockprdStruct(
+                                                                        (e) => e
+                                                                          ..name =
+                                                                              (_model.prdlinstnewtx2?.elementAtOrNull(FFAppState().startLoop))?.name
+                                                                          ..reqStock =
+                                                                              (_model.prdlinstnewtx2?.elementAtOrNull(FFAppState().startLoop))?.quantity
+                                                                          ..id =
+                                                                              (_model.prdlinstnewtx2?.elementAtOrNull(FFAppState().startLoop))?.id,
+                                                                      );
+                                                                      _model.addToStockprdlist(
+                                                                          _model
+                                                                              .stockprd!);
+                                                                      safeSetState(
+                                                                          () {});
                                                                       FFAppState()
                                                                           .productHive = [];
                                                                       FFAppState()
@@ -5015,6 +5133,88 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     safeSetState(
                                                                         () {});
                                                                   }
+
+                                                                  var stockSummaryRecordReference =
+                                                                      StockSummaryRecord.createDoc(
+                                                                          FFAppState()
+                                                                              .outletIdRef!);
+                                                                  await stockSummaryRecordReference
+                                                                      .set({
+                                                                    ...createStockSummaryRecordData(
+                                                                      createdBy: FFAppState()
+                                                                          .userdoc
+                                                                          ?.id,
+                                                                      status:
+                                                                          'OUT',
+                                                                      dayId:
+                                                                          dateTimeFormat(
+                                                                        "yyyy-MM-dd",
+                                                                        getCurrentTimestamp,
+                                                                        locale:
+                                                                            FFLocalizations.of(context).languageCode,
+                                                                      ),
+                                                                      monthId:
+                                                                          dateTimeFormat(
+                                                                        "yyyy-mm",
+                                                                        getCurrentTimestamp,
+                                                                        locale:
+                                                                            FFLocalizations.of(context).languageCode,
+                                                                      ),
+                                                                      createdAt:
+                                                                          getCurrentTimestamp,
+                                                                      stockType:
+                                                                          'OUT',
+                                                                    ),
+                                                                    ...mapToFirestore(
+                                                                      {
+                                                                        'productListMap':
+                                                                            getProductListStockListFirestoreData(
+                                                                          _model
+                                                                              .stockprdlist,
+                                                                        ),
+                                                                      },
+                                                                    ),
+                                                                  });
+                                                                  _model.doc2 =
+                                                                      StockSummaryRecord
+                                                                          .getDocumentFromData({
+                                                                    ...createStockSummaryRecordData(
+                                                                      createdBy: FFAppState()
+                                                                          .userdoc
+                                                                          ?.id,
+                                                                      status:
+                                                                          'OUT',
+                                                                      dayId:
+                                                                          dateTimeFormat(
+                                                                        "yyyy-MM-dd",
+                                                                        getCurrentTimestamp,
+                                                                        locale:
+                                                                            FFLocalizations.of(context).languageCode,
+                                                                      ),
+                                                                      monthId:
+                                                                          dateTimeFormat(
+                                                                        "yyyy-mm",
+                                                                        getCurrentTimestamp,
+                                                                        locale:
+                                                                            FFLocalizations.of(context).languageCode,
+                                                                      ),
+                                                                      createdAt:
+                                                                          getCurrentTimestamp,
+                                                                      stockType:
+                                                                          'OUT',
+                                                                    ),
+                                                                    ...mapToFirestore(
+                                                                      {
+                                                                        'productListMap':
+                                                                            getProductListStockListFirestoreData(
+                                                                          _model
+                                                                              .stockprdlist,
+                                                                        ),
+                                                                      },
+                                                                    ),
+                                                                  }, stockSummaryRecordReference);
+                                                                  _shouldSetState =
+                                                                      true;
                                                                   _model.customergetphive =
                                                                       await actions
                                                                           .getProductlistHive();
@@ -5027,6 +5227,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           ProductStructStruct>();
                                                                   FFAppState()
                                                                       .startLoop = 0;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                  _model.stockprd =
+                                                                      null;
+                                                                  _model.stockprdlist =
+                                                                      [];
                                                                   safeSetState(
                                                                       () {});
                                                                 }

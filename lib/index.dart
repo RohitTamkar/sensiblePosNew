@@ -192,3 +192,5 @@ export '/pages/billing_style/add_recipe_t_e_s_t/add_recipe_t_e_s_t_widget.dart'
     show AddRecipeTESTWidget;
 export '/pages/screens/selectpayment_mode/selectpayment_mode_widget.dart'
     show SelectpaymentModeWidget;
+export '/pages/report_screen/closingstock_report/closingstock_report_widget.dart'
+    show ClosingstockReportWidget;

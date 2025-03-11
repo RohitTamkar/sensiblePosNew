@@ -754,6 +754,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'xs8kdkdh': {
+      'en': 'CHOOSE DATE',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'r1q6nq34': {
       'en': 'Shift : ',
       'hi': '',
@@ -2019,6 +2026,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'aqwrvlu1': {
       'en': 'PRODUCT REPORT',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'gk7e02mn': {
+      'en': 'CLOSING STOCK REPORT',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -21620,6 +21634,58 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'zks7mue5': {
+      'en': 'Home',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
+  // closingstockReport
+  {
+    '2296drda': {
+      'en': 'Closing Stock Report',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'xvp7vgge': {
+      'en': 'CHOOSE DATE',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '617plq6s': {
+      'en': 'SR. NO',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'k6quf2k3': {
+      'en': 'Product Name',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '2ovnvnfw': {
+      'en': 'Current Stock',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'mx5z8qow': {
+      'en': 'Print',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'hpbsmsvm': {
       'en': 'Home',
       'hi': '',
       'kn': '',
