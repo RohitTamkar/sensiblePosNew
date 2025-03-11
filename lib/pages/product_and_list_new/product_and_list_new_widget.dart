@@ -443,7 +443,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                   InvoiceRecord.createDoc(FFAppState().outletIdRef!);
               await invoiceRecordReference.set({
                 ...createInvoiceRecordData(
-                  invoice: functions.genInvoiceNumyear(FFAppState().newcount),
+                  invoice: functions.genInvoiceNum(
+                      FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
                   party: valueOrDefault<String>(
                     FFAppState().setCustRef?.id,
                     'NA',
@@ -474,7 +475,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                     0.0,
                   ),
                   shiftId: getJsonField(
-                    widget!.shiftDetails,
+                    FFAppState().shiftDetailsJson,
                     r'''$.shiftId''',
                   ).toString(),
                 ),
@@ -488,7 +489,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
               });
               _model.invonlineprtCopy = InvoiceRecord.getDocumentFromData({
                 ...createInvoiceRecordData(
-                  invoice: functions.genInvoiceNumyear(FFAppState().newcount),
+                  invoice: functions.genInvoiceNum(
+                      FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
                   party: valueOrDefault<String>(
                     FFAppState().setCustRef?.id,
                     'NA',
@@ -519,7 +521,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                     0.0,
                   ),
                   shiftId: getJsonField(
-                    widget!.shiftDetails,
+                    FFAppState().shiftDetailsJson,
                     r'''$.shiftId''',
                   ).toString(),
                 ),
