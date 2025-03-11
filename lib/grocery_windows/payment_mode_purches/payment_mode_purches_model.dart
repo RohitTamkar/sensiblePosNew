@@ -104,6 +104,8 @@ class PaymentModePurchesModel
   ProductStructStruct? productupdated2;
   // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
   List<ProductStructStruct>? newupdatedproductlist22;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  StockSummaryRecord? purchase;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   PartyRecord? partydetails;
   // Stores action output result for [Custom Action - generateInvoice] action in Button widget.

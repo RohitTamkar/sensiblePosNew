@@ -3884,12 +3884,13 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                 safeSetState(() {});
                                               }
 
-                                              await StockSummaryRecord
-                                                      .createDoc(FFAppState()
-                                                          .outletIdRef!)
+                                              var stockSummaryRecordReference =
+                                                  StockSummaryRecord.createDoc(
+                                                      FFAppState()
+                                                          .outletIdRef!);
+                                              await stockSummaryRecordReference
                                                   .set({
                                                 ...createStockSummaryRecordData(
-                                                  id: '',
                                                   createdBy:
                                                       FFAppState().userdoc?.id,
                                                   status: 'IN',
@@ -3901,7 +3902,7 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                         .languageCode,
                                                   ),
                                                   monthId: dateTimeFormat(
-                                                    "yyyy-mm",
+                                                    "yyyy-MM",
                                                     getCurrentTimestamp,
                                                     locale: FFLocalizations.of(
                                                             context)
@@ -3920,6 +3921,41 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                   },
                                                 ),
                                               });
+                                              _model.purchase =
+                                                  StockSummaryRecord
+                                                      .getDocumentFromData({
+                                                ...createStockSummaryRecordData(
+                                                  createdBy:
+                                                      FFAppState().userdoc?.id,
+                                                  status: 'IN',
+                                                  dayId: dateTimeFormat(
+                                                    "yyyy-MM-dd",
+                                                    getCurrentTimestamp,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
+                                                  monthId: dateTimeFormat(
+                                                    "yyyy-MM",
+                                                    getCurrentTimestamp,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
+                                                  createdAt:
+                                                      getCurrentTimestamp,
+                                                  stockType: 'ADD',
+                                                ),
+                                                ...mapToFirestore(
+                                                  {
+                                                    'productListMap':
+                                                        getProductListStockListFirestoreData(
+                                                      _model.listodprd,
+                                                    ),
+                                                  },
+                                                ),
+                                              }, stockSummaryRecordReference);
+                                              _shouldSetState = true;
                                               _model.partydetails =
                                                   await queryPartyRecordOnce(
                                                 parent:

@@ -208,8 +208,6 @@ class ProductComboBillingModel
   List<dynamic>? device;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   RecipeRecord? recipe;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  StockSummaryRecord? doc;
   // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
   List<ProductStructStruct>? newupdatedproductlist22;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
@@ -234,8 +232,6 @@ class ProductComboBillingModel
   List<dynamic>? devicecust;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   RecipeRecord? recipecust;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  StockSummaryRecord? doc2;
   // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
   List<ProductStructStruct>? customergetphive;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
