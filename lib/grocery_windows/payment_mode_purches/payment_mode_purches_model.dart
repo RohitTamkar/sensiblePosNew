@@ -34,22 +34,6 @@ class PaymentModePurchesModel
   void updatePaymentMAtIndex(int index, Function(PaymentModeRecord) updateFn) =>
       paymentM[index] = updateFn(paymentM[index]);
 
-  List<ProductListStockStruct> listodprd = [];
-  void addToListodprd(ProductListStockStruct item) => listodprd.add(item);
-  void removeFromListodprd(ProductListStockStruct item) =>
-      listodprd.remove(item);
-  void removeAtIndexFromListodprd(int index) => listodprd.removeAt(index);
-  void insertAtIndexInListodprd(int index, ProductListStockStruct item) =>
-      listodprd.insert(index, item);
-  void updateListodprdAtIndex(
-          int index, Function(ProductListStockStruct) updateFn) =>
-      listodprd[index] = updateFn(listodprd[index]);
-
-  ProductListStockStruct? prdstock;
-  void updatePrdstockStruct(Function(ProductListStockStruct) updateFn) {
-    updateFn(prdstock ??= ProductListStockStruct());
-  }
-
   ///  State fields for stateful widgets in this component.
 
   // Stores action output result for [Firestore Query - Query a collection] action in PaymentModePurches widget.
@@ -104,8 +88,6 @@ class PaymentModePurchesModel
   ProductStructStruct? productupdated2;
   // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
   List<ProductStructStruct>? newupdatedproductlist22;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  StockSummaryRecord? purchase;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   PartyRecord? partydetails;
   // Stores action output result for [Custom Action - generateInvoice] action in Button widget.

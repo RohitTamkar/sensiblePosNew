@@ -98,22 +98,6 @@ class ProductComboBillingModel
   void updateInvoicesAtIndex(int index, Function(InvoiceRecord) updateFn) =>
       invoices[index] = updateFn(invoices[index]);
 
-  ProductListStockStruct? stockprd;
-  void updateStockprdStruct(Function(ProductListStockStruct) updateFn) {
-    updateFn(stockprd ??= ProductListStockStruct());
-  }
-
-  List<ProductListStockStruct> stockprdlist = [];
-  void addToStockprdlist(ProductListStockStruct item) => stockprdlist.add(item);
-  void removeFromStockprdlist(ProductListStockStruct item) =>
-      stockprdlist.remove(item);
-  void removeAtIndexFromStockprdlist(int index) => stockprdlist.removeAt(index);
-  void insertAtIndexInStockprdlist(int index, ProductListStockStruct item) =>
-      stockprdlist.insert(index, item);
-  void updateStockprdlistAtIndex(
-          int index, Function(ProductListStockStruct) updateFn) =>
-      stockprdlist[index] = updateFn(stockprdlist[index]);
-
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Custom Action - getProductlistHive] action in productComboBilling widget.

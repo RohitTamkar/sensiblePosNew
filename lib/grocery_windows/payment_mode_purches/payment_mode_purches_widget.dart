@@ -3725,40 +3725,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                       },
                                                     ),
                                                   });
-                                                  _model.updatePrdstockStruct(
-                                                    (e) => e
-                                                      ..name = (_model
-                                                              .prdlinstnewtx
-                                                              ?.elementAtOrNull(
-                                                                  FFAppState()
-                                                                      .startLoop))
-                                                          ?.name
-                                                      ..currentStock = _model
-                                                          .stockupdateprdprt
-                                                          ?.stock
-                                                          ?.toDouble()
-                                                      ..code = _model
-                                                          .stockupdateprdprt
-                                                          ?.code
-                                                      ..reqStock = (_model
-                                                              .prdlinstnewtx
-                                                              ?.elementAtOrNull(
-                                                                  FFAppState()
-                                                                      .startLoop))
-                                                          ?.quantity
-                                                      ..ref = _model
-                                                          .stockupdateprdprt
-                                                          ?.reference
-                                                      ..id = (_model
-                                                              .prdlinstnewtx
-                                                              ?.elementAtOrNull(
-                                                                  FFAppState()
-                                                                      .startLoop))
-                                                          ?.id,
-                                                  );
-                                                  _model.addToListodprd(
-                                                      _model.prdstock!);
-                                                  safeSetState(() {});
                                                   _model.itemprd2 =
                                                       await actions
                                                           .hivegetproductbyId2(
@@ -3883,79 +3849,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                     FFAppState().startLoop + 1;
                                                 safeSetState(() {});
                                               }
-
-                                              var stockSummaryRecordReference =
-                                                  StockSummaryRecord.createDoc(
-                                                      FFAppState()
-                                                          .outletIdRef!);
-                                              await stockSummaryRecordReference
-                                                  .set({
-                                                ...createStockSummaryRecordData(
-                                                  createdBy:
-                                                      FFAppState().userdoc?.id,
-                                                  status: 'IN',
-                                                  dayId: dateTimeFormat(
-                                                    "yyyy-MM-dd",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ),
-                                                  monthId: dateTimeFormat(
-                                                    "yyyy-MM",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ),
-                                                  createdAt:
-                                                      getCurrentTimestamp,
-                                                  stockType: 'ADD',
-                                                ),
-                                                ...mapToFirestore(
-                                                  {
-                                                    'productListMap':
-                                                        getProductListStockListFirestoreData(
-                                                      _model.listodprd,
-                                                    ),
-                                                  },
-                                                ),
-                                              });
-                                              _model.purchase =
-                                                  StockSummaryRecord
-                                                      .getDocumentFromData({
-                                                ...createStockSummaryRecordData(
-                                                  createdBy:
-                                                      FFAppState().userdoc?.id,
-                                                  status: 'IN',
-                                                  dayId: dateTimeFormat(
-                                                    "yyyy-MM-dd",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ),
-                                                  monthId: dateTimeFormat(
-                                                    "yyyy-MM",
-                                                    getCurrentTimestamp,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ),
-                                                  createdAt:
-                                                      getCurrentTimestamp,
-                                                  stockType: 'ADD',
-                                                ),
-                                                ...mapToFirestore(
-                                                  {
-                                                    'productListMap':
-                                                        getProductListStockListFirestoreData(
-                                                      _model.listodprd,
-                                                    ),
-                                                  },
-                                                ),
-                                              }, stockSummaryRecordReference);
-                                              _shouldSetState = true;
                                               _model.partydetails =
                                                   await queryPartyRecordOnce(
                                                 parent:

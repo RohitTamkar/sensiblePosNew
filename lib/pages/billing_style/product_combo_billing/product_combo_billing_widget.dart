@@ -5033,10 +5033,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       .startLoop = 0;
                                                                   safeSetState(
                                                                       () {});
-                                                                  _model.stockprd =
-                                                                      null;
-                                                                  _model.stockprdlist =
-                                                                      [];
+
                                                                   safeSetState(
                                                                       () {});
                                                                 }
