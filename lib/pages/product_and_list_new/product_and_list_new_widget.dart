@@ -6622,20 +6622,57 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           );
                                                                           _shouldSetState =
                                                                               true;
+                                                                          FFAppState()
+                                                                              .updateProductHiveputStruct(
+                                                                            (e) => e
+                                                                              ..id = _model.itemprdCopy?.id
+                                                                              ..price = _model.itemprdCopy?.price
+                                                                              ..category = _model.itemprdCopy?.category
+                                                                              ..code = _model.itemprdCopy?.code
+                                                                              ..name = _model.itemprdCopy?.name
+                                                                              ..sellingPrice = _model.itemprdCopy?.sellingPrice
+                                                                              ..mrpPrice = _model.itemprdCopy?.mrpPrice
+                                                                              ..purchasePrice = _model.itemprdCopy?.purchasePrice
+                                                                              ..categoryId = _model.itemprdCopy?.categoryId
+                                                                              ..taxId = _model.itemprdCopy?.taxId
+                                                                              ..unitId = _model.itemprdCopy?.unitId
+                                                                              ..regionalName = _model.itemprdCopy?.regionalName
+                                                                              ..barcode = _model.itemprdCopy?.barcode
+                                                                              ..hsncode = _model.itemprdCopy?.hsncode
+                                                                              ..reorderLevel = _model.itemprdCopy?.reorderLevel
+                                                                              ..searchcode = _model.itemprdCopy?.searchcode
+                                                                              ..shortName = _model.itemprdCopy?.shortName
+                                                                              ..weightable = _model.itemprdCopy?.weightable
+                                                                              ..stockable = _model.itemprdCopy?.stockable
+                                                                              ..discountPer = _model.itemprdCopy?.discountPer
+                                                                              ..discountAmt = _model.itemprdCopy?.discountAmt
+                                                                              ..productMasterId = _model.itemprdCopy?.productMasterId
+                                                                              ..recipeRefId = _model.itemprdCopy?.recipeRefId
+                                                                              ..imageUrl = _model.itemprdCopy?.imageUrl
+                                                                              ..serviceOutletId = _model.itemprdCopy?.serviceOutletId
+                                                                              ..type = _model.itemprdCopy?.type
+                                                                              ..recipeId = _model.itemprdCopy?.recipeId
+                                                                              ..stock = _model.itemprdCopy!.stock - (functions.doubleToInt((_model.prdlistsavebillCopy?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)
+                                                                              ..isDeleted = _model.itemprdCopy?.isDeleted
+                                                                              ..keywords = _model.itemprdCopy!.keywords.toList()
+                                                                              ..synC = _model.itemprdCopy?.synC
+                                                                              ..hivekey = _model.itemprdCopy?.hivekey
+                                                                              ..version = _model.itemprdCopy?.version,
+                                                                          );
+                                                                          safeSetState(
+                                                                              () {});
+                                                                          _model.productupdatedCopy =
+                                                                              await actions.hiveProductCrud(
+                                                                            FFAppState().productHiveput.hivekey,
+                                                                            FFAppState().productHiveput,
+                                                                            'update',
+                                                                          );
+                                                                          _shouldSetState =
+                                                                              true;
                                                                           FFAppState().productHive =
                                                                               [];
                                                                           FFAppState().productHiveput =
                                                                               ProductStructStruct();
-                                                                          safeSetState(
-                                                                              () {});
-                                                                          _model.newupdatedproductlist2Copy =
-                                                                              await actions.getProductlistHive();
-                                                                          _shouldSetState =
-                                                                              true;
-                                                                          FFAppState().productHive = _model
-                                                                              .newupdatedproductlist2Copy!
-                                                                              .toList()
-                                                                              .cast<ProductStructStruct>();
                                                                           safeSetState(
                                                                               () {});
                                                                         }
@@ -6646,6 +6683,18 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         safeSetState(
                                                                             () {});
                                                                       }
+                                                                      _model.newupdatedproductlist2Copy =
+                                                                          await actions
+                                                                              .getProductlistHive();
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      FFAppState().productHive = _model
+                                                                          .newupdatedproductlist2Copy!
+                                                                          .toList()
+                                                                          .cast<
+                                                                              ProductStructStruct>();
+                                                                      safeSetState(
+                                                                          () {});
                                                                     }
                                                                     await actions
                                                                         .removeFromAllBillList(

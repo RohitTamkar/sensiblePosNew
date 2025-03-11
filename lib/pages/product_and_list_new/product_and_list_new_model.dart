@@ -243,6 +243,8 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   ProductRecord? stockupdateprdCopy;
   // Stores action output result for [Custom Action - hivegetproductbyId] action in UPI widget.
   ProductStructStruct? itemprdCopy;
+  // Stores action output result for [Custom Action - hiveProductCrud] action in UPI widget.
+  ProductStructStruct? productupdatedCopy;
   // Stores action output result for [Custom Action - getProductlistHive] action in UPI widget.
   List<ProductStructStruct>? newupdatedproductlist2Copy;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
