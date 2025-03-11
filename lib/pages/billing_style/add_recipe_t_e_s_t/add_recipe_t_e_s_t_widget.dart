@@ -732,6 +732,13 @@ class _AddRecipeTESTWidgetState extends State<AddRecipeTESTWidget> {
                                                                     rawMaterialItem,
                                                                 index:
                                                                     rawMaterialIndex,
+                                                                listrawmaterial: containerProductRecordList
+                                                                    .where((e) => e
+                                                                        .purchasable)
+                                                                    .toList()
+                                                                    .map((e) =>
+                                                                        e.name)
+                                                                    .toList(),
                                                               ),
                                                             ),
                                                             FlutterFlowIconButton(
