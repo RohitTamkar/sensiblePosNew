@@ -83,7 +83,7 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
                     FormFieldController<String>(
                   _model.dropDownValue1 ??= widget!.parameter2?.name,
                 ),
-                options: widget!.parameter1!,
+                options: widget!.listrawmaterial!,
                 onChanged: (val) async {
                   safeSetState(() => _model.dropDownValue1 = val);
                   _model.prodoc = await queryProductRecordOnce(

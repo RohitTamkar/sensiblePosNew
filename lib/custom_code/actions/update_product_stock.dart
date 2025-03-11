@@ -9,31 +9,61 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-Future updateProductStock(
+import 'index.dart'; // Imports other custom actions
+
+Future<void> updateProductStock(
   RecipeRecord recipeitmelist,
   SelItemListStruct sellitem,
 ) async {
+  // Create a list to hold ProductListStockStruct objects
+  List<ProductListStockStruct> productListStockList = [];
+
   for (var item in recipeitmelist.items) {
     // Find the corresponding product in the product list
-    QuerySnapshot querySnapshot;
-    querySnapshot = await FirebaseFirestore.instance
+    QuerySnapshot querySnapshot = await FirebaseFirestore.instance
         .collection('OUTLET')
         .doc(FFAppState().outletIdRef?.id)
         .collection('PRODUCT')
         .where('id', isEqualTo: item.id)
         .get();
+
     for (var doc in querySnapshot.docs) {
       // If the product is found and is stockable, update its stock
       if (doc != null) {
         // Subtract the quantity from the product's stock
         int stock =
             (doc["currentStock"] - (item.quantity * sellitem.quantity).toInt());
-        doc.reference.update(createProductRecordData(
+        await doc.reference.update(createProductRecordData(
           currentStock: stock,
         ));
 
-        // Update the product record in Firebase
+        // Add the product to the productListStockList with reqStock as the quantity from recipeitem
+        productListStockList.add(ProductListStockStruct(
+          code: doc["code"],
+          name: doc["name"],
+          reqStock: item.quantity * sellitem.quantity,
+          id: item.id,
+        ));
       }
     }
   }
+
+  // Create the StockSummary document
+  var stockSummaryRecordReference =
+      StockSummaryRecord.createDoc(FFAppState().outletIdRef!);
+
+  await stockSummaryRecordReference.set({
+    ...createStockSummaryRecordData(
+      createdBy: FFAppState().userdoc?.id,
+      status: 'OUT',
+      dayId: dateTimeFormat("yyyy-MM-dd", getCurrentTimestamp, locale: 'en'),
+      monthId: dateTimeFormat("yyyy-MM", getCurrentTimestamp, locale: 'en'),
+      createdAt: getCurrentTimestamp,
+      stockType: 'OUT',
+    ),
+    ...mapToFirestore({
+      'productListMap':
+          getProductListStockListFirestoreData(productListStockList),
+    }),
+  });
 }
