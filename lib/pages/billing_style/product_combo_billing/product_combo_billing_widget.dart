@@ -5033,9 +5033,6 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       .startLoop = 0;
                                                                   safeSetState(
                                                                       () {});
-
-                                                                  safeSetState(
-                                                                      () {});
                                                                 }
                                                                 await actions
                                                                     .removeFromAllBillList(
