@@ -11,24 +11,30 @@ import 'package:flutter/material.dart';
 
 Future updateProductStock(
   RecipeRecord recipeitmelist,
-  List<ProductRecord> productlist,
 ) async {
   // Iterate through each item in the recipe item list
+
+  List<ProductRecord> productlist;
   for (var item in recipeitmelist.items) {
     // Find the corresponding product in the product list
-    var product = productlist.firstWhere(
-      (product) => product.id == item.id,
-    );
+    QuerySnapshot querySnapshot;
+    querySnapshot = await FirebaseFirestore.instance
+        .collection('OUTLET')
+        .doc(FFAppState().outletIdRef?.id)
+        .collection('PRODUCT')
+        .where('id', isEqualTo: item.id)
+        .get();
+    for (var doc in querySnapshot.docs) {
+      // If the product is found and is stockable, update its stock
+      if (doc != null && item.stockable == true) {
+        // Subtract the quantity from the product's stock
+        int stock = (doc["currentStock"] - item.quantity) as int;
+        doc.reference.update(createProductRecordData(
+          currentStock: stock,
+        ));
 
-    // If the product is found and is stockable, update its stock
-    if (product != null && item.stockable == true) {
-      // Subtract the quantity from the product's stock
-      int stock = (product.currentStock - item.quantity) as int;
-      product.reference.update(createProductRecordData(
-        currentStock: stock,
-      ));
-
-      // Update the product record in Firebase
+        // Update the product record in Firebase
+      }
     }
   }
 }

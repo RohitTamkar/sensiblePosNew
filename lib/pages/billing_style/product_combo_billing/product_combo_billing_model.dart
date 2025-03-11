@@ -191,11 +191,7 @@ class ProductComboBillingModel
   // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
   List<dynamic>? device;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  ProductRecord? stockupdateprdprt;
-  // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
-  ProductStructStruct? itemprd2;
-  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
-  ProductStructStruct? productupdated2;
+  RecipeRecord? recipe;
   // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
   List<ProductStructStruct>? newupdatedproductlist22;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
@@ -219,11 +215,7 @@ class ProductComboBillingModel
   // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
   List<dynamic>? devicecust;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  ProductRecord? stockupdateprdprt2cust;
-  // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
-  ProductStructStruct? itemprdcust;
-  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
-  ProductStructStruct? productupdatedcust;
+  RecipeRecord? recipecust;
   // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
   List<ProductStructStruct>? customergetphive;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
