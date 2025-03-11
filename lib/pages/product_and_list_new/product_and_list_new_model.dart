@@ -219,6 +219,32 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   FormFieldController<String>? dropDownValueController;
   // Stores action output result for [Custom Action - paymentmodemix] action in DropDown widget.
   bool? returntrue;
+  // Stores action output result for [Custom Action - filterProducts2] action in UPI widget.
+  List<SelItemListStruct>? prdlistsavebillCopy;
+  // Stores action output result for [Custom Action - oldbalanceplusamt] action in UPI widget.
+  int? totalcredit2Copy;
+  // Stores action output result for [Custom Action - checkInternetConnection] action in UPI widget.
+  bool? internetconCopy;
+  // Stores action output result for [Backend Call - Create Document] action in UPI widget.
+  InvoiceRecord? invonlineCopy;
+  // Stores action output result for [Custom Action - addInvoiceBillhive] action in UPI widget.
+  InvoiceStructStruct? hiveInvoiceDataupi;
+  // Stores action output result for [Custom Action - calShiftSummaryNew] action in UPI widget.
+  dynamic? shiftSummarResultsNew2Copy;
+  // Stores action output result for [Custom Action - shiftIdtoInt] action in UPI widget.
+  int? shiftidhive2Copy;
+  // Stores action output result for [Custom Action - hiveShiftCrud] action in UPI widget.
+  ShiftDetailsStruct? getOfflineShiftdetailsCopy;
+  // Stores action output result for [Firestore Query - Query a collection] action in UPI widget.
+  ShiftRecord? shiftondataCopy;
+  // Stores action output result for [Custom Action - hiveShiftCrud] action in UPI widget.
+  ShiftDetailsStruct? updatedShift23Copy;
+  // Stores action output result for [Firestore Query - Query a collection] action in UPI widget.
+  ProductRecord? stockupdateprdCopy;
+  // Stores action output result for [Custom Action - hivegetproductbyId] action in UPI widget.
+  ProductStructStruct? itemprdCopy;
+  // Stores action output result for [Custom Action - getProductlistHive] action in UPI widget.
+  List<ProductStructStruct>? newupdatedproductlist2Copy;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlistsavebill;
   // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
