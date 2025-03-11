@@ -1533,6 +1533,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   structBuilder: RecipeItemListStruct.fromSerializableMap,
                 ),
               ),
+            ),
+            FFRoute(
+              name: SelectpaymentModeWidget.routeName,
+              path: SelectpaymentModeWidget.routePath,
+              builder: (context, params) => SelectpaymentModeWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

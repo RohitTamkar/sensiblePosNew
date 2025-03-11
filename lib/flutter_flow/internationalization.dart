@@ -21718,6 +21718,65 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
+  // selectpaymentMode
+  {
+    'mm9ec06o': {
+      'en': 'System Update',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '3mqc1jbn': {
+      'en': 'Select...',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '029bw3mv': {
+      'en': 'Search...',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'a6ny4dm5': {
+      'en': 'Option 1',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '9jjcwsf9': {
+      'en': 'Option 2',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'jf0qoxkp': {
+      'en': 'Option 3',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '0bpep8t2': {
+      'en': 'Add',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'zks7mue5': {
+      'en': 'Home',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
   // OutletDetailsHeader
   {
     'dk8fulps': {

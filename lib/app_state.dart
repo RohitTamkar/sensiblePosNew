@@ -630,6 +630,10 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _directory = prefs.getString('ff_directory') ?? _directory;
     });
+    _safeInit(() {
+      _paymentmodenew =
+          prefs.getStringList('ff_paymentmodenew') ?? _paymentmodenew;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -3578,6 +3582,41 @@ class FFAppState extends ChangeNotifier {
 
   void insertAtIndexInRecipeItemList(int index, RecipeItemListStruct value) {
     recipeItemList.insert(index, value);
+  }
+
+  List<String> _paymentmodenew = ['CASH', 'DIGITAL', 'CARD'];
+  List<String> get paymentmodenew => _paymentmodenew;
+  set paymentmodenew(List<String> value) {
+    _paymentmodenew = value;
+    prefs.setStringList('ff_paymentmodenew', value);
+  }
+
+  void addToPaymentmodenew(String value) {
+    paymentmodenew.add(value);
+    prefs.setStringList('ff_paymentmodenew', _paymentmodenew);
+  }
+
+  void removeFromPaymentmodenew(String value) {
+    paymentmodenew.remove(value);
+    prefs.setStringList('ff_paymentmodenew', _paymentmodenew);
+  }
+
+  void removeAtIndexFromPaymentmodenew(int index) {
+    paymentmodenew.removeAt(index);
+    prefs.setStringList('ff_paymentmodenew', _paymentmodenew);
+  }
+
+  void updatePaymentmodenewAtIndex(
+    int index,
+    String Function(String) updateFn,
+  ) {
+    paymentmodenew[index] = updateFn(_paymentmodenew[index]);
+    prefs.setStringList('ff_paymentmodenew', _paymentmodenew);
+  }
+
+  void insertAtIndexInPaymentmodenew(int index, String value) {
+    paymentmodenew.insert(index, value);
+    prefs.setStringList('ff_paymentmodenew', _paymentmodenew);
   }
 }
 
