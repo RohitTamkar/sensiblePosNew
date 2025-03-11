@@ -829,9 +829,13 @@ class _ClosingstockReportWidgetState extends State<ClosingstockReportWidget>
                                                                           .center,
                                                                   children: [
                                                                     Text(
-                                                                      listViewProductRecord
-                                                                          .stock
-                                                                          .toString(),
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        listViewProductRecord
+                                                                            .currentStock
+                                                                            .toString(),
+                                                                        '0',
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .headlineSmall

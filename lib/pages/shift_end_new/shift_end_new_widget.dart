@@ -403,12 +403,17 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                           .where(
                             'endTime',
                             isEqualTo: 0,
+                            isNull: (0) == null,
                           )
                           .where(
                             'dayId',
                             isEqualTo: FFAppState().filterDate != ''
                                 ? FFAppState().filterDate
                                 : null,
+                            isNull: (FFAppState().filterDate != ''
+                                    ? FFAppState().filterDate
+                                    : null) ==
+                                null,
                           ),
                       singleRecord: true,
                     ),
