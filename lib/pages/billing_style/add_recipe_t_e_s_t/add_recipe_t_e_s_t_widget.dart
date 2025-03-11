@@ -15,33 +15,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'add_recipe_copy_model.dart';
-export 'add_recipe_copy_model.dart';
+import 'add_recipe_t_e_s_t_model.dart';
+export 'add_recipe_t_e_s_t_model.dart';
 
-class AddRecipeCopyWidget extends StatefulWidget {
-  const AddRecipeCopyWidget({
+class AddRecipeTESTWidget extends StatefulWidget {
+  const AddRecipeTESTWidget({
     super.key,
     this.itemlist,
   });
 
   final RecipeItemListStruct? itemlist;
 
-  static String routeName = 'AddRecipeCopy';
-  static String routePath = 'addRecipeCopy';
+  static String routeName = 'AddRecipeTEST';
+  static String routePath = 'addRecipeTEST';
 
   @override
-  State<AddRecipeCopyWidget> createState() => _AddRecipeCopyWidgetState();
+  State<AddRecipeTESTWidget> createState() => _AddRecipeTESTWidgetState();
 }
 
-class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
-  late AddRecipeCopyModel _model;
+class _AddRecipeTESTWidgetState extends State<AddRecipeTESTWidget> {
+  late AddRecipeTESTModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AddRecipeCopyModel());
+    _model = createModel(context, () => AddRecipeTESTModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -58,7 +58,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
     context.watch<FFAppState>();
 
     return Title(
-        title: 'AddRecipeCopy',
+        title: 'AddRecipeTEST',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -104,7 +104,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                               ),
                               Text(
                                 FFLocalizations.of(context).getText(
-                                  'kh8npccc' /* Add Recipe 2 */,
+                                  'cq508oyf' /* Add Recipe 2 */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
@@ -190,7 +190,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                               safeSetState(() {});
                             },
                             text: FFLocalizations.of(context).getText(
-                              '8u1sg8on' /* Save */,
+                              'nr9y09co' /* Save */,
                             ),
                             options: FFButtonOptions(
                               height: 40.0,
@@ -267,7 +267,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                           0.0, 0.0, 15.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'q383yrmi' /* Select Product */,
+                                          'osgig60z' /* Select Product */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelSmall
@@ -330,7 +330,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        '3j28dup9' /* Select... */,
+                                        '95uutjx2' /* Select... */,
                                       ),
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
@@ -385,7 +385,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          '8s5jtszy' /* Add Product */,
+                                          'gx8ghpq4' /* Add Product */,
                                         ),
                                         icon: Icon(
                                           Icons.add,
@@ -483,7 +483,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          '3crhn3dn' /* Raw Material */,
+                                                          '2hrhuffv' /* Raw Material */,
                                                         ),
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -521,7 +521,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          't7su1dsc' /* Quantity  */,
+                                                          'nsf8gjnd' /* Quantity  */,
                                                         ),
                                                         textAlign:
                                                             TextAlign.start,
@@ -561,7 +561,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          's7h1zh4n' /* Unit */,
+                                                          'f3hv49r4' /* Unit */,
                                                         ),
                                                         textAlign:
                                                             TextAlign.start,
@@ -601,7 +601,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          '2w5094dp' /* Comment */,
+                                                          '2t6819lh' /* Comment */,
                                                         ),
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -708,7 +708,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                                                   child:
                                                                       RawMaterialWidget(
                                                                     key: Key(
-                                                                        'Keyrwk_${rawMaterialIndex}_of_${rawMaterial.length}'),
+                                                                        'Keyho6_${rawMaterialIndex}_of_${rawMaterial.length}'),
                                                                     parameter1: containerProductRecordList
                                                                         .where((e) => e
                                                                             .purchasable)
@@ -773,7 +773,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                                   text: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    'fpu3hoba' /* Add Material */,
+                                                    'h0ebdfvx' /* Add Material */,
                                                   ),
                                                   icon: Icon(
                                                     Icons.add,
@@ -875,7 +875,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          '4qpvz8fu' /* Recipe Name */,
+                                                          'jplal888' /* Recipe Name */,
                                                         ),
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -912,7 +912,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                            'jcydyusy' /* Raw Material */,
+                                                            'mf90afp3' /* Raw Material */,
                                                           ),
                                                           textAlign:
                                                               TextAlign.start,
@@ -1094,7 +1094,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'fqf6avei' /* Raw Material */,
+                                                                              'jhrvg1bp' /* Raw Material */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
@@ -1118,7 +1118,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'ycoao4rp' /* Quantity  */,
+                                                                              'wl00egx8' /* Quantity  */,
                                                                             ),
                                                                             textAlign:
                                                                                 TextAlign.start,
@@ -1144,7 +1144,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'r4czgjv8' /* Unit */,
+                                                                              'w90xe5d8' /* Unit */,
                                                                             ),
                                                                             textAlign:
                                                                                 TextAlign.start,
@@ -1170,7 +1170,7 @@ class _AddRecipeCopyWidgetState extends State<AddRecipeCopyWidget> {
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'eyq97b1e' /* Comment */,
+                                                                              'hfpmuchn' /* Comment */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,

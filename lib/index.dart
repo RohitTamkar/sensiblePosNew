@@ -190,3 +190,5 @@ export '/pages/billing_style/add_recipe/add_recipe_widget.dart'
     show AddRecipeWidget;
 export '/pages/billing_style/add_recipe_copy/add_recipe_copy_widget.dart'
     show AddRecipeCopyWidget;
+export '/pages/billing_style/add_recipe_t_e_s_t/add_recipe_t_e_s_t_widget.dart'
+    show AddRecipeTESTWidget;
