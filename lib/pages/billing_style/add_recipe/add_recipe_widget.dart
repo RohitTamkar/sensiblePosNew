@@ -219,7 +219,7 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                     ),
                   ),
                 ),
-                Expanded(
+                Flexible(
                   flex: 13,
                   child: StreamBuilder<List<ProductRecord>>(
                     stream: queryProductRecord(
@@ -253,26 +253,192 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsets.all(15.0),
-                              child: Column(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 20.0),
+                              child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.end,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 20.0, 0.0, 20.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Padding(
+                                        0.0, 0.0, 15.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        '9k1qczv6' /* Select Product */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelSmall
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelSmallFamily,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelSmallFamily),
+                                          ),
+                                    ),
+                                  ),
+                                  FlutterFlowDropDown<String>(
+                                    controller:
+                                        _model.dropDownValueController ??=
+                                            FormFieldController<String>(
+                                      _model.dropDownValue ??= '',
+                                    ),
+                                    options: List<String>.from(
+                                        containerProductRecordList
+                                            .where((e) =>
+                                                !e.purchasable && (e.type == 0))
+                                            .toList()
+                                            .map((e) => e.reference.id)
+                                            .toList()),
+                                    optionLabels: containerProductRecordList
+                                        .where((e) =>
+                                            !e.purchasable && (e.type == 0))
+                                        .toList()
+                                        .map((e) => e.name)
+                                        .toList(),
+                                    onChanged: (val) => safeSetState(
+                                        () => _model.dropDownValue = val),
+                                    width: 350.0,
+                                    height: 55.0,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily),
+                                        ),
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      '5y3yn88z' /* Select... */,
+                                    ),
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    elevation: 2.0,
+                                    borderColor:
+                                        FlutterFlowTheme.of(context).info,
+                                    borderWidth: 0.5,
+                                    borderRadius: 8.0,
+                                    margin: EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 0.0, 12.0, 0.0),
+                                    hidesUnderline: true,
+                                    isOverButton: false,
+                                    isSearchable: false,
+                                    isMultiSelect: false,
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        30.0, 0.0, 0.0, 0.0),
+                                    child: FFButtonWidget(
+                                      onPressed: () async {
+                                        await showModalBottomSheet(
+                                          isScrollControlled: true,
+                                          backgroundColor: Colors.transparent,
+                                          enableDrag: false,
+                                          context: context,
+                                          builder: (context) {
+                                            return GestureDetector(
+                                              onTap: () {
+                                                FocusScope.of(context)
+                                                    .unfocus();
+                                                FocusManager
+                                                    .instance.primaryFocus
+                                                    ?.unfocus();
+                                              },
+                                              child: Padding(
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
+                                                child:
+                                                    AddProductGroceryWidget(),
+                                              ),
+                                            );
+                                          },
+                                        ).then((value) => safeSetState(() {}));
+                                      },
+                                      text: FFLocalizations.of(context).getText(
+                                        'njzie0w8' /* Add Product */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.add,
+                                        size: 15.0,
+                                      ),
+                                      options: FFButtonOptions(
+                                        height: 40.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 0.0, 20.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLargeFamily,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLargeFamily),
+                                            ),
+                                        elevation: 0.0,
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 10.0),
+                              child: Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context).secondary,
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 5.0, 10.0, 5.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Expanded(
+                                        flex: 5,
+                                        child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 15.0, 0.0),
+                                                  10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              '9k1qczv6' /* Select Product */,
+                                              '6nil5vuv' /* Raw Material */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .labelSmall
@@ -281,9 +447,6 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .labelSmallFamily,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                   useGoogleFonts: GoogleFonts
@@ -295,470 +458,243 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                                 ),
                                           ),
                                         ),
-                                        FlutterFlowDropDown<String>(
-                                          controller:
-                                              _model.dropDownValueController ??=
-                                                  FormFieldController<String>(
-                                            _model.dropDownValue ??= '',
-                                          ),
-                                          options: List<String>.from(
-                                              containerProductRecordList
-                                                  .where((e) =>
-                                                      !e.purchasable &&
-                                                      (e.type == 0))
-                                                  .toList()
-                                                  .map((e) => e.reference.id)
-                                                  .toList()),
-                                          optionLabels:
-                                              containerProductRecordList
-                                                  .where((e) =>
-                                                      !e.purchasable &&
-                                                      (e.type == 0))
-                                                  .toList()
-                                                  .map((e) => e.name)
-                                                  .toList(),
-                                          onChanged: (val) => safeSetState(
-                                              () => _model.dropDownValue = val),
-                                          width: 350.0,
-                                          height: 55.0,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleMedium
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMediumFamily,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMediumFamily),
-                                              ),
-                                          hintText: FFLocalizations.of(context)
-                                              .getText(
-                                            '5y3yn88z' /* Select... */,
-                                          ),
-                                          icon: Icon(
-                                            Icons.keyboard_arrow_down_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            size: 24.0,
-                                          ),
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          elevation: 2.0,
-                                          borderColor:
-                                              FlutterFlowTheme.of(context).info,
-                                          borderWidth: 0.5,
-                                          borderRadius: 8.0,
-                                          margin:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 0.0, 12.0, 0.0),
-                                          hidesUnderline: true,
-                                          isOverButton: false,
-                                          isSearchable: false,
-                                          isMultiSelect: false,
-                                        ),
-                                        Padding(
+                                      ),
+                                      Expanded(
+                                        flex: 2,
+                                        child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 0.0, 0.0),
-                                          child: FFButtonWidget(
-                                            onPressed: () async {
-                                              await showModalBottomSheet(
-                                                isScrollControlled: true,
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                enableDrag: false,
-                                                context: context,
-                                                builder: (context) {
-                                                  return GestureDetector(
-                                                    onTap: () {
-                                                      FocusScope.of(context)
-                                                          .unfocus();
-                                                      FocusManager
-                                                          .instance.primaryFocus
-                                                          ?.unfocus();
-                                                    },
-                                                    child: Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child:
-                                                          AddProductGroceryWidget(),
-                                                    ),
-                                                  );
-                                                },
-                                              ).then((value) =>
-                                                  safeSetState(() {}));
-                                            },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              'njzie0w8' /* Add Product */,
+                                                  10.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            FFLocalizations.of(context).getText(
+                                              '0h1b3woc' /* Quantity  */,
                                             ),
-                                            icon: Icon(
-                                              Icons.add,
-                                              size: 15.0,
-                                            ),
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      20.0, 0.0, 20.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelLargeFamily,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLargeFamily),
-                                                      ),
-                                              elevation: 0.0,
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 10.0),
-                                    child: Container(
-                                      width: double.infinity,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondary,
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
-                                      ),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 5.0, 10.0, 5.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Expanded(
-                                              flex: 5,
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 0.0, 0.0),
-                                                child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '6nil5vuv' /* Raw Material */,
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelSmallFamily,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily),
-                                                      ),
-                                                ),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              flex: 2,
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 0.0, 0.0),
-                                                child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '0h1b3woc' /* Quantity  */,
-                                                  ),
-                                                  textAlign: TextAlign.start,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelSmallFamily,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily),
-                                                      ),
-                                                ),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              flex: 2,
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 0.0, 0.0),
-                                                child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '7p2l4ong' /* Unit */,
-                                                  ),
-                                                  textAlign: TextAlign.start,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelSmallFamily,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily),
-                                                      ),
-                                                ),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              flex: 5,
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 0.0, 0.0),
-                                                child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'ho1w1j56' /* Comment */,
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelSmallFamily,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmallFamily),
-                                                      ),
-                                                ),
-                                              ),
-                                            ),
-                                            FlutterFlowIconButton(
-                                              borderRadius: 8.0,
-                                              buttonSize: 45.0,
-                                              icon: Icon(
-                                                Icons.delete_forever,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                size: 21.0,
-                                              ),
-                                              onPressed: () {
-                                                print('IconButton pressed ...');
-                                              },
-                                            ),
-                                          ].divide(SizedBox(width: 10.0)),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Builder(
-                                          builder: (context) {
-                                            final rawMaterial = FFAppState()
-                                                .recipeItemList
-                                                .toList();
-
-                                            return ListView.separated(
-                                              padding: EdgeInsets.zero,
-                                              shrinkWrap: true,
-                                              scrollDirection: Axis.vertical,
-                                              itemCount: rawMaterial.length,
-                                              separatorBuilder: (_, __) =>
-                                                  SizedBox(height: 5.0),
-                                              itemBuilder:
-                                                  (context, rawMaterialIndex) {
-                                                final rawMaterialItem =
-                                                    rawMaterial[
-                                                        rawMaterialIndex];
-                                                return Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 10.0),
-                                                  child: Container(
-                                                    width: double.infinity,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              5.0),
-                                                    ),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Flexible(
-                                                          child:
-                                                              RawMaterialWidget(
-                                                            key: Key(
-                                                                'Keyrq3_${rawMaterialIndex}_of_${rawMaterial.length}'),
-                                                            parameter1:
-                                                                containerProductRecordList
-                                                                    .where((e) => e
-                                                                        .purchasable)
-                                                                    .toList()
-                                                                    .map((e) =>
-                                                                        e.name)
-                                                                    .toList(),
-                                                            parameter2:
-                                                                rawMaterialItem,
-                                                            index:
-                                                                rawMaterialIndex,
-                                                          ),
-                                                        ),
-                                                        FlutterFlowIconButton(
-                                                          borderRadius: 8.0,
-                                                          buttonSize: 45.0,
-                                                          fillColor: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          icon: Icon(
-                                                            Icons
-                                                                .delete_forever,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            size: 21.0,
-                                                          ),
-                                                          onPressed: () async {
-                                                            FFAppState()
-                                                                .removeFromRecipeItemList(
-                                                                    rawMaterialItem);
-                                                            safeSetState(() {});
-                                                          },
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                );
-                                              },
-                                            );
-                                          },
-                                        ),
-                                        FFButtonWidget(
-                                          onPressed: () async {
-                                            FFAppState()
-                                                .updateRecipeitemsStruct(
-                                              (e) => e..name = 'Select',
-                                            );
-                                            FFAppState().addToRecipeItemList(
-                                                FFAppState().recipeitems);
-                                            safeSetState(() {});
-                                            FFAppState().recipeitems =
-                                                RecipeItemListStruct();
-                                            safeSetState(() {});
-                                          },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'ghwwabme' /* Add Material */,
-                                          ),
-                                          icon: Icon(
-                                            Icons.add,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            size: 15.0,
-                                          ),
-                                          options: FFButtonOptions(
-                                            height: 40.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 0.0, 20.0, 0.0),
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelSmall
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmallFamily,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .titleSmallFamily,
+                                                              .labelSmallFamily),
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        flex: 2,
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            FFLocalizations.of(context).getText(
+                                              '7p2l4ong' /* Unit */,
+                                            ),
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelSmall
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmallFamily,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelSmallFamily),
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        flex: 5,
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            FFLocalizations.of(context).getText(
+                                              'ho1w1j56' /* Comment */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelSmall
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmallFamily,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelSmallFamily),
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                      FlutterFlowIconButton(
+                                        borderRadius: 8.0,
+                                        buttonSize: 45.0,
+                                        icon: Icon(
+                                          Icons.delete_forever,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 21.0,
+                                        ),
+                                        onPressed: () {
+                                          print('IconButton pressed ...');
+                                        },
+                                      ),
+                                    ].divide(SizedBox(width: 10.0)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Builder(
+                                    builder: (context) {
+                                      final rawMaterial =
+                                          FFAppState().recipeItemList.toList();
+
+                                      return ListView.separated(
+                                        padding: EdgeInsets.zero,
+                                        shrinkWrap: true,
+                                        scrollDirection: Axis.vertical,
+                                        itemCount: rawMaterial.length,
+                                        separatorBuilder: (_, __) =>
+                                            SizedBox(height: 5.0),
+                                        itemBuilder:
+                                            (context, rawMaterialIndex) {
+                                          final rawMaterialItem =
+                                              rawMaterial[rawMaterialIndex];
+                                          return Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 10.0),
+                                            child: Container(
+                                              width: double.infinity,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                borderRadius:
+                                                    BorderRadius.circular(5.0),
+                                              ),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Flexible(
+                                                    child: RawMaterialWidget(
+                                                      key: Key(
+                                                          'Keyrq3_${rawMaterialIndex}_of_${rawMaterial.length}'),
+                                                      parameter1:
+                                                          containerProductRecordList
+                                                              .where((e) =>
+                                                                  e.purchasable)
+                                                              .toList()
+                                                              .map(
+                                                                  (e) => e.name)
+                                                              .toList(),
+                                                      parameter2:
+                                                          rawMaterialItem,
+                                                      index: rawMaterialIndex,
+                                                    ),
+                                                  ),
+                                                  FlutterFlowIconButton(
+                                                    borderRadius: 8.0,
+                                                    buttonSize: 45.0,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
+                                                    icon: Icon(
+                                                      Icons.delete_forever,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      letterSpacing: 0.0,
-                                                      useGoogleFonts: GoogleFonts
-                                                              .asMap()
-                                                          .containsKey(
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmallFamily),
+                                                      size: 21.0,
                                                     ),
-                                            elevation: 0.0,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    onPressed: () async {
+                                                      FFAppState()
+                                                          .removeFromRecipeItemList(
+                                                              rawMaterialItem);
+                                                      safeSetState(() {});
+                                                    },
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      );
+                                    },
+                                  ),
+                                  FFButtonWidget(
+                                    onPressed: () async {
+                                      FFAppState().updateRecipeitemsStruct(
+                                        (e) => e..name = 'Select',
+                                      );
+                                      FFAppState().addToRecipeItemList(
+                                          FFAppState().recipeitems);
+                                      safeSetState(() {});
+                                      FFAppState().recipeitems =
+                                          RecipeItemListStruct();
+                                      safeSetState(() {});
+                                    },
+                                    text: FFLocalizations.of(context).getText(
+                                      'ghwwabme' /* Add Material */,
+                                    ),
+                                    icon: Icon(
+                                      Icons.add,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 15.0,
+                                    ),
+                                    options: FFButtonOptions(
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20.0, 0.0, 20.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily),
                                           ),
-                                        ),
-                                      ],
+                                      elevation: 0.0,
+                                      borderRadius: BorderRadius.circular(8.0),
                                     ),
                                   ),
                                 ],
