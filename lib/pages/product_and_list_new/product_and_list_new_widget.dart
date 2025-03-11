@@ -6445,9 +6445,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           .reference
                                                                           .update(
                                                                               createShiftRecordData(
-                                                                        billCount: functions.lastBillCount(FFAppState()
+                                                                        billCount: FFAppState()
                                                                             .shiftDetails
-                                                                            .billCount),
+                                                                            .billCount,
                                                                         dayId:
                                                                             getJsonField(
                                                                           _model
@@ -7395,7 +7395,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               .reference
                                                                               .update(createShiftRecordData(
                                                                             billCount:
-                                                                                functions.lastBillCount(FFAppState().shiftDetails.billCount),
+                                                                                FFAppState().shiftDetails.billCount,
                                                                             dayId:
                                                                                 getJsonField(
                                                                               _model.shiftSummarResultsNew2,
@@ -8194,10 +8194,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 true;
 
                                                                             await _model.shiftondataprint!.reference.update(createShiftRecordData(
-                                                                              billCount: valueOrDefault<int>(
-                                                                                functions.lastBillCount(FFAppState().shiftDetails.billCount),
-                                                                                0,
-                                                                              ),
+                                                                              billCount: FFAppState().shiftDetails.billCount,
                                                                               dayId: getJsonField(
                                                                                 _model.shiftSummarResultsNew,
                                                                                 r'''$.dayId''',
