@@ -32,6 +32,12 @@ class GroceryPurchaseModel extends FlutterFlowModel<GroceryPurchaseWidget> {
   double? output;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldqt widget.
   double? reuslt12;
+  // Stores action output result for [Custom Action - addToHoldListGrCalculationqty] action in TextFieldqt widget.
+  List<dynamic>? allbillistChange;
+  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFieldqt widget.
+  double? outputCopy;
+  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldqt widget.
+  double? reuslt12Copy;
   // Stores action output result for [Custom Action - addToHoldListGrCalculationqty] action in IconButton widget.
   List<dynamic>? all;
   // Stores action output result for [Custom Action - calSubTotalForGrocery] action in IconButton widget.

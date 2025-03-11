@@ -337,6 +337,85 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                           child: TextFormField(
                             controller: _model.textFieldqtTextController,
                             focusNode: _model.textFieldqtFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.textFieldqtTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                _model.allbillistChange =
+                                    await actions.addToHoldListGrCalculationqty(
+                                  widget!.parameter2!,
+                                  FFAppState().selBill,
+                                  widget!.parameter3!.toList(),
+                                  functions
+                                      .enabletaxinclusive(widget!.parameter4!),
+                                  widget!.unitList!.toList(),
+                                  double.parse(_model
+                                      .textFielddisPerTextController.text),
+                                  double.parse(_model
+                                      .textFielddisAmtTextController.text),
+                                  double.parse(
+                                      _model.textFieldrateTextController.text),
+                                  double.parse(
+                                      _model.textFieldqtTextController.text),
+                                  double.parse(_model
+                                      .textFieldtaxPerTextController.text),
+                                  double.parse(_model
+                                      .textFieldTaxAmtTextController.text),
+                                  _model.textFieldqtTextController.text,
+                                );
+                                safeSetState(() {
+                                  _model.textFielddisAmtTextController?.text =
+                                      getJsonField(
+                                    _model.allbillistChange!
+                                        .where((e) =>
+                                            getJsonField(
+                                              widget!.jsonitem,
+                                              r'''$.id''',
+                                            ) ==
+                                            getJsonField(
+                                              e,
+                                              r'''$.id''',
+                                            ))
+                                        .toList()
+                                        .firstOrNull,
+                                    r'''$.disAmt''',
+                                  ).toString();
+                                });
+                                safeSetState(() {
+                                  _model.textFieldTaxAmtTextController?.text =
+                                      getJsonField(
+                                    _model.allbillistChange!
+                                        .where((e) =>
+                                            getJsonField(
+                                              widget!.jsonitem,
+                                              r'''$.id''',
+                                            ) ==
+                                            getJsonField(
+                                              e,
+                                              r'''$.id''',
+                                            ))
+                                        .toList()
+                                        .firstOrNull,
+                                    r'''$.taxAmt''',
+                                  ).toString();
+                                });
+                                _model.outputCopy =
+                                    await actions.calSubTotalForGrocery(
+                                  FFAppState().selBill.toString(),
+                                  FFAppState().allBillsList.toList(),
+                                );
+                                _model.reuslt12Copy =
+                                    await actions.calBillAmtGrocery(
+                                  valueOrDefault<double>(
+                                    FFAppState().disAmt,
+                                    0.0,
+                                  ),
+                                  FFAppState().delCharges,
+                                );
+
+                                safeSetState(() {});
+                              },
+                            ),
                             onFieldSubmitted: (_) async {
                               _model.allbillist =
                                   await actions.addToHoldListGrCalculationqty(
