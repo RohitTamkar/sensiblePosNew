@@ -14752,7 +14752,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'rv8n2nbf': {
+    'p6ihd61j': {
       'en': 'UPI',
       'hi': '',
       'kn': '',
