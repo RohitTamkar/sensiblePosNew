@@ -6602,10 +6602,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 s.firstOrNull);
                                                                         _shouldSetState =
                                                                             true;
-                                                                        if (_model.stockupdateprdprtCopy !=
+                                                                        if (_model.stockupdateprdCopy !=
                                                                             null) {
                                                                           await _model
-                                                                              .stockupdateprdprtCopy!
+                                                                              .stockupdateprdCopy!
                                                                               .reference
                                                                               .update({
                                                                             ...mapToFirestore(
@@ -6616,7 +6616,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           });
                                                                           _model.itemprdCopy =
                                                                               await actions.hivegetproductbyId(
-                                                                            _model.stockupdateprdprtCopy?.reference.id,
+                                                                            _model.stockupdateprdCopy?.reference.id,
                                                                             _model.prdlistsavebillCopy?.elementAtOrNull(FFAppState().startLoop),
                                                                             'get',
                                                                           );
