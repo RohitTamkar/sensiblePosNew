@@ -478,6 +478,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                     FFAppState().shiftDetailsJson,
                     r'''$.shiftId''',
                   ).toString(),
+                  count: FFAppState().newcount,
                 ),
                 ...mapToFirestore(
                   {
@@ -524,6 +525,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                     FFAppState().shiftDetailsJson,
                     r'''$.shiftId''',
                   ).toString(),
+                  count: FFAppState().newcount,
                 ),
                 ...mapToFirestore(
                   {
@@ -544,7 +546,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                   _model.invonline?.reference.id,
                   'NA',
                 ),
-                functions.genInvoiceNumyear(FFAppState().newcount),
+                functions.genInvoiceNum(
+                    FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
                 valueOrDefault<String>(
                   FFAppState().setCustRef?.id,
                   'NA',
@@ -6007,7 +6010,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         invoiceDate:
                                                                             functions.timestampToMili(getCurrentTimestamp),
                                                                         paymentMode:
-                                                                            _model.dropDownValue,
+                                                                            'DIGITAL',
                                                                         dayId: functions
                                                                             .getDayId(),
                                                                         discountAmt:
@@ -6050,6 +6053,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         ).toString(),
                                                                         isDeleted:
                                                                             false,
+                                                                        count: FFAppState()
+                                                                            .newcount,
                                                                       ),
                                                                       ...mapToFirestore(
                                                                         {
@@ -6079,7 +6084,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         invoiceDate:
                                                                             functions.timestampToMili(getCurrentTimestamp),
                                                                         paymentMode:
-                                                                            _model.dropDownValue,
+                                                                            'DIGITAL',
                                                                         dayId: functions
                                                                             .getDayId(),
                                                                         discountAmt:
@@ -6122,6 +6127,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         ).toString(),
                                                                         isDeleted:
                                                                             false,
+                                                                        count: FFAppState()
+                                                                            .newcount,
                                                                       ),
                                                                       ...mapToFirestore(
                                                                         {
@@ -6152,9 +6159,12 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           .invonlineCopy!
                                                                           .reference
                                                                           .id,
-                                                                      functions.genInvoiceNumyear(
+                                                                      functions.genInvoiceNum(
                                                                           FFAppState()
-                                                                              .newcount),
+                                                                              .newcount,
+                                                                          FFAppState()
+                                                                              .shiftDetails
+                                                                              .shiftNo),
                                                                       valueOrDefault<
                                                                           String>(
                                                                         FFAppState()
@@ -6167,8 +6177,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               getCurrentTimestamp),
                                                                       functions
                                                                           .getDayId(),
-                                                                      _model
-                                                                          .dropDownValue!,
+                                                                      'DIGITAL',
                                                                       valueOrDefault<
                                                                           double>(
                                                                         FFAppState()
@@ -7011,6 +7020,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             ).toString(),
                                                                             isDeleted:
                                                                                 false,
+                                                                            count:
+                                                                                FFAppState().newcount,
                                                                           ),
                                                                           ...mapToFirestore(
                                                                             {
@@ -7072,6 +7083,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             ).toString(),
                                                                             isDeleted:
                                                                                 false,
+                                                                            count:
+                                                                                FFAppState().newcount,
                                                                           ),
                                                                           ...mapToFirestore(
                                                                             {
@@ -7100,8 +7113,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             _model.invonline?.reference.id,
                                                                             'NA',
                                                                           ),
-                                                                          functions
-                                                                              .genInvoiceNumyear(FFAppState().newcount),
+                                                                          functions.genInvoiceNum(
+                                                                              FFAppState().newcount,
+                                                                              FFAppState().shiftDetails.shiftNo),
                                                                           valueOrDefault<
                                                                               String>(
                                                                             FFAppState().setCustRef?.id,
@@ -7896,6 +7910,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 r'''$.shiftId''',
                                                                               ).toString(),
                                                                               isDeleted: false,
+                                                                              count: FFAppState().newcount,
                                                                             ),
                                                                             ...mapToFirestore(
                                                                               {
@@ -7943,6 +7958,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 r'''$.shiftId''',
                                                                               ).toString(),
                                                                               isDeleted: false,
+                                                                              count: FFAppState().newcount,
                                                                             ),
                                                                             ...mapToFirestore(
                                                                               {
@@ -7967,7 +7983,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               _model.invonline?.reference.id,
                                                                               'NA',
                                                                             ),
-                                                                            functions.genInvoiceNumyear(FFAppState().newcount),
+                                                                            functions.genInvoiceNum(FFAppState().newcount,
+                                                                                FFAppState().shiftDetails.shiftNo),
                                                                             valueOrDefault<String>(
                                                                               FFAppState().setCustRef?.id,
                                                                               'NA',
