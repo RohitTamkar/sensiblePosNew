@@ -274,12 +274,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 15.0, 0.0),
                                     child: Text(
-                                      dateTimeFormat(
-                                        "yMMMd",
-                                        getCurrentTimestamp,
-                                        locale: FFLocalizations.of(context)
-                                            .languageCode,
-                                      ),
+                                      FFAppState().filterDate,
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(

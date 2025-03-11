@@ -423,7 +423,7 @@ class _CategoryReportnewWidgetState extends State<CategoryReportnewWidget> {
                                                 .saleReportcustom!
                                                 .toList()
                                                 .cast<dynamic>();
-                                            safeSetState(() {});
+                                            FFAppState().update(() {});
 
                                             safeSetState(() {});
                                           },

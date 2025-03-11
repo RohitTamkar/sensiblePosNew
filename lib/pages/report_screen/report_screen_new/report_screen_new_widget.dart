@@ -676,6 +676,17 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                   highlightColor:
                                                       Colors.transparent,
                                                   onTap: () async {
+                                                    FFAppState().filterDate =
+                                                        dateTimeFormat(
+                                                      "yyyy-MM-dd",
+                                                      getCurrentTimestamp,
+                                                      locale:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .languageCode,
+                                                    );
+                                                    safeSetState(() {});
+
                                                     context.pushNamed(
                                                         CategoryReportnewWidget
                                                             .routeName);
@@ -769,6 +780,15 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
+                                          FFAppState().filterDate =
+                                              dateTimeFormat(
+                                            "yyyy-MM-dd",
+                                            getCurrentTimestamp,
+                                            locale: FFLocalizations.of(context)
+                                                .languageCode,
+                                          );
+                                          safeSetState(() {});
+
                                           context.pushNamed(
                                               ProductWiseReportWidget
                                                   .routeName);
@@ -1171,6 +1191,17 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                     highlightColor:
                                                         Colors.transparent,
                                                     onTap: () async {
+                                                      FFAppState().filterDate =
+                                                          dateTimeFormat(
+                                                        "yyyy-MM-dd",
+                                                        getCurrentTimestamp,
+                                                        locale:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .languageCode,
+                                                      );
+                                                      safeSetState(() {});
+
                                                       context.pushNamed(
                                                           ShiftEndNewWidget
                                                               .routeName);
