@@ -5990,8 +5990,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     await invoiceRecordReference
                                                                         .set({
                                                                       ...createInvoiceRecordData(
-                                                                        invoice:
-                                                                            functions.genInvoiceNumyear(FFAppState().newcount),
+                                                                        invoice: functions.genInvoiceNum(
+                                                                            FFAppState().newcount,
+                                                                            FFAppState().shiftDetails.shiftNo),
                                                                         party: valueOrDefault<
                                                                             String>(
                                                                           FFAppState()
@@ -6061,8 +6062,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         InvoiceRecord
                                                                             .getDocumentFromData({
                                                                       ...createInvoiceRecordData(
-                                                                        invoice:
-                                                                            functions.genInvoiceNumyear(FFAppState().newcount),
+                                                                        invoice: functions.genInvoiceNum(
+                                                                            FFAppState().newcount,
+                                                                            FFAppState().shiftDetails.shiftNo),
                                                                         party: valueOrDefault<
                                                                             String>(
                                                                           FFAppState()
@@ -6941,7 +6943,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             .set({
                                                                           ...createInvoiceRecordData(
                                                                             invoice:
-                                                                                functions.genInvoiceNumyear(FFAppState().newcount),
+                                                                                functions.genInvoiceNum(FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
                                                                             party:
                                                                                 valueOrDefault<String>(
                                                                               FFAppState().setCustRef?.id,
@@ -7002,7 +7004,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             InvoiceRecord.getDocumentFromData({
                                                                           ...createInvoiceRecordData(
                                                                             invoice:
-                                                                                functions.genInvoiceNumyear(FFAppState().newcount),
+                                                                                functions.genInvoiceNum(FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
                                                                             party:
                                                                                 valueOrDefault<String>(
                                                                               FFAppState().setCustRef?.id,
@@ -7839,7 +7841,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           await invoiceRecordReference
                                                                               .set({
                                                                             ...createInvoiceRecordData(
-                                                                              invoice: functions.genInvoiceNumyear(FFAppState().newcount),
+                                                                              invoice: functions.genInvoiceNum(FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
                                                                               party: valueOrDefault<String>(
                                                                                 FFAppState().setCustRef?.id,
                                                                                 'NA',
@@ -7886,7 +7888,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           _model.invonlineprt =
                                                                               InvoiceRecord.getDocumentFromData({
                                                                             ...createInvoiceRecordData(
-                                                                              invoice: functions.genInvoiceNumyear(FFAppState().newcount),
+                                                                              invoice: functions.genInvoiceNum(FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
                                                                               party: valueOrDefault<String>(
                                                                                 FFAppState().setCustRef?.id,
                                                                                 'NA',
