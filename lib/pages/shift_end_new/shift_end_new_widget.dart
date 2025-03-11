@@ -2050,14 +2050,16 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 ),
                                                                                           ),
                                                                                         ),
-                                                                                        Text(
-                                                                                          functions.paymentModeStrToJson(shiftEndNewShiftRecord!.paymentJson, 'digital'),
-                                                                                          style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
-                                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                                letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineMediumFamily),
-                                                                                              ),
+                                                                                        Flexible(
+                                                                                          child: Text(
+                                                                                            functions.paymentModeStrToJson(shiftEndNewShiftRecord!.paymentJson, 'digital'),
+                                                                                            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
+                                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineMediumFamily),
+                                                                                                ),
+                                                                                          ),
                                                                                         ),
                                                                                       ],
                                                                                     ),
@@ -3597,32 +3599,34 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                     ),
                                                               ),
                                                             ),
-                                                            Text(
-                                                              shiftEndNewShiftRecord!
-                                                                  .totalSale
-                                                                  .toString(),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .headlineMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .headlineMediumFamily,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    fontSize:
-                                                                        22.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).headlineMediumFamily),
-                                                                  ),
+                                                            Flexible(
+                                                              child: Text(
+                                                                shiftEndNewShiftRecord!
+                                                                    .totalSale
+                                                                    .toString(),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineMediumFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      fontSize:
+                                                                          22.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w600,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).headlineMediumFamily),
+                                                                    ),
+                                                              ),
                                                             ),
                                                           ],
                                                         ),
@@ -3636,140 +3640,147 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                         ),
                                       ),
                                     ),
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 8.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            if (animationsMap[
-                                                    'containerOnActionTriggerAnimation'] !=
-                                                null) {
-                                              safeSetState(() =>
-                                                  hasContainerTriggered = true);
-                                              SchedulerBinding.instance
-                                                  .addPostFrameCallback((_) async =>
-                                                      await animationsMap[
-                                                              'containerOnActionTriggerAnimation']!
-                                                          .controller
-                                                          .forward(from: 0.0));
-                                            }
-                                            var confirmDialogResponse =
-                                                await showDialog<bool>(
-                                                      context: context,
-                                                      builder:
-                                                          (alertDialogContext) {
-                                                        return AlertDialog(
-                                                          title:
-                                                              Text('Shift End'),
-                                                          actions: [
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext,
-                                                                      false),
-                                                              child: Text(
-                                                                  'Cancel'),
-                                                            ),
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext,
-                                                                      true),
-                                                              child: Text(
-                                                                  'Confirm'),
-                                                            ),
-                                                          ],
-                                                        );
-                                                      },
-                                                    ) ??
-                                                    false;
-                                            if (confirmDialogResponse) {
-                                              await shiftEndNewShiftRecord!
-                                                  .reference
-                                                  .update(createShiftRecordData(
-                                                endTime:
-                                                    functions.timestampToMili(
-                                                        getCurrentTimestamp),
-                                              ));
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: Text('Shift Ended'),
-                                                    content: Text(
-                                                        'Login Again To Start New Shift'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
-                                              );
+                                    if (false)
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 8.0, 0.0),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              if (animationsMap[
+                                                      'containerOnActionTriggerAnimation'] !=
+                                                  null) {
+                                                safeSetState(() =>
+                                                    hasContainerTriggered =
+                                                        true);
+                                                SchedulerBinding.instance
+                                                    .addPostFrameCallback(
+                                                        (_) async =>
+                                                            await animationsMap[
+                                                                    'containerOnActionTriggerAnimation']!
+                                                                .controller
+                                                                .forward(
+                                                                    from: 0.0));
+                                              }
+                                              var confirmDialogResponse =
+                                                  await showDialog<bool>(
+                                                        context: context,
+                                                        builder:
+                                                            (alertDialogContext) {
+                                                          return AlertDialog(
+                                                            title: Text(
+                                                                'Shift End'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext,
+                                                                        false),
+                                                                child: Text(
+                                                                    'Cancel'),
+                                                              ),
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext,
+                                                                        true),
+                                                                child: Text(
+                                                                    'Confirm'),
+                                                              ),
+                                                            ],
+                                                          );
+                                                        },
+                                                      ) ??
+                                                      false;
+                                              if (confirmDialogResponse) {
+                                                await shiftEndNewShiftRecord!
+                                                    .reference
+                                                    .update(
+                                                        createShiftRecordData(
+                                                  endTime:
+                                                      functions.timestampToMili(
+                                                          getCurrentTimestamp),
+                                                ));
+                                                await showDialog(
+                                                  context: context,
+                                                  builder:
+                                                      (alertDialogContext) {
+                                                    return AlertDialog(
+                                                      title:
+                                                          Text('Shift Ended'),
+                                                      content: Text(
+                                                          'Login Again To Start New Shift'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    );
+                                                  },
+                                                );
 
-                                              context.pushNamed(
-                                                  LoginPageWidget.routeName);
-                                            } else {
-                                              return;
-                                            }
-                                          },
-                                          child: Container(
-                                            width: double.infinity,
-                                            height: 100.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                            ),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'f7whgz8n' /* Shift End */,
+                                                context.pushNamed(
+                                                    LoginPageWidget.routeName);
+                                              } else {
+                                                return;
+                                              }
+                                            },
+                                            child: Container(
+                                              width: double.infinity,
+                                              height: 100.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                              ),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'f7whgz8n' /* Shift End */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineMediumFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBtnText,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineMediumFamily),
+                                                        ),
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .headlineMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineMediumFamily,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineMediumFamily),
-                                                      ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
-                                          ),
-                                        ).animateOnActionTrigger(
-                                            animationsMap[
-                                                'containerOnActionTriggerAnimation']!,
-                                            hasBeenTriggered:
-                                                hasContainerTriggered),
+                                          ).animateOnActionTrigger(
+                                              animationsMap[
+                                                  'containerOnActionTriggerAnimation']!,
+                                              hasBeenTriggered:
+                                                  hasContainerTriggered),
+                                        ),
                                       ),
-                                    ),
                                   ],
                                 ),
                               ),
