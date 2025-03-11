@@ -13,6 +13,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'shift_end_new_widget.dart' show ShiftEndNewWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -23,6 +24,7 @@ import 'package:provider/provider.dart';
 class ShiftEndNewModel extends FlutterFlowModel<ShiftEndNewWidget> {
   ///  State fields for stateful widgets in this page.
 
+  DateTime? datePicked;
   // Model for Header component.
   late HeaderModel headerModel;
   // State field(s) for TextField widget.

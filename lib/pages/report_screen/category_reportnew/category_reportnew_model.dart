@@ -1,5 +1,4 @@
 import '/components/header/header_widget.dart';
-import '/components/report_calender/report_calender_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -9,6 +8,7 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'category_reportnew_widget.dart' show CategoryReportnewWidget;
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -22,6 +22,9 @@ class CategoryReportnewModel extends FlutterFlowModel<CategoryReportnewWidget> {
   bool? netConn;
   // Stores action output result for [Custom Action - productSaleReport] action in CategoryReportnew widget.
   List<dynamic>? saleReport;
+  DateTime? datePicked;
+  // Stores action output result for [Custom Action - productSaleReport] action in Button widget.
+  List<dynamic>? saleReportcustom;
   // Model for Header component.
   late HeaderModel headerModel;
   // Stores action output result for [Custom Action - scanPrinter] action in FloatingActionButton widget.

@@ -754,8 +754,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'xs8kdkdh': {
-      'en': 'CHOOSE DATE',
+    'ppk10gaw': {
+      'en': 'Choose Date',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -5407,8 +5407,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'hr1qd6ji': {
-      'en': 'CHOOSE DATE',
+    'eli1reot': {
+      'en': 'Choose Date',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -19034,8 +19034,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'i80tvpju': {
-      'en': 'CHOOSE DATE',
+    '2ea0oyts': {
+      'en': 'Choose Date',
       'hi': '',
       'kn': '',
       'mr': '',
