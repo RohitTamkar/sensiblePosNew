@@ -22100,7 +22100,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'shsckkr5': {
-      'en': 'Purchase Order',
+      'en': 'GRN',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'eiao4c61': {
+      'en': 'Recipe ',
       'hi': '',
       'kn': '',
       'mr': '',
