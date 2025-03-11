@@ -93,363 +93,347 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return StreamBuilder<List<ShiftRecord>>(
-      stream: queryShiftRecord(
-        parent: FFAppState().outletIdRef,
-        queryBuilder: (shiftRecord) => shiftRecord
-            .where(
-              'endTime',
-              isEqualTo: 0,
-            )
-            .where(
-              'dayId',
-              isEqualTo: FFAppState().filterDate != ''
-                  ? FFAppState().filterDate
-                  : null,
-            ),
-        singleRecord: true,
-      ),
-      builder: (context, snapshot) {
-        // Customize what your widget looks like when it's loading.
-        if (!snapshot.hasData) {
-          return Scaffold(
+    return Title(
+        title: 'ShiftEndNew',
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+        child: GestureDetector(
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          child: Scaffold(
+            key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            body: Center(
-              child: SizedBox(
-                width: 40.0,
-                height: 40.0,
-                child: SpinKitFadingCircle(
-                  color: FlutterFlowTheme.of(context).primary,
-                  size: 40.0,
-                ),
-              ),
-            ),
-          );
-        }
-        List<ShiftRecord> shiftEndNewShiftRecordList = snapshot.data!;
-        final shiftEndNewShiftRecord = shiftEndNewShiftRecordList.isNotEmpty
-            ? shiftEndNewShiftRecordList.first
-            : null;
-
-        return Title(
-            title: 'ShiftEndNew',
-            color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
-            child: GestureDetector(
-              onTap: () {
-                FocusScope.of(context).unfocus();
-                FocusManager.instance.primaryFocus?.unfocus();
-              },
-              child: Scaffold(
-                key: scaffoldKey,
-                backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-                body: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: MediaQuery.sizeOf(context).height * 0.12,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primary,
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              flex: 2,
-                              child: Container(
-                                width: 100.0,
-                                height: 100.0,
-                                decoration: BoxDecoration(),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      borderRadius: 30.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 60.0,
-                                      icon: Icon(
-                                        Icons.chevron_left_sharp,
+            body: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: MediaQuery.sizeOf(context).height * 0.12,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primary,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                            width: 100.0,
+                            height: 100.0,
+                            decoration: BoxDecoration(),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                FlutterFlowIconButton(
+                                  borderColor: Colors.transparent,
+                                  borderRadius: 30.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 60.0,
+                                  icon: Icon(
+                                    Icons.chevron_left_sharp,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBtnText,
+                                    size: 26.0,
+                                  ),
+                                  onPressed: () async {
+                                    context.pop();
+                                  },
+                                ),
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    '0lsr7tbe' /* Shift Summary Report */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        size: 26.0,
-                                      ),
-                                      onPressed: () async {
-                                        context.pop();
-                                      },
-                                    ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        '0lsr7tbe' /* Shift Summary Report */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineMedium
-                                          .override(
-                                            fontFamily:
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
                                                 FlutterFlowTheme.of(context)
-                                                    .headlineMediumFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBtnText,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineMediumFamily),
-                                          ),
-                                    ),
-                                  ],
+                                                    .headlineMediumFamily),
+                                      ),
                                 ),
-                              ),
+                              ],
                             ),
-                            Expanded(
-                              flex: 1,
-                              child: Container(
-                                width: 100.0,
-                                height: 100.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).primary,
+                          ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            width: 100.0,
+                            height: 100.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).primary,
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 15.0, 0.0),
+                                  child: Text(
+                                    FFAppState().filterDate,
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBtnText,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily),
+                                        ),
+                                  ),
                                 ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 15.0, 0.0),
-                                      child: Text(
-                                        FFAppState().filterDate,
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmallFamily,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBtnText,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 5.0, 10.0, 5.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor: Colors.transparent,
+                                        barrierColor: Color(0x00000000),
+                                        context: context,
+                                        builder: (context) {
+                                          return GestureDetector(
+                                            onTap: () {
+                                              FocusScope.of(context).unfocus();
+                                              FocusManager.instance.primaryFocus
+                                                  ?.unfocus();
+                                            },
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: ReportCalenderWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => safeSetState(() {}));
+                                    },
+                                    child: Material(
+                                      color: Colors.transparent,
+                                      elevation: 2.0,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                      ),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .customColor1,
+                                          borderRadius:
+                                              BorderRadius.circular(5.0),
+                                        ),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            final _datePickedDate =
+                                                await showDatePicker(
+                                              context: context,
+                                              initialDate: getCurrentTimestamp,
+                                              firstDate: DateTime(1900),
+                                              lastDate: DateTime(2050),
+                                              builder: (context, child) {
+                                                return wrapInMaterialDatePickerTheme(
+                                                  context,
+                                                  child!,
+                                                  headerBackgroundColor:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .titleSmallFamily),
-                                            ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 5.0, 10.0, 5.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          await showModalBottomSheet(
-                                            isScrollControlled: true,
-                                            backgroundColor: Colors.transparent,
-                                            barrierColor: Color(0x00000000),
-                                            context: context,
-                                            builder: (context) {
-                                              return GestureDetector(
-                                                onTap: () {
-                                                  FocusScope.of(context)
-                                                      .unfocus();
-                                                  FocusManager
-                                                      .instance.primaryFocus
-                                                      ?.unfocus();
-                                                },
-                                                child: Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: ReportCalenderWidget(),
-                                                ),
-                                              );
-                                            },
-                                          ).then(
-                                              (value) => safeSetState(() {}));
-                                        },
-                                        child: Material(
-                                          color: Colors.transparent,
-                                          elevation: 2.0,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(5.0),
-                                          ),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .customColor1,
-                                              borderRadius:
-                                                  BorderRadius.circular(5.0),
-                                            ),
-                                            child: FFButtonWidget(
-                                              onPressed: () async {
-                                                final _datePickedDate =
-                                                    await showDatePicker(
-                                                  context: context,
-                                                  initialDate:
-                                                      getCurrentTimestamp,
-                                                  firstDate: DateTime(1900),
-                                                  lastDate: DateTime(2050),
-                                                  builder: (context, child) {
-                                                    return wrapInMaterialDatePickerTheme(
-                                                      context,
-                                                      child!,
-                                                      headerBackgroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      headerForegroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .info,
-                                                      headerTextStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineLarge
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                          .primary,
+                                                  headerForegroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .info,
+                                                  headerTextStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
                                                                     .headlineLargeFamily,
-                                                                fontSize: 32.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .headlineLargeFamily),
-                                                              ),
-                                                      pickerBackgroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryBackground,
-                                                      pickerForegroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      selectedDateTimeBackgroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      selectedDateTimeForegroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .info,
-                                                      actionButtonForegroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      iconSize: 24.0,
-                                                    );
-                                                  },
+                                                            fontSize: 32.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            useGoogleFonts: GoogleFonts
+                                                                    .asMap()
+                                                                .containsKey(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineLargeFamily),
+                                                          ),
+                                                  pickerBackgroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
+                                                  pickerForegroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                  selectedDateTimeBackgroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  selectedDateTimeForegroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .info,
+                                                  actionButtonForegroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                  iconSize: 24.0,
                                                 );
-
-                                                if (_datePickedDate != null) {
-                                                  safeSetState(() {
-                                                    _model.datePicked =
-                                                        DateTime(
-                                                      _datePickedDate.year,
-                                                      _datePickedDate.month,
-                                                      _datePickedDate.day,
-                                                    );
-                                                  });
-                                                } else if (_model.datePicked !=
-                                                    null) {
-                                                  safeSetState(() {
-                                                    _model.datePicked =
-                                                        getCurrentTimestamp;
-                                                  });
-                                                }
-                                                FFAppState().filtervalue = '';
-                                                FFAppState().filterDate =
-                                                    dateTimeFormat(
-                                                  "yyyy-MM-dd",
-                                                  _model.datePicked,
-                                                  locale: FFLocalizations.of(
-                                                          context)
-                                                      .languageCode,
-                                                );
-                                                FFAppState().update(() {});
                                               },
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'ppk10gaw' /* Choose Date */,
-                                              ),
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 16.0, 0.0),
-                                                iconPadding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondary,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmallFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmallFamily),
-                                                        ),
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                            ),
+                                            );
+
+                                            if (_datePickedDate != null) {
+                                              safeSetState(() {
+                                                _model.datePicked = DateTime(
+                                                  _datePickedDate.year,
+                                                  _datePickedDate.month,
+                                                  _datePickedDate.day,
+                                                );
+                                              });
+                                            } else if (_model.datePicked !=
+                                                null) {
+                                              safeSetState(() {
+                                                _model.datePicked =
+                                                    getCurrentTimestamp;
+                                              });
+                                            }
+                                            FFAppState().filtervalue = '';
+                                            FFAppState().filterDate =
+                                                dateTimeFormat(
+                                              "yyyy-MM-dd",
+                                              _model.datePicked,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            );
+                                            FFAppState().update(() {});
+                                          },
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'ppk10gaw' /* Choose Date */,
+                                          ),
+                                          options: FFButtonOptions(
+                                            height: 40.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily),
+                                                ),
+                                            elevation: 0.0,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
                                           ),
                                         ),
                                       ),
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
+                              ],
                             ),
-                            Expanded(
-                              flex: 2,
-                              child: wrapWithModel(
-                                model: _model.headerModel,
-                                updateCallback: () => safeSetState(() {}),
-                                child: HeaderWidget(),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
-                      ),
+                        Expanded(
+                          flex: 2,
+                          child: wrapWithModel(
+                            model: _model.headerModel,
+                            updateCallback: () => safeSetState(() {}),
+                            child: HeaderWidget(),
+                          ),
+                        ),
+                      ],
                     ),
-                    Expanded(
-                      flex: 13,
-                      child: Container(
+                  ),
+                ),
+                Expanded(
+                  flex: 13,
+                  child: StreamBuilder<List<ShiftRecord>>(
+                    stream: queryShiftRecord(
+                      parent: FFAppState().outletIdRef,
+                      queryBuilder: (shiftRecord) => shiftRecord
+                          .where(
+                            'endTime',
+                            isEqualTo: 0,
+                          )
+                          .where(
+                            'dayId',
+                            isEqualTo: FFAppState().filterDate != ''
+                                ? FFAppState().filterDate
+                                : null,
+                          ),
+                      singleRecord: true,
+                    ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 40.0,
+                            height: 40.0,
+                            child: SpinKitFadingCircle(
+                              color: FlutterFlowTheme.of(context).primary,
+                              size: 40.0,
+                            ),
+                          ),
+                        );
+                      }
+                      List<ShiftRecord> containerShiftRecordList =
+                          snapshot.data!;
+                      final containerShiftRecord =
+                          containerShiftRecordList.isNotEmpty
+                              ? containerShiftRecordList.first
+                              : null;
+
+                      return Container(
                         width: double.infinity,
                         height: 100.0,
                         decoration: BoxDecoration(
@@ -523,8 +507,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                     .fromSTEB(
                                                         0.0, 0.0, 5.0, 0.0),
                                                 child: Text(
-                                                  shiftEndNewShiftRecord!
-                                                      .shiftId,
+                                                  containerShiftRecord!.shiftId,
                                                   textAlign: TextAlign.center,
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -606,7 +589,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                             .textController ??=
                                                         TextEditingController(
                                                       text: functions.dateToTime(
-                                                          shiftEndNewShiftRecord
+                                                          containerShiftRecord
                                                               ?.startTime),
                                                     ),
                                                     focusNode: _model
@@ -753,7 +736,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                               await actions.printShiftReport(
                                                 functions
                                                     .shiftDocToJsonList(
-                                                        shiftEndNewShiftRecord!)
+                                                        containerShiftRecord!)
                                                     .toList(),
                                                 getJsonField(
                                                   FFAppState().printerDevice,
@@ -808,7 +791,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                               await actions.printShiftReport(
                                                 functions
                                                     .shiftDocToJsonList(
-                                                        shiftEndNewShiftRecord!)
+                                                        containerShiftRecord!)
                                                     .toList(),
                                                 getJsonField(
                                                   FFAppState().printerDevice,
@@ -966,7 +949,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                               ),
                                               Text(
                                                 valueOrDefault<String>(
-                                                  shiftEndNewShiftRecord
+                                                  containerShiftRecord
                                                       ?.openingAmt
                                                       ?.toString(),
                                                   '0',
@@ -1200,7 +1183,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Text(
-                                                                                          functions.paymentModeStrToJson(shiftEndNewShiftRecord!.paymentJson, 'cash'),
+                                                                                          functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'cash'),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
@@ -1298,7 +1281,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Text(
-                                                                                          functions.paymentModeStrToJson(shiftEndNewShiftRecord!.paymentJson, 'googlepay'),
+                                                                                          functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'googlepay'),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
@@ -1409,7 +1392,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Text(
-                                                                                          functions.paymentModeStrToJson(shiftEndNewShiftRecord!.paymentJson, 'card'),
+                                                                                          functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'card'),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
@@ -1507,7 +1490,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Text(
-                                                                                          functions.paymentModeStrToJson(shiftEndNewShiftRecord!.paymentJson, 'paytm'),
+                                                                                          functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'paytm'),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
@@ -1621,7 +1604,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Text(
-                                                                                          functions.paymentModeStrToJson(shiftEndNewShiftRecord!.paymentJson, 'credit'),
+                                                                                          functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'credit'),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
@@ -1712,7 +1695,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Text(
-                                                                                          functions.paymentModeStrToJson(shiftEndNewShiftRecord!.paymentJson, 'phonepe'),
+                                                                                          functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'phonepe'),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
@@ -1826,7 +1809,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Text(
-                                                                                          functions.paymentModeStrToJson(shiftEndNewShiftRecord!.paymentJson, 'cheque'),
+                                                                                          functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'cheque'),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
@@ -1935,7 +1918,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Text(
-                                                                                            functions.paymentModeStrToJson(shiftEndNewShiftRecord!.paymentJson, 'other'),
+                                                                                            functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'other'),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
@@ -2052,7 +2035,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                         ),
                                                                                         Flexible(
                                                                                           child: Text(
-                                                                                            functions.paymentModeStrToJson(shiftEndNewShiftRecord!.paymentJson, 'digital'),
+                                                                                            functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'digital'),
                                                                                             style: FlutterFlowTheme.of(context).headlineMedium.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                                                   color: FlutterFlowTheme.of(context).primary,
@@ -2144,7 +2127,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Text(
-                                                                                            shiftEndNewShiftRecord!.cashSale.toString(),
+                                                                                            containerShiftRecord!.cashSale.toString(),
                                                                                             style: FlutterFlowTheme.of(context).headlineMedium.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                                                   color: FlutterFlowTheme.of(context).primary,
@@ -2360,7 +2343,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Text(
-                                                                                            shiftEndNewShiftRecord!.deliveryCharges.toString(),
+                                                                                            containerShiftRecord!.deliveryCharges.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
@@ -2454,7 +2437,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Text(
-                                                                                            shiftEndNewShiftRecord!.discount.toString().maybeHandleOverflow(
+                                                                                            containerShiftRecord!.discount.toString().maybeHandleOverflow(
                                                                                                   maxChars: 8,
                                                                                                 ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
@@ -2562,7 +2545,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Text(
-                                                                                            shiftEndNewShiftRecord!.tax.toString(),
+                                                                                            containerShiftRecord!.tax.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
@@ -2656,7 +2639,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Text(
-                                                                                            shiftEndNewShiftRecord!.refoundAmount.toString(),
+                                                                                            containerShiftRecord!.refoundAmount.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
@@ -2762,7 +2745,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Text(
-                                                                                            shiftEndNewShiftRecord!.roundOff.toString(),
+                                                                                            containerShiftRecord!.roundOff.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
@@ -2856,7 +2839,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Text(
-                                                                                            shiftEndNewShiftRecord!.expensesAmtTotal.toString(),
+                                                                                            containerShiftRecord!.expensesAmtTotal.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
@@ -2962,7 +2945,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Text(
-                                                                                            shiftEndNewShiftRecord!.advanceAmtTotal.toString(),
+                                                                                            containerShiftRecord!.advanceAmtTotal.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
@@ -3056,7 +3039,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Text(
-                                                                                            shiftEndNewShiftRecord!.customerReciveAmtTotal.toString(),
+                                                                                            containerShiftRecord!.customerReciveAmtTotal.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
@@ -3162,7 +3145,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Text(
-                                                                                            shiftEndNewShiftRecord!.receiveAmtTotal.toString(),
+                                                                                            containerShiftRecord!.receiveAmtTotal.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
@@ -3409,7 +3392,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                           0.0,
                                                                           0.0),
                                                               child: Text(
-                                                                shiftEndNewShiftRecord!
+                                                                containerShiftRecord!
                                                                     .billCount
                                                                     .toString(),
                                                                 style: FlutterFlowTheme.of(
@@ -3601,7 +3584,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                             ),
                                                             Flexible(
                                                               child: Text(
-                                                                shiftEndNewShiftRecord!
+                                                                containerShiftRecord!
                                                                     .totalSale
                                                                     .toString(),
                                                                 style: FlutterFlowTheme.of(
@@ -3698,7 +3681,7 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                       ) ??
                                                       false;
                                               if (confirmDialogResponse) {
-                                                await shiftEndNewShiftRecord!
+                                                await containerShiftRecord!
                                                     .reference
                                                     .update(
                                                         createShiftRecordData(
@@ -3787,13 +3770,13 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                             ),
                           ],
                         ),
-                      ),
-                    ),
-                  ],
+                      );
+                    },
+                  ),
                 ),
-              ),
-            ));
-      },
-    );
+              ],
+            ),
+          ),
+        ));
   }
 }
