@@ -1271,6 +1271,28 @@ class _AddRecipeTESTWidgetState extends State<AddRecipeTESTWidget> {
                                                           ],
                                                         ),
                                                       ),
+                                                      InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await listViewRecipeRecord
+                                                              .reference
+                                                              .delete();
+                                                        },
+                                                        child: Icon(
+                                                          Icons.delete,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          size: 24.0,
+                                                        ),
+                                                      ),
                                                     ],
                                                   );
                                                 },
