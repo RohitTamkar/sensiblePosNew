@@ -5868,97 +5868,57 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         0.0,
                                                                         1.0,
                                                                         0.0),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (true) {
-                                                                  if (getJsonField(
-                                                                    FFAppState()
-                                                                        .shiftDetailsJson,
-                                                                    r'''$.shiftExists''',
-                                                                  )) {
-                                                                    FFAppState()
-                                                                            .count =
-                                                                        FFAppState().count +
-                                                                            1;
-                                                                    FFAppState()
-                                                                            .newcount =
-                                                                        FFAppState().newcount +
-                                                                            1;
-                                                                    safeSetState(
-                                                                        () {});
-                                                                  } else {
-                                                                    FFAppState()
-                                                                            .count =
-                                                                        FFAppState().count +
-                                                                            1;
-                                                                    FFAppState()
-                                                                            .newcount =
-                                                                        FFAppState().newcount +
-                                                                            1;
-                                                                    safeSetState(
-                                                                        () {});
-                                                                  }
-                                                                }
-                                                              },
-                                                              child: Container(
-                                                                width: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .width *
-                                                                    0.15,
-                                                                height: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .height *
-                                                                    0.085,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                ),
-                                                                child: Column(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .center,
-                                                                  children: [
-                                                                    Text(
-                                                                      FFLocalizations.of(
+                                                            child: Container(
+                                                              width: MediaQuery
+                                                                          .sizeOf(
                                                                               context)
-                                                                          .getText(
-                                                                        'rv8n2nbf' /* UPI */,
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
+                                                                      .width *
+                                                                  0.15,
+                                                              height: MediaQuery
+                                                                          .sizeOf(
                                                                               context)
-                                                                          .headlineSmall
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primaryBtnText,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
-                                                                          ),
+                                                                      .height *
+                                                                  0.085,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                              ),
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'rv8n2nbf' /* UPI */,
                                                                     ),
-                                                                  ],
-                                                                ),
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .center,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryBtnText,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
+                                                                        ),
+                                                                  ),
+                                                                ],
                                                               ),
                                                             ).animateOnActionTrigger(
                                                                 animationsMap[
