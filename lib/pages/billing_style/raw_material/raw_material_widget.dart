@@ -65,8 +65,8 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return StreamBuilder<List<ProductRecord>>(
-      stream: queryProductRecord(
+    return FutureBuilder<List<ProductRecord>>(
+      future: queryProductRecordOnce(
         parent: FFAppState().outletIdRef,
         queryBuilder: (productRecord) => productRecord.where(
           'isDeleted',
