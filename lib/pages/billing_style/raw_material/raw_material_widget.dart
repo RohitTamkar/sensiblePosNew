@@ -340,9 +340,7 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
                             FormFieldController<String>(
                           _model.dropDownValue2 ??= widget!.parameter2?.unit,
                         ),
-                        options: dropDownUnitTypeRecordList
-                            .map((e) => e.name)
-                            .toList(),
+                        options: widget!.parameter1!,
                         onChanged: (val) async {
                           safeSetState(() => _model.dropDownValue2 = val);
                           FFAppState().updateRecipeItemListAtIndex(
@@ -351,7 +349,8 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
                               ..name = _model.dropDownValue1
                               ..price = widget!.parameter2?.price
                               ..quantity =
-                                  double.tryParse(_model.textController1.text),
+                                  double.tryParse(_model.textController1.text)
+                              ..unit = _model.dropDownValue2,
                           );
                           FFAppState().update(() {});
                         },
