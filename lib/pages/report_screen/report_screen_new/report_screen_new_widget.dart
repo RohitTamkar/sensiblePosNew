@@ -1190,39 +1190,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                         Colors.transparent,
                                                     highlightColor:
                                                         Colors.transparent,
-                                                    onTap: () async {
-                                                      FFAppState().filterDate =
-                                                          dateTimeFormat(
-                                                        "yyyy-MM-dd",
-                                                        getCurrentTimestamp,
-                                                        locale:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .languageCode,
-                                                      );
-                                                      safeSetState(() {});
-
-                                                      context.pushNamed(
-                                                          ShiftEndNewWidget
-                                                              .routeName);
-
-                                                      if (animationsMap[
-                                                              'containerOnActionTriggerAnimation6'] !=
-                                                          null) {
-                                                        safeSetState(() =>
-                                                            hasContainerTriggered6 =
-                                                                true);
-                                                        SchedulerBinding
-                                                            .instance
-                                                            .addPostFrameCallback((_) async =>
-                                                                await animationsMap[
-                                                                        'containerOnActionTriggerAnimation6']!
-                                                                    .controller
-                                                                    .forward(
-                                                                        from:
-                                                                            0.0));
-                                                      }
-                                                    },
+                                                    onTap: () async {},
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
