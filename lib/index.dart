@@ -194,3 +194,5 @@ export '/pages/screens/selectpayment_mode/selectpayment_mode_widget.dart'
     show SelectpaymentModeWidget;
 export '/pages/report_screen/closingstock_report/closingstock_report_widget.dart'
     show ClosingstockReportWidget;
+export '/pages/report_screen/instock_report/instock_report_widget.dart'
+    show InstockReportWidget;
