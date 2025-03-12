@@ -4972,7 +4972,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                   while (FFAppState()
                                                                           .startLoop <
                                                                       _model
-                                                                          .prdlinstnewtx2!
+                                                                          .invonlineprt!
+                                                                          .productList
                                                                           .length) {
                                                                     _model.recipecust =
                                                                         await queryRecipeRecordOnce(
