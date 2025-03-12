@@ -4983,7 +4983,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                               recipeRecord.where(
                                                                         'productId',
                                                                         isEqualTo:
-                                                                            (_model.prdlinstnewtx2?.elementAtOrNull(FFAppState().startLoop))?.id,
+                                                                            (_model.invonlineprt?.productList?.elementAtOrNull(FFAppState().startLoop))?.id,
                                                                       ),
                                                                       singleRecord:
                                                                           true,
@@ -4992,14 +4992,14 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     _shouldSetState =
                                                                         true;
                                                                     if (_model
-                                                                            .recipe !=
+                                                                            .recipecust !=
                                                                         null) {
                                                                       await actions
                                                                           .updateProductStock(
                                                                         _model
                                                                             .recipecust!,
                                                                         _model
-                                                                            .invonlineprtcust!
+                                                                            .invonlineprt!
                                                                             .productList
                                                                             .elementAtOrNull(FFAppState().startLoop)!,
                                                                       );
