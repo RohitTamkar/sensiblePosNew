@@ -1190,7 +1190,22 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                         Colors.transparent,
                                                     highlightColor:
                                                         Colors.transparent,
-                                                    onTap: () async {},
+                                                    onTap: () async {
+                                                      FFAppState().filterDate =
+                                                          dateTimeFormat(
+                                                        "yyyy-MM-dd",
+                                                        getCurrentTimestamp,
+                                                        locale:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .languageCode,
+                                                      );
+                                                      safeSetState(() {});
+
+                                                      context.pushNamed(
+                                                          ShiftEndNewCustomWidget
+                                                              .routeName);
+                                                    },
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)

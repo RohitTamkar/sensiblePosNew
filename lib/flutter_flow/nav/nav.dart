@@ -1536,6 +1536,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: InstockReportWidget.routeName,
               path: InstockReportWidget.routePath,
               builder: (context, params) => InstockReportWidget(),
+            ),
+            FFRoute(
+              name: ShiftEndNewCustomWidget.routeName,
+              path: ShiftEndNewCustomWidget.routePath,
+              builder: (context, params) => ShiftEndNewCustomWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

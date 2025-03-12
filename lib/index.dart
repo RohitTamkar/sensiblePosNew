@@ -196,3 +196,5 @@ export '/pages/report_screen/closingstock_report/closingstock_report_widget.dart
     show ClosingstockReportWidget;
 export '/pages/report_screen/instock_report/instock_report_widget.dart'
     show InstockReportWidget;
+export '/pages/shift_end_new_custom/shift_end_new_custom_widget.dart'
+    show ShiftEndNewCustomWidget;
