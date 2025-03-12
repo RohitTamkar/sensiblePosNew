@@ -4972,7 +4972,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                   while (FFAppState()
                                                                           .startLoop <
                                                                       _model
-                                                                          .invonlineprt!
+                                                                          .invonlineprtcust!
                                                                           .productList
                                                                           .length) {
                                                                     _model.recipecust =
@@ -4984,7 +4984,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                               recipeRecord.where(
                                                                         'productId',
                                                                         isEqualTo:
-                                                                            (_model.invonlineprt?.productList?.elementAtOrNull(FFAppState().startLoop))?.id,
+                                                                            (_model.invonlineprtcust?.productList?.elementAtOrNull(FFAppState().startLoop))?.id,
                                                                       ),
                                                                       singleRecord:
                                                                           true,
@@ -5000,7 +5000,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         _model
                                                                             .recipecust!,
                                                                         _model
-                                                                            .invonlineprt!
+                                                                            .invonlineprtcust!
                                                                             .productList
                                                                             .elementAtOrNull(FFAppState().startLoop)!,
                                                                       );

@@ -512,7 +512,11 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                     .fromSTEB(
                                                         0.0, 0.0, 5.0, 0.0),
                                                 child: Text(
-                                                  containerShiftRecord!.shiftId,
+                                                  valueOrDefault<String>(
+                                                    containerShiftRecord
+                                                        ?.shiftId,
+                                                    '0',
+                                                  ),
                                                   textAlign: TextAlign.center,
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -593,9 +597,13 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                     controller: _model
                                                             .textController ??=
                                                         TextEditingController(
-                                                      text: functions.dateToTime(
-                                                          containerShiftRecord
-                                                              ?.startTime),
+                                                      text: valueOrDefault<
+                                                          String>(
+                                                        functions.dateToTime(
+                                                            containerShiftRecord
+                                                                ?.startTime),
+                                                        '0',
+                                                      ),
                                                     ),
                                                     focusNode: _model
                                                         .textFieldFocusNode,
@@ -1188,7 +1196,10 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Text(
-                                                                                          functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'cash'),
+                                                                                          valueOrDefault<String>(
+                                                                                            functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'cash'),
+                                                                                            '0',
+                                                                                          ),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
@@ -1286,7 +1297,10 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Text(
-                                                                                          functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'googlepay'),
+                                                                                          valueOrDefault<String>(
+                                                                                            functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'googlepay'),
+                                                                                            '0',
+                                                                                          ),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
@@ -2348,7 +2362,10 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Text(
-                                                                                            containerShiftRecord!.deliveryCharges.toString(),
+                                                                                            valueOrDefault<String>(
+                                                                                              containerShiftRecord?.deliveryCharges?.toString(),
+                                                                                              '0',
+                                                                                            ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
@@ -2442,9 +2459,12 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Text(
-                                                                                            containerShiftRecord!.discount.toString().maybeHandleOverflow(
-                                                                                                  maxChars: 8,
-                                                                                                ),
+                                                                                            valueOrDefault<String>(
+                                                                                              containerShiftRecord?.discount?.toString(),
+                                                                                              '0',
+                                                                                            ).maybeHandleOverflow(
+                                                                                              maxChars: 8,
+                                                                                            ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
@@ -2644,7 +2664,10 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Text(
-                                                                                            containerShiftRecord!.refoundAmount.toString(),
+                                                                                            valueOrDefault<String>(
+                                                                                              containerShiftRecord?.refoundAmount?.toString(),
+                                                                                              '0',
+                                                                                            ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
