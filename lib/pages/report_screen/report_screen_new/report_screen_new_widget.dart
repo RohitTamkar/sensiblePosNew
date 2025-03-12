@@ -57,6 +57,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
   var hasContainerTriggered7 = false;
   var hasContainerTriggered8 = false;
   var hasContainerTriggered9 = false;
+  var hasContainerTriggered10 = false;
+  var hasContainerTriggered11 = false;
   final animationsMap = <String, AnimationInfo>{};
 
   @override
@@ -246,6 +248,46 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
         ],
       ),
       'containerOnActionTriggerAnimation9': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: Offset(0.92, 0.92),
+            end: Offset(1.0, 1.0),
+          ),
+          SaturateEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'containerOnActionTriggerAnimation10': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: false,
+        effectsBuilder: () => [
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: Offset(0.92, 0.92),
+            end: Offset(1.0, 1.0),
+          ),
+          SaturateEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 100.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'containerOnActionTriggerAnimation11': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: false,
         effectsBuilder: () => [
@@ -939,6 +981,180 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                     ),
+                                    Padding(
+                                      padding: EdgeInsets.all(5.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          FFAppState().filterDate =
+                                              dateTimeFormat(
+                                            "yyyy-MM-dd",
+                                            getCurrentTimestamp,
+                                            locale: FFLocalizations.of(context)
+                                                .languageCode,
+                                          );
+                                          safeSetState(() {});
+
+                                          context.pushNamed(
+                                              InstockReportWidget.routeName);
+
+                                          if (animationsMap[
+                                                  'containerOnActionTriggerAnimation5'] !=
+                                              null) {
+                                            safeSetState(() =>
+                                                hasContainerTriggered5 = true);
+                                            SchedulerBinding.instance
+                                                .addPostFrameCallback((_) async =>
+                                                    await animationsMap[
+                                                            'containerOnActionTriggerAnimation5']!
+                                                        .controller
+                                                        .forward(from: 0.0));
+                                          }
+                                        },
+                                        child: Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              0.08,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'dsxup2zg' /* IN STOCK REPORT */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMediumFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMediumFamily),
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ).animateOnActionTrigger(
+                                          animationsMap[
+                                              'containerOnActionTriggerAnimation5']!,
+                                          hasBeenTriggered:
+                                              hasContainerTriggered5),
+                                    ),
+                                    Divider(
+                                      thickness: 0.2,
+                                      indent: 10.0,
+                                      endIndent: 10.0,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(5.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          FFAppState().filterDate =
+                                              dateTimeFormat(
+                                            "yyyy-MM-dd",
+                                            getCurrentTimestamp,
+                                            locale: FFLocalizations.of(context)
+                                                .languageCode,
+                                          );
+                                          safeSetState(() {});
+
+                                          context.pushNamed(
+                                              OutstockReportWidget.routeName);
+
+                                          if (animationsMap[
+                                                  'containerOnActionTriggerAnimation6'] !=
+                                              null) {
+                                            safeSetState(() =>
+                                                hasContainerTriggered6 = true);
+                                            SchedulerBinding.instance
+                                                .addPostFrameCallback((_) async =>
+                                                    await animationsMap[
+                                                            'containerOnActionTriggerAnimation6']!
+                                                        .controller
+                                                        .forward(from: 0.0));
+                                          }
+                                        },
+                                        child: Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              0.08,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'e3ya4ln2' /* OUT STOCK REPORT */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMediumFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMediumFamily),
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ).animateOnActionTrigger(
+                                          animationsMap[
+                                              'containerOnActionTriggerAnimation6']!,
+                                          hasBeenTriggered:
+                                              hasContainerTriggered6),
+                                    ),
+                                    Divider(
+                                      thickness: 0.2,
+                                      indent: 10.0,
+                                      endIndent: 10.0,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
                                   ],
                                 ),
                               ),
@@ -1093,15 +1309,15 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                           );
 
                                                           if (animationsMap[
-                                                                  'containerOnActionTriggerAnimation5'] !=
+                                                                  'containerOnActionTriggerAnimation7'] !=
                                                               null) {
                                                             safeSetState(() =>
-                                                                hasContainerTriggered5 =
+                                                                hasContainerTriggered7 =
                                                                     true);
                                                             SchedulerBinding
                                                                 .instance
                                                                 .addPostFrameCallback((_) async => await animationsMap[
-                                                                        'containerOnActionTriggerAnimation5']!
+                                                                        'containerOnActionTriggerAnimation7']!
                                                                     .controller
                                                                     .forward(
                                                                         from:
@@ -1165,9 +1381,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                         ),
                                                       ).animateOnActionTrigger(
                                                           animationsMap[
-                                                              'containerOnActionTriggerAnimation5']!,
+                                                              'containerOnActionTriggerAnimation7']!,
                                                           hasBeenTriggered:
-                                                              hasContainerTriggered5);
+                                                              hasContainerTriggered7);
                                                     },
                                                   ),
                                                 ),
@@ -1254,9 +1470,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                     ),
                                                   ).animateOnActionTrigger(
                                                       animationsMap[
-                                                          'containerOnActionTriggerAnimation6']!,
+                                                          'containerOnActionTriggerAnimation8']!,
                                                       hasBeenTriggered:
-                                                          hasContainerTriggered6),
+                                                          hasContainerTriggered8),
                                                 ),
                                                 Divider(
                                                   thickness: 0.2,
@@ -1283,16 +1499,16 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                               .routeName);
 
                                                       if (animationsMap[
-                                                              'containerOnActionTriggerAnimation7'] !=
+                                                              'containerOnActionTriggerAnimation9'] !=
                                                           null) {
                                                         safeSetState(() =>
-                                                            hasContainerTriggered7 =
+                                                            hasContainerTriggered9 =
                                                                 true);
                                                         SchedulerBinding
                                                             .instance
                                                             .addPostFrameCallback((_) async =>
                                                                 await animationsMap[
-                                                                        'containerOnActionTriggerAnimation7']!
+                                                                        'containerOnActionTriggerAnimation9']!
                                                                     .controller
                                                                     .forward(
                                                                         from:
@@ -1352,9 +1568,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                     ),
                                                   ).animateOnActionTrigger(
                                                       animationsMap[
-                                                          'containerOnActionTriggerAnimation7']!,
+                                                          'containerOnActionTriggerAnimation9']!,
                                                       hasBeenTriggered:
-                                                          hasContainerTriggered7),
+                                                          hasContainerTriggered9),
                                                 ),
                                                 Divider(
                                                   thickness: 0.2,
@@ -1499,16 +1715,16 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                           safeSetState(() {}));
 
                                                       if (animationsMap[
-                                                              'containerOnActionTriggerAnimation8'] !=
+                                                              'containerOnActionTriggerAnimation10'] !=
                                                           null) {
                                                         safeSetState(() =>
-                                                            hasContainerTriggered8 =
+                                                            hasContainerTriggered10 =
                                                                 true);
                                                         SchedulerBinding
                                                             .instance
                                                             .addPostFrameCallback((_) async =>
                                                                 await animationsMap[
-                                                                        'containerOnActionTriggerAnimation8']!
+                                                                        'containerOnActionTriggerAnimation10']!
                                                                     .controller
                                                                     .forward(
                                                                         from:
@@ -1563,9 +1779,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                     ),
                                                   ).animateOnActionTrigger(
                                                       animationsMap[
-                                                          'containerOnActionTriggerAnimation8']!,
+                                                          'containerOnActionTriggerAnimation10']!,
                                                       hasBeenTriggered:
-                                                          hasContainerTriggered8),
+                                                          hasContainerTriggered10),
                                                 ),
                                                 Divider(
                                                   thickness: 0.2,
@@ -1622,16 +1838,16 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                           safeSetState(() {}));
 
                                                       if (animationsMap[
-                                                              'containerOnActionTriggerAnimation9'] !=
+                                                              'containerOnActionTriggerAnimation11'] !=
                                                           null) {
                                                         safeSetState(() =>
-                                                            hasContainerTriggered9 =
+                                                            hasContainerTriggered11 =
                                                                 true);
                                                         SchedulerBinding
                                                             .instance
                                                             .addPostFrameCallback((_) async =>
                                                                 await animationsMap[
-                                                                        'containerOnActionTriggerAnimation9']!
+                                                                        'containerOnActionTriggerAnimation11']!
                                                                     .controller
                                                                     .forward(
                                                                         from:
@@ -1686,9 +1902,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                     ),
                                                   ).animateOnActionTrigger(
                                                       animationsMap[
-                                                          'containerOnActionTriggerAnimation9']!,
+                                                          'containerOnActionTriggerAnimation11']!,
                                                       hasBeenTriggered:
-                                                          hasContainerTriggered9),
+                                                          hasContainerTriggered11),
                                                 ),
                                                 Divider(
                                                   thickness: 0.2,
@@ -1745,16 +1961,16 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                           safeSetState(() {}));
 
                                                       if (animationsMap[
-                                                              'containerOnActionTriggerAnimation9'] !=
+                                                              'containerOnActionTriggerAnimation11'] !=
                                                           null) {
                                                         safeSetState(() =>
-                                                            hasContainerTriggered9 =
+                                                            hasContainerTriggered11 =
                                                                 true);
                                                         SchedulerBinding
                                                             .instance
                                                             .addPostFrameCallback((_) async =>
                                                                 await animationsMap[
-                                                                        'containerOnActionTriggerAnimation9']!
+                                                                        'containerOnActionTriggerAnimation11']!
                                                                     .controller
                                                                     .forward(
                                                                         from:
@@ -1867,16 +2083,16 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                           safeSetState(() {}));
 
                                                       if (animationsMap[
-                                                              'containerOnActionTriggerAnimation9'] !=
+                                                              'containerOnActionTriggerAnimation11'] !=
                                                           null) {
                                                         safeSetState(() =>
-                                                            hasContainerTriggered9 =
+                                                            hasContainerTriggered11 =
                                                                 true);
                                                         SchedulerBinding
                                                             .instance
                                                             .addPostFrameCallback((_) async =>
                                                                 await animationsMap[
-                                                                        'containerOnActionTriggerAnimation9']!
+                                                                        'containerOnActionTriggerAnimation11']!
                                                                     .controller
                                                                     .forward(
                                                                         from:

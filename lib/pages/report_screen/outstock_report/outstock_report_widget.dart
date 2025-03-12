@@ -17,22 +17,22 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'instock_report_model.dart';
-export 'instock_report_model.dart';
+import 'outstock_report_model.dart';
+export 'outstock_report_model.dart';
 
-class InstockReportWidget extends StatefulWidget {
-  const InstockReportWidget({super.key});
+class OutstockReportWidget extends StatefulWidget {
+  const OutstockReportWidget({super.key});
 
-  static String routeName = 'InstockReport';
-  static String routePath = 'InstockReport';
+  static String routeName = 'outstockReport';
+  static String routePath = 'outstockReport';
 
   @override
-  State<InstockReportWidget> createState() => _InstockReportWidgetState();
+  State<OutstockReportWidget> createState() => _OutstockReportWidgetState();
 }
 
-class _InstockReportWidgetState extends State<InstockReportWidget>
+class _OutstockReportWidgetState extends State<OutstockReportWidget>
     with TickerProviderStateMixin {
-  late InstockReportModel _model;
+  late OutstockReportModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -41,7 +41,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => InstockReportModel());
+    _model = createModel(context, () => OutstockReportModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -108,7 +108,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
     context.watch<FFAppState>();
 
     return Title(
-        title: 'InstockReport',
+        title: 'outstockReport',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -199,7 +199,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                         ),
                         Text(
                           FFLocalizations.of(context).getText(
-                            'smzc1ooc' /* Print */,
+                            'wntdg1gv' /* Print */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .bodySmall
@@ -268,7 +268,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                   ),
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'r46uuuki' /* IN Stock Report */,
+                                      'o9d4987o' /* Out Stock Report */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
@@ -383,7 +383,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'fhfn3e9t' /* CHOOSE DATE */,
+                                                      'wsam40du' /* CHOOSE DATE */,
                                                     ),
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
@@ -494,7 +494,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                       safeSetState(() {});
                                     },
                                     text: FFLocalizations.of(context).getText(
-                                      'r5iwyr4m' /* Choose Date */,
+                                      'etihb3bv' /* Choose Date */,
                                     ),
                                     options: FFButtonOptions(
                                       height: 40.0,
@@ -575,7 +575,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                               Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'spe7btlt' /* Date */,
+                                                  'm3m53d0o' /* Date */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -618,7 +618,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                               Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  '1fikxg2r' /* NO */,
+                                                  '6w5ch610' /* NO */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -669,7 +669,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'omfx3thh' /* STATUS */,
+                                                      'qn4pvb3s' /* Status */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -706,11 +706,11 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                               Expanded(
                                 child: Stack(
                                   children: [
-                                    StreamBuilder<List<PurchaseRecord>>(
-                                      stream: queryPurchaseRecord(
+                                    StreamBuilder<List<StockSummaryRecord>>(
+                                      stream: queryStockSummaryRecord(
                                         parent: FFAppState().outletIdRef,
-                                        queryBuilder: (purchaseRecord) =>
-                                            purchaseRecord.where(
+                                        queryBuilder: (stockSummaryRecord) =>
+                                            stockSummaryRecord.where(
                                           'dayId',
                                           isEqualTo:
                                               FFAppState().filterDate != ''
@@ -734,8 +734,8 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                             ),
                                           );
                                         }
-                                        List<PurchaseRecord>
-                                            containerListPurchaseRecordList =
+                                        List<StockSummaryRecord>
+                                            containerListStockSummaryRecordList =
                                             snapshot.data!;
 
                                         return Container(
@@ -754,7 +754,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                             child: Builder(
                                               builder: (context) {
                                                 final containerListVar =
-                                                    containerListPurchaseRecordList
+                                                    containerListStockSummaryRecordList
                                                         .toList();
                                                 if (containerListVar.isEmpty) {
                                                   return Image.asset(
@@ -823,7 +823,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                       child:
                                                                           Text(
                                                                         containerListVarItem
-                                                                            .invoiceNo,
+                                                                            .monthId,
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
@@ -841,7 +841,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                           Text(
                                                                         FFLocalizations.of(context)
                                                                             .getText(
-                                                                          'f3qas2tn' /* IN STOCK */,
+                                                                          'pei7nuxd' /* OUT STOCK */,
                                                                         ),
                                                                         textAlign:
                                                                             TextAlign.center,
@@ -849,7 +849,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                             .titleLarge
                                                                             .override(
                                                                               fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
-                                                                              color: FlutterFlowTheme.of(context).success,
+                                                                              color: FlutterFlowTheme.of(context).primary,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w900,
                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
@@ -908,7 +908,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                               padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  '7v0mexxh' /* Product Name */,
+                                                                                  'c1eduz0x' /* Raw Material */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
@@ -928,7 +928,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                               padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
-                                                                                  'emgwukrq' /* Req Stock */,
+                                                                                  'h5v5w3ti' /* Quantity  */,
                                                                                 ),
                                                                                 textAlign: TextAlign.start,
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -954,7 +954,7 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                     builder:
                                                                         (context) {
                                                                       final recipel = containerListVarItem
-                                                                          .productList
+                                                                          .productListMap
                                                                           .toList();
 
                                                                       return ListView
@@ -987,7 +987,10 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                                   child: Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                     child: Text(
-                                                                                      recipelItem.name,
+                                                                                      valueOrDefault<String>(
+                                                                                        recipelItem.name,
+                                                                                        '0',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                             letterSpacing: 0.0,
@@ -1001,7 +1004,10 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                                   child: Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                     child: Text(
-                                                                                      recipelItem.quantity.toString(),
+                                                                                      valueOrDefault<String>(
+                                                                                        recipelItem.reqStock.toString(),
+                                                                                        '0',
+                                                                                      ),
                                                                                       style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                             letterSpacing: 0.0,
