@@ -27,7 +27,7 @@ Future addProduct(
   String? barcode,
   String? category,
   bool? isDeleted,
-  DocumentReference taxRef,
+  DocumentReference? taxRef,
   DocumentReference unitRef,
   DocumentReference categoryRef,
   String? stock,
@@ -37,38 +37,4 @@ Future addProduct(
   bool? purchasable,
 ) async {
   // Add your function code here!
-  var productRecordReference =
-      ProductRecord.createDoc(FFAppState().outletIdRef!);
-  await productRecordReference.set(
-    createProductRecordData(
-      name: name,
-      regionalName: regionalName,
-      searchcode: int.tryParse(searchcode ?? ''),
-      shortName: shortName,
-      hsncode: int.tryParse(hsncode ?? ''),
-      price: double.tryParse(price ?? ''),
-      sellingPrice: double.tryParse(sellingPrice ?? ''),
-      purchasePrice: double.tryParse(purchasePrice ?? ''),
-      mrpPrice: double.tryParse(mrpPrice ?? ''),
-      discountPer: double.tryParse(discountPer ?? ''),
-      discountAmt: double.tryParse(discountAmt ?? ''),
-      stockable: stockable,
-      weightable: weightable,
-      code: int.tryParse(code ?? ''),
-      barcode: barcode,
-      category: category,
-      isDeleted: isDeleted,
-      taxRef: taxRef,
-      unitRef: unitRef,
-      categoryRef: categoryRef,
-      stock: int.tryParse(stock ?? ''),
-      currentStock: int.tryParse(currentStock ?? ''),
-      isEnable: isEnable,
-      type: type,
-      purchasable: purchasable,
-    ),
-  );
-  await productRecordReference.update(createPartyRecordData(
-    id: productRecordReference.id,
-  ));
 }

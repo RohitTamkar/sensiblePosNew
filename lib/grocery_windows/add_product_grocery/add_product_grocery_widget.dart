@@ -2822,7 +2822,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           _model.textController3.text,
                           _model.dropDownValue1,
                           false,
-                          _model.taxref!.reference,
+                          _model.taxref?.reference,
                           _model.unitref!.reference,
                           _model.catref!.reference,
                           _model.textController12.text,
