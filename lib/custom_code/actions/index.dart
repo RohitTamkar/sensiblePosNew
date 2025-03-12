@@ -182,3 +182,4 @@ export 'gen_bill_invoice_pdf_a4_and_print.dart'
     show genBillInvoicePdfA4AndPrint;
 export 'merge_bills.dart' show mergeBills;
 export 'update_product_stock.dart' show updateProductStock;
+export 'add_product.dart' show addProduct;

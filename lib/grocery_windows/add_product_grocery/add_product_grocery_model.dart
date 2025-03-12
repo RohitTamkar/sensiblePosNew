@@ -111,8 +111,6 @@ class AddProductGroceryModel extends FlutterFlowModel<AddProductGroceryWidget> {
   UnitTypeRecord? unitref;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   CategoryRecord? catref;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  ProductRecord? proDoc;
 
   @override
   void initState(BuildContext context) {}
