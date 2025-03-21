@@ -208,12 +208,15 @@ Future printBill(
                   align: PosAlign.center));
         }
       }
-      bytes += generator.text(FFAppState().orderType,
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: true,
-              align: PosAlign.center));
+      if (appSetting.settingList.any((setting) =>
+          setting.title == 'disableOrderType' && setting.value == false)) {
+        bytes += generator.text(FFAppState().orderType,
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: true,
+                align: PosAlign.center));
+      }
 
       bytes += generator.text("-----------------------------------------------",
           styles: const PosStyles(
@@ -221,6 +224,7 @@ Future printBill(
               width: PosTextSize.size1,
               bold: false,
               align: PosAlign.center));
+
       bytes += generator.text('Token no: ' + FFAppState().count.toString(),
           styles: const PosStyles(
               height: PosTextSize.size2,
