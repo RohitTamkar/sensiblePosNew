@@ -234,6 +234,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                           doc: widget!.doc,
                           shiftDetails: widget!.shiftDetails,
                           tax: widget!.taxcollection,
+                          appSettings23: productComboBillingAppSettingsRecord,
                         ),
                       ),
                     ),

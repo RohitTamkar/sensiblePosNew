@@ -19,8 +19,6 @@ class MenuDrawerModel extends FlutterFlowModel<MenuDrawerWidget> {
 
   bool editbill = false;
 
-  AppSettingsRecord? appsetting2;
-
   ///  State fields for stateful widgets in this component.
 
   // Stores action output result for [Firestore Query - Query a collection] action in ContainereditBill widget.

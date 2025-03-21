@@ -22,12 +22,14 @@ class MenuDrawerWidget extends StatefulWidget {
     this.doc,
     this.shiftDetails,
     this.tax,
+    this.appSettings23,
   });
 
   final DocumentReference? billdetails;
   final DocumentReference? doc;
   final dynamic shiftDetails;
   final List<TaxMasterRecord>? tax;
+  final AppSettingsRecord? appSettings23;
 
   @override
   State<MenuDrawerWidget> createState() => _MenuDrawerWidgetState();
@@ -228,7 +230,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                               ),
                             ),
-                          if (_model.appsetting2?.settingList
+                          if (widget!.appSettings23?.settingList
                                   ?.where((e) => e.title == 'editbillPos')
                                   .toList()
                                   ?.firstOrNull
@@ -426,7 +428,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                               ),
                             ),
-                          if (_model.appsetting2?.settingList
+                          if (widget!.appSettings23?.settingList
                                   ?.where((e) => e.title == 'enableGrn')
                                   .toList()
                                   ?.firstOrNull
@@ -525,7 +527,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                               ),
                             ),
-                          if (_model.appsetting2?.settingList
+                          if (widget!.appSettings23?.settingList
                                   ?.where((e) => e.title == 'enableRecipe')
                                   .toList()
                                   ?.firstOrNull
@@ -606,112 +608,122 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                               ),
                             ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 1.5),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                FFAppState().bilinvref = widget!.billdetails;
-                                FFAppState().userdoc = widget!.doc;
-                                FFAppState().shiftdetails =
-                                    widget!.shiftDetails!;
-                                safeSetState(() {});
+                          if (widget!.appSettings23?.settingList
+                                  ?.where((e) => e.title == 'enableReport')
+                                  .toList()
+                                  ?.firstOrNull
+                                  ?.value ??
+                              true)
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 1.5),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  FFAppState().bilinvref = widget!.billdetails;
+                                  FFAppState().userdoc = widget!.doc;
+                                  FFAppState().shiftdetails =
+                                      widget!.shiftDetails!;
+                                  safeSetState(() {});
 
-                                context.pushNamed(
-                                  ReportScreenNewWidget.routeName,
-                                  queryParameters: {
-                                    'billDetails': serializeParam(
-                                      widget!.billdetails,
-                                      ParamType.DocumentReference,
-                                    ),
-                                    'doc': serializeParam(
-                                      widget!.doc,
-                                      ParamType.DocumentReference,
-                                    ),
-                                    'shiftDetail': serializeParam(
-                                      widget!.shiftDetails,
-                                      ParamType.JSON,
-                                    ),
-                                    'tax': serializeParam(
-                                      widget!.tax,
-                                      ParamType.Document,
-                                      isList: true,
-                                    ),
-                                  }.withoutNulls,
-                                  extra: <String, dynamic>{
-                                    'tax': widget!.tax,
-                                  },
-                                );
-                              },
-                              onLongPress: () async {
-                                context
-                                    .pushNamed(AddRecipeTESTWidget.routeName);
-                              },
-                              child: Container(
-                                width: double.infinity,
-                                height:
-                                    MediaQuery.sizeOf(context).height * 0.12,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      2.0, 6.0, 2.0, 6.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 6.0),
-                                        child: Icon(
-                                          Icons.insights_outlined,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          size: 24.0,
-                                        ),
+                                  context.pushNamed(
+                                    ReportScreenNewWidget.routeName,
+                                    queryParameters: {
+                                      'billDetails': serializeParam(
+                                        widget!.billdetails,
+                                        ParamType.DocumentReference,
                                       ),
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          context.pushNamed(
-                                              ReportScreenNewWidget.routeName);
-                                        },
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            '6992qtz3' /* Reports */,
+                                      'doc': serializeParam(
+                                        widget!.doc,
+                                        ParamType.DocumentReference,
+                                      ),
+                                      'shiftDetail': serializeParam(
+                                        widget!.shiftDetails,
+                                        ParamType.JSON,
+                                      ),
+                                      'tax': serializeParam(
+                                        widget!.tax,
+                                        ParamType.Document,
+                                        isList: true,
+                                      ),
+                                    }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      'tax': widget!.tax,
+                                    },
+                                  );
+                                },
+                                onLongPress: () async {
+                                  context
+                                      .pushNamed(AddRecipeTESTWidget.routeName);
+                                },
+                                child: Container(
+                                  width: double.infinity,
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 0.12,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        2.0, 6.0, 2.0, 6.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 6.0),
+                                          child: Icon(
+                                            Icons.insights_outlined,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            size: 24.0,
                                           ),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleMedium
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMediumFamily,
-                                                letterSpacing: 0.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMediumFamily),
-                                              ),
                                         ),
-                                      ),
-                                    ],
+                                        InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                                ReportScreenNewWidget
+                                                    .routeName);
+                                          },
+                                          child: Text(
+                                            FFLocalizations.of(context).getText(
+                                              '6992qtz3' /* Reports */,
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleMedium
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMediumFamily,
+                                                  letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleMediumFamily),
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
                           if (false)
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
