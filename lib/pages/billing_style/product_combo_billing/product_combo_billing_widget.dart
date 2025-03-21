@@ -3286,12 +3286,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                   await invoiceRecordReference
                                                                       .set({
                                                                     ...createInvoiceRecordData(
-                                                                      invoice: functions.genInvoiceNum(
-                                                                          FFAppState()
-                                                                              .newcount,
-                                                                          FFAppState()
-                                                                              .shiftDetails
-                                                                              .shiftNo),
+                                                                      invoice:
+                                                                          '00${FFAppState().newcount.toString()}',
                                                                       party: valueOrDefault<
                                                                           String>(
                                                                         FFAppState()
@@ -3379,12 +3375,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       InvoiceRecord
                                                                           .getDocumentFromData({
                                                                     ...createInvoiceRecordData(
-                                                                      invoice: functions.genInvoiceNum(
-                                                                          FFAppState()
-                                                                              .newcount,
-                                                                          FFAppState()
-                                                                              .shiftDetails
-                                                                              .shiftNo),
+                                                                      invoice:
+                                                                          '00${FFAppState().newcount.toString()}',
                                                                       party: valueOrDefault<
                                                                           String>(
                                                                         FFAppState()
@@ -4289,12 +4281,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                 await invoiceRecordReference
                                                                     .set({
                                                                   ...createInvoiceRecordData(
-                                                                    invoice: functions.genInvoiceNum(
-                                                                        FFAppState()
-                                                                            .newcount,
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .shiftNo),
+                                                                    invoice:
+                                                                        '00${FFAppState().newcount.toString()}',
                                                                     party: valueOrDefault<
                                                                         String>(
                                                                       FFAppState()
@@ -4382,12 +4370,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     InvoiceRecord
                                                                         .getDocumentFromData({
                                                                   ...createInvoiceRecordData(
-                                                                    invoice: functions.genInvoiceNum(
-                                                                        FFAppState()
-                                                                            .newcount,
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .shiftNo),
+                                                                    invoice:
+                                                                        '00${FFAppState().newcount.toString()}',
                                                                     party: valueOrDefault<
                                                                         String>(
                                                                       FFAppState()

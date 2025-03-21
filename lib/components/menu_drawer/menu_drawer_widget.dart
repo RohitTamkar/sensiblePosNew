@@ -228,7 +228,12 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                               ),
                             ),
-                          if (_model.editbill)
+                          if (_model.appsetting2?.settingList
+                                  ?.where((e) => e.title == 'editbillPos')
+                                  .toList()
+                                  ?.firstOrNull
+                                  ?.value ??
+                              true)
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 1.5),
@@ -421,168 +426,186 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                               ),
                             ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 1.5),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                FFAppState().invoice =
-                                    functions.genInvoiceNum(1, 1);
-                                FFAppState().filterDate = functions.getDayId();
-                                FFAppState().update(() {});
+                          if (_model.appsetting2?.settingList
+                                  ?.where((e) => e.title == 'enableGrn')
+                                  .toList()
+                                  ?.firstOrNull
+                                  ?.value ??
+                              true)
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 1.5),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  FFAppState().invoice =
+                                      functions.genInvoiceNum(1, 1);
+                                  FFAppState().filterDate =
+                                      functions.getDayId();
+                                  FFAppState().update(() {});
 
-                                context.pushNamed(
-                                  PurchaseOrderWidget.routeName,
-                                  queryParameters: {
-                                    'shiftdetail': serializeParam(
-                                      widget!.shiftDetails,
-                                      ParamType.JSON,
-                                    ),
-                                    'taxDetails': serializeParam(
-                                      widget!.tax,
-                                      ParamType.Document,
-                                      isList: true,
-                                    ),
-                                    'userref': serializeParam(
-                                      widget!.doc,
-                                      ParamType.DocumentReference,
-                                    ),
-                                  }.withoutNulls,
-                                  extra: <String, dynamic>{
-                                    'taxDetails': widget!.tax,
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
-                                    ),
-                                  },
-                                );
-                              },
-                              child: Container(
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      2.0, 6.0, 2.0, 6.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 6.0),
-                                        child: Icon(
-                                          Icons.add_shopping_cart_sharp,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          size: 24.0,
-                                        ),
+                                  context.pushNamed(
+                                    PurchaseOrderWidget.routeName,
+                                    queryParameters: {
+                                      'shiftdetail': serializeParam(
+                                        widget!.shiftDetails,
+                                        ParamType.JSON,
                                       ),
-                                      Text(
-                                        FFLocalizations.of(context).getText(
-                                          'shsckkr5' /* GRN */,
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMediumFamily,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleMediumFamily),
-                                            ),
+                                      'taxDetails': serializeParam(
+                                        widget!.tax,
+                                        ParamType.Document,
+                                        isList: true,
                                       ),
-                                    ],
+                                      'userref': serializeParam(
+                                        widget!.doc,
+                                        ParamType.DocumentReference,
+                                      ),
+                                    }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      'taxDetails': widget!.tax,
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        2.0, 6.0, 2.0, 6.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 6.0),
+                                          child: Icon(
+                                            Icons.add_shopping_cart_sharp,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            size: 24.0,
+                                          ),
+                                        ),
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'shsckkr5' /* GRN */,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
+                                              ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 1.5),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                FFAppState().filterDate = functions.getDayId();
-                                FFAppState().update(() {});
+                          if (_model.appsetting2?.settingList
+                                  ?.where((e) => e.title == 'enableRecipe')
+                                  .toList()
+                                  ?.firstOrNull
+                                  ?.value ??
+                              true)
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 1.5),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  FFAppState().filterDate =
+                                      functions.getDayId();
+                                  FFAppState().update(() {});
 
-                                context.pushNamed(
-                                  AddRecipeTESTWidget.routeName,
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
+                                  context.pushNamed(
+                                    AddRecipeTESTWidget.routeName,
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        2.0, 6.0, 2.0, 6.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 6.0),
+                                          child: Icon(
+                                            Icons.restaurant_menu,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            size: 24.0,
+                                          ),
+                                        ),
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'eiao4c61' /* Recipe  */,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
+                                              ),
+                                        ),
+                                      ],
                                     ),
-                                  },
-                                );
-                              },
-                              child: Container(
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      2.0, 6.0, 2.0, 6.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 6.0),
-                                        child: Icon(
-                                          Icons.restaurant_menu,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          size: 24.0,
-                                        ),
-                                      ),
-                                      Text(
-                                        FFLocalizations.of(context).getText(
-                                          'eiao4c61' /* Recipe  */,
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMediumFamily,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleMediumFamily),
-                                            ),
-                                      ),
-                                    ],
                                   ),
                                 ),
                               ),
                             ),
-                          ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 1.5),
