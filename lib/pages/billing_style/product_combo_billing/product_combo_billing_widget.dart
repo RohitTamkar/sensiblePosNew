@@ -3143,661 +3143,349 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                             },
                                                           ),
                                                         ),
-                                                        FFButtonWidget(
-                                                          onPressed: () async {
-                                                            var _shouldSetState =
-                                                                false;
-                                                            if ((functions
-                                                                        .filterBillList(
-                                                                            FFAppState()
-                                                                                .selBill,
-                                                                            FFAppState()
-                                                                                .allBillsList
-                                                                                .toList())
-                                                                        .length >
-                                                                    0) &&
-                                                                (FFAppState()
-                                                                            .PayMode !=
-                                                                        null &&
-                                                                    FFAppState()
-                                                                            .PayMode !=
-                                                                        '')) {
-                                                              if (getJsonField(
-                                                                FFAppState()
-                                                                    .shiftDetailsJson,
-                                                                r'''$.shiftExists''',
-                                                              )) {
-                                                                FFAppState()
-                                                                        .count =
-                                                                    FFAppState()
-                                                                            .count +
-                                                                        1;
-                                                                FFAppState()
-                                                                        .newcount =
-                                                                    FFAppState()
-                                                                            .newcount +
-                                                                        1;
-                                                                FFAppState()
-                                                                        .billcount =
-                                                                    FFAppState()
-                                                                            .billcount +
-                                                                        1;
-                                                                safeSetState(
-                                                                    () {});
-                                                              } else {
-                                                                FFAppState()
-                                                                        .count =
-                                                                    FFAppState()
-                                                                            .count +
-                                                                        1;
-                                                                FFAppState()
-                                                                        .newcount =
-                                                                    FFAppState()
-                                                                            .newcount +
-                                                                        1;
-                                                                FFAppState()
-                                                                        .billcount =
-                                                                    FFAppState()
-                                                                            .billcount +
-                                                                        1;
-                                                                safeSetState(
-                                                                    () {});
-                                                              }
-
-                                                              _model.prdlinstnewtx =
-                                                                  await actions
-                                                                      .filterProducts2(
-                                                                FFAppState()
-                                                                    .selBill,
-                                                                FFAppState()
-                                                                    .allBillsList
-                                                                    .toList(),
-                                                              );
-                                                              _shouldSetState =
-                                                                  true;
-                                                              await actions
-                                                                  .calBillAmtGroceryPay(
-                                                                0.0,
-                                                                0.0,
-                                                                FFAppState()
-                                                                    .fsTaxAMt,
-                                                                functions.enabletaxinclusive(productComboBillingAppSettingsRecord!
-                                                                    .settingList
-                                                                    .where((e) =>
-                                                                        e.title ==
-                                                                        'enableInclusiveTax')
-                                                                    .toList()
-                                                                    .firstOrNull!
-                                                                    .value),
-                                                              );
-                                                              FFAppState()
-                                                                      .billPrintFooter =
-                                                                  'KOT';
-                                                              safeSetState(
-                                                                  () {});
-                                                              _model.outlecdoc =
-                                                                  await queryOutletRecordOnce(
-                                                                queryBuilder:
-                                                                    (outletRecord) =>
-                                                                        outletRecord
-                                                                            .where(
-                                                                  'id',
-                                                                  isEqualTo:
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onLongPress:
+                                                              () async {
+                                                            await actions
+                                                                .printFunctionKOT();
+                                                          },
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              var _shouldSetState =
+                                                                  false;
+                                                              if ((functions
+                                                                          .filterBillList(
+                                                                              FFAppState()
+                                                                                  .selBill,
+                                                                              FFAppState()
+                                                                                  .allBillsList
+                                                                                  .toList())
+                                                                          .length >
+                                                                      0) &&
+                                                                  (FFAppState()
+                                                                              .PayMode !=
+                                                                          null &&
                                                                       FFAppState()
-                                                                          .outletIdRef
-                                                                          ?.id,
-                                                                ),
-                                                                singleRecord:
-                                                                    true,
-                                                              ).then((s) => s
-                                                                      .firstOrNull);
-                                                              _shouldSetState =
-                                                                  true;
-                                                              if (!isAndroid) {
-                                                                await actions
-                                                                    .newCustomAction5();
-                                                              }
-                                                              _model.interprd =
-                                                                  await actions
-                                                                      .checkInternetConnection();
-                                                              _shouldSetState =
-                                                                  true;
-                                                              if (_model
-                                                                  .interprd!) {
-                                                                var invoiceRecordReference =
-                                                                    InvoiceRecord.createDoc(
-                                                                        FFAppState()
-                                                                            .outletIdRef!);
-                                                                await invoiceRecordReference
-                                                                    .set({
-                                                                  ...createInvoiceRecordData(
-                                                                    invoice: functions.genInvoiceNum(
-                                                                        FFAppState()
-                                                                            .newcount,
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .shiftNo),
-                                                                    party: valueOrDefault<
-                                                                        String>(
-                                                                      FFAppState()
-                                                                          .setCustRef
-                                                                          ?.id,
-                                                                      'NA',
-                                                                    ),
-                                                                    products:
-                                                                        '',
-                                                                    invoiceDate:
-                                                                        functions
-                                                                            .timestampToMili(getCurrentTimestamp),
-                                                                    paymentMode:
-                                                                        FFAppState()
-                                                                            .PayMode,
-                                                                    dayId: functions
-                                                                        .getDayId(),
-                                                                    discountAmt:
-                                                                        valueOrDefault<
-                                                                            double>(
-                                                                      FFAppState()
-                                                                          .disAmt,
-                                                                      0.0,
-                                                                    ),
-                                                                    discountPer:
-                                                                        valueOrDefault<
-                                                                            double>(
-                                                                      FFAppState()
-                                                                          .disPer,
-                                                                      0.0,
-                                                                    ),
-                                                                    delliveryChrg:
-                                                                        valueOrDefault<
-                                                                            double>(
-                                                                      FFAppState()
-                                                                          .delCharges,
-                                                                      0.0,
-                                                                    ),
-                                                                    taxAmt: valueOrDefault<
-                                                                        double>(
-                                                                      FFAppState()
-                                                                          .taxAmtPay,
-                                                                      0.0,
-                                                                    ),
-                                                                    billAmt:
-                                                                        valueOrDefault<
-                                                                            double>(
-                                                                      FFAppState()
-                                                                          .billAmt,
-                                                                      0.0,
-                                                                    ),
-                                                                    finalBillAmt:
-                                                                        valueOrDefault<
-                                                                            double>(
-                                                                      FFAppState()
-                                                                          .finalAmt,
-                                                                      0.0,
-                                                                    ),
-                                                                    shiftId:
-                                                                        getJsonField(
-                                                                      widget!
-                                                                          .shiftDetails,
-                                                                      r'''$.shiftId''',
-                                                                    ).toString(),
-                                                                    count: FFAppState()
-                                                                        .newcount,
-                                                                    source:
-                                                                        'KOT',
-                                                                    isDeleted:
-                                                                        false,
-                                                                    taxPer: FFAppState()
-                                                                        .fsTaxAMt,
-                                                                  ),
-                                                                  ...mapToFirestore(
-                                                                    {
-                                                                      'productList':
-                                                                          getSelItemListListFirestoreData(
-                                                                        _model
-                                                                            .prdlinstnewtx,
-                                                                      ),
-                                                                    },
-                                                                  ),
-                                                                });
-                                                                _model.invonlineprt =
-                                                                    InvoiceRecord
-                                                                        .getDocumentFromData({
-                                                                  ...createInvoiceRecordData(
-                                                                    invoice: functions.genInvoiceNum(
-                                                                        FFAppState()
-                                                                            .newcount,
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .shiftNo),
-                                                                    party: valueOrDefault<
-                                                                        String>(
-                                                                      FFAppState()
-                                                                          .setCustRef
-                                                                          ?.id,
-                                                                      'NA',
-                                                                    ),
-                                                                    products:
-                                                                        '',
-                                                                    invoiceDate:
-                                                                        functions
-                                                                            .timestampToMili(getCurrentTimestamp),
-                                                                    paymentMode:
-                                                                        FFAppState()
-                                                                            .PayMode,
-                                                                    dayId: functions
-                                                                        .getDayId(),
-                                                                    discountAmt:
-                                                                        valueOrDefault<
-                                                                            double>(
-                                                                      FFAppState()
-                                                                          .disAmt,
-                                                                      0.0,
-                                                                    ),
-                                                                    discountPer:
-                                                                        valueOrDefault<
-                                                                            double>(
-                                                                      FFAppState()
-                                                                          .disPer,
-                                                                      0.0,
-                                                                    ),
-                                                                    delliveryChrg:
-                                                                        valueOrDefault<
-                                                                            double>(
-                                                                      FFAppState()
-                                                                          .delCharges,
-                                                                      0.0,
-                                                                    ),
-                                                                    taxAmt: valueOrDefault<
-                                                                        double>(
-                                                                      FFAppState()
-                                                                          .taxAmtPay,
-                                                                      0.0,
-                                                                    ),
-                                                                    billAmt:
-                                                                        valueOrDefault<
-                                                                            double>(
-                                                                      FFAppState()
-                                                                          .billAmt,
-                                                                      0.0,
-                                                                    ),
-                                                                    finalBillAmt:
-                                                                        valueOrDefault<
-                                                                            double>(
-                                                                      FFAppState()
-                                                                          .finalAmt,
-                                                                      0.0,
-                                                                    ),
-                                                                    shiftId:
-                                                                        getJsonField(
-                                                                      widget!
-                                                                          .shiftDetails,
-                                                                      r'''$.shiftId''',
-                                                                    ).toString(),
-                                                                    count: FFAppState()
-                                                                        .newcount,
-                                                                    source:
-                                                                        'KOT',
-                                                                    isDeleted:
-                                                                        false,
-                                                                    taxPer: FFAppState()
-                                                                        .fsTaxAMt,
-                                                                  ),
-                                                                  ...mapToFirestore(
-                                                                    {
-                                                                      'productList':
-                                                                          getSelItemListListFirestoreData(
-                                                                        _model
-                                                                            .prdlinstnewtx,
-                                                                      ),
-                                                                    },
-                                                                  ),
-                                                                }, invoiceRecordReference);
-                                                                _shouldSetState =
-                                                                    true;
-
-                                                                await _model
-                                                                    .invonlineprt!
-                                                                    .reference
-                                                                    .update(
-                                                                        createInvoiceRecordData(
-                                                                  id: _model
-                                                                      .invonlineprt
-                                                                      ?.reference
-                                                                      .id,
-                                                                ));
-                                                                _model.addToInvoices(
-                                                                    _model
-                                                                        .invonlineprt!);
-                                                                safeSetState(
-                                                                    () {});
-                                                              } else {
-                                                                await showDialog(
-                                                                  context:
-                                                                      context,
-                                                                  builder:
-                                                                      (alertDialogContext) {
-                                                                    return AlertDialog(
-                                                                      content: Text(
-                                                                          'Internet Not Available'),
-                                                                      actions: [
-                                                                        TextButton(
-                                                                          onPressed: () =>
-                                                                              Navigator.pop(alertDialogContext),
-                                                                          child:
-                                                                              Text('Ok'),
-                                                                        ),
-                                                                      ],
-                                                                    );
-                                                                  },
-                                                                );
-                                                                if (_shouldSetState)
-                                                                  safeSetState(
-                                                                      () {});
-                                                                return;
-                                                              }
-
-                                                              if (getJsonField(
-                                                                FFAppState()
-                                                                    .shiftDetailsJson,
-                                                                r'''$.shiftExists''',
-                                                              )) {
-                                                                _model.shiftSummarResultsNew =
-                                                                    await actions
-                                                                        .calShiftSummary(
-                                                                  _model
-                                                                      .invonlineprt!,
+                                                                              .PayMode !=
+                                                                          '')) {
+                                                                if (getJsonField(
                                                                   FFAppState()
                                                                       .shiftDetailsJson,
+                                                                  r'''$.shiftExists''',
+                                                                )) {
+                                                                  FFAppState()
+                                                                          .count =
+                                                                      FFAppState()
+                                                                              .count +
+                                                                          1;
+                                                                  FFAppState()
+                                                                          .newcount =
+                                                                      FFAppState()
+                                                                              .newcount +
+                                                                          1;
+                                                                  FFAppState()
+                                                                          .billcount =
+                                                                      FFAppState()
+                                                                              .billcount +
+                                                                          1;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                } else {
+                                                                  FFAppState()
+                                                                          .count =
+                                                                      FFAppState()
+                                                                              .count +
+                                                                          1;
+                                                                  FFAppState()
+                                                                          .newcount =
+                                                                      FFAppState()
+                                                                              .newcount +
+                                                                          1;
+                                                                  FFAppState()
+                                                                          .billcount =
+                                                                      FFAppState()
+                                                                              .billcount +
+                                                                          1;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                }
+
+                                                                _model.prdlinstnewtx =
+                                                                    await actions
+                                                                        .filterProducts2(
+                                                                  FFAppState()
+                                                                      .selBill,
+                                                                  FFAppState()
+                                                                      .allBillsList
+                                                                      .toList(),
                                                                 );
                                                                 _shouldSetState =
                                                                     true;
-                                                                FFAppState()
-                                                                    .updateShiftDetailsStruct(
-                                                                  (e) => e
-                                                                    ..billCount =
-                                                                        valueOrDefault<
-                                                                            int>(
-                                                                      FFAppState()
-                                                                          .billcount,
-                                                                      0,
-                                                                    )
-                                                                    ..totalSale =
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.totalSale''',
-                                                                    )
-                                                                    ..deliveryCharges =
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.deliveryCharges''',
-                                                                    )
-                                                                    ..tax =
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.tax''',
-                                                                    )
-                                                                    ..lastBillNo =
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.lastBillNo''',
-                                                                    ).toString()
-                                                                    ..discount =
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.discount''',
-                                                                    )
-                                                                    ..lastBillTime =
-                                                                        functions
-                                                                            .timestampToMili(getCurrentTimestamp)
-                                                                    ..cashSale =
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.cashSale''',
-                                                                    )
-                                                                    ..paymentJson =
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.paymentJson''',
-                                                                    ).toString()
-                                                                    ..dayId =
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.dayId''',
-                                                                    ).toString()
-                                                                    ..shiftId =
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.shiftId''',
-                                                                    ).toString()
-                                                                    ..hivekey = FFAppState()
-                                                                        .shiftDetails
-                                                                        .hivekey
-                                                                    ..newIDShift =
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .newIDShift
-                                                                    ..code = FFAppState()
-                                                                        .shiftDetails
-                                                                        .code
-                                                                    ..endTime = FFAppState()
-                                                                        .shiftDetails
-                                                                        .endTime
-                                                                    ..advanceAmtTotal =
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .advanceAmtTotal
-                                                                    ..customerReciveAmtTotal =
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .customerReciveAmtTotal
-                                                                    ..expensesAmtTotal =
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .expensesAmtTotal
-                                                                    ..openingAmt =
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .openingAmt
-                                                                    ..receiveAmtTotal =
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .receiveAmtTotal
-                                                                    ..refoundAmount =
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .refoundAmount
-                                                                    ..roundOff =
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .roundOff
-                                                                    ..cashInHand =
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.cashInHand''',
-                                                                    )
-                                                                    ..startTime =
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .startTime
-                                                                    ..inActive =
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .inActive
-                                                                    ..shiftNo = FFAppState()
-                                                                        .shiftDetails
-                                                                        .shiftNo
-                                                                    ..subTotalBill =
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .subTotalBill
-                                                                    ..version = FFAppState()
-                                                                        .shiftDetails
-                                                                        .version
-                                                                    ..userId = FFAppState()
-                                                                        .shiftDetails
-                                                                        .userId
-                                                                    ..deviceId =
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .deviceId
-                                                                    ..synC = FFAppState()
-                                                                        .shiftDetails
-                                                                        .synC
-                                                                    ..id = FFAppState()
-                                                                        .shiftDetails
-                                                                        .id,
+                                                                await actions
+                                                                    .calBillAmtGroceryPay(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  FFAppState()
+                                                                      .fsTaxAMt,
+                                                                  functions.enabletaxinclusive(productComboBillingAppSettingsRecord!
+                                                                      .settingList
+                                                                      .where((e) =>
+                                                                          e.title ==
+                                                                          'enableInclusiveTax')
+                                                                      .toList()
+                                                                      .firstOrNull!
+                                                                      .value),
                                                                 );
+                                                                FFAppState()
+                                                                        .billPrintFooter =
+                                                                    'KOT';
                                                                 safeSetState(
                                                                     () {});
+                                                                _model.outlecdoc =
+                                                                    await queryOutletRecordOnce(
+                                                                  queryBuilder:
+                                                                      (outletRecord) =>
+                                                                          outletRecord
+                                                                              .where(
+                                                                    'id',
+                                                                    isEqualTo:
+                                                                        FFAppState()
+                                                                            .outletIdRef
+                                                                            ?.id,
+                                                                  ),
+                                                                  singleRecord:
+                                                                      true,
+                                                                ).then((s) => s
+                                                                        .firstOrNull);
+                                                                _shouldSetState =
+                                                                    true;
+                                                                if (!isAndroid) {
+                                                                  await actions
+                                                                      .newCustomAction5();
+                                                                }
+                                                                _model.interprd =
+                                                                    await actions
+                                                                        .checkInternetConnection();
+                                                                _shouldSetState =
+                                                                    true;
                                                                 if (_model
                                                                     .interprd!) {
-                                                                  _model.shiftondataprint =
-                                                                      await queryShiftRecordOnce(
-                                                                    parent: FFAppState()
-                                                                        .outletIdRef,
-                                                                    queryBuilder:
-                                                                        (shiftRecord) =>
-                                                                            shiftRecord.where(
-                                                                      'id',
-                                                                      isEqualTo:
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                        getJsonField(
+                                                                  var invoiceRecordReference =
+                                                                      InvoiceRecord.createDoc(
                                                                           FFAppState()
-                                                                              .shiftDetailsJson,
-                                                                          r'''$.ref''',
-                                                                        )?.toString(),
+                                                                              .outletIdRef!);
+                                                                  await invoiceRecordReference
+                                                                      .set({
+                                                                    ...createInvoiceRecordData(
+                                                                      invoice: functions.genInvoiceNum(
+                                                                          FFAppState()
+                                                                              .newcount,
+                                                                          FFAppState()
+                                                                              .shiftDetails
+                                                                              .shiftNo),
+                                                                      party: valueOrDefault<
+                                                                          String>(
+                                                                        FFAppState()
+                                                                            .setCustRef
+                                                                            ?.id,
                                                                         'NA',
                                                                       ),
+                                                                      products:
+                                                                          '',
+                                                                      invoiceDate:
+                                                                          functions
+                                                                              .timestampToMili(getCurrentTimestamp),
+                                                                      paymentMode:
+                                                                          FFAppState()
+                                                                              .PayMode,
+                                                                      dayId: functions
+                                                                          .getDayId(),
+                                                                      discountAmt:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .disAmt,
+                                                                        0.0,
+                                                                      ),
+                                                                      discountPer:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .disPer,
+                                                                        0.0,
+                                                                      ),
+                                                                      delliveryChrg:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .delCharges,
+                                                                        0.0,
+                                                                      ),
+                                                                      taxAmt: valueOrDefault<
+                                                                          double>(
+                                                                        FFAppState()
+                                                                            .taxAmtPay,
+                                                                        0.0,
+                                                                      ),
+                                                                      billAmt:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .billAmt,
+                                                                        0.0,
+                                                                      ),
+                                                                      finalBillAmt:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .finalAmt,
+                                                                        0.0,
+                                                                      ),
+                                                                      shiftId:
+                                                                          getJsonField(
+                                                                        widget!
+                                                                            .shiftDetails,
+                                                                        r'''$.shiftId''',
+                                                                      ).toString(),
+                                                                      count: FFAppState()
+                                                                          .newcount,
+                                                                      source:
+                                                                          'KOT',
+                                                                      isDeleted:
+                                                                          false,
+                                                                      taxPer: FFAppState()
+                                                                          .fsTaxAMt,
                                                                     ),
-                                                                    singleRecord:
-                                                                        true,
-                                                                  ).then((s) =>
-                                                                          s.firstOrNull);
+                                                                    ...mapToFirestore(
+                                                                      {
+                                                                        'productList':
+                                                                            getSelItemListListFirestoreData(
+                                                                          _model
+                                                                              .prdlinstnewtx,
+                                                                        ),
+                                                                      },
+                                                                    ),
+                                                                  });
+                                                                  _model.invonlineprt =
+                                                                      InvoiceRecord
+                                                                          .getDocumentFromData({
+                                                                    ...createInvoiceRecordData(
+                                                                      invoice: functions.genInvoiceNum(
+                                                                          FFAppState()
+                                                                              .newcount,
+                                                                          FFAppState()
+                                                                              .shiftDetails
+                                                                              .shiftNo),
+                                                                      party: valueOrDefault<
+                                                                          String>(
+                                                                        FFAppState()
+                                                                            .setCustRef
+                                                                            ?.id,
+                                                                        'NA',
+                                                                      ),
+                                                                      products:
+                                                                          '',
+                                                                      invoiceDate:
+                                                                          functions
+                                                                              .timestampToMili(getCurrentTimestamp),
+                                                                      paymentMode:
+                                                                          FFAppState()
+                                                                              .PayMode,
+                                                                      dayId: functions
+                                                                          .getDayId(),
+                                                                      discountAmt:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .disAmt,
+                                                                        0.0,
+                                                                      ),
+                                                                      discountPer:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .disPer,
+                                                                        0.0,
+                                                                      ),
+                                                                      delliveryChrg:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .delCharges,
+                                                                        0.0,
+                                                                      ),
+                                                                      taxAmt: valueOrDefault<
+                                                                          double>(
+                                                                        FFAppState()
+                                                                            .taxAmtPay,
+                                                                        0.0,
+                                                                      ),
+                                                                      billAmt:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .billAmt,
+                                                                        0.0,
+                                                                      ),
+                                                                      finalBillAmt:
+                                                                          valueOrDefault<
+                                                                              double>(
+                                                                        FFAppState()
+                                                                            .finalAmt,
+                                                                        0.0,
+                                                                      ),
+                                                                      shiftId:
+                                                                          getJsonField(
+                                                                        widget!
+                                                                            .shiftDetails,
+                                                                        r'''$.shiftId''',
+                                                                      ).toString(),
+                                                                      count: FFAppState()
+                                                                          .newcount,
+                                                                      source:
+                                                                          'KOT',
+                                                                      isDeleted:
+                                                                          false,
+                                                                      taxPer: FFAppState()
+                                                                          .fsTaxAMt,
+                                                                    ),
+                                                                    ...mapToFirestore(
+                                                                      {
+                                                                        'productList':
+                                                                            getSelItemListListFirestoreData(
+                                                                          _model
+                                                                              .prdlinstnewtx,
+                                                                        ),
+                                                                      },
+                                                                    ),
+                                                                  }, invoiceRecordReference);
                                                                   _shouldSetState =
                                                                       true;
 
                                                                   await _model
-                                                                      .shiftondataprint!
+                                                                      .invonlineprt!
                                                                       .reference
                                                                       .update(
-                                                                          createShiftRecordData(
-                                                                    billCount: FFAppState()
-                                                                        .shiftDetails
-                                                                        .billCount,
-                                                                    dayId:
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.dayId''',
-                                                                    ).toString(),
-                                                                    lastBillNo:
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.lastBillNo''',
-                                                                    ).toString(),
-                                                                    lastBillTime:
-                                                                        functions
-                                                                            .timestampToMili(getCurrentTimestamp),
-                                                                    tax:
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.tax''',
-                                                                    ),
-                                                                    deliveryCharges:
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.deliveryCharges''',
-                                                                    ),
-                                                                    discount:
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.discount''',
-                                                                    ),
-                                                                    totalSale:
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.totalSale''',
-                                                                    ),
-                                                                    cashSale:
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.cashSale''',
-                                                                    ),
-                                                                    paymentJson:
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.paymentJson''',
-                                                                    ).toString(),
-                                                                    code: FFAppState()
-                                                                        .shiftDetails
-                                                                        .code,
-                                                                    endTime: FFAppState()
-                                                                        .shiftDetails
-                                                                        .endTime,
-                                                                    advanceAmtTotal:
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .advanceAmtTotal,
-                                                                    customerReciveAmtTotal:
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .customerReciveAmtTotal,
-                                                                    expensesAmtTotal:
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .expensesAmtTotal,
-                                                                    openingAmt: FFAppState()
-                                                                        .shiftDetails
-                                                                        .openingAmt,
-                                                                    receiveAmtTotal:
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .receiveAmtTotal,
-                                                                    refoundAmount:
-                                                                        FFAppState()
-                                                                            .shiftDetails
-                                                                            .refoundAmount,
-                                                                    roundOff: FFAppState()
-                                                                        .shiftDetails
-                                                                        .roundOff,
-                                                                    cashInHand: FFAppState()
-                                                                        .shiftDetails
-                                                                        .cashInHand,
-                                                                    startTime: FFAppState()
-                                                                        .shiftDetails
-                                                                        .startTime,
-                                                                    inActive: FFAppState()
-                                                                        .shiftDetails
-                                                                        .inActive,
-                                                                    shiftNo: FFAppState()
-                                                                        .shiftDetails
-                                                                        .shiftNo,
-                                                                    shiftId:
-                                                                        getJsonField(
-                                                                      _model
-                                                                          .shiftSummarResultsNew,
-                                                                      r'''$.shiftId''',
-                                                                    ).toString(),
+                                                                          createInvoiceRecordData(
+                                                                    id: _model
+                                                                        .invonlineprt
+                                                                        ?.reference
+                                                                        .id,
                                                                   ));
+                                                                  _model.addToInvoices(
+                                                                      _model
+                                                                          .invonlineprt!);
+                                                                  safeSetState(
+                                                                      () {});
                                                                 } else {
                                                                   await showDialog(
                                                                     context:
@@ -3823,137 +3511,176 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         () {});
                                                                   return;
                                                                 }
-                                                              } else {
-                                                                ScaffoldMessenger.of(
-                                                                        context)
-                                                                    .showSnackBar(
-                                                                  SnackBar(
-                                                                    content:
-                                                                        Text(
-                                                                      'Login again to start Shift ',
-                                                                      style:
-                                                                          TextStyle(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                      ),
-                                                                    ),
-                                                                    duration: Duration(
-                                                                        milliseconds:
-                                                                            4000),
-                                                                    backgroundColor:
-                                                                        Color(
-                                                                            0x00000000),
-                                                                  ),
-                                                                );
-                                                                if (_shouldSetState)
-                                                                  safeSetState(
-                                                                      () {});
-                                                                return;
-                                                              }
 
-                                                              if (!functions
-                                                                  .isPrinterSelected(
-                                                                      FFAppState()
-                                                                          .printerDevice)!) {
-                                                                _model.resDevice2 =
-                                                                    await actions
-                                                                        .scanPrinter(
+                                                                if (getJsonField(
                                                                   FFAppState()
-                                                                      .posMode,
-                                                                );
-                                                                _shouldSetState =
-                                                                    true;
-                                                              }
-                                                              _model.isconnected =
-                                                                  await actions
-                                                                      .connectDevice(
-                                                                FFAppState()
-                                                                    .printerDevice,
-                                                                FFAppState()
-                                                                    .printerIndex,
-                                                              );
-                                                              _shouldSetState =
-                                                                  true;
-                                                              if (_model
-                                                                  .isconnected!) {
-                                                                FFAppState()
-                                                                        .lastBill =
+                                                                      .shiftDetailsJson,
+                                                                  r'''$.shiftExists''',
+                                                                )) {
+                                                                  _model.shiftSummarResultsNew =
+                                                                      await actions
+                                                                          .calShiftSummary(
+                                                                    _model
+                                                                        .invonlineprt!,
                                                                     FFAppState()
-                                                                        .finalAmt;
-                                                                FFAppState()
-                                                                    .update(
-                                                                        () {});
-                                                                _model.returnedList2 =
-                                                                    await actions
-                                                                        .selectBillPrint(
+                                                                        .shiftDetailsJson,
+                                                                  );
+                                                                  _shouldSetState =
+                                                                      true;
                                                                   FFAppState()
-                                                                      .selBill
-                                                                      .toString(),
-                                                                  FFAppState()
-                                                                      .allBillsList
-                                                                      .toList(),
-                                                                );
-                                                                _shouldSetState =
-                                                                    true;
-                                                                _model.device =
-                                                                    await actions
-                                                                        .newCustomAction(
-                                                                  FFAppState()
-                                                                      .printerIndex,
-                                                                );
-                                                                _shouldSetState =
-                                                                    true;
-                                                                await actions
-                                                                    .printBillnewhive2(
-                                                                  _model
-                                                                      .returnedList2!
-                                                                      .toList(),
-                                                                  _model.device!
-                                                                      .toList(),
-                                                                  FFAppState()
-                                                                      .isPrinterConnected,
-                                                                  FFAppState()
-                                                                      .printerName,
-                                                                  getJsonField(
-                                                                    functions.outletDocToJson(
+                                                                      .updateShiftDetailsStruct(
+                                                                    (e) => e
+                                                                      ..billCount =
+                                                                          valueOrDefault<
+                                                                              int>(
+                                                                        FFAppState()
+                                                                            .billcount,
+                                                                        0,
+                                                                      )
+                                                                      ..totalSale =
+                                                                          getJsonField(
                                                                         _model
-                                                                            .outlecdoc!),
-                                                                    r'''$''',
-                                                                  ),
-                                                                  _model
-                                                                      .invonlineprt!,
-                                                                  FFAppState()
-                                                                      .paperSize,
-                                                                  productComboBillingAppSettingsRecord!,
-                                                                );
-                                                                if (productComboBillingAppSettingsRecord!
-                                                                    .settingList
-                                                                    .where((e) =>
-                                                                        e.title ==
-                                                                        'enableStock')
-                                                                    .toList()
-                                                                    .firstOrNull!
-                                                                    .value) {
-                                                                  FFAppState()
-                                                                      .startLoop = 0;
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.totalSale''',
+                                                                      )
+                                                                      ..deliveryCharges =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.deliveryCharges''',
+                                                                      )
+                                                                      ..tax =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.tax''',
+                                                                      )
+                                                                      ..lastBillNo =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.lastBillNo''',
+                                                                      ).toString()
+                                                                      ..discount =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.discount''',
+                                                                      )
+                                                                      ..lastBillTime =
+                                                                          functions
+                                                                              .timestampToMili(getCurrentTimestamp)
+                                                                      ..cashSale =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.cashSale''',
+                                                                      )
+                                                                      ..paymentJson =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.paymentJson''',
+                                                                      ).toString()
+                                                                      ..dayId =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.dayId''',
+                                                                      ).toString()
+                                                                      ..shiftId =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.shiftId''',
+                                                                      ).toString()
+                                                                      ..hivekey = FFAppState()
+                                                                          .shiftDetails
+                                                                          .hivekey
+                                                                      ..newIDShift = FFAppState()
+                                                                          .shiftDetails
+                                                                          .newIDShift
+                                                                      ..code = FFAppState()
+                                                                          .shiftDetails
+                                                                          .code
+                                                                      ..endTime = FFAppState()
+                                                                          .shiftDetails
+                                                                          .endTime
+                                                                      ..advanceAmtTotal = FFAppState()
+                                                                          .shiftDetails
+                                                                          .advanceAmtTotal
+                                                                      ..customerReciveAmtTotal = FFAppState()
+                                                                          .shiftDetails
+                                                                          .customerReciveAmtTotal
+                                                                      ..expensesAmtTotal = FFAppState()
+                                                                          .shiftDetails
+                                                                          .expensesAmtTotal
+                                                                      ..openingAmt = FFAppState()
+                                                                          .shiftDetails
+                                                                          .openingAmt
+                                                                      ..receiveAmtTotal = FFAppState()
+                                                                          .shiftDetails
+                                                                          .receiveAmtTotal
+                                                                      ..refoundAmount = FFAppState()
+                                                                          .shiftDetails
+                                                                          .refoundAmount
+                                                                      ..roundOff = FFAppState()
+                                                                          .shiftDetails
+                                                                          .roundOff
+                                                                      ..cashInHand =
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.cashInHand''',
+                                                                      )
+                                                                      ..startTime = FFAppState()
+                                                                          .shiftDetails
+                                                                          .startTime
+                                                                      ..inActive = FFAppState()
+                                                                          .shiftDetails
+                                                                          .inActive
+                                                                      ..shiftNo = FFAppState()
+                                                                          .shiftDetails
+                                                                          .shiftNo
+                                                                      ..subTotalBill = FFAppState()
+                                                                          .shiftDetails
+                                                                          .subTotalBill
+                                                                      ..version = FFAppState()
+                                                                          .shiftDetails
+                                                                          .version
+                                                                      ..userId = FFAppState()
+                                                                          .shiftDetails
+                                                                          .userId
+                                                                      ..deviceId = FFAppState()
+                                                                          .shiftDetails
+                                                                          .deviceId
+                                                                      ..synC = FFAppState()
+                                                                          .shiftDetails
+                                                                          .synC
+                                                                      ..id = FFAppState()
+                                                                          .shiftDetails
+                                                                          .id,
+                                                                  );
                                                                   safeSetState(
                                                                       () {});
-                                                                  while (FFAppState()
-                                                                          .startLoop <
-                                                                      _model
-                                                                          .invonlineprt!
-                                                                          .productList
-                                                                          .length) {
-                                                                    _model.recipe =
-                                                                        await queryRecipeRecordOnce(
+                                                                  if (_model
+                                                                      .interprd!) {
+                                                                    _model.shiftondataprint =
+                                                                        await queryShiftRecordOnce(
                                                                       parent: FFAppState()
                                                                           .outletIdRef,
                                                                       queryBuilder:
-                                                                          (recipeRecord) =>
-                                                                              recipeRecord.where(
-                                                                        'productId',
+                                                                          (shiftRecord) =>
+                                                                              shiftRecord.where(
+                                                                        'id',
                                                                         isEqualTo:
-                                                                            (_model.invonlineprt?.productList?.elementAtOrNull(FFAppState().startLoop))?.id,
+                                                                            valueOrDefault<String>(
+                                                                          getJsonField(
+                                                                            FFAppState().shiftDetailsJson,
+                                                                            r'''$.ref''',
+                                                                          )?.toString(),
+                                                                          'NA',
+                                                                        ),
                                                                       ),
                                                                       singleRecord:
                                                                           true,
@@ -3961,108 +3688,400 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             s.firstOrNull);
                                                                     _shouldSetState =
                                                                         true;
-                                                                    if (_model
-                                                                            .recipe !=
-                                                                        null) {
-                                                                      await actions
-                                                                          .updateProductStock(
+
+                                                                    await _model
+                                                                        .shiftondataprint!
+                                                                        .reference
+                                                                        .update(
+                                                                            createShiftRecordData(
+                                                                      billCount: FFAppState()
+                                                                          .shiftDetails
+                                                                          .billCount,
+                                                                      dayId:
+                                                                          getJsonField(
                                                                         _model
-                                                                            .recipe!,
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.dayId''',
+                                                                      ).toString(),
+                                                                      lastBillNo:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.lastBillNo''',
+                                                                      ).toString(),
+                                                                      lastBillTime:
+                                                                          functions
+                                                                              .timestampToMili(getCurrentTimestamp),
+                                                                      tax:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.tax''',
+                                                                      ),
+                                                                      deliveryCharges:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.deliveryCharges''',
+                                                                      ),
+                                                                      discount:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.discount''',
+                                                                      ),
+                                                                      totalSale:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.totalSale''',
+                                                                      ),
+                                                                      cashSale:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.cashSale''',
+                                                                      ),
+                                                                      paymentJson:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.paymentJson''',
+                                                                      ).toString(),
+                                                                      code: FFAppState()
+                                                                          .shiftDetails
+                                                                          .code,
+                                                                      endTime: FFAppState()
+                                                                          .shiftDetails
+                                                                          .endTime,
+                                                                      advanceAmtTotal: FFAppState()
+                                                                          .shiftDetails
+                                                                          .advanceAmtTotal,
+                                                                      customerReciveAmtTotal: FFAppState()
+                                                                          .shiftDetails
+                                                                          .customerReciveAmtTotal,
+                                                                      expensesAmtTotal: FFAppState()
+                                                                          .shiftDetails
+                                                                          .expensesAmtTotal,
+                                                                      openingAmt: FFAppState()
+                                                                          .shiftDetails
+                                                                          .openingAmt,
+                                                                      receiveAmtTotal: FFAppState()
+                                                                          .shiftDetails
+                                                                          .receiveAmtTotal,
+                                                                      refoundAmount: FFAppState()
+                                                                          .shiftDetails
+                                                                          .refoundAmount,
+                                                                      roundOff: FFAppState()
+                                                                          .shiftDetails
+                                                                          .roundOff,
+                                                                      cashInHand: FFAppState()
+                                                                          .shiftDetails
+                                                                          .cashInHand,
+                                                                      startTime: FFAppState()
+                                                                          .shiftDetails
+                                                                          .startTime,
+                                                                      inActive: FFAppState()
+                                                                          .shiftDetails
+                                                                          .inActive,
+                                                                      shiftNo: FFAppState()
+                                                                          .shiftDetails
+                                                                          .shiftNo,
+                                                                      shiftId:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.shiftId''',
+                                                                      ).toString(),
+                                                                    ));
+                                                                  } else {
+                                                                    await showDialog(
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (alertDialogContext) {
+                                                                        return AlertDialog(
+                                                                          content:
+                                                                              Text('Internet Not Available'),
+                                                                          actions: [
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                              child: Text('Ok'),
+                                                                            ),
+                                                                          ],
+                                                                        );
+                                                                      },
+                                                                    );
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
+                                                                  }
+                                                                } else {
+                                                                  ScaffoldMessenger.of(
+                                                                          context)
+                                                                      .showSnackBar(
+                                                                    SnackBar(
+                                                                      content:
+                                                                          Text(
+                                                                        'Login again to start Shift ',
+                                                                        style:
+                                                                            TextStyle(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                        ),
+                                                                      ),
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              4000),
+                                                                      backgroundColor:
+                                                                          Color(
+                                                                              0x00000000),
+                                                                    ),
+                                                                  );
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  return;
+                                                                }
+
+                                                                if (!functions
+                                                                    .isPrinterSelected(
+                                                                        FFAppState()
+                                                                            .printerDevice)!) {
+                                                                  _model.resDevice2 =
+                                                                      await actions
+                                                                          .scanPrinter(
+                                                                    FFAppState()
+                                                                        .posMode,
+                                                                  );
+                                                                  _shouldSetState =
+                                                                      true;
+                                                                }
+                                                                _model.isconnected =
+                                                                    await actions
+                                                                        .connectDevice(
+                                                                  FFAppState()
+                                                                      .printerDevice,
+                                                                  FFAppState()
+                                                                      .printerIndex,
+                                                                );
+                                                                _shouldSetState =
+                                                                    true;
+                                                                if (_model
+                                                                    .isconnected!) {
+                                                                  FFAppState()
+                                                                          .lastBill =
+                                                                      FFAppState()
+                                                                          .finalAmt;
+                                                                  FFAppState()
+                                                                      .update(
+                                                                          () {});
+                                                                  _model.returnedList2 =
+                                                                      await actions
+                                                                          .selectBillPrint(
+                                                                    FFAppState()
+                                                                        .selBill
+                                                                        .toString(),
+                                                                    FFAppState()
+                                                                        .allBillsList
+                                                                        .toList(),
+                                                                  );
+                                                                  _shouldSetState =
+                                                                      true;
+                                                                  _model.device =
+                                                                      await actions
+                                                                          .newCustomAction(
+                                                                    FFAppState()
+                                                                        .printerIndex,
+                                                                  );
+                                                                  _shouldSetState =
+                                                                      true;
+                                                                  await actions
+                                                                      .printBillnewhive2(
+                                                                    _model
+                                                                        .returnedList2!
+                                                                        .toList(),
+                                                                    _model
+                                                                        .device!
+                                                                        .toList(),
+                                                                    FFAppState()
+                                                                        .isPrinterConnected,
+                                                                    FFAppState()
+                                                                        .printerName,
+                                                                    getJsonField(
+                                                                      functions.outletDocToJson(
+                                                                          _model
+                                                                              .outlecdoc!),
+                                                                      r'''$''',
+                                                                    ),
+                                                                    _model
+                                                                        .invonlineprt!,
+                                                                    FFAppState()
+                                                                        .paperSize,
+                                                                    productComboBillingAppSettingsRecord!,
+                                                                  );
+                                                                  if (productComboBillingAppSettingsRecord!
+                                                                      .settingList
+                                                                      .where((e) =>
+                                                                          e.title ==
+                                                                          'enableStock')
+                                                                      .toList()
+                                                                      .firstOrNull!
+                                                                      .value) {
+                                                                    FFAppState()
+                                                                        .startLoop = 0;
+                                                                    safeSetState(
+                                                                        () {});
+                                                                    while (FFAppState()
+                                                                            .startLoop <
                                                                         _model
                                                                             .invonlineprt!
                                                                             .productList
-                                                                            .elementAtOrNull(FFAppState().startLoop)!,
-                                                                      );
-                                                                      FFAppState()
-                                                                          .productHive = [];
-                                                                      FFAppState()
-                                                                              .productHiveput =
-                                                                          ProductStructStruct();
-                                                                      safeSetState(
-                                                                          () {});
-                                                                      _model.newupdatedproductlist22 =
-                                                                          await actions
-                                                                              .getProductlistHive();
+                                                                            .length) {
+                                                                      _model.recipe =
+                                                                          await queryRecipeRecordOnce(
+                                                                        parent:
+                                                                            FFAppState().outletIdRef,
+                                                                        queryBuilder:
+                                                                            (recipeRecord) =>
+                                                                                recipeRecord.where(
+                                                                          'productId',
+                                                                          isEqualTo:
+                                                                              (_model.invonlineprt?.productList?.elementAtOrNull(FFAppState().startLoop))?.id,
+                                                                        ),
+                                                                        singleRecord:
+                                                                            true,
+                                                                      ).then((s) =>
+                                                                              s.firstOrNull);
                                                                       _shouldSetState =
                                                                           true;
-                                                                      FFAppState().productHive = _model
-                                                                          .newupdatedproductlist22!
-                                                                          .toList()
-                                                                          .cast<
-                                                                              ProductStructStruct>();
+                                                                      if (_model
+                                                                              .recipe !=
+                                                                          null) {
+                                                                        await actions
+                                                                            .updateProductStock(
+                                                                          _model
+                                                                              .recipe!,
+                                                                          _model
+                                                                              .invonlineprt!
+                                                                              .productList
+                                                                              .elementAtOrNull(FFAppState().startLoop)!,
+                                                                        );
+                                                                        FFAppState().productHive =
+                                                                            [];
+                                                                        FFAppState().productHiveput =
+                                                                            ProductStructStruct();
+                                                                        safeSetState(
+                                                                            () {});
+                                                                        _model.newupdatedproductlist22 =
+                                                                            await actions.getProductlistHive();
+                                                                        _shouldSetState =
+                                                                            true;
+                                                                        FFAppState().productHive = _model
+                                                                            .newupdatedproductlist22!
+                                                                            .toList()
+                                                                            .cast<ProductStructStruct>();
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      }
+                                                                      FFAppState()
+                                                                              .startLoop =
+                                                                          FFAppState().startLoop +
+                                                                              1;
                                                                       safeSetState(
                                                                           () {});
                                                                     }
                                                                     FFAppState()
-                                                                            .startLoop =
-                                                                        FFAppState().startLoop +
-                                                                            1;
+                                                                        .startLoop = 0;
                                                                     safeSetState(
                                                                         () {});
                                                                   }
-                                                                  FFAppState()
-                                                                      .startLoop = 0;
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                                await actions
-                                                                    .removeFromAllBillList(
-                                                                  FFAppState()
-                                                                      .selBill,
-                                                                );
-                                                                await actions
-                                                                    .clearValue();
-                                                                FFAppState()
-                                                                        .subTotal =
-                                                                    0.0;
-                                                                FFAppState()
-                                                                        .delCharges =
-                                                                    0.0;
-                                                                FFAppState()
-                                                                    .oldBalance = 0;
-                                                                FFAppState()
-                                                                    .custCredit = 0;
-                                                                FFAppState()
-                                                                        .custNameRef =
-                                                                    null;
-                                                                FFAppState()
-                                                                        .setCustRef =
-                                                                    null;
-                                                                FFAppState()
-                                                                    .setCustName = '';
-                                                                FFAppState()
-                                                                    .setCustMobNo = '';
-                                                                FFAppState()
-                                                                    .noOfItems = 0;
-                                                                FFAppState()
-                                                                    .prdid = '';
-                                                                FFAppState()
-                                                                    .productColor = '';
-                                                                FFAppState()
-                                                                    .billPrintFooter = '';
-                                                                FFAppState()
-                                                                    .PayMode = '';
-                                                                FFAppState()
-                                                                    .update(
-                                                                        () {});
-                                                                FFAppState()
-                                                                        .finalAmt =
-                                                                    0.0;
-                                                                FFAppState()
-                                                                        .billAmt =
-                                                                    0.0;
-                                                                FFAppState()
-                                                                        .count =
+                                                                  await actions
+                                                                      .removeFromAllBillList(
                                                                     FFAppState()
-                                                                        .shiftDetails
-                                                                        .billCount;
-                                                                FFAppState()
-                                                                    .update(
+                                                                        .selBill,
+                                                                  );
+                                                                  await actions
+                                                                      .clearValue();
+                                                                  FFAppState()
+                                                                          .subTotal =
+                                                                      0.0;
+                                                                  FFAppState()
+                                                                          .delCharges =
+                                                                      0.0;
+                                                                  FFAppState()
+                                                                      .oldBalance = 0;
+                                                                  FFAppState()
+                                                                      .custCredit = 0;
+                                                                  FFAppState()
+                                                                          .custNameRef =
+                                                                      null;
+                                                                  FFAppState()
+                                                                          .setCustRef =
+                                                                      null;
+                                                                  FFAppState()
+                                                                      .setCustName = '';
+                                                                  FFAppState()
+                                                                      .setCustMobNo = '';
+                                                                  FFAppState()
+                                                                      .noOfItems = 0;
+                                                                  FFAppState()
+                                                                      .prdid = '';
+                                                                  FFAppState()
+                                                                      .productColor = '';
+                                                                  FFAppState()
+                                                                      .billPrintFooter = '';
+                                                                  FFAppState()
+                                                                      .PayMode = '';
+                                                                  FFAppState()
+                                                                      .update(
+                                                                          () {});
+                                                                  FFAppState()
+                                                                          .finalAmt =
+                                                                      0.0;
+                                                                  FFAppState()
+                                                                          .billAmt =
+                                                                      0.0;
+                                                                  FFAppState()
+                                                                          .count =
+                                                                      FFAppState()
+                                                                          .shiftDetails
+                                                                          .billCount;
+                                                                  FFAppState()
+                                                                      .update(
+                                                                          () {});
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
                                                                         () {});
-                                                                if (_shouldSetState)
-                                                                  safeSetState(
-                                                                      () {});
-                                                                return;
+                                                                  return;
+                                                                } else {
+                                                                  await showDialog(
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (alertDialogContext) {
+                                                                      return AlertDialog(
+                                                                        title: Text(
+                                                                            'printer connection'),
+                                                                        content:
+                                                                            Text('printer not connected'),
+                                                                        actions: [
+                                                                          TextButton(
+                                                                            onPressed: () =>
+                                                                                Navigator.pop(alertDialogContext),
+                                                                            child:
+                                                                                Text('Ok'),
+                                                                          ),
+                                                                        ],
+                                                                      );
+                                                                    },
+                                                                  );
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  return;
+                                                                }
                                                               } else {
                                                                 await showDialog(
                                                                   context:
@@ -4070,10 +4089,8 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                   builder:
                                                                       (alertDialogContext) {
                                                                     return AlertDialog(
-                                                                      title: Text(
-                                                                          'printer connection'),
                                                                       content: Text(
-                                                                          'printer not connected'),
+                                                                          'Select Payment Mode !'),
                                                                       actions: [
                                                                         TextButton(
                                                                           onPressed: () =>
@@ -4085,92 +4102,63 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     );
                                                                   },
                                                                 );
-                                                                if (_shouldSetState)
-                                                                  safeSetState(
-                                                                      () {});
-                                                                return;
                                                               }
-                                                            } else {
-                                                              await showDialog(
-                                                                context:
-                                                                    context,
-                                                                builder:
-                                                                    (alertDialogContext) {
-                                                                  return AlertDialog(
-                                                                    content: Text(
-                                                                        'Select Payment Mode !'),
-                                                                    actions: [
-                                                                      TextButton(
-                                                                        onPressed:
-                                                                            () =>
-                                                                                Navigator.pop(alertDialogContext),
-                                                                        child: Text(
-                                                                            'Ok'),
-                                                                      ),
-                                                                    ],
-                                                                  );
-                                                                },
-                                                              );
-                                                            }
 
-                                                            if (_shouldSetState)
-                                                              safeSetState(
-                                                                  () {});
-                                                          },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            'oc92eaf7' /* KOT  */,
-                                                          ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        16.0,
-                                                                        0.0,
-                                                                        16.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
+                                                              if (_shouldSetState)
+                                                                safeSetState(
+                                                                    () {});
+                                                            },
+                                                            text: FFLocalizations
                                                                     .of(context)
-                                                                .primary,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: Colors
-                                                                          .white,
-                                                                      fontSize:
+                                                                .getText(
+                                                              'oc92eaf7' /* KOT  */,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              width: double
+                                                                  .infinity,
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
                                                                           16.0,
-                                                                      letterSpacing:
-                                                                          1.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 0.0,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: Colors
+                                                                            .white,
+                                                                        fontSize:
+                                                                            16.0,
+                                                                        letterSpacing:
+                                                                            1.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 0.0,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
                                                           ),
                                                         ),
                                                         FFButtonWidget(
