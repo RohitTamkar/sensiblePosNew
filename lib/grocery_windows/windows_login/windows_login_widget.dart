@@ -52,7 +52,6 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
       _model.platform = await actions.checkPlatform(
         isWeb.toString(),
       );
-      await actions.savelogstoStorage();
     });
 
     _model.textController1 ??= TextEditingController();
