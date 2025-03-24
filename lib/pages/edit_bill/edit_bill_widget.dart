@@ -248,27 +248,60 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                         size: 25.0,
                                       ),
                                       onPressed: () async {
-                                        context.pushNamed(
-                                          ProductComboBillingWidget.routeName,
-                                          queryParameters: {
-                                            'billDetails': serializeParam(
-                                              widget!.billRef,
-                                              ParamType.DocumentReference,
-                                            ),
-                                            'shiftDetails': serializeParam(
-                                              FFAppState().shiftdetails,
-                                              ParamType.JSON,
-                                            ),
-                                            'taxcollection': serializeParam(
-                                              widget!.tax,
-                                              ParamType.Document,
-                                              isList: true,
-                                            ),
-                                          }.withoutNulls,
-                                          extra: <String, dynamic>{
-                                            'taxcollection': widget!.tax,
-                                          },
-                                        );
+                                        if (widget!.appsetting!.settingList
+                                            .where(
+                                                (e) => e.title == 'enableCombo')
+                                            .toList()
+                                            .firstOrNull!
+                                            .value) {
+                                          context.pushNamed(
+                                            ProductComboBillingWidget.routeName,
+                                            queryParameters: {
+                                              'billDetails': serializeParam(
+                                                widget!.billRef,
+                                                ParamType.DocumentReference,
+                                              ),
+                                              'shiftDetails': serializeParam(
+                                                FFAppState().shiftdetails,
+                                                ParamType.JSON,
+                                              ),
+                                              'taxcollection': serializeParam(
+                                                widget!.tax,
+                                                ParamType.Document,
+                                                isList: true,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              'taxcollection': widget!.tax,
+                                            },
+                                          );
+                                        } else {
+                                          context.pushNamed(
+                                            ProductAndListNewWidget.routeName,
+                                            queryParameters: {
+                                              'billDetails': serializeParam(
+                                                widget!.billRef,
+                                                ParamType.DocumentReference,
+                                              ),
+                                              'doc': serializeParam(
+                                                FFAppState().userdoc,
+                                                ParamType.DocumentReference,
+                                              ),
+                                              'shiftDetails': serializeParam(
+                                                FFAppState().shiftdetails,
+                                                ParamType.JSON,
+                                              ),
+                                              'taxcollection': serializeParam(
+                                                widget!.tax,
+                                                ParamType.Document,
+                                                isList: true,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              'taxcollection': widget!.tax,
+                                            },
+                                          );
+                                        }
                                       },
                                     ),
                                     AutoSizeText(

@@ -1141,6 +1141,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                   doc: widget!.doc,
                                   shiftDetails: widget!.shiftDetails,
                                   tax: widget!.taxcollection,
+                                  appSettings23:
+                                      productAndListNewAppSettingsRecord,
                                 ),
                               ),
                             ),

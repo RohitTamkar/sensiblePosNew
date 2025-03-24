@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:image/image.dart' as img;
 import 'package:flutter/services.dart';
 
@@ -275,7 +277,12 @@ Future printBillnewhive2(
         final String formatted1 = formatter1.format(now1);
 
         String dateTimeString = formatted1.toString();
-        String billNo = 'Bill No:' + invoiceDetails.invoice.toString();
+        String billNo;
+        if (FFAppState().billPrintFooter != "KOT") {
+          billNo = 'BILL NO: ' + invoiceDetails.invoice.toString();
+        } else {
+          billNo = 'KOT NO: ' + invoiceDetails.invoice.toString();
+        }
         printLine = billNo;
         for (int i = 1;
             i <= (size - (billNo.length + dateTimeString.length));
@@ -319,7 +326,9 @@ Future printBillnewhive2(
         final String formatted1 = formatter1.format(now1);
 
         String dateTimeString = formatted1.toString();
-        String billNo = 'Bill No: ' + invoiceDetails.invoice.toString();
+        String billNo;
+
+        billNo = 'Bill No: ' + invoiceDetails.invoice.toString();
         printLine = billNo;
         for (int i = 1;
             i <= (size - (billNo.length + dateTimeString.length));
@@ -1212,7 +1221,12 @@ Future printBillnewhive2(
         final String formatted1 = formatter1.format(now1);
 
         String dateTimeString = formatted1.toString();
-        String billNo = 'Bill No:' + invoiceDetails.invoice.toString();
+        String billNo;
+        if (FFAppState().billPrintFooter != "KOT") {
+          billNo = 'BILL NO: ' + invoiceDetails.invoice.toString();
+        } else {
+          billNo = 'KOT NO: ' + invoiceDetails.invoice.toString();
+        }
         printLine = billNo;
         bytes += generator.text(printLine,
             styles: const PosStyles(
