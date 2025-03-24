@@ -89,6 +89,14 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
               'isDeleted',
               isEqualTo: false,
             )
+            .where(
+              'dayId',
+              isEqualTo: dateTimeFormat(
+                "yyyy-MM-dd",
+                getCurrentTimestamp,
+                locale: FFLocalizations.of(context).languageCode,
+              ),
+            )
             .orderBy('invoiceDate', descending: true),
         limit: 10,
       );
