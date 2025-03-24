@@ -219,33 +219,33 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   FormFieldController<String>? dropDownValueController;
   // Stores action output result for [Custom Action - paymentmodemix] action in DropDown widget.
   bool? returntrue;
-  // Stores action output result for [Custom Action - filterProducts2] action in UPI widget.
-  List<SelItemListStruct>? prdlistsavebillCopy;
-  // Stores action output result for [Custom Action - oldbalanceplusamt] action in UPI widget.
-  int? totalcredit2Copy;
-  // Stores action output result for [Custom Action - checkInternetConnection] action in UPI widget.
+  // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
+  List<SelItemListStruct>? prdlistsavebillupi;
+  // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
+  int? totalcredit2upi;
+  // Stores action output result for [Custom Action - checkInternetConnection] action in Button widget.
   bool? internetconCopy;
-  // Stores action output result for [Backend Call - Create Document] action in UPI widget.
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
   InvoiceRecord? invonlineCopy;
-  // Stores action output result for [Custom Action - addInvoiceBillhive] action in UPI widget.
+  // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceDataupi;
-  // Stores action output result for [Custom Action - calShiftSummaryNew] action in UPI widget.
+  // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
   dynamic? shiftSummarResultsNew2Copy;
-  // Stores action output result for [Custom Action - shiftIdtoInt] action in UPI widget.
+  // Stores action output result for [Custom Action - shiftIdtoInt] action in Button widget.
   int? shiftidhive2Copy;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in UPI widget.
+  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
   ShiftDetailsStruct? getOfflineShiftdetailsCopy;
-  // Stores action output result for [Firestore Query - Query a collection] action in UPI widget.
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   ShiftRecord? shiftondataCopy;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in UPI widget.
+  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
   ShiftDetailsStruct? updatedShift23Copy;
-  // Stores action output result for [Firestore Query - Query a collection] action in UPI widget.
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   ProductRecord? stockupdateprdCopy;
-  // Stores action output result for [Custom Action - hivegetproductbyId] action in UPI widget.
+  // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
   ProductStructStruct? itemprdCopy;
-  // Stores action output result for [Custom Action - hiveProductCrud] action in UPI widget.
+  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
   ProductStructStruct? productupdatedCopy;
-  // Stores action output result for [Custom Action - getProductlistHive] action in UPI widget.
+  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
   List<ProductStructStruct>? newupdatedproductlist2Copy;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlistsavebill;

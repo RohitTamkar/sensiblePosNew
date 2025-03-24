@@ -939,6 +939,14 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                       r'''$.billCount''',
                                                     );
                                                     safeSetState(() {});
+                                                    FFAppState().shiftdetails =
+                                                        _model
+                                                            .shiftDetailsNew2!;
+                                                    FFAppState()
+                                                            .shiftDetailsJson =
+                                                        _model
+                                                            .shiftDetailsNew2!;
+                                                    safeSetState(() {});
                                                     if (_model
                                                         .devicew!.settingList
                                                         .where((e) =>
@@ -1313,6 +1321,12 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                                 .secondary,
                                                       ),
                                                     );
+                                                    FFAppState().shiftdetails =
+                                                        widget!.shiftDetails!;
+                                                    FFAppState()
+                                                            .shiftDetailsJson =
+                                                        widget!.shiftDetails!;
+                                                    safeSetState(() {});
                                                     if (_model
                                                         .devicew!.settingList
                                                         .where((e) =>

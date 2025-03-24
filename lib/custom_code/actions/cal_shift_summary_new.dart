@@ -147,6 +147,8 @@ Future<dynamic> calShiftSummaryNew(
     var paymentJsonDataString = jsonEncode(paymentJsonData).toString();
     shift[i]["paymentJson"] = paymentJsonDataString;
   }
-
+  FFAppState().shiftDetailsJson = shift[0];
+  FFAppState().shiftdetails = shift[0];
+  FFAppState().shiftDetailsNEw = shift[0];
   return shift[0];
 }
