@@ -249,6 +249,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                       functions.genInvoiceNum(1, 1);
                                   FFAppState().filterDate =
                                       functions.getDayId();
+                                  FFAppState().startLoop = 0;
                                   FFAppState().update(() {});
                                   _model.appsetting =
                                       await queryAppSettingsRecordOnce(
