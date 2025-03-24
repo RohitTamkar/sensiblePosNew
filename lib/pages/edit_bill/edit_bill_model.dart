@@ -59,8 +59,8 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
 
   DateTime? datePicked1;
   // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // Stores action output result for [Custom Action - scanPrinter] action in PrintEditBill widget.
   bool? resDevice2;
   // Stores action output result for [Custom Action - newCustomAction] action in PrintEditBill widget.
@@ -100,12 +100,12 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
   // Stores action output result for [Custom Action - shiftDetailNewpark] action in Button widget.
   dynamic? shiftdetailsnewonlineCopy;
   DateTime? datePicked2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue3;
-  FormFieldController<String>? dropDownValueController3;
+  // State field(s) for DropDownstart widget.
+  String? dropDownstartValue;
+  FormFieldController<String>? dropDownstartValueController;
+  // State field(s) for DropDownend widget.
+  String? dropDownendValue;
+  FormFieldController<String>? dropDownendValueController;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   InvoiceRecord? drop1;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.

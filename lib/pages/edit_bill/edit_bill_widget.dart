@@ -489,7 +489,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       FFAppState()
                                                           .update(() {});
                                                       safeSetState(() {
-                                                        _model.dropDownValueController1
+                                                        _model.dropDownValueController
                                                                 ?.value =
                                                             listViewInvoiceRecord
                                                                 .paymentMode;
@@ -1709,10 +1709,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             FlutterFlowDropDown<
                                                                 String>(
                                                           controller: _model
-                                                                  .dropDownValueController1 ??=
+                                                                  .dropDownValueController ??=
                                                               FormFieldController<
                                                                   String>(
-                                                            _model.dropDownValue1 ??=
+                                                            _model.dropDownValue ??=
                                                                 containerInvoiceRecord
                                                                     ?.paymentMode,
                                                           ),
@@ -1731,7 +1731,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                           onChanged:
                                                               (val) async {
                                                             safeSetState(() =>
-                                                                _model.dropDownValue1 =
+                                                                _model.dropDownValue =
                                                                     val);
                                                             FFAppState()
                                                                     .prevMode =
@@ -1740,7 +1740,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             FFAppState()
                                                                     .curMode =
                                                                 _model
-                                                                    .dropDownValue1!;
+                                                                    .dropDownValue!;
                                                             FFAppState()
                                                                     .dropDown =
                                                                 true;
@@ -4514,9 +4514,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     FFLocalizations.of(context)
                                                         .languageCode,
                                               ),
-                                            )
-                                            .orderBy('invoiceDate',
-                                                descending: true),
+                                            ),
                                   ),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
@@ -4794,10 +4792,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                               children: [
                                                 FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownValueController2 ??=
+                                                          .dropDownstartValueController ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownValue2 ??=
+                                                    _model.dropDownstartValue ??=
                                                         '',
                                                   ),
                                                   options: List<String>.from(
@@ -4818,7 +4816,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                           .toList(),
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownValue2 =
+                                                              .dropDownstartValue =
                                                           val),
                                                   width: 200.0,
                                                   height: 40.0,
@@ -4871,7 +4869,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 ),
                                                 Text(
                                                   valueOrDefault<String>(
-                                                    _model.dropDownValue2,
+                                                    _model.dropDownstartValue,
                                                     '00',
                                                   ),
                                                   style: FlutterFlowTheme.of(
@@ -4901,16 +4899,17 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             children: [
                                               FlutterFlowDropDown<String>(
                                                 controller: _model
-                                                        .dropDownValueController3 ??=
+                                                        .dropDownendValueController ??=
                                                     FormFieldController<String>(
-                                                  _model.dropDownValue3 ??= '',
+                                                  _model.dropDownendValue ??=
+                                                      '',
                                                 ),
                                                 options: List<String>.from(
                                                     selectedbillscustomInvoiceRecordList
                                                         .sortedList(
                                                             keyOf: (e) =>
                                                                 e.count,
-                                                            desc: false)
+                                                            desc: true)
                                                         .map((e) => e.id)
                                                         .toList()),
                                                 optionLabels:
@@ -4923,7 +4922,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                         .toList(),
                                                 onChanged: (val) =>
                                                     safeSetState(() => _model
-                                                        .dropDownValue3 = val),
+                                                            .dropDownendValue =
+                                                        val),
                                                 width: 200.0,
                                                 height: 40.0,
                                                 textStyle:
@@ -4972,7 +4972,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                               ),
                                               Text(
                                                 valueOrDefault<String>(
-                                                  _model.dropDownValue3,
+                                                  _model.dropDownendValue,
                                                   '00',
                                                 ),
                                                 style:
@@ -5000,13 +5000,13 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     0.0, 20.0, 0.0, 10.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                if ((_model.dropDownValue2 !=
+                                                if ((_model.dropDownstartValue !=
                                                             null &&
-                                                        _model.dropDownValue2 !=
+                                                        _model.dropDownstartValue !=
                                                             '') &&
-                                                    (_model.dropDownValue3 !=
+                                                    (_model.dropDownendValue !=
                                                             null &&
-                                                        _model.dropDownValue3 !=
+                                                        _model.dropDownendValue !=
                                                             '')) {
                                                   _model.drop1 =
                                                       await queryInvoiceRecordOnce(
@@ -5016,8 +5016,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                         (invoiceRecord) =>
                                                             invoiceRecord.where(
                                                       'id',
-                                                      isEqualTo:
-                                                          _model.dropDownValue2,
+                                                      isEqualTo: _model
+                                                          .dropDownstartValue,
                                                     ),
                                                     singleRecord: true,
                                                   ).then((s) => s.firstOrNull);
@@ -5029,8 +5029,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                         (invoiceRecord) =>
                                                             invoiceRecord.where(
                                                       'id',
-                                                      isEqualTo:
-                                                          _model.dropDownValue3,
+                                                      isEqualTo: _model
+                                                          .dropDownendValue,
                                                     ),
                                                     singleRecord: true,
                                                   ).then((s) => s.firstOrNull);
@@ -5068,7 +5068,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                 (alertDialogContext) {
                                                               return AlertDialog(
                                                                 title: Text(
-                                                                    'From${_model.drop1?.invoice}To${_model.drop2?.invoice}'),
+                                                                    'From ${_model.drop1?.invoice}To ${_model.drop2?.invoice}'),
                                                                 content: Text(
                                                                     'Are you sure  to delete bills'),
                                                                 actions: [
