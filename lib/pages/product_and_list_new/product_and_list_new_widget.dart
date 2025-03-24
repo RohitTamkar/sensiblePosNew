@@ -5918,6 +5918,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               .newcount =
                                                                           FFAppState().newcount +
                                                                               1;
+                                                                      FFAppState()
+                                                                              .billcount =
+                                                                          FFAppState().billcount +
+                                                                              1;
                                                                       safeSetState(
                                                                           () {});
                                                                     } else {
@@ -5928,6 +5932,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       FFAppState()
                                                                               .newcount =
                                                                           FFAppState().newcount +
+                                                                              1;
+                                                                      FFAppState()
+                                                                              .billcount =
+                                                                          FFAppState().billcount +
                                                                               1;
                                                                       safeSetState(
                                                                           () {});
@@ -6277,9 +6285,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       FFAppState()
                                                                           .updateShiftDetailsStruct(
                                                                         (e) => e
-                                                                          ..billCount = functions.lastBillCount(FFAppState()
-                                                                              .shiftDetails
-                                                                              .billCount)
+                                                                          ..billCount =
+                                                                              valueOrDefault<int>(
+                                                                            FFAppState().billcount,
+                                                                            0,
+                                                                          )
                                                                           ..totalSale =
                                                                               getJsonField(
                                                                             _model.shiftSummarResultsNew2Copy,
@@ -6863,6 +6873,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             .newcount = FFAppState()
                                                                                 .newcount +
                                                                             1;
+                                                                        FFAppState()
+                                                                            .billcount = FFAppState()
+                                                                                .billcount +
+                                                                            1;
                                                                         safeSetState(
                                                                             () {});
                                                                       } else {
@@ -6873,6 +6887,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         FFAppState()
                                                                             .newcount = FFAppState()
                                                                                 .newcount +
+                                                                            1;
+                                                                        FFAppState()
+                                                                            .billcount = FFAppState()
+                                                                                .billcount +
                                                                             1;
                                                                         safeSetState(
                                                                             () {});
@@ -7202,7 +7220,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             .updateShiftDetailsStruct(
                                                                           (e) => e
                                                                             ..billCount =
-                                                                                functions.lastBillCount(FFAppState().shiftDetails.billCount)
+                                                                                valueOrDefault<int>(
+                                                                              FFAppState().billcount,
+                                                                              0,
+                                                                            )
                                                                             ..totalSale =
                                                                                 getJsonField(
                                                                               _model.shiftSummarResultsNew2,
@@ -7753,6 +7774,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               FFAppState().count + 1;
                                                                           FFAppState().newcount =
                                                                               FFAppState().newcount + 1;
+                                                                          FFAppState().billcount =
+                                                                              FFAppState().billcount + 1;
                                                                           safeSetState(
                                                                               () {});
                                                                         } else {
@@ -7760,6 +7783,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               FFAppState().count + 1;
                                                                           FFAppState().newcount =
                                                                               FFAppState().newcount + 1;
+                                                                          FFAppState().billcount =
+                                                                              FFAppState().billcount + 1;
                                                                           safeSetState(
                                                                               () {});
                                                                         }
@@ -8036,7 +8061,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               .updateShiftDetailsStruct(
                                                                             (e) => e
                                                                               ..billCount = valueOrDefault<int>(
-                                                                                functions.lastBillCount(FFAppState().shiftDetails.billCount),
+                                                                                FFAppState().billcount,
                                                                                 0,
                                                                               )
                                                                               ..totalSale = getJsonField(
