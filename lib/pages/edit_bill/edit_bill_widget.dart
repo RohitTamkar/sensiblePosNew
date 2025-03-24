@@ -5000,6 +5000,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     0.0, 20.0, 0.0, 10.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
+                                                var _shouldSetState = false;
                                                 if ((_model.dropDownstartValue !=
                                                             null &&
                                                         _model.dropDownstartValue !=
@@ -5021,6 +5022,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     ),
                                                     singleRecord: true,
                                                   ).then((s) => s.firstOrNull);
+                                                  _shouldSetState = true;
                                                   _model.drop2 =
                                                       await queryInvoiceRecordOnce(
                                                     parent: FFAppState()
@@ -5034,6 +5036,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     ),
                                                     singleRecord: true,
                                                   ).then((s) => s.firstOrNull);
+                                                  _shouldSetState = true;
                                                   _model.invoicecustombills =
                                                       await queryInvoiceRecordOnce(
                                                     parent: FFAppState()
@@ -5061,6 +5064,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                       false,
                                                                 ),
                                                   );
+                                                  _shouldSetState = true;
                                                   var confirmDialogResponse =
                                                       await showDialog<bool>(
                                                             context: context,
@@ -5121,6 +5125,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                   FFAppState()
                                                                       .startLoop),
                                                         );
+                                                        _shouldSetState = true;
                                                         FFAppState()
                                                                 .selectedInvoiceJson =
                                                             _model
@@ -5163,6 +5168,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                               .outletIdRef!
                                                               .id,
                                                         );
+                                                        _shouldSetState = true;
                                                         _model.returnList1editbillcustom =
                                                             await actions
                                                                 .updateShiftSummaryFordeletebill(
@@ -5173,6 +5179,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                           _model
                                                               .shiftListeditbillcustom!,
                                                         );
+                                                        _shouldSetState = true;
 
                                                         await functions
                                                             .shiftRef(
@@ -5229,7 +5236,12 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     FFAppState().startLoop = 0;
                                                     FFAppState().endLoop = 0;
                                                     safeSetState(() {});
+                                                  } else {
+                                                    if (_shouldSetState)
+                                                      safeSetState(() {});
+                                                    return;
                                                   }
+
                                                   _model.omtcustom =
                                                       await queryShiftRecordOnce(
                                                     parent: FFAppState()
@@ -5242,11 +5254,13 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                     true),
                                                     limit: 5,
                                                   );
+                                                  _shouldSetState = true;
                                                   _model.shiftdetailsnewonlineCustom =
                                                       await actions
                                                           .shiftDetailNewpark(
                                                     _model.omtcustom?.toList(),
                                                   );
+                                                  _shouldSetState = true;
                                                   FFAppState().shiftdetails = _model
                                                       .shiftdetailsnewonlineCustom!;
                                                   FFAppState().billcount =
@@ -5297,7 +5311,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   );
                                                 }
 
-                                                safeSetState(() {});
+                                                if (_shouldSetState)
+                                                  safeSetState(() {});
                                               },
                                               text: FFLocalizations.of(context)
                                                   .getText(
