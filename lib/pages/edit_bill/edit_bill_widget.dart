@@ -5340,20 +5340,31 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   await actions.mergeBills(
                                                 _model.ivnlisted!.toList(),
                                               );
-                                              _model.invcode =
+                                              _model.invcodeneww2 =
                                                   await queryInvoiceRecordOnce(
                                                 parent:
                                                     FFAppState().outletIdRef,
                                                 queryBuilder: (invoiceRecord) =>
-                                                    invoiceRecord.orderBy(
-                                                        'invoiceDate',
-                                                        descending: true),
+                                                    invoiceRecord
+                                                        .where(
+                                                          'dayId',
+                                                          isEqualTo:
+                                                              dateTimeFormat(
+                                                            "yyyy-MM-dd",
+                                                            getCurrentTimestamp,
+                                                            locale: FFLocalizations
+                                                                    .of(context)
+                                                                .languageCode,
+                                                          ),
+                                                        )
+                                                        .orderBy('count',
+                                                            descending: true),
                                                 singleRecord: true,
                                               ).then((s) => s.firstOrNull);
-                                              if (_model.invcode?.count !=
+                                              if (_model.invcodeneww2?.count !=
                                                   null) {
                                                 FFAppState().newcount =
-                                                    _model.invcode!.count;
+                                                    _model.invcodeneww2!.count;
                                                 safeSetState(() {});
                                               } else {
                                                 FFAppState().newcount = 0;

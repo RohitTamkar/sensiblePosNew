@@ -34,6 +34,8 @@ class LoadingScreenNewModel extends FlutterFlowModel<LoadingScreenNewWidget> {
   int? pindex;
   // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
   InvoiceRecord? invcode;
+  // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
+  InvoiceRecord? invcodeneww2;
 
   @override
   void initState(BuildContext context) {}

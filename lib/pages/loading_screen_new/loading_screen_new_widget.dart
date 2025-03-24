@@ -73,26 +73,89 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
               invoiceRecord.orderBy('invoiceDate', descending: true),
           singleRecord: true,
         ).then((s) => s.firstOrNull);
-        if ((_model.invcode?.count != null) &&
-            (_model.invcode?.shiftId ==
-                getJsonField(
-                  widget!.shiftDoc,
-                  r'''$.shiftId''',
-                ).toString().toString())) {
-          FFAppState().newcount = _model.invcode!.count;
-          FFAppState().countLaundryForContinuesIncrement = valueOrDefault<int>(
-            functions.returncountnewLaundry(valueOrDefault<String>(
-              _model.invcode?.invoice,
-              '0',
-            )),
-            0,
-          );
-          safeSetState(() {});
+        _model.invcodeneww2 = await queryInvoiceRecordOnce(
+          parent: FFAppState().outletIdRef,
+          queryBuilder: (invoiceRecord) => invoiceRecord
+              .where(
+                'dayId',
+                isEqualTo: dateTimeFormat(
+                  "yyyy-MM-dd",
+                  getCurrentTimestamp,
+                  locale: FFLocalizations.of(context).languageCode,
+                ),
+              )
+              .orderBy('count', descending: true),
+          singleRecord: true,
+        ).then((s) => s.firstOrNull);
+        if (widget!.appSettingDoc!.settingList
+            .where((e) => e.title == 'enableCombo')
+            .toList()
+            .firstOrNull!
+            .value) {
+          if (_model.invcodeneww2?.count != null) {
+            FFAppState().newcount = _model.invcodeneww2!.count;
+            FFAppState().countLaundryForContinuesIncrement =
+                valueOrDefault<int>(
+              functions.returncountnewLaundry(valueOrDefault<String>(
+                _model.invcodeneww2?.count?.toString(),
+                '0',
+              )),
+              0,
+            );
+            safeSetState(() {});
+          } else {
+            FFAppState().newcount = 0;
+            FFAppState().countLaundryForContinuesIncrement = 0;
+            safeSetState(() {});
+          }
         } else {
-          FFAppState().newcount = 0;
-          FFAppState().countLaundryForContinuesIncrement = 0;
-          safeSetState(() {});
+          if ((_model.invcode?.count != null) &&
+              (_model.invcode?.shiftId ==
+                  getJsonField(
+                    widget!.shiftDoc,
+                    r'''$.shiftId''',
+                  ).toString().toString())) {
+            FFAppState().newcount = _model.invcode!.count;
+            FFAppState().countLaundryForContinuesIncrement =
+                valueOrDefault<int>(
+              functions.returncountnewLaundry(valueOrDefault<String>(
+                _model.invcode?.invoice,
+                '0',
+              )),
+              0,
+            );
+            safeSetState(() {});
+          } else {
+            FFAppState().newcount = 0;
+            FFAppState().countLaundryForContinuesIncrement = 0;
+            safeSetState(() {});
+          }
         }
+
+        await showModalBottomSheet(
+          isScrollControlled: true,
+          backgroundColor: Colors.transparent,
+          barrierColor: Color(0x00000000),
+          context: context,
+          builder: (context) {
+            return GestureDetector(
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
+              child: Padding(
+                padding: MediaQuery.viewInsetsOf(context),
+                child: Container(
+                  height: double.infinity,
+                  child: OpeningBalNewWidget(
+                    doc: widget!.userDoc,
+                    shiftDetails: widget!.shiftDoc,
+                  ),
+                ),
+              ),
+            );
+          },
+        ).then((value) => safeSetState(() {}));
       } else {
         await showDialog(
           context: context,
@@ -112,31 +175,6 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
 
         context.pushNamed(WelcomeScreenNewWidget.routeName);
       }
-
-      await showModalBottomSheet(
-        isScrollControlled: true,
-        backgroundColor: Colors.transparent,
-        barrierColor: Color(0x00000000),
-        context: context,
-        builder: (context) {
-          return GestureDetector(
-            onTap: () {
-              FocusScope.of(context).unfocus();
-              FocusManager.instance.primaryFocus?.unfocus();
-            },
-            child: Padding(
-              padding: MediaQuery.viewInsetsOf(context),
-              child: Container(
-                height: double.infinity,
-                child: OpeningBalNewWidget(
-                  doc: widget!.userDoc,
-                  shiftDetails: widget!.shiftDoc,
-                ),
-              ),
-            ),
-          );
-        },
-      ).then((value) => safeSetState(() {}));
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
