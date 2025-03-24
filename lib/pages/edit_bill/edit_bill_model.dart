@@ -126,6 +126,8 @@ class EditBillModel extends FlutterFlowModel<EditBillWidget> {
   List<InvoiceRecord>? ivnlisted;
   // Stores action output result for [Custom Action - mergeBills] action in Button widget.
   List<InvoiceRecord>? returnedbills;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  InvoiceRecord? invcode;
 
   @override
   void initState(BuildContext context) {

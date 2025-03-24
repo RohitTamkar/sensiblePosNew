@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:image/image.dart' as img;
 import 'package:flutter/services.dart';
 
@@ -61,7 +63,17 @@ Future printBillnewhive2(
   String billColumn3;
   String taxColumn3;
   dynamic obj;
+  final headerSnapshot = await FirebaseFirestore.instance
+      .collection('OUTLET')
+      .doc(FFAppState().outletIdRef?.id)
+      .collection('HEADER')
+      .get();
 
+  final footerSnapshot = await FirebaseFirestore.instance
+      .collection('OUTLET')
+      .doc(FFAppState().outletIdRef?.id)
+      .collection('FOOTER')
+      .get();
   // changes according to size
   if (size == 46) {
     billColumn3 =
@@ -77,13 +89,7 @@ Future printBillnewhive2(
         header = FFAppState().billPrintHeader.toString();
       }
 
-      QuerySnapshot querySnapshot;
-      querySnapshot = await FirebaseFirestore.instance
-          .collection('OUTLET')
-          .doc(FFAppState().outletIdRef?.id)
-          .collection('HEADER')
-          .get();
-      for (var doc in querySnapshot.docs) {
+      for (var doc in headerSnapshot.docs) {
         /*  print(doc);
          if (doc["recepitLogoUrl"] != null && doc["recepitLogoUrl"].isNotEmpty) {
            print(doc["recepitLogoUrl"]);
@@ -990,13 +996,7 @@ Future printBillnewhive2(
               bold: false,
               align: PosAlign.center));*/
 
-      QuerySnapshot querySnapshot2;
-      querySnapshot2 = await FirebaseFirestore.instance
-          .collection('OUTLET')
-          .doc(FFAppState().outletIdRef?.id)
-          .collection('FOOTER')
-          .get();
-      for (var doc in querySnapshot2.docs) {
+      for (var doc in footerSnapshot.docs) {
         print(doc);
         if (doc["footerText1"] != null && doc["footerText1"].isNotEmpty) {
           bytes += generator.text(doc["footerText1"],
@@ -1060,13 +1060,7 @@ Future printBillnewhive2(
         header = FFAppState().billPrintHeader.toString();
       }
 
-      QuerySnapshot querySnapshot;
-      querySnapshot = await FirebaseFirestore.instance
-          .collection('OUTLET')
-          .doc(FFAppState().outletIdRef?.id)
-          .collection('HEADER')
-          .get();
-      for (var doc in querySnapshot.docs) {
+      for (var doc in headerSnapshot.docs) {
         if (FFAppState().billPrintFooter != "KOT") {
           if (doc["title"] != null && doc["title"].isNotEmpty) {
             bytes += generator.text(doc["title"],
@@ -1704,7 +1698,7 @@ Future printBillnewhive2(
               ),
               PosColumn(
                 text: values["taxable"]!.toString(),
-                width: 6,
+                width: 3,
                 styles: PosStyles(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
@@ -1713,7 +1707,7 @@ Future printBillnewhive2(
               ),
               PosColumn(
                 text: cgstAmt.toStringAsFixed(2),
-                width: 4,
+                width: 2,
                 styles: PosStyles(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
@@ -1722,7 +1716,7 @@ Future printBillnewhive2(
               ),
               PosColumn(
                 text: sgstAmt.toStringAsFixed(2),
-                width: 4,
+                width: 2,
                 styles: PosStyles(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
@@ -1731,7 +1725,7 @@ Future printBillnewhive2(
               ),
               PosColumn(
                 text: totalTax.toStringAsFixed(2),
-                width: 4,
+                width: 2,
                 styles: PosStyles(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
@@ -1761,7 +1755,7 @@ Future printBillnewhive2(
             ),
             PosColumn(
               text: taxableAmtTotal.toStringAsFixed(2),
-              width: 6,
+              width: 3,
               styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
@@ -1770,7 +1764,7 @@ Future printBillnewhive2(
             ),
             PosColumn(
               text: cgstTotal.toStringAsFixed(2),
-              width: 4,
+              width: 2,
               styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
@@ -1779,7 +1773,7 @@ Future printBillnewhive2(
             ),
             PosColumn(
               text: sgstTotal.toStringAsFixed(2),
-              width: 4,
+              width: 2,
               styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
@@ -1788,7 +1782,7 @@ Future printBillnewhive2(
             ),
             PosColumn(
               text: taxAmtTotal.toStringAsFixed(2),
-              width: 4,
+              width: 2,
               styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
@@ -1886,13 +1880,7 @@ Future printBillnewhive2(
                 align: PosAlign.center));
       }
 
-      QuerySnapshot querySnapshot2;
-      querySnapshot2 = await FirebaseFirestore.instance
-          .collection('OUTLET')
-          .doc(FFAppState().outletIdRef?.id)
-          .collection('FOOTER')
-          .get();
-      for (var doc in querySnapshot2.docs) {
+      for (var doc in footerSnapshot.docs) {
         if (doc["footerText1"] != null && doc["footerText1"].isNotEmpty) {
           bytes += generator.text(doc["footerText1"],
               styles: PosStyles(

@@ -2281,8 +2281,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                           },
                                         ),
                                         FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async {
+                                            await launchURL(
+                                                'https://partner.swiggy.com/');
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(

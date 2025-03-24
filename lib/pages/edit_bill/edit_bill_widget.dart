@@ -5340,6 +5340,27 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   await actions.mergeBills(
                                                 _model.ivnlisted!.toList(),
                                               );
+                                              _model.invcode =
+                                                  await queryInvoiceRecordOnce(
+                                                parent:
+                                                    FFAppState().outletIdRef,
+                                                queryBuilder: (invoiceRecord) =>
+                                                    invoiceRecord.orderBy(
+                                                        'invoiceDate',
+                                                        descending: true),
+                                                singleRecord: true,
+                                              ).then((s) => s.firstOrNull);
+                                              if (_model.invcode?.count !=
+                                                  null) {
+                                                FFAppState().newcount =
+                                                    _model.invcode!.count;
+                                                safeSetState(() {});
+                                              } else {
+                                                FFAppState().newcount = 0;
+                                                FFAppState()
+                                                    .countLaundryForContinuesIncrement = 0;
+                                                safeSetState(() {});
+                                              }
 
                                               safeSetState(() {});
                                             },
