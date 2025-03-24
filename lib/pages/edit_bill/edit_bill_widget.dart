@@ -4760,7 +4760,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                           ),
                                           Text(
                                             'Selected Date: ${dateTimeFormat(
-                                              "dd-mm-yyyy",
+                                              "yyyy-MM-dd",
                                               _model.date,
                                               locale:
                                                   FFLocalizations.of(context)
