@@ -4796,8 +4796,19 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   controller: _model
                                                           .dropDownValueController2 ??=
                                                       FormFieldController<
-                                                          String>(null),
-                                                  options:
+                                                          String>(
+                                                    _model.dropDownValue2 ??=
+                                                        '',
+                                                  ),
+                                                  options: List<String>.from(
+                                                      selectedbillscustomInvoiceRecordList
+                                                          .sortedList(
+                                                              keyOf: (e) =>
+                                                                  e.count,
+                                                              desc: false)
+                                                          .map((e) => e.id)
+                                                          .toList()),
+                                                  optionLabels:
                                                       selectedbillscustomInvoiceRecordList
                                                           .sortedList(
                                                               keyOf: (e) =>
@@ -4892,8 +4903,17 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 controller: _model
                                                         .dropDownValueController3 ??=
                                                     FormFieldController<String>(
-                                                        null),
-                                                options:
+                                                  _model.dropDownValue3 ??= '',
+                                                ),
+                                                options: List<String>.from(
+                                                    selectedbillscustomInvoiceRecordList
+                                                        .sortedList(
+                                                            keyOf: (e) =>
+                                                                e.count,
+                                                            desc: false)
+                                                        .map((e) => e.id)
+                                                        .toList()),
+                                                optionLabels:
                                                     selectedbillscustomInvoiceRecordList
                                                         .sortedList(
                                                             keyOf: (e) =>
@@ -4995,7 +5015,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     queryBuilder:
                                                         (invoiceRecord) =>
                                                             invoiceRecord.where(
-                                                      'invoice',
+                                                      'id',
                                                       isEqualTo:
                                                           _model.dropDownValue2,
                                                     ),
@@ -5008,7 +5028,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     queryBuilder:
                                                         (invoiceRecord) =>
                                                             invoiceRecord.where(
-                                                      'invoice',
+                                                      'id',
                                                       isEqualTo:
                                                           _model.dropDownValue3,
                                                     ),
@@ -5047,6 +5067,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             builder:
                                                                 (alertDialogContext) {
                                                               return AlertDialog(
+                                                                title: Text(
+                                                                    'From${_model.drop1?.invoice}To${_model.drop2?.invoice}'),
                                                                 content: Text(
                                                                     'Are you sure  to delete bills'),
                                                                 actions: [
