@@ -3618,6 +3618,12 @@ class FFAppState extends ChangeNotifier {
     paymentmodenew.insert(index, value);
     prefs.setStringList('ff_paymentmodenew', _paymentmodenew);
   }
+
+  String _dayid = '';
+  String get dayid => _dayid;
+  set dayid(String value) {
+    _dayid = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

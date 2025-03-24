@@ -519,6 +519,9 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       FFAppState().shiftDate =
                                                           listViewInvoiceRecord
                                                               .shiftId;
+                                                      FFAppState().dayid =
+                                                          listViewInvoiceRecord
+                                                              .dayId;
                                                       FFAppState()
                                                           .update(() {});
                                                       safeSetState(() {
@@ -3636,7 +3639,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   ));
                                               _model.shiftlist2 = await actions
                                                   .shiftExistseditbill(
-                                                FFAppState().shiftDate,
+                                                FFAppState().dayid,
                                                 FFAppState().shiftDate,
                                                 FFAppState().outletIdRef!.id,
                                               );
