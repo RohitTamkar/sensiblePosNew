@@ -1546,6 +1546,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: OutstockReportWidget.routeName,
               path: OutstockReportWidget.routePath,
               builder: (context, params) => OutstockReportWidget(),
+            ),
+            FFRoute(
+              name: AddStockbyCategoryWidget.routeName,
+              path: AddStockbyCategoryWidget.routePath,
+              builder: (context, params) => AddStockbyCategoryWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

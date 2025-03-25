@@ -7,33 +7,39 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
+import '/custom_code/actions/index.dart' as actions;
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'selectpayment_mode_model.dart';
-export 'selectpayment_mode_model.dart';
+import 'add_stockby_category_model.dart';
+export 'add_stockby_category_model.dart';
 
-class SelectpaymentModeWidget extends StatefulWidget {
-  const SelectpaymentModeWidget({super.key});
+class AddStockbyCategoryWidget extends StatefulWidget {
+  const AddStockbyCategoryWidget({super.key});
 
-  static String routeName = 'selectpaymentMode';
-  static String routePath = 'selectpaymentMode';
+  static String routeName = 'AddStockbyCategory';
+  static String routePath = 'addStockbyCategory';
 
   @override
-  State<SelectpaymentModeWidget> createState() =>
-      _SelectpaymentModeWidgetState();
+  State<AddStockbyCategoryWidget> createState() =>
+      _AddStockbyCategoryWidgetState();
 }
 
-class _SelectpaymentModeWidgetState extends State<SelectpaymentModeWidget> {
-  late SelectpaymentModeModel _model;
+class _AddStockbyCategoryWidgetState extends State<AddStockbyCategoryWidget> {
+  late AddStockbyCategoryModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SelectpaymentModeModel());
+    _model = createModel(context, () => AddStockbyCategoryModel());
+
+    _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -50,7 +56,7 @@ class _SelectpaymentModeWidgetState extends State<SelectpaymentModeWidget> {
     context.watch<FFAppState>();
 
     return Title(
-        title: 'selectpaymentMode',
+        title: 'AddStockbyCategory',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -106,7 +112,7 @@ class _SelectpaymentModeWidgetState extends State<SelectpaymentModeWidget> {
                                     ),
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'mm9ec06o' /* ADD PAYMENT MODE */,
+                                        'ysi91gb2' /* Add Stock By Category */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
@@ -156,8 +162,15 @@ class _SelectpaymentModeWidgetState extends State<SelectpaymentModeWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Expanded(
-                                child: StreamBuilder<List<PaymentModeRecord>>(
-                                  stream: queryPaymentModeRecord(),
+                                child: StreamBuilder<List<CategoryRecord>>(
+                                  stream: queryCategoryRecord(
+                                    parent: FFAppState().outletIdRef,
+                                    queryBuilder: (categoryRecord) =>
+                                        categoryRecord.where(
+                                      'isDeleted',
+                                      isEqualTo: false,
+                                    ),
+                                  ),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
                                     if (!snapshot.hasData) {
@@ -173,8 +186,8 @@ class _SelectpaymentModeWidgetState extends State<SelectpaymentModeWidget> {
                                         ),
                                       );
                                     }
-                                    List<PaymentModeRecord>
-                                        containerPaymentModeRecordList =
+                                    List<CategoryRecord>
+                                        containerCategoryRecordList =
                                         snapshot.data!;
 
                                     return Container(
@@ -199,7 +212,7 @@ class _SelectpaymentModeWidgetState extends State<SelectpaymentModeWidget> {
                                                       FormFieldController<
                                                           String>(null),
                                                   options:
-                                                      containerPaymentModeRecordList
+                                                      containerCategoryRecordList
                                                           .map((e) => e.name)
                                                           .toList(),
                                                   onChanged: (val) =>
@@ -227,7 +240,7 @@ class _SelectpaymentModeWidgetState extends State<SelectpaymentModeWidget> {
                                                   hintText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    '3mqc1jbn' /* Select... */,
+                                                    'rigkn8m4' /* Select... */,
                                                   ),
                                                   icon: Icon(
                                                     Icons
@@ -260,17 +273,176 @@ class _SelectpaymentModeWidgetState extends State<SelectpaymentModeWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 20.0, 0.0, 0.0),
+                                            child: Container(
+                                              width: 200.0,
+                                              child: TextFormField(
+                                                controller:
+                                                    _model.textController,
+                                                focusNode:
+                                                    _model.textFieldFocusNode,
+                                                autofocus: false,
+                                                obscureText: false,
+                                                decoration: InputDecoration(
+                                                  isDense: true,
+                                                  labelStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts: GoogleFonts
+                                                                    .asMap()
+                                                                .containsKey(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMediumFamily),
+                                                          ),
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'bnoyfav7' /* Add Qty */,
+                                                  ),
+                                                  hintStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts: GoogleFonts
+                                                                    .asMap()
+                                                                .containsKey(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMediumFamily),
+                                                          ),
+                                                  enabledBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color: Color(0x00000000),
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  focusedBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color: Color(0x00000000),
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  errorBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  focusedErrorBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  filled: true,
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                        ),
+                                                cursorColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                validator: _model
+                                                    .textControllerValidator
+                                                    .asValidator(context),
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 30.0, 0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                FFAppState()
-                                                    .addToPaymentmodenew(
-                                                        _model.dropDownValue!);
+                                                _model.productlist =
+                                                    await queryProductRecordOnce(
+                                                  parent:
+                                                      FFAppState().outletIdRef,
+                                                  queryBuilder:
+                                                      (productRecord) =>
+                                                          productRecord
+                                                              .where(
+                                                                'categoryRef',
+                                                                isEqualTo: containerCategoryRecordList
+                                                                    .where((e) =>
+                                                                        e.id ==
+                                                                        _model
+                                                                            .dropDownValue)
+                                                                    .toList()
+                                                                    .firstOrNull
+                                                                    ?.reference,
+                                                              )
+                                                              .where(
+                                                                'isDeleted',
+                                                                isEqualTo:
+                                                                    false,
+                                                              ),
+                                                );
+                                                await actions
+                                                    .addBulkStockByCategory(
+                                                  int.parse(_model
+                                                      .textController.text),
+                                                  _model.productlist!.toList(),
+                                                );
+
                                                 safeSetState(() {});
                                               },
                                               text: FFLocalizations.of(context)
                                                   .getText(
-                                                '0bpep8t2' /* Add */,
+                                                'a71bk5p6' /* Add */,
                                               ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
@@ -311,88 +483,6 @@ class _SelectpaymentModeWidgetState extends State<SelectpaymentModeWidget> {
                                       ),
                                     );
                                   },
-                                ),
-                              ),
-                              Expanded(
-                                child: Container(
-                                  decoration: BoxDecoration(),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Builder(
-                                        builder: (context) {
-                                          final paModes = FFAppState()
-                                              .paymentmodenew
-                                              .toList();
-
-                                          return ListView.builder(
-                                            padding: EdgeInsets.zero,
-                                            shrinkWrap: true,
-                                            scrollDirection: Axis.vertical,
-                                            itemCount: paModes.length,
-                                            itemBuilder:
-                                                (context, paModesIndex) {
-                                              final paModesItem =
-                                                  paModes[paModesIndex];
-                                              return Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  Text(
-                                                    paModesItem,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
-                                                          fontSize: 25.0,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily),
-                                                        ),
-                                                  ),
-                                                  InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      FFAppState()
-                                                          .removeAtIndexFromPaymentmodenew(
-                                                              paModesIndex);
-                                                      safeSetState(() {});
-                                                    },
-                                                    child: Icon(
-                                                      Icons.close_sharp,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      size: 24.0,
-                                                    ),
-                                                  ),
-                                                ],
-                                              );
-                                            },
-                                          );
-                                        },
-                                      ),
-                                    ],
-                                  ),
                                 ),
                               ),
                             ],

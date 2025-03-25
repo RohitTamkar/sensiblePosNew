@@ -184,3 +184,4 @@ export 'merge_bills.dart' show mergeBills;
 export 'update_product_stock.dart' show updateProductStock;
 export 'add_product.dart' show addProduct;
 export 'print_function_k_o_t.dart' show printFunctionKOT;
+export 'add_bulk_stock_by_category.dart' show addBulkStockByCategory;

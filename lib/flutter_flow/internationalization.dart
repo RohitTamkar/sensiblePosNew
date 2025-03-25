@@ -21599,7 +21599,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // selectpaymentMode
   {
     'mm9ec06o': {
-      'en': 'System Update',
+      'en': 'ADD PAYMENT MODE',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -22353,6 +22353,72 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'bbq912he': {
+      'en': 'Home',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
+  // AddStockbyCategory
+  {
+    'ysi91gb2': {
+      'en': 'Add Stock By Category',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'rigkn8m4': {
+      'en': 'Select...',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'xnop6idv': {
+      'en': 'Search...',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'jhncsv1p': {
+      'en': 'Option 1',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '6069qp3p': {
+      'en': 'Option 2',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'ayap7v1s': {
+      'en': 'Option 3',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'bnoyfav7': {
+      'en': 'Add Qty',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'a71bk5p6': {
+      'en': 'Add',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'kvielz05': {
       'en': 'Home',
       'hi': '',
       'kn': '',

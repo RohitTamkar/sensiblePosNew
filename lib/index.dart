@@ -200,3 +200,5 @@ export '/pages/shift_end_new_custom/shift_end_new_custom_widget.dart'
     show ShiftEndNewCustomWidget;
 export '/pages/report_screen/outstock_report/outstock_report_widget.dart'
     show OutstockReportWidget;
+export '/pages/screens/add_stockby_category/add_stockby_category_widget.dart'
+    show AddStockbyCategoryWidget;
