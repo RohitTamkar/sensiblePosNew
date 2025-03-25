@@ -414,90 +414,118 @@ class _AddStockbyCategoryWidgetState extends State<AddStockbyCategoryWidget> {
                                                     0.0, 30.0, 0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                _model.productlist =
-                                                    await queryProductRecordOnce(
-                                                  parent:
-                                                      FFAppState().outletIdRef,
-                                                  queryBuilder:
-                                                      (productRecord) =>
-                                                          productRecord
-                                                              .where(
-                                                                'categoryRef',
-                                                                isEqualTo: containerCategoryRecordList
-                                                                    .where((e) =>
-                                                                        e.id ==
-                                                                        _model
-                                                                            .dropDownValue)
-                                                                    .toList()
-                                                                    .firstOrNull
-                                                                    ?.reference,
-                                                              )
-                                                              .where(
-                                                                'isDeleted',
-                                                                isEqualTo:
-                                                                    false,
-                                                              )
-                                                              .where(
-                                                                'stockable',
-                                                                isEqualTo: true,
-                                                              ),
-                                                );
-                                                await actions
-                                                    .addBulkStockByCategory(
-                                                  int.parse(_model
-                                                      .textController.text),
-                                                  _model.productlist!.toList(),
-                                                );
-                                                _model.allprdrefresh =
-                                                    await queryProductRecordOnce(
-                                                  parent:
-                                                      FFAppState().outletIdRef,
-                                                  queryBuilder:
-                                                      (productRecord) =>
-                                                          productRecord.where(
-                                                    'isDeleted',
-                                                    isEqualTo: false,
-                                                  ),
-                                                );
-                                                _model.prdlist = await actions
-                                                    .addFirebasetoHiveProduct(
-                                                  _model.allprdrefresh!
-                                                      .toList(),
-                                                );
-                                                _model.prdhive2refresh =
-                                                    await actions
-                                                        .getProductlistHive();
-                                                FFAppState().productHive = _model
-                                                    .prdhive2refresh!
-                                                    .toList()
-                                                    .cast<
-                                                        ProductStructStruct>();
-                                                safeSetState(() {});
-                                                await showDialog(
-                                                  context: context,
-                                                  builder:
-                                                      (alertDialogContext) {
-                                                    return AlertDialog(
-                                                      title: Text(
-                                                          '${valueOrDefault<String>(
-                                                        _model
-                                                            .productlist?.length
-                                                            ?.toString(),
-                                                        '0',
-                                                      )}Total Items'),
-                                                      content: Text(
-                                                          'Stock Added Successfully!'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: Text('Ok'),
-                                                        ),
-                                                      ],
-                                                    );
-                                                  },
-                                                );
+                                                if (_model.textController
+                                                            .text !=
+                                                        null &&
+                                                    _model.textController
+                                                            .text !=
+                                                        '') {
+                                                  _model.productlist =
+                                                      await queryProductRecordOnce(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
+                                                    queryBuilder:
+                                                        (productRecord) =>
+                                                            productRecord
+                                                                .where(
+                                                                  'categoryRef',
+                                                                  isEqualTo: containerCategoryRecordList
+                                                                      .where((e) =>
+                                                                          e.id ==
+                                                                          _model
+                                                                              .dropDownValue)
+                                                                      .toList()
+                                                                      .firstOrNull
+                                                                      ?.reference,
+                                                                )
+                                                                .where(
+                                                                  'isDeleted',
+                                                                  isEqualTo:
+                                                                      false,
+                                                                )
+                                                                .where(
+                                                                  'stockable',
+                                                                  isEqualTo:
+                                                                      true,
+                                                                ),
+                                                  );
+                                                  await actions
+                                                      .addBulkStockByCategory(
+                                                    int.parse(_model
+                                                        .textController.text),
+                                                    _model.productlist!
+                                                        .toList(),
+                                                  );
+                                                  _model.allprdrefresh =
+                                                      await queryProductRecordOnce(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
+                                                    queryBuilder:
+                                                        (productRecord) =>
+                                                            productRecord.where(
+                                                      'isDeleted',
+                                                      isEqualTo: false,
+                                                    ),
+                                                  );
+                                                  _model.prdlist = await actions
+                                                      .addFirebasetoHiveProduct(
+                                                    _model.allprdrefresh!
+                                                        .toList(),
+                                                  );
+                                                  _model.prdhive2refresh =
+                                                      await actions
+                                                          .getProductlistHive();
+                                                  FFAppState().productHive = _model
+                                                      .prdhive2refresh!
+                                                      .toList()
+                                                      .cast<
+                                                          ProductStructStruct>();
+                                                  safeSetState(() {});
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        title: Text(
+                                                            '${valueOrDefault<String>(
+                                                          _model.productlist
+                                                              ?.length
+                                                              ?.toString(),
+                                                          '0',
+                                                        )}Total Items'),
+                                                        content: Text(
+                                                            'Stock Added Successfully!'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext),
+                                                            child: Text('Ok'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  );
+                                                } else {
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        content: Text(
+                                                            'Add Stock Quantity !'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext),
+                                                            child: Text('Ok'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  );
+                                                }
 
                                                 safeSetState(() {});
                                               },
