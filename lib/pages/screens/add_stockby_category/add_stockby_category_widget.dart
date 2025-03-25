@@ -437,6 +437,32 @@ class _AddStockbyCategoryWidgetState extends State<AddStockbyCategoryWidget> {
                                                       .textController.text),
                                                   _model.productlist!.toList(),
                                                 );
+                                                await showDialog(
+                                                  context: context,
+                                                  builder:
+                                                      (alertDialogContext) {
+                                                    return AlertDialog(
+                                                      title: Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                        _model
+                                                            .productlist?.length
+                                                            ?.toString(),
+                                                        '0',
+                                                      )),
+                                                      content: Text(
+                                                          'Stock Added Successfully!'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    );
+                                                  },
+                                                );
 
                                                 safeSetState(() {});
                                               },
