@@ -477,6 +477,10 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                     },
                                   );
                                 },
+                                onLongPress: () async {
+                                  context.pushNamed(
+                                      AddStockbyCategoryWidget.routeName);
+                                },
                                 child: Container(
                                   width: double.infinity,
                                   decoration: BoxDecoration(

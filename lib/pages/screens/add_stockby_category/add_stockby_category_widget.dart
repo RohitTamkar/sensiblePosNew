@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -437,6 +438,31 @@ class _AddStockbyCategoryWidgetState extends State<AddStockbyCategoryWidget> {
                                                       .textController.text),
                                                   _model.productlist!.toList(),
                                                 );
+                                                _model.allprdrefresh =
+                                                    await queryProductRecordOnce(
+                                                  parent:
+                                                      FFAppState().outletIdRef,
+                                                  queryBuilder:
+                                                      (productRecord) =>
+                                                          productRecord.where(
+                                                    'isDeleted',
+                                                    isEqualTo: false,
+                                                  ),
+                                                );
+                                                _model.prdlist = await actions
+                                                    .addFirebasetoHiveProduct(
+                                                  _model.allprdrefresh!
+                                                      .toList(),
+                                                );
+                                                _model.prdhive2refresh =
+                                                    await actions
+                                                        .getProductlistHive();
+                                                FFAppState().productHive = _model
+                                                    .prdhive2refresh!
+                                                    .toList()
+                                                    .cast<
+                                                        ProductStructStruct>();
+                                                safeSetState(() {});
                                                 await showDialog(
                                                   context: context,
                                                   builder:

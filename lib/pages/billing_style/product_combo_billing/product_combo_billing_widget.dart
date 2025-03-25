@@ -1362,6 +1362,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                       await queryProductRecordOnce(
                                                     parent: FFAppState()
                                                         .outletIdRef,
+                                                    queryBuilder:
+                                                        (productRecord) =>
+                                                            productRecord.where(
+                                                      'isDeleted',
+                                                      isEqualTo: false,
+                                                    ),
                                                   );
                                                   _model.prdlist = await actions
                                                       .addFirebasetoHiveProduct(
@@ -1372,6 +1378,13 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                       await queryCategoryRecordOnce(
                                                     parent: FFAppState()
                                                         .outletIdRef,
+                                                    queryBuilder:
+                                                        (categoryRecord) =>
+                                                            categoryRecord
+                                                                .where(
+                                                      'isDeleted',
+                                                      isEqualTo: false,
+                                                    ),
                                                   );
                                                   _model.cat = await actions
                                                       .addFirebasetoHiveCategory(

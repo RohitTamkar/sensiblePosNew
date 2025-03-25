@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -31,6 +32,12 @@ class AddStockbyCategoryModel
   String? Function(BuildContext, String?)? textControllerValidator;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<ProductRecord>? productlist;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<ProductRecord>? allprdrefresh;
+  // Stores action output result for [Custom Action - addFirebasetoHiveProduct] action in Button widget.
+  int? prdlist;
+  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
+  List<ProductStructStruct>? prdhive2refresh;
 
   @override
   void initState(BuildContext context) {
