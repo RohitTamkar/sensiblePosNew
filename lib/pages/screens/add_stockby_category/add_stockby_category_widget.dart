@@ -211,8 +211,14 @@ class _AddStockbyCategoryWidgetState extends State<AddStockbyCategoryWidget> {
                                                   controller: _model
                                                           .dropDownValueController ??=
                                                       FormFieldController<
-                                                          String>(null),
-                                                  options:
+                                                          String>(
+                                                    _model.dropDownValue ??= '',
+                                                  ),
+                                                  options: List<String>.from(
+                                                      containerCategoryRecordList
+                                                          .map((e) => e.id)
+                                                          .toList()),
+                                                  optionLabels:
                                                       containerCategoryRecordList
                                                           .map((e) => e.name)
                                                           .toList(),
