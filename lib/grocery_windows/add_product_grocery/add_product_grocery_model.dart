@@ -35,18 +35,18 @@ class AddProductGroceryModel extends FlutterFlowModel<AddProductGroceryWidget> {
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
+  // State field(s) for DropDowncat widget.
+  String? dropDowncatValue;
+  FormFieldController<String>? dropDowncatValueController;
+  // State field(s) for DropDowngst widget.
+  String? dropDowngstValue;
+  FormFieldController<String>? dropDowngstValueController;
+  // State field(s) for DropDownunit widget.
+  String? dropDownunitValue;
+  FormFieldController<String>? dropDownunitValueController;
   // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue3;
-  FormFieldController<String>? dropDownValueController3;
-  // State field(s) for DropDown widget.
-  String? dropDownValue4;
-  FormFieldController<String>? dropDownValueController4;
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode4;
   TextEditingController? textController4;

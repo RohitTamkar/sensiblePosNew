@@ -14,10 +14,11 @@ Future addBulkStockByCategory(
   List<ProductRecord> prdlist,
 ) async {
   // Add your function code here!
-
+  int stock2;
   for (var prd in prdlist) {
+    stock2 = prd.stock + stock;
     prd.reference.update(createProductRecordData(
-      stock: stock,
+      stock: stock2,
     ));
   }
 }

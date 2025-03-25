@@ -596,7 +596,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                               return Container(
                                 child: FlutterFlowDropDown<String>(
                                   controller:
-                                      _model.dropDownValueController1 ??=
+                                      _model.dropDowncatValueController ??=
                                           FormFieldController<String>(null),
                                   options: List<String>.from(
                                       containerCategoryRecordList
@@ -606,7 +606,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                       .map((e) => e.name)
                                       .toList(),
                                   onChanged: (val) => safeSetState(
-                                      () => _model.dropDownValue1 = val),
+                                      () => _model.dropDowncatValue = val),
                                   width: 300.0,
                                   height: 45.0,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -713,7 +713,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                               return Container(
                                 child: FlutterFlowDropDown<String>(
                                   controller:
-                                      _model.dropDownValueController2 ??=
+                                      _model.dropDowngstValueController ??=
                                           FormFieldController<String>(null),
                                   options: List<String>.from(
                                       containerTaxMasterRecordList
@@ -723,7 +723,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                       .map((e) => e.name)
                                       .toList(),
                                   onChanged: (val) => safeSetState(
-                                      () => _model.dropDownValue2 = val),
+                                      () => _model.dropDowngstValue = val),
                                   width: 300.0,
                                   height: 45.0,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -831,7 +831,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                 decoration: BoxDecoration(),
                                 child: FlutterFlowDropDown<String>(
                                   controller:
-                                      _model.dropDownValueController3 ??=
+                                      _model.dropDownunitValueController ??=
                                           FormFieldController<String>(null),
                                   options: List<String>.from(
                                       containerUnitTypeRecordList
@@ -841,7 +841,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                       .map((e) => e.name)
                                       .toList(),
                                   onChanged: (val) => safeSetState(
-                                      () => _model.dropDownValue3 = val),
+                                      () => _model.dropDownunitValue = val),
                                   width: 300.0,
                                   height: 45.0,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -951,14 +951,13 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                               return Container(
                                 decoration: BoxDecoration(),
                                 child: FlutterFlowDropDown<String>(
-                                  controller:
-                                      _model.dropDownValueController4 ??=
-                                          FormFieldController<String>(null),
+                                  controller: _model.dropDownValueController ??=
+                                      FormFieldController<String>(null),
                                   options: containerServicePointOutletRecordList
                                       .map((e) => e.name)
                                       .toList(),
                                   onChanged: (val) => safeSetState(
-                                      () => _model.dropDownValue4 = val),
+                                      () => _model.dropDownValue = val),
                                   width: 300.0,
                                   height: 45.0,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -2774,13 +2773,13 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         _model.textController1.text != '') {
                       if ((_model.textController7.text != null &&
                               _model.textController7.text != '') &&
-                          (_model.dropDownValue1 != null &&
-                              _model.dropDownValue1 != '')) {
+                          (_model.dropDowncatValue != null &&
+                              _model.dropDowncatValue != '')) {
                         _model.taxref = await queryTaxMasterRecordOnce(
                           queryBuilder: (taxMasterRecord) =>
                               taxMasterRecord.where(
                             'id',
-                            isEqualTo: _model.dropDownValue2,
+                            isEqualTo: _model.dropDowngstValue,
                           ),
                           singleRecord: true,
                         ).then((s) => s.firstOrNull);
@@ -2789,7 +2788,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           queryBuilder: (unitTypeRecord) =>
                               unitTypeRecord.where(
                             'id',
-                            isEqualTo: _model.dropDownValue3,
+                            isEqualTo: _model.dropDownunitValue,
                           ),
                           singleRecord: true,
                         ).then((s) => s.firstOrNull);
@@ -2799,7 +2798,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           queryBuilder: (categoryRecord) =>
                               categoryRecord.where(
                             'id',
-                            isEqualTo: _model.dropDownValue1,
+                            isEqualTo: _model.dropDowncatValue,
                           ),
                           singleRecord: true,
                         ).then((s) => s.firstOrNull);
@@ -2820,7 +2819,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           _model.checkboxListTileValue2,
                           _model.textController4.text,
                           _model.textController3.text,
-                          _model.dropDownValue1,
+                          _model.dropDowncatValue,
                           false,
                           _model.taxref?.reference,
                           _model.unitref!.reference,
