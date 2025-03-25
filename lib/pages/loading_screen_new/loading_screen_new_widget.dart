@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import '/components/opening_bal_new/opening_bal_new_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -87,7 +88,103 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
               .orderBy('count', descending: true),
           singleRecord: true,
         ).then((s) => s.firstOrNull);
-        if (widget!.appSettingDoc!.settingList
+        _model.isAppSetExistsNew = await queryAppSettingsRecordOnce(
+          parent: FFAppState().outletIdRef,
+          queryBuilder: (appSettingsRecord) => appSettingsRecord.where(
+            'deviceId',
+            isEqualTo: FFAppState().dId,
+          ),
+          singleRecord: true,
+        ).then((s) => s.firstOrNull);
+        _model.taxcollection = await queryTaxMasterRecordOnce();
+        _model.paymentmode = await queryPaymentModeRecordOnce();
+        _model.masterAppsetting = await queryAppSettingsMasterRecordOnce();
+        if (_model.isAppSetExistsNew != null) {
+          FFAppState().appSettings = _model.isAppSetExistsNew!.settingList
+              .toList()
+              .cast<AppSettingsStruct>();
+          safeSetState(() {});
+          _model.returnAppsettiing2 = await actions.returnAppsetting(
+            _model.masterAppsetting!.toList(),
+            FFAppState().appSettings.toList(),
+          );
+
+          await _model.isAppSetExistsNew!.reference.update({
+            ...mapToFirestore(
+              {
+                'settingList': getAppSettingsListFirestoreData(
+                  _model.returnAppsettiing2,
+                ),
+              },
+            ),
+          });
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                'App Settings Updated !',
+                style: TextStyle(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                ),
+              ),
+              duration: Duration(milliseconds: 4000),
+              backgroundColor: FlutterFlowTheme.of(context).info,
+            ),
+          );
+        } else {
+          _model.returnAppsettiing = await actions.returnAppsetting(
+            _model.masterAppsetting!.toList(),
+            FFAppState().appSettings.toList(),
+          );
+
+          var appSettingsRecordReference =
+              AppSettingsRecord.createDoc(FFAppState().outletIdRef!);
+          await appSettingsRecordReference.set({
+            ...createAppSettingsRecordData(
+              deviceId: FFAppState().dId,
+            ),
+            ...mapToFirestore(
+              {
+                'settingList': getAppSettingsListFirestoreData(
+                  _model.returnAppsettiing,
+                ),
+              },
+            ),
+          });
+          _model.doc = AppSettingsRecord.getDocumentFromData({
+            ...createAppSettingsRecordData(
+              deviceId: FFAppState().dId,
+            ),
+            ...mapToFirestore(
+              {
+                'settingList': getAppSettingsListFirestoreData(
+                  _model.returnAppsettiing,
+                ),
+              },
+            ),
+          }, appSettingsRecordReference);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                'App Settings Created !',
+                style: TextStyle(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                ),
+              ),
+              duration: Duration(milliseconds: 4000),
+              backgroundColor: FlutterFlowTheme.of(context).info,
+            ),
+          );
+        }
+
+        _model.devicew = await queryAppSettingsRecordOnce(
+          parent: FFAppState().outletIdRef,
+          queryBuilder: (appSettingsRecord) => appSettingsRecord.where(
+            'deviceId',
+            isEqualTo: FFAppState().dId,
+          ),
+          singleRecord: true,
+        ).then((s) => s.firstOrNull);
+        if (_model.devicew!.settingList
             .where((e) => e.title == 'enableCombo')
             .toList()
             .firstOrNull!

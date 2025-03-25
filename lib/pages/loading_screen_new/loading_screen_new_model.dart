@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import '/components/opening_bal_new/opening_bal_new_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -36,6 +37,22 @@ class LoadingScreenNewModel extends FlutterFlowModel<LoadingScreenNewWidget> {
   InvoiceRecord? invcode;
   // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
   InvoiceRecord? invcodeneww2;
+  // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
+  AppSettingsRecord? isAppSetExistsNew;
+  // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
+  List<TaxMasterRecord>? taxcollection;
+  // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
+  List<PaymentModeRecord>? paymentmode;
+  // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
+  List<AppSettingsMasterRecord>? masterAppsetting;
+  // Stores action output result for [Custom Action - returnAppsetting] action in loadingScreenNew widget.
+  List<AppSettingsStruct>? returnAppsettiing2;
+  // Stores action output result for [Custom Action - returnAppsetting] action in loadingScreenNew widget.
+  List<AppSettingsStruct>? returnAppsettiing;
+  // Stores action output result for [Backend Call - Create Document] action in loadingScreenNew widget.
+  AppSettingsRecord? doc;
+  // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
+  AppSettingsRecord? devicew;
 
   @override
   void initState(BuildContext context) {}

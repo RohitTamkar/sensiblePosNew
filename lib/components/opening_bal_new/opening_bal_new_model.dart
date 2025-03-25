@@ -23,19 +23,9 @@ class OpeningBalNewModel extends FlutterFlowModel<OpeningBalNewWidget> {
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  AppSettingsRecord? isAppSetExistsNew;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<TaxMasterRecord>? taxcollection;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<PaymentModeRecord>? paymentmode;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  List<AppSettingsMasterRecord>? masterAppsetting;
-  // Stores action output result for [Custom Action - returnAppsetting] action in Button widget.
-  List<AppSettingsStruct>? returnAppsettiing2;
-  // Stores action output result for [Custom Action - returnAppsetting] action in Button widget.
-  List<AppSettingsStruct>? returnAppsettiing;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  AppSettingsRecord? doc;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   AppSettingsRecord? devicew;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
