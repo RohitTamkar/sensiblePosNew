@@ -443,13 +443,12 @@ class _AddStockbyCategoryWidgetState extends State<AddStockbyCategoryWidget> {
                                                       (alertDialogContext) {
                                                     return AlertDialog(
                                                       title: Text(
-                                                          valueOrDefault<
-                                                              String>(
+                                                          '${valueOrDefault<String>(
                                                         _model
                                                             .productlist?.length
                                                             ?.toString(),
                                                         '0',
-                                                      )),
+                                                      )}Total Items'),
                                                       content: Text(
                                                           'Stock Added Successfully!'),
                                                       actions: [
