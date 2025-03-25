@@ -430,6 +430,10 @@ class _AddStockbyCategoryWidgetState extends State<AddStockbyCategoryWidget> {
                                                                 'isDeleted',
                                                                 isEqualTo:
                                                                     false,
+                                                              )
+                                                              .where(
+                                                                'stockable',
+                                                                isEqualTo: true,
                                                               ),
                                                 );
                                                 await actions
