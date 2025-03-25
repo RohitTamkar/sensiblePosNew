@@ -16,9 +16,9 @@ Future addBulkStockByCategory(
   // Add your function code here!
   int stock2;
   for (var prd in prdlist) {
-    stock2 = prd.stock + stock;
+    stock2 = prd.currentStock + stock;
     prd.reference.update(createProductRecordData(
-      stock: stock2,
+      currentStock: stock2,
     ));
   }
 }
