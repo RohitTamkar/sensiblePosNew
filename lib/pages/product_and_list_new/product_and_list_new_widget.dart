@@ -1,4 +1,3 @@
-import '';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/discount_and_delivery_copy/discount_and_delivery_copy_widget.dart';

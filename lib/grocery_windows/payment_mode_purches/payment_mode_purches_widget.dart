@@ -1,4 +1,3 @@
-import '';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/selectlabel/selectlabel_widget.dart';

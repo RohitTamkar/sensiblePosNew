@@ -1,4 +1,3 @@
-import '';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/menu_drawer/menu_drawer_widget.dart';

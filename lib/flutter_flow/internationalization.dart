@@ -7433,106 +7433,57 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'capuebov': {
-      'en': 'Select your Barcode position',
+    '1swwmub9': {
+      'en': 'Select...',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'fap8wvob': {
-      'en': 'TOP',
+    'hatwmpoz': {
+      'en': 'Search...',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'vcis5qpe': {
-      'en': 'TOP',
+    'kp6h3whu': {
+      'en': 'Option 1',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'otwc931h': {
-      'en': 'BOTTOM',
+    'jkyxdl7l': {
+      'en': 'Option 2',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'ytbmq5vc': {
-      'en': 'Customiize your label content',
+    'r2vo45xr': {
+      'en': 'Option 3',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'jlk41r8r': {
-      'en': 'Hello World',
+    '7r6rqx37': {
+      'en': 'TextField',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'bfc3dg22': {
-      'en': 'Search Item by Name/Barcode/Code',
+    '1naxfrt3': {
+      'en': '1',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    '969f7b3s': {
-      'en': 'Select Barcode/QR Code',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'sqci4at1': {
-      'en': 'Barcode',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '70tem2h8': {
-      'en': 'Barcode',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'bkykctst': {
-      'en': 'QRCode',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'e5d3xjg7': {
-      'en': 'No. of Prints',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'or9z7130': {
-      'en': 'Enter Price with outlet name',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '4k9sfx6b': {
-      'en': 'Weightable Barcode',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'nfhvsncr': {
-      'en': 'Barcode Label Preview',
+    'wt4pfla6': {
+      'en': 'Button',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -14466,7 +14417,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    '1naxfrt3': {
+    'cl28tc1g': {
       'en': '1',
       'hi': '',
       'kn': '',
