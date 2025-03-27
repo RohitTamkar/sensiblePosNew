@@ -2090,7 +2090,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                         focusColor: Colors.transparent,
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
-                                        onLongPress: () async {},
+                                        onLongPress: () async {
+                                          context.pushNamed(
+                                              BarcodePrintingWidget.routeName);
+                                        },
                                         child: Image.asset(
                                           'assets/images/IMG_20220412_140945.png',
                                           width: 100.0,
