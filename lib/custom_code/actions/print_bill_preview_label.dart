@@ -30,7 +30,7 @@ Future printBillPreviewLabel(
   bool status,
   String statusName,
   String paperSize,
-  List<ProductRecord> productList,
+  List<PurchaseSaleItemListStruct> productList,
 ) async {
   // Determine printer size (width in dots)
 

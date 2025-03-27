@@ -731,7 +731,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                             FFAppState().isPrinterConnected,
                                             FFAppState().printerName,
                                             _model.labelSize,
-                                            _model.productDoclist.toList(),
+                                            _model.productlist.toList(),
                                           );
 
                                           safeSetState(() {});
