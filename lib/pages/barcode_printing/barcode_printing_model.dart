@@ -60,10 +60,6 @@ class BarcodePrintingModel extends FlutterFlowModel<BarcodePrintingWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue2;
   FormFieldController<String>? dropDownValueController2;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
   // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
   bool? resDevice2Copy;
   // Stores action output result for [Custom Action - connectDevice] action in Button widget.
@@ -79,7 +75,5 @@ class BarcodePrintingModel extends FlutterFlowModel<BarcodePrintingWidget> {
   @override
   void dispose() {
     headerModel.dispose();
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
   }
 }
