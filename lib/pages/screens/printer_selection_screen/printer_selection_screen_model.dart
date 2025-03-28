@@ -69,16 +69,16 @@ class PrinterSelectionScreenModel
   TextEditingController? textFieldTitleTextController;
   String? Function(BuildContext, String?)?
       textFieldTitleTextControllerValidator;
-  // State field(s) for TextFieldSubTitle widget.
-  FocusNode? textFieldSubTitleFocusNode;
-  TextEditingController? textFieldSubTitleTextController;
-  String? Function(BuildContext, String?)?
-      textFieldSubTitleTextControllerValidator;
   // State field(s) for TextFieldAddress widget.
   FocusNode? textFieldAddressFocusNode;
   TextEditingController? textFieldAddressTextController;
   String? Function(BuildContext, String?)?
       textFieldAddressTextControllerValidator;
+  // State field(s) for TextFieldSubTitle widget.
+  FocusNode? textFieldSubTitleFocusNode;
+  TextEditingController? textFieldSubTitleTextController;
+  String? Function(BuildContext, String?)?
+      textFieldSubTitleTextControllerValidator;
   // State field(s) for TextFieldGst widget.
   FocusNode? textFieldGstFocusNode;
   TextEditingController? textFieldGstTextController;
@@ -167,11 +167,11 @@ class PrinterSelectionScreenModel
     textFieldTitleFocusNode?.dispose();
     textFieldTitleTextController?.dispose();
 
-    textFieldSubTitleFocusNode?.dispose();
-    textFieldSubTitleTextController?.dispose();
-
     textFieldAddressFocusNode?.dispose();
     textFieldAddressTextController?.dispose();
+
+    textFieldSubTitleFocusNode?.dispose();
+    textFieldSubTitleTextController?.dispose();
 
     textFieldGstFocusNode?.dispose();
     textFieldGstTextController?.dispose();

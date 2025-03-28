@@ -61,9 +61,9 @@ class _PrinterSelectionScreenWidgetState
 
     _model.textFieldTitleFocusNode ??= FocusNode();
 
-    _model.textFieldSubTitleFocusNode ??= FocusNode();
-
     _model.textFieldAddressFocusNode ??= FocusNode();
+
+    _model.textFieldSubTitleFocusNode ??= FocusNode();
 
     _model.textFieldGstFocusNode ??= FocusNode();
 
@@ -2951,114 +2951,6 @@ class _PrinterSelectionScreenWidgetState
                                                                               0.0),
                                                                           child:
                                                                               TextFormField(
-                                                                            controller: _model.textFieldSubTitleTextController ??=
-                                                                                TextEditingController(
-                                                                              text: containerHeaderRecord?.subtitleAddress,
-                                                                            ),
-                                                                            focusNode:
-                                                                                _model.textFieldSubTitleFocusNode,
-                                                                            onChanged: (_) =>
-                                                                                EasyDebounce.debounce(
-                                                                              '_model.textFieldSubTitleTextController',
-                                                                              Duration(milliseconds: 2000),
-                                                                              () => safeSetState(() {}),
-                                                                            ),
-                                                                            onFieldSubmitted:
-                                                                                (_) async {
-                                                                              FFAppState().addToHeaderList(_model.textFieldSubTitleTextController.text);
-                                                                              FFAppState().update(() {});
-                                                                            },
-                                                                            autofocus:
-                                                                                false,
-                                                                            obscureText:
-                                                                                false,
-                                                                            decoration:
-                                                                                InputDecoration(
-                                                                              isDense: true,
-                                                                              labelText: FFLocalizations.of(context).getText(
-                                                                                '401xvfyt' /* Subtitle */,
-                                                                              ),
-                                                                              hintText: FFLocalizations.of(context).getText(
-                                                                                '6fbciy7m' /* Subtitle/Address */,
-                                                                              ),
-                                                                              enabledBorder: UnderlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0xFF898686),
-                                                                                  width: 0.5,
-                                                                                ),
-                                                                                borderRadius: BorderRadius.circular(0.0),
-                                                                              ),
-                                                                              focusedBorder: UnderlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 0.5,
-                                                                                ),
-                                                                                borderRadius: BorderRadius.circular(0.0),
-                                                                              ),
-                                                                              errorBorder: UnderlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 0.5,
-                                                                                ),
-                                                                                borderRadius: BorderRadius.circular(0.0),
-                                                                              ),
-                                                                              focusedErrorBorder: UnderlineInputBorder(
-                                                                                borderSide: BorderSide(
-                                                                                  color: Color(0x00000000),
-                                                                                  width: 0.5,
-                                                                                ),
-                                                                                borderRadius: BorderRadius.circular(0.0),
-                                                                              ),
-                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 10.0),
-                                                                              suffixIcon: _model.textFieldSubTitleTextController!.text.isNotEmpty
-                                                                                  ? InkWell(
-                                                                                      onTap: () async {
-                                                                                        _model.textFieldSubTitleTextController?.clear();
-                                                                                        safeSetState(() {});
-                                                                                      },
-                                                                                      child: Icon(
-                                                                                        Icons.clear,
-                                                                                        color: Color(0xFF757575),
-                                                                                        size: 22.0,
-                                                                                      ),
-                                                                                    )
-                                                                                  : null,
-                                                                            ),
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                ),
-                                                                            textAlign:
-                                                                                TextAlign.start,
-                                                                            validator:
-                                                                                _model.textFieldSubTitleTextControllerValidator.asValidator(context),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Expanded(
-                                                                      child:
-                                                                          Align(
-                                                                        alignment: AlignmentDirectional(
-                                                                            0.3,
-                                                                            0.15),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              TextFormField(
                                                                             controller: _model.textFieldAddressTextController ??=
                                                                                 TextEditingController(
                                                                               text: containerHeaderRecord?.address,
@@ -3141,6 +3033,114 @@ class _PrinterSelectionScreenWidgetState
                                                                                 TextAlign.start,
                                                                             validator:
                                                                                 _model.textFieldAddressTextControllerValidator.asValidator(context),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                                Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Expanded(
+                                                                      child:
+                                                                          Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            0.3,
+                                                                            0.15),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              TextFormField(
+                                                                            controller: _model.textFieldSubTitleTextController ??=
+                                                                                TextEditingController(
+                                                                              text: containerHeaderRecord?.subtitleAddress,
+                                                                            ),
+                                                                            focusNode:
+                                                                                _model.textFieldSubTitleFocusNode,
+                                                                            onChanged: (_) =>
+                                                                                EasyDebounce.debounce(
+                                                                              '_model.textFieldSubTitleTextController',
+                                                                              Duration(milliseconds: 2000),
+                                                                              () => safeSetState(() {}),
+                                                                            ),
+                                                                            onFieldSubmitted:
+                                                                                (_) async {
+                                                                              FFAppState().addToHeaderList(_model.textFieldSubTitleTextController.text);
+                                                                              FFAppState().update(() {});
+                                                                            },
+                                                                            autofocus:
+                                                                                false,
+                                                                            obscureText:
+                                                                                false,
+                                                                            decoration:
+                                                                                InputDecoration(
+                                                                              isDense: true,
+                                                                              labelText: FFLocalizations.of(context).getText(
+                                                                                '401xvfyt' /* Subtitle */,
+                                                                              ),
+                                                                              hintText: FFLocalizations.of(context).getText(
+                                                                                '6fbciy7m' /* Subtitle/Address */,
+                                                                              ),
+                                                                              enabledBorder: UnderlineInputBorder(
+                                                                                borderSide: BorderSide(
+                                                                                  color: Color(0xFF898686),
+                                                                                  width: 0.5,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(0.0),
+                                                                              ),
+                                                                              focusedBorder: UnderlineInputBorder(
+                                                                                borderSide: BorderSide(
+                                                                                  color: Color(0x00000000),
+                                                                                  width: 0.5,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(0.0),
+                                                                              ),
+                                                                              errorBorder: UnderlineInputBorder(
+                                                                                borderSide: BorderSide(
+                                                                                  color: Color(0x00000000),
+                                                                                  width: 0.5,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(0.0),
+                                                                              ),
+                                                                              focusedErrorBorder: UnderlineInputBorder(
+                                                                                borderSide: BorderSide(
+                                                                                  color: Color(0x00000000),
+                                                                                  width: 0.5,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(0.0),
+                                                                              ),
+                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 10.0),
+                                                                              suffixIcon: _model.textFieldSubTitleTextController!.text.isNotEmpty
+                                                                                  ? InkWell(
+                                                                                      onTap: () async {
+                                                                                        _model.textFieldSubTitleTextController?.clear();
+                                                                                        safeSetState(() {});
+                                                                                      },
+                                                                                      child: Icon(
+                                                                                        Icons.clear,
+                                                                                        color: Color(0xFF757575),
+                                                                                        size: 22.0,
+                                                                                      ),
+                                                                                    )
+                                                                                  : null,
+                                                                            ),
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                  letterSpacing: 0.0,
+                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                ),
+                                                                            textAlign:
+                                                                                TextAlign.start,
+                                                                            validator:
+                                                                                _model.textFieldSubTitleTextControllerValidator.asValidator(context),
                                                                           ),
                                                                         ),
                                                                       ),

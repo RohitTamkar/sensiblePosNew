@@ -19,6 +19,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:image/image.dart' as img;
 import 'package:flutter/services.dart';
 
@@ -1060,7 +1062,7 @@ Future printBillnewhive2(
     }
   } else if (size == 32) {
     billColumn3 =
-        "   ITEM       QTY  RATE  TOTAL"; // Adjusted for 32 characters
+        "  ITEM       QTY  RATE  TOTAL "; // Adjusted for 32 characters
     taxColumn3 =
         "TAX%  TAXABLE  CGST  SGST  TAXAMT"; // Adjusted for 32 characters
 
@@ -1080,7 +1082,7 @@ Future printBillnewhive2(
                 styles: PosStyles(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
           }
           if (doc["address"] != null && doc["address"].isNotEmpty) {
             bytes += generator.text(doc["address"],
@@ -1088,7 +1090,7 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: true,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
           }
           if (doc["gstNo"] != null && doc["gstNo"].isNotEmpty) {
             bytes += generator.text(doc["gstNo"],
@@ -1096,7 +1098,7 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: true,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
           }
           if (doc["contactNo"] != null && doc["contactNo"].isNotEmpty) {
             bytes += generator.text(doc["contactNo"],
@@ -1104,7 +1106,7 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: true,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
           }
           if (doc["email"] != null && doc["email"].isNotEmpty) {
             bytes += generator.text(doc["email"],
@@ -1112,7 +1114,7 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: true,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
           }
           if (doc["serialNo"] != null && doc["serialNo"].isNotEmpty) {
             bytes += generator.text(doc["serialNo"],
@@ -1120,7 +1122,7 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: true,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
           }
           if (doc["taxInvoice"] != null && doc["taxInvoice"].isNotEmpty) {
             bytes += generator.text(doc["taxInvoice"],
@@ -1128,7 +1130,7 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: true,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
           }
           if (doc["bankName"] != null && doc["bankName"].isNotEmpty) {
             bytes += generator.text(doc["bankName"],
@@ -1136,7 +1138,7 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: true,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
           }
           if (doc["bankBranch"] != null && doc["bankBranch"].isNotEmpty) {
             bytes += generator.text(doc["bankBranch"],
@@ -1144,7 +1146,7 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: true,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
           }
           if (doc["accountNumber"] != null && doc["accountNumber"].isNotEmpty) {
             bytes += generator.text(doc["accountNumber"],
@@ -1152,7 +1154,7 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: true,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
           }
           if (doc["ifscCode"] != null && doc["ifscCode"].isNotEmpty) {
             bytes += generator.text(doc["ifscCode"],
@@ -1160,7 +1162,7 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: true,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
           }
           if (doc["subtitleAddress"] != null &&
               doc["subtitleAddress"].isNotEmpty) {
@@ -1169,17 +1171,10 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: true,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
           }
         }
       }
-
-      bytes += generator.text(FFAppState().orderType,
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: true,
-              align: PosAlign.center));
 
       if (FFAppState().billPrintFooter == "KOT") {
         bytes += generator.text("NEW KOT",
@@ -1187,7 +1182,7 @@ Future printBillnewhive2(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: true,
-                align: PosAlign.center));
+                align: PosAlign.left));
       }
 
       bytes += generator.text("--------------------------------",
@@ -1195,7 +1190,7 @@ Future printBillnewhive2(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.center));
+              align: PosAlign.left));
 
       String printLine = '';
 
@@ -1213,7 +1208,7 @@ Future printBillnewhive2(
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                align: PosAlign.center,
+                align: PosAlign.left,
                 bold: true));
 
         printLine = '';
@@ -1234,7 +1229,7 @@ Future printBillnewhive2(
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                align: PosAlign.center,
+                align: PosAlign.left,
                 bold: true));
       } else {
         String dateString = '';
@@ -1251,6 +1246,7 @@ Future printBillnewhive2(
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
+                align: PosAlign.left,
                 bold: false));
 
         printLine = '';
@@ -1267,7 +1263,7 @@ Future printBillnewhive2(
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                align: PosAlign.center,
+                align: PosAlign.left,
                 bold: false));
       }
 
@@ -1276,21 +1272,21 @@ Future printBillnewhive2(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.center));
+              align: PosAlign.left));
 
       bytes += generator.text(billColumn3,
           styles: const PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.center));
+              align: PosAlign.left));
 
       bytes += generator.text("--------------------------------",
           styles: const PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.center));
+              align: PosAlign.left));
 
       for (int i = 0; i < obj["itemList"].length; i++) {
         bytes += generator.row([
@@ -1302,7 +1298,7 @@ Future printBillnewhive2(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center),
+                align: PosAlign.left),
           ),
           PosColumn(
             text: obj["itemList"][i]["quantity"].toString(),
@@ -1311,7 +1307,7 @@ Future printBillnewhive2(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center),
+                align: PosAlign.left),
           ),
           PosColumn(
             text: obj["itemList"][i]["price"].toString(),
@@ -1320,7 +1316,7 @@ Future printBillnewhive2(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center),
+                align: PosAlign.left),
           ),
           PosColumn(
             text: obj["itemList"][i]["total"].toString(),
@@ -1329,7 +1325,7 @@ Future printBillnewhive2(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center),
+                align: PosAlign.left),
           )
         ]);
       }
@@ -1339,7 +1335,7 @@ Future printBillnewhive2(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.center));
+              align: PosAlign.left));
 
       if (FFAppState().billPrintFooter != "KOT" &&
           FFAppState().billPrintFooter != "CUSTOMER") {
@@ -1373,7 +1369,7 @@ Future printBillnewhive2(
             styles: PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
-              align: PosAlign.center,
+              align: PosAlign.left,
             ));
       }
 
@@ -1384,7 +1380,7 @@ Future printBillnewhive2(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center));
+                align: PosAlign.left));
       }
 
       if (invoiceDetails.roundOff != 0) {
@@ -1415,7 +1411,7 @@ Future printBillnewhive2(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center));
+                align: PosAlign.left));
       }
 
       if (FFAppState().billPrintFooter != "KOT" &&
@@ -1480,7 +1476,7 @@ Future printBillnewhive2(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center));
+                align: PosAlign.left));
       }
 
       int disPer = invoiceDetails.discountPer!.round();
@@ -1513,7 +1509,7 @@ Future printBillnewhive2(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center));
+                align: PosAlign.left));
       }
 
       if (FFAppState().billPrintFooter != "KOT" &&
@@ -1545,7 +1541,7 @@ Future printBillnewhive2(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.center));
+              align: PosAlign.left));
 
       //////////////////////////////TAX//////////////////////////////////////
       if (FFAppState().billPrintFooter != "KOT") {
@@ -1583,49 +1579,49 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: false,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
 
             bytes += generator.text(sgstString,
                 styles: const PosStyles(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: false,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
 
             bytes += generator.text(taxableString,
                 styles: const PosStyles(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: false,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
 
             bytes += generator.text(totalTaxString,
                 styles: const PosStyles(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: false,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
 
             bytes += generator.text("--------------------------------",
                 styles: const PosStyles(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: false,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
 
             bytes += generator.text(
                 "Grand Total:" + FFAppState().finalAmt.toString(),
                 styles: PosStyles(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
 
             bytes += generator.text("--------------------------------",
                 styles: const PosStyles(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: false,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
           }
         } else {
           if (invoiceDetails.taxAmt != 0) {
@@ -1637,14 +1633,14 @@ Future printBillnewhive2(
                       height: PosTextSize.size1,
                       width: PosTextSize.size1,
                       bold: false,
-                      align: PosAlign.center));
+                      align: PosAlign.left));
             } else {
               bytes += generator.text("Tax Details ( Exclusive )",
                   styles: const PosStyles(
                       height: PosTextSize.size1,
                       width: PosTextSize.size1,
                       bold: false,
-                      align: PosAlign.center));
+                      align: PosAlign.left));
             }
 
             bytes += generator.text("--------------------------------",
@@ -1652,7 +1648,7 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: false,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
 
             bytes += generator.text(taxColumn3,
                 styles: const PosStyles(
@@ -1666,7 +1662,7 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: false,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
 
             Map<String, Map<String, double>> taxMap = {};
             double taxableAmtTotal = 0;
@@ -1762,7 +1758,7 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: false,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
 
             bytes += generator.row([
               PosColumn(
@@ -1818,7 +1814,7 @@ Future printBillnewhive2(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
                     bold: false,
-                    align: PosAlign.center));
+                    align: PosAlign.left));
           }
         }
       }
@@ -1885,22 +1881,22 @@ Future printBillnewhive2(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center));
+                align: PosAlign.left));
       }
 
       if (FFAppState().billPrintFooter == "KOT") {
-        bytes += generator.text("THIS KOT IS ONLY FOR HOTEL PURPOSED",
+        bytes += generator.text("THIS KOT IS ONLY FOR HOTEL",
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center));
+                align: PosAlign.left));
         bytes += generator.text("--------------------------------",
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center));
+                align: PosAlign.left));
       }
 
       for (var doc in footerSnapshot.docs) {
@@ -1909,7 +1905,7 @@ Future printBillnewhive2(
               styles: PosStyles(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
-                  align: PosAlign.center));
+                  align: PosAlign.left));
         }
         if (doc["footerText2"] != null && doc["footerText2"].isNotEmpty) {
           bytes += generator.text(doc["footerText2"],
@@ -1917,7 +1913,7 @@ Future printBillnewhive2(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
                   bold: true,
-                  align: PosAlign.center));
+                  align: PosAlign.left));
         }
         if (doc["footerText3"] != null && doc["footerText3"].isNotEmpty) {
           bytes += generator.text(doc["footerText3"],
@@ -1925,7 +1921,7 @@ Future printBillnewhive2(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
                   bold: true,
-                  align: PosAlign.center));
+                  align: PosAlign.left));
         }
         if (doc["footerText4"] != null && doc["footerText4"].isNotEmpty) {
           bytes += generator.text(doc["footerText4"],
@@ -1933,7 +1929,7 @@ Future printBillnewhive2(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
                   bold: true,
-                  align: PosAlign.center));
+                  align: PosAlign.left));
         }
         if (doc["footerText5"] != null && doc["footerText5"].isNotEmpty) {
           bytes += generator.text(doc["footerText5"],
@@ -1941,7 +1937,7 @@ Future printBillnewhive2(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
                   bold: true,
-                  align: PosAlign.center));
+                  align: PosAlign.left));
         }
       }
     } else {
@@ -1949,7 +1945,7 @@ Future printBillnewhive2(
           styles: PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
-              align: PosAlign.center));
+              align: PosAlign.left));
     }
   }
 

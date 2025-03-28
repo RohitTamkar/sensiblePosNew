@@ -6643,20 +6643,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    '401xvfyt': {
-      'en': 'Subtitle',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '6fbciy7m': {
-      'en': 'Subtitle/Address',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
     '51rhlxn1': {
       'en': 'Address',
       'hi': '',
@@ -6666,6 +6652,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0uj85czr': {
       'en': 'Address',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '401xvfyt': {
+      'en': 'Subtitle',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '6fbciy7m': {
+      'en': 'Subtitle/Address',
       'hi': '',
       'kn': '',
       'mr': '',
