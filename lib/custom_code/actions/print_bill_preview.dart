@@ -369,7 +369,7 @@ Future printBillPreview(
         bytes += generator.text(doc["title"],
             styles: PosStyles(
                 height: PosTextSize.size2,
-                width: PosTextSize.size2,
+                width: PosTextSize.size1,
                 align: PosAlign.center));
       }
       if (doc["address"] != null && doc["address"].isNotEmpty) {

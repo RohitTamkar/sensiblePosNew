@@ -583,12 +583,12 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                               ),
                                                             ),
                                                             Expanded(
-                                                              flex: 14,
+                                                              flex: 10,
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
                                                                         .width *
-                                                                    0.08,
+                                                                    0.07,
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   borderRadius:
@@ -612,99 +612,126 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                       Expanded(
                                                                         flex: 7,
                                                                         child:
-                                                                            Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.03,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            boxShadow: [
-                                                                              BoxShadow(
-                                                                                blurRadius: 5.0,
-                                                                                color: Color(0x27000000),
-                                                                                offset: Offset(
-                                                                                  -4.0,
-                                                                                  1.0,
-                                                                                ),
-                                                                                spreadRadius: 1.0,
-                                                                              )
-                                                                            ],
-                                                                            borderRadius:
-                                                                                BorderRadius.only(
-                                                                              bottomLeft: Radius.circular(5.0),
-                                                                              bottomRight: Radius.circular(0.0),
-                                                                              topLeft: Radius.circular(5.0),
-                                                                              topRight: Radius.circular(0.0),
-                                                                            ),
-                                                                          ),
+                                                                            InkWell(
+                                                                          splashColor:
+                                                                              Colors.transparent,
+                                                                          focusColor:
+                                                                              Colors.transparent,
+                                                                          hoverColor:
+                                                                              Colors.transparent,
+                                                                          highlightColor:
+                                                                              Colors.transparent,
+                                                                          onTap:
+                                                                              () async {
+                                                                            _model.updateProductStruct(
+                                                                              (e) => e..incrementQuantity(-1.0),
+                                                                            );
+                                                                            safeSetState(() {});
+                                                                          },
                                                                           child:
-                                                                              Icon(
-                                                                            Icons.remove,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            size:
-                                                                                20.0,
+                                                                              Container(
+                                                                            width:
+                                                                                MediaQuery.sizeOf(context).width * 0.02,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              boxShadow: [
+                                                                                BoxShadow(
+                                                                                  blurRadius: 5.0,
+                                                                                  color: Color(0x27000000),
+                                                                                  offset: Offset(
+                                                                                    -4.0,
+                                                                                    1.0,
+                                                                                  ),
+                                                                                  spreadRadius: 1.0,
+                                                                                )
+                                                                              ],
+                                                                              borderRadius: BorderRadius.only(
+                                                                                bottomLeft: Radius.circular(5.0),
+                                                                                bottomRight: Radius.circular(0.0),
+                                                                                topLeft: Radius.circular(5.0),
+                                                                                topRight: Radius.circular(0.0),
+                                                                              ),
+                                                                            ),
+                                                                            child:
+                                                                                Icon(
+                                                                              Icons.remove,
+                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                              size: 20.0,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                      Expanded(
+                                                                      Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
-                                                                            Stack(
-                                                                          children: [
-                                                                            Align(
-                                                                              alignment: AlignmentDirectional(0.0, 0.0),
-                                                                              child: Text(
-                                                                                valueOrDefault<String>(
-                                                                                  billItem.quantity.toString(),
-                                                                                  '0',
-                                                                                ),
-                                                                                style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
-                                                                                      letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
-                                                                                    ),
+                                                                            Text(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            billItem.quantity.toString(),
+                                                                            '25',
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .headlineSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                               ),
-                                                                            ),
-                                                                          ],
                                                                         ),
                                                                       ),
                                                                       Expanded(
                                                                         flex: 7,
                                                                         child:
-                                                                            Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.03,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            boxShadow: [
-                                                                              BoxShadow(
-                                                                                blurRadius: 5.0,
-                                                                                color: Color(0x25000000),
-                                                                                offset: Offset(
-                                                                                  4.0,
-                                                                                  1.0,
-                                                                                ),
-                                                                                spreadRadius: 1.0,
-                                                                              )
-                                                                            ],
-                                                                            borderRadius:
-                                                                                BorderRadius.only(
-                                                                              bottomLeft: Radius.circular(0.0),
-                                                                              bottomRight: Radius.circular(5.0),
-                                                                              topLeft: Radius.circular(0.0),
-                                                                              topRight: Radius.circular(5.0),
-                                                                            ),
-                                                                          ),
+                                                                            InkWell(
+                                                                          splashColor:
+                                                                              Colors.transparent,
+                                                                          focusColor:
+                                                                              Colors.transparent,
+                                                                          hoverColor:
+                                                                              Colors.transparent,
+                                                                          highlightColor:
+                                                                              Colors.transparent,
+                                                                          onTap:
+                                                                              () async {
+                                                                            _model.updateProductStruct(
+                                                                              (e) => e..incrementQuantity(1.0),
+                                                                            );
+                                                                            safeSetState(() {});
+                                                                          },
                                                                           child:
-                                                                              Icon(
-                                                                            Icons.add,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            size:
-                                                                                20.0,
+                                                                              Container(
+                                                                            width:
+                                                                                MediaQuery.sizeOf(context).width * 0.03,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              boxShadow: [
+                                                                                BoxShadow(
+                                                                                  blurRadius: 5.0,
+                                                                                  color: Color(0x25000000),
+                                                                                  offset: Offset(
+                                                                                    4.0,
+                                                                                    1.0,
+                                                                                  ),
+                                                                                  spreadRadius: 1.0,
+                                                                                )
+                                                                              ],
+                                                                              borderRadius: BorderRadius.only(
+                                                                                bottomLeft: Radius.circular(0.0),
+                                                                                bottomRight: Radius.circular(5.0),
+                                                                                topLeft: Radius.circular(0.0),
+                                                                                topRight: Radius.circular(5.0),
+                                                                              ),
+                                                                            ),
+                                                                            child:
+                                                                                Icon(
+                                                                              Icons.add,
+                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                              size: 20.0,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -714,29 +741,49 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                               ),
                                                             ),
                                                             Expanded(
-                                                              flex: 9,
-                                                              child: Container(
-                                                                decoration:
-                                                                    BoxDecoration(),
+                                                              flex: 5,
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  _model.removeFromProductlist(
+                                                                      billItem);
+                                                                  safeSetState(
+                                                                      () {});
+                                                                },
                                                                 child:
-                                                                    FlutterFlowIconButton(
-                                                                  borderRadius:
-                                                                      8.0,
-                                                                  buttonSize:
-                                                                      45.0,
-                                                                  icon: Icon(
-                                                                    Icons
-                                                                        .delete_rounded,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    size: 24.0,
+                                                                    Container(
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      FlutterFlowIconButton(
+                                                                    borderRadius:
+                                                                        8.0,
+                                                                    buttonSize:
+                                                                        45.0,
+                                                                    icon: Icon(
+                                                                      Icons
+                                                                          .delete_rounded,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      size:
+                                                                          24.0,
+                                                                    ),
+                                                                    onPressed:
+                                                                        () {
+                                                                      print(
+                                                                          'IconButton pressed ...');
+                                                                    },
                                                                   ),
-                                                                  onPressed:
-                                                                      () {
-                                                                    print(
-                                                                        'IconButton pressed ...');
-                                                                  },
                                                                 ),
                                                               ),
                                                             ),
@@ -907,6 +954,38 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                         },
                                                         width: 200.0,
                                                         height: 40.0,
+                                                        searchHintTextStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelMediumFamily),
+                                                                ),
+                                                        searchTextStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
                                                         textStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -928,6 +1007,12 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                     context)
                                                                 .getText(
                                                           '1swwmub9' /* Select... */,
+                                                        ),
+                                                        searchHintText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'hatwmpoz' /* Search... */,
                                                         ),
                                                         icon: Icon(
                                                           Icons
@@ -954,7 +1039,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                     0.0),
                                                         hidesUnderline: true,
                                                         isOverButton: false,
-                                                        isSearchable: false,
+                                                        isSearchable: true,
                                                         isMultiSelect: false,
                                                       ),
                                                     ),

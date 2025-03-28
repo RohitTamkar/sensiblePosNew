@@ -17,6 +17,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:image/image.dart' as img;
 import 'package:flutter/services.dart';
 
@@ -114,7 +116,7 @@ Future printBillnewhive2(
             bytes += generator.text(doc["title"],
                 styles: PosStyles(
                     height: PosTextSize.size2,
-                    width: PosTextSize.size2,
+                    width: PosTextSize.size1,
                     align: PosAlign.center));
           }
           if (doc["address"] != null && doc["address"].isNotEmpty) {
