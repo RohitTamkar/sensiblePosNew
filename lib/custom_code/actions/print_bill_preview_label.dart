@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:convert';
 
 import 'dart:typed_data';
@@ -32,160 +34,101 @@ Future printBillPreviewLabel(
   String paperSize,
   List<PurchaseSaleItemListStruct> productList,
 ) async {
-  // Determine printer size (width in dots)
+  // Determine label dimensions based on paper size
+  late double labelWidth;
+  late double labelHeight;
+  late int fontSizeLarge;
+  late int fontSizeMedium;
+  late int fontSizeSmall;
+  late int barcodeHeight;
+  late int topMargin;
+  late int bottomMargin;
+  late int sideMargin;
 
-  // Determine printer size (width in dots)
-  int widthInDots;
-  switch (paperSize) {
-    case "2 inch":
-      widthInDots = 576; // 58mm printer (2 inch)
-      break;
-    case "3 inch":
-      widthInDots = 832; // 80mm printer (3 inch)
-      break;
-    case "4 inch":
-      widthInDots = 1248; // 112mm printer (4 inch)
-      break;
-    default:
-      widthInDots = 576; // Default to 2 inch
-  }
-
-  // Calculate center position
-  int centerPosition = (widthInDots ~/ 2);
-
-  // Create TSPL commands with proper initialization
-  List<String> tsplCommands = [];
-
-  // 1. Printer initialization with proper delays
-  tsplCommands.add('SIZE ${widthInDots ~/ 8} mm, 100 mm');
-  tsplCommands.add('GAP 2 mm, 0 mm');
-  tsplCommands.add('DIRECTION 1');
-  tsplCommands.add('DENSITY 12');
-  tsplCommands.add('CLS'); // Clear buffer
-
-  // Add delay to allow printer to initialize
-  tsplCommands.add('DELAY 500');
-
-  // Add header information
-  QuerySnapshot headerQuery = await FirebaseFirestore.instance
-      .collection('OUTLET')
-      .doc(FFAppState().outletIdRef?.id)
-      .collection('HEADER')
-      .get();
-
-  int currentYPosition = 50;
-  for (var doc in headerQuery.docs) {
-    if (doc["title"] != null && doc["title"].isNotEmpty) {
-      num xPosition = paperSize == "4 inch"
-          ? centerPosition - (doc["title"].length * 6)
-          : 100;
-      tsplCommands
-          .add('TEXT $xPosition,$currentYPosition,"3",0,1,1,"${doc["title"]}"');
-      currentYPosition += 50;
-    }
-    // Add other header fields...
-  }
-
-  // Horizontal line
-  tsplCommands.add('BAR 50,$currentYPosition,${widthInDots - 50},2');
-  currentYPosition += 20;
-
-  // Bill header with dynamic column spacing based on paper size
-  String billHeader;
-  if (paperSize == "4 inch") {
-    billHeader = "S.N   ITEM_NAME               QTY      RATE     TOTAL";
-  } else if (paperSize == "3 inch") {
-    billHeader = "S.N  ITEM_NAME         QTY    RATE   TOTAL";
+  if (paperSize == '35mm*25mm') {
+    labelWidth = 35.0; // mm
+    labelHeight = 25.0; // mm
+    fontSizeLarge = 3; // Large font for name
+    fontSizeMedium = 1; // Medium font for price & MRP
+    fontSizeSmall = 0; // Small font for weight
+    barcodeHeight = 15; // Adjusted barcode height
+    topMargin = 5; // Reduced margin for better spacing
+    bottomMargin = 5;
+    sideMargin = 2;
   } else {
-    billHeader = "S.N ITEM_NAME  QTY RATE TOTAL";
+    // Default to 75mm×50mm
+    labelWidth = 75.0; // mm
+    labelHeight = 50.0; // mm
+    fontSizeLarge = 3;
+    fontSizeMedium = 2;
+    fontSizeSmall = 1;
+    barcodeHeight = 40;
+    topMargin = 20;
+    bottomMargin = 20;
+    sideMargin = 10;
   }
 
-  int headerXPosition =
-      paperSize == "4 inch" ? centerPosition - (billHeader.length * 4) : 100;
-  tsplCommands
-      .add('TEXT $headerXPosition,$currentYPosition,"1",0,1,1,"$billHeader"');
-  currentYPosition += 30;
+  const int dpi = 203; // Standard thermal printer DPI
+  const double dotsPerMm = dpi / 25.4; // ~8 dots/mm
 
-  // Another horizontal line
-  tsplCommands.add('BAR 50,$currentYPosition,${widthInDots - 50},2');
-  currentYPosition += 20;
+  // Calculate dimensions in dots
+  final int widthInDots = (labelWidth * dotsPerMm).round();
+  final int heightInDots = (labelHeight * dotsPerMm).round();
 
-  // Bill items with dynamic spacing
-  String item1, item2;
-  if (paperSize == "4 inch") {
-    item1 = "1.   TEA                  1.00      10.00     10.00";
-    item2 = "2.   COFFEE              2.00      15.00     30.00";
-  } else if (paperSize == "3 inch") {
-    item1 = "1.  TEA               1.00    10.00   10.00";
-    item2 = "2.  COFFEE            2.00    15.00   30.00";
-  } else {
-    item1 = "1.  TEA       1.00 10.00 10.00";
-    item2 = "2.  COFFEE    2.00 15.00 30.00";
-  }
+  // Prepare all labels' TSPL commands
+  List<String> allLabelsCommands = [];
 
-  int itemXPosition =
-      paperSize == "4 inch" ? centerPosition - (item1.length * 4) : 100;
-  tsplCommands.add('TEXT $itemXPosition,$currentYPosition,"1",0,1,1,"$item1"');
-  currentYPosition += 30;
-  tsplCommands.add('TEXT $itemXPosition,$currentYPosition,"1",0,1,1,"$item2"');
-  currentYPosition += 40;
+  for (var product in productList) {
+    // Print one label per quantity
+    for (int i = 0; i < (product.quantity ?? 1); i++) {
+      List<String> tsplCommands = [];
 
-  // Horizontal line
-  tsplCommands.add('BAR 50,$currentYPosition,${widthInDots - 50},2');
-  currentYPosition += 20;
+      // Label setup
+      tsplCommands.add('SIZE ${labelWidth} mm, ${labelHeight} mm');
+      tsplCommands.add('GAP 2.5 mm,0 mm\r\n');
+      tsplCommands.add('DIRECTION 1'); // Print direction
+      tsplCommands.add('DENSITY 12'); // Print density
+      tsplCommands.add('CLS'); // Clear buffer
+      tsplCommands.add('DELAY 100'); // Short delay
 
-  // Grand Total - right aligned for all sizes
-  String grandTotal = "GRAND TOTAL: 40.00";
-  int totalXPosition = widthInDots - (grandTotal.length * 8) - 50;
-  tsplCommands
-      .add('TEXT $totalXPosition,$currentYPosition,"3",0,2,2,"$grandTotal"');
-  currentYPosition += 50;
+      // Calculate positions based on label size
+      final int centerX = widthInDots ~/ 2;
+      final int contentHeight = heightInDots - topMargin - bottomMargin;
 
-  // Payment mode - centered for 4-inch, left for others
-  String paymentMode = "PAYMENT MODE: CASH";
-  int paymentXPosition =
-      paperSize == "4 inch" ? centerPosition - (paymentMode.length * 4) : 100;
-  tsplCommands
-      .add('TEXT $paymentXPosition,$currentYPosition,"1",0,1,1,"$paymentMode"');
-  currentYPosition += 40;
+      // Product Name (Top, Centered)
+      String productName = product.name ?? "Product";
+      if (productName.length > 10) {
+        productName =
+            productName.substring(0, 10) + '...'; // Truncate long names
+      }
+      int nameX = centerX - ((productName.length * 16) ~/ 2);
+      tsplCommands.add('TEXT 20,20,"B.FNT",0,2,2,"${productName}"\r\n');
 
-  // Barcode - centered
-  int barcodeX = centerPosition - 100;
-  tsplCommands.add(
-      'BARCODE $barcodeX,$currentYPosition,"128",100,1,0,2,2,"1234567890"');
-  currentYPosition += 150;
-
-  // Footer information
-  QuerySnapshot footerQuery = await FirebaseFirestore.instance
-      .collection('OUTLET')
-      .doc(FFAppState().outletIdRef?.id)
-      .collection('FOOTER')
-      .get();
-
-  for (var doc in footerQuery.docs) {
-    if (doc["footerText1"] != null && doc["footerText1"].isNotEmpty) {
-      num footerX = paperSize == "4 inch"
-          ? centerPosition - (doc["footerText1"].length * 4)
-          : 100;
       tsplCommands.add(
-          'TEXT $footerX,$currentYPosition,"1",0,1,1,"${doc["footerText1"]}"');
-      currentYPosition += 30;
+          'TEXT 20,50,"3.EFT",0,1,1,"MRP: ${product.price?.toStringAsFixed(2) ?? "0.00"}"\r\n');
+      tsplCommands.add(
+          'TEXT 20,70,"3.EFT",0,1,1,"PRICE: ${product.price?.toStringAsFixed(2) ?? "0.00"}"\r\n');
+
+      if (product.barcode?.isNotEmpty ?? false) {
+        tsplCommands
+            .add(' BARCODE 20,100,"128",60,1,0,2,2,"${product.barcode}"\r\n');
+      }
+
+      // Print command for this label
+      tsplCommands.add('PRINT 1,1');
+
+      // Add this label's commands to the main list
+      allLabelsCommands.addAll(tsplCommands);
     }
-    // Add other footer fields similarly...
   }
 
-  // Add print command
-  tsplCommands.add('PRINT 1,1');
-
-  // Convert commands to bytes
+  // Convert all commands to bytes
   List<int> bytes = [];
-  for (String command in tsplCommands) {
+  for (String command in allLabelsCommands) {
     bytes.addAll(utf8.encode('$command\n'));
   }
 
-  // Printer connection and sending (same as before)
-  if (selectedPrinter == null || bytes.isEmpty) return;
-
+  // Printer connection and sending
   var printerManager = PrinterManager.instance;
   var printerInfo = selectedPrinter[0]!;
 
@@ -205,18 +148,14 @@ Future printBillPreviewLabel(
             ),
     );
 
-    // Send TSPL commands
+    // Send all TSPL commands
     await printerManager.send(
       type: printerInfo["typePrinter"],
       bytes: bytes,
     );
-
-    // Update printer status
-    FFAppState().printerName = statusName;
-    FFAppState().isPrinterConnected = status;
   } catch (e) {
-    print('Error printing: $e');
-    // Handle error
+    print('Error printing labels: $e');
+    // Handle error appropriately
   } finally {
     // Disconnect if needed
     await printerManager.disconnect(type: PrinterType.usb);

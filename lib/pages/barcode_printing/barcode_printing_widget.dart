@@ -100,8 +100,8 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                           .primaryBtnText,
                                       size: 26.0,
                                     ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
+                                    onPressed: () async {
+                                      context.safePop();
                                     },
                                   ),
                                   Text(
