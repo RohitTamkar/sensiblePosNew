@@ -942,7 +942,12 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                               ),
                             ),
                           ),
-                          if (false)
+                          if (widget!.appSettings23?.settingList
+                                  ?.where((e) => e.title == 'bacodeMenu')
+                                  .toList()
+                                  ?.firstOrNull
+                                  ?.value ??
+                              true)
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 1.5),
