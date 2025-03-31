@@ -11,20 +11,6 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -35,7 +21,9 @@ import 'dart:typed_data';
 
 import 'package:flutter/services.dart';
 import 'dart:io';
-import 'package:image/image.dart' as img;
+
+import 'package:http/http.dart' as http;
+import 'package:image/image.dart' as im;
 
 Future printBill(
   List<dynamic> data,
@@ -99,17 +87,37 @@ Future printBill(
           .get();
       for (var doc in querySnapshot.docs) {
         print(doc);
-        /*  if (doc["recepitLogoUrl"] != null && doc["recepitLogoUrl"].isNotEmpty) {
-          final ByteData data =
-              await NetworkAssetBundle(Uri.parse(doc["recepitLogoUrl"]))
-                  .load("");
-          final Uint8List imgBytes = data.buffer.asUint8List();
-          final img.Image image = img.decodeImage(imgBytes)!;
+        if (doc["recepitLogoUrl"] != null && doc["recepitLogoUrl"].isNotEmpty) {
+          try {
+            // First, fetch the image from the URL
+            final response = await http.get(Uri.parse(doc["recepitLogoUrl"]));
 
-          //   bytes += generator.imageRaster(image, imageFn: PosImageFn.graphics);
-          bytes += generator.image(image);
-          // bytes += generator.imageRaster(image);
-        }*/
+            // Decode the image using a try-catch block
+            final image =
+                im.decodeImage(Uint8List.fromList(response.bodyBytes));
+
+            if (image != null) {
+              // Convert to monochrome and resize (printer typically has limited width)
+              // Most thermal printers support around 384 pixels width for 80mm paper
+              final imageRaster = im.copyResize(image, width: 300);
+
+              // Convert to ESC/POS format
+              bytes += generator.image(imageRaster);
+
+              // Add some space after the logo
+              bytes += generator.feed(1);
+            }
+          } catch (e) {
+            print('Error printing logo: $e');
+            // Fallback text logo
+            bytes += generator.text('LOGO',
+                styles: PosStyles(
+                    align: PosAlign.center,
+                    height: PosTextSize.size2,
+                    bold: true));
+            bytes += generator.feed(1);
+          }
+        }
         if (doc["title"] != null && doc["title"].isNotEmpty) {
           bytes += generator.text(doc["title"],
               styles: PosStyles(
@@ -843,17 +851,37 @@ Future printBill(
           .get();
       for (var doc in querySnapshot.docs) {
         print(doc);
-        /*  if (doc["recepitLogoUrl"] != null && doc["recepitLogoUrl"].isNotEmpty) {
-          final ByteData data =
-              await NetworkAssetBundle(Uri.parse(doc["recepitLogoUrl"]))
-                  .load("");
-          final Uint8List imgBytes = data.buffer.asUint8List();
-          final img.Image image = img.decodeImage(imgBytes)!;
+        if (doc["recepitLogoUrl"] != null && doc["recepitLogoUrl"].isNotEmpty) {
+          try {
+            // First, fetch the image from the URL
+            final response = await http.get(Uri.parse(doc["recepitLogoUrl"]));
 
-          //   bytes += generator.imageRaster(image, imageFn: PosImageFn.graphics);
-          bytes += generator.image(image);
-          // bytes += generator.imageRaster(image);
-        }   */
+            // Decode the image using a try-catch block
+            final image =
+                im.decodeImage(Uint8List.fromList(response.bodyBytes));
+
+            if (image != null) {
+              // Convert to monochrome and resize (printer typically has limited width)
+              // Most thermal printers support around 384 pixels width for 80mm paper
+              final imageRaster = im.copyResize(image, width: 300);
+
+              // Convert to ESC/POS format
+              bytes += generator.image(imageRaster);
+
+              // Add some space after the logo
+              bytes += generator.feed(1);
+            }
+          } catch (e) {
+            print('Error printing logo: $e');
+            // Fallback text logo
+            bytes += generator.text('LOGO',
+                styles: PosStyles(
+                    align: PosAlign.center,
+                    height: PosTextSize.size2,
+                    bold: true));
+            bytes += generator.feed(1);
+          }
+        }
         if (doc["title"] != null && doc["title"].isNotEmpty) {
           bytes += generator.text(doc["title"],
               styles: PosStyles(

@@ -7059,7 +7059,7 @@ class _PrinterSelectionScreenWidgetState
                                                                   text: FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'kh4g8fsq' /* Sync Logo */,
+                                                                    'bxm2a6vn' /* Sync Logo */,
                                                                   ),
                                                                   options:
                                                                       FFButtonOptions(

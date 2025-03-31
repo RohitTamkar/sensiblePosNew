@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:image/image.dart' as img;
 import 'package:flutter/services.dart';
 
@@ -22,6 +24,8 @@ import 'dart:io';
 //import 'package:flutter_pos_printer_platform/flutter_pos_printer_platform.dart';
 import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
 import 'package:flutter_pos_printer_platform_image_3_sdt/flutter_pos_printer_platform_image_3_sdt.dart';
+import 'package:http/http.dart' as http;
+import 'package:image/image.dart' as im;
 
 Future printBillnewhive(
   List<dynamic> data,
@@ -84,31 +88,56 @@ Future printBillnewhive(
           .collection('HEADER')
           .get();
       for (var doc in querySnapshot.docs) {
-        /*  print(doc);
-         if (doc["recepitLogoUrl"] != null && doc["recepitLogoUrl"].isNotEmpty) {
-           print(doc["recepitLogoUrl"]);
-          final ByteData data =
-              await NetworkAssetBundle(Uri.parse(doc["recepitLogoUrl"]))
-                  .load("");
-          final Uint8List imgBytes = data.buffer.asUint8List();
-          final img.Image image = img.decodeImage(imgBytes)!;
+        if (doc["recepitLogoUrl"] != null && doc["recepitLogoUrl"].isNotEmpty) {
+          try {
+            // First, fetch the image from the URL
+            final response = await http.get(Uri.parse(doc["recepitLogoUrl"]));
 
-           //bytes += generator.imageRaster(image, imageFn: PosImageFn.graphics);
-        bytes += generator.image(image);
-         //  bytes += generator.imageRaster(image);
+            // Decode the image using a try-catch block
+            final image =
+                im.decodeImage(Uint8List.fromList(response.bodyBytes));
 
+            if (image != null) {
+              // Convert to monochrome and resize (printer typically has limited width)
+              // Most thermal printers support around 384 pixels width for 80mm paper
+              final imageRaster = im.copyResize(image, width: 300);
+
+              // Convert to ESC/POS format
+              bytes += generator.image(imageRaster);
+
+              // Add some space after the logo
+              bytes += generator.feed(1);
+            }
+          } catch (e) {
+            print('Error printing logo: $e');
+            // Fallback text logo
+            bytes += generator.text('LOGO',
+                styles: PosStyles(
+                    align: PosAlign.center,
+                    height: PosTextSize.size2,
+                    bold: true));
+            bytes += generator.feed(1);
+          }
         }
-        */
         if (FFAppState().billPrintFooter != "KOT") {
           if (doc["title"] != null && doc["title"].isNotEmpty) {
             bytes += generator.text(doc["title"],
                 styles: PosStyles(
                     height: PosTextSize.size2,
-                    width: PosTextSize.size2,
+                    width: PosTextSize.size1,
                     align: PosAlign.center));
           }
           if (doc["address"] != null && doc["address"].isNotEmpty) {
             bytes += generator.text(doc["address"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
+          if (doc["subtitleAddress"] != null &&
+              doc["subtitleAddress"].isNotEmpty) {
+            bytes += generator.text(doc["subtitleAddress"],
                 styles: const PosStyles(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
@@ -182,15 +211,6 @@ Future printBillnewhive(
           }
           if (doc["ifscCode"] != null && doc["ifscCode"].isNotEmpty) {
             bytes += generator.text(doc["ifscCode"],
-                styles: const PosStyles(
-                    height: PosTextSize.size1,
-                    width: PosTextSize.size1,
-                    bold: true,
-                    align: PosAlign.center));
-          }
-          if (doc["subtitleAddress"] != null &&
-              doc["subtitleAddress"].isNotEmpty) {
-            bytes += generator.text(doc["subtitleAddress"],
                 styles: const PosStyles(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
@@ -1083,6 +1103,16 @@ Future printBillnewhive(
                     bold: true,
                     align: PosAlign.center));
           }
+
+          if (doc["subtitleAddress"] != null &&
+              doc["subtitleAddress"].isNotEmpty) {
+            bytes += generator.text(doc["subtitleAddress"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
           if (doc["gstNo"] != null && doc["gstNo"].isNotEmpty) {
             bytes += generator.text(doc["gstNo"],
                 styles: const PosStyles(
@@ -1149,15 +1179,6 @@ Future printBillnewhive(
           }
           if (doc["ifscCode"] != null && doc["ifscCode"].isNotEmpty) {
             bytes += generator.text(doc["ifscCode"],
-                styles: const PosStyles(
-                    height: PosTextSize.size1,
-                    width: PosTextSize.size1,
-                    bold: true,
-                    align: PosAlign.center));
-          }
-          if (doc["subtitleAddress"] != null &&
-              doc["subtitleAddress"].isNotEmpty) {
-            bytes += generator.text(doc["subtitleAddress"],
                 styles: const PosStyles(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,

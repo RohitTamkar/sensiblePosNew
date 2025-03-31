@@ -129,6 +129,15 @@ Future printBillnewhive2(
                     bold: true,
                     align: PosAlign.center));
           }
+          if (doc["subtitleAddress"] != null &&
+              doc["subtitleAddress"].isNotEmpty) {
+            bytes += generator.text(doc["subtitleAddress"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.center));
+          }
           if (doc["gstNo"] != null && doc["gstNo"].isNotEmpty) {
             bytes += generator.text(doc["gstNo"],
                 styles: const PosStyles(
@@ -196,15 +205,6 @@ Future printBillnewhive2(
           }
           if (doc["ifscCode"] != null && doc["ifscCode"].isNotEmpty) {
             bytes += generator.text(doc["ifscCode"],
-                styles: const PosStyles(
-                    height: PosTextSize.size1,
-                    width: PosTextSize.size1,
-                    bold: true,
-                    align: PosAlign.center));
-          }
-          if (doc["subtitleAddress"] != null &&
-              doc["subtitleAddress"].isNotEmpty) {
-            bytes += generator.text(doc["subtitleAddress"],
                 styles: const PosStyles(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,
@@ -1092,6 +1092,15 @@ Future printBillnewhive2(
                     bold: true,
                     align: PosAlign.left));
           }
+          if (doc["subtitleAddress"] != null &&
+              doc["subtitleAddress"].isNotEmpty) {
+            bytes += generator.text(doc["subtitleAddress"],
+                styles: const PosStyles(
+                    height: PosTextSize.size1,
+                    width: PosTextSize.size1,
+                    bold: true,
+                    align: PosAlign.left));
+          }
           if (doc["gstNo"] != null && doc["gstNo"].isNotEmpty) {
             bytes += generator.text(doc["gstNo"],
                 styles: const PosStyles(
@@ -1158,15 +1167,6 @@ Future printBillnewhive2(
           }
           if (doc["ifscCode"] != null && doc["ifscCode"].isNotEmpty) {
             bytes += generator.text(doc["ifscCode"],
-                styles: const PosStyles(
-                    height: PosTextSize.size1,
-                    width: PosTextSize.size1,
-                    bold: true,
-                    align: PosAlign.left));
-          }
-          if (doc["subtitleAddress"] != null &&
-              doc["subtitleAddress"].isNotEmpty) {
-            bytes += generator.text(doc["subtitleAddress"],
                 styles: const PosStyles(
                     height: PosTextSize.size1,
                     width: PosTextSize.size1,

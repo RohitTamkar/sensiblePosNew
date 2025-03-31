@@ -7112,7 +7112,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'kh4g8fsq': {
+    'bxm2a6vn': {
       'en': 'Sync Logo',
       'hi': '',
       'kn': '',
