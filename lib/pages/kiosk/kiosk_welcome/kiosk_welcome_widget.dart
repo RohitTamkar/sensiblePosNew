@@ -45,13 +45,15 @@ class _KioskWelcomeWidgetState extends State<KioskWelcomeWidget> {
         isWeb.toString(),
       );
       _model.deiviceexistnew = await queryDeviceRecordOnce(
-        queryBuilder: (deviceRecord) => deviceRecord.where(
-          'deviceId',
-          isEqualTo: getJsonField(
-            _model.docRes,
-            r'''$.deviceId''',
-          ).toString().toString(),
-        ),
+        queryBuilder: (deviceRecord) => deviceRecord
+            .where(
+              'deviceId',
+              isEqualTo: getJsonField(
+                _model.docRes,
+                r'''$.deviceId''',
+              ).toString().toString(),
+            )
+            .orderBy('createdDate'),
         singleRecord: true,
       ).then((s) => s.firstOrNull);
       if (_model.deiviceexistnew?.deviceId ==

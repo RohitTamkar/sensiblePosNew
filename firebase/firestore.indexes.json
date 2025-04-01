@@ -89,6 +89,20 @@
       ]
     },
     {
+      "collectionGroup": "DEVICE",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "deviceId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdDate",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "INVOICE",
       "queryScope": "COLLECTION",
       "fields": [
