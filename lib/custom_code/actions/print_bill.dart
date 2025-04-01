@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -226,19 +228,22 @@ Future printBill(
                 align: PosAlign.center));
       }
 
-      bytes += generator.text("-----------------------------------------------",
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              align: PosAlign.center));
-
-      bytes += generator.text('Token no: ' + FFAppState().count.toString(),
-          styles: const PosStyles(
-              height: PosTextSize.size2,
-              width: PosTextSize.size2,
-              bold: true,
-              align: PosAlign.center));
+      if (appSetting.settingList.any((setting) =>
+          setting.title == 'disableOrderType' && setting.value == false)) {
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+        bytes += generator.text('Token no: ' + FFAppState().count.toString(),
+            styles: const PosStyles(
+                height: PosTextSize.size2,
+                width: PosTextSize.size2,
+                bold: true,
+                align: PosAlign.center));
+      }
 
       bytes += generator.text("-----------------------------------------------",
           styles: const PosStyles(
