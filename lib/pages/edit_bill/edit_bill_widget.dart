@@ -5163,6 +5163,24 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 safeSetState(() {});
                                               }
 
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    content: Text(
+                                                        'Bills Update completed successfully!'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              );
+
                                               safeSetState(() {});
                                             },
                                             text: FFLocalizations.of(context)
