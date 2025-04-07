@@ -5149,6 +5149,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                 .languageCode,
                                                           ),
                                                         )
+                                                        .where(
+                                                          'isDeleted',
+                                                          isEqualTo: false,
+                                                        )
                                                         .orderBy('count',
                                                             descending: true),
                                                 singleRecord: true,
