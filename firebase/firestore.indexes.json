@@ -51,20 +51,6 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "isDeleted",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "invoiceDate",
-          "order": "ASCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "INVOICE",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
           "fieldPath": "dayId",
           "order": "ASCENDING"
         },

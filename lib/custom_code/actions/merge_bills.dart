@@ -11,27 +11,24 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
-Future<List<InvoiceRecord>> mergeBills(List<InvoiceRecord> invoiceList) async {
+List<InvoiceRecord> mergeBills(List<InvoiceRecord> invoiceList) {
   // Create a list to store the final merged invoices
   List<InvoiceRecord> mergedInvoices = [];
 
-  // Track the count of KOT invoices for each shift
-  Map<String, int> kotCountMap = {};
+  // Track the count of KOT invoices
+  int kotCount = 0;
 
-  // Track the count used by customer invoices for each shift
-  Map<String, Set<int>> customerCountMap = {};
+  // Track the counts used by customer invoices
+  Set<int> customerCounts = {};
 
   // First pass: Process customer invoices to track their counts
   for (var invoiceRec in invoiceList) {
     if (invoiceRec.source.toLowerCase() == "customer" &&
         !invoiceRec.isDeleted) {
-      String shiftKey = invoiceRec.shiftId;
-      customerCountMap[shiftKey] ??= Set<int>();
-
-      // Extract the count from the customer invoice number (last character)
+      // Extract the count from the customer invoice number (last 3 digits)
       int customerCount = int.parse(
-          invoiceRec.invoice.substring(invoiceRec.invoice.length - 1));
-      customerCountMap[shiftKey]!.add(customerCount);
+          invoiceRec.invoice.substring(invoiceRec.invoice.length - 3));
+      customerCounts.add(customerCount);
     }
   }
 
@@ -48,35 +45,21 @@ Future<List<InvoiceRecord>> mergeBills(List<InvoiceRecord> invoiceList) async {
     }
     // If the invoice is a KOT invoice, process it
     else if (invoiceRec.source.toLowerCase() == "kot") {
-      // Generate a key for the shift
-      String shiftKey = invoiceRec.shiftId;
-
-      // Initialize the count for this shift if it doesn't exist
-      kotCountMap[shiftKey] ??= 0;
-
-      // Increment the count for this shift
-      kotCountMap[shiftKey] = kotCountMap[shiftKey]! + 1;
+      // Increment the KOT count
+      kotCount++;
 
       // If the count is already used by a customer invoice, skip it
-      while (customerCountMap[shiftKey]?.contains(kotCountMap[shiftKey]!) ??
-          false) {
-        kotCountMap[shiftKey] = kotCountMap[shiftKey]! + 1;
+      while (customerCounts.contains(kotCount)) {
+        kotCount++;
       }
 
-      // Extract date and shift ID from shiftId
-      var shiftIdParts = invoiceRec.shiftId.split("-");
-      var date =
-          shiftIdParts[2] + shiftIdParts[1] + shiftIdParts[0]; // ddmmyyyy
-      var shiftId = shiftIdParts[3]; // shift number
-
-      // Generate the new invoice number
-      var newInvoiceNo =
-          "${date}${shiftId}${kotCountMap[shiftKey]!.toString()}";
+      // Generate the new invoice number with leading zeros
+      var newInvoiceNo = "00${kotCount.toString().padLeft(1, '0')}";
 
       // Update the invoice number
       invoiceRec.reference.update(createInvoiceRecordData(
         invoice: newInvoiceNo,
-        count: kotCountMap[shiftKey],
+        count: kotCount,
       ));
 
       // Add the updated KOT invoice to the merged list
