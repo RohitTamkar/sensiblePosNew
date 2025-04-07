@@ -4406,12 +4406,6 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             .returnList1editbill,
                                                         r'''$.totalSale''',
                                                       ),
-                                                      subTotalBill:
-                                                          getJsonField(
-                                                        _model
-                                                            .returnList1editbill,
-                                                        r'''$.subTotalSale''',
-                                                      ),
                                                       paymentJson: getJsonField(
                                                         _model
                                                             .returnList1editbill,

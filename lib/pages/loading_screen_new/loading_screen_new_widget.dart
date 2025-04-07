@@ -85,6 +85,10 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
                   locale: FFLocalizations.of(context).languageCode,
                 ),
               )
+              .where(
+                'isDeleted',
+                isEqualTo: false,
+              )
               .orderBy('count', descending: true),
           singleRecord: true,
         ).then((s) => s.firstOrNull);

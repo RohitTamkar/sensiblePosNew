@@ -69,20 +69,6 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "dayId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "count",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "INVOICE",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
           "fieldPath": "source",
           "order": "ASCENDING"
         },

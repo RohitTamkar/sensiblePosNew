@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<dynamic> updateShiftSummaryFordeletebill(
   dynamic newInvoice,
   String currentMode,
@@ -110,7 +112,7 @@ Future<dynamic> updateShiftSummaryFordeletebill(
   shift[0]["billCount"] = shift[0]["billCount"] - 1;
   shift[0]["tax"] = double.parse(
       (shift[0]["tax"] - newInvoice["taxAmt"]!.toDouble()).toStringAsFixed(2));
-  if (currentMode == "CASH") {
+  if (prevMode == "CASH") {
     shift[0]["cashSale"] = shift[0]["cashSale"] - reducePaymentTotal;
   }
   // Adjust the total sale in the shift

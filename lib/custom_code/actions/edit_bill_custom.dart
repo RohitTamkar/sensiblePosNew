@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 import 'index.dart'; // Imports other custom actions
+
+import 'index.dart'; // Imports other custom actions
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 
@@ -35,7 +37,6 @@ Future<void> editBillCustom(
     return;
   }
 
-  // Parallelize the initial queries
   final outletRef = FFAppState().outletIdRef;
   final (drop1, drop2) = await (
     queryInvoiceRecordOnce(
@@ -54,7 +55,6 @@ Future<void> editBillCustom(
 
   if (drop1 == null || drop2 == null) return;
 
-  // Get invoices in the date range
   final invoicecustombills = await queryInvoiceRecordOnce(
     parent: outletRef,
     queryBuilder: (invoiceRecord) => invoiceRecord
@@ -63,7 +63,6 @@ Future<void> editBillCustom(
         .where('isDeleted', isEqualTo: false),
   );
 
-  // Confirm with user
   final confirmDialogResponse = await showDialog<bool>(
         context: context,
         builder: (alertDialogContext) => AlertDialog(
@@ -85,53 +84,72 @@ Future<void> editBillCustom(
 
   if (!confirmDialogResponse) return;
 
-  // Process invoices
-  final batch = FirebaseFirestore.instance.batch();
+  // Group invoices by shift to avoid duplicate shift updates
   final kotInvoices =
       invoicecustombills.where((inv) => inv.source == 'KOT').toList();
+  final shiftsToUpdate = <String, Map<String, dynamic>>{};
 
+  final batch = FirebaseFirestore.instance.batch();
+
+  // First pass: mark all invoices as deleted
   for (final invoice in kotInvoices) {
-    // Prepare data
+    batch.update(invoice.reference, {'isDeleted': true});
+  }
+
+  // Second pass: calculate shift updates
+  for (final invoice in kotInvoices) {
     final resultItemloopcustom = await actions.docToJson(invoice);
     FFAppState().selectedInvoiceJson = resultItemloopcustom!;
     FFAppState().prevMode = invoice.paymentMode;
 
-    // Mark invoice as deleted
-    batch.update(invoice.reference, {'isDeleted': true});
+    final shiftKey = '${invoice.dayId}_${invoice.shiftId}';
 
-    // Update shift data
-    final shiftListeditbillcustom = await actions.shiftExistseditbill(
-      invoice.dayId,
-      invoice.shiftId,
-      outletRef!.id,
-    );
+    // Get current shift data if we haven't already
+    if (!shiftsToUpdate.containsKey(shiftKey)) {
+      final currentShiftData = await actions.shiftExistseditbill(
+        invoice.dayId,
+        invoice.shiftId,
+        outletRef!.id,
+      );
 
-    final returnList1editbillcustom =
-        await actions.updateShiftSummaryFordeletebill(
-      FFAppState().selectedInvoiceJson,
-      FFAppState().curMode,
-      FFAppState().prevMode,
-      shiftListeditbillcustom!,
-    );
+      if (currentShiftData != null) {
+        shiftsToUpdate[shiftKey] = {
+          'original': currentShiftData,
+          'updated': currentShiftData,
+          'shiftRef': functions.shiftRef(currentShiftData, outletRef!.id),
+        };
+      }
+    }
 
-    // Update shift record
-    final shiftRef = functions.shiftRef(shiftListeditbillcustom, outletRef!.id);
-    batch.update(shiftRef, {
-      'totalSale': getJsonField(shiftListeditbillcustom, r'''$.totalSale'''),
-      'subTotalBill':
-          getJsonField(shiftListeditbillcustom, r'''$.subTotalSale'''),
-      'paymentJson': getJsonField(shiftListeditbillcustom, r'''$.paymentJson''')
-          .toString(),
-      'cashSale': getJsonField(shiftListeditbillcustom, r'''$.cashSale'''),
-      'billCount': getJsonField(shiftListeditbillcustom, r'''$.billCount'''),
-      'tax': getJsonField(shiftListeditbillcustom, r'''$.tax'''),
+    // Update the shift data with this invoice's impact
+    if (shiftsToUpdate.containsKey(shiftKey)) {
+      final shiftData = shiftsToUpdate[shiftKey]!;
+      final updatedShiftData = await actions.updateShiftSummaryFordeletebill(
+        FFAppState().selectedInvoiceJson,
+        FFAppState().curMode,
+        FFAppState().prevMode,
+        shiftData['updated'],
+      );
+
+      shiftsToUpdate[shiftKey]!['updated'] = updatedShiftData;
+    }
+  }
+
+  // Add all shift updates to the batch
+  for (final shiftUpdate in shiftsToUpdate.values) {
+    final updatedData = shiftUpdate['updated'];
+    batch.update(shiftUpdate['shiftRef'], {
+      'totalSale': getJsonField(updatedData, r'''$.totalSale'''),
+      'paymentJson': getJsonField(updatedData, r'''$.paymentJson''').toString(),
+      'cashSale': getJsonField(updatedData, r'''$.cashSale'''),
+      'billCount': getJsonField(updatedData, r'''$.billCount'''),
+      'tax': getJsonField(updatedData, r'''$.tax'''),
     });
   }
 
-  // Commit all changes in a single batch
   await batch.commit();
 
-  // Get latest shift data
+  // Refresh shift data
   final omtcustom = await queryShiftRecordOnce(
     parent: outletRef,
     queryBuilder: (shiftRecord) =>
@@ -145,7 +163,6 @@ Future<void> editBillCustom(
   FFAppState().billcount =
       getJsonField(shiftdetailsnewonlineCustom, r'''$.billCount''');
 
-  // Show success message
   await showDialog(
     context: context,
     builder: (alertDialogContext) => AlertDialog(
