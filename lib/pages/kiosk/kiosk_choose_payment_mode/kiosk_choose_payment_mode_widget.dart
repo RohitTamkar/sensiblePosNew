@@ -269,7 +269,7 @@ class _KioskChoosePaymentModeWidgetState
                                     FFAppState().outletId =
                                         _model.outletDOc!.id;
                                     safeSetState(() {});
-                                    if (_model.outletDOc!.isRazorpay) {
+                                    if (FFAppState().isRazorPay) {
                                       _model.apiResultplq =
                                           await RazorPaycreateQRCall.call(
                                         mid: _model.outletDOc?.merchantId,

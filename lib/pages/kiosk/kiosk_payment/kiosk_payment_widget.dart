@@ -80,7 +80,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
       _model.instantTimer = InstantTimer.periodic(
         duration: Duration(milliseconds: 5000),
         callback: (timer) async {
-          if (_model.outlet2!.isRazorpay) {
+          if (FFAppState().isRazorPay) {
             _model.apiResultya4 = await TransactionStatusAPIRazorpayCall.call(
               mid: _model.outlet2?.merchantId,
               orderId: FFAppState().paytmOrderId,
