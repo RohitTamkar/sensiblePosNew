@@ -90,7 +90,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
             );
           } else {
             _model.apiResultf9m = await TransactionStatusAPICall.call(
-              mid: FFAppState().mid,
+              mid: _model.outlet2?.merchantId,
               orderId: FFAppState().paytmOrderId,
               mKey: _model.outlet2?.merchantKey,
               isProd: _model.outlet2?.isProd,
