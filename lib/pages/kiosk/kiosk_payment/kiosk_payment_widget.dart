@@ -611,17 +611,34 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                     ),
                                                     singleRecord: true,
                                                   ).then((s) => s.firstOrNull);
-                                                  _model.apiResultf9m2 =
-                                                      await TransactionStatusAPICall
-                                                          .call(
-                                                    mid: FFAppState().mid,
-                                                    orderId: FFAppState()
-                                                        .paytmOrderId,
-                                                    mKey: _model
-                                                        .outlet?.merchantKey,
-                                                    isProd:
-                                                        _model.outlet?.isProd,
-                                                  );
+                                                  if (FFAppState().isRazorPay) {
+                                                    _model.apiResult12g =
+                                                        await TransactionStatusAPIRazorpayCall
+                                                            .call(
+                                                      mid: _model
+                                                          .outlet?.merchantId,
+                                                      orderId: FFAppState()
+                                                          .paytmOrderId,
+                                                      mKey: _model
+                                                          .outlet?.merchantKey,
+                                                      isProd:
+                                                          _model.outlet?.isProd,
+                                                      posId: _model.outlet?.id,
+                                                    );
+                                                  } else {
+                                                    _model.apiResultf9m2 =
+                                                        await TransactionStatusAPICall
+                                                            .call(
+                                                      mid: _model
+                                                          .outlet?.merchantId,
+                                                      orderId: FFAppState()
+                                                          .paytmOrderId,
+                                                      mKey: _model
+                                                          .outlet?.merchantKey,
+                                                      isProd:
+                                                          _model.outlet?.isProd,
+                                                    );
+                                                  }
 
                                                   _model.qrdoc =
                                                       await queryQrTransactionsRecordOnce(
