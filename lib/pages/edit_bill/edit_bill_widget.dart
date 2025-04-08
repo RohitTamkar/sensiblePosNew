@@ -3662,10 +3662,6 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       _model.returnList1Copy,
                                                       r'''$.totalSale''',
                                                     ),
-                                                    subTotalBill: getJsonField(
-                                                      _model.returnList1Copy,
-                                                      r'''$.subTotalSale''',
-                                                    ),
                                                     paymentJson: getJsonField(
                                                       _model.returnList1Copy,
                                                       r'''$.paymentJson''',
@@ -5111,16 +5107,19 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 parent:
                                                     FFAppState().outletIdRef,
                                                 queryBuilder: (invoiceRecord) =>
-                                                    invoiceRecord.where(
-                                                  'dayId',
-                                                  isEqualTo: dateTimeFormat(
-                                                    "yyyy-MM-dd",
-                                                    _model.date,
-                                                    locale: FFLocalizations.of(
-                                                            context)
-                                                        .languageCode,
-                                                  ),
-                                                ),
+                                                    invoiceRecord
+                                                        .where(
+                                                          'dayId',
+                                                          isEqualTo:
+                                                              dateTimeFormat(
+                                                            "yyyy-MM-dd",
+                                                            _model.date,
+                                                            locale: FFLocalizations
+                                                                    .of(context)
+                                                                .languageCode,
+                                                          ),
+                                                        )
+                                                        .orderBy('invoiceDate'),
                                               );
                                               _model.returnedbills =
                                                   await actions.mergeBills(
