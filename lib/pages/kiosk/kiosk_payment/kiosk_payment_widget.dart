@@ -683,8 +683,8 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                         .DynamicQR(
                                                       width: 400.0,
                                                       height: 400.0,
-                                                      data: _model.outlet2!
-                                                              .isRazorpay
+                                                      data: FFAppState()
+                                                              .isRazorPay
                                                           ? getJsonField(
                                                               widget!.qrJson,
                                                               r'''$.qrData''',

@@ -1133,6 +1133,10 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                       FFAppState().outletName = containerDeviceRecord!.outletName;
                                                                                       FFAppState().outletIdRef = containerDeviceRecord?.outletRef;
                                                                                       FFAppState().mid = _model.outletDoc!.merchantId;
+                                                                                      FFAppState().isRazorPay = valueOrDefault<bool>(
+                                                                                        _model.outletDoc?.isRazorpay,
+                                                                                        false,
+                                                                                      );
                                                                                       safeSetState(() {});
                                                                                       _model.shiftlist = await queryShiftRecordOnce(
                                                                                         parent: FFAppState().outletIdRef,

@@ -637,6 +637,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _index = prefs.getInt('ff_index') ?? _index;
     });
+    _safeInit(() {
+      _isRazorPay = prefs.getBool('ff_isRazorPay') ?? _isRazorPay;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -3633,6 +3636,13 @@ class FFAppState extends ChangeNotifier {
   set index(int value) {
     _index = value;
     prefs.setInt('ff_index', value);
+  }
+
+  bool _isRazorPay = false;
+  bool get isRazorPay => _isRazorPay;
+  set isRazorPay(bool value) {
+    _isRazorPay = value;
+    prefs.setBool('ff_isRazorPay', value);
   }
 }
 
