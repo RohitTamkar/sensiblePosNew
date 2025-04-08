@@ -623,10 +623,14 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                               Colors.transparent,
                                                                           onTap:
                                                                               () async {
-                                                                            _model.updateProductStruct(
-                                                                              (e) => e..incrementQuantity(-1.0),
-                                                                            );
-                                                                            safeSetState(() {});
+                                                                            if (billItem.quantity >
+                                                                                0.0) {
+                                                                              _model.updateProductlistAtIndex(
+                                                                                billIndex,
+                                                                                (e) => e..incrementQuantity(-1.0),
+                                                                              );
+                                                                              safeSetState(() {});
+                                                                            }
                                                                           },
                                                                           child:
                                                                               Container(
@@ -696,7 +700,8 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                               Colors.transparent,
                                                                           onTap:
                                                                               () async {
-                                                                            _model.updateProductStruct(
+                                                                            _model.updateProductlistAtIndex(
+                                                                              billIndex,
                                                                               (e) => e..incrementQuantity(1.0),
                                                                             );
                                                                             safeSetState(() {});
