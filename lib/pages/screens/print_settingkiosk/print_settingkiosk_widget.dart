@@ -942,6 +942,9 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                                   r'''$.address''',
                                                                 ).toString();
                                                                 FFAppState()
+                                                                        .index =
+                                                                    printerListIndex;
+                                                                FFAppState()
                                                                     .update(
                                                                         () {});
                                                                 _model.con =
@@ -1132,11 +1135,11 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             ),
                                                           ),
                                                           if (FFAppState()
-                                                                  .setHoldListColor ==
+                                                                  .printerIndex ==
                                                               getJsonField(
                                                                 printerListItem,
                                                                 r'''$.address''',
-                                                              ))
+                                                              ).toString())
                                                             FlutterFlowIconButton(
                                                               borderColor: Colors
                                                                   .transparent,

@@ -634,6 +634,9 @@ class FFAppState extends ChangeNotifier {
       _paymentmodenew =
           prefs.getStringList('ff_paymentmodenew') ?? _paymentmodenew;
     });
+    _safeInit(() {
+      _index = prefs.getInt('ff_index') ?? _index;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -3623,6 +3626,13 @@ class FFAppState extends ChangeNotifier {
   String get dayid => _dayid;
   set dayid(String value) {
     _dayid = value;
+  }
+
+  int _index = 0;
+  int get index => _index;
+  set index(int value) {
+    _index = value;
+    prefs.setInt('ff_index', value);
   }
 }
 

@@ -1377,6 +1377,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                         printerListItem,
                                                                                         r'''$.address''',
                                                                                       ).toString();
+                                                                                      FFAppState().index = printerListIndex;
                                                                                       FFAppState().update(() {});
                                                                                       _model.con = await actions.connectDevice(
                                                                                         printerListItem,
@@ -1499,11 +1500,11 @@ class _PrinterSelectionScreenWidgetState
                                                                                     ),
                                                                                   ),
                                                                                 ),
-                                                                                if (FFAppState().setHoldListColor ==
+                                                                                if (FFAppState().printerIndex ==
                                                                                     getJsonField(
                                                                                       printerListItem,
                                                                                       r'''$.address''',
-                                                                                    ))
+                                                                                    ).toString())
                                                                                   FlutterFlowIconButton(
                                                                                     borderColor: Colors.transparent,
                                                                                     borderRadius: 30.0,
