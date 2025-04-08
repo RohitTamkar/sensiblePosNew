@@ -161,6 +161,11 @@ class OutletRecord extends FirestoreRecord {
   String get paytmCardmkey => _paytmCardmkey ?? '';
   bool hasPaytmCardmkey() => _paytmCardmkey != null;
 
+  // "isRazorpay" field.
+  bool? _isRazorpay;
+  bool get isRazorpay => _isRazorpay ?? false;
+  bool hasIsRazorpay() => _isRazorpay != null;
+
   void _initializeFields() {
     _branch = snapshotData['branch'] as String?;
     _createdDate = castToType<int>(snapshotData['createdDate']);
@@ -191,6 +196,7 @@ class OutletRecord extends FirestoreRecord {
     _channelId = snapshotData['channelId'] as String?;
     _paytmTid = snapshotData['paytmTid'] as String?;
     _paytmCardmkey = snapshotData['paytmCardmkey'] as String?;
+    _isRazorpay = snapshotData['isRazorpay'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -256,6 +262,7 @@ Map<String, dynamic> createOutletRecordData({
   String? channelId,
   String? paytmTid,
   String? paytmCardmkey,
+  bool? isRazorpay,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -288,6 +295,7 @@ Map<String, dynamic> createOutletRecordData({
       'channelId': channelId,
       'paytmTid': paytmTid,
       'paytmCardmkey': paytmCardmkey,
+      'isRazorpay': isRazorpay,
     }.withoutNulls,
   );
 
@@ -327,7 +335,8 @@ class OutletRecordDocumentEquality implements Equality<OutletRecord> {
         e1?.paytmMid == e2?.paytmMid &&
         e1?.channelId == e2?.channelId &&
         e1?.paytmTid == e2?.paytmTid &&
-        e1?.paytmCardmkey == e2?.paytmCardmkey;
+        e1?.paytmCardmkey == e2?.paytmCardmkey &&
+        e1?.isRazorpay == e2?.isRazorpay;
   }
 
   @override
@@ -360,7 +369,8 @@ class OutletRecordDocumentEquality implements Equality<OutletRecord> {
         e?.paytmMid,
         e?.channelId,
         e?.paytmTid,
-        e?.paytmCardmkey
+        e?.paytmCardmkey,
+        e?.isRazorpay
       ]);
 
   @override

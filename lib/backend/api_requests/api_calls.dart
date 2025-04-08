@@ -211,6 +211,45 @@ class CreateQRCall {
   }
 }
 
+class RazorPaycreateQRCall {
+  static Future<ApiCallResponse> call({
+    String? mid = '',
+    String? orderId = '',
+    String? amount = '',
+    String? businessType = '',
+    String? posId = '',
+    String? mKey = '',
+    bool? isProd = false,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "mid": "${mid}",
+  "orderId": "${orderId}",
+  "amount": "${amount}",
+  "businessType": "${businessType}",
+  "posId": "${posId}",
+  "mKey": "${mKey}",
+  "isProd": ${isProd}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'razorPaycreateQR',
+      apiUrl:
+          'https://asia-south1-sensiblebizpro.cloudfunctions.net/Razorpay_QR_Kiosk/createQR',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 class TransactionStatusAPICall {
   static Future<ApiCallResponse> call({
     String? mid = '',
@@ -229,6 +268,41 @@ class TransactionStatusAPICall {
       callName: 'transactionStatusAPI',
       apiUrl:
           'https://asia-south1-sensiblebizpro.cloudfunctions.net/paytm_QR/status',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class TransactionStatusAPIRazorpayCall {
+  static Future<ApiCallResponse> call({
+    String? mid = '',
+    String? orderId = '',
+    String? mKey = '',
+    bool? isProd = false,
+    String? posId = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "mid": "${mid}",
+  "orderId": "${orderId}",
+  "mKey": "${mKey}",
+  "isProd": ${isProd},
+  "posId": "${posId}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'transactionStatusAPIRazorpay',
+      apiUrl:
+          'https://asia-south1-sensiblebizpro.cloudfunctions.net/Razorpay_QR_Kiosk/status',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

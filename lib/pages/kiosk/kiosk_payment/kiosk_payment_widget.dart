@@ -80,14 +80,22 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
       _model.instantTimer = InstantTimer.periodic(
         duration: Duration(milliseconds: 5000),
         callback: (timer) async {
-          _model.apiResultf9m = await TransactionStatusAPICall.call(
-            mid: FFAppState().mid,
-            orderId: FFAppState().paytmOrderId,
-            mKey: _model.outlet2?.merchantKey,
-            isProd: _model.outlet2?.isProd,
-          );
-
-          if ((_model.apiResultf9m?.succeeded ?? true)) {}
+          if (_model.outlet2!.isRazorpay) {
+            _model.apiResultya4 = await TransactionStatusAPIRazorpayCall.call(
+              mid: _model.outlet2?.merchantId,
+              orderId: FFAppState().paytmOrderId,
+              mKey: _model.outlet2?.merchantKey,
+              isProd: _model.outlet2?.isProd,
+              posId: _model.outlet2?.id,
+            );
+          } else {
+            _model.apiResultf9m = await TransactionStatusAPICall.call(
+              mid: FFAppState().mid,
+              orderId: FFAppState().paytmOrderId,
+              mKey: _model.outlet2?.merchantKey,
+              isProd: _model.outlet2?.isProd,
+            );
+          }
         },
         startImmediately: true,
       );

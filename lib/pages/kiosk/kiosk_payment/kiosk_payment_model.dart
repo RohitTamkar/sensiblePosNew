@@ -29,6 +29,8 @@ class KioskPaymentModel extends FlutterFlowModel<KioskPaymentWidget> {
   // Stores action output result for [Firestore Query - Query a collection] action in KioskPayment widget.
   OutletRecord? outlet2;
   InstantTimer? instantTimer;
+  // Stores action output result for [Backend Call - API (transactionStatusAPIRazorpay)] action in KioskPayment widget.
+  ApiCallResponse? apiResultya4;
   // Stores action output result for [Backend Call - API (transactionStatusAPI)] action in KioskPayment widget.
   ApiCallResponse? apiResultf9m;
   // Model for KioskHeader component.

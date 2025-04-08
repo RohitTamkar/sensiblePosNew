@@ -29,6 +29,8 @@ class KioskChoosePaymentModeModel
   late KioskHeaderModel kioskHeaderModel;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   OutletRecord? outletDOc;
+  // Stores action output result for [Backend Call - API (razorPaycreateQR)] action in Button widget.
+  ApiCallResponse? apiResultplq;
   // Stores action output result for [Backend Call - API (createQR)] action in Button widget.
   ApiCallResponse? paymentQrResponse;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
