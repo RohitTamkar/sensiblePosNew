@@ -21,7 +21,7 @@ import 'index.dart'; // Imports other custom actions
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
-import 'package:flutter_pos_printer_platform_image_3_sdt/flutter_pos_printer_platform_image_3_sdt.dart';
+import 'package:flutter_pos_printer_platform_image_3/flutter_pos_printer_platform_image_3.dart';
 //import 'package:flutter_pos_printer_platform/flutter_pos_printer_platform.dart';
 import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
 import 'dart:io';

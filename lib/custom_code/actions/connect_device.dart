@@ -15,8 +15,8 @@ import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
 //import 'package:flutter_pos_printer_platform/flutter_pos_printer_platform.dart';
-import 'package:flutter_pos_printer_platform_image_3_sdt/flutter_pos_printer_platform_image_3_sdt.dart';
-
+//import 'package:flutter_pos_printer_platform_image_3_sdt/flutter_pos_printer_platform_image_3_sdt.dart';
+import 'package:flutter_pos_printer_platform_image_3/flutter_pos_printer_platform_image_3.dart';
 //import 'package:esc_pos_utils/esc_pos_utils.dart';
 
 Future<bool> connectDevice(dynamic printers, String index) async {
