@@ -1520,6 +1520,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: AddStockbyCategoryWidget.routeName,
               path: AddStockbyCategoryWidget.routePath,
               builder: (context, params) => AddStockbyCategoryWidget(),
+            ),
+            FFRoute(
+              name: Product5ShoeWidget.routeName,
+              path: Product5ShoeWidget.routePath,
+              builder: (context, params) => Product5ShoeWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

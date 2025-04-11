@@ -201,3 +201,4 @@ export '/pages/report_screen/outstock_report/outstock_report_widget.dart'
     show OutstockReportWidget;
 export '/pages/screens/add_stockby_category/add_stockby_category_widget.dart'
     show AddStockbyCategoryWidget;
+export '/product5_shoe/product5_shoe_widget.dart' show Product5ShoeWidget;
