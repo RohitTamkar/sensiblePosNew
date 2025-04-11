@@ -2378,7 +2378,14 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                         controller: _model
                                                                 .languageValueController ??=
                                                             FormFieldController<
-                                                                String>(null),
+                                                                String>(
+                                                          _model.languageValue ??=
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                            'o4yxt8yf' /* English */,
+                                                          ),
+                                                        ),
                                                         options: [
                                                           FFLocalizations.of(
                                                                   context)
@@ -2400,14 +2407,25 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                           safeSetState(() =>
                                                               _model.languageValue =
                                                                   val);
-                                                          setAppLanguage(
-                                                              context,
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                _model
-                                                                    .languageValue,
-                                                                'English',
-                                                              ));
+                                                          if (_model
+                                                                  .languageValue ==
+                                                              'English') {
+                                                            setAppLanguage(
+                                                                context, 'en');
+                                                          } else if (_model
+                                                                  .languageValue ==
+                                                              'Thai') {
+                                                            setAppLanguage(
+                                                                context, 'th');
+                                                          } else if (_model
+                                                                  .languageValue ==
+                                                              'Hindi') {
+                                                            setAppLanguage(
+                                                                context, 'hi');
+                                                          } else {
+                                                            setAppLanguage(
+                                                                context, 'en');
+                                                          }
                                                         },
                                                         width: 200.0,
                                                         height: 40.0,
