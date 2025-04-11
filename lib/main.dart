@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
-import '/backend/sqlite/sqlite_manager.dart';
 import 'backend/firebase/firebase_config.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
@@ -26,7 +25,6 @@ void main() async {
   await actions.setupItemHive();
   // End initial custom actions code
 
-  await SQLiteManager.initialize();
   await FlutterFlowTheme.initialize();
 
   final appState = FFAppState(); // Initialize FFAppState
@@ -114,6 +112,7 @@ class _MyAppState extends State<MyApp> {
         Locale('kn'),
         Locale('mr'),
         Locale('ta'),
+        Locale('th'),
       ],
       theme: ThemeData(
         brightness: Brightness.light,

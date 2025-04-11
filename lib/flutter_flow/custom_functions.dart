@@ -11,7 +11,6 @@ import 'uploaded_file.dart';
 import '/backend/backend.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '/backend/schema/structs/index.dart';
-import '/backend/sqlite/sqlite_manager.dart';
 
 List<dynamic> shiftDocToJsonList2(ShiftDetailsStruct item) {
   List<dynamic> list = [];

@@ -186,7 +186,6 @@ flutter:
     - assets/pdfs/
     - assets/jsons/
 
-    - assets/sqlite_db_files/
   fonts:
     - family: 'Dev Gothic'
       fonts:

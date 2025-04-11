@@ -2373,6 +2373,94 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                             port: 'COM1',
                                                           ),
                                                         ),
+                                                      FlutterFlowDropDown<
+                                                          String>(
+                                                        controller: _model
+                                                                .languageValueController ??=
+                                                            FormFieldController<
+                                                                String>(null),
+                                                        options: [
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'a4seqpwq' /* Thai */,
+                                                          ),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'u6t87rrx' /* English */,
+                                                          ),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'zxfa4f05' /* Hindi */,
+                                                          )
+                                                        ],
+                                                        onChanged: (val) async {
+                                                          safeSetState(() =>
+                                                              _model.languageValue =
+                                                                  val);
+                                                          setAppLanguage(
+                                                              context,
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                _model
+                                                                    .languageValue,
+                                                                'English',
+                                                              ));
+                                                        },
+                                                        width: 200.0,
+                                                        height: 40.0,
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                        hintText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'pv8cfkz8' /* Select... */,
+                                                        ),
+                                                        icon: Icon(
+                                                          Icons
+                                                              .g_translate_sharp,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          size: 24.0,
+                                                        ),
+                                                        fillColor: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        elevation: 2.0,
+                                                        borderColor:
+                                                            Colors.transparent,
+                                                        borderWidth: 0.0,
+                                                        borderRadius: 8.0,
+                                                        margin:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    12.0,
+                                                                    0.0,
+                                                                    12.0,
+                                                                    0.0),
+                                                        hidesUnderline: true,
+                                                        isOverButton: false,
+                                                        isSearchable: false,
+                                                        isMultiSelect: false,
+                                                      ),
                                                     ],
                                                   ),
                                                 ),
