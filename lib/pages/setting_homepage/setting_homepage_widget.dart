@@ -361,10 +361,6 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                           ),
                                         ),
                                       ),
-                                    Divider(
-                                      color: FlutterFlowTheme.of(context)
-                                          .customColor2,
-                                    ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           5.0, 5.0, 5.0, 0.0),
@@ -442,6 +438,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                           ),
                                         ),
                                       ),
+                                    ),
+                                    Divider(
+                                      color: FlutterFlowTheme.of(context)
+                                          .customColor2,
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -574,6 +574,84 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                 FFLocalizations.of(context)
                                                     .getText(
                                                   'tnvs4fk2' /* Select Gst  */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMediumFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMediumFamily),
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Divider(
+                                      color: FlutterFlowTheme.of(context)
+                                          .customColor2,
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          5.0, 5.0, 5.0, 0.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          _model.language = true;
+                                          safeSetState(() {});
+                                        },
+                                        child: Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.5,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              0.1,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              FlutterFlowIconButton(
+                                                borderColor: Colors.transparent,
+                                                borderRadius: 30.0,
+                                                borderWidth: 1.0,
+                                                buttonSize: 60.0,
+                                                icon: Icon(
+                                                  Icons.language_outlined,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  size: 20.0,
+                                                ),
+                                                onPressed: () {
+                                                  print(
+                                                      'IconButton pressed ...');
+                                                },
+                                              ),
+                                              Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'd45wyz5f' /* Set App Language */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -1253,7 +1331,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  if (_model.showgst)
+                                  if (!_model.showgst || !_model.language)
                                     Expanded(
                                       flex: 2,
                                       child: StreamBuilder<List<DeviceRecord>>(
@@ -1891,7 +1969,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                         },
                                       ),
                                     ),
-                                  if (_model.showgst)
+                                  if (!_model.language || _model.showgst)
                                     Flexible(
                                       flex: 2,
                                       child: Padding(
@@ -2046,6 +2124,125 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                               );
                                             },
                                           ),
+                                        ),
+                                      ),
+                                    ),
+                                  if (_model.language)
+                                    Flexible(
+                                      flex: 2,
+                                      child: Container(
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                        ),
+                                        child: Builder(
+                                          builder: (context) {
+                                            final languag =
+                                                _model.languagelist.toList();
+
+                                            return ListView.builder(
+                                              padding: EdgeInsets.zero,
+                                              shrinkWrap: true,
+                                              scrollDirection: Axis.vertical,
+                                              itemCount: languag.length,
+                                              itemBuilder:
+                                                  (context, languagIndex) {
+                                                final languagItem =
+                                                    languag[languagIndex];
+                                                return Padding(
+                                                  padding: EdgeInsets.all(6.0),
+                                                  child: Container(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    decoration: BoxDecoration(
+                                                      color: Color(0x799DB8FF),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              12.0),
+                                                    ),
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        FFAppState().language =
+                                                            languagItem;
+                                                        safeSetState(() {});
+                                                        setAppLanguage(
+                                                            context,
+                                                            FFAppState()
+                                                                .language);
+                                                        await showDialog(
+                                                          context: context,
+                                                          builder:
+                                                              (alertDialogContext) {
+                                                            return AlertDialog(
+                                                              title: Text(
+                                                                  FFAppState()
+                                                                      .language),
+                                                              content: Text(
+                                                                  'App language Set Successfully !'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext),
+                                                                  child: Text(
+                                                                      'Ok'),
+                                                                ),
+                                                              ],
+                                                            );
+                                                          },
+                                                        );
+                                                      },
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Text(
+                                                            languagItem,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  fontSize:
+                                                                      20.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              },
+                                            );
+                                          },
                                         ),
                                       ),
                                     ),

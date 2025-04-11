@@ -362,6 +362,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': 'ஜிஎஸ்டியைத் தேர்ந்தெடுக்கவும்',
       'th': 'เลือก GST',
     },
+    'd45wyz5f': {
+      'en': 'Set App Language',
+      'hi': 'जीएसटी चुनें',
+      'kn': 'ಜಿಎಸ್ಟಿ ಆಯ್ಕೆಮಾಡಿ',
+      'mr': 'जीएसटी निवडा',
+      'ta': 'ஜிஎஸ்டியைத் தேர்ந்தெடுக்கவும்',
+      'th': 'เลือก GST',
+    },
     '3pv4h0q3': {
       'en': 'System Update',
       'hi': 'सिस्टम का आधुनिकीकरण',

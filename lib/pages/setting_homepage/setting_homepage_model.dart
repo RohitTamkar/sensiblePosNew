@@ -26,6 +26,24 @@ class SettingHomepageModel extends FlutterFlowModel<SettingHomepageWidget> {
 
   bool showgst = false;
 
+  bool language = false;
+
+  List<String> languagelist = [
+    'English',
+    'Hindi',
+    'Thai',
+    'Marathi',
+    'Kannada',
+    'Tamil'
+  ];
+  void addToLanguagelist(String item) => languagelist.add(item);
+  void removeFromLanguagelist(String item) => languagelist.remove(item);
+  void removeAtIndexFromLanguagelist(int index) => languagelist.removeAt(index);
+  void insertAtIndexInLanguagelist(int index, String item) =>
+      languagelist.insert(index, item);
+  void updateLanguagelistAtIndex(int index, Function(String) updateFn) =>
+      languagelist[index] = updateFn(languagelist[index]);
+
   ///  State fields for stateful widgets in this page.
 
   // Model for Header component.
