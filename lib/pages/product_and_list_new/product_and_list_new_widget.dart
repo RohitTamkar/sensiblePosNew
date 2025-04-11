@@ -2407,18 +2407,23 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                           safeSetState(() =>
                                                               _model.languageValue =
                                                                   val);
+                                                          FFAppState()
+                                                                  .language =
+                                                              _model
+                                                                  .languageValue!;
+                                                          safeSetState(() {});
                                                           if (_model
                                                                   .languageValue ==
                                                               'English') {
                                                             setAppLanguage(
                                                                 context, 'en');
-                                                          } else if (_model
-                                                                  .languageValue ==
+                                                          } else if (FFAppState()
+                                                                  .language ==
                                                               'Thai') {
                                                             setAppLanguage(
                                                                 context, 'th');
-                                                          } else if (_model
-                                                                  .languageValue ==
+                                                          } else if (FFAppState()
+                                                                  .language ==
                                                               'Hindi') {
                                                             setAppLanguage(
                                                                 context, 'hi');
@@ -2426,6 +2431,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                             setAppLanguage(
                                                                 context, 'en');
                                                           }
+
+                                                          safeSetState(() {});
                                                         },
                                                         width: 200.0,
                                                         height: 40.0,

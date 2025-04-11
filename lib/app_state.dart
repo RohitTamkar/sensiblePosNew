@@ -640,6 +640,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _isRazorPay = prefs.getBool('ff_isRazorPay') ?? _isRazorPay;
     });
+    _safeInit(() {
+      _language = prefs.getString('ff_language') ?? _language;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -3643,6 +3646,13 @@ class FFAppState extends ChangeNotifier {
   set isRazorPay(bool value) {
     _isRazorPay = value;
     prefs.setBool('ff_isRazorPay', value);
+  }
+
+  String _language = '';
+  String get language => _language;
+  set language(String value) {
+    _language = value;
+    prefs.setString('ff_language', value);
   }
 }
 
