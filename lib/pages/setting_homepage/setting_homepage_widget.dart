@@ -533,6 +533,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           _model.showgst = true;
+                                          _model.language = false;
                                           safeSetState(() {});
                                         },
                                         child: Container(
@@ -611,6 +612,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           _model.language = true;
+                                          _model.showgst = false;
                                           safeSetState(() {});
                                         },
                                         child: Container(
@@ -1331,7 +1333,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  if (!_model.showgst || !_model.language)
+                                  if (!_model.showgst && !_model.language)
                                     Expanded(
                                       flex: 2,
                                       child: StreamBuilder<List<DeviceRecord>>(
