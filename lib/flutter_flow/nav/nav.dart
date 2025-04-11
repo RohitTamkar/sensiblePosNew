@@ -8,6 +8,8 @@ import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 
+import '/backend/sqlite/sqlite_manager.dart';
+
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/lat_lng.dart';
@@ -1520,6 +1522,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: AddStockbyCategoryWidget.routeName,
               path: AddStockbyCategoryWidget.routePath,
               builder: (context, params) => AddStockbyCategoryWidget(),
+            ),
+            FFRoute(
+              name: ListsqlliteWidget.routeName,
+              path: ListsqlliteWidget.routePath,
+              builder: (context, params) => ListsqlliteWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
