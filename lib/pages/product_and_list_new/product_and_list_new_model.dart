@@ -137,9 +137,6 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   List<ProductStructStruct>? prdhive2refresh;
   // Stores action output result for [Custom Action - getCategorylistHive] action in Button widget.
   List<CategoryStructStruct>? catlistrefresh;
-  // State field(s) for language widget.
-  String? languageValue;
-  FormFieldController<String>? languageValueController;
   // State field(s) for ListView widget.
   ScrollController? listViewController1;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in Container widget.
