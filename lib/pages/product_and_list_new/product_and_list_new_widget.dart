@@ -2380,11 +2380,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                             FormFieldController<
                                                                 String>(
                                                           _model.languageValue ??=
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                            'o4yxt8yf' /* English */,
-                                                          ),
+                                                              FFAppState()
+                                                                  .language,
                                                         ),
                                                         options: [
                                                           FFLocalizations.of(
