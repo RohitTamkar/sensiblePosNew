@@ -2177,10 +2177,42 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                         FFAppState().language =
                                                             languagItem;
                                                         safeSetState(() {});
-                                                        setAppLanguage(
-                                                            context,
-                                                            FFAppState()
-                                                                .language);
+                                                        if (FFAppState()
+                                                                .language ==
+                                                            'English') {
+                                                          setAppLanguage(
+                                                              context, 'en');
+                                                        } else if (FFAppState()
+                                                                .language ==
+                                                            'Thai') {
+                                                          setAppLanguage(
+                                                              context, 'th');
+                                                        } else if (FFAppState()
+                                                                .language ==
+                                                            'Hindi') {
+                                                          setAppLanguage(
+                                                              context, 'hi');
+                                                        } else if (FFAppState()
+                                                                .language ==
+                                                            'Marathi') {
+                                                          setAppLanguage(
+                                                              context, 'mr');
+                                                        } else if (FFAppState()
+                                                                .language ==
+                                                            'Kannada') {
+                                                          setAppLanguage(
+                                                              context, 'kn');
+                                                        } else if (FFAppState()
+                                                                .language ==
+                                                            'Tamil') {
+                                                          setAppLanguage(
+                                                              context, 'ta');
+                                                        } else {
+                                                          setAppLanguage(
+                                                              context, 'en');
+                                                        }
+
+                                                        safeSetState(() {});
                                                         await showDialog(
                                                           context: context,
                                                           builder:
