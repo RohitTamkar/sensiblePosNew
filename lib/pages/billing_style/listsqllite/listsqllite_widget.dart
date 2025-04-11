@@ -555,8 +555,12 @@ class _ListsqlliteWidgetState extends State<ListsqlliteWidget> {
                                                             children: [
                                                               TextSpan(
                                                                 text:
-                                                                    listViewGetRow
-                                                                        .name,
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                  listViewGetRow
+                                                                      .name,
+                                                                  '0',
+                                                                ),
                                                                 style:
                                                                     TextStyle(
                                                                   color: Color(
@@ -598,8 +602,12 @@ class _ListsqlliteWidgetState extends State<ListsqlliteWidget> {
                                                                       0.0,
                                                                       0.0),
                                                           child: Text(
-                                                            listViewGetRow
-                                                                .mobile,
+                                                            valueOrDefault<
+                                                                String>(
+                                                              listViewGetRow
+                                                                  .mobile,
+                                                              '0',
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelMedium
