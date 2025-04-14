@@ -186,3 +186,4 @@ export 'print_function_k_o_t.dart' show printFunctionKOT;
 export 'add_bulk_stock_by_category.dart' show addBulkStockByCategory;
 export 'print_bill_preview_label.dart' show printBillPreviewLabel;
 export 'edit_bill_custom.dart' show editBillCustom;
+export 'enable_dual_display.dart' show enableDualDisplay;
