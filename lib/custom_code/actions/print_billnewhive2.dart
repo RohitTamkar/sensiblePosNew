@@ -21,6 +21,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:image/image.dart' as img;
 import 'package:flutter/services.dart';
 
@@ -1358,19 +1360,41 @@ Future printBillnewhive2(
       } else {
         int len = invoiceDetails.productList!.length;
         String itemsNo = "Items :" + len.toString();
-        printLine = itemsNo;
-        String subTotal = "Sub total:" +
+
+        String subTotal =
             ((invoiceDetails.billAmt).toStringAsFixed(2)).toString();
-        for (int i = 1; i <= (size - (itemsNo.length + subTotal.length)); i++) {
-          printLine += " ";
-        }
-        printLine += subTotal;
-        bytes += generator.text(printLine,
+        bytes += generator.row([
+          PosColumn(
+            text: itemsNo,
+            width: 5,
             styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              align: PosAlign.left,
-            ));
+                fontType: PosFontType.fontA,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.left),
+          ),
+          PosColumn(
+            text: "Sub total:",
+            width: 4,
+            styles: PosStyles(
+                fontType: PosFontType.fontA,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.left),
+          ),
+          PosColumn(
+            text: subTotal,
+            width: 3,
+            styles: PosStyles(
+                fontType: PosFontType.fontA,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: true,
+                align: PosAlign.left),
+          )
+        ]);
       }
 
       if (FFAppState().billPrintFooter != "KOT" &&
