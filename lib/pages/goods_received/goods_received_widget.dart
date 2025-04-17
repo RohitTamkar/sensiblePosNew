@@ -45,6 +45,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
       length: 7,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 

@@ -1129,13 +1129,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => CustomerLedgerreportWidget(),
             ),
             FFRoute(
-              name: ProductAndListNewCopyWidget.routeName,
-              path: ProductAndListNewCopyWidget.routePath,
+              name: Display2Widget.routeName,
+              path: Display2Widget.routePath,
               asyncParams: {
                 'taxcollection':
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
               },
-              builder: (context, params) => ProductAndListNewCopyWidget(
+              builder: (context, params) => Display2Widget(
                 billDetails: params.getParam(
                   'billDetails',
                   ParamType.DocumentReference,
@@ -1525,6 +1525,37 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: Product5ShoeWidget.routeName,
               path: Product5ShoeWidget.routePath,
               builder: (context, params) => Product5ShoeWidget(),
+            ),
+            FFRoute(
+              name: ProductAndListNewCopy2Widget.routeName,
+              path: ProductAndListNewCopy2Widget.routePath,
+              asyncParams: {
+                'taxcollection':
+                    getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
+              },
+              builder: (context, params) => ProductAndListNewCopy2Widget(
+                billDetails: params.getParam(
+                  'billDetails',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['OUTLET', 'INVOICE'],
+                ),
+                doc: params.getParam(
+                  'doc',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['USER_PROFILE'],
+                ),
+                shiftDetails: params.getParam(
+                  'shiftDetails',
+                  ParamType.JSON,
+                ),
+                taxcollection: params.getParam<TaxMasterRecord>(
+                  'taxcollection',
+                  ParamType.Document,
+                  isList: true,
+                ),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

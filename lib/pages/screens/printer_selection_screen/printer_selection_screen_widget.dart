@@ -52,6 +52,7 @@ class _PrinterSelectionScreenWidgetState
       length: 4,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+
     _model.switchValue = FFAppState().ethernetPrint;
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();

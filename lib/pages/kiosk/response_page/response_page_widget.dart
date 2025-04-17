@@ -163,6 +163,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               kotStatus: 'PENDING',
               count: FFAppState().count,
               source: 'KIOSK',
+              isDeleted: false,
             ),
             ...mapToFirestore(
               {
@@ -215,6 +216,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               kotStatus: 'PENDING',
               count: FFAppState().count,
               source: 'KIOSK',
+              isDeleted: false,
             ),
             ...mapToFirestore(
               {

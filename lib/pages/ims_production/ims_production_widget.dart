@@ -37,6 +37,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
       length: 3,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 

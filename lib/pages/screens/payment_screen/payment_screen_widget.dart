@@ -47,6 +47,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
       length: 4,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+
     _model.textFielExpNoteTextController ??= TextEditingController();
     _model.textFielExpNoteFocusNode ??= FocusNode();
 

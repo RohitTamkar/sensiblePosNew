@@ -157,6 +157,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
             kotStatus: 'PENDING',
             count: FFAppState().count,
             source: 'KIOSK',
+            isDeleted: false,
           ),
           ...mapToFirestore(
             {
@@ -209,6 +210,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
             kotStatus: 'PENDING',
             count: FFAppState().count,
             source: 'KIOSK',
+            isDeleted: false,
           ),
           ...mapToFirestore(
             {

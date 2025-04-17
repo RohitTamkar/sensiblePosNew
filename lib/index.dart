@@ -156,8 +156,7 @@ export '/grocery_windows/credit_payment_page/credit_payment_page_widget.dart'
     show CreditPaymentPageWidget;
 export '/pages/report_screen/customer_ledgerreport/customer_ledgerreport_widget.dart'
     show CustomerLedgerreportWidget;
-export '/pages/product_and_list_new_copy/product_and_list_new_copy_widget.dart'
-    show ProductAndListNewCopyWidget;
+export '/pages/display2/display2_widget.dart' show Display2Widget;
 export '/pages/report_screen/category_reportnew/category_reportnew_widget.dart'
     show CategoryReportnewWidget;
 export '/grocery_windows/purchase_order/purchase_order_widget.dart'
@@ -202,3 +201,5 @@ export '/pages/report_screen/outstock_report/outstock_report_widget.dart'
 export '/pages/screens/add_stockby_category/add_stockby_category_widget.dart'
     show AddStockbyCategoryWidget;
 export '/product5_shoe/product5_shoe_widget.dart' show Product5ShoeWidget;
+export '/pages/product_and_list_new_copy2/product_and_list_new_copy2_widget.dart'
+    show ProductAndListNewCopy2Widget;

@@ -25,6 +25,8 @@ class GoodsReceivedModel extends FlutterFlowModel<GoodsReceivedWidget> {
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
       tabBarController != null ? tabBarController!.index : 0;
+  int get tabBarPreviousIndex =>
+      tabBarController != null ? tabBarController!.previousIndex : 0;
 
   // Stores action output result for [Custom Action - docToJsonPurchace] action in Container widget.
   dynamic? jsonResp;
