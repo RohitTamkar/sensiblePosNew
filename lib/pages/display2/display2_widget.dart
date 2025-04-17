@@ -1,4 +1,3 @@
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -9,7 +8,6 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -21,18 +19,7 @@ import 'display2_model.dart';
 export 'display2_model.dart';
 
 class Display2Widget extends StatefulWidget {
-  const Display2Widget({
-    super.key,
-    this.billDetails,
-    this.doc,
-    this.shiftDetails,
-    required this.taxcollection,
-  });
-
-  final DocumentReference? billDetails;
-  final DocumentReference? doc;
-  final dynamic shiftDetails;
-  final List<TaxMasterRecord>? taxcollection;
+  const Display2Widget({super.key});
 
   static String routeName = 'Display2';
   static String routePath = 'display2';
