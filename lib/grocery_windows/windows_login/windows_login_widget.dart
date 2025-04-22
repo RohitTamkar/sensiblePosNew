@@ -1504,9 +1504,9 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                               highlightColor:
                                                   Colors.transparent,
                                               onLongPress: () async {
-                                                await actions.enableDualDisplay(
-                                                  context,
-                                                );
+                                                context.pushNamed(
+                                                    PieceCountingWidget
+                                                        .routeName);
                                               },
                                               child: FlutterFlowIconButton(
                                                 borderColor:
