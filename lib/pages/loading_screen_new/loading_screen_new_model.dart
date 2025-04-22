@@ -4,6 +4,7 @@ import '/components/opening_bal_new/opening_bal_new_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/instant_timer.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
@@ -53,10 +54,13 @@ class LoadingScreenNewModel extends FlutterFlowModel<LoadingScreenNewWidget> {
   AppSettingsRecord? doc;
   // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
   AppSettingsRecord? devicew;
+  InstantTimer? instantTimer;
 
   @override
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {}
+  void dispose() {
+    instantTimer?.cancel();
+  }
 }

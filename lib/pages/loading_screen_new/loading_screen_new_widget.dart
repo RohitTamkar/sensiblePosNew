@@ -4,6 +4,7 @@ import '/components/opening_bal_new/opening_bal_new_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/instant_timer.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
@@ -233,6 +234,21 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
           }
         }
 
+        if (_model.devicew!.settingList
+            .where((e) => e.title == 'enableDualDisplayWindows')
+            .toList()
+            .firstOrNull!
+            .value) {
+          _model.instantTimer = InstantTimer.periodic(
+            duration: Duration(milliseconds: 1000),
+            callback: (timer) async {
+              await actions.enableDualDisplay(
+                context,
+              );
+            },
+            startImmediately: true,
+          );
+        }
         await showModalBottomSheet(
           isScrollControlled: true,
           backgroundColor: Colors.transparent,
