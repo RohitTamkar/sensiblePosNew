@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/instant_timer.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
@@ -105,6 +106,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
       _model.isConnected = await actions.connectDevice(
         FFAppState().printerDevice,
         FFAppState().printerIndex,
+      );
+      _model.instantTimer = InstantTimer.periodic(
+        duration: Duration(milliseconds: 1000),
+        callback: (timer) async {},
+        startImmediately: true,
       );
     });
 
@@ -1079,27 +1085,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                   isEqualTo: FFAppState().dId,
                 ),
                 singleRecord: true,
-              )..listen((snapshot) {
-                  List<AppSettingsRecord>
-                      productAndListNewAppSettingsRecordList = snapshot;
-                  final productAndListNewAppSettingsRecord =
-                      productAndListNewAppSettingsRecordList.isNotEmpty
-                          ? productAndListNewAppSettingsRecordList.first
-                          : null;
-                  if (_model.productAndListNewPreviousSnapshot != null &&
-                      !const ListEquality(AppSettingsRecordDocumentEquality())
-                          .equals(productAndListNewAppSettingsRecordList,
-                              _model.productAndListNewPreviousSnapshot)) {
-                    () async {
-                      await actions.enableDualDisplay(
-                        context,
-                      );
-
-                      safeSetState(() {});
-                    }();
-                  }
-                  _model.productAndListNewPreviousSnapshot = snapshot;
-                }),
+              ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {

@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/instant_timer.dart';
 import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
@@ -77,7 +78,6 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   ///  State fields for stateful widgets in this page.
 
   final shortcutsFocusNode = FocusNode();
-  List<AppSettingsRecord>? productAndListNewPreviousSnapshot;
   // Stores action output result for [Custom Action - getProductlistHive] action in ProductAndListNew widget.
   List<ProductStructStruct>? hiveProductList;
   // Stores action output result for [Custom Action - getCategorylistHive] action in ProductAndListNew widget.
@@ -86,6 +86,7 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   bool? resDevice2Copy;
   // Stores action output result for [Custom Action - connectDevice] action in ProductAndListNew widget.
   bool? isConnected;
+  InstantTimer? instantTimer;
   // Stores action output result for [Custom Action - filterProducts2] action in ProductAndListNew widget.
   List<SelItemListStruct>? prdlinstnewtxCopy;
   // Stores action output result for [Firestore Query - Query a collection] action in ProductAndListNew widget.
@@ -334,6 +335,7 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
 
   @override
   void dispose() {
+    instantTimer?.cancel();
     menuDrawerModel.dispose();
     listViewController1?.dispose();
     listViewController2?.dispose();
