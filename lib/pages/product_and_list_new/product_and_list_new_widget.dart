@@ -1079,7 +1079,27 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                   isEqualTo: FFAppState().dId,
                 ),
                 singleRecord: true,
-              ),
+              )..listen((snapshot) {
+                  List<AppSettingsRecord>
+                      productAndListNewAppSettingsRecordList = snapshot;
+                  final productAndListNewAppSettingsRecord =
+                      productAndListNewAppSettingsRecordList.isNotEmpty
+                          ? productAndListNewAppSettingsRecordList.first
+                          : null;
+                  if (_model.productAndListNewPreviousSnapshot != null &&
+                      !const ListEquality(AppSettingsRecordDocumentEquality())
+                          .equals(productAndListNewAppSettingsRecordList,
+                              _model.productAndListNewPreviousSnapshot)) {
+                    () async {
+                      await actions.enableDualDisplay(
+                        context,
+                      );
+
+                      safeSetState(() {});
+                    }();
+                  }
+                  _model.productAndListNewPreviousSnapshot = snapshot;
+                }),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {

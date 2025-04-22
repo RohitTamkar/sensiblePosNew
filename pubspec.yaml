@@ -45,6 +45,7 @@ dependencies:
   csslib: 0.17.3
   custom_alert_dialog_box: ^1.0.2
   data_table_2: 2.5.10
+  desktop_multi_window: ^0.2.1
   device_info_plus: ^10.1.2
   dropdown_button2: 2.3.9
   dropdown_search:
@@ -105,6 +106,7 @@ dependencies:
   provider: 6.1.2
   qr_flutter:
   rounded_linear_progress: ^0.0.2
+  screen_retriever: ^0.2.0
   screenshot: ^2.3.0
   sensors_plus: 6.0.1
   sensors_plus_platform_interface: 2.0.0
