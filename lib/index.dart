@@ -203,3 +203,4 @@ export '/pages/screens/add_stockby_category/add_stockby_category_widget.dart'
 export '/product5_shoe/product5_shoe_widget.dart' show Product5ShoeWidget;
 export '/pages/product_and_list_new_copy2/product_and_list_new_copy2_widget.dart'
     show ProductAndListNewCopy2Widget;
+export '/piece_counting/piece_counting_widget.dart' show PieceCountingWidget;

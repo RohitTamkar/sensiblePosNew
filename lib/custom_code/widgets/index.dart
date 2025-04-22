@@ -18,3 +18,4 @@ export 'user_input.dart' show UserInput;
 export 'weightscalewidget.dart' show Weightscalewidget;
 export 'labeltestprint.dart' show Labeltestprint;
 export 'pd_led_customerdisplay.dart' show PdLedCustomerdisplay;
+export 'weightscalewidget_copy.dart' show WeightscalewidgetCopy;
