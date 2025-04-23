@@ -233,18 +233,13 @@ class _KioskWelcomeWidgetState extends State<KioskWelcomeWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .displayLarge
                                         .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .displayLargeFamily,
+                                          font: FlutterFlowTheme.of(context)
+                                              .displayLarge,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           fontSize: 32.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .displayLargeFamily),
                                         ),
                                   ),
                                 ),
@@ -255,17 +250,13 @@ class _KioskWelcomeWidgetState extends State<KioskWelcomeWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displayLarge
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .displayLargeFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .displayLarge,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
                                         fontSize: 55.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .displayLargeFamily),
                                       ),
                                 ),
                                 Text(
@@ -275,17 +266,13 @@ class _KioskWelcomeWidgetState extends State<KioskWelcomeWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displayLarge
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .displayLargeFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .displayLarge,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
                                         fontSize: 55.0,
                                         letterSpacing: 15.0,
                                         fontWeight: FontWeight.bold,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .displayLargeFamily),
                                       ),
                                 ),
                                 ClipRRect(

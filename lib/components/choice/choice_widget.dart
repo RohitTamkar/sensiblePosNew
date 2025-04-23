@@ -70,12 +70,9 @@ class _ChoiceWidgetState extends State<ChoiceWidget> {
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).titleSmallFamily,
+                        font: FlutterFlowTheme.of(context).titleSmall,
                         color: Colors.white,
                         letterSpacing: 0.0,
-                        useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).titleSmallFamily),
                       ),
                   elevation: 2.0,
                   borderSide: BorderSide(

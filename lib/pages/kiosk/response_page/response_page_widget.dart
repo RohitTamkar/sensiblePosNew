@@ -825,18 +825,14 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .displayLarge
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .displayLargeFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .displayLarge,
                                         color: FlutterFlowTheme.of(context)
                                             .success,
                                         fontSize: 36.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                         fontStyle: FontStyle.italic,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .displayLargeFamily),
                                       ),
                                 ).animateOnPageLoad(
                                     animationsMap['textOnPageLoadAnimation']!),
@@ -1069,16 +1065,12 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .bodyMediumFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .bodyMedium,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         fontSize: 16.0,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily),
                                       ),
                                 ),
                               ),

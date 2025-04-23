@@ -207,21 +207,14 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                                     context)
                                                 .titleMedium
                                                 .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleMediumFamily,
+                                                  font: FlutterFlowTheme.of(
+                                                          context)
+                                                      .titleMedium,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBtnText,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleMediumFamily),
                                                 ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -272,20 +265,14 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily:
+                                                font:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleMediumFamily,
+                                                        .titleMedium,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBtnText,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMediumFamily),
                                               ),
                                           validator: _model
                                               .textFieldsearchProdTextControllerValidator
@@ -398,18 +385,14 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmall,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                     ),
                                                               ),
                                                             ],
@@ -521,12 +504,10 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                                                           context)
                                                                       .headlineSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .headlineSmall,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                       ),
                                                                 ),
                                                               ],

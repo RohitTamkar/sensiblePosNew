@@ -114,15 +114,10 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmallFamily,
+                                            font: FlutterFlowTheme.of(context)
+                                                .headlineSmall,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmallFamily),
                                           ),
                                     ),
                                   ),
@@ -195,16 +190,9 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodySmallFamily,
+                                              font: FlutterFlowTheme.of(context)
+                                                  .bodySmall,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts:
-                                                  GoogleFonts.asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodySmallFamily),
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -250,14 +238,9 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
+                                            font: FlutterFlowTheme.of(context)
+                                                .bodyMedium,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
                                           ),
                                       validator: _model
                                           .textFieldsearchTextControllerValidator
@@ -391,17 +374,12 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                   .of(context)
                                                               .headlineSmall
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineSmallFamily,
+                                                                    .headlineSmall,
                                                                 fontSize: 15.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .headlineSmallFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -412,16 +390,11 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                   .of(context)
                                                               .titleMedium
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleMediumFamily,
+                                                                    .titleMedium,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleMediumFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -463,14 +436,12 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                           context)
                                                                       .titleMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleMedium,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                       ),
                                                                 ),
                                                                 Flexible(
@@ -482,14 +453,12 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                             context)
                                                                         .titleMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).titleMedium,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                         ),
                                                                   ),
                                                                 ),
@@ -528,12 +497,10 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                               context)
                                                                           .titleMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).titleMedium,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                           ),
                                                                     ),
                                                                   ),
@@ -640,18 +607,13 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                     .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmallFamily,
+                                                                      .headlineSmall,
                                                                   fontSize:
                                                                       15.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily),
                                                                 ),
                                                           ),
                                                         ),
@@ -663,16 +625,11 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                     .of(context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleMediumFamily,
+                                                                      .titleMedium,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleMediumFamily),
                                                                 ),
                                                           ),
                                                         ),
@@ -716,14 +673,12 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                             context)
                                                                         .titleMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).titleMedium,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                         ),
                                                                   ),
                                                                   Flexible(
@@ -735,14 +690,12 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                               context)
                                                                           .titleMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).titleMedium,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                           ),
                                                                     ),
                                                                   ),
@@ -779,12 +732,10 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                             context)
                                                                         .titleMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).titleMedium,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                         ),
                                                                   ),
                                                               ],

@@ -1266,15 +1266,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       .of(context)
                                                                   .headlineSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .headlineSmallFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                   ),
                                                             ),
                                                           ),
@@ -1396,15 +1392,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmall,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily),
                                                                     ),
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
@@ -1487,15 +1479,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                   ),
                                                               validator: _model
                                                                   .textFieldsearchTextControllerValidator
@@ -1711,17 +1699,15 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   Text(
                                                                                     containerVarItem.name,
                                                                                     style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                          font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                         ),
                                                                                   ),
                                                                                   Text(
                                                                                     containerVarItem.mobile,
                                                                                     style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                          font: FlutterFlowTheme.of(context).titleMedium,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -1751,19 +1737,17 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                               '2gtcz6if' /* Balance:  */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
                                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                                 ),
                                                                                           ),
                                                                                           Text(
                                                                                             containerVarItem.oldBalance.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
                                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1940,17 +1924,15 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   Text(
                                                                                     listItem.name,
                                                                                     style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                          font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                         ),
                                                                                   ),
                                                                                   Text(
                                                                                     listItem.mobile,
                                                                                     style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                          font: FlutterFlowTheme.of(context).titleMedium,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -1980,19 +1962,17 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                               'vyk7t2w8' /* Balance:  */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
                                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                                 ),
                                                                                           ),
                                                                                           Text(
                                                                                             listItem.oldBalance.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
                                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -2147,9 +2127,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   .of(context)
                                                               .titleSmall
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmallFamily,
+                                                                    .titleSmall,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBtnText,
@@ -2158,11 +2138,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleSmallFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -2184,9 +2159,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   .of(context)
                                                               .bodySmall
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodySmallFamily,
+                                                                    .bodySmall,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondary,
@@ -2195,11 +2170,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodySmallFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -2330,17 +2300,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleSmallFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall,
                                                                     color: Colors
                                                                         .white,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
                                                           elevation: 0.0,
                                                           borderRadius:
@@ -2402,19 +2368,14 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMediumFamily,
+                                                                    .bodyMedium,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBtnText,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
                                                               ),
                                                     ),
                                                   ),
@@ -2862,9 +2823,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).headlineSmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -3076,10 +3036,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                           ),
                                                                                           textAlign: TextAlign.center,
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                                font: FlutterFlowTheme.of(context).titleSmall,
                                                                                                 color: FlutterFlowTheme.of(context).lineColor,
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                               ),
                                                                                         ),
                                                                                       ),
@@ -3136,11 +3095,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                     categoryListItem.name,
                                                                                                     textAlign: TextAlign.center,
                                                                                                     style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                                          fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                                                          font: FlutterFlowTheme.of(context).labelLarge,
                                                                                                           color: FlutterFlowTheme.of(context).lineColor,
                                                                                                           fontSize: 14.0,
                                                                                                           letterSpacing: 0.0,
-                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                                                         ),
                                                                                                   ),
                                                                                                 ),
@@ -3400,10 +3358,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                               ),
                                                                                                               textAlign: TextAlign.center,
                                                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
                                                                                                                     fontSize: 14.0,
                                                                                                                     letterSpacing: 0.0,
-                                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                                                   ),
                                                                                                             ),
                                                                                                           ),
@@ -3420,9 +3377,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                     ),
                                                                                                                     textAlign: TextAlign.center,
                                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                          font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                                           letterSpacing: 0.0,
-                                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                         ),
                                                                                                                   ),
                                                                                                                   Flexible(
@@ -3430,9 +3386,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                       productListItem.sellingPrice.toString(),
                                                                                                                       textAlign: TextAlign.center,
                                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                            font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                                             letterSpacing: 0.0,
-                                                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                           ),
                                                                                                                     ),
                                                                                                                   ),
@@ -3446,10 +3401,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                 'Stock :${productListItem.stock.toString()}',
                                                                                                                 textAlign: TextAlign.justify,
                                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                      font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                                       color: FlutterFlowTheme.of(context).primary,
                                                                                                                       letterSpacing: 0.0,
-                                                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                     ),
                                                                                                               ),
                                                                                                             ),
@@ -3691,11 +3645,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                                     productListItem.name,
                                                                                                                                     textAlign: TextAlign.center,
                                                                                                                                     style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
                                                                                                                                           color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                                                           letterSpacing: 0.0,
                                                                                                                                           fontWeight: FontWeight.w600,
-                                                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                                                                         ),
                                                                                                                                   ),
                                                                                                                                 ),
@@ -3713,10 +3666,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                                           'br0aspwl' /* ₹ */,
                                                                                                                                         ),
                                                                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                                                               color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                                                               letterSpacing: 0.0,
-                                                                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                                                             ),
                                                                                                                                       ),
                                                                                                                                     ),
@@ -3727,10 +3679,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                                           '120',
                                                                                                                                         ),
                                                                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                                                               color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                                                               letterSpacing: 0.0,
-                                                                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                                                             ),
                                                                                                                                       ),
                                                                                                                                     ),
@@ -3743,10 +3694,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                                     'Stock :${productListItem.stock.toString()}',
                                                                                                                                     textAlign: TextAlign.justify,
                                                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                                          font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                                                           color: FlutterFlowTheme.of(context).parkingPrimary,
                                                                                                                                           letterSpacing: 0.0,
-                                                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                                         ),
                                                                                                                                   ),
                                                                                                                                 ),
@@ -3911,9 +3861,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                             ),
                                                                         enabledBorder:
                                                                             OutlineInputBorder(
@@ -3988,12 +3937,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).headlineSmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                           ),
                                                                       textAlign:
                                                                           TextAlign
@@ -4057,9 +4004,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                             ),
                                                                         enabledBorder:
                                                                             OutlineInputBorder(
@@ -4134,12 +4080,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).titleSmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                           ),
                                                                       textAlign:
                                                                           TextAlign
@@ -4203,9 +4147,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                             ),
                                                                         enabledBorder:
                                                                             OutlineInputBorder(
@@ -4280,12 +4223,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).titleSmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                           ),
                                                                       textAlign:
                                                                           TextAlign
@@ -4365,9 +4306,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 'wc8s1ov8' /* Item Name */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -4398,9 +4338,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               'lfek99x5' /* Qty */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -4430,9 +4369,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               'p24kejs9' /* Amt */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -4562,11 +4500,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                 ),
                                                                                             textAlign: TextAlign.start,
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                                   fontSize: 15.0,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -4578,10 +4515,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                 'k0v73mzx' /* ₹  */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                     fontSize: 13.0,
                                                                                                     letterSpacing: 0.0,
-                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -4590,10 +4526,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                 r'''$.price''',
                                                                                               ).toString(),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                     fontSize: 13.0,
                                                                                                     letterSpacing: 0.0,
-                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -4700,12 +4635,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                   ).toString(),
                                                                                                   textAlign: TextAlign.center,
                                                                                                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                        fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                        font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
                                                                                                         fontWeight: FontWeight.w500,
-                                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                       ),
                                                                                                 ),
                                                                                               ],
@@ -4841,11 +4775,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                           .toString(),
                                                                                       textAlign: TextAlign.center,
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                            fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                            font: FlutterFlowTheme.of(context).bodySmall,
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             fontSize: 13.0,
                                                                                             letterSpacing: 0.0,
-                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -5039,9 +4972,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                     ),
                                                                                     textAlign: TextAlign.center,
                                                                                     style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
                                                                                   ),
                                                                                   Text(
@@ -5051,9 +4983,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                     ),
                                                                                     textAlign: TextAlign.center,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                          font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -5086,12 +5017,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodySmall,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                         ),
                                                                   ),
                                                                   Text(
@@ -5102,12 +5031,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodyLarge,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                         ),
                                                                   ),
                                                                 ],
@@ -5133,12 +5060,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodySmall,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                         ),
                                                                   ),
                                                                   Text(
@@ -5153,12 +5078,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodyLarge,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                         ),
                                                                   ),
                                                                 ],
@@ -5195,12 +5118,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     Row(
@@ -5219,9 +5140,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyLarge
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                                font: FlutterFlowTheme.of(context).bodyLarge,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                               ),
                                                                         ),
                                                                         Text(
@@ -5233,9 +5153,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyLarge
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                                font: FlutterFlowTheme.of(context).bodyLarge,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                               ),
                                                                         ),
                                                                       ],
@@ -5482,10 +5401,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               'xvdwf8js' /* Last Bill */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
                                                                                   color: FlutterFlowTheme.of(context).lineColor,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
                                                                           ),
                                                                           Row(
@@ -5499,10 +5417,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   '9ucfdjmf' /* ₹ */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
                                                                                       color: FlutterFlowTheme.of(context).lineColor,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                               ),
                                                                               Text(
@@ -5511,10 +5428,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   '00.00',
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
                                                                                       color: FlutterFlowTheme.of(context).lineColor,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -5640,14 +5556,12 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).titleSmall,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).lineColor,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                         ),
                                                                     hintText: FFLocalizations.of(
                                                                             context)
@@ -5724,10 +5638,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               'acwjmxun' /* Final Amt */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                   color: FlutterFlowTheme.of(context).lineColor,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                 ),
                                                                           ),
                                                                           Row(
@@ -5741,21 +5654,19 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   'jhgmg2qk' /* ₹  */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
                                                                                       color: FlutterFlowTheme.of(context).lineColor,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                               ),
                                                                               Text(
                                                                                 FFAppState().finalAmt.toString(),
                                                                                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
+                                                                                      font: FlutterFlowTheme.of(context).headlineMedium,
                                                                                       color: FlutterFlowTheme.of(context).lineColor,
                                                                                       fontSize: 26.0,
                                                                                       letterSpacing: 0.0,
                                                                                       fontWeight: FontWeight.w600,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineMediumFamily),
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -5851,11 +5762,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).headlineSmall,
                                                                               color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ],
@@ -6791,16 +6701,14 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: Colors
                                                                             .white,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w800,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                                   elevation:
                                                                       0.0,
@@ -7654,16 +7562,14 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             context)
                                                                         .headlineSmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).headlineSmall,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryBtnText,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                         ),
                                                                     borderSide:
                                                                         BorderSide(
@@ -8543,11 +8449,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .headlineSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).headlineSmall,
                                                                               color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                             ),
                                                                         borderSide:
                                                                             BorderSide(

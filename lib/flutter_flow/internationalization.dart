@@ -25482,15 +25482,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     'b7s62tn9': {
-      'en': 'Tare',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-      'th': '',
-    },
-    'ptkjyzpp': {
-      'en': '0.000',
+      'en': 'Unit Weight',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -25506,15 +25498,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     'a81fcckw': {
-      'en': 'GS',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-      'th': '',
-    },
-    'ffwp9g8h': {
-      'en': '0.000',
+      'en': 'Qty',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -25522,7 +25506,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     '44zc37ml': {
-      'en': 'kg',
+      'en': 'Pcs',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -25554,7 +25538,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     'i8b5pqf5': {
-      'en': 'Ok',
+      'en': 'Set',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -25585,8 +25569,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    'erz7oejs': {
-      'en': '15%',
+    'ccov17dj': {
+      'en': 'Calculate',
       'hi': '',
       'kn': '',
       'mr': '',

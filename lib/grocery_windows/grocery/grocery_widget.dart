@@ -132,12 +132,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
+                                  font: FlutterFlowTheme.of(context).labelSmall,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelSmallFamily),
                                 ),
                           ),
                         ),
@@ -168,12 +164,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
+                                  font: FlutterFlowTheme.of(context).labelSmall,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelSmallFamily),
                                 ),
                           )),
                         ),
@@ -202,14 +194,10 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
+                                  font: FlutterFlowTheme.of(context).labelSmall,
                                   color: Color(0xFF446AFE),
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelSmallFamily),
                                 ),
                           ),
                         ),
@@ -563,24 +551,16 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .labelMedium,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
                                   ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .labelMedium,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -619,12 +599,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
+                                  font: FlutterFlowTheme.of(context).labelSmall,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelSmallFamily),
                                 ),
                             textAlign: TextAlign.center,
                             validator: _model.textFieldqtTextControllerValidator
@@ -784,12 +760,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
+                                  font: FlutterFlowTheme.of(context).labelSmall,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelSmallFamily),
                                 ),
                           ),
                         ),
@@ -984,24 +956,16 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .labelMedium,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
                                   ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .labelMedium,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -1040,12 +1004,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
+                                  font: FlutterFlowTheme.of(context).labelSmall,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelSmallFamily),
                                 ),
                             textAlign: TextAlign.center,
                             validator: _model
@@ -1079,12 +1039,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
+                                  font: FlutterFlowTheme.of(context).labelSmall,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelSmallFamily),
                                 ),
                           ),
                         ),
@@ -1231,24 +1187,16 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .labelMedium,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
                                   ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .labelMedium,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -1287,12 +1235,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
+                                  font: FlutterFlowTheme.of(context).labelSmall,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelSmallFamily),
                                 ),
                             textAlign: TextAlign.center,
                             validator: _model
@@ -1443,24 +1387,16 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .labelMedium,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
                                   ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .labelMedium,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -1499,12 +1435,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
+                                  font: FlutterFlowTheme.of(context).labelSmall,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelSmallFamily),
                                 ),
                             textAlign: TextAlign.center,
                             validator: _model
@@ -1655,24 +1587,16 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .labelMedium,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
                                   ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .labelMedium,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -1711,12 +1635,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
+                                  font: FlutterFlowTheme.of(context).labelSmall,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelSmallFamily),
                                 ),
                             textAlign: TextAlign.center,
                             validator: _model
@@ -1867,24 +1787,16 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .labelMedium,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
                                   ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .labelMedium,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -1923,12 +1835,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
+                                  font: FlutterFlowTheme.of(context).labelSmall,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelSmallFamily),
                                 ),
                             textAlign: TextAlign.center,
                             validator: _model
@@ -1962,13 +1870,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
+                                  font: FlutterFlowTheme.of(context).labelSmall,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .labelSmallFamily),
                                 ),
                           ),
                         ),
@@ -2081,13 +1985,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelSmallFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).labelSmall,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelSmallFamily),
                                   ),
                             ),
                           ),
@@ -2118,13 +2018,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelSmallFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).labelSmall,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelSmallFamily),
                                   ),
                             )),
                           ),
@@ -2153,15 +2049,11 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelSmallFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).labelSmall,
                                     color: Color(0xFF446AFE),
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelSmallFamily),
                                   ),
                             ),
                           ),
@@ -2194,13 +2086,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelSmallFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).labelSmall,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelSmallFamily),
                                   ),
                             ),
                           ),
@@ -2230,13 +2118,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelSmallFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).labelSmall,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelSmallFamily),
                                   ),
                             ),
                           ),
@@ -2266,13 +2150,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelSmallFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).labelSmall,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelSmallFamily),
                                   ),
                             ),
                           ),
@@ -2302,13 +2182,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelSmallFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).labelSmall,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelSmallFamily),
                                   ),
                             ),
                           ),
@@ -2338,13 +2214,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelSmallFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).labelSmall,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelSmallFamily),
                                   ),
                             ),
                           ),
@@ -2374,13 +2246,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelSmallFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).labelSmall,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelSmallFamily),
                                   ),
                             ),
                           ),
@@ -2410,13 +2278,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelSmallFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).labelSmall,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelSmallFamily),
                                   ),
                             ),
                           ),
@@ -2446,13 +2310,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelSmallFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).labelSmall,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelSmallFamily),
                                   ),
                             ),
                           ),
@@ -2482,14 +2342,10 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelSmallFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).labelSmall,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelSmallFamily),
                                   ),
                             ),
                           ),

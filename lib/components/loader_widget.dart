@@ -65,12 +65,9 @@ class _LoaderWidgetState extends State<LoaderWidget> {
                       '8ekairc9' /* Please Wait........ */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                          font: FlutterFlowTheme.of(context).bodyMedium,
                           fontSize: 20.0,
                           letterSpacing: 0.0,
-                          useGoogleFonts: GoogleFonts.asMap().containsKey(
-                              FlutterFlowTheme.of(context).bodyMediumFamily),
                         ),
                   ),
                   if (FFAppState().startLoop > 0)
@@ -97,12 +94,9 @@ class _LoaderWidgetState extends State<LoaderWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .headlineSmallFamily,
+                                font:
+                                    FlutterFlowTheme.of(context).headlineSmall,
                                 letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily),
                               ),
                         ),
                       ),
@@ -113,12 +107,9 @@ class _LoaderWidgetState extends State<LoaderWidget> {
                     child: Text(
                       FFAppState().endLoop.toString(),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            font: FlutterFlowTheme.of(context).bodyMedium,
                             fontSize: 20.0,
                             letterSpacing: 0.0,
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
                     ),
                   ),

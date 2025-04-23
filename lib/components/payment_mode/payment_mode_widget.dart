@@ -68,12 +68,10 @@ class _PaymentModeWidgetState extends State<PaymentModeWidget> {
           onChanged: (val) => safeSetState(() => _model.dropDownValue = val),
           width: 300.0,
           textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                font: FlutterFlowTheme.of(context).bodyMedium,
                 color: FlutterFlowTheme.of(context).primaryBtnText,
                 fontSize: 14.0,
                 letterSpacing: 0.0,
-                useGoogleFonts: GoogleFonts.asMap()
-                    .containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
               ),
           hintText: FFLocalizations.of(context).getText(
             'itmkmxu3' /* Payment Mode */,

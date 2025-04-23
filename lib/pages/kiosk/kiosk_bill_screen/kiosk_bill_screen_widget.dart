@@ -208,9 +208,9 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                   context)
                                                               .headlineSmall
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineSmallFamily,
+                                                                    .headlineSmall,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
@@ -220,39 +220,26 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .headlineSmallFamily),
                                                               ),
                                                     ),
                                                   ),
                                                   Flexible(
                                                     child: Text(
                                                       FFAppState().outletName,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmallFamily,
-                                                                color: Color(
-                                                                    0xFF033BE8),
-                                                                fontSize: 32.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .headlineSmallFamily),
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            font: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmall,
+                                                            color: Color(
+                                                                0xFF033BE8),
+                                                            fontSize: 32.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                          ),
                                                     ),
                                                   ),
                                                 ],
@@ -321,16 +308,14 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         fontSize:
                                                                             22.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 0.0,
                                                               borderSide:
@@ -390,16 +375,14 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         fontSize:
                                                                             24.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 0.0,
                                                               borderSide:
@@ -599,9 +582,9 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                   .of(context)
                                                               .displayMedium
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .displayMediumFamily,
+                                                                    .displayMedium,
                                                                 color: Color(
                                                                     0xFFEA7004),
                                                                 fontSize: 18.0,
@@ -610,11 +593,6 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .displayMediumFamily),
                                                               ),
                                                         ),
                                                       ],
@@ -795,12 +773,11 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                             textAlign:
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).displayMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).displayMediumFamily,
+                                                                                  font: FlutterFlowTheme.of(context).displayMedium,
                                                                                   color: Color(0xFFEA7004),
                                                                                   fontSize: 14.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).displayMediumFamily),
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -994,12 +971,11 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineLarge
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
+                                                                              font: FlutterFlowTheme.of(context).headlineLarge,
                                                                               color: Color(0xFF033BE8),
                                                                               fontSize: 15.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1026,10 +1002,9 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
                                                                               color: Color(0xFF033BE8),
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                             ),
                                                                       ),
                                                                   ],
@@ -1058,11 +1033,10 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                               'zhqfsh59' /* ₹  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                   color: Color(0xFF0046D3),
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                 ),
                                                                           ),
                                                                           TextSpan(
@@ -1072,23 +1046,21 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                               '0',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                   color: Color(0xFF0046D3),
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                 ),
                                                                           )
                                                                         ],
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).headlineSmall,
                                                                               color: Color(0xFF0046D3),
                                                                               fontSize: 12.0,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1327,12 +1299,11 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                               'z8ike2kl' /* Add */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).labelSmall,
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   fontSize: 15.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -1516,11 +1487,10 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                     : '0',
                                                                                 textAlign: TextAlign.center,
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
                                                                                       fontSize: 13.0,
                                                                                       letterSpacing: 0.0,
                                                                                       fontWeight: FontWeight.w600,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -1728,16 +1698,12 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                               textStyle: FlutterFlowTheme.of(context)
                                   .displayMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .displayMediumFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .displayMedium,
                                     color: FlutterFlowTheme.of(context).primary,
                                     fontSize: 20.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .displayMediumFamily),
                                   ),
                               elevation: 0.0,
                               borderSide: BorderSide(
@@ -1771,15 +1737,10 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .displayLarge
                                         .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .displayLargeFamily,
+                                          font: FlutterFlowTheme.of(context)
+                                              .displayLarge,
                                           fontSize: 24.0,
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .displayLargeFamily),
                                         ),
                                   ),
                                 ],
@@ -1801,18 +1762,12 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .displayMedium
                                                 .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .displayMediumFamily,
+                                                  font: FlutterFlowTheme.of(
+                                                          context)
+                                                      .displayMedium,
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(FlutterFlowTheme
-                                                              .of(context)
-                                                          .displayMediumFamily),
                                                 ),
                                           ),
                                           TextSpan(
@@ -1841,34 +1796,21 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .displayMedium
                                                 .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .displayMediumFamily,
+                                                  font: FlutterFlowTheme.of(
+                                                          context)
+                                                      .displayMedium,
                                                   fontSize: 15.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(FlutterFlowTheme
-                                                              .of(context)
-                                                          .displayMediumFamily),
                                                 ),
                                           )
                                         ],
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily,
+                                              font: FlutterFlowTheme.of(context)
+                                                  .bodyMedium,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily),
                                             ),
                                       ),
                                     ),
@@ -1887,15 +1829,11 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .displayMedium
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .displayMediumFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .displayMedium,
                                         fontSize: 22.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.normal,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .displayMediumFamily),
                                       ),
                                 ),
                                 TextSpan(
@@ -1906,28 +1844,20 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .displayMedium
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .displayMediumFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .displayMedium,
                                         fontSize: 24.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .displayMediumFamily),
                                       ),
                                 )
                               ],
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).bodyMedium,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
                                   ),
                             ),
                           ),
@@ -2070,17 +2000,13 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                               textStyle: FlutterFlowTheme.of(context)
                                   .displayMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .displayMediumFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .displayMedium,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBtnText,
                                     fontSize: 20.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .displayMediumFamily),
                                   ),
                               elevation: 3.0,
                               borderSide: BorderSide(
@@ -2154,14 +2080,10 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .titleSmallFamily,
+                                      font: FlutterFlowTheme.of(context)
+                                          .titleSmall,
                                       color: Colors.white,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily),
                                     ),
                                 elevation: 3.0,
                                 borderSide: BorderSide(

@@ -210,21 +210,14 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmallFamily,
+                                              font: FlutterFlowTheme.of(context)
+                                                  .headlineSmall,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
                                               fontSize: 30.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmallFamily),
                                             ),
                                       ),
                                     ].divide(SizedBox(width: 60.0)),
@@ -329,15 +322,10 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily,
+                                            font: FlutterFlowTheme.of(context)
+                                                .titleSmall,
                                             color: Colors.white,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmallFamily),
                                           ),
                                       elevation: 3.0,
                                       borderSide: BorderSide(
@@ -377,22 +365,15 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmallFamily,
+                                                      font: FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
                                                       fontSize: 24.0,
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: GoogleFonts
-                                                              .asMap()
-                                                          .containsKey(
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmallFamily),
                                                     ),
                                             elevation: 0.0,
                                             borderSide: BorderSide(
@@ -431,22 +412,15 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmallFamily,
+                                                      font: FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
                                                       fontSize: 24.0,
                                                       letterSpacing: 0.0,
-                                                      useGoogleFonts: GoogleFonts
-                                                              .asMap()
-                                                          .containsKey(
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmallFamily),
                                                     ),
                                             elevation: 0.0,
                                             borderSide: BorderSide(
@@ -564,26 +538,20 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                       0.0, 0.0, 0.0, 10.0),
                                               child: Text(
                                                 'Orderid  : ${FFAppState().paytmOrderId}',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelLargeFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .labelLarge
+                                                    .override(
+                                                      font: FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
                                                               .info,
-                                                          fontSize: 18.0,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelLargeFamily),
-                                                        ),
+                                                      fontSize: 18.0,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                               ),
                                             ),
                                             Padding(
@@ -675,28 +643,22 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                   safeSetState(() {});
                                                 },
                                                 textAlign: TextAlign.start,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineLarge
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineLargeFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .headlineLarge
+                                                    .override(
+                                                      font: FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineLarge,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
                                                               .info,
-                                                          fontSize: 50.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineLargeFamily),
-                                                        ),
+                                                      fontSize: 50.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
                                               ),
                                             ),
                                             Stack(
@@ -948,20 +910,13 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                             context)
                                                         .displayLarge
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .displayLargeFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .displayLarge,
                                                           fontSize: 30.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .displayLargeFamily),
                                                         ),
                                                   );
                                                 },
@@ -1022,9 +977,9 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                                     context)
                                                                 .headlineLarge
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineLargeFamily,
+                                                                      .headlineLarge,
                                                                   color: Color(
                                                                       0xFF033BE8),
                                                                   fontSize:
@@ -1034,11 +989,6 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineLargeFamily),
                                                                 ),
                                                       ),
                                                     ),
@@ -1058,20 +1008,15 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                                     .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmallFamily,
+                                                                      .headlineSmall,
                                                                   color: Color(
                                                                       0xFF0046D3),
                                                                   fontSize:
                                                                       30.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily),
                                                                 ),
                                                           ),
                                                           TextSpan(
@@ -1082,9 +1027,9 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                                     .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmallFamily,
+                                                                      .headlineSmall,
                                                                   color: Color(
                                                                       0xFF0046D3),
                                                                   fontSize:
@@ -1094,11 +1039,6 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily),
                                                                 ),
                                                           )
                                                         ],
@@ -1107,18 +1047,13 @@ class _KioskCardPaymentWidgetState extends State<KioskCardPaymentWidget> {
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmallFamily,
+                                                                      .headlineSmall,
                                                                   color: Color(
                                                                       0xFF0046D3),
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily),
                                                                 ),
                                                       ),
                                                       textAlign:

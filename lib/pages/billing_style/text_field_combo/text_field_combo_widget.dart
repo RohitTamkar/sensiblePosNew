@@ -415,22 +415,18 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
               'w6zqa6q2' /* Qty */,
             ),
             labelStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                  font: FlutterFlowTheme.of(context).bodyMedium,
                   letterSpacing: 0.0,
-                  useGoogleFonts: GoogleFonts.asMap().containsKey(
-                      FlutterFlowTheme.of(context).bodyMediumFamily),
                 ),
             hintText: FFLocalizations.of(context).getText(
               'pshrganl' /* Enter Manually */,
             ),
             hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                  fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
+                  font: FlutterFlowTheme.of(context).labelMedium,
                   color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 10.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w600,
-                  useGoogleFonts: GoogleFonts.asMap().containsKey(
-                      FlutterFlowTheme.of(context).labelMediumFamily),
                 ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
@@ -464,11 +460,9 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
             fillColor: FlutterFlowTheme.of(context).primaryBackground,
           ),
           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                font: FlutterFlowTheme.of(context).bodyMedium,
                 letterSpacing: 0.0,
                 fontWeight: FontWeight.w600,
-                useGoogleFonts: GoogleFonts.asMap()
-                    .containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
               ),
           textAlign: TextAlign.center,
           keyboardType: TextInputType.number,

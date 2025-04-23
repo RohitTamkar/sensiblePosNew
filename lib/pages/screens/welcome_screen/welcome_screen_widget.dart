@@ -219,13 +219,9 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .headlineSmall,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmallFamily),
                                       ),
                                 ),
                                 Text(
@@ -234,13 +230,9 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .headlineSmall,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmallFamily),
                                       ),
                                 ),
                                 Text(
@@ -248,13 +240,9 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .headlineSmall,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmallFamily),
                                       ),
                                 ),
                               ],
@@ -300,13 +288,9 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .headlineSmall,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmallFamily),
                                       ),
                                 ),
                                 Text(
@@ -318,13 +302,9 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .headlineSmall,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmallFamily),
                                       ),
                                 ),
                                 Text(
@@ -335,13 +315,9 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .headlineSmall,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmallFamily),
                                       ),
                                 ),
                               ],
@@ -424,16 +400,12 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
-                      textStyle: FlutterFlowTheme.of(context)
-                          .titleSmall
-                          .override(
-                            fontFamily:
-                                FlutterFlowTheme.of(context).titleSmallFamily,
-                            color: Colors.white,
-                            letterSpacing: 0.0,
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context).titleSmallFamily),
-                          ),
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                font: FlutterFlowTheme.of(context).titleSmall,
+                                color: Colors.white,
+                                letterSpacing: 0.0,
+                              ),
                       elevation: 2.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,

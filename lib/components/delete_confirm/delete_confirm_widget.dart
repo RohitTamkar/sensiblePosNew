@@ -66,11 +66,8 @@ class _DeleteConfirmWidgetState extends State<DeleteConfirmWidget> {
                     ),
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).headlineLarge.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).headlineLargeFamily,
+                          font: FlutterFlowTheme.of(context).headlineLarge,
                           letterSpacing: 0.0,
-                          useGoogleFonts: GoogleFonts.asMap().containsKey(
-                              FlutterFlowTheme.of(context).headlineLargeFamily),
                         ),
                   ),
                 ),
@@ -108,13 +105,9 @@ class _DeleteConfirmWidgetState extends State<DeleteConfirmWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .displaySmallFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .displaySmall,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .displaySmallFamily),
                                   ),
                               elevation: 2.0,
                               borderSide: BorderSide(
@@ -151,12 +144,9 @@ class _DeleteConfirmWidgetState extends State<DeleteConfirmWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .displayMedium
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .displayMediumFamily,
+                                  font: FlutterFlowTheme.of(context)
+                                      .displayMedium,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .displayMediumFamily),
                                 ),
                             elevation: 2.0,
                             borderSide: BorderSide(

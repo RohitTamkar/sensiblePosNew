@@ -250,15 +250,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .headlineMedium
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .headlineMediumFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .headlineMedium,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineMediumFamily),
                                       ),
                                 ),
                               ],
@@ -329,19 +325,12 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmallFamily,
+                                              font: FlutterFlowTheme.of(context)
+                                                  .headlineSmall,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .lineColor,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmallFamily),
                                             ),
                                       ),
                                     ],
@@ -472,12 +461,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .bodySmall,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -490,12 +477,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .bodySmall,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -508,12 +493,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .bodySmall,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                       ),
                                                                 ),
                                                               ],
@@ -549,14 +532,12 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -575,12 +556,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -591,12 +570,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                       ),
                                                                 ),
                                                               ],
@@ -640,17 +617,12 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                   context)
                                               .headlineLarge
                                               .override(
-                                                fontFamily:
+                                                font:
                                                     FlutterFlowTheme.of(context)
-                                                        .headlineLargeFamily,
+                                                        .headlineLarge,
                                                 fontSize: 32.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(FlutterFlowTheme
-                                                            .of(context)
-                                                        .headlineLargeFamily),
                                               ),
                                           pickerBackgroundColor:
                                               FlutterFlowTheme.of(context)
@@ -731,20 +703,14 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily:
+                                                font:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleMediumFamily,
+                                                        .titleMedium,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBtnText,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMediumFamily),
                                               ),
                                         ),
                                       ],
@@ -801,18 +767,13 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                fontFamily:
+                                                font:
                                                     FlutterFlowTheme.of(context)
-                                                        .headlineSmallFamily,
+                                                        .headlineSmall,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .lineColor,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(FlutterFlowTheme
-                                                            .of(context)
-                                                        .headlineSmallFamily),
                                               ),
                                         ),
                                       ],
@@ -908,16 +869,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodySmallFamily,
+                                                                      .bodySmall,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily),
                                                                 ),
                                                           ),
                                                           AutoSizeText(
@@ -930,16 +886,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .headlineMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineMediumFamily,
+                                                                      .headlineMedium,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineMediumFamily),
                                                                 ),
                                                           ),
                                                         ],
@@ -955,17 +906,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmallFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelSmall,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallFamily),
                                                         ),
                                                   ),
                                                 ],
@@ -1011,16 +955,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodySmallFamily,
+                                                                      .bodySmall,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily),
                                                                 ),
                                                           ),
                                                           AutoSizeText(
@@ -1033,16 +972,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .headlineMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineMediumFamily,
+                                                                      .headlineMedium,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineMediumFamily),
                                                                 ),
                                                           ),
                                                         ],
@@ -1060,21 +994,14 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily),
                                                         ),
                                                   ),
                                                 ],
@@ -1120,16 +1047,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodySmallFamily,
+                                                                      .bodySmall,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily),
                                                                 ),
                                                           ),
                                                           AutoSizeText(
@@ -1142,16 +1064,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .headlineMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineMediumFamily,
+                                                                      .headlineMedium,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineMediumFamily),
                                                                 ),
                                                           ),
                                                         ],
@@ -1175,17 +1092,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmallFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelSmall,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallFamily),
                                                         ),
                                                   ),
                                                 ],
@@ -1231,16 +1141,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodySmallFamily,
+                                                                      .bodySmall,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily),
                                                                 ),
                                                           ),
                                                           AutoSizeText(
@@ -1253,16 +1158,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .headlineMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineMediumFamily,
+                                                                      .headlineMedium,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineMediumFamily),
                                                                 ),
                                                           ),
                                                         ],
@@ -1284,17 +1184,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmallFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelSmall,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallFamily),
                                                         ),
                                                   ),
                                                 ],
@@ -1340,16 +1233,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodySmallFamily,
+                                                                      .bodySmall,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily),
                                                                 ),
                                                           ),
                                                           AutoSizeText(
@@ -1362,16 +1250,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .headlineMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineMediumFamily,
+                                                                      .headlineMedium,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineMediumFamily),
                                                                 ),
                                                           ),
                                                         ],
@@ -1394,16 +1277,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMediumFamily,
+                                                                    .bodyMedium,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
                                                               ),
                                                     ),
                                                   ),
@@ -1419,17 +1297,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmallFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelSmall,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallFamily),
                                                         ),
                                                   ),
                                                 ],
@@ -1489,12 +1360,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .bodySmall,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                       ),
                                                                 ),
                                                               ],
@@ -1509,15 +1378,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                       .of(context)
                                                                   .headlineMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .headlineMediumFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineMedium,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).headlineMediumFamily),
                                                                   ),
                                                             ),
                                                           ],
@@ -1591,16 +1456,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMediumFamily,
+                                                                      .bodyMedium,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily),
                                                                 ),
                                                         hintText:
                                                             FFLocalizations.of(
@@ -1681,16 +1541,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodySmallFamily,
+                                                                      .bodySmall,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily),
                                                                 ),
                                                           ),
                                                           AutoSizeText(
@@ -1703,16 +1558,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .headlineMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineMediumFamily,
+                                                                      .headlineMedium,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineMediumFamily),
                                                                 ),
                                                           ),
                                                         ],
@@ -1735,16 +1585,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMediumFamily,
+                                                                    .bodyMedium,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
                                                               ),
                                                     ),
                                                   ),
@@ -1760,17 +1605,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmallFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelSmall,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallFamily),
                                                         ),
                                                   ),
                                                 ],
@@ -1824,15 +1662,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                       .of(context)
                                                                   .bodySmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodySmallFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodySmallFamily),
                                                                   ),
                                                             ),
                                                           ),
@@ -1846,16 +1680,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .headlineMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineMediumFamily,
+                                                                      .headlineMedium,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineMediumFamily),
                                                                 ),
                                                           ),
                                                         ],
@@ -1878,16 +1707,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMediumFamily,
+                                                                    .bodyMedium,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
                                                               ),
                                                     ),
                                                   ),
@@ -1900,17 +1724,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmallFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelSmall,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallFamily),
                                                         ),
                                                   ),
                                                 ],
@@ -1964,15 +1781,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                       .of(context)
                                                                   .bodySmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodySmallFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodySmallFamily),
                                                                   ),
                                                             ),
                                                           ),
@@ -1986,16 +1799,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .headlineMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineMediumFamily,
+                                                                      .headlineMedium,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineMediumFamily),
                                                                 ),
                                                           ),
                                                         ],
@@ -2018,16 +1826,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMediumFamily,
+                                                                    .bodyMedium,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
                                                               ),
                                                     ),
                                                   ),
@@ -2040,17 +1843,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelSmallFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelSmall,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelSmallFamily),
                                                         ),
                                                   ),
                                                 ],
@@ -2096,19 +1892,14 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleMediumFamily,
+                                                                      .titleMedium,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleMediumFamily),
                                                                 ),
                                                           ),
                                                           AutoSizeText(
@@ -2121,19 +1912,14 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                     .of(context)
                                                                 .displaySmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .displaySmallFamily,
+                                                                      .displaySmall,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .displaySmallFamily),
                                                                 ),
                                                           ),
                                                         ],
@@ -2156,19 +1942,14 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                   context)
                                                               .titleMedium
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleMediumFamily,
+                                                                    .titleMedium,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleMediumFamily),
                                                               ),
                                                     ),
                                                   ),
@@ -2184,20 +1965,13 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                             context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleMedium,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMediumFamily),
                                                         ),
                                                   ),
                                                 ],
@@ -2253,15 +2027,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                         context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmall,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily),
                                                                     ),
                                                               ),
                                                               AutoSizeText(
@@ -2274,8 +2044,14 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Lora',
+                                                                      font: GoogleFonts
+                                                                          .lora(
+                                                                        fontWeight:
+                                                                            FontWeight.normal,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
                                                                       color: Color(
                                                                           0xFF566AA1),
                                                                       fontSize:
@@ -2285,10 +2061,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .normal,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              'Lora'),
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
                                                                     ),
                                                               ),
                                                             ],
@@ -2364,15 +2140,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelSmallFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmall,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).labelSmallFamily),
                                                                   ),
                                                             ),
                                                           ),
@@ -2421,12 +2193,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                           context)
                                                                       .labelSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .labelSmall,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                       ),
                                                                 ),
                                                               ),
@@ -2551,10 +2321,10 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily:
+                                                        font:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmallFamily,
+                                                                .headlineSmall,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -2562,12 +2332,6 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmallFamily),
                                                       ),
                                                 ),
                                               ],
@@ -2623,19 +2387,12 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmallFamily,
+                                              font: FlutterFlowTheme.of(context)
+                                                  .headlineSmall,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .lineColor,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmallFamily),
                                             ),
                                       ),
                                     ],
@@ -2690,18 +2447,11 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium,
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily),
                                                         ),
                                                   ),
                                                 ],
@@ -2759,17 +2509,13 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                     fontSize:
                                                                         14.0,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                   ),
                                                             ),
                                                           ),
@@ -2806,18 +2552,12 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily:
+                                                        font:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMediumFamily,
+                                                                .bodyMedium,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily),
                                                       ),
                                                 ),
                                               ),
@@ -2975,7 +2715,7 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                               ).toString(),
                                                                               textAlign: TextAlign.start,
                                                                               style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                                    font: FlutterFlowTheme.of(context).labelLarge,
                                                                                     color: getJsonField(
                                                                                               list3Item,
                                                                                               r'''$.isDeletedItem''',
@@ -2984,7 +2724,6 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                                         ? FlutterFlowTheme.of(context).primary
                                                                                         : FlutterFlowTheme.of(context).primaryText,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -2997,10 +2736,9 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                                   '083pegpe' /* ₹  */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                      font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       fontSize: 13.0,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                     ),
                                                                               ),
                                                                               Text(
@@ -3010,7 +2748,7 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                                 ).toString(),
                                                                                 textAlign: TextAlign.center,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                      font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       color: getJsonField(
                                                                                                 list3Item,
                                                                                                 r'''$.isDeletedItem''',
@@ -3020,7 +2758,6 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                                           : FlutterFlowTheme.of(context).primaryText,
                                                                                       fontSize: 13.0,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -3145,7 +2882,7 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                                   ).toString(),
                                                                                   textAlign: TextAlign.center,
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
                                                                                         color: getJsonField(
                                                                                                   list3Item,
                                                                                                   r'''$.isDeletedItem''',
@@ -3155,7 +2892,6 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                                             : FlutterFlowTheme.of(context).primaryText,
                                                                                         fontSize: 13.0,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
                                                                                 ),
                                                                               ),
@@ -3211,8 +2947,8 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).titleSmall,
                                                                             color: getJsonField(
                                                                                       list3Item,
                                                                                       r'''$.isDeletedItem''',
@@ -3224,8 +2960,6 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                                                 13.0,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3464,27 +3198,21 @@ class _EditBillNewWidgetState extends State<EditBillNewWidget>
                                                     .getText(
                                                   'figa81h8' /* Save */,
                                                 ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmallFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .headlineSmall
+                                                    .override(
+                                                      font: FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
                                                               .primaryBtnText,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineSmallFamily),
-                                                        ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
                                               ),
                                             ],
                                           ),

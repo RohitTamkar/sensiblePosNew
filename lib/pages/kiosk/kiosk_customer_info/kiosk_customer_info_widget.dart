@@ -117,17 +117,13 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .displayLarge
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .displayLargeFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .displayLarge,
                                         color:
                                             FlutterFlowTheme.of(context).info,
                                         fontSize: 40.0,
                                         letterSpacing: 5.0,
                                         fontWeight: FontWeight.w600,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .displayLargeFamily),
                                       ),
                                 ),
                               ),
@@ -154,18 +150,11 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily,
+                                                  font: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium,
                                                   fontSize: 24.0,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily),
                                                 ),
                                           ),
                                         ),
@@ -184,18 +173,11 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily),
                                                         ),
                                               ),
                                               Container(
@@ -213,18 +195,11 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelMedium,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMediumFamily),
                                                         ),
                                                     hintText:
                                                         FFLocalizations.of(
@@ -236,18 +211,11 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelMedium,
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMediumFamily),
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
@@ -306,18 +274,12 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily:
+                                                        font:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMediumFamily,
+                                                                .bodyMedium,
                                                         fontSize: 24.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily),
                                                       ),
                                                   textAlign: TextAlign.start,
                                                   maxLength: 10,
@@ -413,19 +375,12 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmallFamily,
+                                              font: FlutterFlowTheme.of(context)
+                                                  .titleSmall,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmallFamily),
                                             ),
                                         elevation: 0.0,
                                         borderRadius:
@@ -532,15 +487,10 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily,
+                                            font: FlutterFlowTheme.of(context)
+                                                .titleSmall,
                                             color: Colors.white,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmallFamily),
                                           ),
                                       elevation: 0.0,
                                       borderRadius: BorderRadius.circular(14.0),

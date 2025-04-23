@@ -183,14 +183,10 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).bodyMedium,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
                                   ),
                             ),
                           ],
@@ -248,19 +244,12 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmallFamily,
+                                              font: FlutterFlowTheme.of(context)
+                                                  .headlineSmall,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmallFamily),
                                             ),
                                       ),
                                     ],
@@ -303,21 +292,15 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                           context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily:
+                                                        font:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .titleSmallFamily,
+                                                                .titleSmall,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryBtnText,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmallFamily),
                                                       ),
                                                 ),
                                               ),
@@ -402,18 +385,14 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                                       .of(context)
                                                                   .headlineSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .headlineSmallFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .lineColor,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                   ),
                                                             ),
                                                           ),
@@ -502,10 +481,10 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily:
+                                                        font:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmallFamily,
+                                                                .headlineSmall,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -513,12 +492,6 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmallFamily),
                                                       ),
                                                 ),
                                               ],
@@ -550,10 +523,10 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily:
+                                                        font:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmallFamily,
+                                                                .headlineSmall,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -561,12 +534,6 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmallFamily),
                                                       ),
                                                 ),
                                               ],
@@ -597,10 +564,10 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily:
+                                                        font:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmallFamily,
+                                                                .headlineSmall,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -608,12 +575,6 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmallFamily),
                                                       ),
                                                 ),
                                               ],
@@ -644,10 +605,10 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily:
+                                                        font:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmallFamily,
+                                                                .headlineSmall,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -655,12 +616,6 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmallFamily),
                                                       ),
                                                 ),
                                               ],
@@ -692,10 +647,10 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily:
+                                                        font:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmallFamily,
+                                                                .headlineSmall,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -703,12 +658,6 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmallFamily),
                                                       ),
                                                 ),
                                               ],
@@ -833,9 +782,8 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelSmall
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                font: FlutterFlowTheme.of(context).labelSmall,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                               ),
                                                                         ),
                                                                       ],
@@ -873,9 +821,8 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelSmall
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                font: FlutterFlowTheme.of(context).labelSmall,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                               ),
                                                                         ),
                                                                       ],
@@ -917,9 +864,8 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelSmall
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                font: FlutterFlowTheme.of(context).labelSmall,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                               ),
                                                                         ),
                                                                       ],
@@ -958,9 +904,8 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelSmall
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                font: FlutterFlowTheme.of(context).labelSmall,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
                                                                               ),
                                                                         ),
                                                                       ],
@@ -999,9 +944,8 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .titleMedium
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                font: FlutterFlowTheme.of(context).titleMedium,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                               ),
                                                                         ),
                                                                       ],

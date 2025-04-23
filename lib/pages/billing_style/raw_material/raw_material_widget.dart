@@ -111,25 +111,17 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
                 height: 45.0,
                 searchHintTextStyle:
                     FlutterFlowTheme.of(context).labelMedium.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).labelMediumFamily,
+                          font: FlutterFlowTheme.of(context).labelMedium,
                           letterSpacing: 0.0,
-                          useGoogleFonts: GoogleFonts.asMap().containsKey(
-                              FlutterFlowTheme.of(context).labelMediumFamily),
                         ),
-                searchTextStyle: FlutterFlowTheme.of(context)
-                    .bodyMedium
-                    .override(
-                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                      letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).bodyMediumFamily),
-                    ),
+                searchTextStyle:
+                    FlutterFlowTheme.of(context).bodyMedium.override(
+                          font: FlutterFlowTheme.of(context).bodyMedium,
+                          letterSpacing: 0.0,
+                        ),
                 textStyle: FlutterFlowTheme.of(context).labelSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                      font: FlutterFlowTheme.of(context).labelSmall,
                       letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).labelSmallFamily),
                     ),
                 hintText: FFLocalizations.of(context).getText(
                   'rng3om3v' /* Select... */,
@@ -191,25 +183,18 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
                   obscureText: false,
                   decoration: InputDecoration(
                     isDense: true,
-                    labelStyle: FlutterFlowTheme.of(context)
-                        .labelSmall
-                        .override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).labelSmallFamily,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w600,
-                          useGoogleFonts: GoogleFonts.asMap().containsKey(
-                              FlutterFlowTheme.of(context).labelSmallFamily),
-                        ),
+                    labelStyle:
+                        FlutterFlowTheme.of(context).labelSmall.override(
+                              font: FlutterFlowTheme.of(context).labelSmall,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w600,
+                            ),
                     hintText: FFLocalizations.of(context).getText(
                       'j21owfob' /* TextField */,
                     ),
                     hintStyle: FlutterFlowTheme.of(context).labelSmall.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).labelSmallFamily,
+                          font: FlutterFlowTheme.of(context).labelSmall,
                           letterSpacing: 0.0,
-                          useGoogleFonts: GoogleFonts.asMap().containsKey(
-                              FlutterFlowTheme.of(context).labelSmallFamily),
                         ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -243,11 +228,8 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   style: FlutterFlowTheme.of(context).labelSmall.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).labelSmallFamily,
+                        font: FlutterFlowTheme.of(context).labelSmall,
                         letterSpacing: 0.0,
-                        useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).labelSmallFamily),
                       ),
                   cursorColor: FlutterFlowTheme.of(context).primaryText,
                   validator:
@@ -279,25 +261,17 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
                 height: 45.0,
                 searchHintTextStyle:
                     FlutterFlowTheme.of(context).labelMedium.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).labelMediumFamily,
+                          font: FlutterFlowTheme.of(context).labelMedium,
                           letterSpacing: 0.0,
-                          useGoogleFonts: GoogleFonts.asMap().containsKey(
-                              FlutterFlowTheme.of(context).labelMediumFamily),
                         ),
-                searchTextStyle: FlutterFlowTheme.of(context)
-                    .bodyMedium
-                    .override(
-                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                      letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).bodyMediumFamily),
-                    ),
+                searchTextStyle:
+                    FlutterFlowTheme.of(context).bodyMedium.override(
+                          font: FlutterFlowTheme.of(context).bodyMedium,
+                          letterSpacing: 0.0,
+                        ),
                 textStyle: FlutterFlowTheme.of(context).labelSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                      font: FlutterFlowTheme.of(context).labelSmall,
                       letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).labelSmallFamily),
                     ),
                 hintText: FFLocalizations.of(context).getText(
                   'ymr652kj' /* Select... */,
@@ -359,28 +333,20 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
                   obscureText: false,
                   decoration: InputDecoration(
                     isDense: true,
-                    labelStyle: FlutterFlowTheme.of(context)
-                        .labelSmall
-                        .override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).labelSmallFamily,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w600,
-                          useGoogleFonts: GoogleFonts.asMap().containsKey(
-                              FlutterFlowTheme.of(context).labelSmallFamily),
-                        ),
+                    labelStyle:
+                        FlutterFlowTheme.of(context).labelSmall.override(
+                              font: FlutterFlowTheme.of(context).labelSmall,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w600,
+                            ),
                     hintText: FFLocalizations.of(context).getText(
                       'igxfr4ar' /* TextField */,
                     ),
-                    hintStyle: FlutterFlowTheme.of(context)
-                        .labelMedium
-                        .override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).labelMediumFamily,
-                          letterSpacing: 0.0,
-                          useGoogleFonts: GoogleFonts.asMap().containsKey(
-                              FlutterFlowTheme.of(context).labelMediumFamily),
-                        ),
+                    hintStyle:
+                        FlutterFlowTheme.of(context).labelMedium.override(
+                              font: FlutterFlowTheme.of(context).labelMedium,
+                              letterSpacing: 0.0,
+                            ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).customColor2,
@@ -413,11 +379,8 @@ class _RawMaterialWidgetState extends State<RawMaterialWidget> {
                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   style: FlutterFlowTheme.of(context).labelSmall.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).labelSmallFamily,
+                        font: FlutterFlowTheme.of(context).labelSmall,
                         letterSpacing: 0.0,
-                        useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).labelSmallFamily),
                       ),
                   cursorColor: FlutterFlowTheme.of(context).primaryText,
                   validator:

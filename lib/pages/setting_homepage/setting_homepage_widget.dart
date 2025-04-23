@@ -170,16 +170,11 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmallFamily,
+                                          font: FlutterFlowTheme.of(context)
+                                              .headlineSmall,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmallFamily),
                                         ),
                                   ),
                                 ],
@@ -281,17 +276,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleMedium,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMediumFamily),
                                                         ),
                                               ),
                                             ],
@@ -421,17 +409,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleMedium,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMediumFamily),
                                                         ),
                                               ),
                                             ],
@@ -501,17 +482,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleMedium,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMediumFamily),
                                                         ),
                                               ),
                                             ],
@@ -580,17 +554,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleMedium,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMediumFamily),
                                                         ),
                                               ),
                                             ],
@@ -659,17 +626,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleMedium,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMediumFamily),
                                                         ),
                                               ),
                                             ],
@@ -738,17 +698,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleMedium,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMediumFamily),
                                                         ),
                                               ),
                                             ],
@@ -863,15 +816,11 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                       .of(context)
                                                                   .titleMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleMediumFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMedium,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).titleMediumFamily),
                                                                   ),
                                                             ),
                                                             Padding(
@@ -1045,15 +994,11 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                       .of(context)
                                                                   .titleMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleMediumFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMedium,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).titleMediumFamily),
                                                                   ),
                                                             ),
                                                             Container(
@@ -1215,17 +1160,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                             context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleMedium,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMediumFamily),
                                                         ),
                                                   ),
                                                 ),
@@ -1305,17 +1243,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                             context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleMedium,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMediumFamily),
                                                         ),
                                                   ),
                                                 ),
@@ -1515,10 +1446,9 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                                 AutoSizeText(
                                                                                   containerOutletDetailOutletRecord.name,
                                                                                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
+                                                                                        font: FlutterFlowTheme.of(context).headlineMedium,
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineMediumFamily),
                                                                                       ),
                                                                                 ),
                                                                               ],
@@ -1540,18 +1470,16 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                                     'hepzsyp4' /* Branch:  */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleMedium,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                       ),
                                                                                 ),
                                                                                 Text(
                                                                                   containerOutletDetailOutletRecord.branch,
                                                                                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleMedium,
                                                                                         color: FlutterFlowTheme.of(context).primary,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                       ),
                                                                                 ),
                                                                               ],
@@ -1574,17 +1502,15 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                                     'kypmsbxa' /* User:  */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleMedium,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                       ),
                                                                                 ),
                                                                                 AutoSizeText(
                                                                                   containerUserProfileRecord.name,
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
                                                                                 ),
                                                                               ],
@@ -1607,17 +1533,15 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                                     'kfy1yjnn' /* Role:  */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleMedium,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                       ),
                                                                                 ),
                                                                                 AutoSizeText(
                                                                                   containerUserProfileRecord.role,
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
                                                                                 ),
                                                                               ],
@@ -1639,17 +1563,15 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                                     '2jgr6udw' /* MobileNo:  */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                        font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                 ),
                                                                                 Text(
                                                                                   containerUserProfileRecord.mobile,
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
                                                                                 ),
                                                                               ],
@@ -1672,9 +1594,8 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                                     'kbsrsouj' /* Serial No :  */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleMedium,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                       ),
                                                                                 ),
                                                                                 AutoSizeText(
@@ -1683,9 +1604,8 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                                     '00000',
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
                                                                                 ),
                                                                               ],
@@ -1708,18 +1628,16 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                                     'yxfk0942' /* Version :  */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleMedium,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                       ),
                                                                                 ),
                                                                                 AutoSizeText(
                                                                                   containerDeviceRecord!.versionName,
                                                                                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleMedium,
                                                                                         color: FlutterFlowTheme.of(context).primary,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                       ),
                                                                                 ),
                                                                               ],
@@ -1825,12 +1743,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                           context)
                                                                       .titleMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleMedium,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -1843,12 +1759,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -1861,12 +1775,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                                 ),
                                                               ],
@@ -1921,18 +1833,14 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
                                                                     ),
                                                               ),
                                                             ],
@@ -1949,16 +1857,11 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                     .of(context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleMediumFamily,
+                                                                      .titleMedium,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleMediumFamily),
                                                                 ),
                                                           ),
                                                         ],
@@ -2084,17 +1987,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily),
                                                         ),
                                                 hintText:
                                                     FFLocalizations.of(context)
@@ -2249,9 +2145,9 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMediumFamily,
+                                                                      .bodyMedium,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
@@ -2262,11 +2158,6 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily),
                                                                 ),
                                                           ),
                                                         ],

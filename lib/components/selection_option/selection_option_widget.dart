@@ -148,19 +148,12 @@ class _SelectionOptionWidgetState extends State<SelectionOptionWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMediumFamily,
+                                              font: FlutterFlowTheme.of(context)
+                                                  .titleMedium,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .lineColor,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleMediumFamily),
                                             ),
                                       ),
                                     ],
@@ -214,19 +207,13 @@ class _SelectionOptionWidgetState extends State<SelectionOptionWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily:
+                                                font:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleMediumFamily,
+                                                        .titleMedium,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .lineColor,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMediumFamily),
                                               ),
                                         ),
                                       ],
@@ -283,19 +270,13 @@ class _SelectionOptionWidgetState extends State<SelectionOptionWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily:
+                                                font:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleMediumFamily,
+                                                        .titleMedium,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .lineColor,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMediumFamily),
                                               ),
                                         ),
                                       ],
@@ -352,19 +333,13 @@ class _SelectionOptionWidgetState extends State<SelectionOptionWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily:
+                                                font:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleMediumFamily,
+                                                        .titleMedium,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .lineColor,
                                                 letterSpacing: 0.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMediumFamily),
                                               ),
                                         ),
                                       ],

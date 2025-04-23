@@ -161,15 +161,11 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
                           style: FlutterFlowTheme.of(context)
                               .displayLarge
                               .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .displayLargeFamily,
+                                font: FlutterFlowTheme.of(context).displayLarge,
                                 color: FlutterFlowTheme.of(context).info,
                                 fontSize: 40.0,
                                 letterSpacing: 5.0,
                                 fontWeight: FontWeight.w600,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .displayLargeFamily),
                               ),
                         ),
                       ),
@@ -223,17 +219,12 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .displayLarge
                                           .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .displayLargeFamily,
+                                            font: FlutterFlowTheme.of(context)
+                                                .displayLarge,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
                                             fontSize: 36.0,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .displayLargeFamily),
                                           ),
                                     ),
                                   ),
@@ -301,20 +292,13 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .displayLarge
                                             .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .displayLargeFamily,
+                                              font: FlutterFlowTheme.of(context)
+                                                  .displayLarge,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
                                               fontSize: 36.0,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .displayLargeFamily),
                                             ),
                                       ),
                                     ),

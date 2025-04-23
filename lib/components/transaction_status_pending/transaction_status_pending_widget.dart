@@ -76,11 +76,9 @@ class _TransactionStatusPendingWidgetState
                   'tgkxu3e9' /* Receipt */,
                 ),
                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      font: FlutterFlowTheme.of(context).titleSmall,
                       color: FlutterFlowTheme.of(context).alternate,
                       letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
               ),
             ],
@@ -94,13 +92,10 @@ class _TransactionStatusPendingWidgetState
                   'pnmy6wlj' /* Payment Pending */,
                 ),
                 style: FlutterFlowTheme.of(context).displaySmall.override(
-                      fontFamily:
-                          FlutterFlowTheme.of(context).displaySmallFamily,
+                      font: FlutterFlowTheme.of(context).displaySmall,
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       fontSize: 26.0,
                       letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).displaySmallFamily),
                     ),
               ),
             ],
@@ -145,12 +140,9 @@ class _TransactionStatusPendingWidgetState
               Text(
                 ' ₹ ${FFAppState().kioskAmt.toString()}',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily:
-                          FlutterFlowTheme.of(context).headlineMediumFamily,
+                      font: FlutterFlowTheme.of(context).headlineMedium,
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).headlineMediumFamily),
                     ),
               ),
             ],
@@ -166,12 +158,9 @@ class _TransactionStatusPendingWidgetState
                     'No msg',
                   ),
                   style: FlutterFlowTheme.of(context).labelLarge.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).labelLargeFamily,
+                        font: FlutterFlowTheme.of(context).labelLarge,
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         letterSpacing: 0.0,
-                        useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).labelLargeFamily),
                       ),
                 ),
               ),
@@ -191,12 +180,10 @@ class _TransactionStatusPendingWidgetState
                   'a3sev9uo' /* Redirects automaticaly */,
                 ),
                 style: FlutterFlowTheme.of(context).labelLarge.override(
-                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                      font: FlutterFlowTheme.of(context).labelLarge,
                       color: FlutterFlowTheme.of(context).primary,
                       fontSize: 16.0,
                       letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).labelLargeFamily),
                     ),
               ),
             ],

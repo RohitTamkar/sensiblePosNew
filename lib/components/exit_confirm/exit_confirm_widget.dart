@@ -66,11 +66,8 @@ class _ExitConfirmWidgetState extends State<ExitConfirmWidget> {
                       'w9mt4rjw' /* Are you sure, you want to exit... */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineLarge.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).headlineLargeFamily,
+                          font: FlutterFlowTheme.of(context).headlineLarge,
                           letterSpacing: 0.0,
-                          useGoogleFonts: GoogleFonts.asMap().containsKey(
-                              FlutterFlowTheme.of(context).headlineLargeFamily),
                         ),
                   ),
                 ],
@@ -119,12 +116,9 @@ class _ExitConfirmWidgetState extends State<ExitConfirmWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .displayMedium
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .displayMediumFamily,
+                                  font: FlutterFlowTheme.of(context)
+                                      .displayMedium,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .displayMediumFamily),
                                 ),
                           ),
                         ],
@@ -160,12 +154,9 @@ class _ExitConfirmWidgetState extends State<ExitConfirmWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .displaySmallFamily,
+                                  font:
+                                      FlutterFlowTheme.of(context).displaySmall,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .displaySmallFamily),
                                 ),
                           ),
                         ],

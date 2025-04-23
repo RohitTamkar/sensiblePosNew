@@ -264,23 +264,16 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                       .getText(
                                                     'f04v59hc' /* Search Product */,
                                                   ),
-                                                  hintStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodySmall
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodySmallFamily,
-                                                            letterSpacing: 0.0,
-                                                            useGoogleFonts: GoogleFonts
-                                                                    .asMap()
-                                                                .containsKey(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodySmallFamily),
-                                                          ),
+                                                  hintStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .bodySmall
+                                                      .override(
+                                                        font:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmall,
+                                                        letterSpacing: 0.0,
+                                                      ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
@@ -342,17 +335,10 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily,
+                                                          font: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium,
                                                           letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily),
                                                         ),
                                                 validator: _model
                                                     .textFieldsearchProdTextControllerValidator
@@ -531,12 +517,10 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).headlineSmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                           ),
                                                                     ),
                                                                   ],
@@ -671,9 +655,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).headlineSmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ],
@@ -753,16 +736,11 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmallFamily,
+                                          font: FlutterFlowTheme.of(context)
+                                              .headlineSmall,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmallFamily),
                                         ),
                                   ),
                                 ],
@@ -885,16 +863,11 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                   context)
                                                               .titleMedium
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleMediumFamily,
+                                                                    .titleMedium,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleMediumFamily),
                                                               ),
                                                     ),
                                                   ),
@@ -999,19 +972,14 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                   context)
                                                               .titleSmall
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmallFamily,
+                                                                    .titleSmall,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .lineColor,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleSmallFamily),
                                                               ),
                                                       elevation: 2.0,
                                                       borderSide: BorderSide(
@@ -1137,19 +1105,14 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                   context)
                                                               .titleSmall
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmallFamily,
+                                                                    .titleSmall,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .lineColor,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleSmallFamily),
                                                               ),
                                                       elevation: 2.0,
                                                       borderSide: BorderSide(
@@ -1232,15 +1195,11 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleSmallFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
                                                             ),
                                                           ),
@@ -1322,10 +1281,9 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                             ),
                                                                         hintText:
                                                                             FFLocalizations.of(context).getText(
@@ -1391,15 +1349,11 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleSmallFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
                                                             ),
                                                           ),
@@ -1452,12 +1406,10 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .bodySmall,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                       ),
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
@@ -1549,15 +1501,11 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                     ),
                                                                 validator: _model
                                                                     .textController1Validator
@@ -1598,15 +1546,11 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleSmallFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
                                                             ),
                                                           ),
@@ -1658,12 +1602,10 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .bodySmall,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                       ),
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
@@ -1755,15 +1697,11 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                     ),
                                                                 keyboardType:
                                                                     TextInputType
@@ -1850,9 +1788,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).titleSmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1932,10 +1869,9 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                       width: 180.0,
                                                                                       height: 50.0,
                                                                                       textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                             color: Colors.black,
                                                                                             letterSpacing: 0.0,
-                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       hintText: FFLocalizations.of(context).getText(
                                                                                         'tsfuqqz3' /* Please select... */,
@@ -2005,9 +1941,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).titleSmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2063,10 +1998,9 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                   width: 180.0,
                                                                                   height: 50.0,
                                                                                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                        font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                         color: Colors.black,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   hintText: FFLocalizations.of(context).getText(
                                                                                     '415ktlmo' /* Please select... */,
@@ -2134,9 +2068,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).titleSmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2214,10 +2147,9 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                       width: 180.0,
                                                                                       height: 50.0,
                                                                                       textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                             color: Colors.black,
                                                                                             letterSpacing: 0.0,
-                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       hintText: FFLocalizations.of(context).getText(
                                                                                         'g3wbtvvk' /* Please select... */,
@@ -2287,9 +2219,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).titleSmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2347,10 +2278,9 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                   width: 180.0,
                                                                                   height: 50.0,
                                                                                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                        font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                         color: Colors.black,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
                                                                                   hintText: FFLocalizations.of(context).getText(
                                                                                     'm4fhhf8x' /* Please select... */,
@@ -2436,9 +2366,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                   '3a183utl' /* Best Before */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -2466,9 +2395,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                           ),
                                                                                           textAlign: TextAlign.center,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                               ),
                                                                                         ),
                                                                                       ),
@@ -2514,9 +2442,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                   '1jo4vpxe' /* Batch No */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -2547,9 +2474,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                               'f4wf57l9' /* Batch No */,
                                                                                             ),
                                                                                             hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                 ),
                                                                                             enabledBorder: OutlineInputBorder(
                                                                                               borderSide: BorderSide(
@@ -2593,9 +2519,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                             ),
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                               ),
                                                                                           keyboardType: TextInputType.number,
                                                                                           validator: _model.textController3Validator.asValidator(context),
@@ -2649,9 +2574,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                 'rlv2jan2' /* Search Code */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -2690,9 +2614,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                             'ru88e90m' /* Search Code */,
                                                                                           ),
                                                                                           hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                               ),
                                                                                           enabledBorder: OutlineInputBorder(
                                                                                             borderSide: BorderSide(
@@ -2736,9 +2659,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                               letterSpacing: 0.0,
-                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                             ),
                                                                                         keyboardType: TextInputType.number,
                                                                                         validator: _model.textController4Validator.asValidator(context),
@@ -2792,9 +2714,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                 'w8xwtat7' /* Short Name */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -2833,9 +2754,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                             'i421oso6' /* Short Name */,
                                                                                           ),
                                                                                           hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                               ),
                                                                                           enabledBorder: OutlineInputBorder(
                                                                                             borderSide: BorderSide(
@@ -2879,9 +2799,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                               letterSpacing: 0.0,
-                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                             ),
                                                                                         validator: _model.textController5Validator.asValidator(context),
                                                                                       ),
@@ -2928,9 +2847,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                               'xes5jfx9' /* HSN Code */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -2972,9 +2890,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                           'agxu2awt' /* HSN Code */,
                                                                                         ),
                                                                                         hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                                               letterSpacing: 0.0,
-                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                             ),
                                                                                         enabledBorder: OutlineInputBorder(
                                                                                           borderSide: BorderSide(
@@ -3018,9 +2935,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                         ),
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                             letterSpacing: 0.0,
-                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
                                                                                       validator: _model.textController6Validator.asValidator(context),
                                                                                     ),
@@ -3087,9 +3003,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                     '0vo0q6lr' /* CESS Percent */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
                                                                                 ),
                                                                               ),
@@ -3121,9 +3036,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                                 '4p9bweis' /* CESS Percent */,
                                                                                               ),
                                                                                               hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                     letterSpacing: 0.0,
-                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                   ),
                                                                                               enabledBorder: OutlineInputBorder(
                                                                                                 borderSide: BorderSide(
@@ -3167,9 +3081,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                               ),
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                 ),
                                                                                             keyboardType: TextInputType.number,
                                                                                             validator: _model.textController7Validator.asValidator(context),
@@ -3217,9 +3130,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                     'ivifgzmr' /* CESS Amt. */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
                                                                                 ),
                                                                               ),
@@ -3251,9 +3163,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                                 'ekhxyqvv' /* CESS Amt */,
                                                                                               ),
                                                                                               hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                     letterSpacing: 0.0,
-                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                   ),
                                                                                               enabledBorder: OutlineInputBorder(
                                                                                                 borderSide: BorderSide(
@@ -3297,9 +3208,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                               ),
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                 ),
                                                                                             keyboardType: TextInputType.number,
                                                                                             validator: _model.textController8Validator.asValidator(context),
@@ -3345,9 +3255,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                   'o408hlbg' /* Selling price */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -3381,9 +3290,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                               't7ta1rhq' /* Selling  Price */,
                                                                                             ),
                                                                                             hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                 ),
                                                                                             enabledBorder: OutlineInputBorder(
                                                                                               borderSide: BorderSide(
@@ -3427,9 +3335,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                             ),
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                               ),
                                                                                           keyboardType: TextInputType.number,
                                                                                           validator: _model.textController9Validator.asValidator(context),
@@ -3475,9 +3382,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                   '8kfom03a' /* Purchace price */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -3511,9 +3417,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                               'n5l73o86' /* Cost Price */,
                                                                                             ),
                                                                                             hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                 ),
                                                                                             enabledBorder: OutlineInputBorder(
                                                                                               borderSide: BorderSide(
@@ -3557,9 +3462,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                             ),
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                               ),
                                                                                           keyboardType: TextInputType.number,
                                                                                           validator: _model.textController10Validator.asValidator(context),
@@ -3605,9 +3509,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                 '6cxlyhc5' /* MRP Price */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -3646,9 +3549,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                             's4y12t1o' /* MRP Price */,
                                                                                           ),
                                                                                           hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                               ),
                                                                                           enabledBorder: OutlineInputBorder(
                                                                                             borderSide: BorderSide(
@@ -3692,9 +3594,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                           ),
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                               letterSpacing: 0.0,
-                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                             ),
                                                                                         keyboardType: TextInputType.number,
                                                                                         validator: _model.textController11Validator.asValidator(context),
@@ -3761,9 +3662,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                   'fgx4tf15' /* Discount */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -3797,9 +3697,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                               '36d8v8zs' /* Discount */,
                                                                                             ),
                                                                                             hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                 ),
                                                                                             enabledBorder: OutlineInputBorder(
                                                                                               borderSide: BorderSide(
@@ -3843,9 +3742,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                             ),
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                               ),
                                                                                           keyboardType: TextInputType.number,
                                                                                           validator: _model.textController12Validator.asValidator(context),
@@ -3891,9 +3789,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                   'gq2ryi0f' /* Dis.Amt. */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -3927,9 +3824,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                               '2t0nke1h' /* Discount Amt */,
                                                                                             ),
                                                                                             hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                 ),
                                                                                             enabledBorder: OutlineInputBorder(
                                                                                               borderSide: BorderSide(
@@ -3973,9 +3869,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                             ),
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                               ),
                                                                                           keyboardType: TextInputType.number,
                                                                                           validator: _model.textController13Validator.asValidator(context),
@@ -4023,10 +3918,9 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                     '3ihcj1cp' /* Current Stock */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
                                                                                         color: Color(0xFF3B58FF),
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
                                                                                 ),
                                                                               ),
@@ -4049,10 +3943,9 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                             'ayk19x02' /* Current Stock */,
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                 color: Color(0xFF3B58FF),
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -4106,11 +3999,10 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                       'xj3gswmp' /* Weightable */,
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                          font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                           fontSize: 11.0,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                         ),
                                                                                   ),
                                                                                   tileColor: Color(0xFFF5F5F5),
@@ -4163,10 +4055,9 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                     'vcalqbju' /* Stockable */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                        font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                         fontSize: 12.0,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                       ),
                                                                                 ),
                                                                                 tileColor: Color(0xFFF5F5F5),
@@ -4244,9 +4135,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                               'j61v0fnl' /* Table Price */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -4276,9 +4166,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                   's8k78q7f' /* Table Price */,
                                                                                 ),
                                                                                 hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).bodySmall,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                     ),
                                                                                 enabledBorder: OutlineInputBorder(
                                                                                   borderSide: BorderSide(
@@ -4324,9 +4213,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                 fillColor: FlutterFlowTheme.of(context).customColor3,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               keyboardType: TextInputType.number,
                                                                               validator: _model.textController14Validator.asValidator(context),
@@ -4358,9 +4246,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                               'xjhtirkb' /* AC Price */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -4390,9 +4277,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                   'm5rh4zi2' /* AC Price */,
                                                                                 ),
                                                                                 hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).bodySmall,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                     ),
                                                                                 enabledBorder: OutlineInputBorder(
                                                                                   borderSide: BorderSide(
@@ -4438,9 +4324,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                 fillColor: FlutterFlowTheme.of(context).customColor3,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               validator: _model.textController15Validator.asValidator(context),
                                                                             ),
@@ -4471,9 +4356,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                               'h86bgcyt' /* Hall Price */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -4503,9 +4387,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                   'ixcjq0b1' /* Hall Price */,
                                                                                 ),
                                                                                 hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).bodySmall,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                     ),
                                                                                 enabledBorder: OutlineInputBorder(
                                                                                   borderSide: BorderSide(
@@ -4551,9 +4434,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                 fillColor: FlutterFlowTheme.of(context).customColor3,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                   ),
                                                                               keyboardType: TextInputType.number,
                                                                               validator: _model.textController16Validator.asValidator(context),
@@ -4598,9 +4480,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                 'arikdy7w' /* Parcel Price */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -4625,9 +4506,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                     'm0tktbbs' /* Parcel Price */,
                                                                                   ),
                                                                                   hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                        font: FlutterFlowTheme.of(context).bodySmall,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                       ),
                                                                                   enabledBorder: OutlineInputBorder(
                                                                                     borderSide: BorderSide(
@@ -4673,9 +4553,8 @@ class _UpdateProductWidgetState extends State<UpdateProductWidget> {
                                                                                   fillColor: FlutterFlowTheme.of(context).customColor3,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                      font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                     ),
                                                                                 validator: _model.textController17Validator.asValidator(context),
                                                                               ),

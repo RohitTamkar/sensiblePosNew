@@ -109,15 +109,11 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineMedium
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .headlineMediumFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .headlineMedium,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineMediumFamily),
                                       ),
                                 ),
                               ],
@@ -279,12 +275,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           context)
                                                                       .headlineSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .headlineSmall,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                       ),
                                                                 ),
                                                                 tileColor: Color(
@@ -366,14 +360,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).titleSmall,
                                                                           color:
                                                                               Colors.white,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                         ),
                                                                     elevation:
                                                                         2.0,
@@ -460,12 +452,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           context)
                                                                       .headlineSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .headlineSmall,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                       ),
                                                                 ),
                                                                 tileColor: Color(
@@ -547,14 +537,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).titleSmall,
                                                                           color:
                                                                               Colors.white,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                         ),
                                                                     elevation:
                                                                         2.0,
@@ -641,12 +629,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           context)
                                                                       .headlineSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .headlineSmall,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                       ),
                                                                 ),
                                                                 activeColor:
@@ -726,14 +712,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).titleSmall,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryBtnText,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                         ),
                                                                     elevation:
                                                                         2.0,
@@ -825,12 +809,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             context)
                                                                         .headlineSmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).headlineSmall,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                         ),
                                                                   ),
                                                                   activeColor:
@@ -908,14 +890,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).titleSmall,
                                                                             color:
                                                                                 Colors.white,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                           ),
                                                                       elevation:
                                                                           2.0,
@@ -1002,12 +982,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           context)
                                                                       .headlineSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .headlineSmall,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                       ),
                                                                 ),
                                                                 activeColor:
@@ -1087,14 +1065,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).titleSmall,
                                                                           color:
                                                                               Colors.white,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                         ),
                                                                     elevation:
                                                                         2.0,
@@ -1202,9 +1178,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               'nhkw02du' /* SELECT BILLING SCREEN */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -1262,12 +1237,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -1304,12 +1277,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -1346,12 +1317,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -1388,12 +1357,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -1430,12 +1397,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -1539,9 +1504,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               '3vk2u1eb' /* BILLING SCREEN OPTION */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -1596,12 +1560,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -1638,12 +1600,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -1680,12 +1640,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     subtitle:
@@ -1699,14 +1657,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -1743,12 +1699,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -1785,12 +1739,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -1827,12 +1779,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -1936,9 +1886,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               'iu72vdlq' /* BILL SETTING */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -1993,12 +1942,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -2096,9 +2043,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 '3upohh55' /*  2. RESET BILL NUMBER */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -2132,12 +2078,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -2174,12 +2118,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -2283,9 +2225,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               '4u703xkh' /* PRODUCT  SETTING */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -2340,12 +2281,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -2382,12 +2321,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -2424,12 +2361,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -2466,12 +2401,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor: FlutterFlowTheme.of(
@@ -2522,10 +2455,9 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                   't69j8kdg' /* PRINT SETTING */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
                                                                                       color: FlutterFlowTheme.of(context).primary,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -2560,14 +2492,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     dense: true,
@@ -2607,14 +2537,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     dense:
@@ -2648,14 +2576,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     dense: true,
@@ -2688,14 +2614,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     dense:
@@ -2800,9 +2724,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .headlineSmall
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                               ),
                                                                         ),
                                                                       ),
@@ -2869,9 +2792,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'z7ucq11s' /* 1. CALCULATE REVERSE QUNTITY */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             tileColor:
@@ -2899,9 +2821,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'yjab5wof' /* 2. DISABLE SORTING IN HOT KEY */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -2942,9 +2863,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                       'g62ukzbx' /* 3. WEIGHT START WITH (+)/(-) */,
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                          font: FlutterFlowTheme.of(context).bodySmall,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                         ),
                                                                                   ),
                                                                                   Expanded(
@@ -2967,9 +2887,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                         width: 240.0,
                                                                                         height: 30.0,
                                                                                         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
                                                                                               letterSpacing: 0.0,
-                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                             ),
                                                                                         hintText: FFLocalizations.of(context).getText(
                                                                                           'wayr45fs' /* PLEASE SELECT */,
@@ -3008,9 +2927,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'aby2acy6' /* 4. OPEN SOFT KEYBOARD */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3040,9 +2958,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'ai9an2o6' /* 5. SHOW PRINT BUTTON AFTER PAY */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3072,9 +2989,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'n038r8mi' /* 6. ENABLE THREE CHARECTER  SEA... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3131,9 +3047,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 '0x9yzx00' /* 7. ENABLE MANUAL PRICE */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3163,9 +3078,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'hh6cdhqu' /* 8. ESTIMATE MODE ENABLE/DISABL... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3195,9 +3109,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'ncpv4ggk' /* 9. ENABLE EDITING IN SETTELEME... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3227,9 +3140,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'zcg64h2a' /* 10. ENABLE OPEN PRICE */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3270,9 +3182,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                         'nn54xu1v' /* 11. PRODUCT LIST TYPE */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                            fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                            font: FlutterFlowTheme.of(context).bodySmall,
                                                                                             letterSpacing: 0.0,
-                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -3296,9 +3207,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                       width: 240.0,
                                                                                       height: 30.0,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                            fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                            font: FlutterFlowTheme.of(context).titleSmall,
                                                                                             letterSpacing: 0.0,
-                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                           ),
                                                                                       hintText: FFLocalizations.of(context).getText(
                                                                                         'exc5wp3c' /* PLEASE SELECT */,
@@ -3336,9 +3246,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 '6gslr0h7' /* 12. ENABLE COMBO PRICE UPDATE */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3368,9 +3277,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'kt2pve0y' /* 13. ENABLE ONLINE ORDER SYSTEM */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3400,9 +3308,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'itjz6yt8' /* 14. BILL MODIFICATION (USER) */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3428,9 +3335,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'gyy3exck' /* 15. ENABLE STORE */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3460,9 +3366,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 '8dbqhpwc' /* 16. ENABLE WEGHT MINUS */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3492,9 +3397,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'wuiqu0qn' /* 17. ENABLE STOCK GETTING IN MI... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3524,9 +3428,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'q7aqps3f' /* 18. ENABLE A4 DELIVERY NOTE */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3556,9 +3459,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 '7y6scsix' /* 19. HIDE KEYBOARD */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -3670,9 +3572,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .headlineSmall
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                               ),
                                                                         ),
                                                                       ),
@@ -3732,9 +3633,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       subtitle:
@@ -3746,11 +3646,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                               fontSize: 10.0,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       dense:
@@ -3784,9 +3683,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       dense:
@@ -3820,9 +3718,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       tileColor:
@@ -3859,9 +3756,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       dense:
@@ -3964,9 +3860,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               'i4xd2l4q' /* SHIFT SETTING */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -4021,9 +3916,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       tileColor:
@@ -4155,9 +4049,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               'whwu0x0u' /* TABLE SETTING */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -4212,12 +4105,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -4254,12 +4145,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -4296,12 +4185,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -4338,12 +4225,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -4380,12 +4265,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -4491,9 +4374,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               '1daghkmw' /* KOT SETTING */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -4548,12 +4430,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -4590,12 +4470,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -4632,12 +4510,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -4674,12 +4550,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -4785,9 +4659,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               '6rnk49aa' /* CUSTOMER SETTING */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -4842,9 +4715,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       tileColor:
@@ -4881,9 +4753,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       tileColor:
@@ -4920,9 +4791,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       tileColor:
@@ -4959,9 +4829,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       tileColor:
@@ -4998,9 +4867,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       tileColor:
@@ -5037,9 +4905,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       tileColor:
@@ -5076,9 +4943,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       tileColor:
@@ -5115,9 +4981,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       tileColor:
@@ -5225,9 +5090,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               '5wh8ydmt' /* BARCODE SETTING */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -5282,9 +5146,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       tileColor:
@@ -5392,9 +5255,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               'qc339nve' /* RFID SETTING */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -5449,12 +5311,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -5491,12 +5351,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -5602,9 +5460,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               'fz9luav4' /* SALESMAN SETTING */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -5659,9 +5516,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       tileColor:
@@ -5698,9 +5554,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
                                                                       ),
                                                                       tileColor:
@@ -5810,9 +5665,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .headlineSmall
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                               ),
                                                                         ),
                                                                       ),
@@ -5868,12 +5722,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodySmall,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                         ),
                                                                   ),
                                                                   tileColor: Color(
@@ -5909,12 +5761,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodySmall,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                         ),
                                                                   ),
                                                                   subtitle:
@@ -5928,12 +5778,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).titleSmall,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                         ),
                                                                   ),
                                                                   tileColor: Color(
@@ -6040,9 +5888,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .headlineSmall
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                               ),
                                                                         ),
                                                                       ),
@@ -6111,9 +5958,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'runsgg02' /* 1. DUPLICATE BILL ENABLE/DISAB... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6139,9 +5985,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'btv3p0wo' /* 2. ENABLE DOUBLE PRINT */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6167,9 +6012,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'ic9174mi' /* 3. ENABLE LARGE BILL FONT [USB... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6195,9 +6039,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'te1bq39y' /* 4. ENABLE BILL PRINT SERVICES ... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6223,9 +6066,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 '2n0n65gr' /* 5. ENABLE FONT BOLD NET TOTAL ... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6251,9 +6093,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'td5e6rdg' /* 6. ENABLE BILL AMOUNT IN WORDS */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6279,9 +6120,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'qvgmg4ks' /* 7. ENABLE SIGNATURE BILL */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6311,9 +6151,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 '1ujucmb1' /* 9. ENABLE UNIT TYPE ON BILL */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6339,9 +6178,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 '49nkgy3q' /* 10. ENABLE USER NAME ON BILL */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6367,9 +6205,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'wl23faf2' /* 12. ENABLE REGIONAL KOT PRINT ... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6395,9 +6232,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'a40ryzmc' /* 13. DONT PRINT RATE COLUMN  */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6423,9 +6259,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'y2co25xj' /* 14. DON'T PRINT SERIAL NO.IN B... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6451,9 +6286,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'vicka6je' /* 15. DONT PRINT BILL NO.IN BILL */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6479,9 +6313,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 '6ia8joz3' /* 16. ENABLE BILL REMARK  */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6511,9 +6344,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 '95axuhfg' /* 19. ENABLE TOTAL  QTY ON BILL */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6543,9 +6375,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 '63kjuvn0' /* 20. ENABLE BARCODE ON BILL */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6575,9 +6406,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'kok280yq' /* 22. ENABLE PRINT DISCOUNT ON B... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6607,9 +6437,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'bm7d9c91' /* 23. ENABLE COUPON/ KOT SUMMARY... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6639,9 +6468,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 'b8qoydk0' /* 23. ENABLE COLUMN PRODUST NAME... */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                             dense:
@@ -6747,9 +6575,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).headlineSmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -6807,12 +6634,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodySmall,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                         ),
                                                                   ),
                                                                   tileColor: Color(
@@ -6848,12 +6673,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodySmall,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                         ),
                                                                   ),
                                                                   tileColor: Color(
@@ -6881,14 +6704,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           context)
                                                                       .headlineSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .headlineSmall,
                                                                         color: Color(
                                                                             0xFF3B58FF),
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                       ),
                                                                 ),
                                                               ),
@@ -6927,9 +6748,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodySmall
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                font: FlutterFlowTheme.of(context).bodySmall,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                               ),
                                                                         ),
                                                                         tileColor:
@@ -6961,9 +6781,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodySmall
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                font: FlutterFlowTheme.of(context).bodySmall,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                               ),
                                                                         ),
                                                                         tileColor:
@@ -6995,9 +6814,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodySmall
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                font: FlutterFlowTheme.of(context).bodySmall,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                               ),
                                                                         ),
                                                                         tileColor:
@@ -7029,9 +6847,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodySmall
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                font: FlutterFlowTheme.of(context).bodySmall,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                               ),
                                                                         ),
                                                                         tileColor:
@@ -7063,9 +6880,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodySmall
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                font: FlutterFlowTheme.of(context).bodySmall,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                               ),
                                                                         ),
                                                                         tileColor:
@@ -7167,9 +6983,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).headlineSmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -7224,12 +7039,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodyMedium,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -7330,9 +7143,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).headlineSmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -7388,12 +7200,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -7430,12 +7240,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     tileColor:
@@ -7487,9 +7295,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               '98tktrwy' /* 3. DEFAULT PAYMENT MODE */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                 ),
                                                                           ),
                                                                           Expanded(
@@ -7523,9 +7330,8 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                     width: 240.0,
                                                                                     height: 30.0,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
                                                                                     hintText: FFLocalizations.of(context).getText(
                                                                                       'nl34cjwn' /* CASH */,
@@ -7826,19 +7632,13 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily:
+                                                        font:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmallFamily,
+                                                                .headlineSmall,
                                                         color:
                                                             Color(0x00000000),
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmallFamily),
                                                       ),
                                                 ),
                                                 duration: Duration(
@@ -7867,20 +7667,13 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmallFamily,
+                                                      font: FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall,
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w600,
-                                                      useGoogleFonts: GoogleFonts
-                                                              .asMap()
-                                                          .containsKey(
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmallFamily),
                                                     ),
                                             elevation: 2.0,
                                             borderSide: BorderSide(

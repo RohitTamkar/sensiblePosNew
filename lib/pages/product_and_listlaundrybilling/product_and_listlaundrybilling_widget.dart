@@ -460,10 +460,10 @@ class _ProductAndListlaundrybillingWidgetState
                                                           context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily:
+                                                        font:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .titleSmallFamily,
+                                                                .titleSmall,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -471,12 +471,6 @@ class _ProductAndListlaundrybillingWidgetState
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmallFamily),
                                                       ),
                                                 ),
                                               ),
@@ -493,10 +487,10 @@ class _ProductAndListlaundrybillingWidgetState
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily:
+                                                        font:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodySmallFamily,
+                                                                .bodySmall,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -504,12 +498,6 @@ class _ProductAndListlaundrybillingWidgetState
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodySmallFamily),
                                                       ),
                                                 ),
                                               ),
@@ -617,24 +605,17 @@ class _ProductAndListlaundrybillingWidgetState
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmallFamily,
-                                                            color: Colors.white,
-                                                            letterSpacing: 0.0,
-                                                            useGoogleFonts: GoogleFonts
-                                                                    .asMap()
-                                                                .containsKey(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmallFamily),
-                                                          ),
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        font:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall,
+                                                        color: Colors.white,
+                                                        letterSpacing: 0.0,
+                                                      ),
                                                   elevation: 0.0,
                                                   borderRadius:
                                                       BorderRadius.circular(
@@ -655,20 +636,13 @@ class _ProductAndListlaundrybillingWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily,
+                                                  font: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBtnText,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily),
                                                 ),
                                           ),
                                         ],
@@ -1222,15 +1196,11 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmall,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                     ),
                                                               ),
                                                             ),
@@ -1464,10 +1434,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                   ),
                                                                                   textAlign: TextAlign.center,
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
                                                                                         color: FlutterFlowTheme.of(context).lineColor,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
                                                                                 ),
                                                                               ),
@@ -1542,11 +1511,10 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                                 ),
                                                                                                 textAlign: TextAlign.center,
                                                                                                 style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                                                      font: FlutterFlowTheme.of(context).labelLarge,
                                                                                                       color: FlutterFlowTheme.of(context).lineColor,
                                                                                                       fontSize: 15.0,
                                                                                                       letterSpacing: 0.0,
-                                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -1680,9 +1648,8 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                                       ),
                                                                                                       textAlign: TextAlign.center,
                                                                                                       style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                            fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                                            font: FlutterFlowTheme.of(context).titleMedium,
                                                                                                             letterSpacing: 0.0,
-                                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                                           ),
                                                                                                     ),
                                                                                                   ),
@@ -1699,9 +1666,8 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                                             ),
                                                                                                             textAlign: TextAlign.center,
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                                   letterSpacing: 0.0,
-                                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                 ),
                                                                                                           ),
                                                                                                           Flexible(
@@ -1709,9 +1675,8 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                                               productListItem.sellingPrice.toString(),
                                                                                                               textAlign: TextAlign.center,
                                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                    font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                                     letterSpacing: 0.0,
-                                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                   ),
                                                                                                             ),
                                                                                                           ),
@@ -1725,10 +1690,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                                         'Stock :${productListItem.stock.toString()}',
                                                                                                         textAlign: TextAlign.justify,
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                                                               letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                             ),
                                                                                                       ),
                                                                                                     ),
@@ -1840,11 +1804,10 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                                                           productListItem.name,
                                                                                                                           textAlign: TextAlign.center,
                                                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                                                                font: FlutterFlowTheme.of(context).titleSmall,
                                                                                                                                 color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                                                 letterSpacing: 0.0,
                                                                                                                                 fontWeight: FontWeight.w600,
-                                                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                                                               ),
                                                                                                                         ),
                                                                                                                       ),
@@ -1861,20 +1824,18 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                                                                   'lrjkzc1x' /* ₹ */,
                                                                                                                                 ),
                                                                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                                                      font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                                                       color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                                                       letterSpacing: 0.0,
-                                                                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                                                     ),
                                                                                                                               ),
                                                                                                                             ),
                                                                                                                             Text(
                                                                                                                               productListItem.sellingPrice.toString(),
                                                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                                                     color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                                                     letterSpacing: 0.0,
-                                                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                                                   ),
                                                                                                                             ),
                                                                                                                           ],
@@ -2082,12 +2043,10 @@ class _ProductAndListlaundrybillingWidgetState
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                   ],
@@ -2124,12 +2083,10 @@ class _ProductAndListlaundrybillingWidgetState
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodySmall,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                         ),
                                                                   ),
                                                                 ],
@@ -2165,12 +2122,10 @@ class _ProductAndListlaundrybillingWidgetState
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodySmall,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                         ),
                                                                   ),
                                                                 ],
@@ -2536,9 +2491,8 @@ class _ProductAndListlaundrybillingWidgetState
                                                                             textAlign:
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
                                                                           ),
                                                                           Text(
@@ -2549,9 +2503,8 @@ class _ProductAndListlaundrybillingWidgetState
                                                                             textAlign:
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -2583,16 +2536,11 @@ class _ProductAndListlaundrybillingWidgetState
                                                                     .of(context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodySmallFamily,
+                                                                      .bodySmall,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily),
                                                                 ),
                                                           ),
                                                           Text(
@@ -2603,16 +2551,11 @@ class _ProductAndListlaundrybillingWidgetState
                                                                     .of(context)
                                                                 .bodyLarge
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyLargeFamily,
+                                                                      .bodyLarge,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyLargeFamily),
                                                                 ),
                                                           ),
                                                         ],
@@ -2637,16 +2580,11 @@ class _ProductAndListlaundrybillingWidgetState
                                                                     .of(context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodySmallFamily,
+                                                                      .bodySmall,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily),
                                                                 ),
                                                           ),
                                                           Text(
@@ -2661,16 +2599,11 @@ class _ProductAndListlaundrybillingWidgetState
                                                                     .of(context)
                                                                 .bodyLarge
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyLargeFamily,
+                                                                      .bodyLarge,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyLargeFamily),
                                                                 ),
                                                           ),
                                                         ],
@@ -2706,15 +2639,11 @@ class _ProductAndListlaundrybillingWidgetState
                                                                       .of(context)
                                                                   .bodySmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodySmallFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodySmallFamily),
                                                                   ),
                                                             ),
                                                             Row(
@@ -2735,12 +2664,10 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           context)
                                                                       .bodyLarge
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .bodyLarge,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -2754,12 +2681,10 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           context)
                                                                       .bodyLarge
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .bodyLarge,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                       ),
                                                                 ),
                                                               ],
@@ -2999,14 +2924,12 @@ class _ProductAndListlaundrybillingWidgetState
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).titleSmall,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).lineColor,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                         ),
                                                                   ),
                                                                   Row(
@@ -3025,10 +2948,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).titleSmall,
                                                                               color: FlutterFlowTheme.of(context).lineColor,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                             ),
                                                                       ),
                                                                       Text(
@@ -3042,10 +2964,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).titleSmall,
                                                                               color: FlutterFlowTheme.of(context).lineColor,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ],
@@ -3208,18 +3129,14 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmall,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .lineColor,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
                                                                     ),
                                                                 hintText:
                                                                     FFLocalizations.of(
@@ -3305,14 +3222,12 @@ class _ProductAndListlaundrybillingWidgetState
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodyMedium,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).lineColor,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                         ),
                                                                   ),
                                                                   Row(
@@ -3331,10 +3246,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).titleSmall,
                                                                               color: FlutterFlowTheme.of(context).lineColor,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                             ),
                                                                       ),
                                                                       Text(
@@ -3344,12 +3258,11 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineMedium
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
+                                                                              font: FlutterFlowTheme.of(context).headlineMedium,
                                                                               color: FlutterFlowTheme.of(context).lineColor,
                                                                               fontSize: 26.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineMediumFamily),
                                                                             ),
                                                                       ),
                                                                     ],
@@ -3447,9 +3360,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmall,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBtnText,
@@ -3458,10 +3371,6 @@ class _ProductAndListlaundrybillingWidgetState
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                     ),
                                                               ),
                                                             ],
@@ -3551,9 +3460,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmall,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBtnText,
@@ -3562,10 +3471,6 @@ class _ProductAndListlaundrybillingWidgetState
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                     ),
                                                               ),
                                                             ],
@@ -4887,9 +4792,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmall,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBtnText,
@@ -4898,10 +4803,6 @@ class _ProductAndListlaundrybillingWidgetState
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                     ),
                                                             borderSide:
                                                                 BorderSide(
@@ -6359,9 +6260,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmall,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBtnText,
@@ -6370,10 +6271,6 @@ class _ProductAndListlaundrybillingWidgetState
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                     ),
                                                                 borderSide:
                                                                     BorderSide(

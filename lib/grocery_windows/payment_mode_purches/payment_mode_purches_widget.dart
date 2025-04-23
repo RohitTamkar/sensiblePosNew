@@ -189,14 +189,11 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .titleMediumFamily,
+                                  font:
+                                      FlutterFlowTheme.of(context).titleMedium,
                                   color: FlutterFlowTheme.of(context).primary,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .titleMediumFamily),
                                 ),
                           ),
                           FlutterFlowIconButton(
@@ -352,15 +349,11 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmall,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                     ),
                                                               ),
                                                             ],
@@ -409,19 +402,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                     .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmallFamily,
+                                                                      .headlineSmall,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily),
                                                                 ),
                                                           ),
                                                         ),
@@ -432,19 +420,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                     .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmallFamily,
+                                                                      .headlineSmall,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily),
                                                                 ),
                                                           ),
                                                         ),
@@ -470,32 +453,22 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelMediumFamily,
+                                                                      .labelMedium,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelMediumFamily),
                                                                 ),
                                                         hintStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelMediumFamily,
+                                                                      .labelMedium,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelMediumFamily),
                                                                 ),
                                                         enabledBorder:
                                                             OutlineInputBorder(
@@ -563,9 +536,9 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                   context)
                                                               .titleMedium
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleMediumFamily,
+                                                                    .titleMedium,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
@@ -575,11 +548,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleMediumFamily),
                                                               ),
                                                       validator: _model
                                                           .textController1Validator
@@ -637,16 +605,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             19.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -707,16 +673,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             19.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -777,16 +741,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             19.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -857,16 +819,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             19.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -927,16 +887,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             19.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -997,16 +955,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             19.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -1077,16 +1033,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             19.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -1147,16 +1101,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             19.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -1217,16 +1169,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             19.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -1297,8 +1247,8 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
@@ -1307,8 +1257,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -1369,16 +1317,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             19.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -1496,16 +1442,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -1569,16 +1513,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             19.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -1665,16 +1607,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
                                                                             19.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -1753,9 +1693,9 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelLargeFamily,
+                                                                      .labelLarge,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
@@ -1763,11 +1703,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                       17.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelLargeFamily),
                                                                 ),
                                                       ),
                                                     ),
@@ -1811,20 +1746,15 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                   .of(context)
                                                               .labelLarge
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLargeFamily,
+                                                                    .labelLarge,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
                                                                 fontSize: 17.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelLargeFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -1865,20 +1795,15 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                   .of(context)
                                                               .labelLarge
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLargeFamily,
+                                                                    .labelLarge,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
                                                                 fontSize: 17.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelLargeFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -1919,9 +1844,9 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelLargeFamily,
+                                                                      .labelLarge,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
@@ -1929,11 +1854,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                       17.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelLargeFamily),
                                                                 ),
                                                       ),
                                                     ),
@@ -1975,9 +1895,9 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelLargeFamily,
+                                                                      .labelLarge,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
@@ -1985,11 +1905,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                       17.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelLargeFamily),
                                                                 ),
                                                       ),
                                                     ),
@@ -2033,20 +1948,15 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                   .of(context)
                                                               .labelLarge
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLargeFamily,
+                                                                    .labelLarge,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
                                                                 fontSize: 17.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelLargeFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -2087,20 +1997,15 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                   .of(context)
                                                               .labelLarge
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLargeFamily,
+                                                                    .labelLarge,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
                                                                 fontSize: 17.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelLargeFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -2141,9 +2046,9 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelLargeFamily,
+                                                                      .labelLarge,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
@@ -2151,11 +2056,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                       17.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelLargeFamily),
                                                                 ),
                                                       ),
                                                     ),
@@ -2197,9 +2097,9 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                     context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelLargeFamily,
+                                                                      .labelLarge,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
@@ -2207,11 +2107,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                       17.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelLargeFamily),
                                                                 ),
                                                       ),
                                                     ),
@@ -2304,16 +2199,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .labelLarge,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .error,
                                                                         fontSize:
                                                                             17.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                       ),
                                                               hintText:
                                                                   FFLocalizations.of(
@@ -2326,12 +2219,10 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .labelMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .labelMedium,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                       ),
                                                               enabledBorder:
                                                                   UnderlineInputBorder(
@@ -2393,9 +2284,9 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMediumFamily,
+                                                                      .bodyMedium,
                                                                   fontSize:
                                                                       17.0,
                                                                   letterSpacing:
@@ -2403,11 +2294,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily),
                                                                 ),
                                                             textAlign: TextAlign
                                                                 .center,
@@ -2455,20 +2341,15 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                   .of(context)
                                                               .labelLarge
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLargeFamily,
+                                                                    .labelLarge,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
                                                                 fontSize: 17.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelLargeFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -2568,9 +2449,9 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         context)
                                                                     .labelLarge
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelLargeFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .error,
@@ -2578,10 +2459,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           17.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).labelLargeFamily),
                                                                     ),
                                                             hintText:
                                                                 FFLocalizations.of(
@@ -2594,15 +2471,11 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         context)
                                                                     .labelMedium
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelMediumFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).labelMediumFamily),
                                                                     ),
                                                             enabledBorder:
                                                                 UnderlineInputBorder(
@@ -2688,17 +2561,12 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMediumFamily,
+                                                                    .bodyMedium,
                                                                 fontSize: 17.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
                                                               ),
                                                           textAlign:
                                                               TextAlign.center,
@@ -2753,9 +2621,9 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                     .of(context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelLargeFamily,
+                                                                      .labelLarge,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
@@ -2763,11 +2631,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                       17.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelLargeFamily),
                                                                 ),
                                                           ),
                                                         ),
@@ -2786,9 +2649,9 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                     .of(context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelLargeFamily,
+                                                                      .labelLarge,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
@@ -2796,11 +2659,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                       17.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelLargeFamily),
                                                                 ),
                                                           ),
                                                         ),
@@ -2880,16 +2738,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .labelLarge,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .error,
                                                                         fontSize:
                                                                             17.0,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                       ),
                                                               hintText:
                                                                   FFLocalizations.of(
@@ -2902,12 +2758,10 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           context)
                                                                       .labelMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).labelMediumFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .labelMedium,
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelMediumFamily),
                                                                       ),
                                                               enabledBorder:
                                                                   UnderlineInputBorder(
@@ -2993,18 +2847,13 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                  font: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMediumFamily,
+                                                                      .bodyMedium,
                                                                   fontSize:
                                                                       17.0,
                                                                   letterSpacing:
                                                                       0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily),
                                                                 ),
                                                             textAlign: TextAlign
                                                                 .center,
@@ -3052,20 +2901,15 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                   .of(context)
                                                               .labelLarge
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelLargeFamily,
+                                                                    .labelLarge,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
                                                                 fontSize: 17.0,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelLargeFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -3150,9 +2994,9 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         context)
                                                                     .labelLarge
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelLargeFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLarge,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .error,
@@ -3160,10 +3004,6 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                           17.0,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).labelLargeFamily),
                                                                     ),
                                                             hintText:
                                                                 FFLocalizations.of(
@@ -3176,15 +3016,11 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                         context)
                                                                     .labelMedium
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelMediumFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).labelMediumFamily),
                                                                     ),
                                                             enabledBorder:
                                                                 UnderlineInputBorder(
@@ -3270,20 +3106,15 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMediumFamily,
+                                                                    .bodyMedium,
                                                                 fontSize: 17.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
                                                               ),
                                                           textAlign:
                                                               TextAlign.center,
@@ -3331,16 +3162,11 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                   context)
                                               .headlineLarge
                                               .override(
-                                                fontFamily:
+                                                font:
                                                     FlutterFlowTheme.of(context)
-                                                        .headlineLargeFamily,
+                                                        .headlineLarge,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(FlutterFlowTheme
-                                                            .of(context)
-                                                        .headlineLargeFamily),
                                               ),
                                           borderSide: BorderSide(
                                             color: Colors.transparent,
@@ -4028,19 +3854,14 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                   context)
                                               .headlineLarge
                                               .override(
-                                                fontFamily:
+                                                font:
                                                     FlutterFlowTheme.of(context)
-                                                        .headlineLargeFamily,
+                                                        .headlineLarge,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBtnText,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(FlutterFlowTheme
-                                                            .of(context)
-                                                        .headlineLargeFamily),
                                               ),
                                           elevation: 3.0,
                                           borderSide: BorderSide(

@@ -1267,15 +1267,11 @@ class _ProductAndListNewCopy2WidgetState
                                                                       .of(context)
                                                                   .headlineSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .headlineSmallFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmall,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                   ),
                                                             ),
                                                           ),
@@ -1397,15 +1393,11 @@ class _ProductAndListNewCopy2WidgetState
                                                                         context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodySmallFamily,
+                                                                      font: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmall,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily),
                                                                     ),
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
@@ -1488,15 +1480,11 @@ class _ProductAndListNewCopy2WidgetState
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                   ),
                                                               validator: _model
                                                                   .textFieldsearchTextControllerValidator
@@ -1712,17 +1700,15 @@ class _ProductAndListNewCopy2WidgetState
                                                                                   Text(
                                                                                     containerVarItem.name,
                                                                                     style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                          font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                         ),
                                                                                   ),
                                                                                   Text(
                                                                                     containerVarItem.mobile,
                                                                                     style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                          font: FlutterFlowTheme.of(context).titleMedium,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -1752,19 +1738,17 @@ class _ProductAndListNewCopy2WidgetState
                                                                                               'ti5mxmbr' /* Balance:  */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
                                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                                 ),
                                                                                           ),
                                                                                           Text(
                                                                                             containerVarItem.oldBalance.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
                                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1941,17 +1925,15 @@ class _ProductAndListNewCopy2WidgetState
                                                                                   Text(
                                                                                     listItem.name,
                                                                                     style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                                          font: FlutterFlowTheme.of(context).headlineSmall,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                         ),
                                                                                   ),
                                                                                   Text(
                                                                                     listItem.mobile,
                                                                                     style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                          font: FlutterFlowTheme.of(context).titleMedium,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -1981,19 +1963,17 @@ class _ProductAndListNewCopy2WidgetState
                                                                                               '05ogcbfq' /* Balance:  */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
                                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                                 ),
                                                                                           ),
                                                                                           Text(
                                                                                             listItem.oldBalance.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
                                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -2148,9 +2128,9 @@ class _ProductAndListNewCopy2WidgetState
                                                                   .of(context)
                                                               .titleSmall
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmallFamily,
+                                                                    .titleSmall,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBtnText,
@@ -2159,11 +2139,6 @@ class _ProductAndListNewCopy2WidgetState
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleSmallFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -2185,9 +2160,9 @@ class _ProductAndListNewCopy2WidgetState
                                                                   .of(context)
                                                               .bodySmall
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodySmallFamily,
+                                                                    .bodySmall,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondary,
@@ -2196,11 +2171,6 @@ class _ProductAndListNewCopy2WidgetState
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodySmallFamily),
                                                               ),
                                                         ),
                                                       ),
@@ -2331,17 +2301,13 @@ class _ProductAndListNewCopy2WidgetState
                                                                       context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleSmallFamily,
+                                                                    font: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmall,
                                                                     color: Colors
                                                                         .white,
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
                                                           elevation: 0.0,
                                                           borderRadius:
@@ -2403,19 +2369,14 @@ class _ProductAndListNewCopy2WidgetState
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily: FlutterFlowTheme.of(
+                                                                font: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMediumFamily,
+                                                                    .bodyMedium,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBtnText,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
                                                               ),
                                                     ),
                                                   ),
@@ -2863,9 +2824,8 @@ class _ProductAndListNewCopy2WidgetState
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).headlineSmall,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ),
@@ -3077,10 +3037,9 @@ class _ProductAndListNewCopy2WidgetState
                                                                                           ),
                                                                                           textAlign: TextAlign.center,
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                                font: FlutterFlowTheme.of(context).titleSmall,
                                                                                                 color: FlutterFlowTheme.of(context).lineColor,
                                                                                                 letterSpacing: 0.0,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                               ),
                                                                                         ),
                                                                                       ),
@@ -3137,11 +3096,10 @@ class _ProductAndListNewCopy2WidgetState
                                                                                                     categoryListItem.name,
                                                                                                     textAlign: TextAlign.center,
                                                                                                     style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                                          fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                                                                                                          font: FlutterFlowTheme.of(context).labelLarge,
                                                                                                           color: FlutterFlowTheme.of(context).lineColor,
                                                                                                           fontSize: 14.0,
                                                                                                           letterSpacing: 0.0,
-                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                                                         ),
                                                                                                   ),
                                                                                                 ),
@@ -3401,10 +3359,9 @@ class _ProductAndListNewCopy2WidgetState
                                                                                                               ),
                                                                                                               textAlign: TextAlign.center,
                                                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
                                                                                                                     fontSize: 14.0,
                                                                                                                     letterSpacing: 0.0,
-                                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                                                   ),
                                                                                                             ),
                                                                                                           ),
@@ -3421,9 +3378,8 @@ class _ProductAndListNewCopy2WidgetState
                                                                                                                     ),
                                                                                                                     textAlign: TextAlign.center,
                                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                          font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                                           letterSpacing: 0.0,
-                                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                         ),
                                                                                                                   ),
                                                                                                                   Flexible(
@@ -3431,9 +3387,8 @@ class _ProductAndListNewCopy2WidgetState
                                                                                                                       productListItem.sellingPrice.toString(),
                                                                                                                       textAlign: TextAlign.center,
                                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                            font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                                             letterSpacing: 0.0,
-                                                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                           ),
                                                                                                                     ),
                                                                                                                   ),
@@ -3447,10 +3402,9 @@ class _ProductAndListNewCopy2WidgetState
                                                                                                                 'Stock :${productListItem.stock.toString()}',
                                                                                                                 textAlign: TextAlign.justify,
                                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                      font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                                       color: FlutterFlowTheme.of(context).primary,
                                                                                                                       letterSpacing: 0.0,
-                                                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                     ),
                                                                                                               ),
                                                                                                             ),
@@ -3692,11 +3646,10 @@ class _ProductAndListNewCopy2WidgetState
                                                                                                                                     productListItem.name,
                                                                                                                                     textAlign: TextAlign.center,
                                                                                                                                     style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
                                                                                                                                           color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                                                           letterSpacing: 0.0,
                                                                                                                                           fontWeight: FontWeight.w600,
-                                                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                                                                         ),
                                                                                                                                   ),
                                                                                                                                 ),
@@ -3714,10 +3667,9 @@ class _ProductAndListNewCopy2WidgetState
                                                                                                                                           'g34vdjrx' /* ₹ */,
                                                                                                                                         ),
                                                                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                                                               color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                                                               letterSpacing: 0.0,
-                                                                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                                                             ),
                                                                                                                                       ),
                                                                                                                                     ),
@@ -3728,10 +3680,9 @@ class _ProductAndListNewCopy2WidgetState
                                                                                                                                           '120',
                                                                                                                                         ),
                                                                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                                                               color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                                                               letterSpacing: 0.0,
-                                                                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                                                             ),
                                                                                                                                       ),
                                                                                                                                     ),
@@ -3744,10 +3695,9 @@ class _ProductAndListNewCopy2WidgetState
                                                                                                                                     'Stock :${productListItem.stock.toString()}',
                                                                                                                                     textAlign: TextAlign.justify,
                                                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                                          font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                                                           color: FlutterFlowTheme.of(context).parkingPrimary,
                                                                                                                                           letterSpacing: 0.0,
-                                                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                                         ),
                                                                                                                                   ),
                                                                                                                                 ),
@@ -3912,9 +3862,8 @@ class _ProductAndListNewCopy2WidgetState
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                             ),
                                                                         enabledBorder:
                                                                             OutlineInputBorder(
@@ -3989,12 +3938,10 @@ class _ProductAndListNewCopy2WidgetState
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).headlineSmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                           ),
                                                                       textAlign:
                                                                           TextAlign
@@ -4058,9 +4005,8 @@ class _ProductAndListNewCopy2WidgetState
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                             ),
                                                                         enabledBorder:
                                                                             OutlineInputBorder(
@@ -4135,12 +4081,10 @@ class _ProductAndListNewCopy2WidgetState
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).titleSmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                           ),
                                                                       textAlign:
                                                                           TextAlign
@@ -4204,9 +4148,8 @@ class _ProductAndListNewCopy2WidgetState
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
                                                                               letterSpacing: 0.0,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                             ),
                                                                         enabledBorder:
                                                                             OutlineInputBorder(
@@ -4281,12 +4224,10 @@ class _ProductAndListNewCopy2WidgetState
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).titleSmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                           ),
                                                                       textAlign:
                                                                           TextAlign
@@ -4366,9 +4307,8 @@ class _ProductAndListNewCopy2WidgetState
                                                                                 '256o6g8l' /* Item Name */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                     letterSpacing: 0.0,
-                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -4399,9 +4339,8 @@ class _ProductAndListNewCopy2WidgetState
                                                                               'jzfvkv47' /* Qty */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -4431,9 +4370,8 @@ class _ProductAndListNewCopy2WidgetState
                                                                               'l4fycbx5' /* Amt */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -4563,11 +4501,10 @@ class _ProductAndListNewCopy2WidgetState
                                                                                                 ),
                                                                                             textAlign: TextAlign.start,
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                                   fontSize: 15.0,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -4579,10 +4516,9 @@ class _ProductAndListNewCopy2WidgetState
                                                                                                 'p97spsep' /* ₹  */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                     fontSize: 13.0,
                                                                                                     letterSpacing: 0.0,
-                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -4591,10 +4527,9 @@ class _ProductAndListNewCopy2WidgetState
                                                                                                 r'''$.price''',
                                                                                               ).toString(),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                     fontSize: 13.0,
                                                                                                     letterSpacing: 0.0,
-                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -4701,12 +4636,11 @@ class _ProductAndListNewCopy2WidgetState
                                                                                                   ).toString(),
                                                                                                   textAlign: TextAlign.center,
                                                                                                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                        fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                        font: FlutterFlowTheme.of(context).bodySmall,
                                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                                         fontSize: 13.0,
                                                                                                         letterSpacing: 0.0,
                                                                                                         fontWeight: FontWeight.w500,
-                                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                       ),
                                                                                                 ),
                                                                                               ],
@@ -4842,11 +4776,10 @@ class _ProductAndListNewCopy2WidgetState
                                                                                           .toString(),
                                                                                       textAlign: TextAlign.center,
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                            fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                            font: FlutterFlowTheme.of(context).bodySmall,
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             fontSize: 13.0,
                                                                                             letterSpacing: 0.0,
-                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -5040,9 +4973,8 @@ class _ProductAndListNewCopy2WidgetState
                                                                                     ),
                                                                                     textAlign: TextAlign.center,
                                                                                     style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
                                                                                   ),
                                                                                   Text(
@@ -5052,9 +4984,8 @@ class _ProductAndListNewCopy2WidgetState
                                                                                     ),
                                                                                     textAlign: TextAlign.center,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                          font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                           letterSpacing: 0.0,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -5087,12 +5018,10 @@ class _ProductAndListNewCopy2WidgetState
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodySmall,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                         ),
                                                                   ),
                                                                   Text(
@@ -5103,12 +5032,10 @@ class _ProductAndListNewCopy2WidgetState
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodyLarge,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                         ),
                                                                   ),
                                                                 ],
@@ -5134,12 +5061,10 @@ class _ProductAndListNewCopy2WidgetState
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodySmall,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                         ),
                                                                   ),
                                                                   Text(
@@ -5154,12 +5079,10 @@ class _ProductAndListNewCopy2WidgetState
                                                                             context)
                                                                         .bodyLarge
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodyLarge,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                         ),
                                                                   ),
                                                                 ],
@@ -5196,12 +5119,10 @@ class _ProductAndListNewCopy2WidgetState
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                            font:
+                                                                                FlutterFlowTheme.of(context).bodySmall,
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                           ),
                                                                     ),
                                                                     Row(
@@ -5220,9 +5141,8 @@ class _ProductAndListNewCopy2WidgetState
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyLarge
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                                font: FlutterFlowTheme.of(context).bodyLarge,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                               ),
                                                                         ),
                                                                         Text(
@@ -5234,9 +5154,8 @@ class _ProductAndListNewCopy2WidgetState
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyLarge
                                                                               .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                                font: FlutterFlowTheme.of(context).bodyLarge,
                                                                                 letterSpacing: 0.0,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
                                                                               ),
                                                                         ),
                                                                       ],
@@ -5483,10 +5402,9 @@ class _ProductAndListNewCopy2WidgetState
                                                                               '1rkophoz' /* Last Bill */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
                                                                                   color: FlutterFlowTheme.of(context).lineColor,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
                                                                           ),
                                                                           Row(
@@ -5500,10 +5418,9 @@ class _ProductAndListNewCopy2WidgetState
                                                                                   'hlmfv1rd' /* ₹ */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
                                                                                       color: FlutterFlowTheme.of(context).lineColor,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                               ),
                                                                               Text(
@@ -5512,10 +5429,9 @@ class _ProductAndListNewCopy2WidgetState
                                                                                   '00.00',
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
                                                                                       color: FlutterFlowTheme.of(context).lineColor,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -5641,14 +5557,12 @@ class _ProductAndListNewCopy2WidgetState
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).titleSmall,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).lineColor,
                                                                           letterSpacing:
                                                                               0.0,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                         ),
                                                                     hintText: FFLocalizations.of(
                                                                             context)
@@ -5725,10 +5639,9 @@ class _ProductAndListNewCopy2WidgetState
                                                                               'h3it2etj' /* Final Amt */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
                                                                                   color: FlutterFlowTheme.of(context).lineColor,
                                                                                   letterSpacing: 0.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                 ),
                                                                           ),
                                                                           Row(
@@ -5742,21 +5655,19 @@ class _ProductAndListNewCopy2WidgetState
                                                                                   'bf0s0pxd' /* ₹  */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
                                                                                       color: FlutterFlowTheme.of(context).lineColor,
                                                                                       letterSpacing: 0.0,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                               ),
                                                                               Text(
                                                                                 FFAppState().finalAmt.toString(),
                                                                                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
+                                                                                      font: FlutterFlowTheme.of(context).headlineMedium,
                                                                                       color: FlutterFlowTheme.of(context).lineColor,
                                                                                       fontSize: 26.0,
                                                                                       letterSpacing: 0.0,
                                                                                       fontWeight: FontWeight.w600,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineMediumFamily),
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -5852,11 +5763,10 @@ class _ProductAndListNewCopy2WidgetState
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).headlineSmall,
                                                                               color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                             ),
                                                                       ),
                                                                     ],
@@ -6792,16 +6702,14 @@ class _ProductAndListNewCopy2WidgetState
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleSmall,
                                                                         color: Colors
                                                                             .white,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w800,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
                                                                   elevation:
                                                                       0.0,
@@ -7655,16 +7563,14 @@ class _ProductAndListNewCopy2WidgetState
                                                                             context)
                                                                         .headlineSmall
                                                                         .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).headlineSmall,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryBtnText,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                         ),
                                                                     borderSide:
                                                                         BorderSide(
@@ -8544,11 +8450,10 @@ class _ProductAndListNewCopy2WidgetState
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .headlineSmall
                                                                             .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
+                                                                              font: FlutterFlowTheme.of(context).headlineSmall,
                                                                               color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                             ),
                                                                         borderSide:
                                                                             BorderSide(

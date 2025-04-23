@@ -83,16 +83,13 @@ class _KioskHeaderWidgetState extends State<KioskHeaderWidget> {
                         getCurrentTimestamp,
                         locale: FFLocalizations.of(context).languageCode,
                       ),
-                      style:
-                          FlutterFlowTheme.of(context).headlineSmall.override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .headlineSmallFamily,
-                                fontSize: 18.0,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily),
-                              ),
+                      style: FlutterFlowTheme.of(context)
+                          .headlineSmall
+                          .override(
+                            font: FlutterFlowTheme.of(context).headlineSmall,
+                            fontSize: 18.0,
+                            letterSpacing: 0.0,
+                          ),
                     ),
                   ),
                   Row(
@@ -103,18 +100,15 @@ class _KioskHeaderWidgetState extends State<KioskHeaderWidget> {
                         FFLocalizations.of(context).getText(
                           'vfk9s8di' /* Version :  */,
                         ),
-                        style:
-                            FlutterFlowTheme.of(context).headlineSmall.override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .headlineSmallFamily,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  fontSize: 10.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w600,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .headlineSmallFamily),
-                                ),
+                        style: FlutterFlowTheme.of(context)
+                            .headlineSmall
+                            .override(
+                              font: FlutterFlowTheme.of(context).headlineSmall,
+                              color: FlutterFlowTheme.of(context).primary,
+                              fontSize: 10.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w600,
+                            ),
                       ),
                       InkWell(
                         splashColor: Colors.transparent,
@@ -133,15 +127,12 @@ class _KioskHeaderWidgetState extends State<KioskHeaderWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .headlineSmallFamily,
+                                font:
+                                    FlutterFlowTheme.of(context).headlineSmall,
                                 color: FlutterFlowTheme.of(context).primary,
                                 fontSize: 10.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily),
                               ),
                         ),
                       ),

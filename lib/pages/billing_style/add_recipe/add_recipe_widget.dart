@@ -107,15 +107,11 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .headlineSmallFamily,
+                                      font: FlutterFlowTheme.of(context)
+                                          .headlineSmall,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmallFamily),
                                     ),
                               ),
                             ],
@@ -200,14 +196,10 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelLargeFamily,
+                                    font:
+                                        FlutterFlowTheme.of(context).labelLarge,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelLargeFamily),
                                   ),
                               elevation: 0.0,
                               borderRadius: BorderRadius.circular(8.0),
@@ -268,17 +260,12 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelSmallFamily,
+                                            font: FlutterFlowTheme.of(context)
+                                                .labelSmall,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelSmallFamily),
                                           ),
                                     ),
                                   ),
@@ -308,17 +295,12 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMediumFamily,
+                                          font: FlutterFlowTheme.of(context)
+                                              .titleMedium,
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMediumFamily),
                                         ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
@@ -393,17 +375,10 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLargeFamily,
+                                              font: FlutterFlowTheme.of(context)
+                                                  .labelLarge,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLargeFamily),
                                             ),
                                         elevation: 0.0,
                                         borderRadius:
@@ -442,18 +417,11 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .labelSmall
                                                 .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelSmallFamily,
+                                                  font: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelSmall,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelSmallFamily),
                                                 ),
                                           ),
                                         ),
@@ -472,18 +440,11 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .labelSmall
                                                 .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelSmallFamily,
+                                                  font: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelSmall,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelSmallFamily),
                                                 ),
                                           ),
                                         ),
@@ -502,18 +463,11 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .labelSmall
                                                 .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelSmallFamily,
+                                                  font: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelSmall,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelSmallFamily),
                                                 ),
                                           ),
                                         ),
@@ -531,18 +485,11 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .labelSmall
                                                 .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelSmallFamily,
+                                                  font: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelSmall,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelSmallFamily),
                                                 ),
                                           ),
                                         ),
@@ -681,16 +628,11 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily,
+                                            font: FlutterFlowTheme.of(context)
+                                                .titleSmall,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmallFamily),
                                           ),
                                       elevation: 0.0,
                                       borderRadius: BorderRadius.circular(8.0),

@@ -66,11 +66,8 @@ class _StockConfirmWidgetState extends State<StockConfirmWidget> {
                     ),
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).headlineLarge.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).headlineLargeFamily,
+                          font: FlutterFlowTheme.of(context).headlineLarge,
                           letterSpacing: 0.0,
-                          useGoogleFonts: GoogleFonts.asMap().containsKey(
-                              FlutterFlowTheme.of(context).headlineLargeFamily),
                         ),
                   ),
                 ),
@@ -104,14 +101,11 @@ class _StockConfirmWidgetState extends State<StockConfirmWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .displayMedium
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .displayMediumFamily,
+                                  font: FlutterFlowTheme.of(context)
+                                      .displayMedium,
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
                                   letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .displayMediumFamily),
                                 ),
                             elevation: 2.0,
                             borderSide: BorderSide(

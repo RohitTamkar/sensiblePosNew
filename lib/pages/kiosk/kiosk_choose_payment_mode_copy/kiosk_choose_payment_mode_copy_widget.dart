@@ -250,16 +250,12 @@ class _KioskChoosePaymentModeCopyWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .displayLarge
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .displayLargeFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .displayLarge,
                                     color: FlutterFlowTheme.of(context).primary,
                                     fontSize: 40.0,
                                     letterSpacing: 5.0,
                                     fontWeight: FontWeight.bold,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .displayLargeFamily),
                                   ),
                             ),
                             Padding(
@@ -272,17 +268,13 @@ class _KioskChoosePaymentModeCopyWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .displayLarge
                                     .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .displayLargeFamily,
+                                      font: FlutterFlowTheme.of(context)
+                                          .displayLarge,
                                       color: FlutterFlowTheme.of(context)
                                           .parkingSecondaryBackground,
                                       fontSize: 30.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .displayLargeFamily),
                                     ),
                               ),
                             ),
@@ -492,21 +484,14 @@ class _KioskChoosePaymentModeCopyWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .displayLarge
                                                 .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .displayLargeFamily,
+                                                  font: FlutterFlowTheme.of(
+                                                          context)
+                                                      .displayLarge,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBtnText,
                                                   fontSize: 36.0,
                                                   letterSpacing: 0.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .displayLargeFamily),
                                                 ),
                                           ),
                                         ),
@@ -534,17 +519,13 @@ class _KioskChoosePaymentModeCopyWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .displayLarge
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .displayLargeFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .displayLarge,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         fontSize: 30.0,
                                         letterSpacing: 5.0,
                                         fontWeight: FontWeight.normal,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .displayLargeFamily),
                                       ),
                                 ),
                               ),
@@ -751,22 +732,16 @@ class _KioskChoosePaymentModeCopyWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .displayLarge
                                                       .override(
-                                                        fontFamily:
+                                                        font:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .displayLargeFamily,
+                                                                .displayLarge,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryBtnText,
                                                         fontSize: 36.0,
                                                         letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .displayLargeFamily),
                                                       ),
                                             ),
                                           ),
@@ -809,15 +784,11 @@ class _KioskChoosePaymentModeCopyWidgetState
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .titleSmallFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .titleSmall,
                                         color: Colors.white,
                                         fontSize: 50.0,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily),
                                       ),
                                   elevation: 0.0,
                                   borderRadius: BorderRadius.circular(30.0),
@@ -856,15 +827,11 @@ class _KioskChoosePaymentModeCopyWidgetState
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .titleSmallFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .titleSmall,
                                         color: Colors.white,
                                         fontSize: 50.0,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily),
                                       ),
                                   elevation: 0.0,
                                   borderRadius: BorderRadius.circular(30.0),

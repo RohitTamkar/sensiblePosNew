@@ -194,15 +194,12 @@ class _KioskChoosePaymentModeWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .displayLarge
                                 .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .displayLargeFamily,
+                                  font:
+                                      FlutterFlowTheme.of(context).displayLarge,
                                   color: FlutterFlowTheme.of(context).primary,
                                   fontSize: 40.0,
                                   letterSpacing: 5.0,
                                   fontWeight: FontWeight.bold,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .displayLargeFamily),
                                 ),
                           ),
                           Padding(
@@ -215,17 +212,13 @@ class _KioskChoosePaymentModeWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .displayLarge
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .displayLargeFamily,
+                                    font: FlutterFlowTheme.of(context)
+                                        .displayLarge,
                                     color: FlutterFlowTheme.of(context)
                                         .parkingSecondaryBackground,
                                     fontSize: 30.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .displayLargeFamily),
                                   ),
                             ),
                           ),
@@ -465,15 +458,11 @@ class _KioskChoosePaymentModeWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .titleSmallFamily,
+                                      font: FlutterFlowTheme.of(context)
+                                          .titleSmall,
                                       color: Colors.white,
                                       fontSize: 35.0,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily),
                                     ),
                                 elevation: 0.0,
                                 borderRadius: BorderRadius.circular(30.0),
@@ -498,17 +487,13 @@ class _KioskChoosePaymentModeWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .displayLarge
                                     .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .displayLargeFamily,
+                                      font: FlutterFlowTheme.of(context)
+                                          .displayLarge,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       fontSize: 30.0,
                                       letterSpacing: 5.0,
                                       fontWeight: FontWeight.normal,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .displayLargeFamily),
                                     ),
                               ),
                             ),
@@ -754,15 +739,11 @@ class _KioskChoosePaymentModeWidgetState
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .titleSmallFamily,
+                                        font: FlutterFlowTheme.of(context)
+                                            .titleSmall,
                                         color: Colors.white,
                                         fontSize: 35.0,
                                         letterSpacing: 0.0,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily),
                                       ),
                                   elevation: 0.0,
                                   borderRadius: BorderRadius.circular(30.0),
@@ -787,17 +768,13 @@ class _KioskChoosePaymentModeWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .displayLarge
                                     .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .displayLargeFamily,
+                                      font: FlutterFlowTheme.of(context)
+                                          .displayLarge,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       fontSize: 30.0,
                                       letterSpacing: 5.0,
                                       fontWeight: FontWeight.normal,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .displayLargeFamily),
                                     ),
                               ),
                             ),
@@ -961,15 +938,11 @@ class _KioskChoosePaymentModeWidgetState
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .titleSmallFamily,
+                                      font: FlutterFlowTheme.of(context)
+                                          .titleSmall,
                                       color: Colors.white,
                                       fontSize: 35.0,
                                       letterSpacing: 0.0,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily),
                                     ),
                                 elevation: 0.0,
                                 borderRadius: BorderRadius.circular(30.0),

@@ -63,13 +63,11 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: Color(0xFFFFFFFB),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      font: FlutterFlowTheme.of(context).titleSmall,
                       color: Color(0xFF493A19),
                       fontSize: 42.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w300,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 2.0,
                 borderSide: BorderSide(
@@ -92,13 +90,11 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: Color(0xFFFFFFFB),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      font: FlutterFlowTheme.of(context).titleSmall,
                       color: Color(0xFF493A19),
                       fontSize: 42.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w300,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 2.0,
                 borderSide: BorderSide(
@@ -121,13 +117,11 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: Color(0xFFFFFFFB),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      font: FlutterFlowTheme.of(context).titleSmall,
                       color: Color(0xFF493A19),
                       fontSize: 42.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w300,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 2.0,
                 borderSide: BorderSide(
@@ -153,13 +147,11 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: Color(0xFFFFFFFB),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      font: FlutterFlowTheme.of(context).titleSmall,
                       color: Color(0xFF493A19),
                       fontSize: 42.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w300,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 2.0,
                 borderSide: BorderSide(
@@ -187,13 +179,11 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: Color(0xFFFFFFFB),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      font: FlutterFlowTheme.of(context).titleSmall,
                       color: Color(0xFF493A19),
                       fontSize: 42.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w300,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 2.0,
                 borderSide: BorderSide(
@@ -216,13 +206,11 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: Color(0xFFFFFFFB),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      font: FlutterFlowTheme.of(context).titleSmall,
                       color: Color(0xFF493A19),
                       fontSize: 42.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w300,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 2.0,
                 borderSide: BorderSide(
@@ -245,13 +233,11 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: Color(0xFFFFFFFB),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      font: FlutterFlowTheme.of(context).titleSmall,
                       color: Color(0xFF493A19),
                       fontSize: 42.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w300,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 2.0,
                 borderSide: BorderSide(
@@ -274,13 +260,11 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: Color(0xFFFFFFFB),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      font: FlutterFlowTheme.of(context).titleSmall,
                       color: Color(0xFF493A19),
                       fontSize: 42.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w300,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 2.0,
                 borderSide: BorderSide(
@@ -308,13 +292,11 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: Color(0xFFFFFFFB),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      font: FlutterFlowTheme.of(context).titleSmall,
                       color: Color(0xFF493A19),
                       fontSize: 42.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w300,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 2.0,
                 borderSide: BorderSide(
@@ -337,13 +319,11 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: Color(0xFFFFFFFB),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      font: FlutterFlowTheme.of(context).titleSmall,
                       color: Color(0xFF493A19),
                       fontSize: 42.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w300,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 2.0,
                 borderSide: BorderSide(
@@ -366,13 +346,11 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: Color(0xFFFFFFFB),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      font: FlutterFlowTheme.of(context).titleSmall,
                       color: Color(0xFF493A19),
                       fontSize: 42.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w300,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 2.0,
                 borderSide: BorderSide(
@@ -398,13 +376,11 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: Color(0xFFE3D0AD),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      font: FlutterFlowTheme.of(context).titleSmall,
                       color: Color(0xFF493A19),
                       fontSize: 42.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w300,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 2.0,
                 borderSide: BorderSide(

@@ -76,11 +76,9 @@ class _TransactionStatusFailedWidgetState
                   '0qqtyn77' /* Receipt */,
                 ),
                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      font: FlutterFlowTheme.of(context).titleSmall,
                       color: FlutterFlowTheme.of(context).alternate,
                       letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
               ),
             ],
@@ -94,13 +92,10 @@ class _TransactionStatusFailedWidgetState
                   'uo94negs' /* Payment Failed */,
                 ),
                 style: FlutterFlowTheme.of(context).displaySmall.override(
-                      fontFamily:
-                          FlutterFlowTheme.of(context).displaySmallFamily,
+                      font: FlutterFlowTheme.of(context).displaySmall,
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       fontSize: 26.0,
                       letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).displaySmallFamily),
                     ),
               ),
             ],
@@ -127,12 +122,9 @@ class _TransactionStatusFailedWidgetState
               Text(
                 ' ₹ ${FFAppState().kioskAmt.toString()}',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily:
-                          FlutterFlowTheme.of(context).headlineMediumFamily,
+                      font: FlutterFlowTheme.of(context).headlineMedium,
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).headlineMediumFamily),
                     ),
               ),
             ],
@@ -148,12 +140,9 @@ class _TransactionStatusFailedWidgetState
                     'No msg',
                   ),
                   style: FlutterFlowTheme.of(context).labelLarge.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).labelLargeFamily,
+                        font: FlutterFlowTheme.of(context).labelLarge,
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         letterSpacing: 0.0,
-                        useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).labelLargeFamily),
                       ),
                 ),
               ),
@@ -173,12 +162,10 @@ class _TransactionStatusFailedWidgetState
                   'jp7p7j79' /* Redirects automaticaly */,
                 ),
                 style: FlutterFlowTheme.of(context).labelLarge.override(
-                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                      font: FlutterFlowTheme.of(context).labelLarge,
                       color: FlutterFlowTheme.of(context).primary,
                       fontSize: 16.0,
                       letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).labelLargeFamily),
                     ),
               ),
             ],

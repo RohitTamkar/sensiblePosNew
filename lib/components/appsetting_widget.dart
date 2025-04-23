@@ -92,10 +92,8 @@ class _AppsettingWidgetState extends State<AppsettingWidget> {
         title: Text(
           widget!.struct!.display,
           style: FlutterFlowTheme.of(context).bodySmall.override(
-                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                font: FlutterFlowTheme.of(context).bodySmall,
                 letterSpacing: 0.0,
-                useGoogleFonts: GoogleFonts.asMap()
-                    .containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
               ),
         ),
         tileColor: Color(0xFFF5F5F5),

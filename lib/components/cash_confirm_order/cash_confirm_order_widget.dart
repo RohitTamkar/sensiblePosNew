@@ -79,12 +79,9 @@ class _CashConfirmOrderWidgetState extends State<CashConfirmOrderWidget> {
                     '6jvdyqvg' /* Receipt  */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineLarge.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).headlineLargeFamily,
+                        font: FlutterFlowTheme.of(context).headlineLarge,
                         color: FlutterFlowTheme.of(context).primaryBtnText,
                         letterSpacing: 0.0,
-                        useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).headlineLargeFamily),
                       ),
                 ),
               ),
@@ -94,12 +91,9 @@ class _CashConfirmOrderWidgetState extends State<CashConfirmOrderWidget> {
                   '-',
                 ),
                 style: FlutterFlowTheme.of(context).headlineLarge.override(
-                      fontFamily:
-                          FlutterFlowTheme.of(context).headlineLargeFamily,
+                      font: FlutterFlowTheme.of(context).headlineLarge,
                       color: FlutterFlowTheme.of(context).primaryBtnText,
                       letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).headlineLargeFamily),
                     ),
               ),
             ],
@@ -134,14 +128,11 @@ Successfully. */
                 ),
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).displayMedium.override(
-                      fontFamily:
-                          FlutterFlowTheme.of(context).displayMediumFamily,
+                      font: FlutterFlowTheme.of(context).displayMedium,
                       color: FlutterFlowTheme.of(context).primaryBtnText,
                       fontSize: 27.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w600,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).displayMediumFamily),
                     ),
               ),
             ],
@@ -156,13 +147,10 @@ Successfully. */
                   '0',
                 )}',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily:
-                          FlutterFlowTheme.of(context).headlineMediumFamily,
+                      font: FlutterFlowTheme.of(context).headlineMedium,
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       fontSize: 30.0,
                       letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).headlineMediumFamily),
                     ),
               ),
             ],
@@ -176,12 +164,10 @@ Successfully. */
                   'em078l4s' /* Please Pay At Counter.. */,
                 ),
                 style: FlutterFlowTheme.of(context).labelLarge.override(
-                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                      font: FlutterFlowTheme.of(context).labelLarge,
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       fontSize: 24.0,
                       letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).labelLargeFamily),
                     ),
               ),
             ],
@@ -195,12 +181,10 @@ Successfully. */
                   '0gqlcefu' /* Redirects Automatically */,
                 ),
                 style: FlutterFlowTheme.of(context).labelLarge.override(
-                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+                      font: FlutterFlowTheme.of(context).labelLarge,
                       color: FlutterFlowTheme.of(context).primary,
                       fontSize: 16.0,
                       letterSpacing: 0.0,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).labelLargeFamily),
                     ),
               ),
             ],

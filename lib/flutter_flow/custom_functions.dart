@@ -1332,3 +1332,23 @@ double gerProgressValue(
   }
   return current / total;
 }
+
+String? returnTotalQtybyWeight(
+  String unitWeight,
+  String totalWeight,
+) {
+  try {
+    double unit = double.parse(unitWeight);
+    double total = double.parse(totalWeight);
+
+    if (unit <= 0) {
+      return "0"; // Prevent division by zero or negative unit weight
+    }
+
+    double quantity = total / unit;
+    return quantity
+        .toStringAsFixed(2); // Returns quantity with 2 decimal places
+  } catch (e) {
+    return "0"; // Return null if parsing fails (invalid input)
+  }
+}

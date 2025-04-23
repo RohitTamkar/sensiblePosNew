@@ -135,12 +135,10 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
       selectedChipStyle: ChipStyle(
         backgroundColor: FlutterFlowTheme.of(context).primary,
         textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
+              font: FlutterFlowTheme.of(context).labelLarge,
               color: FlutterFlowTheme.of(context).secondaryBackground,
               letterSpacing: 0.0,
               fontWeight: FontWeight.w600,
-              useGoogleFonts: GoogleFonts.asMap()
-                  .containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
             ),
         iconColor: FlutterFlowTheme.of(context).secondaryBackground,
         iconSize: 16.0,
@@ -150,10 +148,8 @@ class _DineInparcelWidgetState extends State<DineInparcelWidget> {
       unselectedChipStyle: ChipStyle(
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         textStyle: FlutterFlowTheme.of(context).labelSmall.override(
-              fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+              font: FlutterFlowTheme.of(context).labelSmall,
               letterSpacing: 0.0,
-              useGoogleFonts: GoogleFonts.asMap()
-                  .containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
             ),
         iconColor: FlutterFlowTheme.of(context).primaryText,
         iconSize: 16.0,
