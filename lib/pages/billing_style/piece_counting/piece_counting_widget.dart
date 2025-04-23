@@ -706,9 +706,8 @@ class _PieceCountingWidgetState extends State<PieceCountingWidget> {
                                                             10.0),
                                                   ),
                                                   child: FFButtonWidget(
-                                                    onPressed: () {
-                                                      print(
-                                                          'Button pressed ...');
+                                                    onPressed: () async {
+                                                      safeSetState(() {});
                                                     },
                                                     text: FFLocalizations.of(
                                                             context)
