@@ -1237,7 +1237,146 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                   size: 18.0,
                                                 ),
                                                 onPressed: () async {
-                                                  context.safePop();
+                                                  FFAppState().port =
+                                                      FFAppState().port;
+                                                  safeSetState(() {});
+                                                  _model.paymentmode =
+                                                      await queryPaymentModeRecordOnce();
+                                                  if (FFAppState().navigate ==
+                                                      'GROCERY') {
+                                                    context.goNamed(
+                                                      BillingGroceryNewWidget
+                                                          .routeName,
+                                                      queryParameters: {
+                                                        'shiftdetail':
+                                                            serializeParam(
+                                                          widget!.shiftdetail,
+                                                          ParamType.JSON,
+                                                        ),
+                                                        'taxDetails':
+                                                            serializeParam(
+                                                          widget!.taxDetails,
+                                                          ParamType.Document,
+                                                          isList: true,
+                                                        ),
+                                                        'userref':
+                                                            serializeParam(
+                                                          widget!.userref,
+                                                          ParamType
+                                                              .DocumentReference,
+                                                        ),
+                                                        'paymentMode':
+                                                            serializeParam(
+                                                          widget!.paymentMode,
+                                                          ParamType.Document,
+                                                          isList: true,
+                                                        ),
+                                                      }.withoutNulls,
+                                                      extra: <String, dynamic>{
+                                                        'taxDetails':
+                                                            widget!.taxDetails,
+                                                        'paymentMode':
+                                                            widget!.paymentMode,
+                                                      },
+                                                    );
+                                                  } else if (containerAppSettingsRecord!
+                                                      .settingList
+                                                      .where((e) =>
+                                                          e.title ==
+                                                          'enableweightScale')
+                                                      .toList()
+                                                      .firstOrNull!
+                                                      .value) {
+                                                    context.pushNamed(
+                                                      ProductAndListlaundrybillingWidget
+                                                          .routeName,
+                                                      queryParameters: {
+                                                        'doc': serializeParam(
+                                                          widget!.userref,
+                                                          ParamType
+                                                              .DocumentReference,
+                                                        ),
+                                                        'shiftDetails':
+                                                            serializeParam(
+                                                          widget!.shiftdetail,
+                                                          ParamType.JSON,
+                                                        ),
+                                                        'taxcollection':
+                                                            serializeParam(
+                                                          widget!.taxDetails,
+                                                          ParamType.Document,
+                                                          isList: true,
+                                                        ),
+                                                      }.withoutNulls,
+                                                      extra: <String, dynamic>{
+                                                        'taxcollection':
+                                                            widget!.taxDetails,
+                                                      },
+                                                    );
+                                                  } else if (containerAppSettingsRecord!
+                                                      .settingList
+                                                      .where((e) =>
+                                                          e.title ==
+                                                          'enableCombo')
+                                                      .toList()
+                                                      .firstOrNull!
+                                                      .value) {
+                                                    context.pushNamed(
+                                                      ProductComboBillingWidget
+                                                          .routeName,
+                                                      queryParameters: {
+                                                        'taxcollection':
+                                                            serializeParam(
+                                                          widget!.taxDetails,
+                                                          ParamType.Document,
+                                                          isList: true,
+                                                        ),
+                                                        'doc': serializeParam(
+                                                          widget!.userref,
+                                                          ParamType
+                                                              .DocumentReference,
+                                                        ),
+                                                        'shiftDetails':
+                                                            serializeParam(
+                                                          widget!.shiftdetail,
+                                                          ParamType.JSON,
+                                                        ),
+                                                      }.withoutNulls,
+                                                      extra: <String, dynamic>{
+                                                        'taxcollection':
+                                                            widget!.taxDetails,
+                                                      },
+                                                    );
+                                                  } else {
+                                                    context.pushNamed(
+                                                      ProductAndListNewWidget
+                                                          .routeName,
+                                                      queryParameters: {
+                                                        'doc': serializeParam(
+                                                          widget!.userref,
+                                                          ParamType
+                                                              .DocumentReference,
+                                                        ),
+                                                        'shiftDetails':
+                                                            serializeParam(
+                                                          widget!.shiftdetail,
+                                                          ParamType.JSON,
+                                                        ),
+                                                        'taxcollection':
+                                                            serializeParam(
+                                                          widget!.taxDetails,
+                                                          ParamType.Document,
+                                                          isList: true,
+                                                        ),
+                                                      }.withoutNulls,
+                                                      extra: <String, dynamic>{
+                                                        'taxcollection':
+                                                            widget!.taxDetails,
+                                                      },
+                                                    );
+                                                  }
+
+                                                  safeSetState(() {});
                                                 },
                                               ),
                                             ),

@@ -107,7 +107,7 @@ Future printBill(
               bytes += generator.image(imageRaster);
 
               // Add some space after the logo
-              bytes += generator.feed(1);
+              // bytes += generator.feed(1);
             }
           } catch (e) {
             print('Error printing logo: $e');
@@ -243,6 +243,20 @@ Future printBill(
                 width: PosTextSize.size2,
                 bold: true,
                 align: PosAlign.center));
+      } else {
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+        bytes += generator.text('Bill no: ' + FFAppState().count.toString(),
+            styles: const PosStyles(
+                height: PosTextSize.size2,
+                width: PosTextSize.size2,
+                bold: true,
+                align: PosAlign.center));
       }
 
       bytes += generator.text("-----------------------------------------------",
@@ -278,7 +292,14 @@ Future printBill(
       final String formatted1 = formatter1.format(now1);
 
       String dateTimeString = formatted1.toString();
-      String billNo = 'Bill No:' + invoiceDetails.invoice.toString();
+      String billNo;
+      if (appSetting.settingList.any((setting) =>
+          setting.title == 'disableOrderType' && setting.value == false)) {
+        billNo = 'Bill No:' + invoiceDetails.invoice.toString();
+      } else {
+        billNo = 'ORD ID:' + invoiceDetails.invoice.toString();
+      }
+
       printLine = billNo;
       for (int i = 1;
           i <= (size - (billNo.length + dateTimeString.length));

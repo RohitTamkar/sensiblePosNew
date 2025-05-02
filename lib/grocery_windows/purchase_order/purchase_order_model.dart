@@ -63,6 +63,8 @@ class PurchaseOrderModel extends FlutterFlowModel<PurchaseOrderWidget> {
   String? Function(BuildContext, String?)?
       textFieldsearchTextControllerValidator;
   List<PartyRecord> simpleSearchResults = [];
+  // Stores action output result for [Firestore Query - Query a collection] action in IconButton widget.
+  List<PaymentModeRecord>? paymentmode;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<ProductRecord>? allprdrefresh;
   // Stores action output result for [Custom Action - addFirebasetoHiveProduct] action in Button widget.
