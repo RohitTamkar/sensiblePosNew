@@ -381,16 +381,18 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                       safeSetState(() {});
                                       _model.paymentmode =
                                           await queryPaymentModeRecordOnce();
+                                      _model.taxcollection23 =
+                                          await queryTaxMasterRecordOnce();
                                       if (FFAppState().navigate == 'GROCERY') {
                                         context.goNamed(
                                           BillingGroceryNewWidget.routeName,
                                           queryParameters: {
                                             'shiftdetail': serializeParam(
-                                              _model.shiftdetail,
+                                              FFAppState().shiftDetailsNEw,
                                               ParamType.JSON,
                                             ),
                                             'taxDetails': serializeParam(
-                                              _model.tax,
+                                              _model.taxcollection23,
                                               ParamType.Document,
                                               isList: true,
                                             ),
@@ -405,7 +407,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                             ),
                                           }.withoutNulls,
                                           extra: <String, dynamic>{
-                                            'taxDetails': _model.tax,
+                                            'taxDetails':
+                                                _model.taxcollection23,
                                             'paymentMode': _model.paymentmode,
                                           },
                                         );
@@ -428,17 +431,18 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                               ParamType.DocumentReference,
                                             ),
                                             'shiftDetails': serializeParam(
-                                              _model.shiftdetail,
+                                              FFAppState().shiftDetailsNEw,
                                               ParamType.JSON,
                                             ),
                                             'taxcollection': serializeParam(
-                                              _model.tax,
+                                              _model.taxcollection23,
                                               ParamType.Document,
                                               isList: true,
                                             ),
                                           }.withoutNulls,
                                           extra: <String, dynamic>{
-                                            'taxcollection': _model.tax,
+                                            'taxcollection':
+                                                _model.taxcollection23,
                                           },
                                         );
                                       } else if (_model.aappsetting!.settingList
@@ -451,7 +455,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                           ProductComboBillingWidget.routeName,
                                           queryParameters: {
                                             'taxcollection': serializeParam(
-                                              _model.tax,
+                                              _model.taxcollection23,
                                               ParamType.Document,
                                               isList: true,
                                             ),
@@ -464,12 +468,13 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                               ParamType.DocumentReference,
                                             ),
                                             'shiftDetails': serializeParam(
-                                              _model.shiftdetail,
+                                              FFAppState().shiftDetailsNEw,
                                               ParamType.JSON,
                                             ),
                                           }.withoutNulls,
                                           extra: <String, dynamic>{
-                                            'taxcollection': _model.tax,
+                                            'taxcollection':
+                                                _model.taxcollection23,
                                           },
                                         );
                                       } else {
@@ -485,17 +490,18 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                               ParamType.DocumentReference,
                                             ),
                                             'shiftDetails': serializeParam(
-                                              _model.shiftdetail,
+                                              FFAppState().shiftDetailsNEw,
                                               ParamType.JSON,
                                             ),
                                             'taxcollection': serializeParam(
-                                              _model.tax,
+                                              _model.taxcollection23,
                                               ParamType.Document,
                                               isList: true,
                                             ),
                                           }.withoutNulls,
                                           extra: <String, dynamic>{
-                                            'taxcollection': _model.tax,
+                                            'taxcollection':
+                                                _model.taxcollection23,
                                           },
                                         );
                                       }
