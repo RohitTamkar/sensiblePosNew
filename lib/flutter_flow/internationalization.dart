@@ -6723,6 +6723,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '₹',
       'th': '',
     },
+    'z7r6v29e': {
+      'en': 'Table Name',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
     '46t805ng': {
       'en': '45',
       'hi': '45',
@@ -6755,21 +6763,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '70 अनुक्षित',
       'th': '70',
     },
-    'coe9savd': {
+    'ign24m60': {
       'en': 'Print',
-      'hi': 'छाप',
-      'kn': 'ಮುದ್ರಣ',
-      'mr': 'प्रिंट',
-      'ta': 'அச்சு',
-      'th': 'พิมพ์',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
     },
-    'z2jqywe2': {
+    'dlp430ih': {
       'en': 'View',
-      'hi': 'देखना',
-      'kn': 'ವೀಕ್ಷಿಸಿ',
-      'mr': 'पहा',
-      'ta': 'காண்க',
-      'th': 'ดู',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
     },
     'hcnokcw4': {
       'en': 'Dine In',
