@@ -120,7 +120,11 @@ class _QtyEditWidgetState extends State<QtyEditWidget> {
                     if (widget!.parameter3!) {
                       if (!functions.greatethanlesskiosk(
                           functions.jsontoint(widget!.parameter4),
-                          functions.jsontoint(widget!.parameter1))) {
+                          valueOrDefault<int>(
+                            int.tryParse(
+                                _model.textFieldqty2TextController.text),
+                            0,
+                          ))) {
                         await showDialog(
                           context: context,
                           builder: (alertDialogContext) {
