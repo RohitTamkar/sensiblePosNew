@@ -152,6 +152,14 @@ class _QtyEditWidgetState extends State<QtyEditWidget> {
                       double.tryParse(_model.textFieldqty2TextController.text),
                     );
                     _shouldSetState = true;
+                    await actions.editCustomQty(
+                      widget!.parameter5!,
+                      FFAppState().selBill,
+                      widget!.parameter6!.toList(),
+                      functions.enabletaxinclusive(widget!.parameter7!),
+                      double.tryParse(_model.textFieldqty2TextController.text),
+                      _model.textFieldqty2TextController.text,
+                    );
                     await actions.calSubTotalForHoldListkiosk(
                       FFAppState().selBill.toString(),
                       _model.newcalQty!.toList(),

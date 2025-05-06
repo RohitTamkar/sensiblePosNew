@@ -11,13 +11,13 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
-import 'index.dart'; // Imports other custom actions
-
-Future<List<dynamic>> addToHoldListprdCopy(
+Future<List<dynamic>> editCustomQty(
   ProductStructStruct document,
   int billno,
   List<TaxMasterRecord> taxcollection,
   String inclusiveorexclusive,
+  double? newQty,
+  String? qtystring,
 ) async {
   List<dynamic> list = FFAppState().allBillsList;
   print(document);
@@ -25,11 +25,10 @@ Future<List<dynamic>> addToHoldListprdCopy(
   var y = 1.0;
 
   String? taxId = '';
-
-  if (document!.taxId.isNotEmpty) {
-    taxId = document.taxId;
-  } else {
+  if (document?.taxId == null || document!.taxId.isEmpty) {
     taxId = 'QPIz6c63YKBYVKT80oPv';
+  } else {
+    taxId = document?.taxId;
   }
   TaxMasterRecord? taxRecord = taxcollection.firstWhere(
     (element) => element.id == taxId,
@@ -38,7 +37,7 @@ Future<List<dynamic>> addToHoldListprdCopy(
 
   if (taxRecord != null) {
     double taxPer = taxRecord.percentage ?? 0.0;
-    double price = document!.sellingPrice;
+    double price = document!.price;
     double quantity = y.toDouble();
 
     // Calculate taxAmt for each item separately
@@ -48,15 +47,13 @@ Future<List<dynamic>> addToHoldListprdCopy(
 
     double taxAmt = taxAmtPerItem * quantity;
 
-    /* double total = (inclusiveorexclusive.toLowerCase() == 'inclusive')
-        ? (price * quantity)
-        : (price * quantity) + double.parse(taxAmt.toStringAsFixed(2));*/
     double total = (inclusiveorexclusive.toLowerCase() == 'inclusive')
         ? (price * quantity)
         : (price * quantity);
+
     final data = {
       "name": document!.name,
-      "price": (document.sellingPrice)!.toDouble(),
+      "price": (document.price)!.toDouble(),
       "quantity": quantity,
       "total": total, // Include taxAmt for exclusive tax
       "id": document!.id,
@@ -64,9 +61,7 @@ Future<List<dynamic>> addToHoldListprdCopy(
       "taxId": document!.taxId,
       "taxPer": taxPer,
       "taxAmt": double.parse(taxAmt.toStringAsFixed(2)),
-      "currentStock": document!.stock ?? 0,
-      "stockable": document!.stockable ?? false,
-      "qtystring": quantity.toString()
+      "weightable": document!.weightable ?? false,
     };
 
     var index;
@@ -94,7 +89,7 @@ Future<List<dynamic>> addToHoldListprdCopy(
       if (flag1) {
         for (int j = 0; j < itemList.length; j++) {
           if (itemList[j]["name"] == data["name"]) {
-            itemList[j]["quantity"]++;
+            itemList[j]["quantity"] = newQty;
             itemList[j]["taxAmt"] +=
                 taxAmtPerItem; // Update taxAmt for each item
             if (inclusiveorexclusive.toLowerCase() == 'inclusive') {
@@ -103,7 +98,7 @@ Future<List<dynamic>> addToHoldListprdCopy(
             } else {
               itemList[j]["total"] =
                   itemList[j]["quantity"] * itemList[j]["price"];
-            }
+            } // Update total for each item
             list[index]["details"]["itemList"] = itemList;
             FFAppState().allBillsList = list;
             flag = true;
