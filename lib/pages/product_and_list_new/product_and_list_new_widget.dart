@@ -2935,345 +2935,388 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                       children: [
                                         Expanded(
                                           flex: 18,
-                                          child: Container(
-                                            width: 100.0,
-                                            height: double.infinity,
-                                            decoration: BoxDecoration(),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Expanded(
-                                                  child: Container(
-                                                    width: double.infinity,
-                                                    height: double.infinity,
-                                                    child: Stack(
-                                                      children: [
-                                                        Container(
-                                                          width:
-                                                              double.infinity,
-                                                          height:
-                                                              double.infinity,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                          ),
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Expanded(
-                                                                child: Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          3.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Container(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            0.115,
-                                                                        height:
-                                                                            double.infinity,
-                                                                        decoration:
-                                                                            BoxDecoration(),
-                                                                        child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.spaceBetween,
-                                                                          children: [
-                                                                            Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.5),
-                                                                              child: InkWell(
-                                                                                splashColor: Colors.transparent,
-                                                                                focusColor: Colors.transparent,
-                                                                                hoverColor: Colors.transparent,
-                                                                                highlightColor: Colors.transparent,
-                                                                                onTap: () async {
-                                                                                  await actions.hideAppbar();
-                                                                                  FFAppState().categoryColor = '';
-                                                                                  FFAppState().update(() {});
-                                                                                  FFAppState().outletCatRef = FFAppState().catRef;
-                                                                                  FFAppState().update(() {});
-                                                                                  FFAppState().catAllColor = FlutterFlowTheme.of(context).primary;
-                                                                                  FFAppState().update(() {});
-                                                                                  FFAppState().categoryID = '';
-                                                                                  safeSetState(() {});
-                                                                                  _model.prdhiveall = await actions.getProductlistHive();
-                                                                                  FFAppState().productHive = _model.prdhiveall!.toList().cast<ProductStructStruct>();
-                                                                                  safeSetState(() {});
+                                          child: FutureBuilder<
+                                              List<UnitTypeRecord>>(
+                                            future: queryUnitTypeRecordOnce(),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    child: SpinKitFadingCircle(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      size: 40.0,
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              List<UnitTypeRecord>
+                                                  containerUnitTypeRecordList =
+                                                  snapshot.data!;
 
-                                                                                  safeSetState(() {});
-                                                                                },
-                                                                                child: Container(
-                                                                                  width: double.infinity,
-                                                                                  decoration: BoxDecoration(
-                                                                                    color: valueOrDefault<Color>(
-                                                                                      FFAppState().catAllColor,
-                                                                                      FlutterFlowTheme.of(context).secondary,
-                                                                                    ),
-                                                                                    border: Border.all(
-                                                                                      color: FlutterFlowTheme.of(context).customColor1,
-                                                                                    ),
-                                                                                  ),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                                                    children: [
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
-                                                                                        child: Text(
-                                                                                          FFLocalizations.of(context).getText(
-                                                                                            'rwabb586' /* All */,
-                                                                                          ),
-                                                                                          textAlign: TextAlign.center,
-                                                                                          style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).titleSmall,
-                                                                                                color: FlutterFlowTheme.of(context).lineColor,
-                                                                                                letterSpacing: 0.0,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                            Expanded(
-                                                                              child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
-                                                                                child: Container(
-                                                                                  width: double.infinity,
-                                                                                  height: 100.0,
-                                                                                  decoration: BoxDecoration(),
-                                                                                  child: Builder(
-                                                                                    builder: (context) {
-                                                                                      final categoryList = (productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'sortCategoryByCode').toList().firstOrNull!.value ? FFAppState().categoryHive.sortedList(keyOf: (e) => e.code, desc: false) : FFAppState().categoryHive.sortedList(keyOf: (e) => e.name, desc: false)).toList();
+                                              return Container(
+                                                width: 100.0,
+                                                height: double.infinity,
+                                                decoration: BoxDecoration(),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Expanded(
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: double.infinity,
+                                                        child: Stack(
+                                                          children: [
+                                                            Container(
+                                                              width: double
+                                                                  .infinity,
+                                                              height: double
+                                                                  .infinity,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                              ),
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Expanded(
+                                                                    child: Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              3.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Container(
+                                                                            width:
+                                                                                MediaQuery.sizeOf(context).width * 0.115,
+                                                                            height:
+                                                                                double.infinity,
+                                                                            decoration:
+                                                                                BoxDecoration(),
+                                                                            child:
+                                                                                Column(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                              children: [
+                                                                                Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.5),
+                                                                                  child: InkWell(
+                                                                                    splashColor: Colors.transparent,
+                                                                                    focusColor: Colors.transparent,
+                                                                                    hoverColor: Colors.transparent,
+                                                                                    highlightColor: Colors.transparent,
+                                                                                    onTap: () async {
+                                                                                      await actions.hideAppbar();
+                                                                                      FFAppState().categoryColor = '';
+                                                                                      FFAppState().update(() {});
+                                                                                      FFAppState().outletCatRef = FFAppState().catRef;
+                                                                                      FFAppState().update(() {});
+                                                                                      FFAppState().catAllColor = FlutterFlowTheme.of(context).primary;
+                                                                                      FFAppState().update(() {});
+                                                                                      FFAppState().categoryID = '';
+                                                                                      safeSetState(() {});
+                                                                                      _model.prdhiveall = await actions.getProductlistHive();
+                                                                                      FFAppState().productHive = _model.prdhiveall!.toList().cast<ProductStructStruct>();
+                                                                                      safeSetState(() {});
 
-                                                                                      return ListView.builder(
-                                                                                        padding: EdgeInsets.zero,
-                                                                                        scrollDirection: Axis.vertical,
-                                                                                        itemCount: categoryList.length,
-                                                                                        itemBuilder: (context, categoryListIndex) {
-                                                                                          final categoryListItem = categoryList[categoryListIndex];
-                                                                                          return Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.5),
-                                                                                            child: InkWell(
-                                                                                              splashColor: Colors.transparent,
-                                                                                              focusColor: Colors.transparent,
-                                                                                              hoverColor: Colors.transparent,
-                                                                                              highlightColor: Colors.transparent,
-                                                                                              onTap: () async {
-                                                                                                FFAppState().catAllColor = Color(4292855973);
-                                                                                                safeSetState(() {});
-                                                                                                FFAppState().categoryColor = categoryListItem.id;
-                                                                                                FFAppState().update(() {});
-                                                                                                _model.prdhive = await actions.getProductlistHive();
-                                                                                                FFAppState().categoryID = categoryListItem.id;
-                                                                                                safeSetState(() {});
-                                                                                                FFAppState().productHive = _model.prdhive!.where((e) => e.categoryId == categoryListItem.id).toList().cast<ProductStructStruct>();
-                                                                                                safeSetState(() {});
-
-                                                                                                safeSetState(() {});
-                                                                                              },
-                                                                                              child: Container(
-                                                                                                width: double.infinity,
-                                                                                                decoration: BoxDecoration(
-                                                                                                  color: FFAppState().categoryColor == categoryListItem.id ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
-                                                                                                ),
-                                                                                                child: Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
-                                                                                                  child: Text(
-                                                                                                    categoryListItem.name,
-                                                                                                    textAlign: TextAlign.center,
-                                                                                                    style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                                          font: FlutterFlowTheme.of(context).labelLarge,
-                                                                                                          color: FlutterFlowTheme.of(context).lineColor,
-                                                                                                          fontSize: 14.0,
-                                                                                                          letterSpacing: 0.0,
-                                                                                                        ),
-                                                                                                  ),
-                                                                                                ),
-                                                                                              ),
-                                                                                            ),
-                                                                                          );
-                                                                                        },
-                                                                                        controller: _model.listViewController2,
-                                                                                      );
+                                                                                      safeSetState(() {});
                                                                                     },
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                    Expanded(
-                                                                      flex: 19,
-                                                                      child:
-                                                                          Container(
-                                                                        width:
-                                                                            100.0,
-                                                                        height:
-                                                                            double.infinity,
-                                                                        decoration:
-                                                                            BoxDecoration(),
-                                                                        child:
-                                                                            Stack(
-                                                                          children: [
-                                                                            Padding(
-                                                                              padding: EdgeInsets.all(1.0),
-                                                                              child: Container(
-                                                                                decoration: BoxDecoration(),
-                                                                                child: Builder(
-                                                                                  builder: (context) {
-                                                                                    final productList = (productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'sortProductByCode').toList().firstOrNull!.value ? FFAppState().productHive.sortedList(keyOf: (e) => e.code, desc: false) : FFAppState().productHive.sortedList(keyOf: (e) => e.name, desc: false)).toList();
-                                                                                    if (productList.isEmpty) {
-                                                                                      return Center(
-                                                                                        child: Image.asset(
-                                                                                          'assets/images/9091-empty-sad-shopping-bag.gif',
-                                                                                          width: MediaQuery.sizeOf(context).width * 0.28,
+                                                                                    child: Container(
+                                                                                      width: double.infinity,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: valueOrDefault<Color>(
+                                                                                          FFAppState().catAllColor,
+                                                                                          FlutterFlowTheme.of(context).secondary,
                                                                                         ),
-                                                                                      );
-                                                                                    }
-
-                                                                                    return GridView.builder(
-                                                                                      padding: EdgeInsets.zero,
-                                                                                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                                                                        crossAxisCount: 5,
-                                                                                        crossAxisSpacing: 3.0,
-                                                                                        mainAxisSpacing: 4.0,
-                                                                                        childAspectRatio: 1.3,
+                                                                                        border: Border.all(
+                                                                                          color: FlutterFlowTheme.of(context).customColor1,
+                                                                                        ),
                                                                                       ),
-                                                                                      scrollDirection: Axis.vertical,
-                                                                                      itemCount: productList.length,
-                                                                                      itemBuilder: (context, productListIndex) {
-                                                                                        final productListItem = productList[productListIndex];
-                                                                                        return Container(
-                                                                                          width: 113.0,
-                                                                                          height: 100.0,
-                                                                                          decoration: BoxDecoration(
-                                                                                            color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                            borderRadius: BorderRadius.circular(5.0),
-                                                                                            border: Border.all(
-                                                                                              color: FlutterFlowTheme.of(context).customColor2,
-                                                                                              width: 1.0,
+                                                                                      child: Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                                                        children: [
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
+                                                                                            child: Text(
+                                                                                              FFLocalizations.of(context).getText(
+                                                                                                'rwabb586' /* All */,
+                                                                                              ),
+                                                                                              textAlign: TextAlign.center,
+                                                                                              style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    color: FlutterFlowTheme.of(context).lineColor,
+                                                                                                    letterSpacing: 0.0,
+                                                                                                  ),
                                                                                             ),
                                                                                           ),
-                                                                                          child: Stack(
-                                                                                            children: [
-                                                                                              if (!productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'showProductImage').toList().firstOrNull!.value)
-                                                                                                InkWell(
+                                                                                        ],
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                                Expanded(
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                    child: Container(
+                                                                                      width: double.infinity,
+                                                                                      height: 100.0,
+                                                                                      decoration: BoxDecoration(),
+                                                                                      child: Builder(
+                                                                                        builder: (context) {
+                                                                                          final categoryList = (productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'sortCategoryByCode').toList().firstOrNull!.value ? FFAppState().categoryHive.sortedList(keyOf: (e) => e.code, desc: false) : FFAppState().categoryHive.sortedList(keyOf: (e) => e.name, desc: false)).toList();
+
+                                                                                          return ListView.builder(
+                                                                                            padding: EdgeInsets.zero,
+                                                                                            scrollDirection: Axis.vertical,
+                                                                                            itemCount: categoryList.length,
+                                                                                            itemBuilder: (context, categoryListIndex) {
+                                                                                              final categoryListItem = categoryList[categoryListIndex];
+                                                                                              return Padding(
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.5),
+                                                                                                child: InkWell(
                                                                                                   splashColor: Colors.transparent,
                                                                                                   focusColor: Colors.transparent,
                                                                                                   hoverColor: Colors.transparent,
                                                                                                   highlightColor: Colors.transparent,
                                                                                                   onTap: () async {
-                                                                                                    var _shouldSetState = false;
-                                                                                                    FFAppState().groceryshow = false;
+                                                                                                    FFAppState().catAllColor = Color(4292855973);
                                                                                                     safeSetState(() {});
-                                                                                                    if (productListItem.stockable) {
-                                                                                                      if (productListItem.stock > 0) {
-                                                                                                        if (FFAppState().prdid != productListItem.id) {
-                                                                                                          if (FFAppState().holdBillCount == 0) {
-                                                                                                            FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                                                                                                            FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
-                                                                                                            FFAppState().selBill = 1;
-                                                                                                          }
-                                                                                                          _model.addtosavebill3 = await actions.addToHoldListprdCopy(
-                                                                                                            productListItem,
-                                                                                                            FFAppState().selBill,
-                                                                                                            widget!.taxcollection!.toList(),
-                                                                                                            functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                                                          );
-                                                                                                          _shouldSetState = true;
-                                                                                                          _model.calculateResult23dfsdf = await actions.calSubTotalForHoldListkiosk(
-                                                                                                            FFAppState().selBill.toString(),
-                                                                                                            _model.addtosavebill3!.toList(),
-                                                                                                            functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                                                          );
-                                                                                                          _shouldSetState = true;
-                                                                                                          _model.calbillAmt2s = await actions.calBillAmt(
-                                                                                                            FFAppState().disAmt,
-                                                                                                            FFAppState().delCharges,
-                                                                                                          );
-                                                                                                          _shouldSetState = true;
-                                                                                                          FFAppState().prdid = productListItem.id;
-                                                                                                          safeSetState(() {});
-                                                                                                          await _model.listViewprd?.animateTo(
-                                                                                                            _model.listViewprd!.position.maxScrollExtent,
-                                                                                                            duration: Duration(milliseconds: 100),
-                                                                                                            curve: Curves.ease,
-                                                                                                          );
-                                                                                                          if (_shouldSetState) safeSetState(() {});
-                                                                                                          return;
-                                                                                                        } else {
-                                                                                                          if (productListItem.stock >
-                                                                                                              functions.doubleToInt(valueOrDefault<double>(
-                                                                                                                getJsonField(
-                                                                                                                  functions
-                                                                                                                      .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
-                                                                                                                      .where((e) =>
-                                                                                                                          productListItem.id ==
-                                                                                                                          valueOrDefault<String>(
-                                                                                                                            getJsonField(
-                                                                                                                              e,
-                                                                                                                              r'''$.id''',
-                                                                                                                            )?.toString(),
-                                                                                                                            '0',
-                                                                                                                          ))
-                                                                                                                      .toList()
-                                                                                                                      .firstOrNull,
-                                                                                                                  r'''$.quantity''',
-                                                                                                                ),
-                                                                                                                0.0,
-                                                                                                              ))!) {
-                                                                                                            if (FFAppState().holdBillCount == 0) {
-                                                                                                              FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                                                                                                              FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
-                                                                                                              FFAppState().selBill = 1;
+                                                                                                    FFAppState().categoryColor = categoryListItem.id;
+                                                                                                    FFAppState().update(() {});
+                                                                                                    _model.prdhive = await actions.getProductlistHive();
+                                                                                                    FFAppState().categoryID = categoryListItem.id;
+                                                                                                    safeSetState(() {});
+                                                                                                    FFAppState().productHive = _model.prdhive!.where((e) => e.categoryId == categoryListItem.id).toList().cast<ProductStructStruct>();
+                                                                                                    safeSetState(() {});
+
+                                                                                                    safeSetState(() {});
+                                                                                                  },
+                                                                                                  child: Container(
+                                                                                                    width: double.infinity,
+                                                                                                    decoration: BoxDecoration(
+                                                                                                      color: FFAppState().categoryColor == categoryListItem.id ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondary,
+                                                                                                    ),
+                                                                                                    child: Padding(
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
+                                                                                                      child: Text(
+                                                                                                        categoryListItem.name,
+                                                                                                        textAlign: TextAlign.center,
+                                                                                                        style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                                              font: FlutterFlowTheme.of(context).labelLarge,
+                                                                                                              color: FlutterFlowTheme.of(context).lineColor,
+                                                                                                              fontSize: 14.0,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                            ),
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              );
+                                                                                            },
+                                                                                            controller: _model.listViewController2,
+                                                                                          );
+                                                                                        },
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ],
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        Expanded(
+                                                                          flex:
+                                                                              19,
+                                                                          child:
+                                                                              Container(
+                                                                            width:
+                                                                                100.0,
+                                                                            height:
+                                                                                double.infinity,
+                                                                            decoration:
+                                                                                BoxDecoration(),
+                                                                            child:
+                                                                                Stack(
+                                                                              children: [
+                                                                                Padding(
+                                                                                  padding: EdgeInsets.all(1.0),
+                                                                                  child: Container(
+                                                                                    decoration: BoxDecoration(),
+                                                                                    child: Builder(
+                                                                                      builder: (context) {
+                                                                                        final productList = (productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'sortProductByCode').toList().firstOrNull!.value ? FFAppState().productHive.sortedList(keyOf: (e) => e.code, desc: false) : FFAppState().productHive.sortedList(keyOf: (e) => e.name, desc: false)).toList();
+                                                                                        if (productList.isEmpty) {
+                                                                                          return Center(
+                                                                                            child: Image.asset(
+                                                                                              'assets/images/9091-empty-sad-shopping-bag.gif',
+                                                                                              width: MediaQuery.sizeOf(context).width * 0.28,
+                                                                                            ),
+                                                                                          );
+                                                                                        }
+
+                                                                                        return GridView.builder(
+                                                                                          padding: EdgeInsets.zero,
+                                                                                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                                                                            crossAxisCount: 5,
+                                                                                            crossAxisSpacing: 3.0,
+                                                                                            mainAxisSpacing: 4.0,
+                                                                                            childAspectRatio: 1.3,
+                                                                                          ),
+                                                                                          scrollDirection: Axis.vertical,
+                                                                                          itemCount: productList.length,
+                                                                                          itemBuilder: (context, productListIndex) {
+                                                                                            final productListItem = productList[productListIndex];
+                                                                                            return Container(
+                                                                                              width: 113.0,
+                                                                                              height: 100.0,
+                                                                                              decoration: BoxDecoration(
+                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                borderRadius: BorderRadius.circular(5.0),
+                                                                                                border: Border.all(
+                                                                                                  color: FlutterFlowTheme.of(context).customColor2,
+                                                                                                  width: 1.0,
+                                                                                                ),
+                                                                                              ),
+                                                                                              child: Stack(
+                                                                                                children: [
+                                                                                                  if (!productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'showProductImage').toList().firstOrNull!.value)
+                                                                                                    InkWell(
+                                                                                                      splashColor: Colors.transparent,
+                                                                                                      focusColor: Colors.transparent,
+                                                                                                      hoverColor: Colors.transparent,
+                                                                                                      highlightColor: Colors.transparent,
+                                                                                                      onTap: () async {
+                                                                                                        var _shouldSetState = false;
+                                                                                                        FFAppState().groceryshow = false;
+                                                                                                        safeSetState(() {});
+                                                                                                        if (productListItem.stockable) {
+                                                                                                          if (productListItem.stock > 0) {
+                                                                                                            if (FFAppState().prdid != productListItem.id) {
+                                                                                                              if (FFAppState().holdBillCount == 0) {
+                                                                                                                FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                                                FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                                                FFAppState().selBill = 1;
+                                                                                                              }
+                                                                                                              _model.addtosavebill3 = await actions.addToHoldListprdCopy(
+                                                                                                                productListItem,
+                                                                                                                FFAppState().selBill,
+                                                                                                                widget!.taxcollection!.toList(),
+                                                                                                                functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                                              );
+                                                                                                              _shouldSetState = true;
+                                                                                                              _model.calculateResult23dfsdf = await actions.calSubTotalForHoldListkiosk(
+                                                                                                                FFAppState().selBill.toString(),
+                                                                                                                _model.addtosavebill3!.toList(),
+                                                                                                                functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                                              );
+                                                                                                              _shouldSetState = true;
+                                                                                                              _model.calbillAmt2s = await actions.calBillAmt(
+                                                                                                                FFAppState().disAmt,
+                                                                                                                FFAppState().delCharges,
+                                                                                                              );
+                                                                                                              _shouldSetState = true;
+                                                                                                              FFAppState().prdid = productListItem.id;
+                                                                                                              safeSetState(() {});
+                                                                                                              await _model.listViewprd?.animateTo(
+                                                                                                                _model.listViewprd!.position.maxScrollExtent,
+                                                                                                                duration: Duration(milliseconds: 100),
+                                                                                                                curve: Curves.ease,
+                                                                                                              );
+                                                                                                              if (_shouldSetState) safeSetState(() {});
+                                                                                                              return;
+                                                                                                            } else {
+                                                                                                              if (productListItem.stock >
+                                                                                                                  functions.doubleToInt(valueOrDefault<double>(
+                                                                                                                    getJsonField(
+                                                                                                                      functions
+                                                                                                                          .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
+                                                                                                                          .where((e) =>
+                                                                                                                              productListItem.id ==
+                                                                                                                              valueOrDefault<String>(
+                                                                                                                                getJsonField(
+                                                                                                                                  e,
+                                                                                                                                  r'''$.id''',
+                                                                                                                                )?.toString(),
+                                                                                                                                '0',
+                                                                                                                              ))
+                                                                                                                          .toList()
+                                                                                                                          .firstOrNull,
+                                                                                                                      r'''$.quantity''',
+                                                                                                                    ),
+                                                                                                                    0.0,
+                                                                                                                  ))!) {
+                                                                                                                if (FFAppState().holdBillCount == 0) {
+                                                                                                                  FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                                                  FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                                                  FFAppState().selBill = 1;
+                                                                                                                }
+                                                                                                                _model.addtosavebill3d = await actions.addToHoldListprdCopy(
+                                                                                                                  productListItem,
+                                                                                                                  FFAppState().selBill,
+                                                                                                                  widget!.taxcollection!.toList(),
+                                                                                                                  functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                                                );
+                                                                                                                _shouldSetState = true;
+                                                                                                                _model.calculateResult23df = await actions.calSubTotalForHoldListkiosk(
+                                                                                                                  FFAppState().selBill.toString(),
+                                                                                                                  _model.addtosavebill3d!.toList(),
+                                                                                                                  functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                                                );
+                                                                                                                _shouldSetState = true;
+                                                                                                                _model.calbillAmt2sd = await actions.calBillAmt(
+                                                                                                                  FFAppState().disAmt,
+                                                                                                                  FFAppState().delCharges,
+                                                                                                                );
+                                                                                                                _shouldSetState = true;
+                                                                                                                await _model.listViewprd?.animateTo(
+                                                                                                                  _model.listViewprd!.position.maxScrollExtent,
+                                                                                                                  duration: Duration(milliseconds: 100),
+                                                                                                                  curve: Curves.ease,
+                                                                                                                );
+                                                                                                                if (_shouldSetState) safeSetState(() {});
+                                                                                                                return;
+                                                                                                              } else {
+                                                                                                                await showDialog(
+                                                                                                                  context: context,
+                                                                                                                  builder: (alertDialogContext) {
+                                                                                                                    return AlertDialog(
+                                                                                                                      content: Text('Item Out Of  Stock'),
+                                                                                                                      actions: [
+                                                                                                                        TextButton(
+                                                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                                          child: Text('Ok'),
+                                                                                                                        ),
+                                                                                                                      ],
+                                                                                                                    );
+                                                                                                                  },
+                                                                                                                );
+                                                                                                                if (_shouldSetState) safeSetState(() {});
+                                                                                                                return;
+                                                                                                              }
                                                                                                             }
-                                                                                                            _model.addtosavebill3d = await actions.addToHoldListprdCopy(
-                                                                                                              productListItem,
-                                                                                                              FFAppState().selBill,
-                                                                                                              widget!.taxcollection!.toList(),
-                                                                                                              functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                                                            );
-                                                                                                            _shouldSetState = true;
-                                                                                                            _model.calculateResult23df = await actions.calSubTotalForHoldListkiosk(
-                                                                                                              FFAppState().selBill.toString(),
-                                                                                                              _model.addtosavebill3d!.toList(),
-                                                                                                              functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                                                            );
-                                                                                                            _shouldSetState = true;
-                                                                                                            _model.calbillAmt2sd = await actions.calBillAmt(
-                                                                                                              FFAppState().disAmt,
-                                                                                                              FFAppState().delCharges,
-                                                                                                            );
-                                                                                                            _shouldSetState = true;
-                                                                                                            await _model.listViewprd?.animateTo(
-                                                                                                              _model.listViewprd!.position.maxScrollExtent,
-                                                                                                              duration: Duration(milliseconds: 100),
-                                                                                                              curve: Curves.ease,
-                                                                                                            );
-                                                                                                            if (_shouldSetState) safeSetState(() {});
-                                                                                                            return;
                                                                                                           } else {
                                                                                                             await showDialog(
                                                                                                               context: context,
                                                                                                               builder: (alertDialogContext) {
                                                                                                                 return AlertDialog(
-                                                                                                                  content: Text('Item Out Of  Stock'),
+                                                                                                                  content: Text('Item Out Of Stock'),
                                                                                                                   actions: [
                                                                                                                     TextButton(
                                                                                                                       onPressed: () => Navigator.pop(alertDialogContext),
@@ -3286,237 +3329,185 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                             if (_shouldSetState) safeSetState(() {});
                                                                                                             return;
                                                                                                           }
+                                                                                                        } else {
+                                                                                                          if (FFAppState().holdBillCount == 0) {
+                                                                                                            FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                                            FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                                            FFAppState().selBill = 1;
+                                                                                                          }
+                                                                                                          _model.addtosavebill2 = await actions.addToHoldListprdCopy(
+                                                                                                            productListItem,
+                                                                                                            FFAppState().selBill,
+                                                                                                            widget!.taxcollection!.toList(),
+                                                                                                            functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                                          );
+                                                                                                          _shouldSetState = true;
+                                                                                                          _model.calculateResult23 = await actions.calSubTotalForHoldListkiosk(
+                                                                                                            FFAppState().selBill.toString(),
+                                                                                                            _model.addtosavebill2!.toList(),
+                                                                                                            functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                                          );
+                                                                                                          _shouldSetState = true;
+                                                                                                          _model.calbillAmt3 = await actions.calBillAmt(
+                                                                                                            FFAppState().disAmt,
+                                                                                                            FFAppState().delCharges,
+                                                                                                          );
+                                                                                                          _shouldSetState = true;
+                                                                                                          await _model.listViewprd?.animateTo(
+                                                                                                            _model.listViewprd!.position.maxScrollExtent,
+                                                                                                            duration: Duration(milliseconds: 100),
+                                                                                                            curve: Curves.ease,
+                                                                                                          );
+                                                                                                          if (_shouldSetState) safeSetState(() {});
+                                                                                                          return;
                                                                                                         }
-                                                                                                      } else {
-                                                                                                        await showDialog(
-                                                                                                          context: context,
-                                                                                                          builder: (alertDialogContext) {
-                                                                                                            return AlertDialog(
-                                                                                                              content: Text('Item Out Of Stock'),
-                                                                                                              actions: [
-                                                                                                                TextButton(
-                                                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                                  child: Text('Ok'),
-                                                                                                                ),
-                                                                                                              ],
-                                                                                                            );
-                                                                                                          },
-                                                                                                        );
-                                                                                                        if (_shouldSetState) safeSetState(() {});
-                                                                                                        return;
-                                                                                                      }
-                                                                                                    } else {
-                                                                                                      if (FFAppState().holdBillCount == 0) {
-                                                                                                        FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                                                                                                        FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
-                                                                                                        FFAppState().selBill = 1;
-                                                                                                      }
-                                                                                                      _model.addtosavebill2 = await actions.addToHoldListprdCopy(
-                                                                                                        productListItem,
-                                                                                                        FFAppState().selBill,
-                                                                                                        widget!.taxcollection!.toList(),
-                                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                                                      );
-                                                                                                      _shouldSetState = true;
-                                                                                                      _model.calculateResult23 = await actions.calSubTotalForHoldListkiosk(
-                                                                                                        FFAppState().selBill.toString(),
-                                                                                                        _model.addtosavebill2!.toList(),
-                                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                                                      );
-                                                                                                      _shouldSetState = true;
-                                                                                                      _model.calbillAmt3 = await actions.calBillAmt(
-                                                                                                        FFAppState().disAmt,
-                                                                                                        FFAppState().delCharges,
-                                                                                                      );
-                                                                                                      _shouldSetState = true;
-                                                                                                      await _model.listViewprd?.animateTo(
-                                                                                                        _model.listViewprd!.position.maxScrollExtent,
-                                                                                                        duration: Duration(milliseconds: 100),
-                                                                                                        curve: Curves.ease,
-                                                                                                      );
-                                                                                                      if (_shouldSetState) safeSetState(() {});
-                                                                                                      return;
-                                                                                                    }
 
-                                                                                                    if (_shouldSetState) safeSetState(() {});
-                                                                                                  },
-                                                                                                  onDoubleTap: () async {},
-                                                                                                  onLongPress: () async {},
-                                                                                                  child: Container(
-                                                                                                    decoration: BoxDecoration(
-                                                                                                      color: FFAppState().productColor == productListItem.id ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                      borderRadius: BorderRadius.circular(5.0),
-                                                                                                    ),
-                                                                                                    child: Padding(
-                                                                                                      padding: EdgeInsets.all(2.0),
-                                                                                                      child: Column(
-                                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                                        mainAxisAlignment: MainAxisAlignment.end,
-                                                                                                        children: [
-                                                                                                          Padding(
-                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 7.0),
-                                                                                                            child: Text(
-                                                                                                              productListItem.name.maybeHandleOverflow(
-                                                                                                                maxChars: 25,
-                                                                                                              ),
-                                                                                                              textAlign: TextAlign.center,
-                                                                                                              style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
-                                                                                                                    fontSize: 14.0,
-                                                                                                                    letterSpacing: 0.0,
+                                                                                                        if (_shouldSetState) safeSetState(() {});
+                                                                                                      },
+                                                                                                      onDoubleTap: () async {},
+                                                                                                      onLongPress: () async {},
+                                                                                                      child: Container(
+                                                                                                        decoration: BoxDecoration(
+                                                                                                          color: FFAppState().productColor == productListItem.id ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                          borderRadius: BorderRadius.circular(5.0),
+                                                                                                        ),
+                                                                                                        child: Padding(
+                                                                                                          padding: EdgeInsets.all(2.0),
+                                                                                                          child: Column(
+                                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                                            mainAxisAlignment: MainAxisAlignment.end,
+                                                                                                            children: [
+                                                                                                              Padding(
+                                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 7.0),
+                                                                                                                child: Text(
+                                                                                                                  productListItem.name.maybeHandleOverflow(
+                                                                                                                    maxChars: 25,
                                                                                                                   ),
-                                                                                                            ),
-                                                                                                          ),
-                                                                                                          Flexible(
-                                                                                                            child: Padding(
-                                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
-                                                                                                              child: Row(
-                                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                                mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                                children: [
-                                                                                                                  Text(
-                                                                                                                    FFLocalizations.of(context).getText(
-                                                                                                                      '0ppacddr' /* ₹  */,
-                                                                                                                    ),
-                                                                                                                    textAlign: TextAlign.center,
+                                                                                                                  textAlign: TextAlign.center,
+                                                                                                                  style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                                                        font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                                        fontSize: 14.0,
+                                                                                                                        letterSpacing: 0.0,
+                                                                                                                      ),
+                                                                                                                ),
+                                                                                                              ),
+                                                                                                              Flexible(
+                                                                                                                child: Padding(
+                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                                                  child: Row(
+                                                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                                    children: [
+                                                                                                                      Text(
+                                                                                                                        FFLocalizations.of(context).getText(
+                                                                                                                          '0ppacddr' /* ₹  */,
+                                                                                                                        ),
+                                                                                                                        textAlign: TextAlign.center,
+                                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                                                              letterSpacing: 0.0,
+                                                                                                                            ),
+                                                                                                                      ),
+                                                                                                                      Flexible(
+                                                                                                                        child: Text(
+                                                                                                                          productListItem.sellingPrice.toString(),
+                                                                                                                          textAlign: TextAlign.center,
+                                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                                font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                                                                letterSpacing: 0.0,
+                                                                                                                              ),
+                                                                                                                        ),
+                                                                                                                      ),
+                                                                                                                    ],
+                                                                                                                  ),
+                                                                                                                ),
+                                                                                                              ),
+                                                                                                              if (productListItem.stockable)
+                                                                                                                Flexible(
+                                                                                                                  child: Text(
+                                                                                                                    'Stock :${productListItem.stock.toString()}',
+                                                                                                                    textAlign: TextAlign.justify,
                                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                           font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                                                          color: FlutterFlowTheme.of(context).primary,
                                                                                                                           letterSpacing: 0.0,
                                                                                                                         ),
                                                                                                                   ),
-                                                                                                                  Flexible(
-                                                                                                                    child: Text(
-                                                                                                                      productListItem.sellingPrice.toString(),
-                                                                                                                      textAlign: TextAlign.center,
-                                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                            font: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                                                            letterSpacing: 0.0,
-                                                                                                                          ),
-                                                                                                                    ),
-                                                                                                                  ),
-                                                                                                                ],
-                                                                                                              ),
-                                                                                                            ),
-                                                                                                          ),
-                                                                                                          if (productListItem.stockable)
-                                                                                                            Flexible(
-                                                                                                              child: Text(
-                                                                                                                'Stock :${productListItem.stock.toString()}',
-                                                                                                                textAlign: TextAlign.justify,
-                                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                      font: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                                                      color: FlutterFlowTheme.of(context).primary,
-                                                                                                                      letterSpacing: 0.0,
-                                                                                                                    ),
-                                                                                                              ),
-                                                                                                            ),
-                                                                                                        ],
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                ).animateOnActionTrigger(animationsMap['containerOnActionTriggerAnimation3']!, hasBeenTriggered: hasContainerTriggered3),
-                                                                                              if (productAndListNewAppSettingsRecord?.settingList?.where((e) => e.title == 'showProductImage').toList()?.firstOrNull?.value ?? true)
-                                                                                                InkWell(
-                                                                                                  splashColor: Colors.transparent,
-                                                                                                  focusColor: Colors.transparent,
-                                                                                                  hoverColor: Colors.transparent,
-                                                                                                  highlightColor: Colors.transparent,
-                                                                                                  onTap: () async {
-                                                                                                    var _shouldSetState = false;
-                                                                                                    FFAppState().groceryshow = false;
-                                                                                                    safeSetState(() {});
-                                                                                                    if (productListItem.stockable) {
-                                                                                                      if (productListItem.stock > 0) {
-                                                                                                        if (FFAppState().prdid != productListItem.id) {
-                                                                                                          if (FFAppState().holdBillCount == 0) {
-                                                                                                            FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                                                                                                            FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
-                                                                                                            FFAppState().selBill = 1;
-                                                                                                          }
-                                                                                                          _model.addtosavebill3Copy = await actions.addToHoldListprdCopy(
-                                                                                                            productListItem,
-                                                                                                            FFAppState().selBill,
-                                                                                                            widget!.taxcollection!.toList(),
-                                                                                                            functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                                                          );
-                                                                                                          _shouldSetState = true;
-                                                                                                          _model.calculateResult23dfsdfimg = await actions.calSubTotalForHoldListkiosk(
-                                                                                                            FFAppState().selBill.toString(),
-                                                                                                            _model.addtosavebill3Copy!.toList(),
-                                                                                                            functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                                                          );
-                                                                                                          _shouldSetState = true;
-                                                                                                          _model.calbillAmt2simg = await actions.calBillAmt(
-                                                                                                            FFAppState().disAmt,
-                                                                                                            FFAppState().delCharges,
-                                                                                                          );
-                                                                                                          _shouldSetState = true;
-                                                                                                          FFAppState().prdid = productListItem.id;
-                                                                                                          safeSetState(() {});
-                                                                                                          await _model.listViewprd?.animateTo(
-                                                                                                            _model.listViewprd!.position.maxScrollExtent,
-                                                                                                            duration: Duration(milliseconds: 100),
-                                                                                                            curve: Curves.ease,
-                                                                                                          );
-                                                                                                          if (_shouldSetState) safeSetState(() {});
-                                                                                                          return;
-                                                                                                        } else {
-                                                                                                          if (productListItem.stock >
-                                                                                                              functions.doubleToInt(valueOrDefault<double>(
-                                                                                                                getJsonField(
-                                                                                                                  functions
-                                                                                                                      .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
-                                                                                                                      .where((e) =>
-                                                                                                                          productListItem.id ==
-                                                                                                                          valueOrDefault<String>(
-                                                                                                                            getJsonField(
-                                                                                                                              e,
-                                                                                                                              r'''$.id''',
-                                                                                                                            )?.toString(),
-                                                                                                                            '0',
-                                                                                                                          ))
-                                                                                                                      .toList()
-                                                                                                                      .firstOrNull,
-                                                                                                                  r'''$.quantity''',
                                                                                                                 ),
-                                                                                                                0.0,
-                                                                                                              ))!) {
-                                                                                                            if (FFAppState().holdBillCount == 0) {
-                                                                                                              FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                                                                                                              FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
-                                                                                                              FFAppState().selBill = 1;
+                                                                                                            ],
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                    ).animateOnActionTrigger(animationsMap['containerOnActionTriggerAnimation3']!, hasBeenTriggered: hasContainerTriggered3),
+                                                                                                  if (productAndListNewAppSettingsRecord?.settingList?.where((e) => e.title == 'showProductImage').toList()?.firstOrNull?.value ?? true)
+                                                                                                    InkWell(
+                                                                                                      splashColor: Colors.transparent,
+                                                                                                      focusColor: Colors.transparent,
+                                                                                                      hoverColor: Colors.transparent,
+                                                                                                      highlightColor: Colors.transparent,
+                                                                                                      onTap: () async {
+                                                                                                        var _shouldSetState = false;
+                                                                                                        FFAppState().groceryshow = false;
+                                                                                                        safeSetState(() {});
+                                                                                                        if (productListItem.stockable) {
+                                                                                                          if (productListItem.stock > 0) {
+                                                                                                            if (FFAppState().prdid != productListItem.id) {
+                                                                                                              if (FFAppState().holdBillCount == 0) {
+                                                                                                                FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                                                FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                                                FFAppState().selBill = 1;
+                                                                                                              }
+                                                                                                            } else {
+                                                                                                              if (productListItem.stock >
+                                                                                                                  functions.doubleToInt(valueOrDefault<double>(
+                                                                                                                    getJsonField(
+                                                                                                                      functions
+                                                                                                                          .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
+                                                                                                                          .where((e) =>
+                                                                                                                              productListItem.id ==
+                                                                                                                              valueOrDefault<String>(
+                                                                                                                                getJsonField(
+                                                                                                                                  e,
+                                                                                                                                  r'''$.id''',
+                                                                                                                                )?.toString(),
+                                                                                                                                '0',
+                                                                                                                              ))
+                                                                                                                          .toList()
+                                                                                                                          .firstOrNull,
+                                                                                                                      r'''$.quantity''',
+                                                                                                                    ),
+                                                                                                                    0.0,
+                                                                                                                  ))!) {
+                                                                                                                if (FFAppState().holdBillCount == 0) {
+                                                                                                                  FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                                                  FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                                                  FFAppState().selBill = 1;
+                                                                                                                }
+                                                                                                              } else {
+                                                                                                                await showDialog(
+                                                                                                                  context: context,
+                                                                                                                  builder: (alertDialogContext) {
+                                                                                                                    return AlertDialog(
+                                                                                                                      content: Text('Item Out Of  Stock'),
+                                                                                                                      actions: [
+                                                                                                                        TextButton(
+                                                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                                          child: Text('Ok'),
+                                                                                                                        ),
+                                                                                                                      ],
+                                                                                                                    );
+                                                                                                                  },
+                                                                                                                );
+                                                                                                                if (_shouldSetState) safeSetState(() {});
+                                                                                                                return;
+                                                                                                              }
                                                                                                             }
-                                                                                                            _model.addtosavebill3dCopy = await actions.addToHoldListprdCopy(
-                                                                                                              productListItem,
-                                                                                                              FFAppState().selBill,
-                                                                                                              widget!.taxcollection!.toList(),
-                                                                                                              functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                                                            );
-                                                                                                            _shouldSetState = true;
-                                                                                                            _model.calculateResult23dfimg = await actions.calSubTotalForHoldListkiosk(
-                                                                                                              FFAppState().selBill.toString(),
-                                                                                                              _model.addtosavebill3dCopy!.toList(),
-                                                                                                              functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                                                            );
-                                                                                                            _shouldSetState = true;
-                                                                                                            _model.calbillAmt2sdimg = await actions.calBillAmt(
-                                                                                                              FFAppState().disAmt,
-                                                                                                              FFAppState().delCharges,
-                                                                                                            );
-                                                                                                            _shouldSetState = true;
-                                                                                                            await _model.listViewprd?.animateTo(
-                                                                                                              _model.listViewprd!.position.maxScrollExtent,
-                                                                                                              duration: Duration(milliseconds: 100),
-                                                                                                              curve: Curves.ease,
-                                                                                                            );
-                                                                                                            if (_shouldSetState) safeSetState(() {});
-                                                                                                            return;
                                                                                                           } else {
                                                                                                             await showDialog(
                                                                                                               context: context,
                                                                                                               builder: (alertDialogContext) {
                                                                                                                 return AlertDialog(
-                                                                                                                  content: Text('Item Out Of  Stock'),
+                                                                                                                  content: Text('Item Out Of Stock'),
                                                                                                                   actions: [
                                                                                                                     TextButton(
                                                                                                                       onPressed: () => Navigator.pop(alertDialogContext),
@@ -3529,223 +3520,205 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                             if (_shouldSetState) safeSetState(() {});
                                                                                                             return;
                                                                                                           }
+                                                                                                        } else {
+                                                                                                          if (FFAppState().holdBillCount == 0) {
+                                                                                                            FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                                            FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                                            FFAppState().selBill = 1;
+                                                                                                          }
                                                                                                         }
-                                                                                                      } else {
-                                                                                                        await showDialog(
-                                                                                                          context: context,
-                                                                                                          builder: (alertDialogContext) {
-                                                                                                            return AlertDialog(
-                                                                                                              content: Text('Item Out Of Stock'),
-                                                                                                              actions: [
-                                                                                                                TextButton(
-                                                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                                  child: Text('Ok'),
-                                                                                                                ),
-                                                                                                              ],
-                                                                                                            );
-                                                                                                          },
+
+                                                                                                        _model.jsonlistnew2 = await actions.addToHoldListprdGrocery(
+                                                                                                          productListItem,
+                                                                                                          FFAppState().selBill,
+                                                                                                          widget!.taxcollection!.toList(),
+                                                                                                          functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                                          containerUnitTypeRecordList.toList(),
+                                                                                                        );
+                                                                                                        _shouldSetState = true;
+                                                                                                        _model.calculateResult23Copy = await actions.calSubTotalForHoldListkiosk(
+                                                                                                          FFAppState().selBill.toString(),
+                                                                                                          _model.jsonlistnew2!.toList(),
+                                                                                                          functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
+                                                                                                        );
+                                                                                                        _shouldSetState = true;
+                                                                                                        _model.calbillAmt3img = await actions.calBillAmt(
+                                                                                                          FFAppState().disAmt,
+                                                                                                          FFAppState().delCharges,
+                                                                                                        );
+                                                                                                        _shouldSetState = true;
+                                                                                                        await _model.listViewprd?.animateTo(
+                                                                                                          _model.listViewprd!.position.maxScrollExtent,
+                                                                                                          duration: Duration(milliseconds: 100),
+                                                                                                          curve: Curves.ease,
                                                                                                         );
                                                                                                         if (_shouldSetState) safeSetState(() {});
-                                                                                                        return;
-                                                                                                      }
-                                                                                                    } else {
-                                                                                                      if (FFAppState().holdBillCount == 0) {
-                                                                                                        FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                                                                                                        FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
-                                                                                                        FFAppState().selBill = 1;
-                                                                                                      }
-                                                                                                      _model.addtosavebill2Copy = await actions.addToHoldListprdCopy(
-                                                                                                        productListItem,
-                                                                                                        FFAppState().selBill,
-                                                                                                        widget!.taxcollection!.toList(),
-                                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                                                      );
-                                                                                                      _shouldSetState = true;
-                                                                                                      _model.calculateResult23Copy = await actions.calSubTotalForHoldListkiosk(
-                                                                                                        FFAppState().selBill.toString(),
-                                                                                                        _model.addtosavebill2Copy!.toList(),
-                                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
-                                                                                                      );
-                                                                                                      _shouldSetState = true;
-                                                                                                      _model.calbillAmt3img = await actions.calBillAmt(
-                                                                                                        FFAppState().disAmt,
-                                                                                                        FFAppState().delCharges,
-                                                                                                      );
-                                                                                                      _shouldSetState = true;
-                                                                                                      await _model.listViewprd?.animateTo(
-                                                                                                        _model.listViewprd!.position.maxScrollExtent,
-                                                                                                        duration: Duration(milliseconds: 100),
-                                                                                                        curve: Curves.ease,
-                                                                                                      );
-                                                                                                      if (_shouldSetState) safeSetState(() {});
-                                                                                                      return;
-                                                                                                    }
-
-                                                                                                    if (_shouldSetState) safeSetState(() {});
-                                                                                                  },
-                                                                                                  onDoubleTap: () async {},
-                                                                                                  onLongPress: () async {},
-                                                                                                  child: Container(
-                                                                                                    decoration: BoxDecoration(
-                                                                                                      color: FFAppState().productColor == productListItem.id ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                      borderRadius: BorderRadius.circular(5.0),
-                                                                                                    ),
-                                                                                                    child: Padding(
-                                                                                                      padding: EdgeInsets.all(0.5),
-                                                                                                      child: Column(
-                                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                                        crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                                        children: [
-                                                                                                          Expanded(
-                                                                                                            child: Container(
-                                                                                                              width: double.infinity,
-                                                                                                              height: MediaQuery.sizeOf(context).height * 0.14,
-                                                                                                              decoration: BoxDecoration(
-                                                                                                                color: Color(0x1A000000),
-                                                                                                                image: DecorationImage(
-                                                                                                                  fit: BoxFit.cover,
-                                                                                                                  image: CachedNetworkImageProvider(
-                                                                                                                    functions.imageurltostring(productListItem.imageUrl),
+                                                                                                      },
+                                                                                                      onDoubleTap: () async {},
+                                                                                                      onLongPress: () async {},
+                                                                                                      child: Container(
+                                                                                                        decoration: BoxDecoration(
+                                                                                                          color: FFAppState().productColor == productListItem.id ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                          borderRadius: BorderRadius.circular(5.0),
+                                                                                                        ),
+                                                                                                        child: Padding(
+                                                                                                          padding: EdgeInsets.all(0.5),
+                                                                                                          child: Column(
+                                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                                            crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                            children: [
+                                                                                                              Expanded(
+                                                                                                                child: Container(
+                                                                                                                  width: double.infinity,
+                                                                                                                  height: MediaQuery.sizeOf(context).height * 0.14,
+                                                                                                                  decoration: BoxDecoration(
+                                                                                                                    color: Color(0x1A000000),
+                                                                                                                    image: DecorationImage(
+                                                                                                                      fit: BoxFit.cover,
+                                                                                                                      image: CachedNetworkImageProvider(
+                                                                                                                        functions.imageurltostring(productListItem.imageUrl),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                    borderRadius: BorderRadius.circular(5.0),
                                                                                                                   ),
-                                                                                                                ),
-                                                                                                                borderRadius: BorderRadius.circular(5.0),
-                                                                                                              ),
-                                                                                                              child: Column(
-                                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                                mainAxisAlignment: MainAxisAlignment.end,
-                                                                                                                crossAxisAlignment: CrossAxisAlignment.end,
-                                                                                                                children: [
-                                                                                                                  Expanded(
-                                                                                                                    child: Padding(
-                                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
-                                                                                                                      child: Container(
-                                                                                                                        width: double.infinity,
-                                                                                                                        height: MediaQuery.sizeOf(context).height * 0.15,
-                                                                                                                        decoration: BoxDecoration(
-                                                                                                                          image: DecorationImage(
-                                                                                                                            fit: BoxFit.cover,
-                                                                                                                            image: Image.network(
-                                                                                                                              '',
-                                                                                                                            ).image,
-                                                                                                                          ),
-                                                                                                                          gradient: LinearGradient(
-                                                                                                                            colors: [Colors.transparent, Color(0xA7000000)],
-                                                                                                                            stops: [0.0, 1.0],
-                                                                                                                            begin: AlignmentDirectional(0.0, -1.0),
-                                                                                                                            end: AlignmentDirectional(0, 1.0),
-                                                                                                                          ),
-                                                                                                                          borderRadius: BorderRadius.circular(5.0),
-                                                                                                                        ),
+                                                                                                                  child: Column(
+                                                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                                                    mainAxisAlignment: MainAxisAlignment.end,
+                                                                                                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                                                                                                    children: [
+                                                                                                                      Expanded(
                                                                                                                         child: Padding(
-                                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 3.0),
-                                                                                                                          child: Column(
-                                                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                                                            mainAxisAlignment: MainAxisAlignment.end,
-                                                                                                                            children: [
-                                                                                                                              Flexible(
-                                                                                                                                child: Padding(
-                                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
-                                                                                                                                  child: Text(
-                                                                                                                                    productListItem.name,
-                                                                                                                                    textAlign: TextAlign.center,
-                                                                                                                                    style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
-                                                                                                                                          color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                                                                          letterSpacing: 0.0,
-                                                                                                                                          fontWeight: FontWeight.w600,
-                                                                                                                                        ),
-                                                                                                                                  ),
-                                                                                                                                ),
+                                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                                                                                                                          child: Container(
+                                                                                                                            width: double.infinity,
+                                                                                                                            height: MediaQuery.sizeOf(context).height * 0.15,
+                                                                                                                            decoration: BoxDecoration(
+                                                                                                                              image: DecorationImage(
+                                                                                                                                fit: BoxFit.cover,
+                                                                                                                                image: Image.network(
+                                                                                                                                  '',
+                                                                                                                                ).image,
                                                                                                                               ),
-                                                                                                                              Padding(
-                                                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
-                                                                                                                                child: Row(
-                                                                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                                                  children: [
-                                                                                                                                    Padding(
-                                                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                                                              gradient: LinearGradient(
+                                                                                                                                colors: [Colors.transparent, Color(0xA7000000)],
+                                                                                                                                stops: [0.0, 1.0],
+                                                                                                                                begin: AlignmentDirectional(0.0, -1.0),
+                                                                                                                                end: AlignmentDirectional(0, 1.0),
+                                                                                                                              ),
+                                                                                                                              borderRadius: BorderRadius.circular(5.0),
+                                                                                                                            ),
+                                                                                                                            child: Padding(
+                                                                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 3.0),
+                                                                                                                              child: Column(
+                                                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                                                mainAxisAlignment: MainAxisAlignment.end,
+                                                                                                                                children: [
+                                                                                                                                  Flexible(
+                                                                                                                                    child: Padding(
+                                                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                                                                       child: Text(
-                                                                                                                                        FFLocalizations.of(context).getText(
-                                                                                                                                          'br0aspwl' /* ₹ */,
-                                                                                                                                        ),
-                                                                                                                                        style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                                                        productListItem.name,
+                                                                                                                                        textAlign: TextAlign.center,
+                                                                                                                                        style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
                                                                                                                                               color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                                                               letterSpacing: 0.0,
+                                                                                                                                              fontWeight: FontWeight.w600,
                                                                                                                                             ),
                                                                                                                                       ),
                                                                                                                                     ),
+                                                                                                                                  ),
+                                                                                                                                  Padding(
+                                                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                                                                    child: Row(
+                                                                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                                                      children: [
+                                                                                                                                        Padding(
+                                                                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                                                                          child: Text(
+                                                                                                                                            FFLocalizations.of(context).getText(
+                                                                                                                                              'br0aspwl' /* ₹ */,
+                                                                                                                                            ),
+                                                                                                                                            style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                                                                  color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                                                                                  letterSpacing: 0.0,
+                                                                                                                                                ),
+                                                                                                                                          ),
+                                                                                                                                        ),
+                                                                                                                                        Flexible(
+                                                                                                                                          child: Text(
+                                                                                                                                            valueOrDefault<String>(
+                                                                                                                                              productListItem.sellingPrice.toString(),
+                                                                                                                                              '120',
+                                                                                                                                            ),
+                                                                                                                                            style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                                                                  color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                                                                                  letterSpacing: 0.0,
+                                                                                                                                                ),
+                                                                                                                                          ),
+                                                                                                                                        ),
+                                                                                                                                      ],
+                                                                                                                                    ),
+                                                                                                                                  ),
+                                                                                                                                  if (productListItem.stockable)
                                                                                                                                     Flexible(
                                                                                                                                       child: Text(
-                                                                                                                                        valueOrDefault<String>(
-                                                                                                                                          productListItem.sellingPrice.toString(),
-                                                                                                                                          '120',
-                                                                                                                                        ),
-                                                                                                                                        style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
-                                                                                                                                              color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                                                                        'Stock :${productListItem.stock.toString()}',
+                                                                                                                                        textAlign: TextAlign.justify,
+                                                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                                                                              color: FlutterFlowTheme.of(context).parkingPrimary,
                                                                                                                                               letterSpacing: 0.0,
                                                                                                                                             ),
                                                                                                                                       ),
                                                                                                                                     ),
-                                                                                                                                  ],
-                                                                                                                                ),
+                                                                                                                                ],
                                                                                                                               ),
-                                                                                                                              if (productListItem.stockable)
-                                                                                                                                Flexible(
-                                                                                                                                  child: Text(
-                                                                                                                                    'Stock :${productListItem.stock.toString()}',
-                                                                                                                                    textAlign: TextAlign.justify,
-                                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                                          font: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                                                                          color: FlutterFlowTheme.of(context).parkingPrimary,
-                                                                                                                                          letterSpacing: 0.0,
-                                                                                                                                        ),
-                                                                                                                                  ),
-                                                                                                                                ),
-                                                                                                                            ],
+                                                                                                                            ),
                                                                                                                           ),
                                                                                                                         ),
                                                                                                                       ),
-                                                                                                                    ),
+                                                                                                                    ],
                                                                                                                   ),
-                                                                                                                ],
+                                                                                                                ),
                                                                                                               ),
-                                                                                                            ),
+                                                                                                            ],
                                                                                                           ),
-                                                                                                        ],
+                                                                                                        ),
                                                                                                       ),
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                ).animateOnActionTrigger(animationsMap['containerOnActionTriggerAnimation4']!, hasBeenTriggered: hasContainerTriggered4),
-                                                                                            ],
-                                                                                          ),
-                                                                                        ).animateOnActionTrigger(animationsMap['containerOnActionTriggerAnimation2']!, hasBeenTriggered: hasContainerTriggered2);
+                                                                                                    ).animateOnActionTrigger(animationsMap['containerOnActionTriggerAnimation4']!, hasBeenTriggered: hasContainerTriggered4),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ).animateOnActionTrigger(animationsMap['containerOnActionTriggerAnimation2']!, hasBeenTriggered: hasContainerTriggered2);
+                                                                                          },
+                                                                                          controller: _model.gridViewController,
+                                                                                        );
                                                                                       },
-                                                                                      controller: _model.gridViewController,
-                                                                                    );
-                                                                                  },
+                                                                                    ),
+                                                                                  ),
                                                                                 ),
-                                                                              ),
+                                                                              ],
                                                                             ),
-                                                                          ],
+                                                                          ),
                                                                         ),
-                                                                      ),
+                                                                      ],
                                                                     ),
-                                                                  ],
-                                                                ),
+                                                                  ),
+                                                                ],
                                                               ),
-                                                            ],
-                                                          ),
+                                                            ),
+                                                          ],
                                                         ),
-                                                      ],
+                                                      ),
                                                     ),
-                                                  ),
+                                                  ],
                                                 ),
-                                              ],
-                                            ),
+                                              );
+                                            },
                                           ),
                                         ),
                                         Expanded(
