@@ -3,6 +3,7 @@ import '/backend/schema/structs/index.dart';
 import '/components/discount_and_delivery_copy/discount_and_delivery_copy_widget.dart';
 import '/components/menu_drawer/menu_drawer_widget.dart';
 import '/components/mix_payment_mode/mix_payment_mode_widget.dart';
+import '/components/qty_edit_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -3179,6 +3180,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                   highlightColor: Colors.transparent,
                                                                                                   onTap: () async {
                                                                                                     var _shouldSetState = false;
+                                                                                                    _model.qtyCheck = false;
+                                                                                                    safeSetState(() {});
                                                                                                     if (productListItem.stockable) {
                                                                                                       if (productListItem.stock > 0) {
                                                                                                         if (FFAppState().prdid != productListItem.id) {
@@ -3420,6 +3423,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                   highlightColor: Colors.transparent,
                                                                                                   onTap: () async {
                                                                                                     var _shouldSetState = false;
+                                                                                                    _model.qtyCheck = false;
+                                                                                                    safeSetState(() {});
                                                                                                     if (productListItem.stockable) {
                                                                                                       if (productListItem.stock > 0) {
                                                                                                         if (FFAppState().prdid != productListItem.id) {
@@ -4479,7 +4484,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               child: Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
                                                                                 child: Container(
-                                                                                  width: MediaQuery.sizeOf(context).width * 0.265,
+                                                                                  width: MediaQuery.sizeOf(context).width * 0.25,
                                                                                   decoration: BoxDecoration(),
                                                                                   child: Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
@@ -4616,7 +4621,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Expanded(
-                                                                                          flex: 10,
+                                                                                          flex: 13,
                                                                                           child: Container(
                                                                                             width: MediaQuery.sizeOf(context).width * 0.02,
                                                                                             height: double.infinity,
@@ -4624,25 +4629,26 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             ),
                                                                                             alignment: AlignmentDirectional(0.0, 0.0),
-                                                                                            child: Column(
-                                                                                              mainAxisSize: MainAxisSize.max,
-                                                                                              mainAxisAlignment: MainAxisAlignment.center,
-                                                                                              children: [
-                                                                                                Text(
-                                                                                                  getJsonField(
-                                                                                                    billItem,
-                                                                                                    r'''$.quantity''',
-                                                                                                  ).toString(),
-                                                                                                  textAlign: TextAlign.center,
-                                                                                                  style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                        font: FlutterFlowTheme.of(context).bodySmall,
-                                                                                                        color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                        fontSize: 13.0,
-                                                                                                        letterSpacing: 0.0,
-                                                                                                        fontWeight: FontWeight.w500,
-                                                                                                      ),
-                                                                                                ),
-                                                                                              ],
+                                                                                            child: QtyEditWidget(
+                                                                                              key: Key('Keymx4_${billIndex}_of_${bill.length}'),
+                                                                                              parameter1: getJsonField(
+                                                                                                billItem,
+                                                                                                r'''$.quantity''',
+                                                                                              ),
+                                                                                              parameter2: !_model.qtyCheck,
+                                                                                              parameter3: getJsonField(
+                                                                                                billItem,
+                                                                                                r'''$.stockable''',
+                                                                                              ),
+                                                                                              parameter4: getJsonField(
+                                                                                                billItem,
+                                                                                                r'''$.currentStock''',
+                                                                                              ),
+                                                                                              parameter5: ProductStructStruct.maybeFromMap(billItem),
+                                                                                              parameter6: widget!.taxcollection!,
+                                                                                              parameter7: productAndListNewAppSettingsRecord?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
+                                                                                              parameter8: _model.resultplus!,
+                                                                                              parameter9: _model.qtyCheck,
                                                                                             ),
                                                                                           ),
                                                                                         ),

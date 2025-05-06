@@ -205,3 +205,4 @@ export '/pages/product_and_list_new_copy2/product_and_list_new_copy2_widget.dart
     show ProductAndListNewCopy2Widget;
 export '/pages/billing_style/piece_counting/piece_counting_widget.dart'
     show PieceCountingWidget;
+export '/pages/table_list/table_list_widget.dart' show TableListWidget;

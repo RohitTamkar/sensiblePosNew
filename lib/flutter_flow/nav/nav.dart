@@ -1535,6 +1535,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: PieceCountingWidget.routeName,
               path: PieceCountingWidget.routePath,
               builder: (context, params) => PieceCountingWidget(),
+            ),
+            FFRoute(
+              name: TableListWidget.routeName,
+              path: TableListWidget.routePath,
+              builder: (context, params) => TableListWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

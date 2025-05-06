@@ -3,6 +3,7 @@ import '/backend/schema/structs/index.dart';
 import '/components/discount_and_delivery_copy/discount_and_delivery_copy_widget.dart';
 import '/components/menu_drawer/menu_drawer_widget.dart';
 import '/components/mix_payment_mode/mix_payment_mode_widget.dart';
+import '/components/qty_edit_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -73,6 +74,8 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   String prdid = '0';
 
   bool flag = true;
+
+  bool qtyCheck = false;
 
   ///  State fields for stateful widgets in this page.
 

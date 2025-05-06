@@ -2474,8 +2474,8 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                 BorderRadius.circular(15.0),
                                                                             border:
                                                                                 Border.all(
-                                                                              color: FlutterFlowTheme.of(context).secondary,
-                                                                              width: 0.5,
+                                                                              color: Color(0xFFFFE69E),
+                                                                              width: 2.0,
                                                                             ),
                                                                           ),
                                                                           child:
@@ -2606,72 +2606,75 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                           ),
                                                                                         ),
                                                                                       ),
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                                                        children: [
-                                                                                          Expanded(
-                                                                                            child: FFButtonWidget(
-                                                                                              onPressed: () {
-                                                                                                print('Button pressed ...');
-                                                                                              },
-                                                                                              text: FFLocalizations.of(context).getText(
-                                                                                                'ign24m60' /* Print */,
-                                                                                              ),
-                                                                                              options: FFButtonOptions(
-                                                                                                height: 40.0,
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      font: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                    ),
-                                                                                                elevation: 0.0,
-                                                                                                borderRadius: BorderRadius.circular(5.0),
-                                                                                              ),
-                                                                                            ),
-                                                                                          ),
-                                                                                          Expanded(
-                                                                                            child: FFButtonWidget(
-                                                                                              onPressed: () async {
-                                                                                                await showModalBottomSheet(
-                                                                                                  isScrollControlled: true,
-                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                  enableDrag: false,
-                                                                                                  context: context,
-                                                                                                  builder: (context) {
-                                                                                                    return GestureDetector(
-                                                                                                      onTap: () {
-                                                                                                        FocusScope.of(context).unfocus();
-                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                                      },
-                                                                                                      child: Padding(
-                                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                                        child: TableDetailsWidget(),
+                                                                                      Padding(
+                                                                                        padding: EdgeInsets.all(4.0),
+                                                                                        child: Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                                                          children: [
+                                                                                            Expanded(
+                                                                                              child: FFButtonWidget(
+                                                                                                onPressed: () {
+                                                                                                  print('Button pressed ...');
+                                                                                                },
+                                                                                                text: FFLocalizations.of(context).getText(
+                                                                                                  'ign24m60' /* Print */,
+                                                                                                ),
+                                                                                                options: FFButtonOptions(
+                                                                                                  height: 40.0,
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                  textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                                        letterSpacing: 0.0,
                                                                                                       ),
-                                                                                                    );
-                                                                                                  },
-                                                                                                ).then((value) => safeSetState(() {}));
-                                                                                              },
-                                                                                              text: FFLocalizations.of(context).getText(
-                                                                                                'dlp430ih' /* View */,
-                                                                                              ),
-                                                                                              options: FFButtonOptions(
-                                                                                                height: 40.0,
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      font: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                    ),
-                                                                                                elevation: 0.0,
-                                                                                                borderRadius: BorderRadius.circular(5.0),
+                                                                                                  elevation: 0.0,
+                                                                                                  borderRadius: BorderRadius.circular(6.0),
+                                                                                                ),
                                                                                               ),
                                                                                             ),
-                                                                                          ),
-                                                                                        ].divide(SizedBox(width: 3.0)),
+                                                                                            Expanded(
+                                                                                              child: FFButtonWidget(
+                                                                                                onPressed: () async {
+                                                                                                  await showModalBottomSheet(
+                                                                                                    isScrollControlled: true,
+                                                                                                    backgroundColor: Colors.transparent,
+                                                                                                    enableDrag: false,
+                                                                                                    context: context,
+                                                                                                    builder: (context) {
+                                                                                                      return GestureDetector(
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(context).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
+                                                                                                        child: Padding(
+                                                                                                          padding: MediaQuery.viewInsetsOf(context),
+                                                                                                          child: TableDetailsWidget(),
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    },
+                                                                                                  ).then((value) => safeSetState(() {}));
+                                                                                                },
+                                                                                                text: FFLocalizations.of(context).getText(
+                                                                                                  'dlp430ih' /* View */,
+                                                                                                ),
+                                                                                                options: FFButtonOptions(
+                                                                                                  height: 40.0,
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                  textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                      ),
+                                                                                                  elevation: 0.0,
+                                                                                                  borderRadius: BorderRadius.circular(6.0),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ].divide(SizedBox(width: 4.0)),
+                                                                                        ),
                                                                                       ),
                                                                                     ],
                                                                                   ),
