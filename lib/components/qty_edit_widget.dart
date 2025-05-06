@@ -22,7 +22,6 @@ class QtyEditWidget extends StatefulWidget {
     this.parameter5,
     required this.parameter6,
     this.parameter7,
-    required this.parameter8,
     bool? parameter9,
   }) : this.parameter9 = parameter9 ?? false;
 
@@ -33,7 +32,6 @@ class QtyEditWidget extends StatefulWidget {
   final ProductStructStruct? parameter5;
   final List<TaxMasterRecord>? parameter6;
   final bool? parameter7;
-  final List<dynamic>? parameter8;
   final bool parameter9;
 
   @override
@@ -154,7 +152,7 @@ class _QtyEditWidgetState extends State<QtyEditWidget> {
                     _shouldSetState = true;
                     await actions.calSubTotalForHoldListkiosk(
                       FFAppState().selBill.toString(),
-                      widget!.parameter8!.toList(),
+                      _model.newcalQty!.toList(),
                       functions.enabletaxinclusive(widget!.parameter7!),
                     );
                     _model.reuslt1223 = await actions.calBillAmt(

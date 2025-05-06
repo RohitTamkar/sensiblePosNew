@@ -4647,7 +4647,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                               parameter5: ProductStructStruct.maybeFromMap(billItem),
                                                                                               parameter6: widget!.taxcollection!,
                                                                                               parameter7: productAndListNewAppSettingsRecord?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
-                                                                                              parameter8: _model.resultplus!,
                                                                                               parameter9: _model.qtyCheck,
                                                                                             ),
                                                                                           ),
