@@ -144,15 +144,7 @@ class _QtyEditWidgetState extends State<QtyEditWidget> {
                         return;
                       }
                     }
-                    _model.newcalQty = await actions.laudryAddCustomQty(
-                      widget!.parameter5!,
-                      FFAppState().selBill,
-                      widget!.parameter6!.toList(),
-                      functions.enabletaxinclusive(widget!.parameter7!),
-                      double.tryParse(_model.textFieldqty2TextController.text),
-                    );
-                    _shouldSetState = true;
-                    await actions.editCustomQty(
+                    _model.resultqty = await actions.editCustomQty(
                       widget!.parameter5!,
                       FFAppState().selBill,
                       widget!.parameter6!.toList(),
@@ -160,9 +152,10 @@ class _QtyEditWidgetState extends State<QtyEditWidget> {
                       double.tryParse(_model.textFieldqty2TextController.text),
                       _model.textFieldqty2TextController.text,
                     );
+                    _shouldSetState = true;
                     await actions.calSubTotalForHoldListkiosk(
                       FFAppState().selBill.toString(),
-                      _model.newcalQty!.toList(),
+                      _model.resultqty!.toList(),
                       functions.enabletaxinclusive(widget!.parameter7!),
                     );
                     _model.reuslt1223 = await actions.calBillAmt(

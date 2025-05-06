@@ -18,8 +18,8 @@ class QtyEditModel extends FlutterFlowModel<QtyEditWidget> {
   FocusNode? textFieldqty2FocusNode;
   TextEditingController? textFieldqty2TextController;
   String? Function(BuildContext, String?)? textFieldqty2TextControllerValidator;
-  // Stores action output result for [Custom Action - laudryAddCustomQty] action in TextFieldqty2 widget.
-  List<dynamic>? newcalQty;
+  // Stores action output result for [Custom Action - editCustomQty] action in TextFieldqty2 widget.
+  List<dynamic>? resultqty;
   // Stores action output result for [Custom Action - calBillAmt] action in TextFieldqty2 widget.
   double? reuslt1223;
 
