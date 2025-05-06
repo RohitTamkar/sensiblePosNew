@@ -881,7 +881,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                             ),
                           ),
                           if (widget!.appSettings23?.settingList
-                                  ?.where((e) => e.title == 'bacodeMenu')
+                                  ?.where((e) => e.title == 'barcodeMenu')
                                   .toList()
                                   ?.firstOrNull
                                   ?.value ??
