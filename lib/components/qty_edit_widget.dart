@@ -22,8 +22,7 @@ class QtyEditWidget extends StatefulWidget {
     this.parameter5,
     required this.parameter6,
     this.parameter7,
-    bool? parameter9,
-  }) : this.parameter9 = parameter9 ?? false;
+  });
 
   final dynamic parameter1;
   final bool? parameter2;
@@ -32,7 +31,6 @@ class QtyEditWidget extends StatefulWidget {
   final ProductStructStruct? parameter5;
   final List<TaxMasterRecord>? parameter6;
   final bool? parameter7;
-  final bool parameter9;
 
   @override
   State<QtyEditWidget> createState() => _QtyEditWidgetState();
@@ -72,7 +70,7 @@ class _QtyEditWidgetState extends State<QtyEditWidget> {
 
     return Stack(
       children: [
-        if (FFAppState().groceryshow)
+        if (!FFAppState().groceryshow)
           InkWell(
             splashColor: Colors.transparent,
             focusColor: Colors.transparent,
@@ -107,7 +105,7 @@ class _QtyEditWidgetState extends State<QtyEditWidget> {
               ],
             ),
           ),
-        if (!FFAppState().groceryshow)
+        if (FFAppState().groceryshow)
           Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,

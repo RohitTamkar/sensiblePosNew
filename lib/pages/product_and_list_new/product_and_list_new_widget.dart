@@ -3180,7 +3180,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                   highlightColor: Colors.transparent,
                                                                                                   onTap: () async {
                                                                                                     var _shouldSetState = false;
-                                                                                                    _model.qtyCheck = false;
+                                                                                                    FFAppState().groceryshow = false;
                                                                                                     safeSetState(() {});
                                                                                                     if (productListItem.stockable) {
                                                                                                       if (productListItem.stock > 0) {
@@ -3423,7 +3423,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                   highlightColor: Colors.transparent,
                                                                                                   onTap: () async {
                                                                                                     var _shouldSetState = false;
-                                                                                                    _model.qtyCheck = false;
+                                                                                                    FFAppState().groceryshow = false;
                                                                                                     safeSetState(() {});
                                                                                                     if (productListItem.stockable) {
                                                                                                       if (productListItem.stock > 0) {
@@ -4647,7 +4647,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                               parameter5: ProductStructStruct.maybeFromMap(billItem),
                                                                                               parameter6: widget!.taxcollection!,
                                                                                               parameter7: productAndListNewAppSettingsRecord?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.firstOrNull?.value,
-                                                                                              parameter9: _model.qtyCheck,
                                                                                             ),
                                                                                           ),
                                                                                         ),
