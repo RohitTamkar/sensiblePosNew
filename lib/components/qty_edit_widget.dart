@@ -227,6 +227,7 @@ class _QtyEditWidgetState extends State<QtyEditWidget> {
                         font: FlutterFlowTheme.of(context).bodyMedium,
                         letterSpacing: 0.0,
                       ),
+                  textAlign: TextAlign.center,
                   cursorColor: FlutterFlowTheme.of(context).primaryText,
                   validator: _model.textFieldqty2TextControllerValidator
                       .asValidator(context),
