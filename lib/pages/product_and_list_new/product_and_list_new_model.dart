@@ -152,8 +152,8 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   List<ProductStructStruct>? prdhive;
   // State field(s) for GridView widget.
   ScrollController? gridViewController;
-  // Stores action output result for [Custom Action - addToHoldListprdCopy] action in ProductName widget.
-  List<dynamic>? addtosavebill2;
+  // Stores action output result for [Custom Action - addToHoldListprdGrocery] action in ProductName widget.
+  List<dynamic>? qtyunitresult;
   // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in ProductName widget.
   double? calculateResult23;
   // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.

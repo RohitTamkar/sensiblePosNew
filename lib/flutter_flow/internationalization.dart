@@ -25713,7 +25713,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
-    '2aopwnzd': {
+    '4qirkrcs': {
       'en': 'Home',
       'hi': 'घर',
       'kn': 'ಮರಳಿ ಪ್ರಥಮ ಪುಟಕ್ಕೆ',
