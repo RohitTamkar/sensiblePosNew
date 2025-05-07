@@ -1540,6 +1540,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: TableListWidget.routeName,
               path: TableListWidget.routePath,
               builder: (context, params) => TableListWidget(),
+            ),
+            FFRoute(
+              name: StockSummaryReportWidget.routeName,
+              path: StockSummaryReportWidget.routePath,
+              builder: (context, params) => StockSummaryReportWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

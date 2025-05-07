@@ -3297,7 +3297,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                         _shouldSetState = true;
                                                                                                         _model.calculateResult23 = await actions.calSubTotalForHoldListkiosk(
                                                                                                           FFAppState().selBill.toString(),
-                                                                                                          _model.qtyunitresult!.toList(),
+                                                                                                          FFAppState().allBillsList.toList(),
                                                                                                           functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                                         );
                                                                                                         _shouldSetState = true;
@@ -3494,7 +3494,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                         _shouldSetState = true;
                                                                                                         _model.calculateResult23Copy = await actions.calSubTotalForHoldListkiosk(
                                                                                                           FFAppState().selBill.toString(),
-                                                                                                          _model.jsonlistnew2!.toList(),
+                                                                                                          FFAppState().allBillsList.toList(),
                                                                                                           functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                                         );
                                                                                                         _shouldSetState = true;

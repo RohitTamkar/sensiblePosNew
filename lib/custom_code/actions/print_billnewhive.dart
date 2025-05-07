@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:image/image.dart' as img;
 import 'package:flutter/services.dart';
 
@@ -65,11 +67,15 @@ Future printBillnewhive(
   String billColumn3;
   String taxColumn3;
   dynamic obj;
-
+  bool unit = false;
+  if (appSetting.settingList.any((setting) =>
+      setting.title == 'printUnitonbill' && setting.value == true)) {
+    unit = true;
+  }
   // changes according to size
   if (size == 46) {
     billColumn3 =
-        "ITEM_NAME              QTY     RATE     TOTAL "; // 20, 8, 9, 9 (46)
+        "ITEM_NAME            QTY      RATE      TOTAL "; // 20, 8, 9, 9 (46)
     taxColumn3 = "TAX%      TAXABLE     CGST     SGST     TAXAMT";
 
     if (data.length > 0) {
@@ -373,7 +379,7 @@ Future printBillnewhive(
         bytes += generator.row([
           PosColumn(
             text: obj["itemList"][i]["name"].toString(),
-            width: 6,
+            width: 5,
             styles: PosStyles(
               fontType: PosFontType.fontA,
               height: PosTextSize.size1,
@@ -383,8 +389,10 @@ Future printBillnewhive(
             ),
           ),
           PosColumn(
-            text: obj["itemList"][i]["quantity"].toString(),
-            width: 2,
+            text: obj["itemList"][i]["qtystring"].toString() +
+                " " +
+                (unit ? obj["itemList"][i]["unit"] : ""),
+            width: 3,
             styles: PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
@@ -1314,7 +1322,8 @@ Future printBillnewhive(
                 align: PosAlign.center),
           ),
           PosColumn(
-            text: obj["itemList"][i]["quantity"].toString(),
+            text: obj["itemList"][i]["qtystring"].toString() +
+                obj["itemList"][i]["unit"],
             width: 2,
             styles: PosStyles(
                 height: PosTextSize.size1,

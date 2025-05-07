@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> editCustomQty(
   ProductStructStruct document,
   int billno,
@@ -62,6 +64,7 @@ Future<List<dynamic>> editCustomQty(
       "taxPer": taxPer,
       "taxAmt": double.parse(taxAmt.toStringAsFixed(2)),
       "weightable": document!.weightable ?? false,
+      "qtystring": quantity.toString()
     };
 
     var index;
@@ -90,6 +93,7 @@ Future<List<dynamic>> editCustomQty(
         for (int j = 0; j < itemList.length; j++) {
           if (itemList[j]["name"] == data["name"]) {
             itemList[j]["quantity"] = newQty;
+            itemList[j]["qtystring"] = qtystring;
             itemList[j]["taxAmt"] +=
                 taxAmtPerItem; // Update taxAmt for each item
             if (inclusiveorexclusive.toLowerCase() == 'inclusive') {
