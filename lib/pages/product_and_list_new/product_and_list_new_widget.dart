@@ -2121,25 +2121,41 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     0.0,
                                                                     3.0,
                                                                     0.0),
-                                                        child: Text(
-                                                          FFAppState()
-                                                              .outletName,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall
-                                                              .override(
-                                                                font: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBtnText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                              ),
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onLongPress:
+                                                              () async {
+                                                            context.pushNamed(
+                                                                TodayStockOutWindowsCopyWidget
+                                                                    .routeName);
+                                                          },
+                                                          child: Text(
+                                                            FFAppState()
+                                                                .outletName,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .titleSmall
+                                                                .override(
+                                                                  font: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBtnText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                ),
+                                                          ),
                                                         ),
                                                       ),
                                                       Padding(

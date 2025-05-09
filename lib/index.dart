@@ -210,3 +210,5 @@ export '/pages/report_screen/stock_summary_report/stock_summary_report_widget.da
     show StockSummaryReportWidget;
 export '/pages/report_screen/today_stock_out_windows/today_stock_out_windows_widget.dart'
     show TodayStockOutWindowsWidget;
+export '/pages/report_screen/today_stock_out_windows_copy/today_stock_out_windows_copy_widget.dart'
+    show TodayStockOutWindowsCopyWidget;

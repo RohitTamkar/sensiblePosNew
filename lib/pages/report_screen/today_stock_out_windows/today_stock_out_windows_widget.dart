@@ -61,10 +61,7 @@ class _TodayStockOutWindowsWidgetState
       FFAppState().filtervalue = '';
       FFAppState().filterDate = functions.getDayId();
       FFAppState().update(() {});
-      _model.saleReport2 = await actions.productSaleReport(
-        functions.getDayId(),
-        FFAppState().outletIdRef!.id,
-      );
+      _model.saleReport2 = await actions.todaysStockSummarReport();
       FFAppState().resultList = _model.saleReport2!.toList().cast<dynamic>();
       safeSetState(() {});
     });
