@@ -852,11 +852,12 @@ List<dynamic> getProList(
 ) {
   List<dynamic> tempList = [];
   Map map = new Map();
-
-  if (type == "p") {
-    tempList = list[0]["allProducts"];
-  } else {
-    tempList = list[0]["details"];
+  if (list.isNotEmpty) {
+    if (type == "p") {
+      tempList = list[0]["allProducts"];
+    } else {
+      tempList = list[0]["details"];
+    }
   }
   return tempList;
 }
