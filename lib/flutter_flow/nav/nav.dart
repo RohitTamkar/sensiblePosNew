@@ -1545,6 +1545,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: StockSummaryReportWidget.routeName,
               path: StockSummaryReportWidget.routePath,
               builder: (context, params) => StockSummaryReportWidget(),
+            ),
+            FFRoute(
+              name: TodayStockOutWindowsWidget.routeName,
+              path: TodayStockOutWindowsWidget.routePath,
+              builder: (context, params) => TodayStockOutWindowsWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

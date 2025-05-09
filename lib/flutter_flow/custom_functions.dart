@@ -74,6 +74,29 @@ List<dynamic> shiftDocToJsonList2(ShiftDetailsStruct item) {
   return list;
 }
 
+int? outwardItemsqty(
+  List<StockSummaryRecord>? stockDocList,
+  String? productId,
+) {
+  if (stockDocList == null || productId == null) {
+    return null;
+  }
+
+  int totalQty = 0;
+
+  for (var StockSummaryRecord in stockDocList) {
+    if (StockSummaryRecord.productListMap != null) {
+      for (var product in StockSummaryRecord.productListMap!) {
+        if (product.id == productId) {
+          totalQty += product.reqStock.toInt() ?? 0;
+        }
+      }
+    }
+  }
+
+  return totalQty;
+}
+
 String genInvoiceNumLaundry(
   int? count,
   int? shiftCount,
@@ -1351,4 +1374,27 @@ String? returnTotalQtybyWeight(
   } catch (e) {
     return "0"; // Return null if parsing fails (invalid input)
   }
+}
+
+int? inwardItemsqty(
+  List<PurchaseRecord>? purchasedDocList,
+  String? productId,
+) {
+  if (purchasedDocList == null || productId == null) {
+    return null;
+  }
+
+  int totalQty = 0;
+
+  for (var purchaseRecord in purchasedDocList) {
+    if (purchaseRecord.productList != null) {
+      for (var product in purchaseRecord.productList!) {
+        if (product.id == productId) {
+          totalQty += product.quantity.toInt() ?? 0;
+        }
+      }
+    }
+  }
+
+  return totalQty;
 }
