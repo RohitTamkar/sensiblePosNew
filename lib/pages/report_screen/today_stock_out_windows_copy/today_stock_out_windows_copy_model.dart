@@ -7,6 +7,7 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'today_stock_out_windows_copy_widget.dart'
     show TodayStockOutWindowsCopyWidget;
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -25,6 +26,9 @@ class TodayStockOutWindowsCopyModel
   bool? netConn1;
   // Stores action output result for [Custom Action - todaysStockSummarReport] action in TodayStockOutWindowsCopy widget.
   List<dynamic>? saleReport2;
+  DateTime? datePicked;
+  // Stores action output result for [Custom Action - todaysStockSummarReport] action in Button widget.
+  List<dynamic>? saleReportdate;
 
   @override
   void initState(BuildContext context) {}

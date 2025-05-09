@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -149,6 +150,109 @@ class _TodayStockOutWindowsCopyWidgetState
                             onPressed: () {
                               print('IconButton pressed ...');
                             },
+                          ),
+                          FFButtonWidget(
+                            onPressed: () async {
+                              final _datePickedDate = await showDatePicker(
+                                context: context,
+                                initialDate: getCurrentTimestamp,
+                                firstDate: DateTime(1900),
+                                lastDate: DateTime(2050),
+                                builder: (context, child) {
+                                  return wrapInMaterialDatePickerTheme(
+                                    context,
+                                    child!,
+                                    headerBackgroundColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    headerForegroundColor:
+                                        FlutterFlowTheme.of(context).info,
+                                    headerTextStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .override(
+                                              font: FlutterFlowTheme.of(context)
+                                                  .headlineLarge,
+                                              fontSize: 32.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                    pickerBackgroundColor:
+                                        FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                    pickerForegroundColor:
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                    selectedDateTimeBackgroundColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    selectedDateTimeForegroundColor:
+                                        FlutterFlowTheme.of(context).info,
+                                    actionButtonForegroundColor:
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                    iconSize: 24.0,
+                                  );
+                                },
+                              );
+
+                              if (_datePickedDate != null) {
+                                safeSetState(() {
+                                  _model.datePicked = DateTime(
+                                    _datePickedDate.year,
+                                    _datePickedDate.month,
+                                    _datePickedDate.day,
+                                  );
+                                });
+                              } else if (_model.datePicked != null) {
+                                safeSetState(() {
+                                  _model.datePicked = getCurrentTimestamp;
+                                });
+                              }
+                              FFAppState().filterDate = dateTimeFormat(
+                                "yyyy-MM-dd",
+                                _model.datePicked,
+                                locale:
+                                    FFLocalizations.of(context).languageCode,
+                              );
+                              safeSetState(() {});
+                              _model.show = false;
+                              safeSetState(() {});
+                              _model.saleReportdate =
+                                  await actions.todaysStockSummarReport();
+                              FFAppState().resultList = _model.saleReportdate!
+                                  .toList()
+                                  .cast<dynamic>();
+                              safeSetState(() {});
+                              _model.show = true;
+                              safeSetState(() {});
+
+                              safeSetState(() {});
+                            },
+                            text: FFLocalizations.of(context).getText(
+                              'd04qpz66' /* Choose Date */,
+                            ),
+                            icon: Icon(
+                              Icons.calendar_month,
+                              size: 15.0,
+                            ),
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).alternate,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    font:
+                                        FlutterFlowTheme.of(context).titleSmall,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    letterSpacing: 0.0,
+                                  ),
+                              elevation: 0.0,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
                           ),
                         ],
                       ),
@@ -1581,16 +1685,13 @@ class _TodayStockOutWindowsCopyWidgetState
                                 child: Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Container(
-                                    width: double.infinity,
-                                    height: 600.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                    ),
+                                    width: 200.0,
+                                    height: 200.0,
+                                    decoration: BoxDecoration(),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
                                       child: Image.asset(
-                                        'assets/images/97930-loading.gif',
+                                        'assets/images/98092-loading.gif',
                                         height: 0.0,
                                         fit: BoxFit.contain,
                                       ),

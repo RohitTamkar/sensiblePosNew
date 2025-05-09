@@ -26293,6 +26293,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
+    'd04qpz66': {
+      'en': 'Choose Date',
+      'hi': 'दिनांक चुनें',
+      'kn': 'ದಿನಾಂಕವನ್ನು ಆರಿಸಿ',
+      'mr': 'तारीख निवडा',
+      'ta': 'தேதியைத் தேர்வுசெய்க',
+      'th': 'เลือกวันที่',
+    },
     'k59vbze9': {
       'en': 'Product Name',
       'hi': '',
