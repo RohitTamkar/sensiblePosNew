@@ -8307,6 +8307,16 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               FFAppState().startLoop = FFAppState().startLoop + 1;
                                                                               safeSetState(() {});
                                                                             }
+
+                                                                            await StockSummaryRecord.createDoc(FFAppState().outletIdRef!).set(createStockSummaryRecordData(
+                                                                              createdBy: widget!.doc?.id,
+                                                                              dayId: functions.getDayId(),
+                                                                              monthId: dateTimeFormat(
+                                                                                "yyyy-MM",
+                                                                                getCurrentTimestamp,
+                                                                                locale: FFLocalizations.of(context).languageCode,
+                                                                              ),
+                                                                            ));
                                                                           }
                                                                           await actions
                                                                               .removeFromAllBillList(

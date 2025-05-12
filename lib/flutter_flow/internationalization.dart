@@ -2351,6 +2351,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': 'รายงานสต๊อกปิด',
     },
     'dsxup2zg': {
+      'en': 'TODAY STOCK SUMMARY',
+      'hi': 'स्टॉक रिपोर्ट',
+      'kn': 'ಸ್ಟಾಕ್ ವರದಿಯಲ್ಲಿ',
+      'mr': 'स्टॉक रिपोर्टमध्ये',
+      'ta': 'பங்கு அறிக்கையில்',
+      'th': 'รายงานสินค้าคงเหลือ',
+    },
+    'r6sxhafz': {
       'en': 'IN STOCK REPORT',
       'hi': 'स्टॉक रिपोर्ट',
       'kn': 'ಸ್ಟಾಕ್ ವರದಿಯಲ್ಲಿ',
