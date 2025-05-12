@@ -6521,6 +6521,12 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           safeSetState(
                                                                               () {});
                                                                         }
+                                                                        await actions
+                                                                            .updateProductStocknew(
+                                                                          _model
+                                                                              .prdlistsavebillupi!
+                                                                              .toList(),
+                                                                        );
                                                                       }
                                                                       await actions
                                                                           .removeFromAllBillList(
@@ -7397,6 +7403,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 FFAppState().startLoop + 1;
                                                                             safeSetState(() {});
                                                                           }
+                                                                          await actions
+                                                                              .updateProductStocknew(
+                                                                            _model.prdlistsavebill!.toList(),
+                                                                          );
                                                                         }
                                                                         await actions
                                                                             .removeFromAllBillList(
@@ -8307,16 +8317,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               FFAppState().startLoop = FFAppState().startLoop + 1;
                                                                               safeSetState(() {});
                                                                             }
-
-                                                                            await StockSummaryRecord.createDoc(FFAppState().outletIdRef!).set(createStockSummaryRecordData(
-                                                                              createdBy: widget!.doc?.id,
-                                                                              dayId: functions.getDayId(),
-                                                                              monthId: dateTimeFormat(
-                                                                                "yyyy-MM",
-                                                                                getCurrentTimestamp,
-                                                                                locale: FFLocalizations.of(context).languageCode,
-                                                                              ),
-                                                                            ));
+                                                                            await actions.updateProductStocknew(
+                                                                              _model.prdlinstnewtx!.toList(),
+                                                                            );
                                                                           }
                                                                           await actions
                                                                               .removeFromAllBillList(
