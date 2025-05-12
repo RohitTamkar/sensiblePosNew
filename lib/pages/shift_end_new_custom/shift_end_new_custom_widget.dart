@@ -68,13 +68,6 @@ class _ShiftEndNewCustomWidgetState extends State<ShiftEndNewCustomWidget>
       safeSetState(() {});
     });
 
-    _model.textController ??= TextEditingController(
-        text: DateTime.fromMillisecondsSinceEpoch(valueOrDefault<int>(
-      _model.shiftdata?.startTime,
-      0,
-    )).toString());
-    _model.textFieldFocusNode ??= FocusNode();
-
     animationsMap.addAll({
       'containerOnActionTriggerAnimation': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
@@ -547,96 +540,20 @@ class _ShiftEndNewCustomWidgetState extends State<ShiftEndNewCustomWidget>
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 3.0),
-                                              child: TextFormField(
-                                                controller:
-                                                    _model.textController,
-                                                focusNode:
-                                                    _model.textFieldFocusNode,
-                                                obscureText: false,
-                                                decoration: InputDecoration(
-                                                  isDense: false,
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font: GoogleFonts.lora(
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        color:
-                                                            Color(0xFF000133),
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                  enabledBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: Color(0x00000000),
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        const BorderRadius.only(
-                                                      topLeft:
-                                                          Radius.circular(4.0),
-                                                      topRight:
-                                                          Radius.circular(4.0),
-                                                    ),
-                                                  ),
-                                                  focusedBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: Color(0x00000000),
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        const BorderRadius.only(
-                                                      topLeft:
-                                                          Radius.circular(4.0),
-                                                      topRight:
-                                                          Radius.circular(4.0),
-                                                    ),
-                                                  ),
-                                                  errorBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: Color(0x00000000),
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        const BorderRadius.only(
-                                                      topLeft:
-                                                          Radius.circular(4.0),
-                                                      topRight:
-                                                          Radius.circular(4.0),
-                                                    ),
-                                                  ),
-                                                  focusedErrorBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: Color(0x00000000),
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        const BorderRadius.only(
-                                                      topLeft:
-                                                          Radius.circular(4.0),
-                                                      topRight:
-                                                          Radius.circular(4.0),
-                                                    ),
-                                                  ),
+                                              child: Text(
+                                                dateTimeFormat(
+                                                  "yyyy-MM-dd",
+                                                  DateTime
+                                                      .fromMillisecondsSinceEpoch(
+                                                          valueOrDefault<int>(
+                                                    _model.shiftdata?.startTime,
+                                                    0,
+                                                  )),
+                                                  locale: FFLocalizations.of(
+                                                          context)
+                                                      .languageCode,
                                                 ),
+                                                textAlign: TextAlign.start,
                                                 style: FlutterFlowTheme.of(
                                                         context)
                                                     .headlineSmall
@@ -650,12 +567,6 @@ class _ShiftEndNewCustomWidgetState extends State<ShiftEndNewCustomWidget>
                                                               .lineColor,
                                                       letterSpacing: 0.0,
                                                     ),
-                                                textAlign: TextAlign.start,
-                                                keyboardType:
-                                                    TextInputType.datetime,
-                                                validator: _model
-                                                    .textControllerValidator
-                                                    .asValidator(context),
                                               ),
                                             ),
                                           ),

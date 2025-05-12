@@ -36,10 +36,6 @@ class ShiftEndNewCustomModel extends FlutterFlowModel<ShiftEndNewCustomWidget> {
   ShiftRecord? shiftdoc;
   // Model for Header component.
   late HeaderModel headerModel;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
   // Stores action output result for [Custom Action - scanPrinter] action in Container widget.
   bool? rd;
   // Stores action output result for [Custom Action - connectDevice] action in Container widget.
@@ -53,7 +49,5 @@ class ShiftEndNewCustomModel extends FlutterFlowModel<ShiftEndNewCustomWidget> {
   @override
   void dispose() {
     headerModel.dispose();
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
   }
 }

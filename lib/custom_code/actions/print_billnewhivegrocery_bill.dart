@@ -21,6 +21,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 import 'dart:async';
@@ -245,8 +247,13 @@ Future printBillnewhivegroceryBill(
 
       String printLine = '';
       String dateString = '';
-      String serialTemp =
-          'Serial no: ' + lastBillCount(FFAppState().count).toString();
+      String serialTemp;
+      if (invoiceDetails.count.toString() != null &&
+          invoiceDetails.count.toString().isNotEmpty) {
+        serialTemp = 'Serial no: ' + invoiceDetails.count.toString();
+      } else {
+        serialTemp = 'Serial no: ' + invoiceDetails.invoice.toString();
+      }
       if (invoiceDetails.source == "KOT" ||
           invoiceDetails.source == "CUSTOMER") {
         if (invoiceDetails.source == "KOT") {
@@ -315,8 +322,13 @@ Future printBillnewhivegroceryBill(
       } else {
         String printLine = '';
         String dateString = '';
-        String serialTemp =
-            'Serial no: ' + returncountnew(invoiceDetails.invoice).toString();
+        String serialTemp;
+        if (invoiceDetails.count.toString() != null &&
+            invoiceDetails.count.toString().isNotEmpty) {
+          serialTemp = 'Serial no: ' + invoiceDetails.count.toString();
+        } else {
+          serialTemp = 'Serial no: ' + invoiceDetails.invoice.toString();
+        }
 
         final DateTime now =
             DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
@@ -1383,8 +1395,13 @@ Future printBillnewhivegroceryBill(
                 bold: true));
       } else {
         String dateString = '';
-        String serialTemp =
-            'Serial no: ' + lastBillCount(FFAppState().count).toString();
+        String serialTemp;
+        if (invoiceDetails.count.toString() != null &&
+            invoiceDetails.count.toString().isNotEmpty) {
+          serialTemp = 'Serial no: ' + invoiceDetails.count.toString();
+        } else {
+          serialTemp = 'Serial no: ' + invoiceDetails.invoice.toString();
+        }
         final DateTime now =
             DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
         final DateFormat formatter = DateFormat('dd-MM-yyyy');

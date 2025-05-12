@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:image/image.dart' as img;
 import 'package:flutter/services.dart';
 
@@ -307,8 +309,7 @@ Future printBillnewhive(
                 bold: true));
       } else {
         String dateString = '';
-        String serialTemp =
-            'Serial no: ' + lastBillCount(FFAppState().count).toString();
+        String serialTemp = 'Serial no: ' + FFAppState().newcount.toString();
         final DateTime now =
             DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
         final DateFormat formatter = DateFormat('dd-MM-yyyy');
@@ -1211,8 +1212,7 @@ Future printBillnewhive(
       String printLine = '';
 
       String dateString = '';
-      String serialTemp =
-          'Serial no: ' + lastBillCount(FFAppState().count).toString();
+      String serialTemp = 'Serial no: ' + FFAppState().newcount.toString();
       final DateTime now =
           DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
       final DateFormat formatter = DateFormat('dd-MM-yyyy');
