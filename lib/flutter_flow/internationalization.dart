@@ -26461,6 +26461,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
+    '4wkhlzd7': {
+      'en': 'TOTAL STOCK :',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    '18440nxc': {
+      'en': 'PRICE :',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
     'xnqwvy64': {
       'en': 'Home',
       'hi': 'घर',

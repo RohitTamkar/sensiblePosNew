@@ -1399,3 +1399,16 @@ int? inwardItemsqty(
 
   return totalQty;
 }
+
+double? returnTotaljason(
+  List<dynamic>? jsonlist,
+  String? field,
+) {
+  //
+  double amt = 0;
+  for (var json in jsonlist!) {
+    amt += json['$field'];
+  }
+
+  return amt;
+}
