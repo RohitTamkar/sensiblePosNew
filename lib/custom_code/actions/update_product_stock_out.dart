@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 Future updateProductStockOut(
   List<SelItemListStruct> sellitem,
   String? reason,
@@ -54,11 +56,12 @@ Future updateProductStockOut(
   await stockSummaryRecordReference.set({
     ...createStockSummaryRecordData(
       createdBy: FFAppState().userdoc?.id,
-      status: 'OUT',
+      status: 'STOCKOUT',
       dayId: dateTimeFormat("yyyy-MM-dd", getCurrentTimestamp, locale: 'en'),
       monthId: dateTimeFormat("yyyy-MM", getCurrentTimestamp, locale: 'en'),
       createdAt: getCurrentTimestamp,
-      stockType: 'OUT',
+      stockType: 'STOCKOUT',
+      reason: reason,
     ),
     ...mapToFirestore({
       'productListMap':

@@ -810,6 +810,8 @@ class _TodayStockOutWindowsCopyWidgetState
                                                                     font: FlutterFlowTheme.of(
                                                                             context)
                                                                         .labelSmall,
+                                                                    fontSize:
+                                                                        12.0,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
@@ -857,6 +859,8 @@ class _TodayStockOutWindowsCopyWidgetState
                                                                     font: FlutterFlowTheme.of(
                                                                             context)
                                                                         .labelSmall,
+                                                                    fontSize:
+                                                                        12.0,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
@@ -1435,11 +1439,10 @@ class _TodayStockOutWindowsCopyWidgetState
                                                                       .center,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '59k799u5' /* 0 */,
-                                                                  ),
+                                                                  getJsonField(
+                                                                    listItem,
+                                                                    r'''$.stockoutwardjson.qty''',
+                                                                  ).toString(),
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -1477,11 +1480,10 @@ class _TodayStockOutWindowsCopyWidgetState
                                                                       .center,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'hjdnedho' /* 0 */,
-                                                                  ),
+                                                                  getJsonField(
+                                                                    listItem,
+                                                                    r'''$.stockoutwardjson.amt''',
+                                                                  ).toString(),
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -1517,7 +1519,10 @@ class _TodayStockOutWindowsCopyWidgetState
                                                                     (alertDialogContext) {
                                                                   return AlertDialog(
                                                                     content: Text(
-                                                                        'No Record'),
+                                                                        getJsonField(
+                                                                      listItem,
+                                                                      r'''$.stockoutwardjson.reason''',
+                                                                    ).toString()),
                                                                     actions: [
                                                                       TextButton(
                                                                         onPressed:

@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>?> todaysStockSummarReport() async {
   // Fetch documents from Firestore
   final productSnapshot = await FirebaseFirestore.instance
@@ -22,18 +24,21 @@ Future<List<dynamic>?> todaysStockSummarReport() async {
       .collection('OUTLET')
       .doc(FFAppState().outletIdRef?.id)
       .collection('PURCHASE')
+      .where('dayId', isEqualTo: FFAppState().filterDate)
       .get();
 
   final stockSnapshot = await FirebaseFirestore.instance
       .collection('OUTLET')
       .doc(FFAppState().outletIdRef?.id)
       .collection('STOCK_SUMMARY')
+      .where('dayId', isEqualTo: FFAppState().filterDate)
       .get();
 
   final invoiceSnapshot = await FirebaseFirestore.instance
       .collection('OUTLET')
       .doc(FFAppState().outletIdRef?.id)
       .collection('INVOICE')
+      .where('dayId', isEqualTo: FFAppState().filterDate)
       .get();
 
   // Convert Firestore docs to typed model objects
@@ -67,6 +72,10 @@ Future<List<dynamic>?> todaysStockSummarReport() async {
     int outwardQty = outwardItemsqty(stockDocList, productId) ?? 0;
     double outwardAmt = outwardQty * rate;
 
+    // Stockout calculation
+    int stockoutwardQty = stockoutwardItemsqty(stockDocList, productId) ?? 0;
+    double stockoutwardAmt = stockoutwardQty * rate;
+
     // Get closing stock
     int closingStock = product.currentStock?.toInt() ?? 0;
 
@@ -85,6 +94,8 @@ Future<List<dynamic>?> todaysStockSummarReport() async {
       'outwardsaleAmt': outwardAmt,
       'closingStock': closingStock,
       'closingStockAmt': closingAmt,
+      'stockoutwardQty': stockoutwardQty,
+      'stockoutwardAmt': stockoutwardAmt,
     });
   }
 
@@ -106,6 +117,31 @@ int? outwardItemsqty(
       for (var product in StockSummaryRecord.productListMap!) {
         if (product.id == productId) {
           totalQty += product.reqStock.toInt() ?? 0;
+        }
+      }
+    }
+  }
+
+  return totalQty;
+}
+
+int? stockoutwardItemsqty(
+  List<StockSummaryRecord>? stockDocList,
+  String? productId,
+) {
+  if (stockDocList == null || productId == null) {
+    return null;
+  }
+
+  int totalQty = 0;
+
+  for (var StockSummaryRecord in stockDocList) {
+    if (StockSummaryRecord.productListMap != null) {
+      if (StockSummaryRecord.stockType == "STOCKOUT") {
+        for (var product in StockSummaryRecord.productListMap!) {
+          if (product.id == productId) {
+            totalQty += product.reqStock.toInt() ?? 0;
+          }
         }
       }
     }
