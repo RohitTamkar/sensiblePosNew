@@ -73,8 +73,9 @@ Future<List<dynamic>?> todaysStockSummarReport() async {
     double outwardAmt = outwardQty * rate;
 
     // Stockout calculation
-    int stockoutwardQty = stockoutwardItemsqty(stockDocList, productId) ?? 0;
-    double stockoutwardAmt = stockoutwardQty * rate;
+    dynamic stockoutjson =
+        stockoutwardItemsqty(stockDocList, productId, rate) ?? 0;
+    //double stockoutwardAmt = stockoutwardQty * rate;
 
     // Get closing stock
     int closingStock = product.currentStock?.toInt() ?? 0;
@@ -94,8 +95,7 @@ Future<List<dynamic>?> todaysStockSummarReport() async {
       'outwardsaleAmt': outwardAmt,
       'closingStock': closingStock,
       'closingStockAmt': closingAmt,
-      'stockoutwardQty': stockoutwardQty,
-      'stockoutwardAmt': stockoutwardAmt,
+      'stockoutwardjson': stockoutjson,
     });
   }
 
@@ -113,7 +113,8 @@ int? outwardItemsqty(
   int totalQty = 0;
 
   for (var StockSummaryRecord in stockDocList) {
-    if (StockSummaryRecord.productListMap != null) {
+    if (StockSummaryRecord.stockType != "STOCKOUT" &&
+        StockSummaryRecord.productListMap != null) {
       for (var product in StockSummaryRecord.productListMap!) {
         if (product.id == productId) {
           totalQty += product.reqStock.toInt() ?? 0;
@@ -125,29 +126,43 @@ int? outwardItemsqty(
   return totalQty;
 }
 
-int? stockoutwardItemsqty(
+Map<String, dynamic>? stockoutwardItemsqty(
   List<StockSummaryRecord>? stockDocList,
   String? productId,
+  double rate,
 ) {
   if (stockDocList == null || productId == null) {
     return null;
   }
 
   int totalQty = 0;
+  double totalAmt = 0.0;
+  List<Map<String, dynamic>> reasons = [];
 
-  for (var StockSummaryRecord in stockDocList) {
-    if (StockSummaryRecord.productListMap != null) {
-      if (StockSummaryRecord.stockType == "STOCKOUT") {
-        for (var product in StockSummaryRecord.productListMap!) {
-          if (product.id == productId) {
-            totalQty += product.reqStock.toInt() ?? 0;
-          }
+  for (var stockSummary in stockDocList) {
+    if (stockSummary.stockType == "STOCKOUT" &&
+        stockSummary.productListMap != null) {
+      for (var product in stockSummary.productListMap!) {
+        if (product.id == productId) {
+          int qty = product.reqStock.toInt() ?? 0;
+          totalQty += qty;
+          totalAmt += qty * rate;
+
+          reasons.add({
+            'reason': stockSummary.reason ?? 'N/A',
+            'qty': qty,
+            'amt': qty * rate,
+          });
         }
       }
     }
   }
 
-  return totalQty;
+  return {
+    'qty': totalQty,
+    'amt': totalAmt,
+    'reason': reasons,
+  };
 }
 
 int? inwardItemsqty(

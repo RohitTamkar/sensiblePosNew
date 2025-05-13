@@ -271,6 +271,10 @@ class _ProductAndListStockoutWidgetState
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  await actions.removeFromAllBillList(
+                                    FFAppState().selBill,
+                                  );
+
                                   context.pushNamed(
                                     ProductAndListNewWidget.routeName,
                                     queryParameters: {
@@ -1204,7 +1208,7 @@ class _ProductAndListStockoutWidgetState
                                                                             child:
                                                                                 Builder(
                                                                               builder: (context) {
-                                                                                final productList = (productAndListStockoutAppSettingsRecord!.settingList.where((e) => e.title == 'sortProductByCode').toList().firstOrNull!.value ? FFAppState().productHive.sortedList(keyOf: (e) => e.code, desc: false) : FFAppState().productHive.sortedList(keyOf: (e) => e.name, desc: false)).toList();
+                                                                                final productList = (productAndListStockoutAppSettingsRecord!.settingList.where((e) => e.title == 'sortProductByCode').toList().firstOrNull!.value ? FFAppState().productHive.sortedList(keyOf: (e) => e.code, desc: false).where((e) => e.stockable).toList() : FFAppState().productHive.sortedList(keyOf: (e) => e.name, desc: false).where((e) => e.stockable).toList()).toList();
                                                                                 if (productList.isEmpty) {
                                                                                   return Center(
                                                                                     child: Image.asset(
