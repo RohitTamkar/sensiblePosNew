@@ -1,6 +1,7 @@
 export 'check_platform.dart' show checkPlatform;
 export 'update_product_stocknew.dart' show updateProductStocknew;
 export 'edit_custom_qty.dart' show editCustomQty;
+export 'update_product_stock_out.dart' show updateProductStockOut;
 export 'shift_existseditbill.dart' show shiftExistseditbill;
 export 'cal_bill_amt2.dart' show calBillAmt2;
 export 'update_shift_summary_fordeletebill.dart'

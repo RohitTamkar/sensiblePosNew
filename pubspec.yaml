@@ -44,7 +44,6 @@ dependencies:
   connectivity_plus: ^4.0.2
   csslib: 0.17.3
   custom_alert_dialog_box: ^1.0.2
-  data_table_2: 2.5.10
   desktop_multi_window: ^0.2.1
   device_info_plus: ^10.1.2
   dropdown_button2: 2.3.9

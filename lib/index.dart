@@ -56,8 +56,6 @@ export '/pages/loading_screen/loading_screen_widget.dart'
     show LoadingScreenWidget;
 export '/pages/screens/digital_order/digital_order_widget.dart'
     show DigitalOrderWidget;
-export '/pages/regular_app_setting/regular_app_setting_widget.dart'
-    show RegularAppSettingWidget;
 export '/pages/login_page/login_page_widget.dart' show LoginPageWidget;
 export '/pages/edit_bill/edit_bill_widget.dart' show EditBillWidget;
 export '/pages/ims_inward_outward/ims_inward_outward_widget.dart'
@@ -72,8 +70,6 @@ export '/pages/goods_received/goods_received_widget.dart'
 export '/pages/ims_opening_stock/ims_opening_stock_widget.dart'
     show ImsOpeningStockWidget;
 export '/pages/start_screen/start_screen_widget.dart' show StartScreenWidget;
-export '/pages/product_sale_testing/product_sale_testing_widget.dart'
-    show ProductSaleTestingWidget;
 export '/pages/report_screen/category_sale_report/category_sale_report_widget.dart'
     show CategorySaleReportWidget;
 export '/pages/onboarding_screen/onboarding_screen_widget.dart'
@@ -201,8 +197,6 @@ export '/pages/report_screen/outstock_report/outstock_report_widget.dart'
 export '/pages/screens/add_stockby_category/add_stockby_category_widget.dart'
     show AddStockbyCategoryWidget;
 export '/product5_shoe/product5_shoe_widget.dart' show Product5ShoeWidget;
-export '/pages/product_and_list_new_copy2/product_and_list_new_copy2_widget.dart'
-    show ProductAndListNewCopy2Widget;
 export '/pages/billing_style/piece_counting/piece_counting_widget.dart'
     show PieceCountingWidget;
 export '/pages/table_list/table_list_widget.dart' show TableListWidget;

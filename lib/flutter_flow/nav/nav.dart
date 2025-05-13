@@ -307,11 +307,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => DigitalOrderWidget(),
             ),
             FFRoute(
-              name: RegularAppSettingWidget.routeName,
-              path: RegularAppSettingWidget.routePath,
-              builder: (context, params) => RegularAppSettingWidget(),
-            ),
-            FFRoute(
               name: LoginPageWidget.routeName,
               path: LoginPageWidget.routePath,
               builder: (context, params) => LoginPageWidget(
@@ -402,11 +397,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: StartScreenWidget.routeName,
               path: StartScreenWidget.routePath,
               builder: (context, params) => StartScreenWidget(),
-            ),
-            FFRoute(
-              name: ProductSaleTestingWidget.routeName,
-              path: ProductSaleTestingWidget.routePath,
-              builder: (context, params) => ProductSaleTestingWidget(),
             ),
             FFRoute(
               name: CategorySaleReportWidget.routeName,
@@ -1499,37 +1489,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: Product5ShoeWidget.routeName,
               path: Product5ShoeWidget.routePath,
               builder: (context, params) => Product5ShoeWidget(),
-            ),
-            FFRoute(
-              name: ProductAndListNewCopy2Widget.routeName,
-              path: ProductAndListNewCopy2Widget.routePath,
-              asyncParams: {
-                'taxcollection':
-                    getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
-              },
-              builder: (context, params) => ProductAndListNewCopy2Widget(
-                billDetails: params.getParam(
-                  'billDetails',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['OUTLET', 'INVOICE'],
-                ),
-                doc: params.getParam(
-                  'doc',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['USER_PROFILE'],
-                ),
-                shiftDetails: params.getParam(
-                  'shiftDetails',
-                  ParamType.JSON,
-                ),
-                taxcollection: params.getParam<TaxMasterRecord>(
-                  'taxcollection',
-                  ParamType.Document,
-                  isList: true,
-                ),
-              ),
             ),
             FFRoute(
               name: PieceCountingWidget.routeName,

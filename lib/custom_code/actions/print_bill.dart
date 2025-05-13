@@ -13,6 +13,21 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'dart:typed_data';
+
+import 'package:flutter/services.dart';
+
+import 'index.dart'; // Imports other custom actions
+import 'dart:async';
+import 'dart:developer';
+import 'dart:io';
+import 'package:flutter_pos_printer_platform_image_3/flutter_pos_printer_platform_image_3.dart';
+//import 'package:flutter_pos_printer_platform/flutter_pos_printer_platform.dart';
+import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
+import 'dart:io';
+import 'package:http/http.dart' as http;
+import 'package:image/image.dart' as im;
+
 Future printBill(
   List<dynamic> data,
   List<dynamic> selectedPrinter,

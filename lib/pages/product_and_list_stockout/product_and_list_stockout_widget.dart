@@ -3203,10 +3203,13 @@ class _ProductAndListStockoutWidgetState
                                                                       () {});
                                                                 }
                                                                 await actions
-                                                                    .updateProductStocknew(
+                                                                    .updateProductStockOut(
                                                                   _model
                                                                       .prdlistsavebillupi!
                                                                       .toList(),
+                                                                  _model
+                                                                      .textController
+                                                                      .text,
                                                                 );
                                                               }
                                                               await actions
