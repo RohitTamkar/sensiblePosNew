@@ -23,6 +23,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:image/image.dart' as img;
 import 'package:flutter/services.dart';
 
@@ -1987,7 +1989,7 @@ Future printBillnewhive2(
           List<int> cashDrawerCommand = [0x1B, 0x70, 0x00, 0x19, 0xFA];
           bytes += cashDrawerCommand; // Append the cash drawer open command
         }
-        bytes += generator.feed(2);
+        //  bytes += generator.feed(2);
         bytes += generator.cut();
         FFAppState().printerName = statusName;
         FFAppState().isPrinterConnected = status;
@@ -2017,7 +2019,7 @@ Future printBillnewhive2(
         break;
 
       case PrinterType.network:
-        bytes += generator.feed(2);
+        // bytes += generator.feed(2);
         bytes += generator.cut();
         await printerManager.connect(
             type: bluetoothPrinter["typePrinter"],

@@ -13,20 +13,6 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
-import 'dart:async';
-import 'dart:developer';
-import 'dart:io';
-//import 'package:flutter_pos_printer_platform/flutter_pos_printer_platform.dart';
-import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
-import 'package:flutter_pos_printer_platform_image_3/flutter_pos_printer_platform_image_3.dart';
-import 'dart:typed_data';
-
-import 'package:flutter/services.dart';
-import 'dart:io';
-
-import 'package:http/http.dart' as http;
-import 'package:image/image.dart' as im;
-
 Future printBill(
   List<dynamic> data,
   List<dynamic> selectedPrinter,
@@ -243,9 +229,9 @@ Future printBill(
                 width: PosTextSize.size2,
                 bold: true,
                 align: PosAlign.center));
-      } else {
-        bytes += generator.text(
-            "-----------------------------------------------",
+      } /*else{
+
+        bytes += generator.text("-----------------------------------------------",
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
@@ -257,7 +243,7 @@ Future printBill(
                 width: PosTextSize.size2,
                 bold: true,
                 align: PosAlign.center));
-      }
+      }*/
 
       bytes += generator.text("-----------------------------------------------",
           styles: const PosStyles(
@@ -297,7 +283,7 @@ Future printBill(
           setting.title == 'disableOrderType' && setting.value == false)) {
         billNo = 'Bill No:' + invoiceDetails.invoice.toString();
       } else {
-        billNo = 'ORD ID:' + invoiceDetails.invoice.toString();
+        billNo = 'Bill No:' + FFAppState().count.toString();
       }
 
       printLine = billNo;
@@ -553,7 +539,8 @@ Future printBill(
                 align: PosAlign.center));
       }
 
-      bytes += generator.text("NET :" + FFAppState().finalAmt.toString(),
+      bytes += generator.text(
+          "NET :" + (FFAppState().finalAmt.toStringAsFixed(2)).toString(),
           styles: PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size2,
@@ -1291,7 +1278,8 @@ Future printBill(
       }
 
       //
-      bytes += generator.text("NET :" + FFAppState().finalAmt.toString(),
+      bytes += generator.text(
+          "NET :" + (FFAppState().finalAmt.toStringAsFixed(2)).toString(),
           styles: PosStyles(
               height: PosTextSize.size2,
               width: PosTextSize.size2,
@@ -1610,7 +1598,7 @@ Future printBill(
 
     switch (bluetoothPrinter["typePrinter"]) {
       case PrinterType.usb:
-        bytes += generator.feed(2);
+        // bytes += generator.feed(2);
         bytes += generator.cut();
         FFAppState().printerName = statusName;
         FFAppState().isPrinterConnected = status;
@@ -1638,7 +1626,7 @@ Future printBill(
         if (Platform.isIOS || Platform.isAndroid) pendingTask = bytes;
         break;
       case PrinterType.network:
-        bytes += generator.feed(2);
+        // bytes += generator.feed(2);
         bytes += generator.cut();
         await printerManager.connect(
             type: bluetoothPrinter["typePrinter"],

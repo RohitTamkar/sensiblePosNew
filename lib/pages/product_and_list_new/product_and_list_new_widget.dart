@@ -2066,21 +2066,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                           MediaQuery.sizeOf(context).height *
                                               0.05,
                                       decoration: BoxDecoration(),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onLongPress: () async {
-                                          context.pushNamed(
-                                              BarcodePrintingWidget.routeName);
-                                        },
-                                        child: Image.asset(
-                                          'assets/images/IMG_20220412_140945.png',
-                                          width: 100.0,
-                                          height: 100.0,
-                                          fit: BoxFit.contain,
-                                        ),
+                                      child: Image.asset(
+                                        'assets/images/IMG_20220412_140945.png',
+                                        width: 100.0,
+                                        height: 100.0,
+                                        fit: BoxFit.contain,
                                       ),
                                     ),
                                     Expanded(

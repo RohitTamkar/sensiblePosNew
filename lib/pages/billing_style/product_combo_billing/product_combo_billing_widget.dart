@@ -2162,78 +2162,94 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        Builder(
-                                          builder: (context) {
-                                            final listpay =
-                                                _model.liststring.toList();
+                                        if (productComboBillingAppSettingsRecord
+                                                ?.settingList
+                                                ?.where((e) =>
+                                                    e.title ==
+                                                    'disablePaymentMode')
+                                                .toList()
+                                                ?.firstOrNull
+                                                ?.value ??
+                                            true)
+                                          Builder(
+                                            builder: (context) {
+                                              final listpay =
+                                                  _model.liststring.toList();
 
-                                            return Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children:
-                                                  List.generate(listpay.length,
-                                                      (listpayIndex) {
-                                                final listpayItem =
-                                                    listpay[listpayIndex];
-                                                return FFButtonWidget(
-                                                  onPressed: () async {
-                                                    FFAppState().PayMode =
-                                                        listpayItem;
-                                                    safeSetState(() {});
-                                                  },
-                                                  text: listpayItem,
-                                                  options: FFButtonOptions(
-                                                    width: 150.0,
-                                                    height: 50.0,
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(20.0, 0.0,
-                                                                20.0, 0.0),
-                                                    iconPadding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    color: FFAppState()
-                                                                .PayMode ==
-                                                            listpayItem
-                                                        ? FlutterFlowTheme.of(
-                                                                context)
-                                                            .alternate
-                                                        : FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondaryBackground,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .override(
-                                                              font: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleSmall,
-                                                              color: FFAppState()
-                                                                          .PayMode ==
-                                                                      listpayItem
-                                                                  ? FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText
-                                                                  : FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                              letterSpacing:
+                                              return Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: List.generate(
+                                                    listpay.length,
+                                                    (listpayIndex) {
+                                                  final listpayItem =
+                                                      listpay[listpayIndex];
+                                                  return FFButtonWidget(
+                                                    onPressed: () async {
+                                                      FFAppState().PayMode =
+                                                          listpayItem;
+                                                      safeSetState(() {});
+                                                    },
+                                                    text: listpayItem,
+                                                    options: FFButtonOptions(
+                                                      width: 150.0,
+                                                      height: 50.0,
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  20.0,
                                                                   0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w900,
-                                                            ),
-                                                    elevation: 0.0,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                );
-                                              }).divide(SizedBox(height: 5.0)),
-                                            );
-                                          },
-                                        ),
+                                                                  20.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color: FFAppState()
+                                                                  .PayMode ==
+                                                              listpayItem
+                                                          ? FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate
+                                                          : FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryBackground,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                font: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall,
+                                                                color: FFAppState()
+                                                                            .PayMode ==
+                                                                        listpayItem
+                                                                    ? FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText
+                                                                    : FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w900,
+                                                              ),
+                                                      elevation: 0.0,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                  );
+                                                }).divide(
+                                                    SizedBox(height: 5.0)),
+                                              );
+                                            },
+                                          ),
                                         FFButtonWidget(
                                           onPressed: () async {
                                             await launchURL(
@@ -2269,8 +2285,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                           ),
                                         ),
                                         FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async {
+                                            await launchURL(
+                                                'https://www.zomato.com/partners/login');
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
@@ -3079,12 +3096,20 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                             if (FFAppState()
                                                                     .finalAmt >
                                                                 0.0) {
-                                                              if (FFAppState()
-                                                                          .PayMode !=
-                                                                      null &&
-                                                                  FFAppState()
-                                                                          .PayMode !=
-                                                                      '') {
+                                                              if ((FFAppState()
+                                                                              .PayMode !=
+                                                                          null &&
+                                                                      FFAppState()
+                                                                              .PayMode !=
+                                                                          '') ||
+                                                                  !productComboBillingAppSettingsRecord!
+                                                                      .settingList
+                                                                      .where((e) =>
+                                                                          e.title ==
+                                                                          'disablePaymentMode')
+                                                                      .toList()
+                                                                      .firstOrNull!
+                                                                      .value) {
                                                                 if (getJsonField(
                                                                   FFAppState()
                                                                       .shiftDetailsJson,

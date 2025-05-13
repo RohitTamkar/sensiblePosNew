@@ -97,6 +97,11 @@ class StockSummaryRecord extends FirestoreRecord {
   int get requstedCount => _requstedCount ?? 0;
   bool hasRequstedCount() => _requstedCount != null;
 
+  // "reason" field.
+  String? _reason;
+  String get reason => _reason ?? '';
+  bool hasReason() => _reason != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -121,6 +126,7 @@ class StockSummaryRecord extends FirestoreRecord {
     _requstedStock = castToType<double>(snapshotData['requstedStock']);
     _stockType = snapshotData['stockType'] as String?;
     _requstedCount = castToType<int>(snapshotData['requstedCount']);
+    _reason = snapshotData['reason'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -178,6 +184,7 @@ Map<String, dynamic> createStockSummaryRecordData({
   double? requstedStock,
   String? stockType,
   int? requstedCount,
+  String? reason,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -196,6 +203,7 @@ Map<String, dynamic> createStockSummaryRecordData({
       'requstedStock': requstedStock,
       'stockType': stockType,
       'requstedCount': requstedCount,
+      'reason': reason,
     }.withoutNulls,
   );
 
@@ -227,7 +235,8 @@ class StockSummaryRecordDocumentEquality
         e1?.requstedId == e2?.requstedId &&
         e1?.requstedStock == e2?.requstedStock &&
         e1?.stockType == e2?.stockType &&
-        e1?.requstedCount == e2?.requstedCount;
+        e1?.requstedCount == e2?.requstedCount &&
+        e1?.reason == e2?.reason;
   }
 
   @override
@@ -247,7 +256,8 @@ class StockSummaryRecordDocumentEquality
         e?.requstedId,
         e?.requstedStock,
         e?.stockType,
-        e?.requstedCount
+        e?.requstedCount,
+        e?.reason
       ]);
 
   @override

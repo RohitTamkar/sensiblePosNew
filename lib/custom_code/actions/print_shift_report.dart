@@ -17,6 +17,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -142,7 +144,12 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               align: PosAlign.right),
         )
       ]);
+      final DateTime now1 =
+          DateTime.fromMillisecondsSinceEpoch(data[0]["shiftTimeIn"]);
+      final DateFormat formatter2 = DateFormat('dd-MM-yyyy h:mm a');
+      final String formatted2 = formatter2.format(now1);
 
+      String dateTimeString2 = formatted2.toString();
       bytes += generator.row([
         PosColumn(
           text: "Shift Time In:",
@@ -155,7 +162,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               align: PosAlign.left),
         ),
         PosColumn(
-          text: data[0]["shiftTimeIn"].toString(),
+          text: dateTimeString2,
           width: 6,
           styles: PosStyles(
               fontType: PosFontType.fontA,
@@ -760,16 +767,16 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
     if (data.length > 0) {
       bytes += generator.text(reportTitle,
           styles: PosStyles(
-              height: PosTextSize.size2,
+              height: PosTextSize.size1,
               width: PosTextSize.size2,
-              align: PosAlign.center));
+              align: PosAlign.left));
 
-      bytes += generator.text(divider,
+      bytes += generator.text("--------------------------------",
           styles: const PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.center));
+              align: PosAlign.left));
 
       String printLine = '';
       String dateString = '';
@@ -798,15 +805,17 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
           styles: const PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
-              bold: false));
+              bold: false,
+              align: PosAlign.left));
+
       printLine = '';
 
-      bytes += generator.text(divider,
+      bytes += generator.text("--------------------------------",
           styles: const PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.center));
+              align: PosAlign.left));
 
 //row1
 
@@ -829,7 +838,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
@@ -852,7 +861,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
@@ -875,14 +884,14 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
       bytes += generator.row([
         PosColumn(
           text: "Opening Balance:",
-          width: 6,
+          width: 7,
           styles: PosStyles(
               fontType: PosFontType.fontA,
               height: PosTextSize.size1,
@@ -892,13 +901,13 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
         ),
         PosColumn(
           text: data[0]["openingBalance"].toString(),
-          width: 6,
+          width: 5,
           styles: PosStyles(
               fontType: PosFontType.fontA,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
@@ -921,7 +930,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
@@ -944,7 +953,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
@@ -967,14 +976,14 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
       bytes += generator.row([
         PosColumn(
           text: "Digital Payment:",
-          width: 6,
+          width: 7,
           styles: PosStyles(
               fontType: PosFontType.fontA,
               height: PosTextSize.size1,
@@ -984,13 +993,13 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
         ),
         PosColumn(
           text: data[0]["digital"].toString(),
-          width: 6,
+          width: 5,
           styles: PosStyles(
               fontType: PosFontType.fontA,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
@@ -1013,7 +1022,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
@@ -1036,7 +1045,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
@@ -1059,7 +1068,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
@@ -1082,7 +1091,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
@@ -1105,7 +1114,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
@@ -1128,7 +1137,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
@@ -1151,14 +1160,14 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
       bytes += generator.row([
         PosColumn(
           text: "Delivery Charges:",
-          width: 6,
+          width: 7,
           styles: PosStyles(
               fontType: PosFontType.fontA,
               height: PosTextSize.size1,
@@ -1168,13 +1177,13 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
         ),
         PosColumn(
           text: data[0]["delivery"].toString(),
-          width: 6,
+          width: 5,
           styles: PosStyles(
               fontType: PosFontType.fontA,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
       bytes += generator.row([
@@ -1196,7 +1205,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 /*
@@ -1373,7 +1382,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
@@ -1420,7 +1429,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.right),
+              align: PosAlign.left),
         )
       ]);
 
@@ -1429,21 +1438,21 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.center));
+              align: PosAlign.left));
 
       bytes += generator.text("** THANK YOU ! VISIT AGAIN !! **",
           styles: const PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
               bold: false,
-              align: PosAlign.center));
+              align: PosAlign.left));
     }
   } else {
     bytes += generator.text('Test Print',
         styles: PosStyles(
             height: PosTextSize.size2,
             width: PosTextSize.size2,
-            align: PosAlign.center));
+            align: PosAlign.left));
   }
 
   if (bytes.length > 0) {
@@ -1452,7 +1461,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
 
     switch (bluetoothPrinter["typePrinter"]) {
       case PrinterType.usb:
-        bytes += generator.feed(2);
+        // bytes += generator.feed(2);
         bytes += generator.cut();
         FFAppState().printerName = statusName;
         FFAppState().isPrinterConnected = status;
@@ -1480,7 +1489,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
         if (Platform.isIOS || Platform.isAndroid) pendingTask = bytes;
         break;
       case PrinterType.network:
-        bytes += generator.feed(2);
+        //  bytes += generator.feed(2);
         bytes += generator.cut();
         await printerManager.connect(
             type: bluetoothPrinter["typePrinter"],

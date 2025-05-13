@@ -501,6 +501,101 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                               ),
                             ),
                           if (widget!.appSettings23?.settingList
+                                  ?.where((e) => e.title == 'enableGrn')
+                                  .toList()
+                                  ?.firstOrNull
+                                  ?.value ??
+                              true)
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 1.5),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                    ProductAndListStockoutWidget.routeName,
+                                    queryParameters: {
+                                      'taxcollection': serializeParam(
+                                        widget!.tax,
+                                        ParamType.Document,
+                                        isList: true,
+                                      ),
+                                      'billDetails': serializeParam(
+                                        widget!.billdetails,
+                                        ParamType.DocumentReference,
+                                      ),
+                                      'doc': serializeParam(
+                                        widget!.doc,
+                                        ParamType.DocumentReference,
+                                      ),
+                                      'shiftDetails': serializeParam(
+                                        widget!.shiftDetails,
+                                        ParamType.JSON,
+                                      ),
+                                    }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      'taxcollection': widget!.tax,
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
+                                },
+                                onLongPress: () async {
+                                  context.pushNamed(
+                                      AddStockbyCategoryWidget.routeName);
+                                },
+                                child: Container(
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        2.0, 6.0, 2.0, 6.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 6.0),
+                                          child: Icon(
+                                            Icons.outbox_outlined,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            size: 24.0,
+                                          ),
+                                        ),
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '0mvy3y8a' /* Stock Out */,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .override(
+                                                font:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          if (widget!.appSettings23?.settingList
                                   ?.where((e) => e.title == 'enableRecipe')
                                   .toList()
                                   ?.firstOrNull

@@ -1036,55 +1036,6 @@ double? calculateremAmt(
   return total! - advance!;
 }
 
-double? calculateParkingCharges(
-  double? hourlyTotal,
-  int? checkInTimeMillisecond,
-  int? checkOutTimeMillisecond,
-) {
-  // Calculate the duration of parking in hours
-  double? durationInHours;
-  if (checkInTimeMillisecond != null && checkOutTimeMillisecond != null) {
-    durationInHours =
-        ((checkOutTimeMillisecond - checkInTimeMillisecond) / (1000 * 60 * 60))
-            .floor()
-            .toDouble();
-  }
-
-  // Calculate the parking charges
-  double? parkingCharges;
-  if (hourlyTotal != null && durationInHours != null) {
-    parkingCharges = hourlyTotal * durationInHours;
-  }
-
-  if (parkingCharges == 0) {
-    return hourlyTotal;
-  } else {
-    return parkingCharges;
-  }
-}
-
-double? calculateHour(
-  int? checkinTime,
-  int? checkouttime,
-) {
-  // Calculate the duration of parking in hours and minutes
-  double? durationInHours;
-  if (checkinTime != null && checkouttime != null) {
-    int durationInMinutes = (checkouttime - checkinTime) ~/ (1000 * 60);
-    int hours = durationInMinutes ~/ 60;
-    int minutes = durationInMinutes % 60;
-    durationInHours = hours + (minutes / 100); // Combine hours and minutes
-  }
-
-  // Calculate the parking charges
-
-  if (durationInHours == 0) {
-    return 0;
-  } else {
-    return durationInHours;
-  }
-}
-
 String? toCapitalLetter(String? letter) {
   return (letter!.toUpperCase());
 }
