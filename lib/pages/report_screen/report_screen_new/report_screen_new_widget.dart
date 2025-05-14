@@ -990,7 +990,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                           safeSetState(() {});
 
                                           context.pushNamed(
-                                              TodayStockOutWindowsCopyWidget
+                                              TodayStockOutWindowsWidget
                                                   .routeName);
 
                                           if (animationsMap[

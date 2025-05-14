@@ -202,7 +202,7 @@ export '/pages/billing_style/piece_counting/piece_counting_widget.dart'
 export '/pages/table_list/table_list_widget.dart' show TableListWidget;
 export '/pages/report_screen/stock_summary_report/stock_summary_report_widget.dart'
     show StockSummaryReportWidget;
-export '/pages/report_screen/today_stock_out_windows_copy/today_stock_out_windows_copy_widget.dart'
-    show TodayStockOutWindowsCopyWidget;
+export '/pages/report_screen/today_stock_out_windows/today_stock_out_windows_widget.dart'
+    show TodayStockOutWindowsWidget;
 export '/pages/product_and_list_stockout/product_and_list_stockout_widget.dart'
     show ProductAndListStockoutWidget;

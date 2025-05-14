@@ -25180,7 +25180,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': 'บ้าน',
     },
   },
-  // TodayStockOutWindowsCopy
+  // TodayStockOutWindows
   {
     'lgrovspu': {
       'en': 'Today\'s Stock Out Report',

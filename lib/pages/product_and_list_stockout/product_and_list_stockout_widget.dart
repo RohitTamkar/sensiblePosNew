@@ -350,7 +350,7 @@ class _ProductAndListStockoutWidgetState
                                                       Colors.transparent,
                                                   onLongPress: () async {
                                                     context.pushNamed(
-                                                        TodayStockOutWindowsCopyWidget
+                                                        TodayStockOutWindowsWidget
                                                             .routeName);
                                                   },
                                                   child: Text(

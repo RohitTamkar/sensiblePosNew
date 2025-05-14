@@ -11,30 +11,30 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'today_stock_out_windows_copy_model.dart';
-export 'today_stock_out_windows_copy_model.dart';
+import 'today_stock_out_windows_model.dart';
+export 'today_stock_out_windows_model.dart';
 
-class TodayStockOutWindowsCopyWidget extends StatefulWidget {
-  const TodayStockOutWindowsCopyWidget({super.key});
+class TodayStockOutWindowsWidget extends StatefulWidget {
+  const TodayStockOutWindowsWidget({super.key});
 
-  static String routeName = 'TodayStockOutWindowsCopy';
-  static String routePath = 'todayStockOutWindowsCopy';
+  static String routeName = 'TodayStockOutWindows';
+  static String routePath = 'todayStockOutWindows';
 
   @override
-  State<TodayStockOutWindowsCopyWidget> createState() =>
-      _TodayStockOutWindowsCopyWidgetState();
+  State<TodayStockOutWindowsWidget> createState() =>
+      _TodayStockOutWindowsWidgetState();
 }
 
-class _TodayStockOutWindowsCopyWidgetState
-    extends State<TodayStockOutWindowsCopyWidget> {
-  late TodayStockOutWindowsCopyModel _model;
+class _TodayStockOutWindowsWidgetState
+    extends State<TodayStockOutWindowsWidget> {
+  late TodayStockOutWindowsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => TodayStockOutWindowsCopyModel());
+    _model = createModel(context, () => TodayStockOutWindowsModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -85,7 +85,7 @@ class _TodayStockOutWindowsCopyWidgetState
     context.watch<FFAppState>();
 
     return Title(
-        title: 'TodayStockOutWindowsCopy',
+        title: 'TodayStockOutWindows',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -252,6 +252,19 @@ class _TodayStockOutWindowsCopyWidgetState
                                   ),
                               elevation: 0.0,
                               borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {},
+                            child: Icon(
+                              Icons.picture_as_pdf,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              size: 35.0,
                             ),
                           ),
                         ],

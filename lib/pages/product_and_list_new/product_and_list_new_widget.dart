@@ -2123,7 +2123,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                           onLongPress:
                                                               () async {
                                                             context.pushNamed(
-                                                                TodayStockOutWindowsCopyWidget
+                                                                TodayStockOutWindowsWidget
                                                                     .routeName);
                                                           },
                                                           child: Text(
