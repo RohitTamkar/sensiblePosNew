@@ -2261,18 +2261,16 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                           FFAppState()
                                                               .categoryColor = '';
                                                           FFAppState()
+                                                              .categoryID = '';
+                                                          FFAppState()
                                                                   .catAllColor =
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .primary;
                                                           FFAppState()
-                                                              .update(() {});
-                                                          FFAppState()
                                                                   .outletCatRef =
                                                               FFAppState()
                                                                   .catRef;
-                                                          FFAppState()
-                                                              .update(() {});
                                                           FFAppState()
                                                                   .productHive =
                                                               _model
