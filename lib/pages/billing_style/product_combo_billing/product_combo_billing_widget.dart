@@ -2162,15 +2162,13 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        if (productComboBillingAppSettingsRecord
-                                                ?.settingList
-                                                ?.where((e) =>
-                                                    e.title ==
-                                                    'disablePaymentMode')
-                                                .toList()
-                                                ?.firstOrNull
-                                                ?.value ??
-                                            true)
+                                        if (!productComboBillingAppSettingsRecord!
+                                            .settingList
+                                            .where((e) =>
+                                                e.title == 'disablePaymentMode')
+                                            .toList()
+                                            .firstOrNull!
+                                            .value)
                                           Builder(
                                             builder: (context) {
                                               final listpay =
@@ -3102,7 +3100,7 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       FFAppState()
                                                                               .PayMode !=
                                                                           '') ||
-                                                                  !productComboBillingAppSettingsRecord!
+                                                                  productComboBillingAppSettingsRecord!
                                                                       .settingList
                                                                       .where((e) =>
                                                                           e.title ==
@@ -3152,12 +3150,14 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       () {});
                                                                 }
 
-                                                                if (!(FFAppState()
-                                                                            .PayMode !=
-                                                                        null &&
-                                                                    FFAppState()
-                                                                            .PayMode !=
-                                                                        '')) {
+                                                                if (productComboBillingAppSettingsRecord!
+                                                                    .settingList
+                                                                    .where((e) =>
+                                                                        e.title ==
+                                                                        'disablePaymentMode')
+                                                                    .toList()
+                                                                    .firstOrNull!
+                                                                    .value) {
                                                                   FFAppState()
                                                                           .PayMode =
                                                                       'CASH';
@@ -4126,12 +4126,20 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                             if (FFAppState()
                                                                     .finalAmt >
                                                                 0.0) {
-                                                              if (FFAppState()
-                                                                          .PayMode !=
-                                                                      null &&
-                                                                  FFAppState()
-                                                                          .PayMode !=
-                                                                      '') {
+                                                              if ((FFAppState()
+                                                                              .PayMode !=
+                                                                          null &&
+                                                                      FFAppState()
+                                                                              .PayMode !=
+                                                                          '') ||
+                                                                  productComboBillingAppSettingsRecord!
+                                                                      .settingList
+                                                                      .where((e) =>
+                                                                          e.title ==
+                                                                          'disablePaymentMode')
+                                                                      .toList()
+                                                                      .firstOrNull!
+                                                                      .value) {
                                                                 if (getJsonField(
                                                                   FFAppState()
                                                                       .shiftDetailsJson,
@@ -4174,6 +4182,20 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       () {});
                                                                 }
 
+                                                                if (productComboBillingAppSettingsRecord!
+                                                                    .settingList
+                                                                    .where((e) =>
+                                                                        e.title ==
+                                                                        'disablePaymentMode')
+                                                                    .toList()
+                                                                    .firstOrNull!
+                                                                    .value) {
+                                                                  FFAppState()
+                                                                          .PayMode =
+                                                                      'CASH';
+                                                                  safeSetState(
+                                                                      () {});
+                                                                }
                                                                 _model.prdlinstnewtx2 =
                                                                     await actions
                                                                         .filterProducts2(
