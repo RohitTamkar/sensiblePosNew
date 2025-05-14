@@ -263,6 +263,22 @@ class _TodayStockOutWindowsWidgetState
                               await actions.generatePdfStockSummary(
                                 FFAppState().resultList.toList(),
                               );
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Pdf Save SuccessFully !'),
+                                    content: Text('Check Download Folder !'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
                             },
                             child: Icon(
                               Icons.picture_as_pdf,
