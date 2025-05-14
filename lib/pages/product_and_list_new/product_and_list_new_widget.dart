@@ -2259,6 +2259,21 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                               await actions
                                                                   .getCategorylistHive();
                                                           FFAppState()
+                                                              .categoryColor = '';
+                                                          FFAppState()
+                                                                  .catAllColor =
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primary;
+                                                          FFAppState()
+                                                              .update(() {});
+                                                          FFAppState()
+                                                                  .outletCatRef =
+                                                              FFAppState()
+                                                                  .catRef;
+                                                          FFAppState()
+                                                              .update(() {});
+                                                          FFAppState()
                                                                   .productHive =
                                                               _model
                                                                   .prdhive2refresh!
