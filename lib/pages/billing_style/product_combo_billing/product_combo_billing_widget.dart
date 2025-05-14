@@ -3152,6 +3152,18 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       () {});
                                                                 }
 
+                                                                if (!(FFAppState()
+                                                                            .PayMode !=
+                                                                        null &&
+                                                                    FFAppState()
+                                                                            .PayMode !=
+                                                                        '')) {
+                                                                  FFAppState()
+                                                                          .PayMode =
+                                                                      'CASH';
+                                                                  safeSetState(
+                                                                      () {});
+                                                                }
                                                                 _model.prdlinstnewtx =
                                                                     await actions
                                                                         .filterProducts2(

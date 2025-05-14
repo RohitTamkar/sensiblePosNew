@@ -248,8 +248,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                     .enabletaxinclusive(widget!.parameter4!),
                                 widget!.unitList!.toList(),
                                 0.0,
-                                double.parse(
-                                    _model.textFielddisAmtTextController.text),
+                                0.0,
                                 double.parse(
                                     _model.textFieldrateTextController.text),
                                 double.parse(
@@ -260,24 +259,6 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                     _model.textFieldTaxAmtTextController.text),
                                 _model.textFieldqtTextController.text,
                               );
-                              safeSetState(() {
-                                _model.textFielddisAmtTextController?.text =
-                                    getJsonField(
-                                  _model.allbillistplusCopy!
-                                      .where((e) =>
-                                          getJsonField(
-                                            e,
-                                            r'''$.id''',
-                                          ) ==
-                                          getJsonField(
-                                            widget!.jsonitem,
-                                            r'''$.id''',
-                                          ))
-                                      .toList()
-                                      .firstOrNull,
-                                  r'''$.disAmt''',
-                                ).toString();
-                              });
                               safeSetState(() {
                                 _model.textFieldTaxAmtTextController?.text =
                                     getJsonField(
