@@ -247,8 +247,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                 functions
                                     .enabletaxinclusive(widget!.parameter4!),
                                 widget!.unitList!.toList(),
-                                double.parse(
-                                    _model.textFielddisPerTextController.text),
+                                0.0,
                                 double.parse(
                                     _model.textFielddisAmtTextController.text),
                                 double.parse(
@@ -337,10 +336,8 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                   functions
                                       .enabletaxinclusive(widget!.parameter4!),
                                   widget!.unitList!.toList(),
-                                  double.parse(_model
-                                      .textFielddisPerTextController.text),
-                                  double.parse(_model
-                                      .textFielddisAmtTextController.text),
+                                  0.0,
+                                  0.0,
                                   double.parse(
                                       _model.textFieldrateTextController.text),
                                   double.parse(
@@ -351,24 +348,6 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                       .textFieldTaxAmtTextController.text),
                                   _model.textFieldqtTextController.text,
                                 );
-                                safeSetState(() {
-                                  _model.textFielddisAmtTextController?.text =
-                                      getJsonField(
-                                    _model.allbillistChange!
-                                        .where((e) =>
-                                            getJsonField(
-                                              widget!.jsonitem,
-                                              r'''$.id''',
-                                            ) ==
-                                            getJsonField(
-                                              e,
-                                              r'''$.id''',
-                                            ))
-                                        .toList()
-                                        .firstOrNull,
-                                    r'''$.disAmt''',
-                                  ).toString();
-                                });
                                 safeSetState(() {
                                   _model.textFieldTaxAmtTextController?.text =
                                       getJsonField(
@@ -413,10 +392,8 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                 functions
                                     .enabletaxinclusive(widget!.parameter4!),
                                 widget!.unitList!.toList(),
-                                double.parse(
-                                    _model.textFielddisPerTextController.text),
-                                double.parse(
-                                    _model.textFielddisAmtTextController.text),
+                                0.0,
+                                0.0,
                                 double.parse(
                                     _model.textFieldrateTextController.text),
                                 double.parse(
@@ -428,40 +405,25 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                 _model.textFieldqtTextController.text,
                               );
                               safeSetState(() {
-                                _model.textFielddisAmtTextController?.text =
-                                    getJsonField(
-                                  _model.allbillist!
-                                      .where((e) =>
-                                          getJsonField(
-                                            widget!.jsonitem,
-                                            r'''$.id''',
-                                          ) ==
-                                          getJsonField(
-                                            e,
-                                            r'''$.id''',
-                                          ))
-                                      .toList()
-                                      .firstOrNull,
-                                  r'''$.disAmt''',
-                                ).toString();
-                              });
-                              safeSetState(() {
                                 _model.textFieldTaxAmtTextController?.text =
-                                    getJsonField(
-                                  _model.allbillist!
-                                      .where((e) =>
-                                          getJsonField(
-                                            widget!.jsonitem,
-                                            r'''$.id''',
-                                          ) ==
-                                          getJsonField(
-                                            e,
-                                            r'''$.id''',
-                                          ))
-                                      .toList()
-                                      .firstOrNull,
-                                  r'''$.taxAmt''',
-                                ).toString();
+                                    valueOrDefault<String>(
+                                  getJsonField(
+                                    _model.allbillist
+                                        ?.where((e) =>
+                                            getJsonField(
+                                              widget!.jsonitem,
+                                              r'''$.id''',
+                                            ) ==
+                                            getJsonField(
+                                              e,
+                                              r'''$.id''',
+                                            ))
+                                        .toList()
+                                        ?.firstOrNull,
+                                    r'''$.taxAmt''',
+                                  )?.toString(),
+                                  '0',
+                                );
                               });
                               _model.output =
                                   await actions.calSubTotalForGrocery(
@@ -567,10 +529,8 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                               widget!.parameter3!.toList(),
                               functions.enabletaxinclusive(widget!.parameter4!),
                               widget!.unitList!.toList(),
-                              double.parse(
-                                  _model.textFielddisPerTextController.text),
-                              double.parse(
-                                  _model.textFielddisAmtTextController.text),
+                              0.0,
+                              0.0,
                               double.parse(
                                   _model.textFieldrateTextController.text),
                               double.parse(
@@ -581,24 +541,6 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                   _model.textFieldTaxAmtTextController.text),
                               _model.textFieldqtTextController.text,
                             );
-                            safeSetState(() {
-                              _model.textFielddisAmtTextController?.text =
-                                  getJsonField(
-                                _model.all!
-                                    .where((e) =>
-                                        getJsonField(
-                                          widget!.jsonitem,
-                                          r'''$.id''',
-                                        ) ==
-                                        getJsonField(
-                                          e,
-                                          r'''$.id''',
-                                        ))
-                                    .toList()
-                                    .firstOrNull,
-                                r'''$.disAmt''',
-                              ).toString();
-                            });
                             safeSetState(() {
                               _model.textFieldTaxAmtTextController?.text =
                                   getJsonField(
@@ -695,10 +637,8 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                 functions
                                     .enabletaxinclusive(widget!.parameter4!),
                                 widget!.unitList!.toList(),
-                                double.parse(
-                                    _model.textFielddisPerTextController.text),
-                                double.parse(
-                                    _model.textFielddisAmtTextController.text),
+                                0.0,
+                                0.0,
                                 double.parse(
                                     _model.textFieldrateTextController.text),
                                 double.parse(
@@ -725,27 +665,6 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                         .toList()
                                         ?.firstOrNull,
                                     r'''$.taxAmt''',
-                                  )?.toString(),
-                                  '0',
-                                );
-                              });
-                              safeSetState(() {
-                                _model.textFielddisAmtTextController?.text =
-                                    valueOrDefault<String>(
-                                  getJsonField(
-                                    _model.ratechanged
-                                        ?.where((e) =>
-                                            getJsonField(
-                                              e,
-                                              r'''$.id''',
-                                            ) ==
-                                            getJsonField(
-                                              widget!.jsonitem,
-                                              r'''$.id''',
-                                            ))
-                                        .toList()
-                                        ?.firstOrNull,
-                                    r'''$.disAmt''',
                                   )?.toString(),
                                   '0',
                                 );
@@ -1126,10 +1045,8 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                 functions
                                     .enabletaxinclusive(widget!.parameter4!),
                                 widget!.unitList!.toList(),
-                                double.parse(
-                                    _model.textFielddisPerTextController.text),
-                                double.parse(
-                                    _model.textFielddisAmtTextController.text),
+                                0.0,
+                                0.0,
                                 double.parse(
                                     _model.textFieldrateTextController.text),
                                 double.parse(
@@ -1266,10 +1183,8 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                                 functions
                                     .enabletaxinclusive(widget!.parameter4!),
                                 widget!.unitList!.toList(),
-                                double.parse(
-                                    _model.textFielddisPerTextController.text),
-                                double.parse(
-                                    _model.textFielddisAmtTextController.text),
+                                0.0,
+                                0.0,
                                 double.parse(
                                     _model.textFieldrateTextController.text),
                                 double.parse(

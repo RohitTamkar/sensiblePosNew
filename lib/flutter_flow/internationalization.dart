@@ -30342,16 +30342,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': 'உரைப்புலம்',
       'th': 'ฟิลด์ข้อความ',
     },
-    'mtkbwsm3': {
-      'en': 'C:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\firestore',
-      'hi': 'सी:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\firestore',
-      'kn':
-          'ಸಿ:\\\\ಬಳಕೆದಾರರು\\\\ನಿರ್ವಾಹಕರು\\\\ಆ್ಯಪ್‌ಡೇಟಾ\\\\ಸ್ಥಳೀಯ\\\\ಫೈರ್‌ಸ್ಟೋರ್',
-      'mr': 'क:\\\\वापरकर्ते\\\\प्रशासक\\\\अ‍ॅपडेटा\\\\स्थानिक\\\\फायरस्टोअर',
-      'ta':
-          'C:\\\\பயனர்கள்\\\\நிர்வாகம்\\\\ஆப் டேட்டா\\\\லோக்கல்\\\\ஃபயர்ஸ்டோர்',
-      'th': 'C:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\firestore',
-    },
     'g9c03pbk': {
       'en': 'save',
       'hi': 'बचाना',

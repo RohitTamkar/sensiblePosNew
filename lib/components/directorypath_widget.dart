@@ -30,14 +30,11 @@ class _DirectorypathWidgetState extends State<DirectorypathWidget> {
     super.initState();
     _model = createModel(context, () => DirectorypathModel());
 
-    _model.textController ??= TextEditingController();
+    _model.textController ??=
+        TextEditingController(text: FFAppState().directory);
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
-          _model.textController?.text = FFLocalizations.of(context).getText(
-            'mtkbwsm3' /* C:\\Users\\Admin\\AppData\\Loc... */,
-          );
-        }));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -49,6 +46,8 @@ class _DirectorypathWidgetState extends State<DirectorypathWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 16.0),
       child: Container(
