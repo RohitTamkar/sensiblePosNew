@@ -259,7 +259,11 @@ class _TodayStockOutWindowsWidgetState
                             focusColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
-                            onTap: () async {},
+                            onTap: () async {
+                              await actions.generatePdfStockSummary(
+                                FFAppState().resultList.toList(),
+                              );
+                            },
                             child: Icon(
                               Icons.picture_as_pdf,
                               color: FlutterFlowTheme.of(context)
