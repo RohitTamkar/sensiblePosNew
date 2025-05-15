@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom widgets
 
+import 'index.dart'; // Imports other custom widgets
+
 import 'package:flutter/services.dart';
 
 import 'index.dart'; // Imports other custom widgets
@@ -203,18 +205,18 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
                               );*/
                               _model.addtosavebill3 =
                                   await actions.addToHoldListprdGrocery(
-                                selectedProduct,
-                                FFAppState().selBill,
-                                widget!.taxcollection!.toList(),
-                                functions.enabletaxinclusive(widget
-                                    .appSettingsRecord.settingList
-                                    .where(
-                                        (e) => e.title == 'enableInclusiveTax')
-                                    .toList()
-                                    .firstOrNull!
-                                    .value),
-                                widget.unitcollection,
-                              );
+                                      selectedProduct,
+                                      FFAppState().selBill,
+                                      widget!.taxcollection!.toList(),
+                                      functions.enabletaxinclusive(widget
+                                          .appSettingsRecord.settingList
+                                          .where((e) =>
+                                              e.title == 'enableInclusiveTax')
+                                          .toList()
+                                          .firstOrNull!
+                                          .value),
+                                      widget.unitcollection,
+                                      widget.purchase);
                               _shouldSetState = true;
                               _model.calculateResult1 =
                                   await actions.calSubTotalForHoldList(
@@ -304,18 +306,18 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
                                 );*/
                                 _model.addtosavebill3d =
                                     await actions.addToHoldListprdGrocery(
-                                  selectedProduct,
-                                  FFAppState().selBill,
-                                  widget!.taxcollection!.toList(),
-                                  functions.enabletaxinclusive(widget
-                                      .appSettingsRecord.settingList
-                                      .where((e) =>
-                                          e.title == 'enableInclusiveTax')
-                                      .toList()
-                                      .firstOrNull!
-                                      .value),
-                                  widget.unitcollection,
-                                );
+                                        selectedProduct,
+                                        FFAppState().selBill,
+                                        widget!.taxcollection!.toList(),
+                                        functions.enabletaxinclusive(widget
+                                            .appSettingsRecord.settingList
+                                            .where((e) =>
+                                                e.title == 'enableInclusiveTax')
+                                            .toList()
+                                            .firstOrNull!
+                                            .value),
+                                        widget.unitcollection,
+                                        widget.purchase);
                                 _shouldSetState = true;
                                 _model.calculateResult1d =
                                     await actions.calSubTotalForHoldList(
@@ -419,17 +421,18 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
                           }
                           _model.addtosavebill2 =
                               await actions.addToHoldListprdGrocery(
-                            selectedProduct,
-                            FFAppState().selBill,
-                            widget!.taxcollection!.toList(),
-                            functions.enabletaxinclusive(widget
-                                .appSettingsRecord.settingList
-                                .where((e) => e.title == 'enableInclusiveTax')
-                                .toList()
-                                .firstOrNull!
-                                .value),
-                            widget.unitcollection,
-                          );
+                                  selectedProduct,
+                                  FFAppState().selBill,
+                                  widget!.taxcollection!.toList(),
+                                  functions.enabletaxinclusive(widget
+                                      .appSettingsRecord.settingList
+                                      .where((e) =>
+                                          e.title == 'enableInclusiveTax')
+                                      .toList()
+                                      .firstOrNull!
+                                      .value),
+                                  widget.unitcollection,
+                                  widget.purchase);
                           _shouldSetState = true;
                           _model.calculateResult23 =
                               await actions.calSubTotalForHoldList(
@@ -520,17 +523,18 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
                           );*/
                           _model.addtosavebill3 =
                               await actions.addToHoldListprdGrocery(
-                            document,
-                            FFAppState().selBill,
-                            widget!.taxcollection!.toList(),
-                            functions.enabletaxinclusive(widget
-                                .appSettingsRecord.settingList
-                                .where((e) => e.title == 'enableInclusiveTax')
-                                .toList()
-                                .firstOrNull!
-                                .value),
-                            widget.unitcollection,
-                          );
+                                  document,
+                                  FFAppState().selBill,
+                                  widget!.taxcollection!.toList(),
+                                  functions.enabletaxinclusive(widget
+                                      .appSettingsRecord.settingList
+                                      .where((e) =>
+                                          e.title == 'enableInclusiveTax')
+                                      .toList()
+                                      .firstOrNull!
+                                      .value),
+                                  widget.unitcollection,
+                                  widget.purchase);
                           _shouldSetState = true;
                           _model.calculateResult1 =
                               await actions.calSubTotalForHoldList(
@@ -609,17 +613,18 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
                             );*/
                             _model.addtosavebill3d =
                                 await actions.addToHoldListprdGrocery(
-                              document,
-                              FFAppState().selBill,
-                              widget!.taxcollection!.toList(),
-                              functions.enabletaxinclusive(widget
-                                  .appSettingsRecord.settingList
-                                  .where((e) => e.title == 'enableInclusiveTax')
-                                  .toList()
-                                  .firstOrNull!
-                                  .value),
-                              widget.unitcollection,
-                            );
+                                    document,
+                                    FFAppState().selBill,
+                                    widget!.taxcollection!.toList(),
+                                    functions.enabletaxinclusive(widget
+                                        .appSettingsRecord.settingList
+                                        .where((e) =>
+                                            e.title == 'enableInclusiveTax')
+                                        .toList()
+                                        .firstOrNull!
+                                        .value),
+                                    widget.unitcollection,
+                                    widget.purchase);
                             _shouldSetState = true;
                             _model.calculateResult1d =
                                 await actions.calSubTotalForHoldList(
@@ -712,17 +717,17 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
                       );*/
                       _model.addtosavebill2 =
                           await actions.addToHoldListprdGrocery(
-                        document,
-                        FFAppState().selBill,
-                        widget!.taxcollection!.toList(),
-                        functions.enabletaxinclusive(widget
-                            .appSettingsRecord.settingList
-                            .where((e) => e.title == 'enableInclusiveTax')
-                            .toList()
-                            .firstOrNull!
-                            .value),
-                        widget.unitcollection,
-                      );
+                              document,
+                              FFAppState().selBill,
+                              widget!.taxcollection!.toList(),
+                              functions.enabletaxinclusive(widget
+                                  .appSettingsRecord.settingList
+                                  .where((e) => e.title == 'enableInclusiveTax')
+                                  .toList()
+                                  .firstOrNull!
+                                  .value),
+                              widget.unitcollection,
+                              widget.purchase);
 
                       _shouldSetState = true;
                       _model.calculateResult23 =

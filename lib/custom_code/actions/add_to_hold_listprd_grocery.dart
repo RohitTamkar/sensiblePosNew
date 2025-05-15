@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> addToHoldListprdGrocery(
   ProductStructStruct document,
   int billno,
@@ -52,7 +54,12 @@ Future<List<dynamic>> addToHoldListprdGrocery(
   // Continue if taxRecord is available
   if (taxRecord != null) {
     double taxPer = taxRecord.percentage ?? 0.0;
-    double price = document.sellingPrice;
+    double price;
+    if (purchase) {
+      price = document.purchasePrice;
+    } else {
+      price = document.sellingPrice;
+    }
 
     // Calculate tax amount per item based on inclusive/exclusive option
     double taxAmtPerItem = (inclusiveorexclusive.toLowerCase() == 'inclusive')
@@ -84,9 +91,7 @@ Future<List<dynamic>> addToHoldListprdGrocery(
       "regionallang": document.regionalName,
       "barcode": document.barcode,
       "price": price,
-      "purPrice": (document.purchasePrice == 0 || document.purchasePrice == 0.0)
-          ? price
-          : document.purchasePrice.toDouble(),
+      "purPrice": price,
       "mrpPrice": document.mrpPrice.toDouble(),
       "quantity": quantity,
       "unit": unitRecord?.unitType,

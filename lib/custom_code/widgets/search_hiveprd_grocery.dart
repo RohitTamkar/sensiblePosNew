@@ -14,6 +14,8 @@ import 'index.dart'; // Imports other custom widgets
 
 import 'index.dart'; // Imports other custom widgets
 
+import 'index.dart'; // Imports other custom widgets
+
 import 'package:flutter/services.dart';
 
 import 'index.dart'; // Imports other custom widgets
@@ -206,18 +208,18 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                               }
                               _model.addtosavebill =
                                   await actions.addToHoldListprdGrocery(
-                                FFAppState().productHiveput,
-                                FFAppState().selBill,
-                                widget.taxcollection,
-                                functions.enabletaxinclusive(widget
-                                    .appSettingsRecord.settingList
-                                    .where(
-                                        (e) => e.title == 'enableInclusiveTax')
-                                    .toList()
-                                    .first
-                                    .value),
-                                widget.unitcollection,
-                              );
+                                      FFAppState().productHiveput,
+                                      FFAppState().selBill,
+                                      widget.taxcollection,
+                                      functions.enabletaxinclusive(widget
+                                          .appSettingsRecord.settingList
+                                          .where((e) =>
+                                              e.title == 'enableInclusiveTax')
+                                          .toList()
+                                          .first
+                                          .value),
+                                      widget.unitcollection,
+                                      widget.purchase);
                               _model.calculateResult =
                                   await actions.calSubTotalForGrocery(
                                 FFAppState().selBill.toString(),
@@ -294,18 +296,18 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                                 }
                                 _model.addtosavebill =
                                     await actions.addToHoldListprdGrocery(
-                                  FFAppState().productHiveput,
-                                  FFAppState().selBill,
-                                  widget.taxcollection,
-                                  functions.enabletaxinclusive(widget
-                                      .appSettingsRecord.settingList
-                                      .where((e) =>
-                                          e.title == 'enableInclusiveTax')
-                                      .toList()
-                                      .first
-                                      .value),
-                                  widget.unitcollection,
-                                );
+                                        FFAppState().productHiveput,
+                                        FFAppState().selBill,
+                                        widget.taxcollection,
+                                        functions.enabletaxinclusive(widget
+                                            .appSettingsRecord.settingList
+                                            .where((e) =>
+                                                e.title == 'enableInclusiveTax')
+                                            .toList()
+                                            .first
+                                            .value),
+                                        widget.unitcollection,
+                                        widget.purchase);
                                 _model.calculateResult =
                                     await actions.calSubTotalForGrocery(
                                   FFAppState().selBill.toString(),
@@ -404,17 +406,18 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                           }
                           _model.addtosavebill =
                               await actions.addToHoldListprdGrocery(
-                            FFAppState().productHiveput,
-                            FFAppState().selBill,
-                            widget.taxcollection,
-                            functions.enabletaxinclusive(widget
-                                .appSettingsRecord.settingList
-                                .where((e) => e.title == 'enableInclusiveTax')
-                                .toList()
-                                .first
-                                .value),
-                            widget.unitcollection,
-                          );
+                                  FFAppState().productHiveput,
+                                  FFAppState().selBill,
+                                  widget.taxcollection,
+                                  functions.enabletaxinclusive(widget
+                                      .appSettingsRecord.settingList
+                                      .where((e) =>
+                                          e.title == 'enableInclusiveTax')
+                                      .toList()
+                                      .first
+                                      .value),
+                                  widget.unitcollection,
+                                  widget.purchase);
                           _model.calculateResult =
                               await actions.calSubTotalForGrocery(
                             FFAppState().selBill.toString(),
@@ -518,7 +521,8 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                                       .toList()
                                       .first
                                       .value),
-                                  widget.unitcollection!.toList());
+                                  widget.unitcollection!.toList(),
+                                  widget.purchase);
                           _model.calculateResult =
                               await actions.calSubTotalForGrocery(
                             FFAppState().selBill.toString(),
@@ -589,7 +593,8 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                                         .toList()
                                         .first
                                         .value),
-                                    widget.unitcollection!.toList());
+                                    widget.unitcollection!.toList(),
+                                    widget.purchase);
                             _model.calculateResult =
                                 await actions.calSubTotalForGrocery(
                               FFAppState().selBill.toString(),
@@ -675,7 +680,8 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                                   .toList()
                                   .first
                                   .value),
-                              widget.unitcollection!.toList());
+                              widget.unitcollection!.toList(),
+                              widget.purchase);
                       _model.calculateResult =
                           await actions.calSubTotalForGrocery(
                         FFAppState().selBill.toString(),
