@@ -542,7 +542,7 @@ class _ShiftEndNewCustomWidgetState extends State<ShiftEndNewCustomWidget>
                                                   .fromSTEB(0.0, 0.0, 0.0, 3.0),
                                               child: Text(
                                                 dateTimeFormat(
-                                                  "yyyy-MM-dd",
+                                                  "yyyy-MM-dd hh:mm",
                                                   DateTime
                                                       .fromMillisecondsSinceEpoch(
                                                           valueOrDefault<int>(

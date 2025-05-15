@@ -1287,151 +1287,153 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                Padding(
-                                                  padding: EdgeInsets.all(5.0),
-                                                  child: StreamBuilder<
-                                                      List<ShiftRecord>>(
-                                                    stream: queryShiftRecord(
-                                                      parent: FFAppState()
-                                                          .outletIdRef,
-                                                      queryBuilder:
-                                                          (shiftRecord) =>
-                                                              shiftRecord.where(
-                                                        'dayId',
-                                                        isEqualTo: functions
-                                                                    .getDayId() !=
-                                                                ''
-                                                            ? functions
-                                                                .getDayId()
-                                                            : null,
+                                                if (false)
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsets.all(5.0),
+                                                    child: StreamBuilder<
+                                                        List<ShiftRecord>>(
+                                                      stream: queryShiftRecord(
+                                                        parent: FFAppState()
+                                                            .outletIdRef,
+                                                        queryBuilder:
+                                                            (shiftRecord) =>
+                                                                shiftRecord
+                                                                    .where(
+                                                          'dayId',
+                                                          isEqualTo: functions
+                                                                      .getDayId() !=
+                                                                  ''
+                                                              ? functions
+                                                                  .getDayId()
+                                                              : null,
+                                                        ),
                                                       ),
-                                                    ),
-                                                    builder:
-                                                        (context, snapshot) {
-                                                      // Customize what your widget looks like when it's loading.
-                                                      if (!snapshot.hasData) {
-                                                        return Center(
-                                                          child: SizedBox(
-                                                            width: 40.0,
-                                                            height: 40.0,
-                                                            child:
-                                                                SpinKitFadingCircle(
+                                                      builder:
+                                                          (context, snapshot) {
+                                                        // Customize what your widget looks like when it's loading.
+                                                        if (!snapshot.hasData) {
+                                                          return Center(
+                                                            child: SizedBox(
+                                                              width: 40.0,
+                                                              height: 40.0,
+                                                              child:
+                                                                  SpinKitFadingCircle(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                size: 40.0,
+                                                              ),
+                                                            ),
+                                                          );
+                                                        }
+                                                        List<ShiftRecord>
+                                                            todaySummaryShiftRecordList =
+                                                            snapshot.data!;
+
+                                                        return InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                              TodaySummerReportNewWidget
+                                                                  .routeName,
+                                                              queryParameters: {
+                                                                'shift':
+                                                                    serializeParam(
+                                                                  todaySummaryShiftRecordList,
+                                                                  ParamType
+                                                                      .Document,
+                                                                  isList: true,
+                                                                ),
+                                                              }.withoutNulls,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                'shift':
+                                                                    todaySummaryShiftRecordList,
+                                                              },
+                                                            );
+
+                                                            if (animationsMap[
+                                                                    'containerOnActionTriggerAnimation8'] !=
+                                                                null) {
+                                                              safeSetState(() =>
+                                                                  hasContainerTriggered8 =
+                                                                      true);
+                                                              SchedulerBinding
+                                                                  .instance
+                                                                  .addPostFrameCallback((_) async => await animationsMap[
+                                                                          'containerOnActionTriggerAnimation8']!
+                                                                      .controller
+                                                                      .forward(
+                                                                          from:
+                                                                              0.0));
+                                                            }
+                                                          },
+                                                          child:
+                                                              AnimatedContainer(
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    220),
+                                                            curve: Curves
+                                                                .elasticOut,
+                                                            width: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .width *
+                                                                1.0,
+                                                            height: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .height *
+                                                                0.08,
+                                                            decoration:
+                                                                BoxDecoration(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .primary,
-                                                              size: 40.0,
+                                                                  .primaryBackground,
+                                                            ),
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    '7ux2e09n' /* TODAY'S SUMMARY */,
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMedium
+                                                                      .override(
+                                                                        font: FlutterFlowTheme.of(context)
+                                                                            .titleMedium,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ],
                                                             ),
                                                           ),
-                                                        );
-                                                      }
-                                                      List<ShiftRecord>
-                                                          todaySummaryShiftRecordList =
-                                                          snapshot.data!;
-
-                                                      return InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          context.pushNamed(
-                                                            TodaySummerReportNewWidget
-                                                                .routeName,
-                                                            queryParameters: {
-                                                              'shift':
-                                                                  serializeParam(
-                                                                todaySummaryShiftRecordList,
-                                                                ParamType
-                                                                    .Document,
-                                                                isList: true,
-                                                              ),
-                                                            }.withoutNulls,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              'shift':
-                                                                  todaySummaryShiftRecordList,
-                                                            },
-                                                          );
-
-                                                          if (animationsMap[
-                                                                  'containerOnActionTriggerAnimation8'] !=
-                                                              null) {
-                                                            safeSetState(() =>
-                                                                hasContainerTriggered8 =
-                                                                    true);
-                                                            SchedulerBinding
-                                                                .instance
-                                                                .addPostFrameCallback((_) async => await animationsMap[
-                                                                        'containerOnActionTriggerAnimation8']!
-                                                                    .controller
-                                                                    .forward(
-                                                                        from:
-                                                                            0.0));
-                                                          }
-                                                        },
-                                                        child:
-                                                            AnimatedContainer(
-                                                          duration: Duration(
-                                                              milliseconds:
-                                                                  220),
-                                                          curve:
-                                                              Curves.elasticOut,
-                                                          width:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .width *
-                                                                  1.0,
-                                                          height:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .height *
-                                                                  0.08,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                          ),
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '7ux2e09n' /* TODAY'S SUMMARY */,
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleMedium
-                                                                    .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ).animateOnActionTrigger(
-                                                          animationsMap[
-                                                              'containerOnActionTriggerAnimation8']!,
-                                                          hasBeenTriggered:
-                                                              hasContainerTriggered8);
-                                                    },
+                                                        ).animateOnActionTrigger(
+                                                            animationsMap[
+                                                                'containerOnActionTriggerAnimation8']!,
+                                                            hasBeenTriggered:
+                                                                hasContainerTriggered8);
+                                                      },
+                                                    ),
                                                   ),
-                                                ),
                                                 Divider(
                                                   thickness: 0.2,
                                                   indent: 10.0,
