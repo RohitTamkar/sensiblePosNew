@@ -479,6 +479,18 @@ class _ProductAndListStockoutWidgetState
                                                             await actions
                                                                 .getCategorylistHive();
                                                         FFAppState()
+                                                            .categoryColor = '';
+                                                        FFAppState()
+                                                            .categoryID = '';
+                                                        FFAppState()
+                                                                .catAllColor =
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary;
+                                                        FFAppState()
+                                                                .outletCatRef =
+                                                            FFAppState().catRef;
+                                                        FFAppState()
                                                                 .productHive =
                                                             _model
                                                                 .prdhive2refresh!

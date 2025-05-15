@@ -567,8 +567,8 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                 autofocus:
                                                                     false,
                                                                 readOnly: true,
-                                                                obscureText:
-                                                                    false,
+                                                                obscureText: !_model
+                                                                    .passwordVisibility,
                                                                 decoration:
                                                                     InputDecoration(
                                                                   isDense: true,
@@ -643,6 +643,30 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                           15.0,
                                                                           0.0,
                                                                           15.0),
+                                                                  suffixIcon:
+                                                                      InkWell(
+                                                                    onTap: () =>
+                                                                        safeSetState(
+                                                                      () => _model
+                                                                              .passwordVisibility =
+                                                                          !_model
+                                                                              .passwordVisibility,
+                                                                    ),
+                                                                    focusNode: FocusNode(
+                                                                        skipTraversal:
+                                                                            true),
+                                                                    child: Icon(
+                                                                      _model.passwordVisibility
+                                                                          ? Icons
+                                                                              .visibility_outlined
+                                                                          : Icons
+                                                                              .visibility_off_outlined,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      size: 22,
+                                                                    ),
+                                                                  ),
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
