@@ -2966,11 +2966,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                              child: Text('cancle'),
+                                                                              child: Text('Cancel'),
                                                                             ),
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                              child: Text('confirm'),
+                                                                              child: Text('Confirm'),
                                                                             ),
                                                                           ],
                                                                         );
