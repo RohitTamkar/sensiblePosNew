@@ -83,6 +83,9 @@ Future<List<dynamic>> addToHoldListprdGrocery(
       "regionallang": document.regionalName,
       "barcode": document.barcode,
       "price": price,
+      "purPrice": (document.purchasePrice == 0 || document.purchasePrice == 0.0)
+          ? price
+          : document.purchasePrice.toDouble(),
       "mrpPrice": document.mrpPrice.toDouble(),
       "quantity": quantity,
       "unit": unitRecord?.unitType,

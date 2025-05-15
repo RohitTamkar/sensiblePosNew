@@ -58,7 +58,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
     _model.textFieldrateTextController ??= TextEditingController(
         text: getJsonField(
       widget!.jsonitem,
-      r'''$.price''',
+      r'''$.purPrice''',
     ).toString().toString());
     _model.textFieldrateFocusNode ??= FocusNode();
 
