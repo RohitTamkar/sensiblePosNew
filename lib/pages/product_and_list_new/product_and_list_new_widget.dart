@@ -3348,6 +3348,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                             widget!.taxcollection!.toList(),
                                                                                                             functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                                             containerUnitTypeRecordList.toList(),
+                                                                                                            false,
                                                                                                           );
                                                                                                           _shouldSetState = true;
                                                                                                           _model.calculateResult23 = await actions.calSubTotalForHoldListkiosk(
@@ -3545,6 +3546,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                             widget!.taxcollection!.toList(),
                                                                                                             functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().firstOrNull!.value),
                                                                                                             containerUnitTypeRecordList.toList(),
+                                                                                                            false,
                                                                                                           );
                                                                                                           _shouldSetState = true;
                                                                                                           _model.calculateResult23Copy = await actions.calSubTotalForHoldListkiosk(
