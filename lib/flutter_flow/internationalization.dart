@@ -21276,14 +21276,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': 'சேர்',
       'th': 'เพิ่ม',
     },
-    'i40raqem': {
-      'en': 'Modify',
-      'hi': 'संशोधित',
-      'kn': 'ಮಾರ್ಪಡಿಸಿ',
-      'mr': 'सुधारित करा',
-      'ta': 'மாற்று',
-      'th': 'แก้ไข',
-    },
     'lam4mtdr': {
       'en': 'Payment Mode',
       'hi': 'भुगतान मोड',

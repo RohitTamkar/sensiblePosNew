@@ -21,6 +21,7 @@ Future updateProductStocknew(List<SelItemListStruct> sellitem) async {
         .doc(FFAppState().outletIdRef?.id)
         .collection('PRODUCT')
         .where('id', isEqualTo: item.id)
+        .where('stockable', isEqualTo: true)
         .get();
 
     for (var doc in querySnapshot.docs) {

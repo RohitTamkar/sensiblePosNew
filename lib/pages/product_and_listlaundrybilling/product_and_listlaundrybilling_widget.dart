@@ -662,250 +662,112 @@ class _ProductAndListlaundrybillingWidgetState
                             children: [
                               Expanded(
                                 flex: 18,
-                                child: Container(
-                                  width: 100.0,
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 0.065,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: FlutterFlowTheme.of(context)
-                                          .customColor2,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 3.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            scaffoldKey.currentState!
-                                                .openDrawer();
-                                            if (animationsMap[
-                                                    'containerOnActionTriggerAnimation1'] !=
-                                                null) {
-                                              safeSetState(() =>
-                                                  hasContainerTriggered1 =
-                                                      true);
-                                              SchedulerBinding.instance
-                                                  .addPostFrameCallback((_) async =>
-                                                      await animationsMap[
-                                                              'containerOnActionTriggerAnimation1']!
-                                                          .controller
-                                                          .forward(from: 0.0));
-                                            }
-                                          },
-                                          child: Container(
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                0.115,
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                0.07,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .tertiary,
-                                            ),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  Icons.menu_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  size: 18.0,
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ).animateOnActionTrigger(
-                                            animationsMap[
-                                                'containerOnActionTriggerAnimation1']!,
-                                            hasBeenTriggered:
-                                                hasContainerTriggered1),
-                                      ),
-                                      Expanded(
-                                        flex: 19,
-                                        child: Container(
-                                          width: 100.0,
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              0.08,
-                                          decoration: BoxDecoration(
+                                child: FutureBuilder<List<UnitTypeRecord>>(
+                                  future: queryUnitTypeRecordOnce(),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 40.0,
+                                          height: 40.0,
+                                          child: SpinKitFadingCircle(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4.0,
-                                                color: Color(0x32000000),
-                                                offset: Offset(
-                                                  0.0,
-                                                  2.0,
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Container(
-                                                width: 750.0,
-                                                height: 50.0,
-                                                child: custom_widgets
-                                                    .SearchHiveprd(
-                                                  width: 750.0,
-                                                  height: 50.0,
-                                                  billno: FFAppState().selBill,
-                                                  document:
-                                                      FFAppState().productHive,
-                                                  billnum: FFAppState()
-                                                      .selBill
-                                                      .toString(),
-                                                  disAmt: FFAppState().disAmt,
-                                                  delChargs:
-                                                      FFAppState().delCharges,
-                                                  taxcollection:
-                                                      widget!.taxcollection!,
-                                                  appSettingsRecord:
-                                                      productAndListlaundrybillingAppSettingsRecord!,
-                                                ),
-                                              ),
-                                            ],
+                                                .primary,
+                                            size: 40.0,
                                           ),
                                         ),
-                                      ),
-                                      if (false)
-                                        Expanded(
-                                          flex: 19,
-                                          child:
-                                              StreamBuilder<List<PartyRecord>>(
-                                            stream: queryPartyRecord(
-                                              parent: FFAppState().outletIdRef,
-                                              queryBuilder: (partyRecord) =>
-                                                  partyRecord.where(
-                                                'role',
-                                                isEqualTo: 'CUSTOMER',
-                                              ),
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 40.0,
-                                                    height: 40.0,
-                                                    child: SpinKitFadingCircle(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      size: 40.0,
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                              List<PartyRecord>
-                                                  containerPartyRecordList =
-                                                  snapshot.data!;
+                                      );
+                                    }
+                                    List<UnitTypeRecord>
+                                        containerUnitTypeRecordList =
+                                        snapshot.data!;
 
-                                              return Container(
-                                                width: 100.0,
+                                    return Container(
+                                      width: 100.0,
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.065,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: FlutterFlowTheme.of(context)
+                                              .customColor2,
+                                        ),
+                                      ),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 3.0, 0.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                scaffoldKey.currentState!
+                                                    .openDrawer();
+                                                if (animationsMap[
+                                                        'containerOnActionTriggerAnimation1'] !=
+                                                    null) {
+                                                  safeSetState(() =>
+                                                      hasContainerTriggered1 =
+                                                          true);
+                                                  SchedulerBinding.instance
+                                                      .addPostFrameCallback(
+                                                          (_) async =>
+                                                              await animationsMap[
+                                                                      'containerOnActionTriggerAnimation1']!
+                                                                  .controller
+                                                                  .forward(
+                                                                      from:
+                                                                          0.0));
+                                                }
+                                              },
+                                              child: Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        0.115,
                                                 height:
                                                     MediaQuery.sizeOf(context)
                                                             .height *
-                                                        0.08,
+                                                        0.07,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      blurRadius: 4.0,
-                                                      color: Color(0x32000000),
-                                                      offset: Offset(
-                                                        0.0,
-                                                        2.0,
-                                                      ),
-                                                    )
-                                                  ],
+                                                      .tertiary,
                                                 ),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   mainAxisAlignment:
                                                       MainAxisAlignment.center,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
                                                   children: [
-                                                    Container(
-                                                      width: 750.0,
-                                                      height: 50.0,
-                                                      child: custom_widgets
-                                                          .Searchcustomer(
-                                                        width: 750.0,
-                                                        height: 50.0,
-                                                        customer:
-                                                            containerPartyRecordList,
-                                                      ),
+                                                    Icon(
+                                                      Icons.menu_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      size: 18.0,
                                                     ),
                                                   ],
                                                 ),
-                                              );
-                                            },
+                                              ),
+                                            ).animateOnActionTrigger(
+                                                animationsMap[
+                                                    'containerOnActionTriggerAnimation1']!,
+                                                hasBeenTriggered:
+                                                    hasContainerTriggered1),
                                           ),
-                                        ),
-                                      Flexible(
-                                        child: Align(
-                                          alignment:
-                                              AlignmentDirectional(0.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await showModalBottomSheet(
-                                                isScrollControlled: true,
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                enableDrag: false,
-                                                context: context,
-                                                builder: (context) {
-                                                  return GestureDetector(
-                                                    onTap: () {
-                                                      FocusScope.of(context)
-                                                          .unfocus();
-                                                      FocusManager
-                                                          .instance.primaryFocus
-                                                          ?.unfocus();
-                                                    },
-                                                    child: Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child:
-                                                          AddCustomerlaundryWidget(),
-                                                    ),
-                                                  );
-                                                },
-                                              ).then((value) =>
-                                                  safeSetState(() {}));
-                                            },
+                                          Expanded(
+                                            flex: 19,
                                             child: Container(
-                                              width: 50.0,
+                                              width: 100.0,
                                               height: MediaQuery.sizeOf(context)
                                                       .height *
                                                   0.08,
@@ -929,23 +791,211 @@ class _ProductAndListlaundrybillingWidgetState
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.center,
                                                 crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
+                                                    CrossAxisAlignment.start,
                                                 children: [
-                                                  Icon(
-                                                    Icons.person_add,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    size: 35.0,
+                                                  Container(
+                                                    width: 750.0,
+                                                    height: 50.0,
+                                                    child: custom_widgets
+                                                        .SearchHiveprd(
+                                                      width: 750.0,
+                                                      height: 50.0,
+                                                      billno:
+                                                          FFAppState().selBill,
+                                                      document: FFAppState()
+                                                          .productHive,
+                                                      billnum: FFAppState()
+                                                          .selBill
+                                                          .toString(),
+                                                      disAmt:
+                                                          FFAppState().disAmt,
+                                                      delChargs: FFAppState()
+                                                          .delCharges,
+                                                      taxcollection: widget!
+                                                          .taxcollection!,
+                                                      appSettingsRecord:
+                                                          productAndListlaundrybillingAppSettingsRecord!,
+                                                      purchase: false,
+                                                      unitcollection:
+                                                          containerUnitTypeRecordList,
+                                                    ),
                                                   ),
                                                 ],
                                               ),
                                             ),
                                           ),
-                                        ),
+                                          if (false)
+                                            Expanded(
+                                              flex: 19,
+                                              child: StreamBuilder<
+                                                  List<PartyRecord>>(
+                                                stream: queryPartyRecord(
+                                                  parent:
+                                                      FFAppState().outletIdRef,
+                                                  queryBuilder: (partyRecord) =>
+                                                      partyRecord.where(
+                                                    'role',
+                                                    isEqualTo: 'CUSTOMER',
+                                                  ),
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 40.0,
+                                                        height: 40.0,
+                                                        child:
+                                                            SpinKitFadingCircle(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          size: 40.0,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<PartyRecord>
+                                                      containerPartyRecordList =
+                                                      snapshot.data!;
+
+                                                  return Container(
+                                                    width: 100.0,
+                                                    height: MediaQuery.sizeOf(
+                                                                context)
+                                                            .height *
+                                                        0.08,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      boxShadow: [
+                                                        BoxShadow(
+                                                          blurRadius: 4.0,
+                                                          color:
+                                                              Color(0x32000000),
+                                                          offset: Offset(
+                                                            0.0,
+                                                            2.0,
+                                                          ),
+                                                        )
+                                                      ],
+                                                    ),
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Container(
+                                                          width: 750.0,
+                                                          height: 50.0,
+                                                          child: custom_widgets
+                                                              .Searchcustomer(
+                                                            width: 750.0,
+                                                            height: 50.0,
+                                                            customer:
+                                                                containerPartyRecordList,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                          Flexible(
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await showModalBottomSheet(
+                                                    isScrollControlled: true,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    enableDrag: false,
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return GestureDetector(
+                                                        onTap: () {
+                                                          FocusScope.of(context)
+                                                              .unfocus();
+                                                          FocusManager.instance
+                                                              .primaryFocus
+                                                              ?.unfocus();
+                                                        },
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              AddCustomerlaundryWidget(),
+                                                        ),
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      safeSetState(() {}));
+                                                },
+                                                child: Container(
+                                                  width: 50.0,
+                                                  height:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height *
+                                                          0.08,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                        blurRadius: 4.0,
+                                                        color:
+                                                            Color(0x32000000),
+                                                        offset: Offset(
+                                                          0.0,
+                                                          2.0,
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Icon(
+                                                        Icons.person_add,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        size: 35.0,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                    ],
-                                  ),
+                                    );
+                                  },
                                 ),
                               ),
                               Expanded(
