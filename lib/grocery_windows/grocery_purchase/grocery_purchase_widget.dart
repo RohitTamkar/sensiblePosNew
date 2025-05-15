@@ -1573,7 +1573,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                             child: Text(
                               getJsonField(
                                 widget!.jsonitem,
-                                r'''$.price''',
+                                r'''$.purPrice''',
                               ).toString(),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)

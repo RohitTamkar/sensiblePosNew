@@ -4101,7 +4101,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                             alertDialogContext,
                                                                             false),
                                                                     child: Text(
-                                                                        'cancle'),
+                                                                        'Cancel'),
                                                                   ),
                                                                   TextButton(
                                                                     onPressed: () =>
@@ -4109,7 +4109,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                             alertDialogContext,
                                                                             true),
                                                                     child: Text(
-                                                                        'confirm'),
+                                                                        'Confirm'),
                                                                   ),
                                                                 ],
                                                               );
