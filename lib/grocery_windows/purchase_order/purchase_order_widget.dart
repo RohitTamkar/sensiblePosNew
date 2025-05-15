@@ -4256,6 +4256,13 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                 FFAppState()
                                                                     .delCharges,
                                                               );
+                                                              FFAppState()
+                                                                  .prdid = '';
+                                                              FFAppState()
+                                                                      .groceryshow =
+                                                                  false;
+                                                              safeSetState(
+                                                                  () {});
 
                                                               safeSetState(
                                                                   () {});
