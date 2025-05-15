@@ -1343,7 +1343,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                     valueOrDefault<String>(
                   getJsonField(
                     widget!.jsonitem,
-                    r'''$.price''',
+                    r'''$.purPrice''',
                   )?.toString(),
                   '0',
                 );
