@@ -57,7 +57,8 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
+    _model.textController2 ??=
+        TextEditingController(text: FFAppState().quickPin);
     _model.textFieldFocusNode2 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
@@ -572,9 +573,6 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                 decoration:
                                                                     InputDecoration(
                                                                   isDense: true,
-                                                                  labelText:
-                                                                      FFAppState()
-                                                                          .quickPin,
                                                                   hintStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
@@ -722,6 +720,9 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     );
                                                                                     FFAppState().quickPin = _model.one!;
                                                                                     FFAppState().update(() {});
+                                                                                    safeSetState(() {
+                                                                                      _model.textController2?.text = FFAppState().quickPin;
+                                                                                    });
 
                                                                                     safeSetState(() {});
                                                                                   },
@@ -758,6 +759,9 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     );
                                                                                     FFAppState().quickPin = _model.four!;
                                                                                     FFAppState().update(() {});
+                                                                                    safeSetState(() {
+                                                                                      _model.textController2?.text = FFAppState().quickPin;
+                                                                                    });
 
                                                                                     safeSetState(() {});
                                                                                   },
@@ -794,6 +798,9 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     );
                                                                                     FFAppState().quickPin = _model.seven!;
                                                                                     FFAppState().update(() {});
+                                                                                    safeSetState(() {
+                                                                                      _model.textController2?.text = FFAppState().quickPin;
+                                                                                    });
 
                                                                                     safeSetState(() {});
                                                                                   },
@@ -827,6 +834,9 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   onPressed: () async {
                                                                                     FFAppState().quickPin = '';
                                                                                     FFAppState().update(() {});
+                                                                                    safeSetState(() {
+                                                                                      _model.textController2?.text = FFAppState().quickPin;
+                                                                                    });
                                                                                   },
                                                                                   text: '',
                                                                                   icon: Icon(
@@ -883,6 +893,9 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     );
                                                                                     FFAppState().quickPin = _model.two!;
                                                                                     FFAppState().update(() {});
+                                                                                    safeSetState(() {
+                                                                                      _model.textController2?.text = FFAppState().quickPin;
+                                                                                    });
 
                                                                                     safeSetState(() {});
                                                                                   },
@@ -919,6 +932,9 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     );
                                                                                     FFAppState().quickPin = _model.five!;
                                                                                     FFAppState().update(() {});
+                                                                                    safeSetState(() {
+                                                                                      _model.textController2?.text = FFAppState().quickPin;
+                                                                                    });
 
                                                                                     safeSetState(() {});
                                                                                   },
@@ -955,6 +971,9 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     );
                                                                                     FFAppState().quickPin = _model.eight!;
                                                                                     FFAppState().update(() {});
+                                                                                    safeSetState(() {
+                                                                                      _model.textController2?.text = FFAppState().quickPin;
+                                                                                    });
 
                                                                                     safeSetState(() {});
                                                                                   },
@@ -989,6 +1008,9 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   );
                                                                                   FFAppState().quickPin = _model.zero!;
                                                                                   FFAppState().update(() {});
+                                                                                  safeSetState(() {
+                                                                                    _model.textController2?.text = FFAppState().quickPin;
+                                                                                  });
 
                                                                                   safeSetState(() {});
                                                                                 },
@@ -1037,6 +1059,9 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   );
                                                                                   FFAppState().quickPin = _model.three!;
                                                                                   FFAppState().update(() {});
+                                                                                  safeSetState(() {
+                                                                                    _model.textController2?.text = FFAppState().quickPin;
+                                                                                  });
 
                                                                                   safeSetState(() {});
                                                                                 },
@@ -1074,6 +1099,9 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   );
                                                                                   FFAppState().quickPin = _model.six!;
                                                                                   FFAppState().update(() {});
+                                                                                  safeSetState(() {
+                                                                                    _model.textController2?.text = FFAppState().quickPin;
+                                                                                  });
 
                                                                                   safeSetState(() {});
                                                                                 },
@@ -1111,6 +1139,9 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   );
                                                                                   FFAppState().quickPin = _model.nine!;
                                                                                   FFAppState().update(() {});
+                                                                                  safeSetState(() {
+                                                                                    _model.textController2?.text = FFAppState().quickPin;
+                                                                                  });
 
                                                                                   safeSetState(() {});
                                                                                 },
