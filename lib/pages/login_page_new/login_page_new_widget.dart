@@ -1710,23 +1710,32 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                   decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
                                   ),
-                                  child: FlutterFlowIconButton(
-                                    borderColor: Colors.transparent,
-                                    borderRadius: 50.0,
-                                    buttonSize: 40.0,
-                                    fillColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    icon: Icon(
-                                      Icons.keyboard_hide_outlined,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      size: 27.0,
-                                    ),
-                                    onPressed: () async {
-                                      FFAppState().show = functions
-                                          .toggleLogin(FFAppState().show);
-                                      FFAppState().update(() {});
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onLongPress: () async {
+                                      await actions.enabledualDisplayAndroid();
                                     },
+                                    child: FlutterFlowIconButton(
+                                      borderColor: Colors.transparent,
+                                      borderRadius: 50.0,
+                                      buttonSize: 40.0,
+                                      fillColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      icon: Icon(
+                                        Icons.keyboard_hide_outlined,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBtnText,
+                                        size: 27.0,
+                                      ),
+                                      onPressed: () async {
+                                        FFAppState().show = functions
+                                            .toggleLogin(FFAppState().show);
+                                        FFAppState().update(() {});
+                                      },
+                                    ),
                                   ),
                                 ),
                                 Container(
