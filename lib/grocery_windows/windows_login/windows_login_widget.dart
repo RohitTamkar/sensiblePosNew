@@ -322,46 +322,29 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                         alignment:
                                                             AlignmentDirectional(
                                                                 0.0, 0.0),
-                                                        child: InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onLongPress:
-                                                              () async {
-                                                            context.pushNamed(
-                                                                LabeltestWidget
-                                                                    .routeName);
-                                                          },
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              containerDeviceRecord
-                                                                  ?.outletName,
-                                                              '.',
-                                                            ),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .displaySmall
-                                                                .override(
-                                                                  font: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .displaySmall,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                  fontSize:
-                                                                      15.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                        child: Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            containerDeviceRecord
+                                                                ?.outletName,
+                                                            '.',
                                                           ),
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .displaySmall
+                                                              .override(
+                                                                font: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displaySmall,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                fontSize: 15.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                         ),
                                                       ),
                                                     ],
@@ -1514,9 +1497,8 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                               highlightColor:
                                                   Colors.transparent,
                                               onLongPress: () async {
-                                                context.pushNamed(
-                                                    PieceCountingWidget
-                                                        .routeName);
+                                                await actions
+                                                    .enabledualDisplayAndroid();
                                               },
                                               child: FlutterFlowIconButton(
                                                 borderColor:

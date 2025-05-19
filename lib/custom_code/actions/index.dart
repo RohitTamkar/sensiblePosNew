@@ -192,3 +192,4 @@ export 'edit_bill_custom.dart' show editBillCustom;
 export 'enable_dual_display.dart' show enableDualDisplay;
 export 'todays_stock_summar_report.dart' show todaysStockSummarReport;
 export 'generate_pdf_stock_summary.dart' show generatePdfStockSummary;
+export 'enabledual_display_android.dart' show enabledualDisplayAndroid;
