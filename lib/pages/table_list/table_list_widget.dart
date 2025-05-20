@@ -85,85 +85,62 @@ class _TableListWidgetState extends State<TableListWidget> {
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).primary,
                           ),
-                          child: StreamBuilder<UserProfileRecord>(
-                            stream: UserProfileRecord.getDocument(
-                                FFAppState().logedInUserDetail!),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    child: SpinKitFadingCircle(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 40.0,
-                                    ),
-                                  ),
-                                );
-                              }
-
-                              final rowUserProfileRecord = snapshot.data!;
-
-                              return Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 3.0, 0.0),
-                                    child: Text(
-                                      rowUserProfileRecord.name,
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .titleSmall,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBtnText,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 6.0, 0.0),
-                                    child: Text(
-                                      rowUserProfileRecord.role,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .bodySmall,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondary,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 6.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        '143egfia' /* 15-09-2022 14:41 */,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 3.0, 0.0),
+                                child: Text(
+                                  FFAppState().outletName,
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        font: FlutterFlowTheme.of(context)
+                                            .titleSmall,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBtnText,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .titleSmall,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBtnText,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 6.0, 0.0),
+                                child: Text(
+                                  FFAppState().userName,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodySmall
+                                      .override(
+                                        font: FlutterFlowTheme.of(context)
+                                            .bodySmall,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 6.0, 0.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    '143egfia' /*  */,
                                   ),
-                                ],
-                              );
-                            },
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        font: FlutterFlowTheme.of(context)
+                                            .titleSmall,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBtnText,
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),

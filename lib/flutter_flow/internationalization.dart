@@ -24817,7 +24817,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // TableList
   {
     '143egfia': {
-      'en': '15-09-2022 14:41',
+      'en': '',
       'hi': '15-09-2022 14:41',
       'kn': '15-09-2022 14:41',
       'mr': '१५-०९-२०२२ १४:४१',
