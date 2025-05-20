@@ -8429,7 +8429,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': 'பார்கோடு அச்சிடுதல்',
       'th': 'การพิมพ์บาร์โค้ด',
     },
-    'cxl1ykv0': {
+    '5pkat5re': {
+      'en': 'Scan Printer',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    '8iwc05jj': {
       'en': '35mm*25mm',
       'hi': '35मिमी*25मिमी',
       'kn': '35ಮಿಮೀ*25ಮಿಮೀ',
@@ -8437,7 +8445,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '35மிமீ*25மிமீ',
       'th': '35มม.*25มม.',
     },
-    'qci55d03': {
+    't4cy3uv0': {
       'en': 'Select your label size',
       'hi': 'अपना लेबल आकार चुनें',
       'kn': 'ನಿಮ್ಮ ಲೇಬಲ್ ಗಾತ್ರವನ್ನು ಆಯ್ಕೆಮಾಡಿ',
@@ -8445,7 +8453,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': 'உங்கள் லேபிள் அளவைத் தேர்ந்தெடுக்கவும்',
       'th': 'เลือกขนาดฉลากของคุณ',
     },
-    'ormvsg6m': {
+    'vuozrhc9': {
       'en': '35mm*25mm',
       'hi': '35मिमी*25मिमी',
       'kn': '35ಮಿಮೀ*25ಮಿಮೀ',

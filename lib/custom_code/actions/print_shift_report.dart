@@ -19,6 +19,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -841,7 +843,12 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               align: PosAlign.left),
         )
       ]);
+      final DateTime now1 =
+          DateTime.fromMillisecondsSinceEpoch(data[0]["shiftTimeIn"]);
+      final DateFormat formatter2 = DateFormat(' h:mm a');
+      final String formatted2 = formatter2.format(now1);
 
+      String dateTimeString2 = formatted2.toString();
       bytes += generator.row([
         PosColumn(
           text: "Shift Time In:",
@@ -854,7 +861,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               align: PosAlign.left),
         ),
         PosColumn(
-          text: data[0]["shiftTimeIn"].toString(),
+          text: dateTimeString2,
           width: 6,
           styles: PosStyles(
               fontType: PosFontType.fontA,
@@ -1198,7 +1205,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
               align: PosAlign.left),
         ),
         PosColumn(
-          text: data[0]["tax"].toString(),
+          text: data[0]["tax"].toStringAsFixed(2),
           width: 6,
           styles: PosStyles(
               fontType: PosFontType.fontA,
@@ -1457,7 +1464,7 @@ Future printShiftReport(List<dynamic> data, List<dynamic> selectedPrinter,
 
   if (bytes.length > 0) {
     if (selectedPrinter == null) return;
-    var bluetoothPrinter = selectedPrinter[0]!;
+    var bluetoothPrinter = selectedPrinter[FFAppState().index]!;
 
     switch (bluetoothPrinter["typePrinter"]) {
       case PrinterType.usb:

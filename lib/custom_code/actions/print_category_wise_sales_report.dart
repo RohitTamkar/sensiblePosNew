@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -778,7 +780,7 @@ Future printCategoryWiseSalesReport(
     //_printEscPos(bytes, generator);
 
     if (selectedPrinter == null) return;
-    var bluetoothPrinter = selectedPrinter[0]!;
+    var bluetoothPrinter = selectedPrinter[FFAppState().index]!;
 
     switch (bluetoothPrinter["typePrinter"]) {
       case PrinterType.usb:

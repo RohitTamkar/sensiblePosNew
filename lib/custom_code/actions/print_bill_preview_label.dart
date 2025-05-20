@@ -130,7 +130,7 @@ Future printBillPreviewLabel(
 
   // Printer connection and sending
   var printerManager = PrinterManager.instance;
-  var printerInfo = selectedPrinter[0]!;
+  var printerInfo = selectedPrinter[FFAppState().labelindex]!;
 
   try {
     // Connect to printer

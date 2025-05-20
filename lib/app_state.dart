@@ -643,6 +643,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _language = prefs.getString('ff_language') ?? _language;
     });
+    _safeInit(() {
+      _labelindex = prefs.getInt('ff_labelindex') ?? _labelindex;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -3653,6 +3656,13 @@ class FFAppState extends ChangeNotifier {
   set language(String value) {
     _language = value;
     prefs.setString('ff_language', value);
+  }
+
+  int _labelindex = 0;
+  int get labelindex => _labelindex;
+  set labelindex(int value) {
+    _labelindex = value;
+    prefs.setInt('ff_labelindex', value);
   }
 }
 

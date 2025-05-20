@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<SelItemListStruct>> filterProducts2(
   int billno,
   List<dynamic> allBillList,
@@ -39,7 +41,7 @@ Future<List<SelItemListStruct>> filterProducts2(
               taxAmt: itemList[j]["taxAmt"],
               disPer: itemList[j]["disPer"],
               disAmt: itemList[j]["disAmt"],
-              qtystring: itemList[j]["qtystring"],
+              qtystring: itemList[j]["qtystring"].toString(),
               isDeletedItem: false,
             );
 

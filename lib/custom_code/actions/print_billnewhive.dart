@@ -17,6 +17,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:image/image.dart' as img;
 import 'package:flutter/services.dart';
 
@@ -1929,7 +1931,7 @@ Future printBillnewhive(
     //_printEscPos(bytes, generator);
 
     if (selectedPrinter == null) return;
-    var bluetoothPrinter = selectedPrinter[0]!;
+    var bluetoothPrinter = selectedPrinter[FFAppState().index]!;
 
     switch (bluetoothPrinter["typePrinter"]) {
       case PrinterType.usb:

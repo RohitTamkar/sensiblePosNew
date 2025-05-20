@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:io';
 
 Future<void> newCustomAction5() async {
@@ -23,6 +25,9 @@ Future<void> deleteFirestoreFolder() async {
     // final directoryPath = FFAppState().directory;
 //C:\\Users\\Pos\\AppData\\Local\\firestore'
     // Create a reference to the directory
+
+    FFAppState().directory =
+        '${Platform.environment['USERPROFILE']}\\AppData\\Local\\firestore';
     final directory = Directory(FFAppState().directory);
 
     // Check if the directory exists

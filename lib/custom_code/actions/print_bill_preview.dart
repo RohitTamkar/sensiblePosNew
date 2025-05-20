@@ -17,6 +17,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:typed_data';
 
 import 'package:flutter/services.dart';
@@ -97,7 +99,7 @@ Future printBillPreview(
             bytes += generator.image(imageRaster);
 
             // Add some space after the logo
-            bytes += generator.feed(1);
+            // bytes += generator.feed(1);
           }
         } catch (e) {
           print('Error printing logo: $e');
@@ -107,7 +109,7 @@ Future printBillPreview(
                   align: PosAlign.center,
                   height: PosTextSize.size2,
                   bold: true));
-          bytes += generator.feed(1);
+          //  bytes += generator.feed(1);
         }
       }
       if (doc["title"] != null && doc["title"].isNotEmpty) {
@@ -661,7 +663,7 @@ Future printBillPreview(
     //_printEscPos(bytes, generator);
 
     if (selectedPrinter == null) return;
-    var bluetoothPrinter = selectedPrinter[0]!;
+    var bluetoothPrinter = selectedPrinter[FFAppState().index]!;
 
     switch (bluetoothPrinter["typePrinter"]) {
       case PrinterType.usb:

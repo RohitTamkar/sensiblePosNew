@@ -54,6 +54,12 @@ class BarcodePrintingModel extends FlutterFlowModel<BarcodePrintingWidget> {
 
   // Model for Header component.
   late HeaderModel headerModel;
+  // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
+  bool? resultDevic;
+  // Stores action output result for [Custom Action - connectDevice] action in Container widget.
+  bool? con2;
+  // Stores action output result for [Custom Action - newCustomAction] action in Container widget.
+  List<dynamic>? selected2;
   // State field(s) for DropDown widget.
   String? dropDownValue1;
   FormFieldController<String>? dropDownValueController1;

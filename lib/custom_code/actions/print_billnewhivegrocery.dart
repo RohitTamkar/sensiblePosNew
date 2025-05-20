@@ -17,6 +17,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 import 'dart:async';
@@ -1863,7 +1865,7 @@ Future printBillnewhivegrocery(
   } else {
     if (bytes.length > 0) {
       if (selectedPrinter == null) return;
-      var bluetoothPrinter = selectedPrinter[0]!;
+      var bluetoothPrinter = selectedPrinter[FFAppState().index]!;
 
       // Function to print a single bill
       Future<void> printBill(List<int> billBytes) async {
