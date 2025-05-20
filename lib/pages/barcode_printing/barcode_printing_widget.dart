@@ -948,7 +948,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                                 Text(
                                                                               valueOrDefault<String>(
                                                                                 billItem.quantity.toString(),
-                                                                                '25',
+                                                                                '0',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).headlineSmall.override(
                                                                                     font: FlutterFlowTheme.of(context).headlineSmall,
