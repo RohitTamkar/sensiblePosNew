@@ -508,11 +508,8 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                           ),
                                                         ),
                                                         if (FFAppState()
-                                                                .printerName ==
-                                                            getJsonField(
-                                                              printerListItem,
-                                                              r'''$.deviceName''',
-                                                            ).toString())
+                                                                .labelindex ==
+                                                            printerListIndex)
                                                           FlutterFlowIconButton(
                                                             borderColor: Colors
                                                                 .transparent,
