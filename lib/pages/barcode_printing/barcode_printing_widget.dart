@@ -314,7 +314,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                               ).toString();
                                                               FFAppState()
                                                                       .labelindex =
-                                                                  printerListItem;
+                                                                  printerListIndex;
                                                               FFAppState()
                                                                       .printerName =
                                                                   getJsonField(
