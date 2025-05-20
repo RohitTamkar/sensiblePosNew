@@ -539,12 +539,14 @@ class _TableListWidgetState extends State<TableListWidget> {
                                                       ),
                                                       Builder(
                                                         builder: (context) {
-                                                          final tablelist = functions
-                                                              .generatePremiseTables(
-                                                                  listViewPremisesRecord,
-                                                                  listViewPremisesRecord
-                                                                      .name)
-                                                              .toList();
+                                                          final tablelist =
+                                                              getJsonField(
+                                                            functions.generatePremiseTables(
+                                                                listViewPremisesRecord,
+                                                                listViewPremisesRecord
+                                                                    .name),
+                                                            r'''$.type''',
+                                                          ).toList();
 
                                                           return GridView
                                                               .builder(
@@ -620,7 +622,10 @@ class _TableListWidgetState extends State<TableListWidget> {
                                                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                                                 children: [
                                                                                   Text(
-                                                                                    tablelistItem.toString(),
+                                                                                    getJsonField(
+                                                                                      tablelistItem,
+                                                                                      r'''$.typeName''',
+                                                                                    ).toString(),
                                                                                     textAlign: TextAlign.center,
                                                                                     style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                           font: FlutterFlowTheme.of(context).labelLarge,
