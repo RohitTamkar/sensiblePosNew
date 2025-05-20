@@ -94,6 +94,7 @@ Future<List<dynamic>> addToHoldListprdGrocery(
       "purPrice": price,
       "mrpPrice": document.mrpPrice.toDouble(),
       "quantity": quantity,
+      "qtystring": quantity,
       "unit": unitRecord?.unitType,
       "unitId": unitRecord?.id,
       "total": double.parse(total.toStringAsFixed(2)),
@@ -117,7 +118,7 @@ Future<List<dynamic>> addToHoldListprdGrocery(
         for (int j = 0; j < itemList.length; j++) {
           if (itemList[j]["name"] == data["name"]) {
             itemList[j]["quantity"]++;
-
+            itemList[j]["qtystring"] = itemList[j]["quantity"];
             itemList[j]["disAmt"] = double.parse(
                 (disAmt * itemList[j]["quantity"]).toStringAsFixed(2));
 
