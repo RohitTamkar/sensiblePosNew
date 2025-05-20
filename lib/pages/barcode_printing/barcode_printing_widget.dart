@@ -547,7 +547,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                   1.0,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
-                                              0.1,
+                                              0.05,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
@@ -581,7 +581,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                               safeSetState(() {});
                                             },
                                             width: 180.0,
-                                            height: 50.0,
+                                            height: 28.13,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .headlineSmall
@@ -611,56 +611,103 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                           ),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            3.0, 5.0, 3.0, 3.0),
-                                        child: Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          height: 500.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
-                                          child: SingleChildScrollView(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Container(
-                                                  width: double.infinity,
-                                                  height:
-                                                      MediaQuery.sizeOf(context)
-                                                              .height *
-                                                          0.03,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .customColor2,
-                                                  ),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Expanded(
-                                                        flex: 28,
-                                                        child: Container(
-                                                          width:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .width *
-                                                                  0.12,
-                                                          height: 100.0,
-                                                          decoration:
-                                                              BoxDecoration(),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
+                                      Flexible(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  3.0, 5.0, 3.0, 3.0),
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: 500.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                            child: SingleChildScrollView(
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Container(
+                                                    width: double.infinity,
+                                                    height: MediaQuery.sizeOf(
+                                                                context)
+                                                            .height *
+                                                        0.03,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .customColor2,
+                                                    ),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Expanded(
+                                                          flex: 28,
+                                                          child: Container(
+                                                            width: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .width *
+                                                                0.12,
+                                                            height: 100.0,
+                                                            decoration:
+                                                                BoxDecoration(),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'wolvbcoj' /* Item Name */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall
+                                                                        .override(
+                                                                          font:
+                                                                              FlutterFlowTheme.of(context).bodySmall,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          flex: 14,
+                                                          child: Container(
+                                                            width: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .width *
+                                                                0.08,
+                                                            height: 100.0,
+                                                            decoration:
+                                                                BoxDecoration(),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -668,15 +715,12 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                               mainAxisAlignment:
                                                                   MainAxisAlignment
                                                                       .center,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
                                                               children: [
                                                                 Text(
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'wolvbcoj' /* Item Name */,
+                                                                    'z7ui1z2v' /* Qty */,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -692,380 +736,317 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                      Expanded(
-                                                        flex: 14,
-                                                        child: Container(
-                                                          width:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .width *
-                                                                  0.08,
-                                                          height: 100.0,
-                                                          decoration:
-                                                              BoxDecoration(),
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'z7ui1z2v' /* Qty */,
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodySmall
-                                                                    .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
-                                                              ),
-                                                            ],
+                                                        Expanded(
+                                                          child: Container(
+                                                            width: 100.0,
+                                                            height: 100.0,
+                                                            decoration:
+                                                                BoxDecoration(),
+                                                            child: Icon(
+                                                              Icons
+                                                                  .delete_forever_outlined,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
+                                                              size: 24.0,
+                                                            ),
                                                           ),
                                                         ),
-                                                      ),
-                                                      Expanded(
-                                                        child: Container(
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          decoration:
-                                                              BoxDecoration(),
-                                                          child: Icon(
-                                                            Icons
-                                                                .delete_forever_outlined,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText,
-                                                            size: 24.0,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
+                                                      ],
+                                                    ),
                                                   ),
-                                                ),
-                                                Builder(
-                                                  builder: (context) {
-                                                    final bill = _model
-                                                        .productlist
-                                                        .toList();
+                                                  Flexible(
+                                                    child: Builder(
+                                                      builder: (context) {
+                                                        final bill = _model
+                                                            .productlist
+                                                            .toList();
 
-                                                    return ListView.separated(
-                                                      padding: EdgeInsets.zero,
-                                                      shrinkWrap: true,
-                                                      scrollDirection:
-                                                          Axis.vertical,
-                                                      itemCount: bill.length,
-                                                      separatorBuilder: (_,
-                                                              __) =>
-                                                          SizedBox(height: 3.0),
-                                                      itemBuilder:
-                                                          (context, billIndex) {
-                                                        final billItem =
-                                                            bill[billIndex];
-                                                        return Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            Expanded(
-                                                              flex: 28,
-                                                              child: Container(
-                                                                width: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .width *
-                                                                    0.265,
-                                                                decoration:
-                                                                    BoxDecoration(),
-                                                                child: Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
+                                                        return ListView
+                                                            .separated(
+                                                          padding:
+                                                              EdgeInsets.zero,
+                                                          shrinkWrap: true,
+                                                          scrollDirection:
+                                                              Axis.vertical,
+                                                          itemCount:
+                                                              bill.length,
+                                                          separatorBuilder: (_,
+                                                                  __) =>
+                                                              SizedBox(
+                                                                  height: 3.0),
+                                                          itemBuilder: (context,
+                                                              billIndex) {
+                                                            final billItem =
+                                                                bill[billIndex];
+                                                            return Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Expanded(
+                                                                  flex: 28,
+                                                                  child:
+                                                                      Container(
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        0.265,
+                                                                    decoration:
+                                                                        BoxDecoration(),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           2.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0),
-                                                                        child:
-                                                                            Text(
-                                                                          billItem
-                                                                              .name
-                                                                              .maybeHandleOverflow(
-                                                                            maxChars:
-                                                                                15,
-                                                                            replacement:
-                                                                                '…',
-                                                                          ),
-                                                                          textAlign:
-                                                                              TextAlign.start,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .titleMedium
-                                                                              .override(
-                                                                                font: FlutterFlowTheme.of(context).titleMedium,
-                                                                                letterSpacing: 0.0,
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.start,
+                                                                        children: [
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                5.0),
+                                                                            child:
+                                                                                Text(
+                                                                              billItem.name.maybeHandleOverflow(
+                                                                                maxChars: 15,
+                                                                                replacement: '…',
                                                                               ),
-                                                                        ),
-                                                                      ),
-                                                                      Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        children: [
-                                                                          Text(
-                                                                            FFLocalizations.of(context).getText(
-                                                                              '37f6cvrx' /* ₹  */,
+                                                                              textAlign: TextAlign.start,
+                                                                              style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
                                                                             ),
-                                                                            style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).labelSmall,
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
                                                                           ),
-                                                                          Text(
-                                                                            billItem.price.toString(),
-                                                                            style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).labelSmall,
-                                                                                  letterSpacing: 0.0,
+                                                                          Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Text(
+                                                                                FFLocalizations.of(context).getText(
+                                                                                  '37f6cvrx' /* ₹  */,
                                                                                 ),
+                                                                                style: FlutterFlowTheme.of(context).labelSmall.override(
+                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
+                                                                              ),
+                                                                              Text(
+                                                                                billItem.price.toString(),
+                                                                                style: FlutterFlowTheme.of(context).labelSmall.override(
+                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                          Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Text(
+                                                                                billItem.barcode,
+                                                                                style: FlutterFlowTheme.of(context).labelSmall.override(
+                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
+                                                                              ),
+                                                                            ],
                                                                           ),
                                                                         ],
                                                                       ),
-                                                                      Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        children: [
-                                                                          Text(
-                                                                            billItem.barcode,
-                                                                            style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).labelSmall,
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ],
+                                                                    ),
                                                                   ),
                                                                 ),
-                                                              ),
-                                                            ),
-                                                            Expanded(
-                                                              flex: 10,
-                                                              child: Container(
-                                                                width: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .width *
-                                                                    0.07,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
+                                                                Expanded(
+                                                                  flex: 10,
+                                                                  child:
+                                                                      Container(
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        0.07,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
                                                                               5.0),
-                                                                ),
-                                                                child: Padding(
-                                                                  padding:
-                                                                      EdgeInsets
-                                                                          .all(
+                                                                    ),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding:
+                                                                          EdgeInsets.all(
                                                                               1.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      Expanded(
-                                                                        flex: 7,
-                                                                        child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            if (billItem.quantity >
-                                                                                0.0) {
-                                                                              _model.updateProductlistAtIndex(
-                                                                                billIndex,
-                                                                                (e) => e..incrementQuantity(1.0),
-                                                                              );
-                                                                              safeSetState(() {});
-                                                                            }
-                                                                          },
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                MediaQuery.sizeOf(context).width * 0.02,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              boxShadow: [
-                                                                                BoxShadow(
-                                                                                  blurRadius: 5.0,
-                                                                                  color: Color(0x27000000),
-                                                                                  offset: Offset(
-                                                                                    -4.0,
-                                                                                    1.0,
-                                                                                  ),
-                                                                                  spreadRadius: 1.0,
-                                                                                )
-                                                                              ],
-                                                                              borderRadius: BorderRadius.only(
-                                                                                bottomLeft: Radius.circular(5.0),
-                                                                                bottomRight: Radius.circular(0.0),
-                                                                                topLeft: Radius.circular(5.0),
-                                                                                topRight: Radius.circular(0.0),
-                                                                              ),
-                                                                            ),
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        children: [
+                                                                          Expanded(
+                                                                            flex:
+                                                                                7,
                                                                             child:
-                                                                                Icon(
-                                                                              Icons.remove,
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              size: 20.0,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                      Align(
-                                                                        alignment: AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            billItem.quantity.toString(),
-                                                                            '25',
-                                                                          ),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .headlineSmall
-                                                                              .override(
-                                                                                font: FlutterFlowTheme.of(context).headlineSmall,
-                                                                                letterSpacing: 0.0,
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                      Expanded(
-                                                                        flex: 7,
-                                                                        child:
-                                                                            InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            _model.updateProductlistAtIndex(
-                                                                              billIndex,
-                                                                              (e) => e..incrementQuantity(1.0),
-                                                                            );
-                                                                            safeSetState(() {});
-                                                                          },
-                                                                          child:
-                                                                              Container(
-                                                                            width:
-                                                                                MediaQuery.sizeOf(context).width * 0.03,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              boxShadow: [
-                                                                                BoxShadow(
-                                                                                  blurRadius: 5.0,
-                                                                                  color: Color(0x25000000),
-                                                                                  offset: Offset(
-                                                                                    4.0,
-                                                                                    1.0,
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                if (billItem.quantity > 0.0) {
+                                                                                  _model.updateProductlistAtIndex(
+                                                                                    billIndex,
+                                                                                    (e) => e..incrementQuantity(1.0),
+                                                                                  );
+                                                                                  safeSetState(() {});
+                                                                                }
+                                                                              },
+                                                                              child: Container(
+                                                                                width: MediaQuery.sizeOf(context).width * 0.02,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                  boxShadow: [
+                                                                                    BoxShadow(
+                                                                                      blurRadius: 5.0,
+                                                                                      color: Color(0x27000000),
+                                                                                      offset: Offset(
+                                                                                        -4.0,
+                                                                                        1.0,
+                                                                                      ),
+                                                                                      spreadRadius: 1.0,
+                                                                                    )
+                                                                                  ],
+                                                                                  borderRadius: BorderRadius.only(
+                                                                                    bottomLeft: Radius.circular(5.0),
+                                                                                    bottomRight: Radius.circular(0.0),
+                                                                                    topLeft: Radius.circular(5.0),
+                                                                                    topRight: Radius.circular(0.0),
                                                                                   ),
-                                                                                  spreadRadius: 1.0,
-                                                                                )
-                                                                              ],
-                                                                              borderRadius: BorderRadius.only(
-                                                                                bottomLeft: Radius.circular(0.0),
-                                                                                bottomRight: Radius.circular(5.0),
-                                                                                topLeft: Radius.circular(0.0),
-                                                                                topRight: Radius.circular(5.0),
+                                                                                ),
+                                                                                child: Icon(
+                                                                                  Icons.remove,
+                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                  size: 20.0,
+                                                                                ),
                                                                               ),
                                                                             ),
+                                                                          ),
+                                                                          Align(
+                                                                            alignment:
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             child:
-                                                                                Icon(
-                                                                              Icons.add,
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              size: 20.0,
+                                                                                Text(
+                                                                              valueOrDefault<String>(
+                                                                                billItem.quantity.toString(),
+                                                                                '25',
+                                                                              ),
+                                                                              style: FlutterFlowTheme.of(context).headlineSmall.override(
+                                                                                    font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
                                                                             ),
                                                                           ),
-                                                                        ),
+                                                                          Expanded(
+                                                                            flex:
+                                                                                7,
+                                                                            child:
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                _model.updateProductlistAtIndex(
+                                                                                  billIndex,
+                                                                                  (e) => e..incrementQuantity(1.0),
+                                                                                );
+                                                                                safeSetState(() {});
+                                                                              },
+                                                                              child: Container(
+                                                                                width: MediaQuery.sizeOf(context).width * 0.03,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                  boxShadow: [
+                                                                                    BoxShadow(
+                                                                                      blurRadius: 5.0,
+                                                                                      color: Color(0x25000000),
+                                                                                      offset: Offset(
+                                                                                        4.0,
+                                                                                        1.0,
+                                                                                      ),
+                                                                                      spreadRadius: 1.0,
+                                                                                    )
+                                                                                  ],
+                                                                                  borderRadius: BorderRadius.only(
+                                                                                    bottomLeft: Radius.circular(0.0),
+                                                                                    bottomRight: Radius.circular(5.0),
+                                                                                    topLeft: Radius.circular(0.0),
+                                                                                    topRight: Radius.circular(5.0),
+                                                                                  ),
+                                                                                ),
+                                                                                child: Icon(
+                                                                                  Icons.add,
+                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                  size: 20.0,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ],
                                                                       ),
-                                                                    ],
+                                                                    ),
                                                                   ),
                                                                 ),
-                                                              ),
-                                                            ),
-                                                            Expanded(
-                                                              flex: 5,
-                                                              child: Container(
-                                                                decoration:
-                                                                    BoxDecoration(),
-                                                                child:
-                                                                    FlutterFlowIconButton(
-                                                                  borderRadius:
-                                                                      8.0,
-                                                                  buttonSize:
-                                                                      45.0,
-                                                                  icon: Icon(
-                                                                    Icons
-                                                                        .delete_rounded,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    size: 24.0,
+                                                                Expanded(
+                                                                  flex: 5,
+                                                                  child:
+                                                                      Container(
+                                                                    decoration:
+                                                                        BoxDecoration(),
+                                                                    child:
+                                                                        FlutterFlowIconButton(
+                                                                      borderRadius:
+                                                                          8.0,
+                                                                      buttonSize:
+                                                                          45.0,
+                                                                      icon:
+                                                                          Icon(
+                                                                        Icons
+                                                                            .delete_rounded,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                        size:
+                                                                            24.0,
+                                                                      ),
+                                                                      onPressed:
+                                                                          () async {
+                                                                        _model.removeFromProductlist(
+                                                                            billItem);
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      },
+                                                                    ),
                                                                   ),
-                                                                  onPressed:
-                                                                      () async {
-                                                                    _model.removeFromProductlist(
-                                                                        billItem);
-                                                                    safeSetState(
-                                                                        () {});
-                                                                  },
                                                                 ),
-                                                              ),
-                                                            ),
-                                                          ],
+                                                              ],
+                                                            );
+                                                          },
                                                         );
                                                       },
-                                                    );
-                                                  },
-                                                ),
-                                              ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -1181,48 +1162,97 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                           safeSetState(() =>
                                                               _model.dropDownValue2 =
                                                                   val);
-                                                          _model.addToProductDoclist(
-                                                              containerProductRecordList
-                                                                  .where((e) =>
-                                                                      e.id ==
-                                                                      _model
-                                                                          .dropDownValue2)
-                                                                  .toList()
-                                                                  .firstOrNull!);
-                                                          _model
-                                                              .updateProductStruct(
-                                                            (e) => e
-                                                              ..name = containerProductRecordList
+                                                          if (containerProductRecordList
                                                                   .where((e) =>
                                                                       e.id ==
                                                                       _model
                                                                           .dropDownValue2)
                                                                   .toList()
                                                                   .firstOrNull
-                                                                  ?.name
-                                                              ..quantity = 1.0
-                                                              ..price = containerProductRecordList
+                                                                  ?.id ==
+                                                              _model.productlist
                                                                   .where((e) =>
-                                                                      e.id ==
-                                                                      _model
-                                                                          .dropDownValue2)
+                                                                      containerProductRecordList
+                                                                          .where((e) =>
+                                                                              e.id ==
+                                                                              _model.dropDownValue2)
+                                                                          .toList()
+                                                                          .firstOrNull
+                                                                          ?.id ==
+                                                                      e.id)
                                                                   .toList()
                                                                   .firstOrNull
-                                                                  ?.sellingPrice
-                                                              ..barcode = containerProductRecordList
-                                                                  .where((e) =>
-                                                                      e.id ==
-                                                                      _model
-                                                                          .dropDownValue2)
-                                                                  .toList()
-                                                                  .firstOrNull
-                                                                  ?.barcode,
-                                                          );
-                                                          _model
-                                                              .addToProductlist(
-                                                                  _model
-                                                                      .product!);
-                                                          safeSetState(() {});
+                                                                  ?.id) {
+                                                            await showDialog(
+                                                              context: context,
+                                                              builder:
+                                                                  (alertDialogContext) {
+                                                                return AlertDialog(
+                                                                  content: Text(
+                                                                      'Already Exists!'),
+                                                                  actions: [
+                                                                    TextButton(
+                                                                      onPressed:
+                                                                          () =>
+                                                                              Navigator.pop(alertDialogContext),
+                                                                      child: Text(
+                                                                          'Ok'),
+                                                                    ),
+                                                                  ],
+                                                                );
+                                                              },
+                                                            );
+                                                          } else {
+                                                            _model.addToProductDoclist(
+                                                                containerProductRecordList
+                                                                    .where((e) =>
+                                                                        e.id ==
+                                                                        _model
+                                                                            .dropDownValue2)
+                                                                    .toList()
+                                                                    .firstOrNull!);
+                                                            _model
+                                                                .updateProductStruct(
+                                                              (e) => e
+                                                                ..name = containerProductRecordList
+                                                                    .where((e) =>
+                                                                        e.id ==
+                                                                        _model
+                                                                            .dropDownValue2)
+                                                                    .toList()
+                                                                    .firstOrNull
+                                                                    ?.name
+                                                                ..quantity = 1.0
+                                                                ..price = containerProductRecordList
+                                                                    .where((e) =>
+                                                                        e.id ==
+                                                                        _model
+                                                                            .dropDownValue2)
+                                                                    .toList()
+                                                                    .firstOrNull
+                                                                    ?.sellingPrice
+                                                                ..barcode = containerProductRecordList
+                                                                    .where((e) =>
+                                                                        e.id ==
+                                                                        _model
+                                                                            .dropDownValue2)
+                                                                    .toList()
+                                                                    .firstOrNull
+                                                                    ?.barcode
+                                                                ..id = containerProductRecordList
+                                                                    .where((e) =>
+                                                                        e.id ==
+                                                                        _model
+                                                                            .dropDownValue2)
+                                                                    .toList()
+                                                                    .firstOrNull
+                                                                    ?.barcode,
+                                                            );
+                                                            _model.addToProductlist(
+                                                                _model
+                                                                    .product!);
+                                                            safeSetState(() {});
+                                                          }
                                                         },
                                                         width: 200.0,
                                                         height: 40.0,
