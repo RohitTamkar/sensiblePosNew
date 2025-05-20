@@ -529,21 +529,21 @@ List<dynamic> filterBillList(
 }
 
 dynamic generatePremiseTables(
-  List<PremisesRecord> doc,
+  PremisesRecord doc,
   String? selectedPremise,
 ) {
   List<dynamic> list1 = [];
   List<dynamic> list2 = [];
   List<dynamic> returnData = [];
-  int len = doc.length;
-  for (int j = 0; j < len; j++) {
-    int noOfTables = doc[j].tables!;
-    for (int i = 1; i <= noOfTables; i++) {
-      var typeName = doc[j].type! + " $i";
-      list1.add({"typeName": typeName});
-    }
-    list2.add({"premise": doc[j].name, "type": list1});
+  //int len = doc.length;
+  //for (int j = 0; j < len; j++) {
+  int noOfTables = doc.tables!;
+  for (int i = 1; i <= noOfTables; i++) {
+    var typeName = doc.type! + " $i";
+    list1.add({"typeName": typeName});
   }
+  list2.add({"premise": doc.name, "type": list1});
+  // }
 
   print(list2);
   for (int x = 0; x < list2.length; x++) {
