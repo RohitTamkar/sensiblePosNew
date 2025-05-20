@@ -24897,7 +24897,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '70',
     },
     '0fgb8py4': {
-      'en': 'Print',
+      'en': '',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24905,7 +24905,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     '01dox2mc': {
-      'en': 'View',
+      'en': '',
       'hi': '',
       'kn': '',
       'mr': '',

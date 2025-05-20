@@ -620,19 +620,7 @@ class _TableListWidgetState extends State<TableListWidget> {
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.center,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    getJsonField(
-                                                                                      tablelistItem,
-                                                                                      r'''$.typeName''',
-                                                                                    ).toString(),
-                                                                                    textAlign: TextAlign.center,
-                                                                                    style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                          font: FlutterFlowTheme.of(context).labelLarge,
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                ],
+                                                                                children: [],
                                                                               ),
                                                                             ),
                                                                             Container(
@@ -668,17 +656,30 @@ class _TableListWidgetState extends State<TableListWidget> {
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                                                     children: [
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          children: [
-                                                                                            Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
-                                                                                              child: Text(
+                                                                                      if (false)
+                                                                                        Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
+                                                                                          child: Row(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                                                            children: [
+                                                                                              Padding(
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                                child: Text(
+                                                                                                  FFLocalizations.of(context).getText(
+                                                                                                    'npkocwx2' /* 45 */,
+                                                                                                  ),
+                                                                                                  textAlign: TextAlign.center,
+                                                                                                  style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                                        font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                        color: FlutterFlowTheme.of(context).lineColor,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ),
+                                                                                              Text(
                                                                                                 FFLocalizations.of(context).getText(
-                                                                                                  'npkocwx2' /* 45 */,
+                                                                                                  'br3dlsc2' /* Mins */,
                                                                                                 ),
                                                                                                 textAlign: TextAlign.center,
                                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -687,48 +688,50 @@ class _TableListWidgetState extends State<TableListWidget> {
                                                                                                       letterSpacing: 0.0,
                                                                                                     ),
                                                                                               ),
-                                                                                            ),
-                                                                                            Text(
-                                                                                              FFLocalizations.of(context).getText(
-                                                                                                'br3dlsc2' /* Mins */,
-                                                                                              ),
-                                                                                              textAlign: TextAlign.center,
-                                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
-                                                                                                    color: FlutterFlowTheme.of(context).lineColor,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ],
+                                                                                            ],
+                                                                                          ),
                                                                                         ),
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
-                                                                                        child: Row(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          children: [
-                                                                                            Text(
-                                                                                              FFLocalizations.of(context).getText(
-                                                                                                't9kf9j5c' /* ₹  */,
+                                                                                      if (false)
+                                                                                        Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
+                                                                                          child: Row(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                                                            children: [
+                                                                                              Text(
+                                                                                                FFLocalizations.of(context).getText(
+                                                                                                  't9kf9j5c' /* ₹  */,
+                                                                                                ),
+                                                                                                style: FlutterFlowTheme.of(context).labelSmall.override(
+                                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                      letterSpacing: 0.0,
+                                                                                                    ),
                                                                                               ),
-                                                                                              style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelSmall,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                            Text(
-                                                                                              FFLocalizations.of(context).getText(
-                                                                                                '05xodfiq' /* 70 */,
+                                                                                              Text(
+                                                                                                FFLocalizations.of(context).getText(
+                                                                                                  '05xodfiq' /* 70 */,
+                                                                                                ),
+                                                                                                style: FlutterFlowTheme.of(context).labelSmall.override(
+                                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                    ),
                                                                                               ),
-                                                                                              style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelSmall,
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w600,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ],
+                                                                                            ],
+                                                                                          ),
                                                                                         ),
+                                                                                      Text(
+                                                                                        getJsonField(
+                                                                                          tablelistItem,
+                                                                                          r'''$.typeName''',
+                                                                                        ).toString(),
+                                                                                        textAlign: TextAlign.center,
+                                                                                        style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                              font: FlutterFlowTheme.of(context).labelLarge,
+                                                                                              fontSize: 16.0,
+                                                                                              letterSpacing: 0.0,
+                                                                                              fontWeight: FontWeight.bold,
+                                                                                            ),
                                                                                       ),
                                                                                     ],
                                                                                   ),
@@ -746,7 +749,11 @@ class _TableListWidgetState extends State<TableListWidget> {
                                                                                           print('Button pressed ...');
                                                                                         },
                                                                                         text: FFLocalizations.of(context).getText(
-                                                                                          '0fgb8py4' /* Print */,
+                                                                                          '0fgb8py4' /*  */,
+                                                                                        ),
+                                                                                        icon: Icon(
+                                                                                          Icons.print_sharp,
+                                                                                          size: 15.0,
                                                                                         ),
                                                                                         options: FFButtonOptions(
                                                                                           height: 30.0,
@@ -785,11 +792,17 @@ class _TableListWidgetState extends State<TableListWidget> {
                                                                                           ).then((value) => safeSetState(() {}));
                                                                                         },
                                                                                         text: FFLocalizations.of(context).getText(
-                                                                                          '01dox2mc' /* View */,
+                                                                                          '01dox2mc' /*  */,
+                                                                                        ),
+                                                                                        icon: Icon(
+                                                                                          Icons.remove_red_eye_outlined,
+                                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                                          size: 15.0,
                                                                                         ),
                                                                                         options: FFButtonOptions(
                                                                                           height: 30.0,
                                                                                           padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                          iconAlignment: IconAlignment.start,
                                                                                           iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                           color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                           textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
