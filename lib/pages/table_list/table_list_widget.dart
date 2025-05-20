@@ -93,7 +93,9 @@ class _TableListWidgetState extends State<TableListWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 3.0, 0.0),
                                 child: Text(
-                                  FFAppState().outletName,
+                                  FFLocalizations.of(context).getText(
+                                    'w3drwlpy' /* dd */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -110,7 +112,9 @@ class _TableListWidgetState extends State<TableListWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 6.0, 0.0),
                                 child: Text(
-                                  FFAppState().userName,
+                                  FFLocalizations.of(context).getText(
+                                    '7j29oz8s' /* sk */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
@@ -127,7 +131,7 @@ class _TableListWidgetState extends State<TableListWidget> {
                                     0.0, 0.0, 6.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '143egfia' /*  */,
+                                    '143egfia' /* sdk */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall

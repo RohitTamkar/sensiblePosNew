@@ -24816,8 +24816,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // TableList
   {
+    'w3drwlpy': {
+      'en': 'dd',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    '7j29oz8s': {
+      'en': 'sk',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
     '143egfia': {
-      'en': '',
+      'en': 'sdk',
       'hi': '15-09-2022 14:41',
       'kn': '15-09-2022 14:41',
       'mr': '१५-०९-२०२२ १४:४१',
