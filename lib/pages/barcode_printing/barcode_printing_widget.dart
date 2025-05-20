@@ -733,79 +733,13 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                           height: 100.0,
                                                           decoration:
                                                               BoxDecoration(),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              var confirmDialogResponse =
-                                                                  await showDialog<
-                                                                          bool>(
-                                                                        context:
-                                                                            context,
-                                                                        builder:
-                                                                            (alertDialogContext) {
-                                                                          return AlertDialog(
-                                                                            title:
-                                                                                Text('Delete All Bills..?'),
-                                                                            content:
-                                                                                Text('Are you sure you want to delete all Bills..'),
-                                                                            actions: [
-                                                                              TextButton(
-                                                                                onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                child: Text('cancle'),
-                                                                              ),
-                                                                              TextButton(
-                                                                                onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                child: Text('confirm'),
-                                                                              ),
-                                                                            ],
-                                                                          );
-                                                                        },
-                                                                      ) ??
-                                                                      false;
-                                                              if (confirmDialogResponse) {
-                                                                FFAppState()
-                                                                    .holdBillCount = 0;
-                                                                FFAppState()
-                                                                    .allBillsList = [];
-                                                                FFAppState()
-                                                                    .update(
-                                                                        () {});
-                                                                FFAppState()
-                                                                    .itemCartList = [];
-                                                                FFAppState()
-                                                                    .update(
-                                                                        () {});
-                                                                await actions
-                                                                    .clearValue();
-                                                                FFAppState()
-                                                                    .noOfItems = 0;
-                                                                FFAppState()
-                                                                    .update(
-                                                                        () {});
-                                                                FFAppState()
-                                                                    .prdid = '';
-                                                                safeSetState(
-                                                                    () {});
-                                                              } else {
-                                                                return;
-                                                              }
-                                                            },
-                                                            child: Icon(
-                                                              Icons
-                                                                  .delete_forever_outlined,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryText,
-                                                              size: 24.0,
-                                                            ),
+                                                          child: Icon(
+                                                            Icons
+                                                                .delete_forever_outlined,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            size: 24.0,
                                                           ),
                                                         ),
                                                       ),
@@ -1092,48 +1026,30 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                             ),
                                                             Expanded(
                                                               flex: 5,
-                                                              child: InkWell(
-                                                                splashColor: Colors
-                                                                    .transparent,
-                                                                focusColor: Colors
-                                                                    .transparent,
-                                                                hoverColor: Colors
-                                                                    .transparent,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                onTap:
-                                                                    () async {
-                                                                  _model.removeFromProductlist(
-                                                                      billItem);
-                                                                  safeSetState(
-                                                                      () {});
-                                                                },
+                                                              child: Container(
+                                                                decoration:
+                                                                    BoxDecoration(),
                                                                 child:
-                                                                    Container(
-                                                                  decoration:
-                                                                      BoxDecoration(),
-                                                                  child:
-                                                                      FlutterFlowIconButton(
-                                                                    borderRadius:
-                                                                        8.0,
-                                                                    buttonSize:
-                                                                        45.0,
-                                                                    icon: Icon(
-                                                                      Icons
-                                                                          .delete_rounded,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                      size:
-                                                                          24.0,
-                                                                    ),
-                                                                    onPressed:
-                                                                        () {
-                                                                      print(
-                                                                          'IconButton pressed ...');
-                                                                    },
+                                                                    FlutterFlowIconButton(
+                                                                  borderRadius:
+                                                                      8.0,
+                                                                  buttonSize:
+                                                                      45.0,
+                                                                  icon: Icon(
+                                                                    Icons
+                                                                        .delete_rounded,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
+                                                                    size: 24.0,
                                                                   ),
+                                                                  onPressed:
+                                                                      () async {
+                                                                    _model.removeFromProductlist(
+                                                                        billItem);
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  },
                                                                 ),
                                                               ),
                                                             ),
