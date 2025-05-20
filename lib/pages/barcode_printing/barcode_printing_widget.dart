@@ -484,7 +484,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                             ),
                                                                           ),
                                                                           Text(
-                                                                            printerListItem.toString(),
+                                                                            printerListIndex.toString(),
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   font: FlutterFlowTheme.of(context).bodySmall,
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
@@ -502,8 +502,11 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                           ),
                                                         ),
                                                         if (FFAppState()
-                                                                .labelindex ==
-                                                            printerListItem)
+                                                                .printerName ==
+                                                            getJsonField(
+                                                              printerListItem,
+                                                              r'''$.deviceName''',
+                                                            ).toString())
                                                           FlutterFlowIconButton(
                                                             borderColor: Colors
                                                                 .transparent,
