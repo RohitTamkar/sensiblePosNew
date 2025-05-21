@@ -113,16 +113,19 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                     width: 100.0,
                     height: 100.0,
                     decoration: BoxDecoration(
-                      color: containerTableKotRecord?.table ==
-                              valueOrDefault<String>(
-                                getJsonField(
-                                  tablelistItem,
-                                  r'''$.typeName''',
-                                )?.toString(),
-                                '0',
-                              )
-                          ? FlutterFlowTheme.of(context).tertiary
-                          : Color(0xFFFFE69E),
+                      color: valueOrDefault<Color>(
+                        containerTableKotRecord?.table ==
+                                valueOrDefault<String>(
+                                  getJsonField(
+                                    tablelistItem,
+                                    r'''$.typeName''',
+                                  )?.toString(),
+                                  '0',
+                                )
+                            ? FlutterFlowTheme.of(context).tertiary
+                            : Color(0xFFFFE69E),
+                        Color(0xFFFFE69E),
+                      ),
                       borderRadius: BorderRadius.circular(15.0),
                       border: Border.all(
                         color: Color(0xFFFFE69E),
