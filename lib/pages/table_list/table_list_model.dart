@@ -4,7 +4,7 @@ import '/components/discount_and_delivery_copy/discount_and_delivery_copy_widget
 import '/components/menu_drawer/menu_drawer_widget.dart';
 import '/components/mix_payment_mode/mix_payment_mode_widget.dart';
 import '/components/qty_edit_widget.dart';
-import '/components/table_v_iew_widget.dart';
+import '/components/table_v_iew/table_v_iew_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
