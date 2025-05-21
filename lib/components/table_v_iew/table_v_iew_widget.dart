@@ -185,7 +185,22 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       FFAppState().tableViewHideShow = false;
-                                      _model.updatePage(() {});
+                                      FFAppState().update(() {});
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            content: Text('done'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
                                     },
                                     child: Container(
                                       width: double.infinity,
