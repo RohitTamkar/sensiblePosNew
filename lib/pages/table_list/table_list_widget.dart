@@ -68,6 +68,12 @@ class _TableListWidgetState extends State<TableListWidget>
     super.initState();
     _model = createModel(context, () => TableListModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      FFAppState().tableViewHideShow = true;
+      safeSetState(() {});
+    });
+
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
@@ -1359,7 +1365,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                 ),
                                               ),
                                             ),
-                                          if (FFAppState().tableViewHideShow)
+                                          if (!FFAppState().tableViewHideShow)
                                             Expanded(
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
