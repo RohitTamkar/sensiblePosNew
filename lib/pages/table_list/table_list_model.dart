@@ -4,6 +4,7 @@ import '/components/discount_and_delivery_copy/discount_and_delivery_copy_widget
 import '/components/menu_drawer/menu_drawer_widget.dart';
 import '/components/mix_payment_mode/mix_payment_mode_widget.dart';
 import '/components/qty_edit_widget.dart';
+import '/components/table_v_iew_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -78,8 +79,6 @@ class TableListModel extends FlutterFlowModel<TableListWidget> {
   late MenuDrawerModel menuDrawerModel;
   // State field(s) for ListView widget.
   ScrollController? listViewController1;
-  // State field(s) for GridView widget.
-  ScrollController? gridViewController1;
   // Stores action output result for [Custom Action - getProductlistHive] action in Container widget.
   List<ProductStructStruct>? prdhiveall;
   // State field(s) for ListView widget.
@@ -87,7 +86,7 @@ class TableListModel extends FlutterFlowModel<TableListWidget> {
   // Stores action output result for [Custom Action - getProductlistHive] action in Container widget.
   List<ProductStructStruct>? prdhive;
   // State field(s) for GridView widget.
-  ScrollController? gridViewController2;
+  ScrollController? gridViewController;
   // Stores action output result for [Custom Action - addToHoldListprdGrocery] action in ProductName widget.
   List<dynamic>? qtyunitresult;
   // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in ProductName widget.
@@ -200,9 +199,8 @@ class TableListModel extends FlutterFlowModel<TableListWidget> {
   void initState(BuildContext context) {
     menuDrawerModel = createModel(context, () => MenuDrawerModel());
     listViewController1 = ScrollController();
-    gridViewController1 = ScrollController();
     listViewController2 = ScrollController();
-    gridViewController2 = ScrollController();
+    gridViewController = ScrollController();
     listViewprd = ScrollController();
   }
 
@@ -210,9 +208,8 @@ class TableListModel extends FlutterFlowModel<TableListWidget> {
   void dispose() {
     menuDrawerModel.dispose();
     listViewController1?.dispose();
-    gridViewController1?.dispose();
     listViewController2?.dispose();
-    gridViewController2?.dispose();
+    gridViewController?.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();
 
