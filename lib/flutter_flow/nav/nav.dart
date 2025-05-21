@@ -1498,7 +1498,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: TableListWidget.routeName,
               path: TableListWidget.routePath,
-              builder: (context, params) => TableListWidget(),
+              asyncParams: {
+                'taxcollection':
+                    getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
+              },
+              builder: (context, params) => TableListWidget(
+                shiftDetails: params.getParam(
+                  'shiftDetails',
+                  ParamType.JSON,
+                ),
+                taxcollection: params.getParam<TaxMasterRecord>(
+                  'taxcollection',
+                  ParamType.Document,
+                  isList: true,
+                ),
+                doc: params.getParam(
+                  'doc',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['USER_PROFILE'],
+                ),
+              ),
             ),
             FFRoute(
               name: StockSummaryReportWidget.routeName,
