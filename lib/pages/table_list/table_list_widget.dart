@@ -3305,9 +3305,10 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                           dayId: functions.getDayId(),
                                                                                           createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
                                                                                           checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
-                                                                                          table: FFAppState().tableNo,
                                                                                           orderType: 'TABLE_KOT',
                                                                                           kotStatus: 'Pending',
+                                                                                          tableNo: FFAppState().tableNo,
+                                                                                          premiseName: FFAppState().selectedPremise,
                                                                                         ),
                                                                                         ...mapToFirestore(
                                                                                           {
@@ -3322,9 +3323,10 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                           dayId: functions.getDayId(),
                                                                                           createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
                                                                                           checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
-                                                                                          table: FFAppState().tableNo,
                                                                                           orderType: 'TABLE_KOT',
                                                                                           kotStatus: 'Pending',
+                                                                                          tableNo: FFAppState().tableNo,
+                                                                                          premiseName: FFAppState().selectedPremise,
                                                                                         ),
                                                                                         ...mapToFirestore(
                                                                                           {
@@ -3448,9 +3450,10 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                       dayId: functions.getDayId(),
                                                                                       createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
                                                                                       checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
-                                                                                      table: FFAppState().tableNo,
                                                                                       orderType: 'TABLE_KOT',
                                                                                       kotStatus: 'Pending',
+                                                                                      tableNo: FFAppState().tableNo,
+                                                                                      premiseName: FFAppState().selectedPremise,
                                                                                     ),
                                                                                     ...mapToFirestore(
                                                                                       {
@@ -3465,9 +3468,10 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                       dayId: functions.getDayId(),
                                                                                       createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
                                                                                       checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
-                                                                                      table: FFAppState().tableNo,
                                                                                       orderType: 'TABLE_KOT',
                                                                                       kotStatus: 'Pending',
+                                                                                      tableNo: FFAppState().tableNo,
+                                                                                      premiseName: FFAppState().selectedPremise,
                                                                                     ),
                                                                                     ...mapToFirestore(
                                                                                       {

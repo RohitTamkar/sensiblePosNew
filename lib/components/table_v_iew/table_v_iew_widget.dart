@@ -78,7 +78,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
               stream: queryTableKotRecord(
                 parent: FFAppState().outletIdRef,
                 queryBuilder: (tableKotRecord) => tableKotRecord.where(
-                  'table',
+                  'tableNo',
                   isEqualTo: getJsonField(
                     tablelistItem,
                     r'''$.typeName''',
@@ -114,14 +114,16 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                     height: 100.0,
                     decoration: BoxDecoration(
                       color: valueOrDefault<Color>(
-                        containerTableKotRecord?.table ==
-                                valueOrDefault<String>(
-                                  getJsonField(
-                                    tablelistItem,
-                                    r'''$.typeName''',
-                                  )?.toString(),
-                                  '0',
-                                )
+                        (containerTableKotRecord?.tableNo ==
+                                    valueOrDefault<String>(
+                                      getJsonField(
+                                        tablelistItem,
+                                        r'''$.typeName''',
+                                      )?.toString(),
+                                      '0',
+                                    )) &&
+                                (widget!.parameter3 ==
+                                    containerTableKotRecord?.premiseName)
                             ? FlutterFlowTheme.of(context).tertiary
                             : Color(0xFFFFE69E),
                         Color(0xFFFFE69E),
@@ -185,6 +187,12 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       FFAppState().tableViewHideShow = false;
+                                      FFAppState().tableNo = getJsonField(
+                                        tablelistItem,
+                                        r'''$.typeName''',
+                                      ).toString();
+                                      FFAppState().selectedPremise =
+                                          widget!.parameter3!;
                                       FFAppState().update(() {});
                                     },
                                     child: Container(

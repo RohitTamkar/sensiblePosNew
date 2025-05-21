@@ -121,15 +121,20 @@ class TableKotRecord extends FirestoreRecord {
   bool get isDeleted => _isDeleted ?? false;
   bool hasIsDeleted() => _isDeleted != null;
 
-  // "table" field.
-  String? _table;
-  String get table => _table ?? '';
-  bool hasTable() => _table != null;
-
   // "settled" field.
   bool? _settled;
   bool get settled => _settled ?? false;
   bool hasSettled() => _settled != null;
+
+  // "tableNo" field.
+  String? _tableNo;
+  String get tableNo => _tableNo ?? '';
+  bool hasTableNo() => _tableNo != null;
+
+  // "premiseName" field.
+  String? _premiseName;
+  String get premiseName => _premiseName ?? '';
+  bool hasPremiseName() => _premiseName != null;
 
   DocumentReference get parentReference => reference.parent.parent!;
 
@@ -158,8 +163,9 @@ class TableKotRecord extends FirestoreRecord {
     _kotStatus = snapshotData['kotStatus'] as String?;
     _source = snapshotData['source'] as String?;
     _isDeleted = snapshotData['isDeleted'] as bool?;
-    _table = snapshotData['table'] as String?;
     _settled = snapshotData['settled'] as bool?;
+    _tableNo = snapshotData['tableNo'] as String?;
+    _premiseName = snapshotData['premiseName'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -222,8 +228,9 @@ Map<String, dynamic> createTableKotRecordData({
   String? kotStatus,
   String? source,
   bool? isDeleted,
-  String? table,
   bool? settled,
+  String? tableNo,
+  String? premiseName,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -247,8 +254,9 @@ Map<String, dynamic> createTableKotRecordData({
       'kotStatus': kotStatus,
       'source': source,
       'isDeleted': isDeleted,
-      'table': table,
       'settled': settled,
+      'tableNo': tableNo,
+      'premiseName': premiseName,
     }.withoutNulls,
   );
 
@@ -282,8 +290,9 @@ class TableKotRecordDocumentEquality implements Equality<TableKotRecord> {
         e1?.kotStatus == e2?.kotStatus &&
         e1?.source == e2?.source &&
         e1?.isDeleted == e2?.isDeleted &&
-        e1?.table == e2?.table &&
-        e1?.settled == e2?.settled;
+        e1?.settled == e2?.settled &&
+        e1?.tableNo == e2?.tableNo &&
+        e1?.premiseName == e2?.premiseName;
   }
 
   @override
@@ -309,8 +318,9 @@ class TableKotRecordDocumentEquality implements Equality<TableKotRecord> {
         e?.kotStatus,
         e?.source,
         e?.isDeleted,
-        e?.table,
-        e?.settled
+        e?.settled,
+        e?.tableNo,
+        e?.premiseName
       ]);
 
   @override
