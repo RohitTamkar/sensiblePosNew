@@ -17,6 +17,5 @@ export 'qr_code_struct.dart';
 export 'recipe_item_list_struct.dart';
 export 'sel_item_list_struct.dart';
 export 'shift_details_struct.dart';
-export 'shrikant_product_struct.dart';
 export 'user_access_struct.dart';
 export 'user_access_c_struct.dart';

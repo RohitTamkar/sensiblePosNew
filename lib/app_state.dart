@@ -257,9 +257,6 @@ class FFAppState extends ChangeNotifier {
       _shiftDocRef = prefs.getString('ff_shiftDocRef')?.ref ?? _shiftDocRef;
     });
     _safeInit(() {
-      _tableSetting = prefs.getBool('ff_tableSetting') ?? _tableSetting;
-    });
-    _safeInit(() {
       _CustSetting = prefs.getBool('ff_CustSetting') ?? _CustSetting;
     });
     _safeInit(() {
@@ -267,9 +264,6 @@ class FFAppState extends ChangeNotifier {
     });
     _safeInit(() {
       _rfidSetting = prefs.getBool('ff_rfidSetting') ?? _rfidSetting;
-    });
-    _safeInit(() {
-      _salesmanSet = prefs.getBool('ff_salesmanSet') ?? _salesmanSet;
     });
     _safeInit(() {
       _checkAppSetting = prefs.getStringList('ff_checkAppSetting')?.map((x) {
@@ -645,6 +639,9 @@ class FFAppState extends ChangeNotifier {
     });
     _safeInit(() {
       _labelindex = prefs.getInt('ff_labelindex') ?? _labelindex;
+    });
+    _safeInit(() {
+      _tableNo = prefs.getString('ff_tableNo') ?? _tableNo;
     });
   }
 
@@ -1604,13 +1601,6 @@ class FFAppState extends ChangeNotifier {
         : prefs.remove('ff_shiftDocRef');
   }
 
-  bool _tableSetting = false;
-  bool get tableSetting => _tableSetting;
-  set tableSetting(bool value) {
-    _tableSetting = value;
-    prefs.setBool('ff_tableSetting', value);
-  }
-
   bool _CustSetting = false;
   bool get CustSetting => _CustSetting;
   set CustSetting(bool value) {
@@ -1630,13 +1620,6 @@ class FFAppState extends ChangeNotifier {
   set rfidSetting(bool value) {
     _rfidSetting = value;
     prefs.setBool('ff_rfidSetting', value);
-  }
-
-  bool _salesmanSet = false;
-  bool get salesmanSet => _salesmanSet;
-  set salesmanSet(bool value) {
-    _salesmanSet = value;
-    prefs.setBool('ff_salesmanSet', value);
   }
 
   List<dynamic> _checkAppSetting = [];
@@ -1680,7 +1663,7 @@ class FFAppState extends ChangeNotifier {
         _checkAppSetting.map((x) => jsonEncode(x)).toList());
   }
 
-  bool _tableViewHideShow = false;
+  bool _tableViewHideShow = true;
   bool get tableViewHideShow => _tableViewHideShow;
   set tableViewHideShow(bool value) {
     _tableViewHideShow = value;
@@ -3663,6 +3646,13 @@ class FFAppState extends ChangeNotifier {
   set labelindex(int value) {
     _labelindex = value;
     prefs.setInt('ff_labelindex', value);
+  }
+
+  String _tableNo = '';
+  String get tableNo => _tableNo;
+  set tableNo(String value) {
+    _tableNo = value;
+    prefs.setString('ff_tableNo', value);
   }
 }
 

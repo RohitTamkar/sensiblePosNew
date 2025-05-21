@@ -273,11 +273,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: AppSettingNewWidget.routeName,
-              path: AppSettingNewWidget.routePath,
-              builder: (context, params) => AppSettingNewWidget(),
-            ),
-            FFRoute(
               name: LoadingScreenWidget.routeName,
               path: LoadingScreenWidget.routePath,
               asyncParams: {

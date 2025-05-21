@@ -5970,7 +5970,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         r'''$''',
                                                                       ),
                                                                       _model
-                                                                          .hiveInvoiceData!,
+                                                                          .invonlineprt!,
                                                                       FFAppState()
                                                                           .paperSize,
                                                                       productAndListlaundrybillingAppSettingsRecord!,
@@ -6009,7 +6009,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         r'''$''',
                                                                       ),
                                                                       _model
-                                                                          .hiveInvoiceData!,
+                                                                          .invonlineprt!,
                                                                       FFAppState()
                                                                           .paperSize,
                                                                       FFAppState()

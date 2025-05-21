@@ -50,8 +50,6 @@ export '/pages/barcode_printing/barcode_printing_widget.dart'
 export '/pages/update_product/update_product_widget.dart'
     show UpdateProductWidget;
 export '/pages/edit_customer/edit_customer_widget.dart' show EditCustomerWidget;
-export '/pages/app_setting_new/app_setting_new_widget.dart'
-    show AppSettingNewWidget;
 export '/pages/loading_screen/loading_screen_widget.dart'
     show LoadingScreenWidget;
 export '/pages/screens/digital_order/digital_order_widget.dart'

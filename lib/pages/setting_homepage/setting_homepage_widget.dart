@@ -361,10 +361,6 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                           context.pushNamed(
                                               AppSettingNewPosWidget.routeName);
                                         },
-                                        onLongPress: () async {
-                                          context.pushNamed(
-                                              AppSettingNewWidget.routeName);
-                                        },
                                         child: Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *

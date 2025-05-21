@@ -24,7 +24,7 @@ Future printKOTwithusbkioskhive(
   bool status,
   String statusName,
   dynamic outletDetails,
-  InvoiceStructStruct invoiceDetails,
+  InvoiceRecord invoiceDetails,
   String printerSize,
   AppSettingsRecord appSetting,
   String port,

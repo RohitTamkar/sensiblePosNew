@@ -25,6 +25,7 @@ class SelItemListStruct extends FFFirebaseStruct {
     double? disPer,
     String? ordertype,
     String? qtystring,
+    int? kotTime,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _name = name,
         _price = price,
@@ -41,6 +42,7 @@ class SelItemListStruct extends FFFirebaseStruct {
         _disPer = disPer,
         _ordertype = ordertype,
         _qtystring = qtystring,
+        _kotTime = kotTime,
         super(firestoreUtilData);
 
   // "name" field.
@@ -162,6 +164,15 @@ class SelItemListStruct extends FFFirebaseStruct {
 
   bool hasQtystring() => _qtystring != null;
 
+  // "kotTime" field.
+  int? _kotTime;
+  int get kotTime => _kotTime ?? 0;
+  set kotTime(int? val) => _kotTime = val;
+
+  void incrementKotTime(int amount) => kotTime = kotTime + amount;
+
+  bool hasKotTime() => _kotTime != null;
+
   static SelItemListStruct fromMap(Map<String, dynamic> data) =>
       SelItemListStruct(
         name: data['name'] as String?,
@@ -179,6 +190,7 @@ class SelItemListStruct extends FFFirebaseStruct {
         disPer: castToType<double>(data['disPer']),
         ordertype: data['ordertype'] as String?,
         qtystring: data['qtystring'] as String?,
+        kotTime: castToType<int>(data['kotTime']),
       );
 
   static SelItemListStruct? maybeFromMap(dynamic data) => data is Map
@@ -201,6 +213,7 @@ class SelItemListStruct extends FFFirebaseStruct {
         'disPer': _disPer,
         'ordertype': _ordertype,
         'qtystring': _qtystring,
+        'kotTime': _kotTime,
       }.withoutNulls;
 
   @override
@@ -264,6 +277,10 @@ class SelItemListStruct extends FFFirebaseStruct {
         'qtystring': serializeParam(
           _qtystring,
           ParamType.String,
+        ),
+        'kotTime': serializeParam(
+          _kotTime,
+          ParamType.int,
         ),
       }.withoutNulls;
 
@@ -344,6 +361,11 @@ class SelItemListStruct extends FFFirebaseStruct {
           ParamType.String,
           false,
         ),
+        kotTime: deserializeParam(
+          data['kotTime'],
+          ParamType.int,
+          false,
+        ),
       );
 
   @override
@@ -366,7 +388,8 @@ class SelItemListStruct extends FFFirebaseStruct {
         disAmt == other.disAmt &&
         disPer == other.disPer &&
         ordertype == other.ordertype &&
-        qtystring == other.qtystring;
+        qtystring == other.qtystring &&
+        kotTime == other.kotTime;
   }
 
   @override
@@ -385,7 +408,8 @@ class SelItemListStruct extends FFFirebaseStruct {
         disAmt,
         disPer,
         ordertype,
-        qtystring
+        qtystring,
+        kotTime
       ]);
 }
 
@@ -405,6 +429,7 @@ SelItemListStruct createSelItemListStruct({
   double? disPer,
   String? ordertype,
   String? qtystring,
+  int? kotTime,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -426,6 +451,7 @@ SelItemListStruct createSelItemListStruct({
       disPer: disPer,
       ordertype: ordertype,
       qtystring: qtystring,
+      kotTime: kotTime,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,

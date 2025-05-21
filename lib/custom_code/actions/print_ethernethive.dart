@@ -31,7 +31,7 @@ Future<void> printEthernethive(
   bool status,
   String statusName,
   dynamic outletDetails,
-  InvoiceStructStruct invoiceDetails,
+  InvoiceRecord invoiceDetails,
   String printerSize,
   String port,
   String? ipaddress,

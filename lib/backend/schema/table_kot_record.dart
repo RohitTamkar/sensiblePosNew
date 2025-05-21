@@ -21,31 +21,6 @@ class TableKotRecord extends FirestoreRecord {
   String get id => _id ?? '';
   bool hasId() => _id != null;
 
-  // "invoice" field.
-  String? _invoice;
-  String get invoice => _invoice ?? '';
-  bool hasInvoice() => _invoice != null;
-
-  // "party" field.
-  String? _party;
-  String get party => _party ?? '';
-  bool hasParty() => _party != null;
-
-  // "products" field.
-  String? _products;
-  String get products => _products ?? '';
-  bool hasProducts() => _products != null;
-
-  // "invoiceDate" field.
-  int? _invoiceDate;
-  int get invoiceDate => _invoiceDate ?? 0;
-  bool hasInvoiceDate() => _invoiceDate != null;
-
-  // "paymentMode" field.
-  String? _paymentMode;
-  String get paymentMode => _paymentMode ?? '';
-  bool hasPaymentMode() => _paymentMode != null;
-
   // "dayId" field.
   String? _dayId;
   String get dayId => _dayId ?? '';
@@ -96,45 +71,15 @@ class TableKotRecord extends FirestoreRecord {
   int get updatedDate => _updatedDate ?? 0;
   bool hasUpdatedDate() => _updatedDate != null;
 
-  // "roundOff" field.
-  double? _roundOff;
-  double get roundOff => _roundOff ?? 0.0;
-  bool hasRoundOff() => _roundOff != null;
-
-  // "updatedBy" field.
-  DocumentReference? _updatedBy;
-  DocumentReference? get updatedBy => _updatedBy;
-  bool hasUpdatedBy() => _updatedBy != null;
-
-  // "code" field.
-  int? _code;
-  int get code => _code ?? 0;
-  bool hasCode() => _code != null;
-
   // "productList" field.
   List<SelItemListStruct>? _productList;
   List<SelItemListStruct> get productList => _productList ?? const [];
   bool hasProductList() => _productList != null;
 
-  // "shiftId" field.
-  String? _shiftId;
-  String get shiftId => _shiftId ?? '';
-  bool hasShiftId() => _shiftId != null;
-
-  // "partyMobNo" field.
-  String? _partyMobNo;
-  String get partyMobNo => _partyMobNo ?? '';
-  bool hasPartyMobNo() => _partyMobNo != null;
-
   // "taxPer" field.
   double? _taxPer;
   double get taxPer => _taxPer ?? 0.0;
   bool hasTaxPer() => _taxPer != null;
-
-  // "vechicleNo" field.
-  String? _vechicleNo;
-  String get vechicleNo => _vechicleNo ?? '';
-  bool hasVechicleNo() => _vechicleNo != null;
 
   // "checkInTime" field.
   int? _checkInTime;
@@ -145,16 +90,6 @@ class TableKotRecord extends FirestoreRecord {
   int? _checkOutTime;
   int get checkOutTime => _checkOutTime ?? 0;
   bool hasCheckOutTime() => _checkOutTime != null;
-
-  // "advancePaid" field.
-  double? _advancePaid;
-  double get advancePaid => _advancePaid ?? 0.0;
-  bool hasAdvancePaid() => _advancePaid != null;
-
-  // "vechicleType" field.
-  String? _vechicleType;
-  String get vechicleType => _vechicleType ?? '';
-  bool hasVechicleType() => _vechicleType != null;
 
   // "count" field.
   int? _count;
@@ -186,15 +121,20 @@ class TableKotRecord extends FirestoreRecord {
   bool get isDeleted => _isDeleted ?? false;
   bool hasIsDeleted() => _isDeleted != null;
 
+  // "table" field.
+  String? _table;
+  String get table => _table ?? '';
+  bool hasTable() => _table != null;
+
+  // "settled" field.
+  bool? _settled;
+  bool get settled => _settled ?? false;
+  bool hasSettled() => _settled != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
     _id = snapshotData['id'] as String?;
-    _invoice = snapshotData['invoice'] as String?;
-    _party = snapshotData['party'] as String?;
-    _products = snapshotData['products'] as String?;
-    _invoiceDate = castToType<int>(snapshotData['invoiceDate']);
-    _paymentMode = snapshotData['paymentMode'] as String?;
     _dayId = snapshotData['dayId'] as String?;
     _discountAmt = castToType<double>(snapshotData['discountAmt']);
     _discountPer = castToType<double>(snapshotData['discountPer']);
@@ -205,27 +145,21 @@ class TableKotRecord extends FirestoreRecord {
     _createdBy = snapshotData['createdBy'] as DocumentReference?;
     _createdDate = castToType<int>(snapshotData['createdDate']);
     _updatedDate = castToType<int>(snapshotData['updatedDate']);
-    _roundOff = castToType<double>(snapshotData['roundOff']);
-    _updatedBy = snapshotData['updatedBy'] as DocumentReference?;
-    _code = castToType<int>(snapshotData['code']);
     _productList = getStructList(
       snapshotData['productList'],
       SelItemListStruct.fromMap,
     );
-    _shiftId = snapshotData['shiftId'] as String?;
-    _partyMobNo = snapshotData['partyMobNo'] as String?;
     _taxPer = castToType<double>(snapshotData['taxPer']);
-    _vechicleNo = snapshotData['vechicleNo'] as String?;
     _checkInTime = castToType<int>(snapshotData['checkInTime']);
     _checkOutTime = castToType<int>(snapshotData['checkOutTime']);
-    _advancePaid = castToType<double>(snapshotData['advancePaid']);
-    _vechicleType = snapshotData['vechicleType'] as String?;
     _count = castToType<int>(snapshotData['count']);
     _duration = castToType<double>(snapshotData['duration']);
     _orderType = snapshotData['orderType'] as String?;
     _kotStatus = snapshotData['kotStatus'] as String?;
     _source = snapshotData['source'] as String?;
     _isDeleted = snapshotData['isDeleted'] as bool?;
+    _table = snapshotData['table'] as String?;
+    _settled = snapshotData['settled'] as bool?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -269,11 +203,6 @@ class TableKotRecord extends FirestoreRecord {
 
 Map<String, dynamic> createTableKotRecordData({
   String? id,
-  String? invoice,
-  String? party,
-  String? products,
-  int? invoiceDate,
-  String? paymentMode,
   String? dayId,
   double? discountAmt,
   double? discountPer,
@@ -284,32 +213,21 @@ Map<String, dynamic> createTableKotRecordData({
   DocumentReference? createdBy,
   int? createdDate,
   int? updatedDate,
-  double? roundOff,
-  DocumentReference? updatedBy,
-  int? code,
-  String? shiftId,
-  String? partyMobNo,
   double? taxPer,
-  String? vechicleNo,
   int? checkInTime,
   int? checkOutTime,
-  double? advancePaid,
-  String? vechicleType,
   int? count,
   double? duration,
   String? orderType,
   String? kotStatus,
   String? source,
   bool? isDeleted,
+  String? table,
+  bool? settled,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'id': id,
-      'invoice': invoice,
-      'party': party,
-      'products': products,
-      'invoiceDate': invoiceDate,
-      'paymentMode': paymentMode,
       'dayId': dayId,
       'discountAmt': discountAmt,
       'discountPer': discountPer,
@@ -320,23 +238,17 @@ Map<String, dynamic> createTableKotRecordData({
       'createdBy': createdBy,
       'createdDate': createdDate,
       'updatedDate': updatedDate,
-      'roundOff': roundOff,
-      'updatedBy': updatedBy,
-      'code': code,
-      'shiftId': shiftId,
-      'partyMobNo': partyMobNo,
       'taxPer': taxPer,
-      'vechicleNo': vechicleNo,
       'checkInTime': checkInTime,
       'checkOutTime': checkOutTime,
-      'advancePaid': advancePaid,
-      'vechicleType': vechicleType,
       'count': count,
       'duration': duration,
       'orderType': orderType,
       'kotStatus': kotStatus,
       'source': source,
       'isDeleted': isDeleted,
+      'table': table,
+      'settled': settled,
     }.withoutNulls,
   );
 
@@ -350,11 +262,6 @@ class TableKotRecordDocumentEquality implements Equality<TableKotRecord> {
   bool equals(TableKotRecord? e1, TableKotRecord? e2) {
     const listEquality = ListEquality();
     return e1?.id == e2?.id &&
-        e1?.invoice == e2?.invoice &&
-        e1?.party == e2?.party &&
-        e1?.products == e2?.products &&
-        e1?.invoiceDate == e2?.invoiceDate &&
-        e1?.paymentMode == e2?.paymentMode &&
         e1?.dayId == e2?.dayId &&
         e1?.discountAmt == e2?.discountAmt &&
         e1?.discountPer == e2?.discountPer &&
@@ -365,34 +272,23 @@ class TableKotRecordDocumentEquality implements Equality<TableKotRecord> {
         e1?.createdBy == e2?.createdBy &&
         e1?.createdDate == e2?.createdDate &&
         e1?.updatedDate == e2?.updatedDate &&
-        e1?.roundOff == e2?.roundOff &&
-        e1?.updatedBy == e2?.updatedBy &&
-        e1?.code == e2?.code &&
         listEquality.equals(e1?.productList, e2?.productList) &&
-        e1?.shiftId == e2?.shiftId &&
-        e1?.partyMobNo == e2?.partyMobNo &&
         e1?.taxPer == e2?.taxPer &&
-        e1?.vechicleNo == e2?.vechicleNo &&
         e1?.checkInTime == e2?.checkInTime &&
         e1?.checkOutTime == e2?.checkOutTime &&
-        e1?.advancePaid == e2?.advancePaid &&
-        e1?.vechicleType == e2?.vechicleType &&
         e1?.count == e2?.count &&
         e1?.duration == e2?.duration &&
         e1?.orderType == e2?.orderType &&
         e1?.kotStatus == e2?.kotStatus &&
         e1?.source == e2?.source &&
-        e1?.isDeleted == e2?.isDeleted;
+        e1?.isDeleted == e2?.isDeleted &&
+        e1?.table == e2?.table &&
+        e1?.settled == e2?.settled;
   }
 
   @override
   int hash(TableKotRecord? e) => const ListEquality().hash([
         e?.id,
-        e?.invoice,
-        e?.party,
-        e?.products,
-        e?.invoiceDate,
-        e?.paymentMode,
         e?.dayId,
         e?.discountAmt,
         e?.discountPer,
@@ -403,24 +299,18 @@ class TableKotRecordDocumentEquality implements Equality<TableKotRecord> {
         e?.createdBy,
         e?.createdDate,
         e?.updatedDate,
-        e?.roundOff,
-        e?.updatedBy,
-        e?.code,
         e?.productList,
-        e?.shiftId,
-        e?.partyMobNo,
         e?.taxPer,
-        e?.vechicleNo,
         e?.checkInTime,
         e?.checkOutTime,
-        e?.advancePaid,
-        e?.vechicleType,
         e?.count,
         e?.duration,
         e?.orderType,
         e?.kotStatus,
         e?.source,
-        e?.isDeleted
+        e?.isDeleted,
+        e?.table,
+        e?.settled
       ]);
 
   @override
