@@ -84,7 +84,6 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                     r'''$.typeName''',
                   ).toString(),
                 ),
-                singleRecord: true,
               ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
@@ -102,10 +101,6 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                 }
                 List<TableKotRecord> containerTableKotRecordList =
                     snapshot.data!;
-                final containerTableKotRecord =
-                    containerTableKotRecordList.isNotEmpty
-                        ? containerTableKotRecordList.first
-                        : null;
 
                 return ClipRRect(
                   borderRadius: BorderRadius.circular(15.0),
@@ -114,7 +109,16 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                     height: 100.0,
                     decoration: BoxDecoration(
                       color: valueOrDefault<Color>(
-                        (containerTableKotRecord?.tableNo ==
+                        (containerTableKotRecordList
+                                        .where((e) =>
+                                            e.tableNo ==
+                                            getJsonField(
+                                              tablelistItem,
+                                              r'''$.typeName''',
+                                            ).toString())
+                                        .toList()
+                                        .firstOrNull
+                                        ?.tableNo ==
                                     valueOrDefault<String>(
                                       getJsonField(
                                         tablelistItem,
@@ -122,8 +126,17 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                       )?.toString(),
                                       '0',
                                     )) &&
-                                (widget!.parameter3 ==
-                                    containerTableKotRecord?.premiseName)
+                                (containerTableKotRecordList
+                                        .where((e) =>
+                                            e.tableNo ==
+                                            getJsonField(
+                                              tablelistItem,
+                                              r'''$.typeName''',
+                                            ).toString())
+                                        .toList()
+                                        .firstOrNull
+                                        ?.premiseName ==
+                                    widget!.parameter3)
                             ? FlutterFlowTheme.of(context).tertiary
                             : Color(0xFFFFE69E),
                         Color(0xFFFFE69E),
