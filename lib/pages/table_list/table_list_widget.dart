@@ -3375,180 +3375,201 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                   MainAxisAlignment
                                                                       .center,
                                                               children: [
-                                                                if (tableListAppSettingsRecord
-                                                                        ?.couponSaveBill ??
-                                                                    true)
-                                                                  Expanded(
-                                                                    flex: 8,
+                                                                Expanded(
+                                                                  flex: 8,
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            1.0,
+                                                                            0.0),
                                                                     child:
-                                                                        Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          1.0,
-                                                                          0.0),
+                                                                        InkWell(
+                                                                      splashColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      focusColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      hoverColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      highlightColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      onTap:
+                                                                          () async {
+                                                                        if (animationsMap['containerOnActionTriggerAnimation6'] !=
+                                                                            null) {
+                                                                          safeSetState(() =>
+                                                                              hasContainerTriggered6 = true);
+                                                                          SchedulerBinding
+                                                                              .instance
+                                                                              .addPostFrameCallback((_) async => await animationsMap['containerOnActionTriggerAnimation6']!.controller.forward(from: 0.0));
+                                                                        }
+                                                                      },
                                                                       child:
-                                                                          InkWell(
-                                                                        splashColor:
-                                                                            Colors.transparent,
-                                                                        focusColor:
-                                                                            Colors.transparent,
-                                                                        hoverColor:
-                                                                            Colors.transparent,
-                                                                        highlightColor:
-                                                                            Colors.transparent,
-                                                                        onTap:
-                                                                            () async {
-                                                                          if (animationsMap['containerOnActionTriggerAnimation6'] !=
-                                                                              null) {
-                                                                            safeSetState(() =>
-                                                                                hasContainerTriggered6 = true);
-                                                                            SchedulerBinding.instance.addPostFrameCallback((_) async =>
-                                                                                await animationsMap['containerOnActionTriggerAnimation6']!.controller.forward(from: 0.0));
-                                                                          }
-                                                                        },
+                                                                          Container(
+                                                                        width: MediaQuery.sizeOf(context).width *
+                                                                            0.15,
+                                                                        height: MediaQuery.sizeOf(context).height *
+                                                                            0.085,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                        ),
                                                                         child:
-                                                                            Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.15,
-                                                                          height:
-                                                                              MediaQuery.sizeOf(context).height * 0.085,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                          ),
-                                                                          child:
-                                                                              FFButtonWidget(
-                                                                            onPressed:
-                                                                                () async {
-                                                                              var _shouldSetState = false;
-                                                                              if (functions.filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList()).length > 0) {
-                                                                                _model.prdlistsavebillkot = await actions.filterProducts2(
-                                                                                  FFAppState().selBill,
-                                                                                  FFAppState().allBillsList.toList(),
-                                                                                );
-                                                                                _shouldSetState = true;
-                                                                                _model.internetconkot = await actions.checkInternetConnection();
-                                                                                _shouldSetState = true;
-                                                                                if (_model.internetconkot!) {
-                                                                                  var tableKotRecordReference = TableKotRecord.createDoc(FFAppState().outletIdRef!);
-                                                                                  await tableKotRecordReference.set({
-                                                                                    ...createTableKotRecordData(
-                                                                                      dayId: functions.getDayId(),
-                                                                                      createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
-                                                                                      checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
-                                                                                      orderType: 'TABLE_KOT',
-                                                                                      kotStatus: 'Pending',
-                                                                                      tableNo: FFAppState().tableNo,
-                                                                                      premiseName: FFAppState().selectedPremise,
-                                                                                    ),
-                                                                                    ...mapToFirestore(
-                                                                                      {
-                                                                                        'productList': getSelItemListListFirestoreData(
-                                                                                          _model.prdlistsavebillkot,
-                                                                                        ),
-                                                                                      },
-                                                                                    ),
-                                                                                  });
-                                                                                  _model.kotCopy = TableKotRecord.getDocumentFromData({
-                                                                                    ...createTableKotRecordData(
-                                                                                      dayId: functions.getDayId(),
-                                                                                      createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
-                                                                                      checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
-                                                                                      orderType: 'TABLE_KOT',
-                                                                                      kotStatus: 'Pending',
-                                                                                      tableNo: FFAppState().tableNo,
-                                                                                      premiseName: FFAppState().selectedPremise,
-                                                                                    ),
-                                                                                    ...mapToFirestore(
-                                                                                      {
-                                                                                        'productList': getSelItemListListFirestoreData(
-                                                                                          _model.prdlistsavebillkot,
-                                                                                        ),
-                                                                                      },
-                                                                                    ),
-                                                                                  }, tableKotRecordReference);
-                                                                                  _shouldSetState = true;
-
-                                                                                  await _model.kotCopy!.reference.update(createTableKotRecordData(
-                                                                                    id: _model.kotCopy?.reference.id,
-                                                                                  ));
-                                                                                } else {
-                                                                                  await showDialog(
-                                                                                    context: context,
-                                                                                    builder: (alertDialogContext) {
-                                                                                      return AlertDialog(
-                                                                                        content: Text('Internet Not Available'),
-                                                                                        actions: [
-                                                                                          TextButton(
-                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                            child: Text('Ok'),
-                                                                                          ),
-                                                                                        ],
-                                                                                      );
+                                                                            FFButtonWidget(
+                                                                          onPressed:
+                                                                              () async {
+                                                                            var _shouldSetState =
+                                                                                false;
+                                                                            if (functions.filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList()).length >
+                                                                                0) {
+                                                                              _model.prdlistsavebillkot = await actions.filterProducts2(
+                                                                                FFAppState().selBill,
+                                                                                FFAppState().allBillsList.toList(),
+                                                                              );
+                                                                              _shouldSetState = true;
+                                                                              _model.internetconkot = await actions.checkInternetConnection();
+                                                                              _shouldSetState = true;
+                                                                              if (_model.internetconkot!) {
+                                                                                var tableKotRecordReference = TableKotRecord.createDoc(FFAppState().outletIdRef!);
+                                                                                await tableKotRecordReference.set({
+                                                                                  ...createTableKotRecordData(
+                                                                                    dayId: functions.getDayId(),
+                                                                                    createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                                    checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                                    orderType: 'TABLE_KOT',
+                                                                                    kotStatus: 'Pending',
+                                                                                    tableNo: FFAppState().tableNo,
+                                                                                    premiseName: FFAppState().selectedPremise,
+                                                                                  ),
+                                                                                  ...mapToFirestore(
+                                                                                    {
+                                                                                      'productList': getSelItemListListFirestoreData(
+                                                                                        _model.prdlistsavebillkot,
+                                                                                      ),
                                                                                     },
-                                                                                  );
-                                                                                  if (_shouldSetState) safeSetState(() {});
-                                                                                  return;
-                                                                                }
-
-                                                                                await actions.removeFromAllBillList(
-                                                                                  FFAppState().selBill,
-                                                                                );
-                                                                                safeSetState(() {
-                                                                                  _model.dropDownValueController?.value = 'CASH';
+                                                                                  ),
                                                                                 });
-                                                                                _model.prdid = null;
-                                                                                safeSetState(() {});
-                                                                                await actions.clearValue();
-                                                                                FFAppState().noOfItems = 0;
-                                                                                FFAppState().subTotal = 0.0;
-                                                                                FFAppState().delCharges = 0.0;
-                                                                                FFAppState().update(() {});
-                                                                                FFAppState().prdid = '';
-                                                                                FFAppState().update(() {});
-                                                                                FFAppState().finalAmt = 0.0;
-                                                                                FFAppState().billAmt = 0.0;
-                                                                                FFAppState().tableViewHideShow = true;
-                                                                                FFAppState().update(() {});
-                                                                                if (_shouldSetState) safeSetState(() {});
-                                                                                return;
+                                                                                _model.kotCopy = TableKotRecord.getDocumentFromData({
+                                                                                  ...createTableKotRecordData(
+                                                                                    dayId: functions.getDayId(),
+                                                                                    createdDate: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                                    checkInTime: getCurrentTimestamp.millisecondsSinceEpoch,
+                                                                                    orderType: 'TABLE_KOT',
+                                                                                    kotStatus: 'Pending',
+                                                                                    tableNo: FFAppState().tableNo,
+                                                                                    premiseName: FFAppState().selectedPremise,
+                                                                                  ),
+                                                                                  ...mapToFirestore(
+                                                                                    {
+                                                                                      'productList': getSelItemListListFirestoreData(
+                                                                                        _model.prdlistsavebillkot,
+                                                                                      ),
+                                                                                    },
+                                                                                  ),
+                                                                                }, tableKotRecordReference);
+                                                                                _shouldSetState = true;
+
+                                                                                await _model.kotCopy!.reference.update(createTableKotRecordData(
+                                                                                  id: _model.kotCopy?.reference.id,
+                                                                                ));
                                                                               } else {
+                                                                                await showDialog(
+                                                                                  context: context,
+                                                                                  builder: (alertDialogContext) {
+                                                                                    return AlertDialog(
+                                                                                      content: Text('Internet Not Available'),
+                                                                                      actions: [
+                                                                                        TextButton(
+                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                          child: Text('Ok'),
+                                                                                        ),
+                                                                                      ],
+                                                                                    );
+                                                                                  },
+                                                                                );
                                                                                 if (_shouldSetState) safeSetState(() {});
                                                                                 return;
                                                                               }
 
+                                                                              await actions.removeFromAllBillList(
+                                                                                FFAppState().selBill,
+                                                                              );
+                                                                              safeSetState(() {
+                                                                                _model.dropDownValueController?.value = 'CASH';
+                                                                              });
+                                                                              _model.prdid = null;
+                                                                              safeSetState(() {});
+                                                                              await actions.clearValue();
+                                                                              FFAppState().noOfItems = 0;
+                                                                              FFAppState().subTotal = 0.0;
+                                                                              FFAppState().delCharges = 0.0;
+                                                                              FFAppState().update(() {});
+                                                                              FFAppState().prdid = '';
+                                                                              FFAppState().update(() {});
+                                                                              FFAppState().finalAmt = 0.0;
+                                                                              FFAppState().billAmt = 0.0;
+                                                                              FFAppState().tableViewHideShow = true;
+                                                                              FFAppState().update(() {});
                                                                               if (_shouldSetState)
                                                                                 safeSetState(() {});
-                                                                            },
-                                                                            text:
-                                                                                FFLocalizations.of(context).getText(
-                                                                              'qv96tsse' /* Save Kot */,
-                                                                            ),
-                                                                            options:
-                                                                                FFButtonOptions(
-                                                                              height: 40.0,
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    color: Colors.white,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.w600,
-                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
-                                                                                  ),
-                                                                              elevation: 0.0,
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                            ),
+                                                                              return;
+                                                                            } else {
+                                                                              if (_shouldSetState)
+                                                                                safeSetState(() {});
+                                                                              return;
+                                                                            }
+
+                                                                            if (_shouldSetState)
+                                                                              safeSetState(() {});
+                                                                          },
+                                                                          text:
+                                                                              FFLocalizations.of(context).getText(
+                                                                            'qv96tsse' /* Save Kot */,
+                                                                          ),
+                                                                          options:
+                                                                              FFButtonOptions(
+                                                                            height:
+                                                                                40.0,
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                16.0,
+                                                                                0.0,
+                                                                                16.0,
+                                                                                0.0),
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                  color: Colors.white,
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FontWeight.w600,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                                ),
+                                                                            elevation:
+                                                                                0.0,
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
                                                                         ),
-                                                                      ).animateOnActionTrigger(
-                                                                              animationsMap['containerOnActionTriggerAnimation6']!,
-                                                                              hasBeenTriggered: hasContainerTriggered6),
-                                                                    ),
+                                                                      ),
+                                                                    ).animateOnActionTrigger(
+                                                                            animationsMap[
+                                                                                'containerOnActionTriggerAnimation6']!,
+                                                                            hasBeenTriggered:
+                                                                                hasContainerTriggered6),
                                                                   ),
+                                                                ),
                                                                 Expanded(
                                                                   flex: 8,
                                                                   child:

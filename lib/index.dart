@@ -204,3 +204,5 @@ export '/pages/report_screen/today_stock_out_windows/today_stock_out_windows_wid
     show TodayStockOutWindowsWidget;
 export '/pages/product_and_list_stockout/product_and_list_stockout_widget.dart'
     show ProductAndListStockoutWidget;
+export '/grocery_windows/barcode_print_new/barcode_print_new_widget.dart'
+    show BarcodePrintNewWidget;

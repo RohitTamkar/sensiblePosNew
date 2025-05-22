@@ -535,23 +535,20 @@ dynamic generatePremiseTables(
   List<dynamic> list1 = [];
   List<dynamic> list2 = [];
   List<dynamic> returnData = [];
-  //int len = doc.length;
-  //for (int j = 0; j < len; j++) {
+
   int noOfTables = doc.tables!;
   for (int i = 1; i <= noOfTables; i++) {
     var typeName = doc.type! + " $i";
-    list1.add({"typeName": typeName});
+    var id = "${doc.name} $typeName"; // e.g., "AC TABLE 1"
+    list1.add({"typeName": typeName, "id": id});
   }
-  list2.add({"premise": doc.name, "type": list1});
-  // }
 
-  print(list2);
+  list2.add({"premise": doc.name, "type": list1});
+
   for (int x = 0; x < list2.length; x++) {
     if (list2[x]["premise"] == selectedPremise!) {
       returnData.add(list2[x]);
       break;
-    } else {
-      // returnData.add(list2[0]);
     }
   }
 

@@ -2,6 +2,7 @@ export 'qr_code.dart' show QrCode;
 export 'searchcustomer.dart' show Searchcustomer;
 export 'open_w_i_f_i_setting.dart' show OpenWIFISetting;
 export 'pos_printing.dart' show PosPrinting;
+export 'search_hiveprdbarcode.dart' show SearchHiveprdbarcode;
 export 'pos_printing_copy.dart' show PosPrintingCopy;
 export 'progress_bar.dart' show ProgressBar;
 export 'cust_widget.dart' show CustWidget;
