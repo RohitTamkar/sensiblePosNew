@@ -1528,37 +1528,26 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                 },
                                               ),
                                             ),
-                                            InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onLongPress: () async {
-                                                await actions
-                                                    .enabledualDisplayAndroid();
-                                              },
-                                              child: FlutterFlowIconButton(
-                                                borderColor:
+                                            FlutterFlowIconButton(
+                                              borderColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              borderRadius: 10.0,
+                                              borderWidth: 1.0,
+                                              buttonSize: 40.0,
+                                              icon: Icon(
+                                                Icons.keyboard_alt,
+                                                color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                borderRadius: 10.0,
-                                                borderWidth: 1.0,
-                                                buttonSize: 40.0,
-                                                icon: Icon(
-                                                  Icons.keyboard_alt,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  size: 20.0,
-                                                ),
-                                                onPressed: () async {
-                                                  FFAppState().show =
-                                                      functions.toggleLogin(
-                                                          FFAppState().show);
-                                                  safeSetState(() {});
-                                                },
+                                                size: 20.0,
                                               ),
+                                              onPressed: () async {
+                                                FFAppState().show =
+                                                    functions.toggleLogin(
+                                                        FFAppState().show);
+                                                safeSetState(() {});
+                                              },
                                             ),
                                             InkWell(
                                               splashColor: Colors.transparent,

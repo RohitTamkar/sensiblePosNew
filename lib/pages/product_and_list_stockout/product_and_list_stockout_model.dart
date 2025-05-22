@@ -137,16 +137,6 @@ class ProductAndListStockoutModel
   double? ddddd;
   // Stores action output result for [Custom Action - calBillAmt] action in Icon widget.
   double? reuslt22;
-  // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
-  List<SelItemListStruct>? prdlistsavebillupi;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  ProductRecord? stockupdateprdCopy;
-  // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
-  ProductStructStruct? itemprdCopy;
-  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
-  ProductStructStruct? productupdatedCopy;
-  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
-  List<ProductStructStruct>? newupdatedproductlist2Copy;
 
   @override
   void initState(BuildContext context) {
