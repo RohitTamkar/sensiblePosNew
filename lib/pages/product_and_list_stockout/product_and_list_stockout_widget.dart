@@ -3023,315 +3023,316 @@ class _ProductAndListStockoutWidgetState
                                                                       .of(context)
                                                                   .primary,
                                                             ),
-                                                            child:
-                                                                FFButtonWidget(
-                                                              onPressed:
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onLongPress:
                                                                   () async {
-                                                                var _shouldSetState =
-                                                                    false;
-                                                                if (functions
-                                                                        .filterBillList(
-                                                                            FFAppState().selBill,
-                                                                            FFAppState().allBillsList.toList())
-                                                                        .length >
-                                                                    0) {
-                                                                  _model.prdlistsavebillupi =
-                                                                      await actions
-                                                                          .filterProducts2(
-                                                                    FFAppState()
-                                                                        .selBill,
-                                                                    FFAppState()
-                                                                        .allBillsList
-                                                                        .toList(),
-                                                                  );
-                                                                  _shouldSetState =
-                                                                      true;
-                                                                  if (getJsonField(
-                                                                    FFAppState()
-                                                                        .shiftDetailsJson,
-                                                                    r'''$.shiftExists''',
-                                                                  )) {
-                                                                    if (productAndListStockoutAppSettingsRecord!
-                                                                        .settingList
-                                                                        .where((e) =>
-                                                                            e.title ==
-                                                                            'enableStock')
-                                                                        .toList()
-                                                                        .firstOrNull!
-                                                                        .value) {
+                                                                await actions
+                                                                    .saveStockOut(
+                                                                  context,
+                                                                  productAndListStockoutAppSettingsRecord!,
+                                                                  '',
+                                                                );
+                                                              },
+                                                              child:
+                                                                  FFButtonWidget(
+                                                                onPressed:
+                                                                    () async {
+                                                                  var _shouldSetState =
+                                                                      false;
+                                                                  if (functions
+                                                                          .filterBillList(
+                                                                              FFAppState().selBill,
+                                                                              FFAppState().allBillsList.toList())
+                                                                          .length >
+                                                                      0) {
+                                                                    _model.prdlistsavebillupi =
+                                                                        await actions
+                                                                            .filterProducts2(
                                                                       FFAppState()
-                                                                          .startLoop = 0;
-                                                                      safeSetState(
-                                                                          () {});
-                                                                      while (FFAppState()
-                                                                              .startLoop <
-                                                                          _model
-                                                                              .prdlistsavebillupi!
-                                                                              .length) {
-                                                                        _model.stockupdateprdCopy =
-                                                                            await queryProductRecordOnce(
-                                                                          parent:
-                                                                              FFAppState().outletIdRef,
-                                                                          queryBuilder: (productRecord) => productRecord
-                                                                              .where(
-                                                                                'id',
-                                                                                isEqualTo: (_model.prdlistsavebillupi?.elementAtOrNull(FFAppState().startLoop))?.id,
-                                                                              )
-                                                                              .where(
-                                                                                'stockable',
-                                                                                isEqualTo: true,
+                                                                          .selBill,
+                                                                      FFAppState()
+                                                                          .allBillsList
+                                                                          .toList(),
+                                                                    );
+                                                                    _shouldSetState =
+                                                                        true;
+                                                                    if (getJsonField(
+                                                                      FFAppState()
+                                                                          .shiftDetailsJson,
+                                                                      r'''$.shiftExists''',
+                                                                    )) {
+                                                                      if (productAndListStockoutAppSettingsRecord!
+                                                                          .settingList
+                                                                          .where((e) =>
+                                                                              e.title ==
+                                                                              'enableStock')
+                                                                          .toList()
+                                                                          .firstOrNull!
+                                                                          .value) {
+                                                                        FFAppState()
+                                                                            .startLoop = 0;
+                                                                        safeSetState(
+                                                                            () {});
+                                                                        while (FFAppState().startLoop <
+                                                                            _model.prdlistsavebillupi!.length) {
+                                                                          _model.stockupdateprdCopy =
+                                                                              await queryProductRecordOnce(
+                                                                            parent:
+                                                                                FFAppState().outletIdRef,
+                                                                            queryBuilder: (productRecord) => productRecord
+                                                                                .where(
+                                                                                  'id',
+                                                                                  isEqualTo: (_model.prdlistsavebillupi?.elementAtOrNull(FFAppState().startLoop))?.id,
+                                                                                )
+                                                                                .where(
+                                                                                  'stockable',
+                                                                                  isEqualTo: true,
+                                                                                ),
+                                                                            singleRecord:
+                                                                                true,
+                                                                          ).then((s) => s.firstOrNull);
+                                                                          _shouldSetState =
+                                                                              true;
+                                                                          if (_model.stockupdateprdCopy !=
+                                                                              null) {
+                                                                            await _model.stockupdateprdCopy!.reference.update({
+                                                                              ...mapToFirestore(
+                                                                                {
+                                                                                  'currentStock': FieldValue.increment(-(functions.doubleToInt((_model.prdlistsavebillupi?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)),
+                                                                                },
                                                                               ),
-                                                                          singleRecord:
-                                                                              true,
-                                                                        ).then((s) =>
-                                                                                s.firstOrNull);
-                                                                        _shouldSetState =
-                                                                            true;
-                                                                        if (_model.stockupdateprdCopy !=
-                                                                            null) {
-                                                                          await _model
-                                                                              .stockupdateprdCopy!
-                                                                              .reference
-                                                                              .update({
-                                                                            ...mapToFirestore(
-                                                                              {
-                                                                                'currentStock': FieldValue.increment(-(functions.doubleToInt((_model.prdlistsavebillupi?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)),
-                                                                              },
-                                                                            ),
-                                                                          });
-                                                                          _model.itemprdCopy =
-                                                                              await actions.hivegetproductbyId(
-                                                                            _model.stockupdateprdCopy?.reference.id,
-                                                                            _model.prdlistsavebillupi?.elementAtOrNull(FFAppState().startLoop),
-                                                                            'get',
-                                                                          );
-                                                                          _shouldSetState =
-                                                                              true;
-                                                                          FFAppState()
-                                                                              .updateProductHiveputStruct(
-                                                                            (e) => e
-                                                                              ..id = _model.itemprdCopy?.id
-                                                                              ..price = _model.itemprdCopy?.price
-                                                                              ..category = _model.itemprdCopy?.category
-                                                                              ..code = _model.itemprdCopy?.code
-                                                                              ..name = _model.itemprdCopy?.name
-                                                                              ..sellingPrice = _model.itemprdCopy?.sellingPrice
-                                                                              ..mrpPrice = _model.itemprdCopy?.mrpPrice
-                                                                              ..purchasePrice = _model.itemprdCopy?.purchasePrice
-                                                                              ..categoryId = _model.itemprdCopy?.categoryId
-                                                                              ..taxId = _model.itemprdCopy?.taxId
-                                                                              ..unitId = _model.itemprdCopy?.unitId
-                                                                              ..regionalName = _model.itemprdCopy?.regionalName
-                                                                              ..barcode = _model.itemprdCopy?.barcode
-                                                                              ..hsncode = _model.itemprdCopy?.hsncode
-                                                                              ..reorderLevel = _model.itemprdCopy?.reorderLevel
-                                                                              ..searchcode = _model.itemprdCopy?.searchcode
-                                                                              ..shortName = _model.itemprdCopy?.shortName
-                                                                              ..weightable = _model.itemprdCopy?.weightable
-                                                                              ..stockable = _model.itemprdCopy?.stockable
-                                                                              ..discountPer = _model.itemprdCopy?.discountPer
-                                                                              ..discountAmt = _model.itemprdCopy?.discountAmt
-                                                                              ..productMasterId = _model.itemprdCopy?.productMasterId
-                                                                              ..recipeRefId = _model.itemprdCopy?.recipeRefId
-                                                                              ..imageUrl = _model.itemprdCopy?.imageUrl
-                                                                              ..serviceOutletId = _model.itemprdCopy?.serviceOutletId
-                                                                              ..type = _model.itemprdCopy?.type
-                                                                              ..recipeId = _model.itemprdCopy?.recipeId
-                                                                              ..stock = _model.itemprdCopy!.stock - (functions.doubleToInt((_model.prdlistsavebillupi?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)
-                                                                              ..isDeleted = _model.itemprdCopy?.isDeleted
-                                                                              ..keywords = _model.itemprdCopy!.keywords.toList()
-                                                                              ..synC = _model.itemprdCopy?.synC
-                                                                              ..hivekey = _model.itemprdCopy?.hivekey
-                                                                              ..version = _model.itemprdCopy?.version,
-                                                                          );
-                                                                          safeSetState(
-                                                                              () {});
-                                                                          _model.productupdatedCopy =
-                                                                              await actions.hiveProductCrud(
-                                                                            FFAppState().productHiveput.hivekey,
-                                                                            FFAppState().productHiveput,
-                                                                            'update',
-                                                                          );
-                                                                          _shouldSetState =
-                                                                              true;
-                                                                          FFAppState().productHive =
-                                                                              [];
-                                                                          FFAppState().productHiveput =
-                                                                              ProductStructStruct();
-                                                                          safeSetState(
-                                                                              () {});
-                                                                          _model.newupdatedproductlist2Copy =
-                                                                              await actions.getProductlistHive();
-                                                                          _shouldSetState =
-                                                                              true;
-                                                                          FFAppState().productHive = _model
-                                                                              .newupdatedproductlist2Copy!
-                                                                              .toList()
-                                                                              .cast<ProductStructStruct>();
+                                                                            });
+                                                                            _model.itemprdCopy =
+                                                                                await actions.hivegetproductbyId(
+                                                                              _model.stockupdateprdCopy?.reference.id,
+                                                                              _model.prdlistsavebillupi?.elementAtOrNull(FFAppState().startLoop),
+                                                                              'get',
+                                                                            );
+                                                                            _shouldSetState =
+                                                                                true;
+                                                                            FFAppState().updateProductHiveputStruct(
+                                                                              (e) => e
+                                                                                ..id = _model.itemprdCopy?.id
+                                                                                ..price = _model.itemprdCopy?.price
+                                                                                ..category = _model.itemprdCopy?.category
+                                                                                ..code = _model.itemprdCopy?.code
+                                                                                ..name = _model.itemprdCopy?.name
+                                                                                ..sellingPrice = _model.itemprdCopy?.sellingPrice
+                                                                                ..mrpPrice = _model.itemprdCopy?.mrpPrice
+                                                                                ..purchasePrice = _model.itemprdCopy?.purchasePrice
+                                                                                ..categoryId = _model.itemprdCopy?.categoryId
+                                                                                ..taxId = _model.itemprdCopy?.taxId
+                                                                                ..unitId = _model.itemprdCopy?.unitId
+                                                                                ..regionalName = _model.itemprdCopy?.regionalName
+                                                                                ..barcode = _model.itemprdCopy?.barcode
+                                                                                ..hsncode = _model.itemprdCopy?.hsncode
+                                                                                ..reorderLevel = _model.itemprdCopy?.reorderLevel
+                                                                                ..searchcode = _model.itemprdCopy?.searchcode
+                                                                                ..shortName = _model.itemprdCopy?.shortName
+                                                                                ..weightable = _model.itemprdCopy?.weightable
+                                                                                ..stockable = _model.itemprdCopy?.stockable
+                                                                                ..discountPer = _model.itemprdCopy?.discountPer
+                                                                                ..discountAmt = _model.itemprdCopy?.discountAmt
+                                                                                ..productMasterId = _model.itemprdCopy?.productMasterId
+                                                                                ..recipeRefId = _model.itemprdCopy?.recipeRefId
+                                                                                ..imageUrl = _model.itemprdCopy?.imageUrl
+                                                                                ..serviceOutletId = _model.itemprdCopy?.serviceOutletId
+                                                                                ..type = _model.itemprdCopy?.type
+                                                                                ..recipeId = _model.itemprdCopy?.recipeId
+                                                                                ..stock = _model.itemprdCopy!.stock - (functions.doubleToInt((_model.prdlistsavebillupi?.elementAtOrNull(FFAppState().startLoop))?.quantity)!)
+                                                                                ..isDeleted = _model.itemprdCopy?.isDeleted
+                                                                                ..keywords = _model.itemprdCopy!.keywords.toList()
+                                                                                ..synC = _model.itemprdCopy?.synC
+                                                                                ..hivekey = _model.itemprdCopy?.hivekey
+                                                                                ..version = _model.itemprdCopy?.version,
+                                                                            );
+                                                                            safeSetState(() {});
+                                                                            _model.productupdatedCopy =
+                                                                                await actions.hiveProductCrud(
+                                                                              FFAppState().productHiveput.hivekey,
+                                                                              FFAppState().productHiveput,
+                                                                              'update',
+                                                                            );
+                                                                            _shouldSetState =
+                                                                                true;
+                                                                            FFAppState().productHive =
+                                                                                [];
+                                                                            FFAppState().productHiveput =
+                                                                                ProductStructStruct();
+                                                                            safeSetState(() {});
+                                                                            _model.newupdatedproductlist2Copy =
+                                                                                await actions.getProductlistHive();
+                                                                            _shouldSetState =
+                                                                                true;
+                                                                            FFAppState().productHive =
+                                                                                _model.newupdatedproductlist2Copy!.toList().cast<ProductStructStruct>();
+                                                                            safeSetState(() {});
+                                                                          }
+                                                                          FFAppState().startLoop =
+                                                                              FFAppState().startLoop + 1;
                                                                           safeSetState(
                                                                               () {});
                                                                         }
-                                                                        FFAppState()
-                                                                            .startLoop = FFAppState()
-                                                                                .startLoop +
-                                                                            1;
-                                                                        safeSetState(
-                                                                            () {});
+                                                                        await actions
+                                                                            .updateProductStockOut(
+                                                                          _model
+                                                                              .prdlistsavebillupi!
+                                                                              .toList(),
+                                                                          _model
+                                                                              .textController
+                                                                              .text,
+                                                                        );
                                                                       }
                                                                       await actions
-                                                                          .updateProductStockOut(
-                                                                        _model
-                                                                            .prdlistsavebillupi!
-                                                                            .toList(),
-                                                                        _model
-                                                                            .textController
-                                                                            .text,
-                                                                      );
-                                                                    }
-                                                                    await actions
-                                                                        .removeFromAllBillList(
-                                                                      FFAppState()
-                                                                          .selBill,
-                                                                    );
-                                                                    FFAppState()
-                                                                            .lastBill =
+                                                                          .removeFromAllBillList(
                                                                         FFAppState()
-                                                                            .finalAmt;
-                                                                    FFAppState()
-                                                                        .update(
-                                                                            () {});
-                                                                    _model.prdid =
-                                                                        '0';
-                                                                    safeSetState(
-                                                                        () {});
-                                                                    await actions
-                                                                        .clearValue();
-                                                                    FFAppState()
-                                                                        .noOfItems = 0;
-                                                                    FFAppState()
-                                                                            .subTotal =
-                                                                        0.0;
-                                                                    FFAppState()
-                                                                            .delCharges =
-                                                                        0.0;
-                                                                    FFAppState()
-                                                                        .update(
-                                                                            () {});
-                                                                    FFAppState()
-                                                                        .oldBalance = 0;
-                                                                    FFAppState()
-                                                                        .custCredit = 0;
-                                                                    FFAppState()
-                                                                            .custNameRef =
-                                                                        null;
-                                                                    FFAppState()
-                                                                            .setCustRef =
-                                                                        null;
-                                                                    FFAppState()
-                                                                        .setCustName = '';
-                                                                    FFAppState()
-                                                                        .setCustMobNo = '';
-                                                                    FFAppState()
-                                                                        .prdid = '';
-                                                                    FFAppState()
-                                                                        .update(
-                                                                            () {});
-                                                                    FFAppState()
-                                                                            .finalAmt =
-                                                                        0.0;
-                                                                    FFAppState()
-                                                                            .billAmt =
-                                                                        0.0;
-                                                                    FFAppState()
-                                                                        .update(
-                                                                            () {});
-                                                                    if (_shouldSetState)
+                                                                            .selBill,
+                                                                      );
+                                                                      FFAppState()
+                                                                              .lastBill =
+                                                                          FFAppState()
+                                                                              .finalAmt;
+                                                                      FFAppState()
+                                                                          .update(
+                                                                              () {});
+                                                                      _model.prdid =
+                                                                          '0';
                                                                       safeSetState(
                                                                           () {});
-                                                                    return;
-                                                                  } else {
-                                                                    ScaffoldMessenger.of(
-                                                                            context)
-                                                                        .showSnackBar(
-                                                                      SnackBar(
-                                                                        content:
-                                                                            Text(
-                                                                          'Login again to start Shift ',
-                                                                          style:
-                                                                              TextStyle(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                      await actions
+                                                                          .clearValue();
+                                                                      FFAppState()
+                                                                          .noOfItems = 0;
+                                                                      FFAppState()
+                                                                              .subTotal =
+                                                                          0.0;
+                                                                      FFAppState()
+                                                                              .delCharges =
+                                                                          0.0;
+                                                                      FFAppState()
+                                                                          .update(
+                                                                              () {});
+                                                                      FFAppState()
+                                                                          .oldBalance = 0;
+                                                                      FFAppState()
+                                                                          .custCredit = 0;
+                                                                      FFAppState()
+                                                                              .custNameRef =
+                                                                          null;
+                                                                      FFAppState()
+                                                                              .setCustRef =
+                                                                          null;
+                                                                      FFAppState()
+                                                                          .setCustName = '';
+                                                                      FFAppState()
+                                                                          .setCustMobNo = '';
+                                                                      FFAppState()
+                                                                          .prdid = '';
+                                                                      FFAppState()
+                                                                          .update(
+                                                                              () {});
+                                                                      FFAppState()
+                                                                              .finalAmt =
+                                                                          0.0;
+                                                                      FFAppState()
+                                                                              .billAmt =
+                                                                          0.0;
+                                                                      FFAppState()
+                                                                          .update(
+                                                                              () {});
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
+                                                                    } else {
+                                                                      ScaffoldMessenger.of(
+                                                                              context)
+                                                                          .showSnackBar(
+                                                                        SnackBar(
+                                                                          content:
+                                                                              Text(
+                                                                            'Login again to start Shift ',
+                                                                            style:
+                                                                                TextStyle(
+                                                                              color: FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
                                                                           ),
+                                                                          duration:
+                                                                              Duration(milliseconds: 4000),
+                                                                          backgroundColor:
+                                                                              Color(0x00000000),
                                                                         ),
-                                                                        duration:
-                                                                            Duration(milliseconds: 4000),
-                                                                        backgroundColor:
-                                                                            Color(0x00000000),
-                                                                      ),
-                                                                    );
+                                                                      );
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
+                                                                    }
+                                                                  } else {
                                                                     if (_shouldSetState)
                                                                       safeSetState(
                                                                           () {});
                                                                     return;
                                                                   }
-                                                                } else {
+
                                                                   if (_shouldSetState)
                                                                     safeSetState(
                                                                         () {});
-                                                                  return;
-                                                                }
-
-                                                                if (_shouldSetState)
-                                                                  safeSetState(
-                                                                      () {});
-                                                              },
-                                                              text: FFLocalizations
-                                                                      .of(context)
-                                                                  .getText(
-                                                                'yszc5cr0' /* Save Stock Out */,
-                                                              ),
-                                                              options:
-                                                                  FFButtonOptions(
-                                                                height: 40.0,
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        16.0,
-                                                                        0.0,
-                                                                        16.0,
-                                                                        0.0),
-                                                                iconPadding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                color: FlutterFlowTheme.of(
+                                                                },
+                                                                text: FFLocalizations.of(
                                                                         context)
-                                                                    .primary,
-                                                                textStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: Colors
-                                                                          .white,
-                                                                      letterSpacing:
+                                                                    .getText(
+                                                                  'yszc5cr0' /* Save Stock Out */,
+                                                                ),
+                                                                options:
+                                                                    FFButtonOptions(
+                                                                  height: 40.0,
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
                                                                           0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w800,
-                                                                      useGoogleFonts:
-                                                                          !FlutterFlowTheme.of(context)
-                                                                              .titleSmallIsCustom,
-                                                                    ),
-                                                                elevation: 0.0,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            8.0),
+                                                                          16.0,
+                                                                          0.0),
+                                                                  iconPadding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  textStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: Colors
+                                                                            .white,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w800,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                      ),
+                                                                  elevation:
+                                                                      0.0,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              8.0),
+                                                                ),
                                                               ),
                                                             ),
                                                           ).animateOnActionTrigger(
