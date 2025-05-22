@@ -3043,6 +3043,9 @@ class _ProductAndListStockoutWidgetState
                                                                       .textController
                                                                       .text,
                                                                 );
+
+                                                                safeSetState(
+                                                                    () {});
                                                               },
                                                               child:
                                                                   FFButtonWidget(
