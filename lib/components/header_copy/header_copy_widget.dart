@@ -70,11 +70,13 @@ class _HeaderCopyWidgetState extends State<HeaderCopyWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                font:
-                                    FlutterFlowTheme.of(context).headlineMedium,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineMediumFamily,
                                 color:
                                     FlutterFlowTheme.of(context).primaryBtnText,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .headlineMediumIsCustom,
                               ),
                         ),
                       ],
@@ -96,10 +98,13 @@ class _HeaderCopyWidgetState extends State<HeaderCopyWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBtnText,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .titleSmallIsCustom,
                                 ),
                           ),
                         ),
@@ -110,10 +115,13 @@ class _HeaderCopyWidgetState extends State<HeaderCopyWidget> {
                           style: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
-                                font: FlutterFlowTheme.of(context).titleSmall,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
                                 color:
                                     FlutterFlowTheme.of(context).primaryBtnText,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .titleSmallIsCustom,
                               ),
                         ),
                       ],

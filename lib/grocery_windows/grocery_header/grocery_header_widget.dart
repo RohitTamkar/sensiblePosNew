@@ -85,9 +85,11 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                      font: FlutterFlowTheme.of(context).labelLarge,
+                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w500,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).labelLargeIsCustom,
                     ),
                 elevation: 0.0,
                 borderSide: BorderSide(
@@ -121,9 +123,11 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                      font: FlutterFlowTheme.of(context).labelLarge,
+                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w500,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).labelLargeIsCustom,
                     ),
                 elevation: 0.0,
                 borderSide: BorderSide(
@@ -183,9 +187,11 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                      font: FlutterFlowTheme.of(context).labelLarge,
+                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w500,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).labelLargeIsCustom,
                     ),
                 elevation: 0.0,
                 borderSide: BorderSide(
@@ -219,8 +225,10 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                      font: FlutterFlowTheme.of(context).labelLarge,
+                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).labelLargeIsCustom,
                     ),
                 elevation: 0.0,
                 borderSide: BorderSide(
@@ -254,8 +262,10 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                      font: FlutterFlowTheme.of(context).labelLarge,
+                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).labelLargeIsCustom,
                     ),
                 elevation: 0.0,
                 borderSide: BorderSide(
@@ -289,8 +299,10 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                      font: FlutterFlowTheme.of(context).labelLarge,
+                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).labelLargeIsCustom,
                     ),
                 elevation: 0.0,
                 borderSide: BorderSide(
@@ -324,8 +336,10 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                      font: FlutterFlowTheme.of(context).labelLarge,
+                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).labelLargeIsCustom,
                     ),
                 elevation: 0.0,
                 borderSide: BorderSide(
@@ -359,8 +373,10 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                      font: FlutterFlowTheme.of(context).labelLarge,
+                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).labelLargeIsCustom,
                     ),
                 elevation: 0.0,
                 borderSide: BorderSide(
@@ -408,8 +424,10 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                      font: FlutterFlowTheme.of(context).labelLarge,
+                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).labelLargeIsCustom,
                     ),
                 elevation: 0.0,
                 borderSide: BorderSide(

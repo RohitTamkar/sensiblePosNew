@@ -83,11 +83,13 @@ class _CalenderDayEndWidgetState extends State<CalenderDayEndWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                font:
-                                    FlutterFlowTheme.of(context).headlineMedium,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineMediumFamily,
                                 color: FlutterFlowTheme.of(context).primary,
                                 fontSize: 18.0,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .headlineMediumIsCustom,
                               ),
                         ),
                       ),
@@ -110,12 +112,14 @@ class _CalenderDayEndWidgetState extends State<CalenderDayEndWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                font:
-                                    FlutterFlowTheme.of(context).headlineMedium,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineMediumFamily,
                                 color: FlutterFlowTheme.of(context).primary,
                                 fontSize: 18.0,
                                 letterSpacing: 0.0,
                                 decoration: TextDecoration.underline,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .headlineMediumIsCustom,
                               ),
                         ),
                       ),

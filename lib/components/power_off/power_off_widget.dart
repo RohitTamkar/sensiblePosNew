@@ -83,9 +83,12 @@ class _PowerOffWidgetState extends State<PowerOffWidget> {
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
-                              font: FlutterFlowTheme.of(context).headlineMedium,
+                              fontFamily: FlutterFlowTheme.of(context)
+                                  .headlineMediumFamily,
                               color: FlutterFlowTheme.of(context).primaryText,
                               letterSpacing: 0.0,
+                              useGoogleFonts: !FlutterFlowTheme.of(context)
+                                  .headlineMediumIsCustom,
                             ),
                       ),
                     ],
@@ -124,10 +127,12 @@ class _PowerOffWidgetState extends State<PowerOffWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                font:
-                                    FlutterFlowTheme.of(context).headlineMedium,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineMediumFamily,
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .headlineMediumIsCustom,
                               ),
                         ),
                       ],
@@ -167,10 +172,12 @@ class _PowerOffWidgetState extends State<PowerOffWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                font:
-                                    FlutterFlowTheme.of(context).headlineMedium,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineMediumFamily,
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .headlineMediumIsCustom,
                               ),
                         ),
                       ],

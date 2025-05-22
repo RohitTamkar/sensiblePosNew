@@ -132,10 +132,13 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .headlineLarge
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .headlineLarge,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .headlineLargeFamily,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .headlineLargeIsCustom,
                                     ),
                               ),
                               FFButtonWidget(
@@ -155,9 +158,12 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .titleMedium,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleMediumIsCustom,
                                       ),
                                   elevation: 0.0,
                                   borderSide: BorderSide(
@@ -242,14 +248,19 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: Colors.white,
                                                           fontSize: 35.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                 elevation: 3.0,
                                                 borderSide: BorderSide(
@@ -408,14 +419,19 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: Colors.white,
                                                           fontSize: 35.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                 elevation: 3.0,
                                                 borderSide: BorderSide(

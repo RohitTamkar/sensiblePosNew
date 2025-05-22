@@ -160,13 +160,17 @@ class _PurchaseOrderListWidgetState extends State<PurchaseOrderListWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .headlineSmall,
+                                                        .headlineSmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBtnText,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmallIsCustom,
                                               ),
                                         ),
                                       ],
@@ -276,21 +280,25 @@ class _PurchaseOrderListWidgetState extends State<PurchaseOrderListWidget>
                                                     .getText(
                                                   'ecx27292' /* SR. NO */,
                                                 ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineSmall
-                                                    .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .lineColor,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineSmallIsCustom,
+                                                        ),
                                               ),
                                             ],
                                           ),
@@ -316,10 +324,10 @@ class _PurchaseOrderListWidgetState extends State<PurchaseOrderListWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmall,
+                                                                .headlineSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -327,6 +335,10 @@ class _PurchaseOrderListWidgetState extends State<PurchaseOrderListWidget>
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmallIsCustom,
                                                       ),
                                             ),
                                           ],
@@ -360,10 +372,10 @@ class _PurchaseOrderListWidgetState extends State<PurchaseOrderListWidget>
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmall,
+                                                                .headlineSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -371,6 +383,10 @@ class _PurchaseOrderListWidgetState extends State<PurchaseOrderListWidget>
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmallIsCustom,
                                                       ),
                                                 ),
                                               ),
@@ -397,21 +413,25 @@ class _PurchaseOrderListWidgetState extends State<PurchaseOrderListWidget>
                                                     .getText(
                                                   'v7bzasfu' /* NET AMOUNT */,
                                                 ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineSmall
-                                                    .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .lineColor,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineSmallIsCustom,
+                                                        ),
                                               ),
                                             ],
                                           ),
@@ -574,10 +594,12 @@ class _PurchaseOrderListWidgetState extends State<PurchaseOrderListWidget>
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).headlineSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -618,8 +640,9 @@ class _PurchaseOrderListWidgetState extends State<PurchaseOrderListWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ],
@@ -670,8 +693,9 @@ class _PurchaseOrderListWidgetState extends State<PurchaseOrderListWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .headlineSmall
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                               ),
                                                                         ),
                                                                       ],
@@ -710,10 +734,12 @@ class _PurchaseOrderListWidgetState extends State<PurchaseOrderListWidget>
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).headlineSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ],

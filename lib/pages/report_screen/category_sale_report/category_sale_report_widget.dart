@@ -193,11 +193,15 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .headlineSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ],
@@ -230,12 +234,16 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .titleSmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleSmallIsCustom,
                                             ),
                                       ),
                                     ),
@@ -316,15 +324,19 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                                           context)
                                                       .titleMedium
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .titleMedium,
+                                                                .titleMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .lineColor,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .titleMediumIsCustom,
                                                       ),
                                                 ),
                                               ),
@@ -394,10 +406,10 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmall,
+                                                                .headlineSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -405,6 +417,10 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmallIsCustom,
                                                       ),
                                             ),
                                           ],
@@ -430,10 +446,10 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmall,
+                                                                .headlineSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -441,6 +457,10 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmallIsCustom,
                                                       ),
                                             ),
                                           ],

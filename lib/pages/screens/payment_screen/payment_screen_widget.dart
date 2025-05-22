@@ -208,10 +208,15 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .headlineSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .headlineSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineSmallIsCustom,
                                                         ),
                                               ),
                                             ),
@@ -309,16 +314,21 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                       .getText(
                                                     'wtr0ipi3' /* Search Customer */,
                                                   ),
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodySmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  hintStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodySmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodySmallIsCustom,
+                                                          ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
@@ -380,10 +390,15 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMediumIsCustom,
                                                         ),
                                                 validator: _model
                                                     .textFieldsearchTextControllerValidator
@@ -570,10 +585,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).headlineSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                     Text(
@@ -583,10 +600,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .titleMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -626,17 +645,19 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               '0mm2dy6o' /* Balance:  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Text(
                                                                             listItem.oldBalance.toString(),
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -664,8 +685,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                                 'oho1vgfr' /* Allow Credit */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                         ],
@@ -925,10 +947,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).headlineSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                     Text(
@@ -938,10 +962,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .titleMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -981,17 +1007,19 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               'w87pblwj' /* Balance:  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Text(
                                                                             containerVarItem.oldBalance.toString(),
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -1019,8 +1047,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                                 'hgh9l3zh' /* Allow Credit */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                         ],
@@ -1220,11 +1249,15 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineSmall,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmallFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineSmallIsCustom,
                                         ),
                                   ),
                                 ],
@@ -1264,9 +1297,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .headlineSmall,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .headlineSmallFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .headlineSmallIsCustom,
                                     ),
                                 unselectedLabelStyle: TextStyle(),
                                 indicatorColor:
@@ -1377,11 +1413,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -1420,11 +1459,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .titleMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleMediumIsCustom,
                                                                     ),
                                                                 hintText:
                                                                     FFLocalizations.of(
@@ -1502,11 +1544,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -1536,10 +1581,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
@@ -1598,11 +1645,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .titleMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleMediumIsCustom,
                                                                     ),
                                                                 validator: _model
                                                                     .textFielExpNoteTextControllerValidator
@@ -1667,8 +1717,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -1697,8 +1748,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           hintStyle: FlutterFlowTheme.of(context)
                                                                               .bodySmall
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                               ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
@@ -1756,8 +1808,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                             ),
                                                                         validator: _model
                                                                             .textFieldExpAmtTextControllerValidator
@@ -1801,10 +1854,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                     Container(
@@ -1880,8 +1935,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         icon:
                                                                             Icon(
@@ -1994,14 +2050,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       .of(context)
                                                                   .headlineSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .headlineSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .lineColor,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .headlineSmallIsCustom,
                                                                   ),
                                                               elevation: 2.0,
                                                               borderRadius:
@@ -2045,14 +2104,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       .of(context)
                                                                   .headlineSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .headlineSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .lineColor,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .headlineSmallIsCustom,
                                                                   ),
                                                               elevation: 2.0,
                                                               borderSide:
@@ -2195,8 +2257,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -2215,8 +2278,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -2245,9 +2309,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               color: Color(0xFF69837A),
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2258,10 +2323,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -2288,8 +2355,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2300,10 +2368,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -2330,8 +2400,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2342,10 +2413,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -2372,9 +2445,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -2388,12 +2462,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                     Text(
@@ -2404,12 +2480,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -2493,11 +2571,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -2547,10 +2628,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           context)
                                                                       .titleMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                       ),
                                                               hintText:
                                                                   FFLocalizations.of(
@@ -2623,11 +2706,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -2657,11 +2743,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodySmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodySmallIsCustom,
                                                                     ),
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
@@ -2720,11 +2809,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       .of(context)
                                                                   .titleMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleMediumFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleMediumIsCustom,
                                                                   ),
                                                               validator: _model
                                                                   .textFieldNoteAdvTextControllerValidator
@@ -2788,10 +2880,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2822,8 +2916,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                         enabledBorder:
                                                                             OutlineInputBorder(
@@ -2898,10 +2993,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .titleMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                           ),
                                                                       validator: _model
                                                                           .textFieldExpAmtAdvTextControllerValidator
@@ -2949,10 +3046,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   Container(
@@ -3033,10 +3132,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                       icon:
                                                                           Icon(
@@ -3147,14 +3248,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .lineColor,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                             elevation: 2.0,
                                                             borderRadius:
@@ -3199,14 +3303,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .lineColor,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                             elevation: 2.0,
                                                             borderSide:
@@ -3302,10 +3409,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -3326,10 +3435,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -3361,10 +3472,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -3378,11 +3491,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -3412,10 +3528,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -3429,11 +3547,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -3463,10 +3584,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -3480,11 +3603,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -3514,12 +3640,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -3533,14 +3661,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                               Text(
@@ -3553,14 +3684,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -3644,11 +3778,15 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                     .of(context)
                                                                 .titleSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleSmall,
+                                                                      .titleSmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmallIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -3743,10 +3881,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3806,11 +3946,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -3844,11 +3987,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodySmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodySmallIsCustom,
                                                                     ),
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
@@ -3907,11 +4053,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       .of(context)
                                                                   .titleMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleMediumFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleMediumIsCustom,
                                                                   ),
                                                               validator: _model
                                                                   .textFieldNoteCustCredTextControllerValidator
@@ -3971,11 +4120,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -4029,10 +4181,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4096,10 +4250,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4130,8 +4286,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                         enabledBorder:
                                                                             OutlineInputBorder(
@@ -4206,10 +4363,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .titleMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                           ),
                                                                       validator: _model
                                                                           .textFieldCustCredAmtTextControllerValidator
@@ -4257,10 +4416,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   Container(
@@ -4339,10 +4500,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                       icon:
                                                                           Icon(
@@ -4558,14 +4721,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       .of(context)
                                                                   .headlineSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .headlineSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .lineColor,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .headlineSmallIsCustom,
                                                                   ),
                                                               elevation: 2.0,
                                                               borderSide:
@@ -4830,14 +4996,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       .of(context)
                                                                   .headlineSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .headlineSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .lineColor,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .headlineSmallIsCustom,
                                                                   ),
                                                               elevation: 2.0,
                                                               borderSide:
@@ -5036,8 +5205,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                                   '0',
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -5050,8 +5220,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                                   locale: FFLocalizations.of(context).languageCode,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -5077,16 +5248,18 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                                 '9z0odu0n' /* Customer Name :  */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
                                                                           Text(
                                                                             containerPartyRecord.name,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -5110,16 +5283,18 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                                 'd8q8latf' /* Note:  */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
                                                                           Text(
                                                                             listViewPaymentRecord.note,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -5143,16 +5318,18 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                                 '1xi2w4pw' /* Pay.Mode:  */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
                                                                           Text(
                                                                             listViewPaymentRecord.paymentType,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -5176,8 +5353,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                                 'r44jfmm8' /* Balance:  */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -5187,8 +5365,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               '0',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -5212,9 +5391,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                                 'mw3g3jic' /* Amount paid:  */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -5223,17 +5403,19 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               'hcd745t6' /* ₹  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Text(
                                                                             listViewPaymentRecord.amount.toString(),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -5324,11 +5506,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -5358,11 +5543,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodySmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodySmallIsCustom,
                                                                     ),
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
@@ -5421,11 +5609,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       .of(context)
                                                                   .titleMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleMediumFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleMediumIsCustom,
                                                                   ),
                                                               validator: _model
                                                                   .textFieldNoteReceiveAmtTextControllerValidator
@@ -5489,10 +5680,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -5523,8 +5716,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                         enabledBorder:
                                                                             OutlineInputBorder(
@@ -5599,10 +5793,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .titleMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                           ),
                                                                       validator: _model
                                                                           .textFieldReceiveAmtAmtTextControllerValidator
@@ -5650,10 +5846,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   Container(
@@ -5740,10 +5938,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                       icon:
                                                                           Icon(
@@ -5854,14 +6054,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .lineColor,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                             elevation: 2.0,
                                                             borderSide:
@@ -5910,14 +6113,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .lineColor,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                             elevation: 2.0,
                                                             borderSide:
@@ -6013,10 +6219,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -6037,10 +6245,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -6072,10 +6282,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -6089,11 +6301,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -6123,12 +6338,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -6142,14 +6359,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                               Text(
@@ -6162,14 +6382,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ],

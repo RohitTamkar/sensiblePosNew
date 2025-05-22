@@ -119,9 +119,12 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
-                              font: FlutterFlowTheme.of(context).headlineMedium,
+                              fontFamily: FlutterFlowTheme.of(context)
+                                  .headlineMediumFamily,
                               color: FlutterFlowTheme.of(context).primaryText,
                               letterSpacing: 0.0,
+                              useGoogleFonts: !FlutterFlowTheme.of(context)
+                                  .headlineMediumIsCustom,
                             ),
                       ),
                     ),
@@ -146,8 +149,11 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
                             hintStyle: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .override(
-                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodySmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .bodySmallIsCustom,
                                 ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
@@ -193,8 +199,11 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                font: FlutterFlowTheme.of(context).bodyMedium,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodyMediumIsCustom,
                               ),
                           maxLines: 3,
                           validator: _model.textControllerValidator
@@ -273,10 +282,13 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .titleSmall,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleSmallFamily,
                                       color: Colors.white,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .titleSmallIsCustom,
                                     ),
                                 elevation: 2.0,
                                 borderSide: BorderSide(

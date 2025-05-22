@@ -137,9 +137,12 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).titleSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .titleSmallIsCustom,
                                   ),
                             ),
                           ),
@@ -153,9 +156,12 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).titleSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .titleSmallIsCustom,
                                   ),
                             ),
                           ),
@@ -184,10 +190,13 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .titleSmall,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         fontSize: 12.0,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -201,11 +210,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .bodyMediumIsCustom,
                                       ),
                                 ),
                               ),
@@ -219,10 +231,13 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .titleSmall,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         fontSize: 15.0,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -242,10 +257,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .titleSmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               fontSize: 12.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleSmallIsCustom,
                                             ),
                                       ),
                                     ),
@@ -259,10 +278,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .titleSmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               fontSize: 12.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleSmallIsCustom,
                                             ),
                                       ),
                                     ),
@@ -276,10 +299,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .titleSmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               fontSize: 12.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleSmallIsCustom,
                                             ),
                                       ),
                                     ),
@@ -293,10 +320,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .titleSmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               fontSize: 12.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleSmallIsCustom,
                                             ),
                                       ),
                                     ),
@@ -310,10 +341,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .titleSmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               fontSize: 12.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleSmallIsCustom,
                                             ),
                                       ),
                                     ),
@@ -333,10 +368,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             fontSize: 12.0,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -350,10 +389,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             fontSize: 12.0,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -364,10 +407,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .titleSmall,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
                                           fontSize: 12.0,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .titleSmallIsCustom,
                                         ),
                                   ),
                                   Padding(
@@ -380,10 +427,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             fontSize: 12.0,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -524,10 +575,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .bodySmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmallFamily,
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodySmallIsCustom,
                                             ),
                                       ),
                                     ),
@@ -541,10 +596,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .bodySmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmallFamily,
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodySmallIsCustom,
                                             ),
                                       ),
                                     ),
@@ -558,10 +617,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .bodySmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmallFamily,
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodySmallIsCustom,
                                             ),
                                       ),
                                     ),
@@ -572,10 +635,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .bodySmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodySmallFamily,
                                             fontSize: 10.0,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodySmallIsCustom,
                                           ),
                                     ),
                                   ],
@@ -713,23 +780,25 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                     child: Text(
                                                       rowUserProfileRecord!
                                                           .name,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .override(
-                                                                font: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmall,
-                                                                color: FlutterFlowTheme.of(
+                                                                    .titleSmallFamily,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBtnText,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryBtnText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                              ),
+                                                                    .titleSmallIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                   Padding(
@@ -748,14 +817,18 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                   context)
                                                               .bodySmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodySmall,
+                                                                    .bodySmallFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondary,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmallIsCustom,
                                                               ),
                                                     ),
                                                   ),
@@ -775,20 +848,23 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                     FFLocalizations.of(context)
                                                         .languageCode,
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmallFamily,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBtnText,
+                                                    letterSpacing: 0.0,
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmallIsCustom,
+                                                  ),
                                             ),
                                           ),
                                           Text(
@@ -802,13 +878,18 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBackground,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                           Expanded(
@@ -827,13 +908,18 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBtnText,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMediumIsCustom,
                                                         ),
                                                   ),
                                                 ],
@@ -938,16 +1024,21 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                       .getText(
                                                     'x27rxvsi' /* New */,
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallIsCustom,
+                                                          ),
                                                 ),
                                               ],
                                             ),
@@ -987,16 +1078,21 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                       .getText(
                                                     'ydl0tnj8' /* Preparing */,
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallIsCustom,
+                                                          ),
                                                 ),
                                               ],
                                             ),
@@ -1036,16 +1132,21 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                       .getText(
                                                     'dx5p9qdk' /* Ready */,
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallIsCustom,
+                                                          ),
                                                 ),
                                               ],
                                             ),
@@ -1085,16 +1186,21 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                       .getText(
                                                     'a807e4wr' /* Picked Up */,
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallIsCustom,
+                                                          ),
                                                 ),
                                               ],
                                             ),
@@ -1134,16 +1240,21 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                       .getText(
                                                     'wf3jtb21' /* Delivered */,
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallIsCustom,
+                                                          ),
                                                 ),
                                               ],
                                             ),
@@ -1182,16 +1293,21 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                       .getText(
                                                     '1sr5s12y' /* Cancelled */,
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallIsCustom,
+                                                          ),
                                                 ),
                                               ],
                                             ),
@@ -1223,11 +1339,15 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .titleSmall,
+                                                                .titleSmallFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .titleSmallIsCustom,
                                                       ),
                                             ),
                                           ],
@@ -1377,9 +1497,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                         validator: _model
                                                                             .textController1Validator
@@ -1538,14 +1659,17 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodySmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodySmallIsCustom,
                                                                     ),
                                                                 validator: _model
                                                                     .textController2Validator
@@ -1659,8 +1783,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           Text(
                                                                             listItem.orderId,
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Stack(
@@ -1708,15 +1833,17 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                               '3x48zu2v' /* ₹  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Text(
                                                                             listItem.totalCost.toString(),
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -1847,10 +1974,11 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodySmall
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                 color: FlutterFlowTheme.of(context).customColor1,
                                                                                 fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                               ),
                                                                         ),
                                                                       ],
@@ -1876,10 +2004,11 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 color: FlutterFlowTheme.of(context).primaryText,
                                                                                 fontSize: 15.0,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -1898,9 +2027,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .titleSmall
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                 fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -1950,12 +2080,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             fontSize:
                                                                                 12.0,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1984,12 +2116,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           fontSize:
                                                                               12.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2017,12 +2151,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           fontSize:
                                                                               12.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2043,12 +2179,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           fontSize:
                                                                               12.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2062,12 +2200,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             12.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 Padding(
@@ -2087,12 +2227,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           fontSize:
                                                                               12.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2167,10 +2309,12 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                               ],
@@ -2211,11 +2355,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodySmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodySmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -2255,11 +2402,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodySmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodySmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -2354,8 +2504,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                           r'''$.name''',
                                                                                         ).toString(),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ),
@@ -2369,9 +2520,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                               'wp49lt31' /* ₹ */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   fontSize: 10.0,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -2381,9 +2533,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                             r'''$.unitCost''',
                                                                                           ).toString(),
                                                                                           style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                 fontSize: 10.0,
                                                                                                 letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -2413,8 +2566,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                       r'''$.quantity''',
                                                                                     ).toString(),
                                                                                     style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -2441,8 +2595,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                       r'''$.dishTotalCost''',
                                                                                     ).toString(),
                                                                                     style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -2502,11 +2657,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleSmallIsCustom,
                                                                   ),
                                                             ),
                                                             Text(
@@ -2519,11 +2677,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ],
@@ -2545,11 +2706,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleSmallIsCustom,
                                                                   ),
                                                             ),
                                                             Text(
@@ -2562,14 +2726,17 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                       .of(context)
                                                                   .headlineSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .headlineSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w600,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .headlineSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ],
@@ -2599,18 +2766,25 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: Color(0xFFFBA442),
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .lineColor,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .lineColor,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallIsCustom,
+                                                            ),
                                                     elevation: 2.0,
                                                     borderSide: BorderSide(
                                                       color: Colors.transparent,
@@ -2690,9 +2864,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodySmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .customColor1,
@@ -2700,6 +2874,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           12.0,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodySmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -2743,12 +2920,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             fontSize:
                                                                                 15.0,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2762,10 +2941,12 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodySmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                         ),
                                                                   ),
                                                                 ],
@@ -2792,12 +2973,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             fontSize:
                                                                                 14.0,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2811,12 +2994,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           fontSize:
                                                                               14.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                 ],
@@ -3043,13 +3228,16 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodySmallFamily,
                                                                       fontSize:
                                                                           10.0,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodySmallIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3071,13 +3259,16 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodySmallFamily,
                                                                       fontSize:
                                                                           10.0,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodySmallIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3091,13 +3282,16 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                       .of(context)
                                                                   .bodySmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodySmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodySmallFamily,
                                                                     fontSize:
                                                                         10.0,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodySmallIsCustom,
                                                                   ),
                                                             ),
                                                           ],
@@ -3150,9 +3344,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBtnText,
@@ -3161,6 +3355,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -3208,9 +3405,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBtnText,
@@ -3219,6 +3416,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -3265,10 +3465,15 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                   ),
                                                 ),
@@ -3362,14 +3567,17 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodySmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .lineColor,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodySmallIsCustom,
                                                                     ),
                                                             elevation: 2.0,
                                                             borderSide:
@@ -3396,11 +3604,15 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                       ),
                                                     ],
@@ -3472,9 +3684,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodySmall
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                 color: FlutterFlowTheme.of(context).primaryText,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -3492,9 +3705,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                               'rucw9htl' /* Order ID */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   fontSize: 14.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -3514,9 +3728,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                               'boujrtcp' /* Customer Name */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   fontSize: 14.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -3574,9 +3789,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                               'i1ufzn0c' /* Delivery Person */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   fontSize: 14.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -3590,9 +3806,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                               'xxrrdpo4' /* ₹  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Padding(
@@ -3607,8 +3824,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                 'wco2l3ln' /* 250 */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -3676,9 +3894,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                             'p79yhvx8' /* Item Name */,
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                 color: FlutterFlowTheme.of(context).primaryText,
                                                                                                 letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -3700,9 +3919,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                             'he7szdid' /* Qty */,
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                 color: FlutterFlowTheme.of(context).primaryText,
                                                                                                 letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -3727,9 +3947,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                               '38qzsv6c' /* Total */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -3781,9 +4002,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                                   'rvgc6rw0' /* Item Name */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                       color: FlutterFlowTheme.of(context).primaryText,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -3809,8 +4031,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                               'p2vrct54' /* 2 */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -3837,8 +4060,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                                 'mnvcd3jo' /* 300 */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],

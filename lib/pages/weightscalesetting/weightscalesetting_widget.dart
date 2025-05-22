@@ -114,11 +114,15 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineMedium,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMediumFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineMediumIsCustom,
                                         ),
                                   ),
                                   Padding(
@@ -282,9 +286,9 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .success,
@@ -295,6 +299,9 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),

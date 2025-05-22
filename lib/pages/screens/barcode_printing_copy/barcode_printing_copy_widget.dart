@@ -138,11 +138,15 @@ class _BarcodePrintingCopyWidgetState extends State<BarcodePrintingCopyWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineMedium,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMediumFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineMediumIsCustom,
                                         ),
                                   ),
                                 ],
@@ -238,17 +242,20 @@ class _BarcodePrintingCopyWidgetState extends State<BarcodePrintingCopyWidget> {
                                                           .getText(
                                                         '0fyqrlrg' /* Customiize your label content */,
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .override(
-                                                                font: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineSmall,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                                    .headlineSmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallIsCustom,
+                                                          ),
                                                     ),
                                                   ),
                                                   ListView(
@@ -272,11 +279,14 @@ class _BarcodePrintingCopyWidgetState extends State<BarcodePrintingCopyWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodyMediumIsCustom,
                                                                   ),
                                                             ),
                                                           ],

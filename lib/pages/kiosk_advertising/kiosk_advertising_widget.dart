@@ -302,11 +302,15 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: Colors.white,
                                             fontSize: 30.0,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleSmallIsCustom,
                                           ),
                                       elevation: 10.0,
                                       borderSide: BorderSide(

@@ -66,8 +66,11 @@ class _DeleteConfirmWidgetState extends State<DeleteConfirmWidget> {
                     ),
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).headlineLarge.override(
-                          font: FlutterFlowTheme.of(context).headlineLarge,
+                          fontFamily:
+                              FlutterFlowTheme.of(context).headlineLargeFamily,
                           letterSpacing: 0.0,
+                          useGoogleFonts: !FlutterFlowTheme.of(context)
+                              .headlineLargeIsCustom,
                         ),
                   ),
                 ),
@@ -105,9 +108,12 @@ class _DeleteConfirmWidgetState extends State<DeleteConfirmWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
-                                    font: FlutterFlowTheme.of(context)
-                                        .displaySmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .displaySmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .displaySmallIsCustom,
                                   ),
                               elevation: 2.0,
                               borderSide: BorderSide(
@@ -144,9 +150,11 @@ class _DeleteConfirmWidgetState extends State<DeleteConfirmWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .displayMedium
                                 .override(
-                                  font: FlutterFlowTheme.of(context)
-                                      .displayMedium,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .displayMediumFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .displayMediumIsCustom,
                                 ),
                             elevation: 2.0,
                             borderSide: BorderSide(

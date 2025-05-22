@@ -204,9 +204,12 @@ class _ClosingstockReportWidgetState extends State<ClosingstockReportWidget>
                           style: FlutterFlowTheme.of(context)
                               .bodySmall
                               .override(
-                                font: FlutterFlowTheme.of(context).bodySmall,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodySmallFamily,
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodySmallIsCustom,
                               ),
                         ),
                       ],
@@ -269,11 +272,15 @@ class _ClosingstockReportWidgetState extends State<ClosingstockReportWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineSmall,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmallFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineSmallIsCustom,
                                         ),
                                   ),
                                 ],
@@ -303,11 +310,15 @@ class _ClosingstockReportWidgetState extends State<ClosingstockReportWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -380,15 +391,20 @@ class _ClosingstockReportWidgetState extends State<ClosingstockReportWidget>
                                                             context)
                                                         .titleMedium
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleMedium,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMediumFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleMediumIsCustom,
                                                         ),
                                                   ),
                                                 ),
@@ -456,10 +472,10 @@ class _ClosingstockReportWidgetState extends State<ClosingstockReportWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmall,
+                                                                .headlineSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -467,6 +483,10 @@ class _ClosingstockReportWidgetState extends State<ClosingstockReportWidget>
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmallIsCustom,
                                                       ),
                                             ),
                                           ],
@@ -490,14 +510,19 @@ class _ClosingstockReportWidgetState extends State<ClosingstockReportWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .headlineSmall,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .lineColor,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallIsCustom,
                                                 ),
                                           ),
                                         ],
@@ -524,21 +549,25 @@ class _ClosingstockReportWidgetState extends State<ClosingstockReportWidget>
                                                     .getText(
                                                   '2ovnvnfw' /* Current Stock */,
                                                 ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineSmall
-                                                    .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .lineColor,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineSmallIsCustom,
+                                                        ),
                                               ),
                                             ),
                                           ],
@@ -693,10 +722,12 @@ class _ClosingstockReportWidgetState extends State<ClosingstockReportWidget>
                                                                           context)
                                                                       .headlineSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .headlineSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                       ),
                                                                 ),
                                                               ],
@@ -738,10 +769,12 @@ class _ClosingstockReportWidgetState extends State<ClosingstockReportWidget>
                                                                             context)
                                                                         .headlineSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).headlineSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                 ],
@@ -797,14 +830,16 @@ class _ClosingstockReportWidgetState extends State<ClosingstockReportWidget>
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).headlineSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).success,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w800,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ],

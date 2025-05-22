@@ -122,11 +122,15 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineSmall,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmallFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineSmallIsCustom,
                                         ),
                                   ),
                                 ],
@@ -253,18 +257,23 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                       .getText(
                                                     'wuyvi26h' /* Ethernet Printing */,
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleLarge
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleLarge,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleLargeIsCustom,
+                                                          ),
                                                 ),
                                                 Switch.adaptive(
                                                   value: _model.switchValue!,
@@ -321,15 +330,22 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             .getText(
                                                       'sghuzjbp' /* port... */,
                                                     ),
-                                                    labelStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelMedium,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    labelStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumIsCustom,
+                                                            ),
                                                     alignLabelWithHint: true,
                                                     hintText:
                                                         FFLocalizations.of(
@@ -337,15 +353,22 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             .getText(
                                                       '6ip8565z' /* Port */,
                                                     ),
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelMedium,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    hintStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumIsCustom,
+                                                            ),
                                                     enabledBorder:
                                                         UnderlineInputBorder(
                                                       borderSide: BorderSide(
@@ -399,16 +422,21 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                               8.0),
                                                     ),
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                   validator: _model
                                                       .textController1Validator
                                                       .asValidator(context),
@@ -433,15 +461,22 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             .getText(
                                                       '7p22bixm' /* IP ADDRESS ... */,
                                                     ),
-                                                    labelStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelMedium,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    labelStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumIsCustom,
+                                                            ),
                                                     alignLabelWithHint: true,
                                                     hintText:
                                                         FFLocalizations.of(
@@ -449,15 +484,22 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             .getText(
                                                       'xphxso41' /* 192.168.0.100 */,
                                                     ),
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelMedium,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    hintStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumIsCustom,
+                                                            ),
                                                     enabledBorder:
                                                         UnderlineInputBorder(
                                                       borderSide: BorderSide(
@@ -511,16 +553,21 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                               8.0),
                                                     ),
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                   validator: _model
                                                       .textController2Validator
                                                       .asValidator(context),
@@ -589,11 +636,16 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             .of(context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                     elevation: 3.0,
                                                     borderSide: BorderSide(
@@ -619,10 +671,15 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodySmall,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmallFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmallIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -646,10 +703,15 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallIsCustom,
                                                     ),
                                             hintText:
                                                 FFLocalizations.of(context)
@@ -686,10 +748,15 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodySmall,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmallFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmallIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -728,10 +795,15 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallIsCustom,
                                                     ),
                                             hintText:
                                                 FFLocalizations.of(context)
@@ -768,10 +840,15 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodySmall,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmallFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmallIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -990,9 +1067,10 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                                               r'''$.deviceName''',
                                                                             ).toString(),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -1024,10 +1102,11 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                                                 r'''$.address''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ],

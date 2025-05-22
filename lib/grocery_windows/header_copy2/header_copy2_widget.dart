@@ -73,12 +73,14 @@ class _HeaderCopy2WidgetState extends State<HeaderCopy2Widget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
-                                font:
-                                    FlutterFlowTheme.of(context).headlineSmall,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineSmallFamily,
                                 color:
                                     FlutterFlowTheme.of(context).primaryBtnText,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .headlineSmallIsCustom,
                               ),
                         ),
                       ],
@@ -98,10 +100,13 @@ class _HeaderCopy2WidgetState extends State<HeaderCopy2Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  font: FlutterFlowTheme.of(context).labelSmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelSmallFamily,
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBtnText,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelSmallIsCustom,
                                 ),
                           ),
                         ),
@@ -112,10 +117,13 @@ class _HeaderCopy2WidgetState extends State<HeaderCopy2Widget> {
                           style: FlutterFlowTheme.of(context)
                               .bodySmall
                               .override(
-                                font: FlutterFlowTheme.of(context).bodySmall,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodySmallFamily,
                                 color: FlutterFlowTheme.of(context).secondary,
                                 fontSize: 9.0,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodySmallIsCustom,
                               ),
                         ),
                       ],

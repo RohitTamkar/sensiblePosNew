@@ -176,10 +176,15 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .headlineSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .headlineSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineSmallIsCustom,
                                                         ),
                                               ),
                                             ),
@@ -277,16 +282,21 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                       .getText(
                                                     '0byfo33b' /* Search Customer */,
                                                   ),
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodySmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  hintStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodySmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodySmallIsCustom,
+                                                          ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
@@ -348,10 +358,15 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMediumIsCustom,
                                                         ),
                                                 validator: _model
                                                     .textFieldsearchTextControllerValidator
@@ -532,10 +547,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).headlineSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                     Text(
@@ -545,10 +562,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .titleMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -585,17 +604,19 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               '3e5ebddv' /* Balance:  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Text(
                                                                             listItem.oldBalance.toString(),
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -623,8 +644,9 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                                 'cnjcbvt2' /* Allow Credit */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                         ],
@@ -767,10 +789,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).headlineSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                     Text(
@@ -780,10 +804,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .titleMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -820,17 +846,19 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               'va8d0kgu' /* Balance:  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Text(
                                                                             containerVarItem.oldBalance.toString(),
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -858,8 +886,9 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                                 '9g57ro5r' /* Allow Credit */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                         ],
@@ -944,11 +973,15 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineSmall,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmallFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineSmallIsCustom,
                                         ),
                                   ),
                                 ],
@@ -1053,11 +1086,15 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                     context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleMedium,
+                                                                      .titleMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMediumIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1168,10 +1205,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1258,8 +1297,9 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         enabledBorder:
                                                                             OutlineInputBorder(
@@ -1334,10 +1374,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                       keyboardType:
                                                                           TextInputType
@@ -1417,11 +1459,14 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -1489,8 +1534,9 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         enabledBorder:
                                                                             OutlineInputBorder(
@@ -1565,10 +1611,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                       keyboardType:
                                                                           TextInputType
@@ -1650,11 +1698,14 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodyMediumIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -1739,8 +1790,9 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         enabledBorder:
                                                                             OutlineInputBorder(
@@ -1815,10 +1867,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                       keyboardType:
                                                                           TextInputType
@@ -1912,11 +1966,14 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -1999,10 +2056,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                       enabledBorder:
                                                                           OutlineInputBorder(
@@ -2077,10 +2136,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                     keyboardType:
                                                                         TextInputType
@@ -2160,11 +2221,14 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodyMediumIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -2227,8 +2291,9 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         enabledBorder:
                                                                             OutlineInputBorder(
@@ -2303,10 +2368,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                       keyboardType:
                                                                           TextInputType
@@ -2411,14 +2478,17 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -2554,9 +2624,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               gridViewPaymentModeRecord.name,
                                                                               textAlign: TextAlign.center,
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
                                                                                     lineHeight: 1.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -2650,14 +2721,18 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmall,
+                                                                      .headlineSmallFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmallIsCustom,
                                                                 ),
                                                       ),
                                                     ],
@@ -2732,10 +2807,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2754,10 +2831,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2798,10 +2877,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2820,10 +2901,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2864,10 +2947,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2909,14 +2994,16 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                           labelStyle: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                           hintStyle: FlutterFlowTheme.of(context)
                                                                               .bodySmall
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                               ),
                                                                           enabledBorder:
                                                                               UnderlineInputBorder(
@@ -2974,8 +3061,9 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                         textAlign:
                                                                             TextAlign.end,
@@ -3024,10 +3112,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3046,10 +3136,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3090,10 +3182,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3111,10 +3205,12 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3167,14 +3263,17 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         context)
                                                                     .headlineMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3194,14 +3293,17 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         context)
                                                                     .headlineMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3366,11 +3468,15 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                     .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmall,
+                                                                      .headlineSmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmallIsCustom,
                                                                 ),
                                                           ),
                                                           duration: Duration(
@@ -3457,13 +3563,17 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                   context)
                                                               .titleSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmall,
+                                                                    .titleSmallFamily,
                                                                 color: Colors
                                                                     .white,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmallIsCustom,
                                                               ),
                                                       elevation: 2.0,
                                                       borderSide: BorderSide(
@@ -3509,13 +3619,17 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                   context)
                                                               .titleSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmall,
+                                                                    .titleSmallFamily,
                                                                 color: Colors
                                                                     .white,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmallIsCustom,
                                                               ),
                                                       elevation: 2.0,
                                                       borderSide: BorderSide(

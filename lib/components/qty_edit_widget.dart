@@ -95,11 +95,14 @@ class _QtyEditWidgetState extends State<QtyEditWidget> {
                   widget!.parameter1!.toString(),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                        font: FlutterFlowTheme.of(context).bodySmall,
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodySmallFamily,
                         color: FlutterFlowTheme.of(context).primaryText,
                         fontSize: 13.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                       ),
                 ),
               ],
@@ -172,19 +175,27 @@ class _QtyEditWidgetState extends State<QtyEditWidget> {
                   obscureText: false,
                   decoration: InputDecoration(
                     isDense: true,
-                    labelStyle:
-                        FlutterFlowTheme.of(context).labelMedium.override(
-                              font: FlutterFlowTheme.of(context).labelMedium,
-                              letterSpacing: 0.0,
-                            ),
+                    labelStyle: FlutterFlowTheme.of(context)
+                        .labelMedium
+                        .override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).labelMediumFamily,
+                          letterSpacing: 0.0,
+                          useGoogleFonts:
+                              !FlutterFlowTheme.of(context).labelMediumIsCustom,
+                        ),
                     hintText: FFLocalizations.of(context).getText(
                       'm2b1ibmn' /* Qty */,
                     ),
-                    hintStyle:
-                        FlutterFlowTheme.of(context).labelMedium.override(
-                              font: FlutterFlowTheme.of(context).labelMedium,
-                              letterSpacing: 0.0,
-                            ),
+                    hintStyle: FlutterFlowTheme.of(context)
+                        .labelMedium
+                        .override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).labelMediumFamily,
+                          letterSpacing: 0.0,
+                          useGoogleFonts:
+                              !FlutterFlowTheme.of(context).labelMediumIsCustom,
+                        ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Color(0x00000000),
@@ -217,8 +228,11 @@ class _QtyEditWidgetState extends State<QtyEditWidget> {
                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        font: FlutterFlowTheme.of(context).bodyMedium,
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                       ),
                   textAlign: TextAlign.center,
                   cursorColor: FlutterFlowTheme.of(context).primaryText,

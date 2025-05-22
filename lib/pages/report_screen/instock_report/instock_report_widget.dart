@@ -204,9 +204,12 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                           style: FlutterFlowTheme.of(context)
                               .bodySmall
                               .override(
-                                font: FlutterFlowTheme.of(context).bodySmall,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodySmallFamily,
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodySmallIsCustom,
                               ),
                         ),
                       ],
@@ -269,11 +272,15 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineSmall,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmallFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineSmallIsCustom,
                                         ),
                                   ),
                                 ],
@@ -299,11 +306,15 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -376,15 +387,20 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                             context)
                                                         .titleMedium
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleMedium,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMediumFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleMediumIsCustom,
                                                         ),
                                                   ),
                                                 ),
@@ -416,13 +432,17 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .headlineLarge
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineLarge,
+                                                      fontFamily: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineLargeFamily,
                                                       fontSize: 32.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w600,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineLargeIsCustom,
                                                     ),
                                             pickerBackgroundColor:
                                                 FlutterFlowTheme.of(context)
@@ -481,11 +501,15 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleSmallIsCustom,
                                           ),
                                       elevation: 0.0,
                                       borderRadius: BorderRadius.circular(8.0),
@@ -547,10 +571,10 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmall,
+                                                                .headlineSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -558,6 +582,10 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmallIsCustom,
                                                       ),
                                             ),
                                           ],
@@ -585,10 +613,10 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmall,
+                                                                .headlineSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -596,6 +624,10 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmallIsCustom,
                                                       ),
                                             ),
                                           ],
@@ -631,10 +663,10 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmall,
+                                                                .headlineSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -642,6 +674,10 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmallIsCustom,
                                                       ),
                                                 ),
                                               ),
@@ -754,12 +790,14 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                           context)
                                                                       .titleLarge
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleLarge,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleLargeFamily,
                                                                         color: Colors
                                                                             .black,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleLargeIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -774,12 +812,14 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                           context)
                                                                       .titleLarge
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleLarge,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleLargeFamily,
                                                                         color: Colors
                                                                             .black,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleLargeIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -797,14 +837,16 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                           context)
                                                                       .titleLarge
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleLarge,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleLargeFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .success,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w900,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleLargeIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -868,10 +910,11 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelSmall
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                 fontSize: 15.0,
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -896,10 +939,11 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .labelSmall
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                 fontSize: 14.0,
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -961,8 +1005,9 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                               child: Text(
                                                                                 recipelItem.name,
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -976,8 +1021,9 @@ class _InstockReportWidgetState extends State<InstockReportWidget>
                                                                               child: Text(
                                                                                 recipelItem.quantity.toString(),
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),

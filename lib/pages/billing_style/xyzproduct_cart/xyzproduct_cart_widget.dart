@@ -122,8 +122,11 @@ class _XyzproductCartWidgetState extends State<XyzproductCartWidget> {
                           style: FlutterFlowTheme.of(context)
                               .titleMedium
                               .override(
-                                font: FlutterFlowTheme.of(context).titleMedium,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleMediumFamily,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .titleMediumIsCustom,
                               ),
                         ),
                       ),
@@ -137,8 +140,11 @@ class _XyzproductCartWidgetState extends State<XyzproductCartWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  font: FlutterFlowTheme.of(context).labelSmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelSmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelSmallIsCustom,
                                 ),
                           ),
                           Text(
@@ -149,8 +155,11 @@ class _XyzproductCartWidgetState extends State<XyzproductCartWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  font: FlutterFlowTheme.of(context).labelSmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelSmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelSmallIsCustom,
                                 ),
                           ),
                         ],
@@ -281,20 +290,28 @@ class _XyzproductCartWidgetState extends State<XyzproductCartWidget> {
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .bodySmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodySmallFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodySmallIsCustom,
                                           ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .labelMedium,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelMediumIsCustom,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -338,9 +355,13 @@ class _XyzproductCartWidgetState extends State<XyzproductCartWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineSmall,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmallFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineSmallIsCustom,
                                         ),
                                     textAlign: TextAlign.center,
                                     keyboardType:
@@ -381,9 +402,13 @@ class _XyzproductCartWidgetState extends State<XyzproductCartWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineSmall,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmallFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineSmallIsCustom,
                                         ),
                                   ),
                                 ),
@@ -498,9 +523,12 @@ class _XyzproductCartWidgetState extends State<XyzproductCartWidget> {
                         .toString(),
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).labelLarge.override(
-                          font: FlutterFlowTheme.of(context).labelLarge,
+                          fontFamily:
+                              FlutterFlowTheme.of(context).labelLargeFamily,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.normal,
+                          useGoogleFonts:
+                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                         ),
                   ),
                 ),

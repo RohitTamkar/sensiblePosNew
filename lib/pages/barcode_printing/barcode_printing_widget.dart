@@ -111,11 +111,15 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineMedium,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMediumFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineMediumIsCustom,
                                         ),
                                   ),
                                 ],
@@ -215,17 +219,22 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall,
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallIsCustom,
+                                                          ),
                                                   elevation: 0.0,
                                                   borderRadius:
                                                       BorderRadius.circular(
@@ -456,9 +465,10 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .headlineSmall
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                 color: FlutterFlowTheme.of(context).primaryText,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                               ),
                                                                         ),
                                                                       ],
@@ -492,10 +502,11 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                           Text(
                                                                             printerListIndex.toString(),
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -586,10 +597,14 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .headlineSmall
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall,
+                                                      fontFamily: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmallFamily,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmallIsCustom,
                                                     ),
                                             hintText:
                                                 FFLocalizations.of(context)
@@ -686,10 +701,12 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodySmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                         ),
                                                                   ),
                                                                 ],
@@ -726,10 +743,12 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                               ],
@@ -823,8 +842,9 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                               ),
                                                                               textAlign: TextAlign.start,
                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -837,15 +857,17 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                                   '37f6cvrx' /* ₹  */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                     ),
                                                                               ),
                                                                               Text(
                                                                                 billItem.price.toString(),
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -857,8 +879,9 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                               Text(
                                                                                 billItem.barcode,
                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -951,8 +974,9 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                                 '0',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -1261,33 +1285,45 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                     context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelMedium,
+                                                                      .labelMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMediumIsCustom,
                                                                 ),
                                                         searchTextStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                         textStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                         hintText:
                                                             FFLocalizations.of(
@@ -1421,11 +1457,15 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                   context)
                                               .titleSmall
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleSmall,
+                                                        .titleSmallFamily,
                                                 color: Colors.white,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .titleSmallIsCustom,
                                               ),
                                           elevation: 0.0,
                                           borderRadius:

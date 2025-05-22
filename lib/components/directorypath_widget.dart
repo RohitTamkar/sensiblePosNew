@@ -101,9 +101,12 @@ class _DirectorypathWidgetState extends State<DirectorypathWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    font: FlutterFlowTheme.of(context)
-                                        .labelMedium,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelMediumIsCustom,
                                   ),
                               hintText: FFLocalizations.of(context).getText(
                                 'xiwjae3z' /* TextField */,
@@ -111,9 +114,12 @@ class _DirectorypathWidgetState extends State<DirectorypathWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    font: FlutterFlowTheme.of(context)
-                                        .labelMedium,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelMediumIsCustom,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -150,8 +156,11 @@ class _DirectorypathWidgetState extends State<DirectorypathWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: FlutterFlowTheme.of(context).bodyMedium,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .bodyMediumIsCustom,
                                 ),
                             cursorColor:
                                 FlutterFlowTheme.of(context).primaryText,
@@ -180,9 +189,12 @@ class _DirectorypathWidgetState extends State<DirectorypathWidget> {
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        font: FlutterFlowTheme.of(context).titleSmall,
+                        fontFamily:
+                            FlutterFlowTheme.of(context).titleSmallFamily,
                         color: Colors.white,
                         letterSpacing: 0.0,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                       ),
                   elevation: 0.0,
                   borderRadius: BorderRadius.circular(8.0),

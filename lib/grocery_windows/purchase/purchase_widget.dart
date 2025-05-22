@@ -107,8 +107,11 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  font: FlutterFlowTheme.of(context).labelSmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelSmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelSmallIsCustom,
                                 ),
                           ),
                         ),
@@ -139,8 +142,11 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  font: FlutterFlowTheme.of(context).labelSmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelSmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelSmallIsCustom,
                                 ),
                           )),
                         ),
@@ -169,10 +175,13 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  font: FlutterFlowTheme.of(context).labelSmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelSmallFamily,
                                   color: Color(0xFF446AFE),
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelSmallIsCustom,
                                 ),
                           ),
                         ),
@@ -200,8 +209,11 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                font: FlutterFlowTheme.of(context).bodyMedium,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodyMediumIsCustom,
                               ),
                         ),
                         SizedBox(
@@ -230,8 +242,11 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  font: FlutterFlowTheme.of(context).labelSmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelSmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelSmallIsCustom,
                                 ),
                           ),
                         ),
@@ -259,8 +274,11 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                font: FlutterFlowTheme.of(context).bodyMedium,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodyMediumIsCustom,
                               ),
                         ),
                         SizedBox(
@@ -298,16 +316,22 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    font: FlutterFlowTheme.of(context)
-                                        .labelMedium,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelMediumIsCustom,
                                   ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    font: FlutterFlowTheme.of(context)
-                                        .labelMedium,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelMediumIsCustom,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -346,8 +370,11 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  font: FlutterFlowTheme.of(context).labelSmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelSmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelSmallIsCustom,
                                 ),
                             textAlign: TextAlign.center,
                             validator: _model
@@ -382,16 +409,22 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    font: FlutterFlowTheme.of(context)
-                                        .labelMedium,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelMediumIsCustom,
                                   ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    font: FlutterFlowTheme.of(context)
-                                        .labelMedium,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelMediumIsCustom,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -430,8 +463,11 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  font: FlutterFlowTheme.of(context).labelSmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelSmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelSmallIsCustom,
                                 ),
                             textAlign: TextAlign.center,
                             validator: _model
@@ -466,16 +502,22 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    font: FlutterFlowTheme.of(context)
-                                        .labelMedium,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelMediumIsCustom,
                                   ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    font: FlutterFlowTheme.of(context)
-                                        .labelMedium,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelMediumIsCustom,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -514,8 +556,11 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  font: FlutterFlowTheme.of(context).labelSmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelSmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelSmallIsCustom,
                                 ),
                             textAlign: TextAlign.center,
                             validator: _model
@@ -547,8 +592,11 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                font: FlutterFlowTheme.of(context).bodyMedium,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodyMediumIsCustom,
                               ),
                         ),
                         SizedBox(
@@ -575,8 +623,11 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                font: FlutterFlowTheme.of(context).bodyMedium,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .bodyMediumIsCustom,
                               ),
                         ),
                         SizedBox(
@@ -605,9 +656,12 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
-                                  font: FlutterFlowTheme.of(context).labelSmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelSmallFamily,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelSmallIsCustom,
                                 ),
                           ),
                         ),
@@ -679,9 +733,12 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             ),
                           ),
@@ -712,9 +769,12 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             )),
                           ),
@@ -743,11 +803,14 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     color: Color(0xFF446AFE),
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             ),
                           ),
@@ -780,9 +843,12 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             ),
                           ),
@@ -812,9 +878,12 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             ),
                           ),
@@ -844,9 +913,12 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             ),
                           ),
@@ -876,9 +948,12 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             ),
                           ),
@@ -908,9 +983,12 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             ),
                           ),
@@ -940,9 +1018,12 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             ),
                           ),
@@ -972,9 +1053,12 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             ),
                           ),
@@ -1004,9 +1088,12 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             ),
                           ),
@@ -1036,10 +1123,13 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             ),
                           ),

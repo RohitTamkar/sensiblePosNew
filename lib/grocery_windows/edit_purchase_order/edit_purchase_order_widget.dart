@@ -268,13 +268,18 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                             context)
                                                         .headlineSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .headlineSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryBackground,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineSmallIsCustom,
                                                         ),
                                                   ),
                                                 ),
@@ -406,14 +411,18 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                   context)
                                                               .bodySmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodySmall,
+                                                                    .bodySmallFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryBackground,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmallIsCustom,
                                                               ),
                                                       enabledBorder:
                                                           OutlineInputBorder(
@@ -492,13 +501,18 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryBackground,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMediumIsCustom,
                                                         ),
                                                     validator: _model
                                                         .textFieldsearchTextControllerValidator
@@ -712,17 +726,19 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                           Text(
                                                                             containerVarItem.name,
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).info,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Text(
                                                                             containerVarItem.mobile,
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).info,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -760,9 +776,10 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                                     Text(
                                                                                       'Balance: ${containerVarItem.oldBalance.toString()}',
                                                                                       style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                            font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                             color: FlutterFlowTheme.of(context).primary,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                           ),
                                                                                     ),
                                                                                   ],
@@ -986,17 +1003,19 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                           Text(
                                                                             listItem.name,
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).info,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Text(
                                                                             listItem.mobile,
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).info,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -1035,9 +1054,10 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                                       child: Text(
                                                                                         'Balance: ${listItem.oldBalance.toString()}',
                                                                                         style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ),
@@ -1217,22 +1237,26 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   'e8wsgqyn' /* Purchase */,
                                                 ),
                                                 textAlign: TextAlign.start,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineMedium
-                                                    .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineMedium,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineMediumFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primaryBtnText,
-                                                      fontSize: 20.0,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                    ),
+                                                          fontSize: 20.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineMediumIsCustom,
+                                                        ),
                                               ),
                                             ),
                                           ],
@@ -1281,19 +1305,23 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                       0.0, 0.0, 10.0, 0.0),
                                               child: Text(
                                                 FFAppState().outletName,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineSmall
-                                                    .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primaryBtnText,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineSmallIsCustom,
+                                                        ),
                                               ),
                                             ),
                                             Padding(
@@ -1306,14 +1334,19 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                         context)
                                                     .labelSmall
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelSmall,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelSmallFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryBtnText,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelSmallIsCustom,
                                                     ),
                                               ),
                                             ),
@@ -1381,11 +1414,15 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   context)
                                               .labelLarge
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelLarge,
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                           elevation: 0.0,
                                           borderSide: BorderSide(
@@ -1428,11 +1465,15 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   context)
                                               .labelLarge
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelLarge,
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                           elevation: 0.0,
                                           borderSide: BorderSide(
@@ -1502,11 +1543,15 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   context)
                                               .labelLarge
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelLarge,
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                           elevation: 0.0,
                                           borderSide: BorderSide(
@@ -1555,10 +1600,14 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   context)
                                               .labelLarge
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelLarge,
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                           elevation: 0.0,
                                           borderSide: BorderSide(
@@ -1601,10 +1650,14 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   context)
                                               .labelLarge
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelLarge,
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                           elevation: 0.0,
                                           borderSide: BorderSide(
@@ -1649,10 +1702,14 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   context)
                                               .labelLarge
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelLarge,
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                           elevation: 0.0,
                                           borderSide: BorderSide(
@@ -1696,10 +1753,14 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   context)
                                               .labelLarge
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelLarge,
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                           elevation: 0.0,
                                           borderSide: BorderSide(
@@ -1742,10 +1803,14 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   context)
                                               .labelLarge
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelLarge,
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                           elevation: 0.0,
                                           borderSide: BorderSide(
@@ -1814,10 +1879,14 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   context)
                                               .labelLarge
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelLarge,
+                                                        .labelLargeFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLargeIsCustom,
                                               ),
                                           elevation: 0.0,
                                           borderSide: BorderSide(
@@ -1892,11 +1961,14 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -1924,11 +1996,14 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelLarge
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelLargeFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelLargeIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -1955,11 +2030,14 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -1982,20 +2060,24 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                           context)
                                                                       .labelMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .labelMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                       ),
                                                               hintStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .labelMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                       ),
                                                               enabledBorder:
                                                                   OutlineInputBorder(
@@ -2066,11 +2148,15 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                     .of(context)
                                                                 .labelLarge
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelLarge,
+                                                                      .labelLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelLargeIsCustom,
                                                                 ),
                                                             validator: _model
                                                                 .textController2Validator
@@ -2112,11 +2198,15 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                   .of(context)
                                                               .labelSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelSmall,
+                                                                    .labelSmallFamily,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmallIsCustom,
                                                               ),
                                                         ),
                                                       ),
@@ -2298,11 +2388,15 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium,
+                                                                    .bodyMediumFamily,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumIsCustom,
                                                               ),
                                                         ),
                                                       ].divide(SizedBox(
@@ -2364,10 +2458,12 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2394,19 +2490,23 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                               context)
                                                                           .labelMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                           ),
                                                                       hintStyle: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                           ),
                                                                       enabledBorder:
                                                                           OutlineInputBorder(
@@ -2469,10 +2569,12 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).labelLarge,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                     validator: _model
                                                                         .custnameTextControllerValidator
@@ -2530,10 +2632,12 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2560,19 +2664,23 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                               context)
                                                                           .labelMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                           ),
                                                                       hintStyle: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                           ),
                                                                       enabledBorder:
                                                                           OutlineInputBorder(
@@ -2635,10 +2743,12 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).labelLarge,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                     validator: _model
                                                                         .custmobTextControllerValidator
@@ -2722,9 +2832,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
@@ -2733,6 +2843,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -2770,9 +2883,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
@@ -2781,6 +2894,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -2815,9 +2931,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
@@ -2826,6 +2942,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -2863,9 +2982,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
@@ -2874,6 +2993,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -2911,9 +3033,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
@@ -2922,6 +3044,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -2959,9 +3084,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
@@ -2970,6 +3095,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -3007,9 +3135,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
@@ -3018,6 +3146,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -3055,9 +3186,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
@@ -3066,6 +3197,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -3103,9 +3237,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
@@ -3114,6 +3248,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -3151,9 +3288,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
@@ -3162,6 +3299,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -3199,9 +3339,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
@@ -3210,6 +3350,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -3247,9 +3390,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                       .of(context)
                                                                   .labelSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
@@ -3258,6 +3401,9 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -3473,14 +3619,19 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryBtnText,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumIsCustom,
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
@@ -3521,14 +3672,19 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryBtnText,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumIsCustom,
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
@@ -3623,14 +3779,19 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryBtnText,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumIsCustom,
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
@@ -3670,14 +3831,19 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryBtnText,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumIsCustom,
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
@@ -3716,10 +3882,15 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                             context)
                                                         .titleMedium
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleMedium,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMediumFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleMediumIsCustom,
                                                         ),
                                                   ),
                                                 ),
@@ -3727,18 +3898,23 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   FFAppState()
                                                       .finalAmt
                                                       .toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleMedium
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleMedium,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumIsCustom,
+                                                          ),
                                                 ),
                                               ],
                                             ),
@@ -3773,10 +3949,15 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmallFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelSmallIsCustom,
                                                         ),
                                                   ),
                                                 ),
@@ -3784,18 +3965,23 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   FFAppState()
                                                       .noOfItems
                                                       .toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelSmall,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallIsCustom,
+                                                          ),
                                                 ),
                                                 SizedBox(
                                                   height: 100.0,
@@ -3824,10 +4010,15 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmallFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelSmallIsCustom,
                                                         ),
                                                   ),
                                                 ),
@@ -3835,18 +4026,23 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   FFAppState()
                                                       .disAmt
                                                       .toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelSmall,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallIsCustom,
+                                                          ),
                                                 ),
                                                 SizedBox(
                                                   height: 100.0,
@@ -3875,10 +4071,15 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmallFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelSmallIsCustom,
                                                         ),
                                                   ),
                                                 ),
@@ -3886,18 +4087,23 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   FFAppState()
                                                       .delCharges
                                                       .toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelSmall,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallIsCustom,
+                                                          ),
                                                 ),
                                                 SizedBox(
                                                   height: 100.0,
@@ -3926,10 +4132,15 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmallFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelSmallIsCustom,
                                                         ),
                                                   ),
                                                 ),
@@ -3937,18 +4148,23 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   FFAppState()
                                                       .taxamt
                                                       .toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelSmall,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallIsCustom,
+                                                          ),
                                                 ),
                                               ],
                                             ),
@@ -4027,10 +4243,15 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMediumIsCustom,
                                                         ),
                                               ),
                                             ],
@@ -4066,11 +4287,15 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMediumFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMediumIsCustom,
                                                       ),
                                             ),
                                           ],
@@ -4105,11 +4330,15 @@ class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMediumFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMediumIsCustom,
                                                       ),
                                             ),
                                           ],

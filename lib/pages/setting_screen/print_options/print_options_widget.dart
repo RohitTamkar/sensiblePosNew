@@ -114,11 +114,15 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineSmall,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmallFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineSmallIsCustom,
                                         ),
                                   ),
                                 ],
@@ -294,14 +298,19 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                         context)
                                                     .titleSmall
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .lineColor,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallIsCustom,
                                                     ),
                                                 elevation: 5.0,
                                                 borderSide: BorderSide(
@@ -361,11 +370,15 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                     .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmall,
+                                                                      .headlineSmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmallIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -409,10 +422,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodySmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   tileColor: Color(
@@ -455,10 +470,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodySmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   tileColor: Color(
@@ -501,10 +518,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodySmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   tileColor: Color(
@@ -547,10 +566,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodySmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   tileColor: Color(
@@ -593,10 +614,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodySmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   tileColor: Color(
@@ -652,11 +675,15 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                     .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmall,
+                                                                      .headlineSmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmallIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -700,10 +727,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodySmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   tileColor: Color(
@@ -746,10 +775,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodySmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   subtitle:
@@ -763,10 +794,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   tileColor: Color(
@@ -852,10 +885,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -896,10 +931,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -940,10 +977,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -984,10 +1023,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1028,10 +1069,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1072,10 +1115,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1116,10 +1161,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1160,10 +1207,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1211,10 +1260,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1255,10 +1306,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1299,10 +1352,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1350,10 +1405,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1394,10 +1451,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1438,10 +1497,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1482,10 +1543,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1526,10 +1589,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1577,10 +1642,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: true,
@@ -1621,10 +1688,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1665,10 +1734,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1716,10 +1787,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1767,10 +1840,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: true,
@@ -1818,10 +1893,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: false,
@@ -1869,10 +1946,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: true,
@@ -1920,10 +1999,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                                 dense: true,
@@ -2040,11 +2121,15 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .titleMedium,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleMediumIsCustom,
                                           ),
                                       elevation: 3.0,
                                       borderSide: BorderSide(

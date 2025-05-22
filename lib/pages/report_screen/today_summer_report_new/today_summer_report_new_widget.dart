@@ -127,11 +127,15 @@ class _TodaySummerReportNewWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineMedium,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMediumFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineMediumIsCustom,
                                         ),
                                   ),
                                 ],
@@ -204,15 +208,19 @@ class _TodaySummerReportNewWidgetState
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmall,
+                                                                .headlineSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .lineColor,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmallIsCustom,
                                                       ),
                                                 ),
                                               ),
@@ -335,13 +343,18 @@ class _TodaySummerReportNewWidgetState
                                                             context)
                                                         .headlineSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .headlineSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineSmallIsCustom,
                                                         ),
                                                     textAlign: TextAlign.start,
                                                     keyboardType:
@@ -491,15 +504,19 @@ class _TodaySummerReportNewWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .headlineMedium
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineMedium,
+                                                                .headlineMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineMediumIsCustom,
                                                       ),
                                             ),
                                             Padding(
@@ -510,19 +527,23 @@ class _TodaySummerReportNewWidgetState
                                                     .getText(
                                                   'kc6ufmtc' /* ₹ */,
                                                 ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineSmall
-                                                    .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primary,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineSmallIsCustom,
+                                                        ),
                                               ),
                                             ),
                                             Text(
@@ -534,16 +555,20 @@ class _TodaySummerReportNewWidgetState
                                                   FlutterFlowTheme.of(context)
                                                       .headlineMedium
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineMedium,
+                                                                .headlineMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
                                                         fontSize: 20.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineMediumIsCustom,
                                                       ),
                                             ),
                                           ],
@@ -614,11 +639,14 @@ class _TodaySummerReportNewWidgetState
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -709,8 +737,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'j09juigk' /* Cash */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -718,8 +747,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 '5gr77ym7' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -739,8 +769,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'tes3uc7k' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -752,8 +783,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 ).toString(),
                                                                                                 'cash'),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -797,8 +829,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'xei5xaes' /* Digital */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -806,8 +839,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'q2uqwweb' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -826,8 +860,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'vh511zb1' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -839,8 +874,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 ).toString(),
                                                                                                 'digital'),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -897,8 +933,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'ax51z9f6' /* Card */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -906,8 +943,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 '0l9x9s55' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -927,8 +965,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'lf3fht1s' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -940,8 +979,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 ).toString(),
                                                                                                 'card'),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -985,8 +1025,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 '8k1igspy' /* Paytm */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -994,8 +1035,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'kwf19lks' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -1015,8 +1057,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'jtywg0o5' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1028,8 +1071,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 ).toString(),
                                                                                                 'paytm'),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1086,8 +1130,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'dpinyz8j' /* Google Pay */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -1095,8 +1140,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'g4kkng4m' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -1116,8 +1162,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'klch4fl8' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1129,8 +1176,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 ).toString(),
                                                                                                 'googlepay'),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1175,8 +1223,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'nhco992i' /* PhonePe */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -1184,8 +1233,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'hn2tpa2x' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -1204,8 +1254,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'm4geftb7' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1217,8 +1268,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 ).toString(),
                                                                                                 'phonepe'),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1274,8 +1326,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'rxxx08fv' /* Cheque */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Padding(
@@ -1285,8 +1338,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'nyl5fy2s' /* : */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -1306,8 +1360,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'etq3utar' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1319,8 +1374,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 ).toString(),
                                                                                                 'cheque'),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1365,8 +1421,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'ituyb81t' /* Other */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Padding(
@@ -1376,8 +1433,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'thnl6kpc' /* : */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -1397,8 +1455,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'jj6m7sq7' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1410,8 +1469,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 ).toString(),
                                                                                                 'other'),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1474,8 +1534,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 '207q77ev' /* UPI */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Padding(
@@ -1485,8 +1546,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'exp9u5jz' /* : */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -1508,9 +1570,10 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'eyxa3r8q' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).headlineMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1523,9 +1586,10 @@ class _TodaySummerReportNewWidgetState
                                                                                                   ).toString(),
                                                                                                   'digital'),
                                                                                               style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).headlineMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1604,11 +1668,14 @@ class _TodaySummerReportNewWidgetState
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -1698,8 +1765,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'mxdkdh1s' /* Delivery */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                               Text(
@@ -1707,8 +1775,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'rcfzl132' /* : */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ],
@@ -1731,8 +1800,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'ji6y2615' /* ₹ */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -1742,8 +1812,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 r'''$.delivery''',
                                                                                               ).toString(),
                                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -1792,8 +1863,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'f64g07g5' /* Discount */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                               Text(
@@ -1801,8 +1873,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'xs5oaiv2' /* : */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ],
@@ -1825,8 +1898,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'kczadamr' /* ₹ */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -1836,8 +1910,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 r'''$.discount''',
                                                                                               ).toString(),
                                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -1898,8 +1973,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'kr2bjl6u' /* Tax */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                               Text(
@@ -1907,8 +1983,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   '6yvly97j' /* : */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ],
@@ -1931,8 +2008,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   '9to516tx' /* ₹ */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -1942,8 +2020,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 r'''$.tax''',
                                                                                               ).toString(),
                                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -1992,8 +2071,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   '53h4gc6b' /* Refund */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                               Text(
@@ -2001,8 +2081,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'sna62860' /* : */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ],
@@ -2025,8 +2106,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'l9oq8sa5' /* ₹ */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -2036,8 +2118,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 r'''$.refund''',
                                                                                               ).toString(),
                                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -2098,8 +2181,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   '5mxzkeio' /* Round Off */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                               Text(
@@ -2107,8 +2191,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   '5o5vy7xd' /* : */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ],
@@ -2131,8 +2216,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'uurlxkiy' /* ₹ */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -2142,8 +2228,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 r'''$.roundOff''',
                                                                                               ).toString(),
                                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -2192,8 +2279,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'nehdzo5s' /* Expenses(-) */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                               Text(
@@ -2201,8 +2289,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'rfd9tato' /* : */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ],
@@ -2225,8 +2314,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'vl394ohm' /* ₹  */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -2236,8 +2326,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 r'''$.expenses''',
                                                                                               ).toString(),
                                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -2298,8 +2389,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'cjmsxfit' /* Advance(-) */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                               Text(
@@ -2307,8 +2399,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'bfcn7fnk' /* : */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ],
@@ -2331,8 +2424,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'mwhv4i4p' /* ₹ */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -2342,8 +2436,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 r'''$.advance''',
                                                                                               ).toString(),
                                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -2392,8 +2487,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   'i0uxwli6' /* Cred.Reci(+) */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                               Text(
@@ -2401,8 +2497,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   '2ued1j3n' /* : */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ],
@@ -2425,8 +2522,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                   '13hanopm' /* ₹  */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -2436,8 +2534,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 r'''$.credRec''',
                                                                                               ).toString(),
                                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -2498,8 +2597,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'b3q5won1' /* Rec. Amt(+) */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -2507,8 +2607,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'hajrihu5' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -2529,8 +2630,9 @@ class _TodaySummerReportNewWidgetState
                                                                                                 'vt2qn8xf' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -2540,8 +2642,9 @@ class _TodaySummerReportNewWidgetState
                                                                                               r'''$.recAmount''',
                                                                                             ).toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -2678,11 +2781,14 @@ class _TodaySummerReportNewWidgetState
                                                                         context)
                                                                     .labelSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelSmallIsCustom,
                                                                     ),
                                                               ),
                                                               Text(
@@ -2695,11 +2801,14 @@ class _TodaySummerReportNewWidgetState
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -2736,14 +2845,17 @@ class _TodaySummerReportNewWidgetState
                                                                         context)
                                                                     .headlineMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -2821,11 +2933,14 @@ class _TodaySummerReportNewWidgetState
                                                                         context)
                                                                     .titleMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -2872,12 +2987,14 @@ class _TodaySummerReportNewWidgetState
                                                                             context)
                                                                         .headlineMedium
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).headlineMedium,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2890,12 +3007,14 @@ class _TodaySummerReportNewWidgetState
                                                                           context)
                                                                       .headlineMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .headlineMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ],
@@ -2981,11 +3100,14 @@ class _TodaySummerReportNewWidgetState
                                                                         context)
                                                                     .titleMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleMediumIsCustom,
                                                                     ),
                                                               ),
                                                               Text(
@@ -2998,11 +3120,14 @@ class _TodaySummerReportNewWidgetState
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -3040,9 +3165,9 @@ class _TodaySummerReportNewWidgetState
                                                                         context)
                                                                     .headlineMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
@@ -3050,6 +3175,9 @@ class _TodaySummerReportNewWidgetState
                                                                           22.0,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3062,9 +3190,9 @@ class _TodaySummerReportNewWidgetState
                                                                       .of(context)
                                                                   .headlineMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .headlineMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineMediumFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
@@ -3072,6 +3200,9 @@ class _TodaySummerReportNewWidgetState
                                                                         22.0,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .headlineMediumIsCustom,
                                                                   ),
                                                             ),
                                                           ],

@@ -386,14 +386,18 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                     .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmall,
+                                                                      .headlineSmallFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmallIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -542,12 +546,14 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondaryBackground,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                               enabledBorder:
                                                                   OutlineInputBorder(
@@ -630,14 +636,18 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMediumFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                             validator: _model
                                                                 .textFieldsearchTextControllerValidator
@@ -849,17 +859,19 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                                   Text(
                                                                                     containerVarItem.name,
                                                                                     style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                           color: FlutterFlowTheme.of(context).info,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                   Text(
                                                                                     containerVarItem.mobile,
                                                                                     style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                           color: FlutterFlowTheme.of(context).info,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -888,9 +900,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                                             Text(
                                                                                               'Balance: ${containerVarItem.oldBalance.toString()}',
                                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -1082,17 +1095,19 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                                   Text(
                                                                                     listItem.name,
                                                                                     style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                           color: FlutterFlowTheme.of(context).info,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                   Text(
                                                                                     listItem.mobile,
                                                                                     style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                           color: FlutterFlowTheme.of(context).info,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -1122,9 +1137,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                                               child: Text(
                                                                                                 'Balance: ${listItem.oldBalance.toString()}',
                                                                                                 style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                      font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                       color: FlutterFlowTheme.of(context).primary,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -1309,9 +1325,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                     context)
                                                                 .headlineMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineMedium,
+                                                                      .headlineMediumFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBtnText,
@@ -1322,6 +1338,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineMediumIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1389,14 +1409,18 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmall,
+                                                                      .headlineSmallFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBtnText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmallIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1415,14 +1439,18 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                     context)
                                                                 .labelSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelSmall,
+                                                                      .labelSmallFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBtnText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1531,18 +1559,23 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelLarge,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
@@ -1621,18 +1654,23 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelLarge,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
@@ -1701,16 +1739,21 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelLarge,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
@@ -1756,16 +1799,21 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelLarge,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
@@ -1813,16 +1861,21 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelLarge,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
@@ -1870,16 +1923,21 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelLarge,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
@@ -1955,16 +2013,21 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelLarge
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelLarge,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeIsCustom,
+                                                          ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
@@ -2051,10 +2114,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2080,10 +2145,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelLarge
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelLarge,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2110,10 +2177,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2142,19 +2211,23 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                           ),
                                                                       hintStyle: FlutterFlowTheme.of(
                                                                               context)
                                                                           .labelMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                           ),
                                                                       enabledBorder:
                                                                           OutlineInputBorder(
@@ -2217,10 +2290,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).labelLarge,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                     validator: _model
                                                                         .textController1Validator
@@ -2265,10 +2340,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                           context)
                                                                       .labelSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .labelSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelSmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -2507,8 +2584,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               ),
                                                                               textAlign: TextAlign.start,
                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -2530,12 +2608,14 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                                 InputDecoration(
                                                                               isDense: true,
                                                                               labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                   ),
                                                                               hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                   ),
                                                                               enabledBorder: OutlineInputBorder(
                                                                                 borderSide: BorderSide(
@@ -2570,8 +2650,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               contentPadding: EdgeInsets.all(12.0),
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                  font: FlutterFlowTheme.of(context).labelLarge,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                                 ),
                                                                             validator:
                                                                                 _model.custnameTextControllerValidator.asValidator(context),
@@ -2616,8 +2697,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               ),
                                                                               textAlign: TextAlign.start,
                                                                               style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -2639,12 +2721,14 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                                 InputDecoration(
                                                                               isDense: true,
                                                                               labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                   ),
                                                                               hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                                   ),
                                                                               enabledBorder: OutlineInputBorder(
                                                                                 borderSide: BorderSide(
@@ -2679,8 +2763,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               contentPadding: EdgeInsets.all(12.0),
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                  font: FlutterFlowTheme.of(context).labelLarge,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                                 ),
                                                                             validator:
                                                                                 _model.custmobTextControllerValidator.asValidator(context),
@@ -2765,14 +2850,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2814,14 +2901,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2860,14 +2949,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2909,14 +3000,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2958,14 +3051,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3007,14 +3102,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3056,14 +3153,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3105,14 +3204,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3154,14 +3255,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3203,14 +3306,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3252,14 +3357,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3301,14 +3408,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3542,18 +3651,25 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .info,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelMedium,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBtnText,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumIsCustom,
+                                                            ),
                                                     elevation: 3.0,
                                                     borderSide: BorderSide(
                                                       color: Colors.transparent,
@@ -3598,18 +3714,25 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .info,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelMedium,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBtnText,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumIsCustom,
+                                                            ),
                                                     elevation: 3.0,
                                                     borderSide: BorderSide(
                                                       color: Colors.transparent,
@@ -3764,18 +3887,25 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .info,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelMedium,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBtnText,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumIsCustom,
+                                                            ),
                                                     elevation: 3.0,
                                                     borderSide: BorderSide(
                                                       color: Colors.transparent,
@@ -3832,18 +3962,25 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
                                                     color: Color(0xFF1C4494),
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelMedium,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBtnText,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumIsCustom,
+                                                            ),
                                                     elevation: 3.0,
                                                     borderSide: BorderSide(
                                                       color: Colors.transparent,
@@ -3893,11 +4030,15 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                     .of(context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleMedium,
+                                                                      .titleMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMediumIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -3909,14 +4050,18 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                   .of(context)
                                                               .titleMedium
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleMedium,
+                                                                    .titleMediumFamily,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMediumIsCustom,
                                                               ),
                                                         ),
                                                       ],
@@ -3960,11 +4105,15 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                     .of(context)
                                                                 .labelSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelSmall,
+                                                                      .labelSmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -3976,14 +4125,18 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                   .of(context)
                                                               .labelSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelSmall,
+                                                                    .labelSmallFamily,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmallIsCustom,
                                                               ),
                                                         ),
                                                         SizedBox(
@@ -4020,11 +4173,15 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                     .of(context)
                                                                 .labelSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelSmall,
+                                                                      .labelSmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -4036,14 +4193,18 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                   .of(context)
                                                               .labelSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelSmall,
+                                                                    .labelSmallFamily,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmallIsCustom,
                                                               ),
                                                         ),
                                                         SizedBox(
@@ -4080,11 +4241,15 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                     .of(context)
                                                                 .labelSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelSmall,
+                                                                      .labelSmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -4096,14 +4261,18 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                   .of(context)
                                                               .labelSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelSmall,
+                                                                    .labelSmallFamily,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmallIsCustom,
                                                               ),
                                                         ),
                                                         SizedBox(
@@ -4140,11 +4309,15 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                     .of(context)
                                                                 .labelSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelSmall,
+                                                                      .labelSmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelSmallIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -4156,14 +4329,18 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                   .of(context)
                                                               .labelSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelSmall,
+                                                                    .labelSmallFamily,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmallIsCustom,
                                                               ),
                                                         ),
                                                       ],
@@ -4258,11 +4435,15 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                       ),
                                                     ],
@@ -4302,17 +4483,20 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                           .getText(
                                                         'uygbvz7h' /* Shift Summary */,
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                     ),
                                                   ],
                                                 ),
@@ -4349,17 +4533,20 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                           .getText(
                                                         '984s8pr0' /* Product Sale Report */,
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                     ),
                                                   ],
                                                 ),

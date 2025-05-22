@@ -244,14 +244,18 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                                   context)
                                                               .bodySmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodySmall,
+                                                                    .bodySmallFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .lineColor,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmallIsCustom,
                                                               ),
                                                     ),
                                                   ),
@@ -265,13 +269,18 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                             context)
                                                         .bodySmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodySmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodySmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodySmallIsCustom,
                                                         ),
                                                   ),
                                                 ],
@@ -295,10 +304,15 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmallFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelSmallIsCustom,
                                                         ),
                                                   ),
                                                   Text(
@@ -310,12 +324,17 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                             context)
                                                         .labelSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelSmallFamily,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelSmallIsCustom,
                                                         ),
                                                   ),
                                                 ],
@@ -330,12 +349,17 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelLarge,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLargeFamily,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLargeIsCustom,
                                                 ),
                                           ),
                                         ],
@@ -377,10 +401,15 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumIsCustom,
                                                     ),
                                             elevation: 0.0,
                                             borderRadius:
@@ -418,10 +447,15 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumIsCustom,
                                                     ),
                                             elevation: 0.0,
                                             borderRadius:

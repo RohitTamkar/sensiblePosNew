@@ -177,13 +177,17 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .headlineMedium
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .headlineMedium,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               fontSize: 25.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .headlineMediumIsCustom,
                                             ),
                                       ),
                                     ],
@@ -255,12 +259,16 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .headlineMedium,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 25.0,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineMediumIsCustom,
                                           ),
                                     ),
                                   ],
@@ -350,12 +358,16 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .headlineMedium,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 25.0,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineMediumIsCustom,
                                           ),
                                     ),
                                   ],

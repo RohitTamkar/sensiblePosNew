@@ -107,11 +107,15 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineMedium,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMediumFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineMediumIsCustom,
                                         ),
                                   ),
                                 ],
@@ -168,10 +172,15 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .headlineSmall,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -184,10 +193,15 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -200,10 +214,15 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -218,10 +237,15 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .headlineSmall,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -234,10 +258,15 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -252,10 +281,15 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .headlineSmall,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -268,10 +302,15 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -284,10 +323,15 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .headlineSmall,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -300,10 +344,15 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -438,11 +487,14 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                                         context)
                                                                     .displaySmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .displaySmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .displaySmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .displaySmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -486,10 +538,12 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                         ),
                                                                   ),
                                                                 ],
@@ -524,10 +578,12 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                 ],
@@ -573,10 +629,12 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                         ),
                                                                   ),
                                                                 ],
@@ -611,10 +669,12 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                 ],
@@ -742,17 +802,19 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                                                 'x1qie5rv' /* ₹  */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).headlineMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                             Text(
                                                                               containerSubscriptionRecord.amount.toString(),
                                                                               style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).headlineMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -767,8 +829,9 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                                               Text(
                                                                             containerSubscriptionRecord.planName,
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -799,9 +862,10 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                                                 ),
                                                                                 textAlign: TextAlign.center,
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                       color: FlutterFlowTheme.of(context).secondaryText,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -825,8 +889,9 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                                                 functions.subscriptionDays(getCurrentTimestamp, containerOutletRecord!.renewalDate),
                                                                                 textAlign: TextAlign.center,
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -894,12 +959,14 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                                           context)
                                                                       .headlineMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .headlineMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ],
@@ -967,11 +1034,14 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodyMediumIsCustom,
                                                                   ),
                                                             ),
                                                           ],

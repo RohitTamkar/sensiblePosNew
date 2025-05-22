@@ -183,14 +183,18 @@ class _KioskPaymentCopyWidgetState extends State<KioskPaymentCopyWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .headlineSmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmallFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
                                               fontSize: 30.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .headlineSmallIsCustom,
                                             ),
                                       ),
                                     ].divide(SizedBox(width: 60.0)),
@@ -214,10 +218,14 @@ class _KioskPaymentCopyWidgetState extends State<KioskPaymentCopyWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: Colors.white,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleSmallIsCustom,
                                           ),
                                       elevation: 3.0,
                                       borderSide: BorderSide(
@@ -335,15 +343,20 @@ class _KioskPaymentCopyWidgetState extends State<KioskPaymentCopyWidget> {
                                                         context)
                                                     .labelLarge
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelLarge,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLargeFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .info,
                                                       fontSize: 18.0,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelLargeIsCustom,
                                                     ),
                                               ),
                                             ),
@@ -371,11 +384,16 @@ class _KioskPaymentCopyWidgetState extends State<KioskPaymentCopyWidget> {
                                                       context)
                                                   .labelLarge
                                                   .override(
-                                                    font: FlutterFlowTheme.of(
-                                                            context)
-                                                        .labelLarge,
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeFamily,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeIsCustom,
                                                   ),
                                             ),
                                             ClipRRect(
@@ -451,13 +469,18 @@ class _KioskPaymentCopyWidgetState extends State<KioskPaymentCopyWidget> {
                                                             context)
                                                         .displayLarge
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .displayLarge,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .displayLargeFamily,
                                                           fontSize: 30.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .displayLargeIsCustom,
                                                         ),
                                                   );
                                                 },
@@ -513,24 +536,27 @@ class _KioskPaymentCopyWidgetState extends State<KioskPaymentCopyWidget> {
                                                             .getText(
                                                           '4xipr5hf' /* Grand Total : */,
                                                         ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineLarge
-                                                                .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .headlineLarge
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineLarge,
-                                                                  color: Color(
-                                                                      0xFF033BE8),
-                                                                  fontSize:
-                                                                      25.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                ),
+                                                                      .headlineLargeFamily,
+                                                              color: Color(
+                                                                  0xFF033BE8),
+                                                              fontSize: 25.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineLargeIsCustom,
+                                                            ),
                                                       ),
                                                     ),
                                                     RichText(
@@ -549,15 +575,19 @@ class _KioskPaymentCopyWidgetState extends State<KioskPaymentCopyWidget> {
                                                                     .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmall,
+                                                                      .headlineSmallFamily,
                                                                   color: Color(
                                                                       0xFF0046D3),
                                                                   fontSize:
                                                                       30.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmallIsCustom,
                                                                 ),
                                                           ),
                                                           TextSpan(
@@ -568,9 +598,9 @@ class _KioskPaymentCopyWidgetState extends State<KioskPaymentCopyWidget> {
                                                                     .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmall,
+                                                                      .headlineSmallFamily,
                                                                   color: Color(
                                                                       0xFF0046D3),
                                                                   fontSize:
@@ -580,6 +610,10 @@ class _KioskPaymentCopyWidgetState extends State<KioskPaymentCopyWidget> {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmallIsCustom,
                                                                 ),
                                                           )
                                                         ],
@@ -588,13 +622,17 @@ class _KioskPaymentCopyWidgetState extends State<KioskPaymentCopyWidget> {
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmall,
+                                                                      .headlineSmallFamily,
                                                                   color: Color(
                                                                       0xFF0046D3),
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmallIsCustom,
                                                                 ),
                                                       ),
                                                       textAlign:

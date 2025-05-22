@@ -138,12 +138,15 @@ class _ProductCartListComplaundryWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 15.0,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .bodyMediumIsCustom,
                                   ),
                             ),
                           ),
@@ -157,10 +160,13 @@ class _ProductCartListComplaundryWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .bodySmall,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodySmallFamily,
                                       fontSize: 13.0,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodySmallIsCustom,
                                     ),
                               ),
                               Container(
@@ -206,9 +212,13 @@ class _ProductCartListComplaundryWidgetState
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .labelMedium,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMediumFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .labelMediumIsCustom,
                                         ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
@@ -247,9 +257,12 @@ class _ProductCartListComplaundryWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .bodyMediumIsCustom,
                                       ),
                                   keyboardType:
                                       const TextInputType.numberWithOptions(
@@ -403,21 +416,29 @@ class _ProductCartListComplaundryWidgetState
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .bodySmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmallFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               fontSize: 13.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodySmallIsCustom,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .labelMedium,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -460,9 +481,13 @@ class _ProductCartListComplaundryWidgetState
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyMediumIsCustom,
                                           ),
                                       keyboardType:
                                           const TextInputType.numberWithOptions(
@@ -594,10 +619,13 @@ class _ProductCartListComplaundryWidgetState
                             .toString(),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                              font: FlutterFlowTheme.of(context).bodySmall,
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodySmallFamily,
                               color: FlutterFlowTheme.of(context).primaryText,
                               fontSize: 13.0,
                               letterSpacing: 0.0,
+                              useGoogleFonts: !FlutterFlowTheme.of(context)
+                                  .bodySmallIsCustom,
                             ),
                       ),
                     ),

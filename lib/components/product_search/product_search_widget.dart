@@ -207,14 +207,19 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                                     context)
                                                 .titleMedium
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleMedium,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBtnText,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMediumIsCustom,
                                                 ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -265,14 +270,18 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleMedium,
+                                                        .titleMediumFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBtnText,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .titleMediumIsCustom,
                                               ),
                                           validator: _model
                                               .textFieldsearchProdTextControllerValidator
@@ -385,14 +394,17 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -504,10 +516,12 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                                                           context)
                                                                       .headlineSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .headlineSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                       ),
                                                                 ),
                                                               ],

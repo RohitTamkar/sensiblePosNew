@@ -400,11 +400,15 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .displaySmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .displaySmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily,
                                             fontSize: 36.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .displaySmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -418,11 +422,15 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .headlineSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             letterSpacing: 5.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -518,14 +526,19 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
                                                         context)
                                                     .displaySmall
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .displaySmall,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .displaySmallFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .displaySmallIsCustom,
                                                     ),
                                               ),
                                             ],
@@ -573,14 +586,18 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
                                                                   context)
                                                               .bodySmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodySmall,
+                                                                    .bodySmallFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .lineColor,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmallIsCustom,
                                                               ),
                                                     ),
                                                     barRadius:
@@ -601,13 +618,18 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                   ),
                                                 ),

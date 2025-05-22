@@ -86,9 +86,11 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  font:
-                                      FlutterFlowTheme.of(context).displaySmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .displaySmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .displaySmallIsCustom,
                                 ),
                           ),
                         ),
@@ -168,11 +170,15 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                     .of(context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodySmall,
+                                                                      .bodySmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmallIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -231,11 +237,14 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -248,11 +257,15 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                     .of(context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodySmall,
+                                                                      .bodySmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmallIsCustom,
                                                                 ),
                                                           ),
                                                         ],
@@ -379,12 +392,14 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodySmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                         ),
                                                                   ),
                                                                 ],
@@ -500,14 +515,18 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                   .of(context)
                                                               .bodySmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodySmall,
+                                                                    .bodySmallFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmallIsCustom,
                                                               ),
                                                         ),
                                                       ),
@@ -624,10 +643,14 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .headlineSmall,
+                                                        .headlineSmallFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmallIsCustom,
                                               ),
                                         ),
                                       ],
@@ -654,14 +677,19 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -674,14 +702,19 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -723,15 +756,20 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumIsCustom,
                                                 ),
                                           ),
                                         ],
@@ -818,19 +856,23 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                     .getText(
                                                   'tkknhwtj' /* ALL */,
                                                 ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineSmall
-                                                    .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primaryBtnText,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineSmallIsCustom,
+                                                        ),
                                               ),
                                             ),
                                           ],
@@ -942,14 +984,17 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                       .of(context)
                                                                   .headlineSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .headlineSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryBtnText,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .headlineSmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -1251,10 +1296,11 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                                           gridViewProductRecord.name,
                                                                                           textAlign: TextAlign.center,
                                                                                           style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                                 color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w600,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ),
@@ -1272,18 +1318,20 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                                                   '8og2xmn2' /* ₹ */,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                       color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
                                                                                             Text(
                                                                                               gridViewProductRecord.sellingPrice.toString(),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -1370,17 +1418,20 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                     context)
                                                                 .languageCode,
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .override(
-                                                                font: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmall,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                                    .titleSmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallIsCustom,
+                                                          ),
                                                     ),
                                                     Padding(
                                                       padding:
@@ -1404,11 +1455,15 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                     context)
                                                                 .titleSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleSmall,
+                                                                      .titleSmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmallIsCustom,
                                                                 ),
                                                       ),
                                                     ),
@@ -1486,11 +1541,15 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                     .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmall,
+                                                                      .headlineSmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmallIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -1503,11 +1562,15 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                   .of(context)
                                                               .headlineSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineSmall,
+                                                                    .headlineSmallFamily,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmallIsCustom,
                                                               ),
                                                         ),
                                                       ],
@@ -1575,14 +1638,18 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                   .of(context)
                                                               .headlineMedium
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineMedium,
+                                                                    .headlineMediumFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBtnText,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineMediumIsCustom,
                                                               ),
                                                         ),
                                                       ),
@@ -1602,14 +1669,18 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                   .of(context)
                                                               .headlineMedium
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineMedium,
+                                                                    .headlineMediumFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBtnText,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineMediumIsCustom,
                                                               ),
                                                         ),
                                                       ),
@@ -1624,14 +1695,18 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                     context)
                                                                 .headlineMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineMedium,
+                                                                      .headlineMediumFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBtnText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineMediumIsCustom,
                                                                 ),
                                                       ),
                                                     ],

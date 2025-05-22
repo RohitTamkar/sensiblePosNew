@@ -94,10 +94,12 @@ class _ReportCalenderWidgetState extends State<ReportCalenderWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  font:
-                                      FlutterFlowTheme.of(context).titleMedium,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleMediumFamily,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .titleMediumIsCustom,
                                 ),
                             elevation: 2.0,
                             borderSide: BorderSide(
@@ -132,12 +134,14 @@ class _ReportCalenderWidgetState extends State<ReportCalenderWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  font:
-                                      FlutterFlowTheme.of(context).titleMedium,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleMediumFamily,
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBtnText,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .titleMediumIsCustom,
                                 ),
                             elevation: 2.0,
                             borderSide: BorderSide(
@@ -170,36 +174,53 @@ class _ReportCalenderWidgetState extends State<ReportCalenderWidget> {
                         safeSetState(
                             () => _model.calendarSelectedDay = newSelectedDate);
                       },
-                      titleStyle: FlutterFlowTheme.of(context)
-                          .headlineSmall
-                          .override(
-                            font: FlutterFlowTheme.of(context).headlineSmall,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w600,
-                          ),
-                      dayOfWeekStyle:
-                          FlutterFlowTheme.of(context).titleMedium.override(
-                                font: FlutterFlowTheme.of(context).titleMedium,
+                      titleStyle:
+                          FlutterFlowTheme.of(context).headlineSmall.override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineSmallFamily,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .headlineSmallIsCustom,
                               ),
-                      dateStyle:
-                          FlutterFlowTheme.of(context).titleMedium.override(
-                                font: FlutterFlowTheme.of(context).titleMedium,
-                                letterSpacing: 0.0,
-                              ),
+                      dayOfWeekStyle: FlutterFlowTheme.of(context)
+                          .titleMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleMediumFamily,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.w600,
+                            useGoogleFonts: !FlutterFlowTheme.of(context)
+                                .titleMediumIsCustom,
+                          ),
+                      dateStyle: FlutterFlowTheme.of(context)
+                          .titleMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: !FlutterFlowTheme.of(context)
+                                .titleMediumIsCustom,
+                          ),
                       selectedDateStyle: FlutterFlowTheme.of(context)
                           .headlineSmall
                           .override(
-                            font: FlutterFlowTheme.of(context).headlineSmall,
+                            fontFamily: FlutterFlowTheme.of(context)
+                                .headlineSmallFamily,
                             color: FlutterFlowTheme.of(context).primaryBtnText,
                             letterSpacing: 0.0,
+                            useGoogleFonts: !FlutterFlowTheme.of(context)
+                                .headlineSmallIsCustom,
                           ),
-                      inactiveDateStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                font: FlutterFlowTheme.of(context).labelMedium,
-                                letterSpacing: 0.0,
-                              ),
+                      inactiveDateStyle: FlutterFlowTheme.of(context)
+                          .labelMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).labelMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: !FlutterFlowTheme.of(context)
+                                .labelMediumIsCustom,
+                          ),
                       locale: FFLocalizations.of(context).languageCode,
                     ),
                   ),

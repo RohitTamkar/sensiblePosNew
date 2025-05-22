@@ -194,10 +194,15 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .headlineSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .headlineSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineSmallIsCustom,
                                                         ),
                                               ),
                                             ),
@@ -295,16 +300,21 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                       .getText(
                                                     'e9j5wlk7' /* Search Customer */,
                                                   ),
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodySmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  hintStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodySmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodySmallIsCustom,
+                                                          ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
@@ -366,10 +376,15 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMediumIsCustom,
                                                         ),
                                                 validator: _model
                                                     .textFieldsearchTextControllerValidator
@@ -569,10 +584,12 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).headlineSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                     if (containerVarItem
@@ -588,17 +605,19 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               '8krxo2u8' /* Balance:  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   color: Color(0xFF3B58FF),
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Text(
                                                                             containerVarItem.oldBalance.toString(),
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   color: Color(0xFF3B58FF),
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -634,10 +653,12 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               context)
                                                                           .titleMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                     Container(
@@ -661,8 +682,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               'e95e99m8' /*   */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -871,10 +893,12 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).headlineSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                     if (listItem
@@ -890,17 +914,19 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               'c6ybzl2e' /* Balance:  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Text(
                                                                             listItem.oldBalance.toString(),
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -936,10 +962,12 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               context)
                                                                           .titleMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                     Text(
@@ -952,10 +980,12 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -1098,12 +1128,16 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -1115,11 +1149,15 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .bodySmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodySmallFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodySmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -1133,11 +1171,15 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -1254,10 +1296,15 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                   ),
                                                 ],
@@ -1298,10 +1345,15 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                   ),
                                                 ],
@@ -1342,10 +1394,15 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                   ),
                                                 ],
@@ -1513,12 +1570,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             fontSize:
                                                                                 11.0,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                       enabledBorder:
                                                                           OutlineInputBorder(
@@ -1598,10 +1657,12 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                     validator: _model
                                                                         .textController1Validator
@@ -1641,12 +1702,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             fontSize:
                                                                                 11.0,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                       enabledBorder:
                                                                           OutlineInputBorder(
@@ -1726,10 +1789,12 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                     validator: _model
                                                                         .textController2Validator
@@ -1769,12 +1834,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             fontSize:
                                                                                 11.0,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                       enabledBorder:
                                                                           OutlineInputBorder(
@@ -1854,10 +1921,12 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                     validator: _model
                                                                         .textController3Validator
@@ -1960,9 +2029,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                 ),
                                                                                 textAlign: TextAlign.center,
                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                       color: FlutterFlowTheme.of(context).lineColor,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -2054,9 +2124,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                           listViewCategoryRecord.name,
                                                                                           textAlign: TextAlign.center,
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 color: FlutterFlowTheme.of(context).lineColor,
                                                                                                 letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ),
@@ -2271,10 +2342,11 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                         gridViewProductRecord.name,
                                                                                                         textAlign: TextAlign.center,
                                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                               color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                               letterSpacing: 0.0,
                                                                                                               fontWeight: FontWeight.w600,
+                                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                             ),
                                                                                                       ),
                                                                                                     ),
@@ -2291,18 +2363,20 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                                 '1i40n55o' /* ₹ */,
                                                                                                               ),
                                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                                     color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                                     letterSpacing: 0.0,
+                                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                                   ),
                                                                                                             ),
                                                                                                           ),
                                                                                                           Text(
                                                                                                             gridViewProductRecord.sellingPrice.toString(),
                                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                                   color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                                 ),
                                                                                                           ),
                                                                                                         ],
@@ -2487,9 +2561,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                         ),
                                                                                         textAlign: TextAlign.center,
                                                                                         style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                               color: FlutterFlowTheme.of(context).lineColor,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ],
@@ -2537,9 +2612,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                     ),
                                                                                                     textAlign: TextAlign.center,
                                                                                                     style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                          font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                          fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                           color: FlutterFlowTheme.of(context).lineColor,
                                                                                                           letterSpacing: 0.0,
+                                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                         ),
                                                                                                   ),
                                                                                                 ),
@@ -2549,9 +2625,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                   ),
                                                                                                   textAlign: TextAlign.center,
                                                                                                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                        font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                        fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                         color: FlutterFlowTheme.of(context).lineColor,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                       ),
                                                                                                 ),
                                                                                               ],
@@ -2568,9 +2645,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                     'm0i79feb' /* ₹  */,
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                         color: FlutterFlowTheme.of(context).lineColor,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                       ),
                                                                                                 ),
                                                                                                 Text(
@@ -2578,10 +2656,11 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                     '5ch1vm7w' /* 70 */,
                                                                                                   ),
                                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                         color: FlutterFlowTheme.of(context).lineColor,
                                                                                                         letterSpacing: 0.0,
                                                                                                         fontWeight: FontWeight.w600,
+                                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                       ),
                                                                                                 ),
                                                                                               ],
@@ -2611,8 +2690,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                               iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                                   ),
                                                                                               elevation: 0.0,
                                                                                               borderRadius: BorderRadius.circular(6.0),
@@ -2650,8 +2730,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                               iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                                   ),
                                                                                               elevation: 0.0,
                                                                                               borderRadius: BorderRadius.circular(6.0),
@@ -2739,10 +2820,15 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                             context)
                                                         .titleMedium
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleMedium,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMediumFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleMediumIsCustom,
                                                         ),
                                                   ),
                                                 ],
@@ -2775,10 +2861,15 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                             context)
                                                         .titleMedium
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleMedium,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMediumFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleMediumIsCustom,
                                                         ),
                                                   ),
                                                 ],
@@ -2803,16 +2894,21 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                       .getText(
                                                     'e1dl9io1' /* Quick Bill */,
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleMedium
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleMedium,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumIsCustom,
+                                                          ),
                                                 ),
                                               ],
                                             ),
@@ -2873,14 +2969,18 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                     .of(context)
                                                                 .titleSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleSmall,
+                                                                      .titleSmallFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .lineColor,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmallIsCustom,
                                                                 ),
                                                           ),
                                                         ],
@@ -2921,14 +3021,18 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                     .of(context)
                                                                 .titleSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleSmall,
+                                                                      .titleSmallFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .lineColor,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmallIsCustom,
                                                                 ),
                                                           ),
                                                         ],
@@ -3013,12 +3117,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .lineColor,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -3066,14 +3172,18 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                   context)
                                                               .titleSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmall,
+                                                                    .titleSmallFamily,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .normal,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmallIsCustom,
                                                               ),
                                                       unselectedLabelStyle:
                                                           TextStyle(),
@@ -3172,8 +3282,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                           'lios19zu' /* Item Name */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ],
@@ -3196,8 +3307,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                         'c6lw5xvw' /* Qty */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                            font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                           ),
                                                                                     ),
                                                                                   ],
@@ -3219,8 +3331,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                         'twapwnkb' /* Amt */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                            font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                           ),
                                                                                     ),
                                                                                   ],
@@ -3306,8 +3419,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                   r'''$.name''',
                                                                                                 ).toString(),
                                                                                                 style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ),
@@ -3317,8 +3431,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                 r'''$.price''',
                                                                                               ).toString(),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -3389,8 +3504,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                     ).toString(),
                                                                                                     textAlign: TextAlign.center,
                                                                                                     style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                          font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                          fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                           letterSpacing: 0.0,
+                                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                         ),
                                                                                                   ),
                                                                                                 ],
@@ -3471,8 +3587,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                 .toString(),
                                                                                             textAlign: TextAlign.center,
                                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -3560,8 +3677,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                 'jhqce1ql' /* KOT Note */,
                                                                               ),
                                                                               hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                   ),
                                                                               enabledBorder: OutlineInputBorder(
                                                                                 borderSide: BorderSide(
@@ -3606,8 +3724,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               contentPadding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                 ),
                                                                             textAlign:
                                                                                 TextAlign.center,
@@ -3647,8 +3766,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                 '39vvt2y0' /* Covers/Guests */,
                                                                               ),
                                                                               hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                   ),
                                                                               enabledBorder: OutlineInputBorder(
                                                                                 borderSide: BorderSide(
@@ -3693,8 +3813,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               contentPadding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                 ),
                                                                             textAlign:
                                                                                 TextAlign.center,
@@ -3747,10 +3868,11 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                 'e3k0osv6' /* Save KOT */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w600,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -3790,10 +3912,11 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                 'ekgihb5v' /* Save & Print KOT */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w600,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -3828,9 +3951,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               'xkcip3zs' /* ₹  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).lineColor,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Text(
@@ -3838,9 +3962,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               'i9imzlt4' /* 720 */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).headlineMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).lineColor,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -3913,8 +4038,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                           'jotgzqo1' /* Item Name */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ],
@@ -3937,8 +4063,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                         '9oz6qsg7' /* Qty */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                            font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                           ),
                                                                                     ),
                                                                                   ],
@@ -3960,8 +4087,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                         '3dnkqzas' /* Amt */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                            font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                           ),
                                                                                     ),
                                                                                   ],
@@ -4030,8 +4158,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                             'rmx4ocev' /* Pizza */,
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                         Text(
@@ -4039,8 +4168,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                             'mbkmsd24' /* 180 */,
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                 letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -4074,8 +4204,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                 ),
                                                                                                 textAlign: TextAlign.center,
                                                                                                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                       letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                     ),
                                                                                               ),
                                                                                             ],
@@ -4102,8 +4233,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                         ),
                                                                                         textAlign: TextAlign.center,
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ],
@@ -4263,9 +4395,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                     ),
                                                                                     textAlign: TextAlign.center,
                                                                                     style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           color: FlutterFlowTheme.of(context).lineColor,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -4298,9 +4431,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                 width: 180.0,
                                                                                 height: 50.0,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                       color: FlutterFlowTheme.of(context).lineColor,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                     ),
                                                                                 icon: Icon(
                                                                                   Icons.keyboard_arrow_down,
@@ -4342,9 +4476,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               'o7dx9agb' /* ₹  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).lineColor,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Text(
@@ -4352,9 +4487,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               '2rl3k6ge' /* 1220 */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).lineColor,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -4403,10 +4539,11 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                 'wghasc4p' /* Save KOT */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w600,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -4449,10 +4586,11 @@ KOT */
                                                                               ),
                                                                               textAlign: TextAlign.center,
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w600,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -4493,10 +4631,11 @@ KOT */
                                                                               ),
                                                                               textAlign: TextAlign.center,
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w600,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -4533,10 +4672,11 @@ KOT */
                                                                             textAlign:
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],

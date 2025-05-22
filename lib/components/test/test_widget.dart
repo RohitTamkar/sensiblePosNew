@@ -81,22 +81,27 @@ class _TestWidgetState extends State<TestWidget> {
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
-                              font: FlutterFlowTheme.of(context).headlineMedium,
+                              fontFamily: FlutterFlowTheme.of(context)
+                                  .headlineMediumFamily,
                               fontSize: 26.0,
                               letterSpacing: 0.0,
+                              useGoogleFonts: !FlutterFlowTheme.of(context)
+                                  .headlineMediumIsCustom,
                             ),
                       ),
                       Text(
                         FFLocalizations.of(context).getText(
                           '2k2rf8ku' /* $300.00 */,
                         ),
-                        style: FlutterFlowTheme.of(context)
-                            .displaySmall
-                            .override(
-                              font: FlutterFlowTheme.of(context).displaySmall,
-                              color: FlutterFlowTheme.of(context).primary,
-                              letterSpacing: 0.0,
-                            ),
+                        style:
+                            FlutterFlowTheme.of(context).displaySmall.override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .displaySmallFamily,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .displaySmallIsCustom,
+                                ),
                       ),
                     ],
                   ),
@@ -105,10 +110,13 @@ class _TestWidgetState extends State<TestWidget> {
                       'tk7ui1l5' /* membership */,
                     ),
                     style: FlutterFlowTheme.of(context).titleMedium.override(
-                          font: FlutterFlowTheme.of(context).titleMedium,
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleMediumFamily,
                           color: FlutterFlowTheme.of(context).primary,
                           fontSize: 14.0,
                           letterSpacing: 0.0,
+                          useGoogleFonts:
+                              !FlutterFlowTheme.of(context).titleMediumIsCustom,
                         ),
                   ),
                   Padding(
@@ -118,8 +126,11 @@ class _TestWidgetState extends State<TestWidget> {
                         'gxf4kntt' /* Get all the features at a disc... */,
                       ),
                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                            font: FlutterFlowTheme.of(context).bodySmall,
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodySmallFamily,
                             letterSpacing: 0.0,
+                            useGoogleFonts:
+                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                           ),
                     ),
                   ),
@@ -153,10 +164,13 @@ class _TestWidgetState extends State<TestWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).titleSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
                                     color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .titleSmallIsCustom,
                                   ),
                             ),
                           ),
@@ -179,9 +193,12 @@ class _TestWidgetState extends State<TestWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
                                   color: Colors.white,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .titleSmallIsCustom,
                                 ),
                             elevation: 2.0,
                             borderSide: BorderSide(

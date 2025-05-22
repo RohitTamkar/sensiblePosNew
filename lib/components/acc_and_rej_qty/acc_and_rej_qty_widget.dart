@@ -84,10 +84,13 @@ class _AccAndRejQtyWidgetState extends State<AccAndRejQtyWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodySmallFamily,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .bodySmallIsCustom,
                                   ),
                             ),
                           ),
@@ -109,9 +112,12 @@ class _AccAndRejQtyWidgetState extends State<AccAndRejQtyWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .bodySmall,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodySmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .bodySmallIsCustom,
                                       ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
@@ -158,11 +164,14 @@ class _AccAndRejQtyWidgetState extends State<AccAndRejQtyWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
                                     ),
                                 validator: _model.textController1Validator
                                     .asValidator(context),
@@ -194,10 +203,13 @@ class _AccAndRejQtyWidgetState extends State<AccAndRejQtyWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodySmallFamily,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .bodySmallIsCustom,
                                   ),
                             ),
                           ),
@@ -219,9 +231,12 @@ class _AccAndRejQtyWidgetState extends State<AccAndRejQtyWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .bodySmall,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodySmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .bodySmallIsCustom,
                                       ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
@@ -268,11 +283,14 @@ class _AccAndRejQtyWidgetState extends State<AccAndRejQtyWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
                                     ),
                                 validator: _model.textController2Validator
                                     .asValidator(context),

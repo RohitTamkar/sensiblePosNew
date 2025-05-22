@@ -247,15 +247,20 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                         context)
                                                     .displaySmall
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .displaySmall,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .displaySmallFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
                                                       fontSize: 27.0,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .displaySmallIsCustom,
                                                     ),
                                               ),
                                             ),
@@ -265,15 +270,19 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .headlineMedium
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineMedium,
+                                                                .headlineMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineMediumIsCustom,
                                                       ),
                                             ),
                                           ],
@@ -411,8 +420,9 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                           textStyle: FlutterFlowTheme.of(context)
                                                                               .titleSmall
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                               ),
                                                                           hintText:
                                                                               FFLocalizations.of(context).getText(
@@ -502,10 +512,12 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                       enabledBorder:
                                                                           OutlineInputBorder(
@@ -580,10 +592,12 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                             context)
                                                                         .headlineSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).headlineSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                         ),
                                                                     textAlign:
                                                                         TextAlign
@@ -644,8 +658,9 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                     iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                         ),
                                                                                     elevation: 2.0,
                                                                                     borderSide: BorderSide(
@@ -681,8 +696,9 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                     iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                         ),
                                                                                     elevation: 2.0,
                                                                                     borderSide: BorderSide(
@@ -717,8 +733,9 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                     iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                         ),
                                                                                     elevation: 2.0,
                                                                                     borderSide: BorderSide(
@@ -751,8 +768,9 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                     iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                         ),
                                                                                     elevation: 2.0,
                                                                                     borderSide: BorderSide(
@@ -806,8 +824,9 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                     iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                         ),
                                                                                     elevation: 2.0,
                                                                                     borderSide: BorderSide(
@@ -842,8 +861,9 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                     iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                         ),
                                                                                     elevation: 2.0,
                                                                                     borderSide: BorderSide(
@@ -878,8 +898,9 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                     iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                         ),
                                                                                     elevation: 2.0,
                                                                                     borderSide: BorderSide(
@@ -912,8 +933,9 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                   iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                       ),
                                                                                   elevation: 2.0,
                                                                                   borderSide: BorderSide(
@@ -960,8 +982,9 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                   iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                       ),
                                                                                   elevation: 2.0,
                                                                                   borderSide: BorderSide(
@@ -997,8 +1020,9 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                   iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                       ),
                                                                                   elevation: 2.0,
                                                                                   borderSide: BorderSide(
@@ -1034,8 +1058,9 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                   iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                       ),
                                                                                   elevation: 2.0,
                                                                                   borderSide: BorderSide(
@@ -1266,8 +1291,9 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                       iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: FlutterFlowTheme.of(context).customColor2,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                            font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                           ),
                                                                                       elevation: 2.0,
                                                                                       borderSide: BorderSide(
@@ -1302,11 +1328,14 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -1362,14 +1391,18 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                     context)
                                                                 .titleSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleSmall,
+                                                                      .titleSmallFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmallIsCustom,
                                                                 ),
                                                       ),
                                                     ],
@@ -1467,14 +1500,18 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                   .of(context)
                                                               .titleSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmall,
+                                                                    .titleSmallFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmallIsCustom,
                                                               ),
                                                         ),
                                                       ),
@@ -1489,14 +1526,18 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                     context)
                                                                 .titleSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleSmall,
+                                                                      .titleSmallFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmallIsCustom,
                                                                 ),
                                                       ),
                                                     ],
@@ -1541,9 +1582,9 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                   .of(context)
                                                               .titleSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmall,
+                                                                    .titleSmallFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .lineColor,
@@ -1552,6 +1593,10 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .normal,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmallIsCustom,
                                                               ),
                                                         ),
                                                         barRadius:
@@ -1568,16 +1613,21 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                       .getText(
                                                     'ael6u5jl' /* Remaining Days */,
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallIsCustom,
+                                                          ),
                                                 ),
                                               ],
                                             ),
@@ -1598,14 +1648,19 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                       context)
                                                   .bodyMedium
                                                   .override(
-                                                    font: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium,
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumIsCustom,
                                                   ),
                                             ),
                                             TextSpan(
@@ -1631,10 +1686,14 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMediumIsCustom,
                                               ),
                                         ),
                                       ),

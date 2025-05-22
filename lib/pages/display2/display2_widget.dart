@@ -173,14 +173,19 @@ class _Display2WidgetState extends State<Display2Widget>
                                                       context)
                                                   .titleSmall
                                                   .override(
-                                                    font: FlutterFlowTheme.of(
-                                                            context)
-                                                        .titleSmall,
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmallFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBtnText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmallIsCustom,
                                                   ),
                                             ),
                                           ),
@@ -197,14 +202,19 @@ class _Display2WidgetState extends State<Display2Widget>
                                                       context)
                                                   .bodySmall
                                                   .override(
-                                                    font: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodySmall,
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondary,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallIsCustom,
                                                   ),
                                             ),
                                           ),
@@ -231,12 +241,16 @@ class _Display2WidgetState extends State<Display2Widget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .bodyMedium,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodyMediumIsCustom,
                                             ),
                                       ),
                                     ],
@@ -344,10 +358,12 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                             context)
                                                                         .bodySmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodySmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodySmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                         ),
                                                                   ),
                                                                 ],
@@ -384,10 +400,12 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                               ],
@@ -423,10 +441,12 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                           context)
                                                                       .bodySmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodySmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodySmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                       ),
                                                                 ),
                                                               ],
@@ -584,11 +604,12 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                                       ),
                                                                                   textAlign: TextAlign.start,
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                         fontSize: 15.0,
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.bold,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                       ),
                                                                                 ),
                                                                               ),
@@ -600,9 +621,10 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                                       'o8o0q297' /* ₹  */,
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                           fontSize: 13.0,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                   Text(
@@ -611,10 +633,11 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                                       r'''$.price''',
                                                                                     ).toString(),
                                                                                     style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                           fontSize: 13.0,
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w600,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -676,11 +699,12 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                                         ).toString(),
                                                                                         textAlign: TextAlign.center,
                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                                               fontSize: 13.0,
                                                                                               letterSpacing: 0.0,
                                                                                               fontWeight: FontWeight.bold,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ],
@@ -737,11 +761,12 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                             textAlign:
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 13.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.bold,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -897,10 +922,12 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                             context)
                                                                         .titleSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   Text(
@@ -917,10 +944,12 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                             context)
                                                                         .bodyMedium
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                         ),
                                                                   ),
                                                                 ],
@@ -952,11 +981,15 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                     context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodySmall,
+                                                                      .bodySmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmallIsCustom,
                                                                 ),
                                                       ),
                                                       Text(
@@ -968,11 +1001,15 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                     context)
                                                                 .bodyLarge
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyLarge,
+                                                                      .bodyLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ],
@@ -998,11 +1035,15 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                     context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodySmall,
+                                                                      .bodySmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmallIsCustom,
                                                                 ),
                                                       ),
                                                       Text(
@@ -1017,11 +1058,15 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                     context)
                                                                 .bodyLarge
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyLarge,
+                                                                      .bodyLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLargeIsCustom,
                                                                 ),
                                                       ),
                                                     ],
@@ -1054,11 +1099,15 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                   .of(context)
                                                               .bodySmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodySmall,
+                                                                    .bodySmallFamily,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmallIsCustom,
                                                               ),
                                                         ),
                                                         Row(
@@ -1078,11 +1127,14 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                       .of(context)
                                                                   .bodyLarge
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyLarge,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyLargeFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodyLargeIsCustom,
                                                                   ),
                                                             ),
                                                             Text(
@@ -1096,11 +1148,14 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                       .of(context)
                                                                   .bodyLarge
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyLarge,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyLargeFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodyLargeIsCustom,
                                                                   ),
                                                             ),
                                                           ],
@@ -1228,14 +1283,18 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                     context)
                                                                 .titleSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleSmall,
+                                                                      .titleSmallFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .lineColor,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleSmallIsCustom,
                                                                 ),
                                                         hintText:
                                                             FFLocalizations.of(
@@ -1329,9 +1388,9 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                   context)
                                                               .headlineSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineSmall,
+                                                                    .headlineSmallFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBtnText,
@@ -1340,6 +1399,10 @@ class _Display2WidgetState extends State<Display2Widget>
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmallIsCustom,
                                                               ),
                                                       borderSide: BorderSide(
                                                         color:

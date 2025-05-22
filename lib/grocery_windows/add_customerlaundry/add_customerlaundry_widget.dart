@@ -109,10 +109,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                         'raz5mkxm' /* Add Customer */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
-                            font: FlutterFlowTheme.of(context).titleMedium,
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleMediumFamily,
                             color: FlutterFlowTheme.of(context).primary,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
+                            useGoogleFonts: !FlutterFlowTheme.of(context)
+                                .titleMediumIsCustom,
                           ),
                     ),
                     Padding(
@@ -292,9 +295,12 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                           textStyle: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
-                                font: FlutterFlowTheme.of(context).titleSmall,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
                                 color: Colors.white,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .titleSmallIsCustom,
                               ),
                           elevation: 3.0,
                           borderSide: BorderSide(
@@ -347,11 +353,14 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .titleMedium,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
                                         color:
                                             FlutterFlowTheme.of(context).info,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleMediumIsCustom,
                                       ),
                                 ),
                               ],
@@ -381,9 +390,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .labelSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelSmallFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -400,9 +413,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .labelMedium,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
@@ -411,9 +428,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .labelMedium,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -459,9 +480,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .labelLarge,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLargeFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelLargeIsCustom,
                                           ),
                                       validator: _model
                                           .textFieldnameTextControllerValidator
@@ -487,9 +512,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .labelSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelSmallFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -507,9 +536,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .labelMedium,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
@@ -518,9 +551,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .labelMedium,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -566,9 +603,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .labelLarge,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLargeFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelLargeIsCustom,
                                           ),
                                       maxLength: 10,
                                       buildCounter: (context,
@@ -610,9 +651,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .labelSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelSmallFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -631,9 +676,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .labelMedium,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
@@ -642,9 +691,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .labelMedium,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -690,9 +743,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .labelLarge,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLargeFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelLargeIsCustom,
                                           ),
                                       validator: _model
                                           .textFieldaltmobTextControllerValidator
@@ -718,9 +775,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .labelSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelSmallFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -737,9 +798,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .labelMedium,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
@@ -748,9 +813,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .labelMedium,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelMediumIsCustom,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -796,9 +865,13 @@ class _AddCustomerlaundryWidgetState extends State<AddCustomerlaundryWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .labelLarge,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLargeFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .labelLargeIsCustom,
                                           ),
                                       validator: _model
                                           .textFieldemailTextControllerValidator

@@ -108,11 +108,14 @@ class _PhonePeQrWidgetState extends State<PhonePeQrWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineMedium
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .headlineMedium,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineMediumFamily,
                                         color: Colors.white,
                                         fontSize: 16.0,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .headlineMediumIsCustom,
                                       ),
                                 ),
                               ),
@@ -129,11 +132,13 @@ class _PhonePeQrWidgetState extends State<PhonePeQrWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
-                                  font: FlutterFlowTheme.of(context)
-                                      .headlineMedium,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .headlineMediumFamily,
                                   color: Colors.white,
                                   fontSize: 22.0,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .headlineMediumIsCustom,
                                 ),
                           ),
                         ),

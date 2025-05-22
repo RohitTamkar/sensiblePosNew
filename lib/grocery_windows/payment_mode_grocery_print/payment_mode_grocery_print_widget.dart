@@ -877,13 +877,17 @@ class _PaymentModeGroceryPrintWidgetState
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .titleMedium,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleMediumIsCustom,
                                             ),
                                       ),
                                       FlutterFlowIconButton(
@@ -1061,8 +1065,9 @@ class _PaymentModeGroceryPrintWidgetState
                                                                           Text(
                                                                             paymentModeItem.name,
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -1116,12 +1121,14 @@ class _PaymentModeGroceryPrintWidgetState
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).headlineSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1132,12 +1139,14 @@ class _PaymentModeGroceryPrintWidgetState
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).headlineSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1164,19 +1173,23 @@ class _PaymentModeGroceryPrintWidgetState
                                                                           context)
                                                                       .labelMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .labelMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                       ),
                                                                   hintStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .labelMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                       ),
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
@@ -1243,9 +1256,9 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         context)
                                                                     .titleMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
@@ -1256,6 +1269,9 @@ class _PaymentModeGroceryPrintWidgetState
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleMediumIsCustom,
                                                                     ),
                                                                 validator: _model
                                                                     .textController1Validator
@@ -1310,10 +1326,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 19.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         elevation:
                                                                             3.0,
@@ -1369,10 +1386,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 19.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         elevation:
                                                                             3.0,
@@ -1428,10 +1446,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 19.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         elevation:
                                                                             3.0,
@@ -1499,10 +1518,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 19.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         elevation:
                                                                             3.0,
@@ -1558,10 +1578,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 19.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         elevation:
                                                                             3.0,
@@ -1617,10 +1638,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 19.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         elevation:
                                                                             3.0,
@@ -1688,10 +1710,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 19.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         elevation:
                                                                             3.0,
@@ -1747,10 +1770,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 19.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         elevation:
                                                                             3.0,
@@ -1806,10 +1830,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 19.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         elevation:
                                                                             3.0,
@@ -1877,11 +1902,12 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 28.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         elevation:
                                                                             3.0,
@@ -1937,10 +1963,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 19.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         elevation:
                                                                             3.0,
@@ -2044,10 +2071,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 10.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                         elevation:
                                                                             3.0,
@@ -2132,14 +2160,16 @@ class _PaymentModeGroceryPrintWidgetState
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).labelLarge,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).error,
                                                                           fontSize:
                                                                               17.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2191,14 +2221,16 @@ class _PaymentModeGroceryPrintWidgetState
                                                                               context)
                                                                           .labelLarge
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelLarge,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).error,
                                                                             fontSize:
                                                                                 17.0,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2247,14 +2279,16 @@ class _PaymentModeGroceryPrintWidgetState
                                                                               context)
                                                                           .labelLarge
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelLarge,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryText,
                                                                             fontSize:
                                                                                 17.0,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2297,14 +2331,16 @@ class _PaymentModeGroceryPrintWidgetState
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).labelLarge,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).error,
                                                                           fontSize:
                                                                               17.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2348,14 +2384,16 @@ class _PaymentModeGroceryPrintWidgetState
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).labelLarge,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               17.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2407,14 +2445,16 @@ class _PaymentModeGroceryPrintWidgetState
                                                                               context)
                                                                           .labelLarge
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelLarge,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).error,
                                                                             fontSize:
                                                                                 17.0,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2463,14 +2503,16 @@ class _PaymentModeGroceryPrintWidgetState
                                                                               context)
                                                                           .labelLarge
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelLarge,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).info,
                                                                             fontSize:
                                                                                 17.0,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2513,14 +2555,16 @@ class _PaymentModeGroceryPrintWidgetState
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).labelLarge,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).error,
                                                                           fontSize:
                                                                               17.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2564,14 +2608,16 @@ class _PaymentModeGroceryPrintWidgetState
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).labelLarge,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
                                                                               17.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -2659,10 +2705,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                           labelStyle: FlutterFlowTheme.of(context)
                                                                               .labelLarge
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).labelLarge,
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                                 color: FlutterFlowTheme.of(context).error,
                                                                                 fontSize: 17.0,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                               ),
                                                                           hintText:
                                                                               FFLocalizations.of(context).getText(
@@ -2671,8 +2718,9 @@ class _PaymentModeGroceryPrintWidgetState
                                                                           hintStyle: FlutterFlowTheme.of(context)
                                                                               .labelMedium
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                               ),
                                                                           enabledBorder:
                                                                               UnderlineInputBorder(
@@ -2718,10 +2766,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               fontSize: 17.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w500,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                         textAlign:
                                                                             TextAlign.center,
@@ -2776,14 +2825,16 @@ class _PaymentModeGroceryPrintWidgetState
                                                                               context)
                                                                           .labelLarge
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelLarge,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).info,
                                                                             fontSize:
                                                                                 17.0,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2876,10 +2927,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         labelStyle: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).labelLarge,
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               color: FlutterFlowTheme.of(context).error,
                                                                               fontSize: 17.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                         hintText:
                                                                             FFLocalizations.of(context).getText(
@@ -2888,8 +2940,9 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).labelMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                             ),
                                                                         enabledBorder:
                                                                             UnderlineInputBorder(
@@ -2964,12 +3017,14 @@ class _PaymentModeGroceryPrintWidgetState
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             fontSize:
                                                                                 17.0,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                       textAlign:
                                                                           TextAlign
@@ -3028,10 +3083,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).labelLarge,
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 17.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -3051,10 +3107,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).labelLarge,
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 17.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ),
@@ -3129,10 +3186,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                           labelStyle: FlutterFlowTheme.of(context)
                                                                               .labelLarge
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).labelLarge,
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                                 color: FlutterFlowTheme.of(context).error,
                                                                                 fontSize: 17.0,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                               ),
                                                                           hintText:
                                                                               FFLocalizations.of(context).getText(
@@ -3141,8 +3199,9 @@ class _PaymentModeGroceryPrintWidgetState
                                                                           hintStyle: FlutterFlowTheme.of(context)
                                                                               .labelMedium
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).labelMedium,
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                               ),
                                                                           enabledBorder:
                                                                               UnderlineInputBorder(
@@ -3200,9 +3259,10 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               fontSize: 17.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                         textAlign:
                                                                             TextAlign.center,
@@ -3257,14 +3317,16 @@ class _PaymentModeGroceryPrintWidgetState
                                                                               context)
                                                                           .labelLarge
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelLarge,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).info,
                                                                             fontSize:
                                                                                 17.0,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3348,10 +3410,11 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         labelStyle: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).labelLarge,
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                               color: FlutterFlowTheme.of(context).error,
                                                                               fontSize: 17.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                             ),
                                                                         hintText:
                                                                             FFLocalizations.of(context).getText(
@@ -3360,8 +3423,9 @@ class _PaymentModeGroceryPrintWidgetState
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).labelMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).labelMediumIsCustom,
                                                                             ),
                                                                         enabledBorder:
                                                                             UnderlineInputBorder(
@@ -3436,14 +3500,16 @@ class _PaymentModeGroceryPrintWidgetState
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             fontSize:
                                                                                 17.0,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w500,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                           ),
                                                                       textAlign:
                                                                           TextAlign
@@ -4602,14 +4668,18 @@ class _PaymentModeGroceryPrintWidgetState
                                                                   context)
                                                               .headlineLarge
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineLarge,
+                                                                    .headlineLargeFamily,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineLargeIsCustom,
                                                               ),
                                                       borderSide: BorderSide(
                                                         color:
@@ -5921,9 +5991,9 @@ class _PaymentModeGroceryPrintWidgetState
                                                                   context)
                                                               .headlineLarge
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineLarge,
+                                                                    .headlineLargeFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBtnText,
@@ -5933,6 +6003,10 @@ class _PaymentModeGroceryPrintWidgetState
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineLargeIsCustom,
                                                               ),
                                                       elevation: 3.0,
                                                       borderSide: BorderSide(

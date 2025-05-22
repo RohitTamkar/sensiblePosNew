@@ -152,11 +152,14 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .headlineMedium
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .headlineMedium,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .headlineMediumIsCustom,
                                       ),
                                 ),
                               ],
@@ -183,11 +186,15 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .titleSmall,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .titleSmallIsCustom,
                                         ),
                                   ),
                                 ),
@@ -260,13 +267,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                               context)
                                                           .headlineLarge
                                                           .override(
-                                                            font: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .headlineLarge,
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineLargeFamily,
                                                             fontSize: 32.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineLargeIsCustom,
                                                           ),
                                                   pickerBackgroundColor:
                                                       FlutterFlowTheme.of(
@@ -337,14 +349,19 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                     context)
                                                 .titleSmall
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallIsCustom,
                                                 ),
                                             elevation: 0.0,
                                             borderRadius:
@@ -466,15 +483,19 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmall,
+                                                                .headlineSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .lineColor,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmallIsCustom,
                                                       ),
                                                 ),
                                               ),
@@ -493,15 +514,19 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmall,
+                                                                .headlineSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .lineColor,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmallIsCustom,
                                                       ),
                                                 ),
                                               ),
@@ -535,15 +560,19 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmall,
+                                                                .headlineSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .lineColor,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmallIsCustom,
                                                       ),
                                                 ),
                                               ),
@@ -675,13 +704,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                             context)
                                                         .headlineSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .headlineSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineSmallIsCustom,
                                                         ),
                                                     textAlign: TextAlign.start,
                                                     keyboardType:
@@ -870,19 +904,23 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                     .getText(
                                                   'lnfh3wg6' /* Opening Balance :  */,
                                                 ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineMedium
-                                                    .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineMedium,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineMediumFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primaryText,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineMediumIsCustom,
+                                                        ),
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
@@ -897,15 +935,19 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmall,
+                                                                .headlineSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmallIsCustom,
                                                       ),
                                                 ),
                                               ),
@@ -916,19 +958,23 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                       ?.toString(),
                                                   '0',
                                                 ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineMedium
-                                                    .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineMedium,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineMediumFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primary,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineMediumIsCustom,
+                                                        ),
                                               ),
                                             ],
                                           ),
@@ -994,11 +1040,14 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -1095,8 +1144,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               'j9h8ui92' /* Cash */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                           Text(
@@ -1104,8 +1154,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               'zkzfjdnk' /* : */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1126,8 +1177,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               'z7ht1czr' /* ₹ */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -1137,8 +1189,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             '0',
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -1192,8 +1245,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               'ucgz66l5' /* GooglePay */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                           Text(
@@ -1201,8 +1255,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               '0fvff8jl' /* : */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1223,8 +1278,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               'lmnpppyh' /* ₹ */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -1234,8 +1290,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                             '0',
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -1302,8 +1359,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               's0ha8zyh' /* Card */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                           Text(
@@ -1311,8 +1369,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               'lkd41bhx' /* : */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1333,16 +1392,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               'eqmlrq80' /* ₹ */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
                                                                                         Text(
                                                                                           functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'card'),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -1396,8 +1457,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               'jdgsbs1o' /* Paytm */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                           Text(
@@ -1405,8 +1467,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               '02nftrem' /* : */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1427,16 +1490,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               'b7v96nys' /* ₹ */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
                                                                                         Text(
                                                                                           functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'paytm'),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -1503,8 +1568,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               'xwiste6q' /* Credit */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                           Padding(
@@ -1514,8 +1580,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'zz3dghdn' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1537,16 +1604,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               '8ay0hc3i' /* ₹ */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
                                                                                         Text(
                                                                                           functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'credit'),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -1602,8 +1671,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'wg0slg00' /* PhonePe: */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1625,16 +1695,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               'ql700ylc' /* ₹ */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
                                                                                         Text(
                                                                                           functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'phonepe'),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -1701,8 +1773,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               '0f0c2est' /* Cheque */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                           Padding(
@@ -1712,8 +1785,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'g5esl66y' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1735,16 +1809,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               '87ar11qq' /* ₹ */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
                                                                                         Text(
                                                                                           functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'cheque'),
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ],
@@ -1798,8 +1874,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               'agxzpfrt' /* Other */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                           Padding(
@@ -1809,8 +1886,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'jwfkco7g' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1840,16 +1918,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 '91owned0' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
                                                                                           Text(
                                                                                             functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'other'),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1917,8 +1997,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               '16ytiydv' /* UPI */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                           Padding(
@@ -1928,8 +2009,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'zi57xpir' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1951,9 +2033,10 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               '1xxedo1m' /* ₹ */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                                  font: FlutterFlowTheme.of(context).headlineMedium,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -1961,9 +2044,10 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                           child: Text(
                                                                                             functions.paymentModeStrToJson(containerShiftRecord!.paymentJson, 'digital'),
                                                                                             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                                  font: FlutterFlowTheme.of(context).headlineMedium,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -2017,8 +2101,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               'oxcxpjpv' /* Cash In hand : */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -2041,18 +2126,20 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'sux24fl7' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                                    font: FlutterFlowTheme.of(context).headlineMedium,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
                                                                                           Text(
                                                                                             containerShiftRecord!.cashSale.toString(),
                                                                                             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                                  font: FlutterFlowTheme.of(context).headlineMedium,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                                                   color: FlutterFlowTheme.of(context).primary,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -2130,10 +2217,12 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                           context)
                                                                       .headlineSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .headlineSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                       ),
                                                                 ),
                                                               ],
@@ -2221,8 +2310,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 '88sfq9hy' /* Delivery */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -2230,8 +2320,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'butenw5e' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -2252,8 +2343,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'gtjwidms' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -2263,8 +2355,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               '0',
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -2314,8 +2407,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'znfe46eh' /* Discount */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -2323,8 +2417,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 '0pdila6z' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -2345,8 +2440,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'f2d9azwr' /* ₹  */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -2358,8 +2454,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               maxChars: 8,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -2421,8 +2518,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'd49fnnzq' /* Tax */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -2430,8 +2528,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'hfq9ouen' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -2452,16 +2551,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'ozgqfzdd' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
                                                                                           Text(
                                                                                             containerShiftRecord!.tax.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -2511,8 +2612,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'iw5x9r8z' /* Refund */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -2520,8 +2622,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 '6wbj32c3' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -2542,8 +2645,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 '94ghggl5' /* ₹  */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -2553,8 +2657,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                               '0',
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -2616,8 +2721,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'smmbegi5' /* Round Off */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -2625,8 +2731,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 '9x588lgn' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -2647,16 +2754,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 '8re7sg7t' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
                                                                                           Text(
                                                                                             containerShiftRecord!.roundOff.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -2706,8 +2815,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'nkhgwdzx' /* Expenses(-) */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -2715,8 +2825,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'gxen07kp' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -2737,16 +2848,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 '3kzxq3dm' /* ₹  */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
                                                                                           Text(
                                                                                             containerShiftRecord!.expensesAmtTotal.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -2808,8 +2921,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'lps3usv5' /* Advance(-) */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -2817,8 +2931,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'ludj39n4' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -2839,16 +2954,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 '3f5vi0qv' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
                                                                                           Text(
                                                                                             containerShiftRecord!.advanceAmtTotal.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -2898,8 +3015,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'dkkmlpj5' /* Cred.Reci(+) */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -2907,8 +3025,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 '9gzq4dkd' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -2929,16 +3048,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'vk4zeaa7' /* ₹  */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
                                                                                           Text(
                                                                                             containerShiftRecord!.customerReciveAmtTotal.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -3000,8 +3121,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'qw93t4od' /* Rec. Amt(+) */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                             Text(
@@ -3009,8 +3131,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 '1f5jz4e4' /* : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ],
@@ -3031,16 +3154,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                                                 'lteyql11' /* ₹ */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
                                                                                           Text(
                                                                                             containerShiftRecord!.receiveAmtTotal.toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -3225,11 +3350,14 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                               Text(
@@ -3242,11 +3370,14 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -3282,9 +3413,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                         context)
                                                                     .headlineMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
@@ -3293,6 +3424,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3374,11 +3508,14 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                         context)
                                                                     .headlineMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineMediumIsCustom,
                                                                     ),
                                                               ),
                                                               Text(
@@ -3391,11 +3528,14 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                               ),
                                                             ],
@@ -3433,9 +3573,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                         context)
                                                                     .headlineMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
@@ -3446,6 +3586,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3458,9 +3601,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                         context)
                                                                     .headlineMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
@@ -3471,6 +3614,9 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3601,13 +3747,18 @@ class _ShiftEndNewWidgetState extends State<ShiftEndNewWidget>
                                                             context)
                                                         .headlineMedium
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .headlineMedium,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineMediumFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBtnText,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineMediumIsCustom,
                                                         ),
                                                   ),
                                                 ],

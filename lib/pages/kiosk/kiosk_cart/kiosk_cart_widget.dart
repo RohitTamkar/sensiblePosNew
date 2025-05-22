@@ -219,14 +219,18 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .headlineSmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmallFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
                                               fontSize: 30.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .headlineSmallIsCustom,
                                             ),
                                       ),
                                       if (!widget!.appsetting!.settingList
@@ -377,20 +381,25 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .primary,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        fontSize: 30.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            fontSize: 30.0,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                   iconColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -404,20 +413,24 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                 unselectedChipStyle: ChipStyle(
                                                   backgroundColor:
                                                       Color(0xFFD7D4E8),
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .primaryText,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                   iconColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -626,11 +639,12 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                       '0',
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                          font: FlutterFlowTheme.of(context).headlineLarge,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                                           color: Color(0xFF033BE8),
                                                                                           fontSize: 18.0,
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w600,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).headlineLargeIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ),
@@ -646,10 +660,11 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                         r'''$.regionalName''',
                                                                                       ).toString(),
                                                                                       style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                            font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                             color: Color(0xFF033BE8),
                                                                                             fontSize: 14.0,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -664,10 +679,11 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                       '5ctume8n' /* ₹  */,
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                           color: Color(0xFF0046D3),
                                                                                           fontSize: 13.0,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                   TextSpan(
@@ -676,18 +692,20 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                       r'''$.price''',
                                                                                     ).toString(),
                                                                                     style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                          font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                           color: Color(0xFF0046D3),
                                                                                           fontSize: 14.0,
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w600,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                         ),
                                                                                   )
                                                                                 ],
                                                                                 style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                      font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                       color: Color(0xFF0046D3),
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                     ),
                                                                               ),
                                                                               textAlign: TextAlign.start,
@@ -789,10 +807,11 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                       ).toString(),
                                                                                       textAlign: TextAlign.center,
                                                                                       style: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                            font: FlutterFlowTheme.of(context).headlineLarge,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                                             fontSize: 15.0,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).headlineLargeIsCustom,
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -905,11 +924,12 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                         'tsogvgdy' /* Sub Total : */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).labelSmall.override(
-                                                                                            font: FlutterFlowTheme.of(context).labelSmall,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                             color: Color(0xFF00A03F),
                                                                                             fontSize: 12.0,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -922,11 +942,12 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                             'w0u1zlir' /* ₹  */,
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                                font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                 color: Color(0xFF00A03F),
                                                                                                 fontSize: 13.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.normal,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                         TextSpan(
@@ -942,18 +963,20 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                                   ))
                                                                                               .toString(),
                                                                                           style: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                                font: FlutterFlowTheme.of(context).headlineLarge,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                                                 color: Color(0xFF00A03F),
                                                                                                 fontSize: 15.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w600,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).headlineLargeIsCustom,
                                                                                               ),
                                                                                         )
                                                                                       ],
                                                                                       style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                            font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                             color: Color(0xFF0046D3),
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                           ),
                                                                                     ),
                                                                                     textAlign: TextAlign.center,
@@ -1173,13 +1196,18 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                       context)
                                                   .titleLarge
                                                   .override(
-                                                    font: FlutterFlowTheme.of(
-                                                            context)
-                                                        .titleLarge,
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleLargeFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBackground,
                                                     letterSpacing: 0.0,
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleLargeIsCustom,
                                                   ),
                                               elevation: 3.0,
                                               borderSide: BorderSide(
@@ -1307,14 +1335,18 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .titleSmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
                                               fontSize: 20.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .titleSmallIsCustom,
                                             ),
                                         elevation: 0.0,
                                         borderSide: BorderSide(
@@ -1355,12 +1387,16 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .displayLarge
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .displayLarge,
+                                                                .displayLargeFamily,
                                                         fontSize: 24.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .displayLargeIsCustom,
                                                       ),
                                             ),
                                           ],
@@ -1378,11 +1414,16 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .displayLarge
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .displayLarge,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .displayLargeFamily,
                                                           fontSize: 15.0,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .displayLargeIsCustom,
                                                         ),
                                               ),
                                               Text(
@@ -1393,11 +1434,16 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .displayLarge
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .displayLarge,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .displayLargeFamily,
                                                           fontSize: 15.0,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .displayLargeIsCustom,
                                                         ),
                                               ),
                                             ],
@@ -1417,14 +1463,19 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .headlineSmall,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
                                                   fontSize: 20.0,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallIsCustom,
                                                 ),
                                           ),
                                           TextSpan(
@@ -1434,27 +1485,36 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .headlineSmall,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
                                                   fontSize: 24.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallIsCustom,
                                                 ),
                                           )
                                         ],
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .headlineSmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmallFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .headlineSmallIsCustom,
                                             ),
                                       ),
                                       textAlign: TextAlign.center,
@@ -1627,13 +1687,17 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                   context)
                                               .titleSmall
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleSmall,
+                                                        .titleSmallFamily,
                                                 color: Colors.white,
                                                 fontSize: 20.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .titleSmallIsCustom,
                                               ),
                                           elevation: 3.0,
                                           borderSide: BorderSide(

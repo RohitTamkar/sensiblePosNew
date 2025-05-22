@@ -283,11 +283,15 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineSmall,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmallFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineSmallIsCustom,
                                         ),
                                   ),
                                   if (false)
@@ -352,10 +356,15 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumIsCustom,
                                                     ),
                                             hintText:
                                                 FFLocalizations.of(context)
@@ -366,10 +375,15 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumIsCustom,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -424,10 +438,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .labelSmall
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelSmall,
+                                                        .labelSmallFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelSmallIsCustom,
                                               ),
                                           cursorColor:
                                               FlutterFlowTheme.of(context)
@@ -451,11 +469,15 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .titleSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -561,14 +583,17 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         context)
                                                                     .labelLarge
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelLargeFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBtnText,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelLargeIsCustom,
                                                                     ),
                                                               ),
                                                               TextSpan(
@@ -588,9 +613,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBtnText,
@@ -598,6 +623,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           27.0,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               )
                                                             ],
@@ -605,14 +633,18 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMediumFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -633,9 +665,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .warning,
@@ -646,6 +678,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                     fontStyle:
                                                                         FontStyle
                                                                             .italic,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodyMediumIsCustom,
                                                                   ),
                                                             ).animateOnPageLoad(
                                                                 animationsMap[
@@ -698,12 +733,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           context)
                                                                       .titleMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -778,8 +815,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .labelLarge,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelLargeFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         fontSize:
@@ -788,6 +825,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                       ),
                                                                 )
                                                               ],
@@ -795,9 +834,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -808,6 +847,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodyMediumIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -858,12 +900,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).labelLarge,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                   TextSpan(
@@ -876,14 +920,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             context)
                                                                         .headlineSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).headlineSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           fontSize:
                                                                               27.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   TextSpan(
@@ -896,12 +942,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).labelLarge,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   )
                                                                 ],
@@ -909,11 +957,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -971,9 +1022,10 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                                 Text(
                                                                                   prdlistItem.name,
                                                                                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w800,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                       ),
                                                                                 ),
                                                                               ],
@@ -992,9 +1044,10 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineLarge
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).headlineLarge,
+                                                                              fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).headlineLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ],
@@ -1114,14 +1167,17 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         context)
                                                                     .labelLarge
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelLargeFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBtnText,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelLargeIsCustom,
                                                                     ),
                                                               ),
                                                               TextSpan(
@@ -1141,9 +1197,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBtnText,
@@ -1151,6 +1207,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           27.0,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               )
                                                             ],
@@ -1158,14 +1217,18 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMediumFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -1186,9 +1249,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .warning,
@@ -1199,6 +1262,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                     fontStyle:
                                                                         FontStyle
                                                                             .italic,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodyMediumIsCustom,
                                                                   ),
                                                             ).animateOnPageLoad(
                                                                 animationsMap[
@@ -1251,12 +1317,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           context)
                                                                       .titleMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -1331,8 +1399,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .labelLarge,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelLargeFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         fontSize:
@@ -1341,6 +1409,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                       ),
                                                                 )
                                                               ],
@@ -1348,9 +1418,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -1361,6 +1431,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodyMediumIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -1411,12 +1484,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).labelLarge,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                   TextSpan(
@@ -1429,14 +1504,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             context)
                                                                         .headlineSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).headlineSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           fontSize:
                                                                               27.0,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                         ),
                                                                   ),
                                                                   TextSpan(
@@ -1449,12 +1526,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).labelLarge,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   )
                                                                 ],
@@ -1462,11 +1541,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -1524,9 +1606,10 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                                 Text(
                                                                                   prdlistItem.name,
                                                                                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w800,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                       ),
                                                                                 ),
                                                                               ],
@@ -1545,9 +1628,10 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineLarge
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).headlineLarge,
+                                                                              fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).headlineLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ],
@@ -1617,10 +1701,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .headlineLarge
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .headlineLarge,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineLargeFamily,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .headlineLargeIsCustom,
                                         ),
                                   ),
                                   Expanded(
@@ -1686,10 +1774,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                   context)
                                               .labelMedium
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelMedium,
+                                                        .labelMediumFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMediumIsCustom,
                                               ),
                                           hintText: FFLocalizations.of(context)
                                               .getText(
@@ -1699,10 +1791,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                   context)
                                               .labelMedium
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelMedium,
+                                                        .labelMediumFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMediumIsCustom,
                                               ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
@@ -1756,9 +1852,13 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .labelSmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .labelSmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelSmallFamily,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .labelSmallIsCustom,
                                             ),
                                         cursorColor:
                                             FlutterFlowTheme.of(context)
@@ -1810,17 +1910,22 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                         .toString(),
                                                     '0',
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall,
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallIsCustom,
+                                                          ),
                                                 ),
                                                 showBadge: true,
                                                 shape: badges.BadgeShape.circle,
@@ -2027,12 +2132,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .labelLarge,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelLargeFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBtnText,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                       ),
                                                                 ),
                                                                 TextSpan(
@@ -2050,14 +2157,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           context)
                                                                       .headlineSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .headlineSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBtnText,
                                                                         fontSize:
                                                                             27.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                       ),
                                                                 )
                                                               ],
@@ -2065,14 +2174,17 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryBackground,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodyMediumIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -2097,9 +2209,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .warning,
@@ -2110,6 +2222,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       fontStyle:
                                                                           FontStyle
                                                                               .italic,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ).animateOnPageLoad(
                                                                   animationsMap[
@@ -2160,12 +2275,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             context)
                                                                         .titleMedium
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleMedium,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                         ),
                                                                     elevation:
                                                                         3.0,
@@ -2225,14 +2342,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             context)
                                                                         .titleMedium
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleMedium,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleMediumFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                         ),
                                                                     elevation:
                                                                         3.0,
@@ -2286,12 +2405,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             context)
                                                                         .titleMedium
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleMedium,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                         ),
                                                                     elevation:
                                                                         3.0,
@@ -2377,8 +2498,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                               context)
                                                                           .labelLarge
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelLarge,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             fontSize:
@@ -2387,6 +2508,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                           ),
                                                                     )
                                                                   ],
@@ -2394,8 +2517,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
@@ -2404,6 +2527,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.bold,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                       ),
                                                                 ),
                                                               ),
@@ -2477,10 +2602,11 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                               Text(
                                                                                 prdlistItem.name,
                                                                                 style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                      font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                       fontSize: 17.0,
                                                                                       letterSpacing: 0.0,
                                                                                       fontWeight: FontWeight.w800,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -2521,11 +2647,12 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                                     Text(
                                                                                       prdlistItem.ordertype,
                                                                                       style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                            font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                             color: FlutterFlowTheme.of(context).info,
                                                                                             fontSize: 14.0,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w800,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                           ),
                                                                                     ),
                                                                                   ],
@@ -2538,9 +2665,10 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                               '0',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).headlineLarge.override(
-                                                                                  font: FlutterFlowTheme.of(context).headlineLarge,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).headlineLargeIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -2636,14 +2764,17 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         context)
                                                                     .labelLarge
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelLargeFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBtnText,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .labelLargeIsCustom,
                                                                     ),
                                                               ),
                                                               TextSpan(
@@ -2663,9 +2794,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBtnText,
@@ -2673,6 +2804,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           27.0,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               )
                                                             ],
@@ -2680,14 +2814,18 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMediumFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -2712,9 +2850,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .warning,
@@ -2725,6 +2863,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                     fontStyle:
                                                                         FontStyle
                                                                             .italic,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodyMediumIsCustom,
                                                                   ),
                                                             ).animateOnPageLoad(
                                                                 animationsMap[
@@ -2773,12 +2914,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           context)
                                                                       .titleMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -2836,14 +2979,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           context)
                                                                       .titleMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleMediumFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondaryBackground,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -2894,12 +3039,14 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           context)
                                                                       .titleMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleMediumFamily,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                       ),
                                                                   elevation:
                                                                       3.0,
@@ -2986,8 +3133,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).labelLarge,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryBackground,
                                                                           fontSize:
@@ -2996,6 +3143,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                               0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   )
                                                                 ],
@@ -3003,9 +3152,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
@@ -3016,6 +3165,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -3087,10 +3239,11 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             Text(
                                                                               prdlistItem.name,
                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                     fontSize: 17.0,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w800,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -3138,11 +3291,12 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                                   Text(
                                                                                     prdlistItem.ordertype,
                                                                                     style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                           color: FlutterFlowTheme.of(context).info,
                                                                                           fontSize: 14.0,
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w800,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -3158,9 +3312,10 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .headlineLarge
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).headlineLarge,
+                                                                                fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).headlineLargeIsCustom,
                                                                               ),
                                                                         ),
                                                                       ],
@@ -3289,14 +3444,17 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       .of(context)
                                                                   .labelLarge
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelLarge,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelLargeFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryBtnText,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .labelLargeIsCustom,
                                                                   ),
                                                             ),
                                                             TextSpan(
@@ -3315,9 +3473,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       .of(context)
                                                                   .headlineSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .headlineSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryBtnText,
@@ -3325,6 +3483,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         27.0,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .headlineSmallIsCustom,
                                                                   ),
                                                             )
                                                           ],
@@ -3332,14 +3493,18 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium,
+                                                                    .bodyMediumFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryBackground,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumIsCustom,
                                                               ),
                                                         ),
                                                       ),
@@ -3364,9 +3529,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMediumFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .warning,
@@ -3377,6 +3542,10 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                   fontStyle:
                                                                       FontStyle
                                                                           .italic,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumIsCustom,
                                                                 ),
                                                           ).animateOnPageLoad(
                                                               animationsMap[
@@ -3439,14 +3608,17 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         context)
                                                                     .titleMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleMediumIsCustom,
                                                                     ),
                                                                 elevation: 3.0,
                                                                 borderSide:
@@ -3517,9 +3689,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         context)
                                                                     .titleMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .secondaryBackground,
@@ -3528,6 +3700,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleMediumIsCustom,
                                                                     ),
                                                                 elevation: 3.0,
                                                                 borderSide:
@@ -3578,14 +3753,17 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         context)
                                                                     .titleMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleMediumIsCustom,
                                                                     ),
                                                                 elevation: 3.0,
                                                                 borderSide:
@@ -3671,8 +3849,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           context)
                                                                       .labelLarge
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .labelLarge,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).labelLargeFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         fontSize:
@@ -3681,6 +3859,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                             0.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                       ),
                                                                 )
                                                               ],
@@ -3688,9 +3868,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -3701,6 +3881,9 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodyMediumIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -3773,10 +3956,11 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                           Text(
                                                                             prdlistItem.name,
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   fontSize: 17.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w800,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -3833,11 +4017,12 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                                 Text(
                                                                                   prdlistItem.ordertype,
                                                                                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                         color: FlutterFlowTheme.of(context).info,
                                                                                         fontSize: 14.0,
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w800,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                       ),
                                                                                 ),
                                                                               ],
@@ -3855,9 +4040,10 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineLarge
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).headlineLarge,
+                                                                              fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).headlineLargeIsCustom,
                                                                             ),
                                                                       ),
                                                                     ],

@@ -114,10 +114,14 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .headlineSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                     ),
                                   ),
@@ -190,9 +194,13 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .bodySmall,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmallFamily,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .bodySmallIsCustom,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -238,9 +246,13 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .bodyMediumIsCustom,
                                           ),
                                       validator: _model
                                           .textFieldsearchTextControllerValidator
@@ -374,12 +386,16 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                   .of(context)
                                                               .headlineSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineSmall,
+                                                                    .headlineSmallFamily,
                                                                 fontSize: 15.0,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmallIsCustom,
                                                               ),
                                                         ),
                                                       ),
@@ -390,11 +406,15 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                   .of(context)
                                                               .titleMedium
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleMedium,
+                                                                    .titleMediumFamily,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMediumIsCustom,
                                                               ),
                                                         ),
                                                       ),
@@ -436,12 +456,14 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                           context)
                                                                       .titleMedium
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleMedium,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleMediumFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                       ),
                                                                 ),
                                                                 Flexible(
@@ -453,12 +475,14 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                             context)
                                                                         .titleMedium
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleMedium,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleMediumFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                         ),
                                                                   ),
                                                                 ),
@@ -497,10 +521,12 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                               context)
                                                                           .titleMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleMediumFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -607,13 +633,17 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                     .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineSmall,
+                                                                      .headlineSmallFamily,
                                                                   fontSize:
                                                                       15.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineSmallIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -625,11 +655,15 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                     .of(context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleMedium,
+                                                                      .titleMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMediumIsCustom,
                                                                 ),
                                                           ),
                                                         ),
@@ -673,12 +707,14 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                             context)
                                                                         .titleMedium
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleMedium,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleMediumFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                         ),
                                                                   ),
                                                                   Flexible(
@@ -690,12 +726,14 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                               context)
                                                                           .titleMedium
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleMedium,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleMediumFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -732,10 +770,12 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                             context)
                                                                         .titleMedium
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).titleMedium,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).titleMediumFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                         ),
                                                                   ),
                                                               ],

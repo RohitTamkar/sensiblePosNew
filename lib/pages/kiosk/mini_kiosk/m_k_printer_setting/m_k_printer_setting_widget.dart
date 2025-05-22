@@ -102,12 +102,15 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .headlineSmall,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineSmallFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .lineColor,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .headlineSmallIsCustom,
                                       ),
                                 ),
                                 FlutterFlowIconButton(
@@ -158,9 +161,12 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .bodyLarge,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyLargeFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .bodyLargeIsCustom,
                                       ),
                                 ),
                               ),
@@ -181,9 +187,12 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .titleSmall,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleSmallIsCustom,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
                                     'wq26yvpr' /* Select Paper Size... */,
@@ -215,9 +224,12 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .bodyLarge,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyLargeFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .bodyLargeIsCustom,
                                       ),
                                 ),
                               ),
@@ -251,9 +263,12 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .titleSmall,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleSmallIsCustom,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
                                     'a04vhqw3' /* Select printer mode */,
@@ -285,9 +300,12 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .bodyLarge,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyLargeFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .bodyLargeIsCustom,
                                       ),
                                 ),
                               ),
@@ -496,9 +514,10 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ],
@@ -543,10 +562,11 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               fontSize: 10.0,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       ),
                                                                     ],

@@ -695,14 +695,17 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .displayLarge
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .displayLarge,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .displayLargeFamily,
                                       color:
                                           FlutterFlowTheme.of(context).success,
                                       fontSize: 36.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                       fontStyle: FontStyle.italic,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .displayLargeIsCustom,
                                     ),
                               ).animateOnPageLoad(
                                   animationsMap['textOnPageLoadAnimation']!),
@@ -932,12 +935,15 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
                                     ),
                               ),
                             ),

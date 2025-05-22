@@ -78,9 +78,12 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .headlineSmall,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineSmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .headlineSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -91,12 +94,15 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .headlineMedium,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .headlineMediumFamily,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       fontSize: 18.0,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .headlineMediumIsCustom,
                                     ),
                               ),
                             ],
@@ -120,11 +126,14 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .headlineSmall,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineSmallFamily,
                                         color: Color(0xFF3B58FF),
                                         fontSize: 12.0,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .headlineSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -135,10 +144,13 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .titleSmall,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleSmallFamily,
                                       color: Color(0xFF3B58FF),
                                       letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .titleSmallIsCustom,
                                     ),
                               ),
                             ],
@@ -166,9 +178,13 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          font: FlutterFlowTheme.of(context)
-                                              .titleSmall,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .titleSmallIsCustom,
                                         ),
                                   ),
                                 ),
@@ -179,9 +195,12 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .titleSmall,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleSmallIsCustom,
                                       ),
                                 ),
                               ],
@@ -243,9 +262,12 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .labelSmall
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .labelSmall,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .labelSmallFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .labelSmallIsCustom,
                                     ),
                               ),
                             ],
@@ -272,9 +294,12 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             ),
                           ],
@@ -300,9 +325,12 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelSmall
                                   .override(
-                                    font:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelSmallIsCustom,
                                   ),
                             ),
                           ],
@@ -333,9 +361,12 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .labelSmall
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .labelSmall,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .labelSmallFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .labelSmallIsCustom,
                                     ),
                               ),
                             ],
@@ -393,11 +424,15 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleMedium
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .titleMedium,
+                                                                .titleMediumFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .titleMediumIsCustom,
                                                       ),
                                             ),
                                           ),
@@ -430,10 +465,15 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -465,10 +505,15 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -508,11 +553,15 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleMedium
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .titleMedium,
+                                                                .titleMediumFamily,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .titleMediumIsCustom,
                                                       ),
                                             ),
                                           ),
@@ -554,9 +603,12 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: FlutterFlowTheme.of(context)
-                                            .titleSmall,
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleSmallIsCustom,
                                       ),
                                 ),
                               ),
@@ -567,9 +619,12 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .titleSmall,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleSmallFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .titleSmallIsCustom,
                                     ),
                               ),
                             ],
@@ -595,9 +650,12 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .headlineSmall,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .headlineSmallFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .headlineSmallIsCustom,
                                     ),
                               ),
                             ),
@@ -612,9 +670,12 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      font: FlutterFlowTheme.of(context)
-                                          .headlineSmall,
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .headlineSmallFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .headlineSmallIsCustom,
                                     ),
                               ),
                             ),
@@ -626,9 +687,12 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .displayMedium
                                   .override(
-                                    font: FlutterFlowTheme.of(context)
-                                        .displayMedium,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .displayMediumFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .displayMediumIsCustom,
                                   ),
                             ),
                           ],

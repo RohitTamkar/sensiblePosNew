@@ -415,18 +415,22 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
               'w6zqa6q2' /* Qty */,
             ),
             labelStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                  font: FlutterFlowTheme.of(context).bodyMedium,
+                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                   letterSpacing: 0.0,
+                  useGoogleFonts:
+                      !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                 ),
             hintText: FFLocalizations.of(context).getText(
               'pshrganl' /* Enter Manually */,
             ),
             hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                  font: FlutterFlowTheme.of(context).labelMedium,
+                  fontFamily: FlutterFlowTheme.of(context).labelMediumFamily,
                   color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 10.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w600,
+                  useGoogleFonts:
+                      !FlutterFlowTheme.of(context).labelMediumIsCustom,
                 ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
@@ -460,9 +464,11 @@ class _TextFieldComboWidgetState extends State<TextFieldComboWidget> {
             fillColor: FlutterFlowTheme.of(context).primaryBackground,
           ),
           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                font: FlutterFlowTheme.of(context).bodyMedium,
+                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                 letterSpacing: 0.0,
                 fontWeight: FontWeight.w600,
+                useGoogleFonts:
+                    !FlutterFlowTheme.of(context).bodyMediumIsCustom,
               ),
           textAlign: TextAlign.center,
           keyboardType: TextInputType.number,

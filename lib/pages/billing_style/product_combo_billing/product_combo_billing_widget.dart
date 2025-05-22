@@ -346,14 +346,18 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                   context)
                                                               .headlineSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineSmall,
+                                                                    .headlineSmallFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryBackground,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineSmallIsCustom,
                                                               ),
                                                     ),
                                                   ),
@@ -489,11 +493,15 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodySmall,
+                                                                      .bodySmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodySmallIsCustom,
                                                                 ),
                                                         enabledBorder:
                                                             OutlineInputBorder(
@@ -572,17 +580,20 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                           ),
                                                         ),
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: FlutterFlowTheme.of(
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                                    .bodyMediumFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumIsCustom,
+                                                          ),
                                                       validator: _model
                                                           .textFieldsearchTextControllerValidator
                                                           .asValidator(context),
@@ -797,15 +808,17 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           Text(
                                                                             containerVarItem.name,
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Text(
                                                                             containerVarItem.mobile,
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -844,17 +857,19 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                                       'xmrmjhsa' /* Balance:  */,
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                           color: FlutterFlowTheme.of(context).primary,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                   Text(
                                                                                     containerVarItem.oldBalance.toString(),
                                                                                     style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                          font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                          fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                           color: FlutterFlowTheme.of(context).primary,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -1061,15 +1076,17 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           Text(
                                                                             listItem.name,
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).headlineSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                                 ),
                                                                           ),
                                                                           Text(
                                                                             listItem.mobile,
                                                                             style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -1238,10 +1255,10 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                           context)
                                                       .titleSmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .titleSmall,
+                                                                .titleSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1249,6 +1266,10 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .titleSmallIsCustom,
                                                       ),
                                                 ),
                                               ),
@@ -1265,10 +1286,10 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodySmall,
+                                                                .bodySmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1276,6 +1297,10 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodySmallIsCustom,
                                                       ),
                                                 ),
                                               ),
@@ -1396,17 +1421,22 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall,
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallIsCustom,
+                                                          ),
                                                   elevation: 0.0,
                                                   borderRadius:
                                                       BorderRadius.circular(
@@ -1451,20 +1481,23 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: Text(
                                               FFAppState().userName,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBtnText,
+                                                    letterSpacing: 0.0,
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumIsCustom,
+                                                  ),
                                             ),
                                           ),
                                           InkWell(
@@ -1615,9 +1648,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         context)
                                                                     .titleMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily,
                                                                       fontSize:
                                                                           15.0,
                                                                       letterSpacing:
@@ -1625,6 +1658,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleMediumIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -1659,10 +1695,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             context)
                                                                         .labelLarge
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).labelLarge,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).labelLargeFamily,
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                         ),
                                                                   ),
                                                                   Flexible(
@@ -1681,14 +1719,16 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                               context)
                                                                           .labelLarge
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelLarge,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelLargeFamily,
                                                                             fontSize:
                                                                                 12.0,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1709,13 +1749,16 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       .of(context)
                                                                   .bodyMedium
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     color: Color(
                                                                         0xFF830D1C),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodyMediumIsCustom,
                                                                   ),
                                                             ),
                                                         ],
@@ -2104,10 +2147,11 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                                 ),
                                                                                 textAlign: TextAlign.center,
                                                                                 style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                      font: FlutterFlowTheme.of(context).labelLarge,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                                       fontSize: 12.0,
                                                                                       letterSpacing: 0.0,
                                                                                       fontWeight: FontWeight.w600,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -2219,9 +2263,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                   context)
                                                               .titleSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmall,
+                                                                    .titleSmallFamily,
                                                                 color: FFAppState()
                                                                             .PayMode ==
                                                                         listpayItem
@@ -2236,6 +2280,10 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w900,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmallIsCustom,
                                                               ),
                                                       elevation: 0.0,
                                                       borderRadius:
@@ -2271,11 +2319,16 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallIsCustom,
                                                     ),
                                             elevation: 0.0,
                                             borderRadius:
@@ -2305,11 +2358,16 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      font: FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall,
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color: Colors.white,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts:
+                                                          !FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallIsCustom,
                                                     ),
                                             elevation: 0.0,
                                             borderRadius:
@@ -2484,8 +2542,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                                   'jc0qoh1p' /* Item Name */,
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                      font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                       letterSpacing: 0.0,
+                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                     ),
                                                                               ),
                                                                             ],
@@ -2515,8 +2574,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                                 '5xwkd9xs' /* Qty */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -2545,8 +2605,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                                 'jy804qqm' /* Amt */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -2802,14 +2863,18 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                   .of(context)
                                                               .labelSmall
                                                               .override(
-                                                                font: FlutterFlowTheme.of(
+                                                                fontFamily: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelSmall,
+                                                                    .labelSmallFamily,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
+                                                                useGoogleFonts:
+                                                                    !FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmallIsCustom,
                                                               ),
                                                         ),
                                                         FFButtonWidget(
@@ -2877,15 +2942,18 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       color: Colors
                                                                           .white,
                                                                       fontSize:
                                                                           14.0,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                             elevation: 0.0,
                                                             borderRadius:
@@ -3070,9 +3138,10 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           textStyle: FlutterFlowTheme.of(context)
                                                                               .titleSmall
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                 color: Colors.white,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                               ),
                                                                           elevation:
                                                                               0.0,
@@ -4099,9 +4168,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       color: Colors
                                                                           .white,
                                                                       fontSize:
@@ -4111,6 +4180,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                             elevation: 0.0,
                                                             borderRadius:
@@ -5128,9 +5200,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily,
                                                                       color: Colors
                                                                           .white,
                                                                       fontSize:
@@ -5140,6 +5212,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .titleSmallIsCustom,
                                                                     ),
                                                             elevation: 0.0,
                                                             borderRadius:
@@ -5931,12 +6006,14 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: Colors
                                                                             .white,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                               elevation: 0.0,
                                                               borderRadius:
@@ -6098,9 +6175,10 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                               ),
                                                                               textAlign: TextAlign.center,
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 16.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -6112,8 +6190,9 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                             textAlign:
                                                                                 TextAlign.center,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                                 ),
                                                                           ),
                                                                         ],
@@ -6153,11 +6232,14 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       .of(context)
                                                                   .bodySmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodySmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodySmallFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodySmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -6169,11 +6251,15 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     .of(context)
                                                                 .bodyLarge
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyLarge,
+                                                                      .bodyLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLargeIsCustom,
                                                                 ),
                                                           ),
                                                         ],
@@ -6206,11 +6292,14 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                       .of(context)
                                                                   .bodySmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodySmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodySmallFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .bodySmallIsCustom,
                                                                   ),
                                                             ),
                                                           ),
@@ -6226,11 +6315,15 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                     .of(context)
                                                                 .bodyLarge
                                                                 .override(
-                                                                  font: FlutterFlowTheme.of(
+                                                                  fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyLarge,
+                                                                      .bodyLargeFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      !FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLargeIsCustom,
                                                                 ),
                                                           ),
                                                         ],
@@ -6274,11 +6367,14 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodySmallFamily,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodySmallIsCustom,
                                                                     ),
                                                               ),
                                                             ),
@@ -6300,10 +6396,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           context)
                                                                       .bodyLarge
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -6317,10 +6415,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                           context)
                                                                       .bodyLarge
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).bodyLargeIsCustom,
                                                                       ),
                                                                 ),
                                                               ],
@@ -6404,10 +6504,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                               context)
                                                                           .labelSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).labelSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).labelSmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).labelSmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -6427,9 +6529,10 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               color: FlutterFlowTheme.of(context).lineColor,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       ),
                                                                       Text(
@@ -6439,11 +6542,12 @@ class _ProductComboBillingWidgetState extends State<ProductComboBillingWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).headlineMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                               color: FlutterFlowTheme.of(context).lineColor,
                                                                               fontSize: 26.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ],

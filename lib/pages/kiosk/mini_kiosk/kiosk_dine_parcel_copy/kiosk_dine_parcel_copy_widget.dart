@@ -163,11 +163,14 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                           style: FlutterFlowTheme.of(context)
                               .displayLarge
                               .override(
-                                font: FlutterFlowTheme.of(context).displayLarge,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .displayLargeFamily,
                                 color: FlutterFlowTheme.of(context).info,
                                 fontSize: 40.0,
                                 letterSpacing: 5.0,
                                 fontWeight: FontWeight.w600,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .displayLargeIsCustom,
                               ),
                         ),
                       ),
@@ -252,12 +255,16 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .displayLarge
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .displayLarge,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .displayLargeFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
                                             fontSize: 36.0,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .displayLargeIsCustom,
                                           ),
                                     ),
                                   ),
@@ -359,13 +366,17 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .displayLarge
                                             .override(
-                                              font: FlutterFlowTheme.of(context)
-                                                  .displayLarge,
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displayLargeFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
                                               fontSize: 36.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .displayLargeIsCustom,
                                             ),
                                       ),
                                     ),

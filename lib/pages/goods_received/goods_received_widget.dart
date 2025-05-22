@@ -207,15 +207,20 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBtnText,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                   ),
                                                 ),
@@ -232,13 +237,18 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             context)
                                                         .bodySmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodySmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodySmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondary,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodySmallIsCustom,
                                                         ),
                                                   ),
                                                 ),
@@ -261,13 +271,18 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
-                                                  font: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall,
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBtnText,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts:
+                                                      !FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallIsCustom,
                                                 ),
                                           ),
                                         ),
@@ -281,13 +296,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                font:
+                                                fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMediumFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBackground,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMediumIsCustom,
                                               ),
                                         ),
                                         Expanded(
@@ -306,15 +325,19 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        font:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryBtnText,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts:
+                                                            !FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMediumIsCustom,
                                                       ),
                                                 ),
                                               ],
@@ -426,9 +449,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
@@ -436,6 +460,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                   )),
                                                 ),
@@ -488,14 +516,19 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                   )),
                                                 ),
@@ -548,14 +581,19 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                   )),
                                                 ),
@@ -608,14 +646,19 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                   )),
                                                 ),
@@ -668,14 +711,19 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
                                                           fontSize: 12.0,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                   )),
                                                 ),
@@ -728,9 +776,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
@@ -738,6 +787,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                   )),
                                                 ),
@@ -788,9 +841,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             context)
                                                         .titleSmall
                                                         .override(
-                                                          font: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall,
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
@@ -798,6 +852,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleSmallIsCustom,
                                                         ),
                                                   )),
                                                 ),
@@ -825,11 +883,15 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            font: FlutterFlowTheme.of(context)
-                                                .headlineSmall,
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily,
                                             fontSize: 13.5,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineSmallIsCustom,
                                           ),
                                       unselectedLabelStyle: TextStyle(),
                                       indicatorColor:
@@ -1033,8 +1095,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                     child: Text(
                                                                                   purchaceOrderListItem.order,
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                       ),
                                                                                 )),
                                                                               ),
@@ -1044,9 +1107,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                     child: Text(
                                                                                   purchaceOrderListItem.party,
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         color: FlutterFlowTheme.of(context).primary,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                       ),
                                                                                 )),
                                                                               ),
@@ -1061,8 +1125,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         '63te80c6' /* Booked :  */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                            font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                           ),
                                                                                     )),
                                                                                     SelectionArea(
@@ -1071,8 +1136,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         '62xmfigc' /* - - - */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                            font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                           ),
                                                                                     )),
                                                                                   ],
@@ -1122,8 +1188,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                     '4h9pa698' /* Approved */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                       ),
                                                                                 )),
                                                                               ),
@@ -1137,9 +1204,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                     locale: FFLocalizations.of(context).languageCode,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         fontSize: 10.0,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                       ),
                                                                                 )),
                                                                               ),
@@ -1220,14 +1288,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               )),
                                                               SelectionArea(
@@ -1241,14 +1312,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               )),
                                                             ],
@@ -1312,8 +1386,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -1327,9 +1402,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -1360,8 +1436,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -1375,8 +1452,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -1407,8 +1485,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -1422,8 +1501,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -1454,8 +1534,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -1469,8 +1550,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -1533,10 +1615,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -1561,12 +1645,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -1591,12 +1677,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -1621,12 +1709,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -1717,8 +1807,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.name''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                             Padding(
@@ -1739,8 +1830,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               'x2zakht3' /* Price : */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -1751,8 +1843,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               'ray4l254' /* ₹ */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -1764,8 +1857,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               r'''$.price''',
                                                                                             ).toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -1787,8 +1881,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                 's40mxakn' /* Qty : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1798,8 +1893,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               r'''$.quantity''',
                                                                                             ).toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -1861,10 +1957,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1894,9 +1992,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'q34domr2' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -1916,9 +2015,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 '0',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -1962,10 +2062,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1995,9 +2097,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'cssghu4y' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -2014,9 +2117,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.taxAmt''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -2060,10 +2164,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2093,9 +2199,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'u0ezx0le' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -2112,9 +2219,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.finalAmt''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -2158,10 +2266,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -2191,9 +2301,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'ucqj98ww' /* Delivery */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -2266,14 +2377,16 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).headlineSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryBtnText,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     )),
                                                                   ],
@@ -2383,8 +2496,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           hintStyle: FlutterFlowTheme.of(context)
                                                                               .bodySmall
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                               ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
@@ -2442,8 +2556,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                         validator: _model
                                                                             .textController1Validator
@@ -2498,14 +2613,16 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             color:
                                                                                 Colors.white,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                       elevation:
                                                                           2.0,
@@ -2640,8 +2757,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           child: Text(
                                                                                         purchaceGoodsRecvItem.order,
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -2651,9 +2769,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           child: Text(
                                                                                         purchaceGoodsRecvItem.party,
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -2668,8 +2787,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               '3zsd090x' /* Booked :  */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           )),
                                                                                           SelectionArea(
@@ -2678,8 +2798,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               'vn9gjso2' /* - - - */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           )),
                                                                                         ],
@@ -2715,8 +2836,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           'kj7nbn2g' /* Approved */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -2730,9 +2852,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               fontSize: 10.0,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -2816,14 +2939,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               )),
                                                               SelectionArea(
@@ -2837,14 +2963,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               )),
                                                             ],
@@ -2908,8 +3037,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -2923,9 +3053,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -2956,8 +3087,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -2971,8 +3103,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -3003,8 +3136,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -3018,8 +3152,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -3050,8 +3185,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -3065,8 +3201,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -3115,8 +3252,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               'olzpgdz0' /* Approved */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                 ),
                                                                           )),
                                                                         ),
@@ -3132,9 +3270,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               '6lnoyi5v' /* 3 */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                 ),
                                                                           )),
                                                                         ),
@@ -3150,9 +3289,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               '8iapdqrz' /* Days */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                 ),
                                                                           )),
                                                                         ),
@@ -3168,9 +3308,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               '7i8gz1gx' /* ago */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                   fontSize: 10.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                 ),
                                                                           )),
                                                                         ),
@@ -3256,8 +3397,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                     r'''$.name''',
                                                                                                   ).toString(),
                                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                         letterSpacing: 0.0,
+                                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -3286,8 +3428,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                           'zb5c79mv' /* Serial : */,
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                             ),
                                                                                                       ),
                                                                                                     ),
@@ -3296,10 +3439,11 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                       child: Text(
                                                                                                         functions.genSrno(productGRIndex).toString(),
                                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                                                               fontSize: 10.0,
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                             ),
                                                                                                       ),
                                                                                                     ),
@@ -3324,8 +3468,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                           '28hlhf42' /* Total Qty : */,
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                             ),
                                                                                                       ),
                                                                                                     ),
@@ -3335,8 +3480,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                         r'''$.quantity''',
                                                                                                       ).toString(),
                                                                                                       style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                            font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                            fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                             letterSpacing: 0.0,
+                                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                           ),
                                                                                                     ),
                                                                                                   ],
@@ -3422,10 +3568,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3455,9 +3603,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'f9d2hz7q' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -3477,9 +3626,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 '0',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -3523,10 +3673,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3556,9 +3708,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'm2hn8frv' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -3575,9 +3728,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.taxAmt''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -3621,10 +3775,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3654,9 +3810,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'ybx0ivn3' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -3676,9 +3833,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 '0',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -3722,10 +3880,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -3755,9 +3915,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'qmb1xyej' /* Delivery */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -3824,9 +3985,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBtnText,
@@ -3835,6 +3996,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               )),
                                                             ],
@@ -3930,14 +4094,16 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                             context)
                                                                         .headlineSmall
                                                                         .override(
-                                                                          font:
-                                                                              FlutterFlowTheme.of(context).headlineSmall,
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryBtnText,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
+                                                                          useGoogleFonts:
+                                                                              !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                         ),
                                                                   )),
                                                                 ],
@@ -4057,8 +4223,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         child: Text(
                                                                                       purchaceQcItem.order,
                                                                                       style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                            font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                           ),
                                                                                     )),
                                                                                     Padding(
@@ -4067,9 +4234,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           child: Text(
                                                                                         purchaceQcItem.party,
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -4084,8 +4252,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               'xusxjdea' /* Booked :  */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           )),
                                                                                           SelectionArea(
@@ -4094,8 +4263,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               'im6nw1ik' /* - - -  */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           )),
                                                                                         ],
@@ -4131,8 +4301,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           'bpidy0gt' /* Approved */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -4146,9 +4317,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               fontSize: 10.0,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -4232,14 +4404,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               )),
                                                               SelectionArea(
@@ -4253,14 +4428,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               )),
                                                             ],
@@ -4324,8 +4502,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -4339,9 +4518,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -4372,8 +4552,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -4387,8 +4568,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -4419,8 +4601,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -4434,8 +4617,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -4466,8 +4650,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -4481,8 +4666,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -4545,10 +4731,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -4573,12 +4761,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -4603,12 +4793,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -4633,12 +4825,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -4730,8 +4924,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.name''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                             Padding(
@@ -4752,8 +4947,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               'wt7wabox' /* Serial : */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -4764,10 +4960,11 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               'gi09mdz7' /* 54654h */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                                   fontSize: 10.0,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -4789,8 +4986,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                 'nlz7js9r' /* Qty : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -4800,8 +4998,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               r'''$.quantity''',
                                                                                             ).toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -4863,10 +5062,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4896,9 +5097,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'er52zd6a' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -4915,9 +5117,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.grossTotal''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -4961,10 +5164,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -4994,9 +5199,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'm3jhl01q' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -5013,9 +5219,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.taxAmt''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -5059,10 +5266,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -5092,9 +5301,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'mkmqvref' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -5111,9 +5321,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.finalAmt''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -5157,10 +5368,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -5190,9 +5403,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 '6xba4mte' /* Delivery */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -5297,10 +5511,11 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryBtnText,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       ),
                                                                     ],
@@ -5365,14 +5580,16 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .titleSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).titleSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryBtnText,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                           ),
                                                                     )),
                                                                   ],
@@ -5524,8 +5741,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           child: Text(
                                                                                         purchaceSIItem.order,
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -5535,9 +5753,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           child: Text(
                                                                                         purchaceSIItem.party,
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -5552,8 +5771,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               'qt0eauu2' /* Booked :  */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           )),
                                                                                           SelectionArea(
@@ -5562,8 +5782,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               'nxia7atu' /* - - -  */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           )),
                                                                                         ],
@@ -5599,8 +5820,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           'uhep1rtx' /* Approved */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -5614,9 +5836,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               fontSize: 10.0,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -5700,14 +5923,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               )),
                                                               SelectionArea(
@@ -5721,14 +5947,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               )),
                                                             ],
@@ -5839,9 +6068,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 color: FlutterFlowTheme.of(context).primary,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                               ),
                                                                           textAlign:
                                                                               TextAlign.start,
@@ -5878,8 +6108,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -5893,9 +6124,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -5926,8 +6158,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -5941,8 +6174,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -5973,8 +6207,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -5988,8 +6223,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -6020,8 +6256,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -6035,8 +6272,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -6099,10 +6337,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -6127,12 +6367,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -6157,12 +6399,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -6187,12 +6431,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -6284,8 +6530,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.name''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                             Padding(
@@ -6306,8 +6553,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               '1ejnu6nj' /* Serial : */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -6318,10 +6566,11 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               'f6zdkcv4' /* 54654h */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                                   fontSize: 10.0,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -6343,8 +6592,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                 'p7d1snxs' /* Qty : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -6354,8 +6604,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               r'''$.quantity''',
                                                                                             ).toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -6417,10 +6668,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -6450,9 +6703,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'nq0izt08' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -6472,9 +6726,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 '0',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -6518,10 +6773,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -6551,9 +6808,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'mje5yi5t' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -6570,9 +6828,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.taxAmt''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -6616,10 +6875,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -6649,9 +6910,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'sbkx8lzi' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -6668,9 +6930,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.finalAmt''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -6714,10 +6977,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -6747,9 +7012,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'vvjcwmfs' /* Delivery */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -6832,14 +7098,16 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .headlineSmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).headlineSmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryBtnText,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).headlineSmallIsCustom,
                                                                           ),
                                                                     )),
                                                                   ],
@@ -7035,8 +7303,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         child: Text(
                                                                                       rejectPurchaceItem.order,
                                                                                       style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                            font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                           ),
                                                                                     )),
                                                                                     Padding(
@@ -7045,9 +7314,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           child: Text(
                                                                                         rejectPurchaceItem.party,
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -7062,8 +7332,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               '2c4sb0c9' /* Booked :  */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           )),
                                                                                           SelectionArea(
@@ -7072,8 +7343,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               '3flxoe44' /* - - -  */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           )),
                                                                                         ],
@@ -7109,8 +7381,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           'wdmqmohu' /* Approved */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -7124,9 +7397,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               fontSize: 10.0,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -7210,14 +7484,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               )),
                                                               SelectionArea(
@@ -7231,14 +7508,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               )),
                                                             ],
@@ -7302,8 +7582,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -7317,9 +7598,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -7350,8 +7632,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -7365,8 +7648,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -7397,8 +7681,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -7412,8 +7697,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -7444,8 +7730,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -7459,8 +7746,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -7523,10 +7811,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -7551,12 +7841,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -7581,12 +7873,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -7611,12 +7905,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -7708,8 +8004,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.name''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                             Padding(
@@ -7730,8 +8027,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               '78z84o9o' /* Serial : */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -7742,10 +8040,11 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               'cvzb7o7r' /* 54654h */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                                   fontSize: 10.0,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -7767,8 +8066,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                 '0fhkndo6' /* Qty : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -7778,8 +8078,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               r'''$.quantity''',
                                                                                             ).toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -7841,10 +8142,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -7874,9 +8177,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'h868dlmd' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -7893,9 +8197,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.grossTotal''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -7939,10 +8244,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -7972,9 +8279,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 '1wpvp2ak' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -7991,9 +8299,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.taxAmt''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -8037,10 +8346,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -8070,9 +8381,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'tfmy44t0' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -8089,9 +8401,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.finalAmt''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -8135,10 +8448,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -8168,9 +8483,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 '9h3ph39p' /* Delivery */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -8215,9 +8531,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                       .of(context)
                                                                   .headlineSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .headlineSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryBtnText,
@@ -8226,6 +8542,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w600,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .headlineSmallIsCustom,
                                                                   ),
                                                             )),
                                                           ],
@@ -8373,8 +8692,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           child: Text(
                                                                                         purchaceFinalItem.order,
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -8384,9 +8704,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           child: Text(
                                                                                         purchaceFinalItem.party,
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -8401,8 +8722,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               'xam0oz0u' /* Booked :  */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           )),
                                                                                           SelectionArea(
@@ -8411,8 +8733,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               'mfm2ww6p' /* - - -  */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           )),
                                                                                         ],
@@ -8448,8 +8771,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           '9wvjvao3' /* Approved */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -8463,9 +8787,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               fontSize: 10.0,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       )),
                                                                                     ),
@@ -8557,14 +8882,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               )),
                                                               SelectionArea(
@@ -8578,14 +8906,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               )),
                                                             ],
@@ -8649,8 +8980,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -8664,9 +8996,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -8697,8 +9030,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -8712,9 +9046,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -8745,8 +9080,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -8760,8 +9096,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -8792,8 +9129,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -8807,8 +9145,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -8839,8 +9178,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -8854,8 +9194,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -8918,10 +9259,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -9013,8 +9356,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.name''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                             Padding(
@@ -9035,8 +9379,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               '9oxfvh4o' /* Serial : */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -9047,10 +9392,11 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               '4hwv0hhv' /* 54654h */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                                   fontSize: 10.0,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
@@ -9072,8 +9418,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                 '20v76jxv' /* Qty : */,
                                                                                               ),
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                    font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -9083,8 +9430,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                               r'''$.quantity''',
                                                                                             ).toString(),
                                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                                  fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                                 ),
                                                                                           ),
                                                                                         ],
@@ -9146,10 +9494,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -9179,9 +9529,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 '8g81oyay' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -9198,9 +9549,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.grossTotal''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -9244,10 +9596,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -9277,9 +9631,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'sq9o3hz3' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -9296,9 +9651,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.taxAmt''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -9342,10 +9698,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -9375,9 +9733,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 '7tjdx3um' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -9394,9 +9753,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 r'''$.finalAmt''',
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -9440,10 +9800,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -9473,9 +9835,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'whyma77s' /* Delivery */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -9520,14 +9883,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .lineColor,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleSmallIsCustom,
                                                                   ),
                                                             )),
                                                           ],
@@ -9637,8 +10003,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                     'oc6ks60y' /* 1234567891234 */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                       ),
                                                                                 )),
                                                                               ),
@@ -9650,9 +10017,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                     'mb5y1zry' /* Party Name Party Name */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         color: FlutterFlowTheme.of(context).primary,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                       ),
                                                                                 )),
                                                                               ),
@@ -9667,8 +10035,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         '671zl2aj' /* Booked :  */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                            font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                           ),
                                                                                     )),
                                                                                     SelectionArea(
@@ -9677,8 +10046,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         '0qngcpwf' /* Nerlikar  */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                            font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                            fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                           ),
                                                                                     )),
                                                                                   ],
@@ -9728,8 +10098,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                     '6qsbrvqn' /* Approved */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                       ),
                                                                                 )),
                                                                               ),
@@ -9741,9 +10112,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                     'c2zdmz7e' /* 3 */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         fontSize: 10.0,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                       ),
                                                                                 )),
                                                                               ),
@@ -9755,9 +10127,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                     'x0ibukya' /* Days */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         fontSize: 10.0,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                       ),
                                                                                 )),
                                                                               ),
@@ -9769,9 +10142,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                     '46m64o2x' /* ago */,
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                        fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         fontSize: 10.0,
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                       ),
                                                                                 )),
                                                                               ),
@@ -9860,14 +10234,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .bodyMediumIsCustom,
                                                                     ),
                                                               )),
                                                               SelectionArea(
@@ -9881,14 +10258,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         context)
                                                                     .headlineSmall
                                                                     .override(
-                                                                      font: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .headlineSmall,
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          !FlutterFlowTheme.of(context)
+                                                                              .headlineSmallIsCustom,
                                                                     ),
                                                               )),
                                                             ],
@@ -9952,8 +10332,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -9966,9 +10347,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -9999,8 +10381,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -10013,9 +10396,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -10046,8 +10430,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -10060,8 +10445,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -10092,8 +10478,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -10106,8 +10493,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -10138,8 +10526,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                             ),
                                                                       )),
                                                                       SelectionArea(
@@ -10152,8 +10541,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
-                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                               letterSpacing: 0.0,
+                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                             ),
                                                                       )),
                                                                     ],
@@ -10216,10 +10606,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -10244,12 +10636,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -10274,12 +10668,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -10304,12 +10700,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: FlutterFlowTheme.of(context)
-                                                                            .titleSmall,
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
                                                                             10.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                       ),
                                                                 )),
                                                               ),
@@ -10391,8 +10789,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .titleSmall
                                                                               .override(
-                                                                                font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                 letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                               ),
                                                                         ),
                                                                         Padding(
@@ -10420,8 +10819,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           'dwsuhoe1' /* Serial : */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ),
@@ -10432,10 +10832,11 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           'lfbnwq7g' /* 54654h */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                                               fontSize: 10.0,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ),
@@ -10457,8 +10858,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                             'q52o0py0' /* Qty : */,
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                                font: FlutterFlowTheme.of(context).bodySmall,
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                 letterSpacing: 0.0,
+                                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                                               ),
                                                                                         ),
                                                                                       ),
@@ -10467,8 +10869,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           '8unlrm0j' /* 3 */,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                             ),
                                                                                       ),
                                                                                     ],
@@ -10528,10 +10931,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -10561,9 +10966,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'd6mikj9o' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -10579,9 +10985,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 '8bl4eilu' /* 26,000.00 */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -10625,10 +11032,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -10658,9 +11067,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'n4ot63px' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -10676,9 +11086,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 '730js0ag' /* 26,000.00 */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -10722,10 +11133,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -10755,9 +11168,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'kfwr0xc8' /* ₹ */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -10773,9 +11187,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 'c6lwgbmm' /* 26,000.00 */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primary,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -10819,10 +11234,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               context)
                                                                           .bodySmall
                                                                           .override(
-                                                                            font:
-                                                                                FlutterFlowTheme.of(context).bodySmall,
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodySmallFamily,
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                !FlutterFlowTheme.of(context).bodySmallIsCustom,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -10852,9 +11269,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 '269oxmra' /* Delivery */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: FlutterFlowTheme.of(context).titleSmall,
+                                                                                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     fontSize: 10.0,
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: !FlutterFlowTheme.of(context).titleSmallIsCustom,
                                                                                   ),
                                                                             ),
                                                                           ),
@@ -10899,14 +11317,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                       .of(context)
                                                                   .titleSmall
                                                                   .override(
-                                                                    font: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall,
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleSmallFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .lineColor,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        !FlutterFlowTheme.of(context)
+                                                                            .titleSmallIsCustom,
                                                                   ),
                                                             )),
                                                           ],

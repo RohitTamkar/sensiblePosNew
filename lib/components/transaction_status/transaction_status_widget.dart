@@ -87,9 +87,12 @@ class _TransactionStatusWidgetState extends State<TransactionStatusWidget> {
                     '1mz7d1fs' /* Receipt  */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineLarge.override(
-                        font: FlutterFlowTheme.of(context).headlineLarge,
+                        fontFamily:
+                            FlutterFlowTheme.of(context).headlineLargeFamily,
                         color: FlutterFlowTheme.of(context).primaryBtnText,
                         letterSpacing: 0.0,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).headlineLargeIsCustom,
                       ),
                 ),
               ),
@@ -99,9 +102,12 @@ class _TransactionStatusWidgetState extends State<TransactionStatusWidget> {
                   '-',
                 ),
                 style: FlutterFlowTheme.of(context).headlineLarge.override(
-                      font: FlutterFlowTheme.of(context).headlineLarge,
+                      fontFamily:
+                          FlutterFlowTheme.of(context).headlineLargeFamily,
                       color: FlutterFlowTheme.of(context).primaryBtnText,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).headlineLargeIsCustom,
                     ),
               ),
             ],
@@ -136,11 +142,14 @@ Successful */
                 ),
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).displayMedium.override(
-                      font: FlutterFlowTheme.of(context).displayMedium,
+                      fontFamily:
+                          FlutterFlowTheme.of(context).displayMediumFamily,
                       color: FlutterFlowTheme.of(context).primaryBtnText,
                       fontSize: 27.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w600,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).displayMediumIsCustom,
                     ),
               ),
             ],
@@ -155,10 +164,13 @@ Successful */
                   '0',
                 )}',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      font: FlutterFlowTheme.of(context).headlineMedium,
+                      fontFamily:
+                          FlutterFlowTheme.of(context).headlineMediumFamily,
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       fontSize: 30.0,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                     ),
               ),
             ],
@@ -173,10 +185,12 @@ Successful */
                   '-',
                 ),
                 style: FlutterFlowTheme.of(context).labelLarge.override(
-                      font: FlutterFlowTheme.of(context).labelLarge,
+                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       fontSize: 24.0,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).labelLargeIsCustom,
                     ),
               ),
             ],
@@ -190,10 +204,12 @@ Successful */
                   'fe19kwg5' /* Redirects Automatically */,
                 ),
                 style: FlutterFlowTheme.of(context).labelLarge.override(
-                      font: FlutterFlowTheme.of(context).labelLarge,
+                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       color: FlutterFlowTheme.of(context).primary,
                       fontSize: 16.0,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).labelLargeIsCustom,
                     ),
               ),
             ],

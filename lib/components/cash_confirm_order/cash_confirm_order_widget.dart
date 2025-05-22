@@ -79,9 +79,12 @@ class _CashConfirmOrderWidgetState extends State<CashConfirmOrderWidget> {
                     '6jvdyqvg' /* Receipt  */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineLarge.override(
-                        font: FlutterFlowTheme.of(context).headlineLarge,
+                        fontFamily:
+                            FlutterFlowTheme.of(context).headlineLargeFamily,
                         color: FlutterFlowTheme.of(context).primaryBtnText,
                         letterSpacing: 0.0,
+                        useGoogleFonts:
+                            !FlutterFlowTheme.of(context).headlineLargeIsCustom,
                       ),
                 ),
               ),
@@ -91,9 +94,12 @@ class _CashConfirmOrderWidgetState extends State<CashConfirmOrderWidget> {
                   '-',
                 ),
                 style: FlutterFlowTheme.of(context).headlineLarge.override(
-                      font: FlutterFlowTheme.of(context).headlineLarge,
+                      fontFamily:
+                          FlutterFlowTheme.of(context).headlineLargeFamily,
                       color: FlutterFlowTheme.of(context).primaryBtnText,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).headlineLargeIsCustom,
                     ),
               ),
             ],
@@ -128,11 +134,14 @@ Successfully. */
                 ),
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).displayMedium.override(
-                      font: FlutterFlowTheme.of(context).displayMedium,
+                      fontFamily:
+                          FlutterFlowTheme.of(context).displayMediumFamily,
                       color: FlutterFlowTheme.of(context).primaryBtnText,
                       fontSize: 27.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w600,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).displayMediumIsCustom,
                     ),
               ),
             ],
@@ -147,10 +156,13 @@ Successfully. */
                   '0',
                 )}',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      font: FlutterFlowTheme.of(context).headlineMedium,
+                      fontFamily:
+                          FlutterFlowTheme.of(context).headlineMediumFamily,
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       fontSize: 30.0,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).headlineMediumIsCustom,
                     ),
               ),
             ],
@@ -164,10 +176,12 @@ Successfully. */
                   'em078l4s' /* Please Pay At Counter.. */,
                 ),
                 style: FlutterFlowTheme.of(context).labelLarge.override(
-                      font: FlutterFlowTheme.of(context).labelLarge,
+                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       fontSize: 24.0,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).labelLargeIsCustom,
                     ),
               ),
             ],
@@ -181,10 +195,12 @@ Successfully. */
                   '0gqlcefu' /* Redirects Automatically */,
                 ),
                 style: FlutterFlowTheme.of(context).labelLarge.override(
-                      font: FlutterFlowTheme.of(context).labelLarge,
+                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       color: FlutterFlowTheme.of(context).primary,
                       fontSize: 16.0,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          !FlutterFlowTheme.of(context).labelLargeIsCustom,
                     ),
               ),
             ],
