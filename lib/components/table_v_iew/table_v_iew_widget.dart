@@ -109,34 +109,35 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                     height: 100.0,
                     decoration: BoxDecoration(
                       color: valueOrDefault<Color>(
-                        containerTableKotRecordList
-                                    .where((e) =>
-                                        (e.tableNo ==
-                                            getJsonField(
-                                              tablelistItem,
-                                              r'''$.typeName''',
-                                            ).toString()) &&
-                                        (containerTableKotRecordList
-                                                .where((e) =>
-                                                    e.tableNo ==
-                                                    getJsonField(
-                                                      tablelistItem,
-                                                      r'''$.typeName''',
-                                                    ).toString())
-                                                .toList()
-                                                .firstOrNull
-                                                ?.premiseName ==
-                                            widget!.parameter3))
-                                    .toList()
-                                    .firstOrNull
-                                    ?.tableNo ==
-                                valueOrDefault<String>(
-                                  getJsonField(
-                                    tablelistItem,
-                                    r'''$.typeName''',
-                                  )?.toString(),
-                                  '0',
-                                )
+                        (containerTableKotRecordList
+                                        .where((e) =>
+                                            (e.premiseName ==
+                                                widget!.parameter3) &&
+                                            (e.tableNo ==
+                                                getJsonField(
+                                                  tablelistItem,
+                                                  r'''$.typeName''',
+                                                ).toString()))
+                                        .toList()
+                                        .firstOrNull
+                                        ?.tableNo ==
+                                    getJsonField(
+                                      tablelistItem,
+                                      r'''$.typeName''',
+                                    ).toString()) &&
+                                (containerTableKotRecordList
+                                        .where((e) =>
+                                            (e.premiseName ==
+                                                widget!.parameter3) &&
+                                            (e.tableNo ==
+                                                getJsonField(
+                                                  tablelistItem,
+                                                  r'''$.typeName''',
+                                                ).toString()))
+                                        .toList()
+                                        .firstOrNull
+                                        ?.premiseName ==
+                                    widget!.parameter3)
                             ? FlutterFlowTheme.of(context).tertiary
                             : Color(0xFFFFE69E),
                         Color(0xFFFFE69E),
