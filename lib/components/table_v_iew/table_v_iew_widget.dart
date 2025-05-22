@@ -81,7 +81,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                   'tableNo',
                   isEqualTo: getJsonField(
                     tablelistItem,
-                    r'''$.typeName''',
+                    r'''$.id''',
                   ).toString(),
                 ),
               ),

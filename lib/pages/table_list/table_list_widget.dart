@@ -288,13 +288,15 @@ class _TableListWidgetState extends State<TableListWidget>
     context.watch<FFAppState>();
 
     return StreamBuilder<List<AppSettingsRecord>>(
-      stream: queryAppSettingsRecord(
-        parent: FFAppState().outletIdRef,
-        queryBuilder: (appSettingsRecord) => appSettingsRecord.where(
-          'deviceId',
-          isEqualTo: FFAppState().dId,
+      stream: FFAppState().appsdetting(
+        requestFn: () => queryAppSettingsRecord(
+          parent: FFAppState().outletIdRef,
+          queryBuilder: (appSettingsRecord) => appSettingsRecord.where(
+            'deviceId',
+            isEqualTo: FFAppState().dId,
+          ),
+          singleRecord: true,
         ),
-        singleRecord: true,
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
@@ -920,9 +922,12 @@ class _TableListWidgetState extends State<TableListWidget>
                                             ),
                                             child: StreamBuilder<
                                                 List<PremisesRecord>>(
-                                              stream: queryPremisesRecord(
-                                                parent:
-                                                    FFAppState().outletIdRef,
+                                              stream: FFAppState().list(
+                                                requestFn: () =>
+                                                    queryPremisesRecord(
+                                                  parent:
+                                                      FFAppState().outletIdRef,
+                                                ),
                                               ),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.

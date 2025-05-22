@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'flutter_flow/request_manager.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/api_requests/api_manager.dart';
@@ -3654,6 +3655,36 @@ class FFAppState extends ChangeNotifier {
     _tableNo = value;
     prefs.setString('ff_tableNo', value);
   }
+
+  final _listManager = StreamRequestManager<List<PremisesRecord>>();
+  Stream<List<PremisesRecord>> list({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Stream<List<PremisesRecord>> Function() requestFn,
+  }) =>
+      _listManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearListCache() => _listManager.clear();
+  void clearListCacheKey(String? uniqueKey) =>
+      _listManager.clearRequest(uniqueKey);
+
+  final _appsdettingManager = StreamRequestManager<List<AppSettingsRecord>>();
+  Stream<List<AppSettingsRecord>> appsdetting({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Stream<List<AppSettingsRecord>> Function() requestFn,
+  }) =>
+      _appsdettingManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearAppsdettingCache() => _appsdettingManager.clear();
+  void clearAppsdettingCacheKey(String? uniqueKey) =>
+      _appsdettingManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {
