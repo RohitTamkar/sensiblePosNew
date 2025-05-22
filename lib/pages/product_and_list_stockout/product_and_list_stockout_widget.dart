@@ -3039,7 +3039,9 @@ class _ProductAndListStockoutWidgetState
                                                                     .saveStockOut(
                                                                   context,
                                                                   productAndListStockoutAppSettingsRecord!,
-                                                                  '',
+                                                                  _model
+                                                                      .textController
+                                                                      .text,
                                                                 );
                                                               },
                                                               child:
