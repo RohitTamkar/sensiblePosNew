@@ -3930,8 +3930,38 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                             ),
                                           ),
                                         FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async {
+                                            if (!functions.isPrinterSelected(
+                                                FFAppState().printerDevice)!) {
+                                              _model.resDevice2CopyCopy =
+                                                  await actions.scanPrinter(
+                                                FFAppState().posMode,
+                                              );
+                                            }
+                                            _model.connectdevice4 =
+                                                await actions.connectDevice(
+                                              FFAppState().printerDevice,
+                                              FFAppState().printerIndex,
+                                            );
+                                            _model.selected4 =
+                                                await actions.newCustomAction(
+                                              FFAppState().printerIndex,
+                                            );
+                                            await actions.printBarcodeLabel(
+                                              _model.selected4!.toList(),
+                                              FFAppState().isPrinterConnected,
+                                              FFAppState().printerName,
+                                              _model.dropDownValue!,
+                                              functions
+                                                  .filterBillList(
+                                                      FFAppState().selBill,
+                                                      FFAppState()
+                                                          .allBillsList
+                                                          .toList())
+                                                  .toList(),
+                                            );
+
+                                            safeSetState(() {});
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(

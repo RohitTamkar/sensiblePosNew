@@ -112,6 +112,12 @@ class BarcodePrintNewModel extends FlutterFlowModel<BarcodePrintNewWidget> {
   double? ret;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in Icon widget.
   double? ads;
+  // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
+  bool? resDevice2CopyCopy;
+  // Stores action output result for [Custom Action - connectDevice] action in Button widget.
+  bool? connectdevice4;
+  // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
+  List<dynamic>? selected4;
 
   @override
   void initState(BuildContext context) {}
