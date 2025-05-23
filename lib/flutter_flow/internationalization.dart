@@ -24599,6 +24599,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '35மிமீ*25மிமீ',
       'th': '35มม.*25มม.',
     },
+    'ugec74qw': {
+      'en': '50mm×75mm',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
     'hby2064c': {
       'en': 'Sr. No.',
       'hi': 'क्रमांक।',

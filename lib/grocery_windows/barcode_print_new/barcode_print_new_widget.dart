@@ -2738,6 +2738,11 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                 context)
                                                             .getText(
                                                           'hkn19852' /* 35mm*25mm */,
+                                                        ),
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'ugec74qw' /* 50mm×75mm */,
                                                         )
                                                       ],
                                                       onChanged: (val) async {
