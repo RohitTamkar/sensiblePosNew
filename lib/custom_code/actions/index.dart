@@ -196,3 +196,4 @@ export 'todays_stock_summar_report.dart' show todaysStockSummarReport;
 export 'generate_pdf_stock_summary.dart' show generatePdfStockSummary;
 export 'enabledual_display_android.dart' show enabledualDisplayAndroid;
 export 'save_stock_out.dart' show saveStockOut;
+export 'add_to_hold_listbarcodevalue.dart' show addToHoldListbarcodevalue;

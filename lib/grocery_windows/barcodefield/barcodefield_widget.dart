@@ -990,8 +990,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               '_model.textFieldexpdateTextController',
                               Duration(milliseconds: 2000),
                               () async {
-                                _model.listCopyCopy =
-                                    await actions.addToHoldListGrmfgdate(
+                                await actions.addToHoldListbarcodevalue(
                                   widget!.parameter2!,
                                   FFAppState().selBill,
                                   widget!.parameter3!.toList(),
@@ -1000,14 +999,13 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   widget!.unitList!.toList(),
                                   _model.textFieldmfgdateTextController.text,
                                   _model.textFieldexpdateTextController.text,
+                                  _model.textFieldnetWtTextController.text,
+                                  _model.textFieldbarchNoTextController.text,
                                 );
-
-                                safeSetState(() {});
                               },
                             ),
                             onFieldSubmitted: (_) async {
-                              _model.list645 =
-                                  await actions.addToHoldListGrmfgdate(
+                              await actions.addToHoldListbarcodevalue(
                                 widget!.parameter2!,
                                 FFAppState().selBill,
                                 widget!.parameter3!.toList(),
@@ -1016,9 +1014,9 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                 widget!.unitList!.toList(),
                                 _model.textFieldmfgdateTextController.text,
                                 _model.textFieldexpdateTextController.text,
+                                _model.textFieldnetWtTextController.text,
+                                _model.textFieldbarchNoTextController.text,
                               );
-
-                              safeSetState(() {});
                             },
                             autofocus: false,
                             obscureText: false,
@@ -1113,41 +1111,37 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                           child: TextFormField(
                             controller: _model.textFieldbarchNoTextController,
                             focusNode: _model.textFieldbarchNoFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.textFieldbarchNoTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                await actions.addToHoldListbarcodevalue(
+                                  widget!.parameter2!,
+                                  FFAppState().selBill,
+                                  widget!.parameter3!.toList(),
+                                  functions
+                                      .enabletaxinclusive(widget!.parameter4!),
+                                  widget!.unitList!.toList(),
+                                  _model.textFieldmfgdateTextController.text,
+                                  _model.textFieldexpdateTextController.text,
+                                  _model.textFieldnetWtTextController.text,
+                                  _model.textFieldbarchNoTextController.text,
+                                );
+                              },
+                            ),
                             onFieldSubmitted: (_) async {
-                              _model.taxperchenged =
-                                  await actions.taxPerChangedFunctiongrocery(
+                              await actions.addToHoldListbarcodevalue(
                                 widget!.parameter2!,
                                 FFAppState().selBill,
                                 widget!.parameter3!.toList(),
                                 functions
                                     .enabletaxinclusive(widget!.parameter4!),
                                 widget!.unitList!.toList(),
-                                0.0,
-                                0.0,
-                                double.parse(
-                                    _model.textFieldrateTextController.text),
-                                double.parse(
-                                    _model.textFieldqtTextController.text),
-                                double.parse(
-                                    _model.textFieldbarchNoTextController.text),
-                                double.parse(
-                                    _model.textFieldnetWtTextController.text),
+                                _model.textFieldmfgdateTextController.text,
+                                _model.textFieldexpdateTextController.text,
+                                _model.textFieldnetWtTextController.text,
+                                _model.textFieldbarchNoTextController.text,
                               );
-                              _model.output2 =
-                                  await actions.calSubTotalForGrocery(
-                                FFAppState().selBill.toString(),
-                                FFAppState().allBillsList.toList(),
-                              );
-                              _model.reuslt12m =
-                                  await actions.calBillAmtGrocery(
-                                valueOrDefault<double>(
-                                  FFAppState().disAmt,
-                                  0.0,
-                                ),
-                                FFAppState().delCharges,
-                              );
-
-                              safeSetState(() {});
                             },
                             autofocus: false,
                             obscureText: false,

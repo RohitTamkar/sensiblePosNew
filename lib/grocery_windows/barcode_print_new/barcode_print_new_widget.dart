@@ -3925,24 +3925,8 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                             ),
                                           ),
                                         FFButtonWidget(
-                                          onPressed: () async {
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  content:
-                                                      Text('NOT AVAILABLE !'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
-                                                );
-                                              },
-                                            );
+                                          onPressed: () {
+                                            print('Button pressed ...');
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(

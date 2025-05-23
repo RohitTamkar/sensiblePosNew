@@ -79,21 +79,11 @@ class BarcodefieldModel extends FlutterFlowModel<BarcodefieldWidget> {
   TextEditingController? textFieldexpdateTextController;
   String? Function(BuildContext, String?)?
       textFieldexpdateTextControllerValidator;
-  // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in TextFieldexpdate widget.
-  List<dynamic>? list645;
-  // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in TextFieldexpdate widget.
-  List<dynamic>? listCopyCopy;
   // State field(s) for TextFieldbarchNo widget.
   FocusNode? textFieldbarchNoFocusNode;
   TextEditingController? textFieldbarchNoTextController;
   String? Function(BuildContext, String?)?
       textFieldbarchNoTextControllerValidator;
-  // Stores action output result for [Custom Action - taxPerChangedFunctiongrocery] action in TextFieldbarchNo widget.
-  List<dynamic>? taxperchenged;
-  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFieldbarchNo widget.
-  double? output2;
-  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldbarchNo widget.
-  double? reuslt12m;
   // State field(s) for TextFieldnetWt widget.
   FocusNode? textFieldnetWtFocusNode;
   TextEditingController? textFieldnetWtTextController;
