@@ -269,30 +269,10 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     _model.textFieldrateTextController.text),
                                 double.parse(
                                     _model.textFieldqtTextController.text),
-                                double.parse(
-                                    _model.textFieldbarchNoTextController.text),
-                                double.parse(
-                                    _model.textFieldnetWtTextController.text),
+                                0.0,
+                                0.0,
                                 _model.textFieldqtTextController.text,
                               );
-                              safeSetState(() {
-                                _model.textFieldnetWtTextController?.text =
-                                    getJsonField(
-                                  _model.allbillistplusCopy!
-                                      .where((e) =>
-                                          getJsonField(
-                                            e,
-                                            r'''$.id''',
-                                          ) ==
-                                          getJsonField(
-                                            widget!.jsonitem,
-                                            r'''$.id''',
-                                          ))
-                                      .toList()
-                                      .firstOrNull,
-                                  r'''$.taxAmt''',
-                                ).toString();
-                              });
                               _model.output1Copy =
                                   await actions.calSubTotalForGrocery(
                                 FFAppState().selBill.toString(),
@@ -339,10 +319,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                       _model.textFieldrateTextController.text),
                                   double.parse(
                                       _model.textFieldqtTextController.text),
-                                  double.parse(_model
-                                      .textFieldbarchNoTextController.text),
-                                  double.parse(
-                                      _model.textFieldnetWtTextController.text),
+                                  0.0,
+                                  0.0,
                                   _model.textFieldqtTextController.text,
                                 );
                                 _model.outputCopy =
@@ -523,10 +501,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   _model.textFieldrateTextController.text),
                               double.parse(
                                   _model.textFieldqtTextController.text),
-                              double.parse(
-                                  _model.textFieldbarchNoTextController.text),
-                              double.parse(
-                                  _model.textFieldnetWtTextController.text),
+                              00.0,
+                              0.0,
                               _model.textFieldqtTextController.text,
                             );
                             _model.output1 =
@@ -616,10 +592,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     _model.textFieldrateTextController.text),
                                 double.parse(
                                     _model.textFieldqtTextController.text),
-                                double.parse(
-                                    _model.textFieldbarchNoTextController.text),
-                                double.parse(
-                                    _model.textFieldnetWtTextController.text),
+                                0.0,
+                                0.0,
                               );
                               _model.outputr2 =
                                   await actions.calSubTotalForGrocery(
@@ -745,10 +719,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     _model.textFieldmrprateTextController.text),
                                 double.parse(
                                     _model.textFieldqtTextController.text),
-                                double.parse(
-                                    _model.textFieldbarchNoTextController.text),
-                                double.parse(
-                                    _model.textFieldnetWtTextController.text),
+                                0.0,
+                                0.0,
                               );
                               _model.outputr22 =
                                   await actions.calSubTotalForGrocery(
