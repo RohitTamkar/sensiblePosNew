@@ -220,10 +220,15 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                   FFAppState().port =
                                                       FFAppState().port;
                                                   safeSetState(() {});
-                                                  _model.paymentmode =
-                                                      await queryPaymentModeRecordOnce();
+                                                  await actions
+                                                      .removeFromAllBillList(
+                                                    FFAppState().selBill,
+                                                  );
                                                   if (FFAppState().navigate ==
                                                       'GROCERY') {
+                                                    _model.paymentmode =
+                                                        await queryPaymentModeRecordOnce();
+
                                                     context.goNamed(
                                                       BillingGroceryNewWidget
                                                           .routeName,
@@ -3564,7 +3569,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                       ),
                                                     ),
                                                     Expanded(
-                                                      flex: 4,
+                                                      flex: 5,
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,

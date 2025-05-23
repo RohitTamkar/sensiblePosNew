@@ -1732,7 +1732,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                       ),
                     ),
                     Expanded(
-                      flex: 4,
+                      flex: 5,
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
