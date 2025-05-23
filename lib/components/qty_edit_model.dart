@@ -6,6 +6,7 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'qty_edit_widget.dart' show QtyEditWidget;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,6 +23,10 @@ class QtyEditModel extends FlutterFlowModel<QtyEditWidget> {
   List<dynamic>? resultqty;
   // Stores action output result for [Custom Action - calBillAmt] action in TextFieldqty2 widget.
   double? reuslt1223;
+  // Stores action output result for [Custom Action - editCustomQty] action in TextFieldqty2 widget.
+  List<dynamic>? resultqtyCopy;
+  // Stores action output result for [Custom Action - calBillAmt] action in TextFieldqty2 widget.
+  double? reuslt1223Copy;
 
   @override
   void initState(BuildContext context) {}

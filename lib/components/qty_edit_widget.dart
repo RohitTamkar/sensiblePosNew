@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -78,11 +79,7 @@ class _QtyEditWidgetState extends State<QtyEditWidget> {
             highlightColor: Colors.transparent,
             onTap: () async {
               safeSetState(() {
-                _model.textFieldqty2TextController?.text =
-                    valueOrDefault<String>(
-                  widget!.parameter1?.toString(),
-                  '0',
-                );
+                _model.textFieldqty2TextController?.text = '';
               });
               FFAppState().groceryshow = true;
               safeSetState(() {});
@@ -118,6 +115,64 @@ class _QtyEditWidgetState extends State<QtyEditWidget> {
                 child: TextFormField(
                   controller: _model.textFieldqty2TextController,
                   focusNode: _model.textFieldqty2FocusNode,
+                  onChanged: (_) => EasyDebounce.debounce(
+                    '_model.textFieldqty2TextController',
+                    Duration(milliseconds: 2000),
+                    () async {
+                      var _shouldSetState = false;
+                      if (widget!.parameter3!) {
+                        if (!functions.greatethanlesskiosk(
+                            functions.jsontoint(widget!.parameter4),
+                            valueOrDefault<int>(
+                              int.tryParse(
+                                  _model.textFieldqty2TextController.text),
+                              0,
+                            ))) {
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                content: Text('Item Out Of Stock !'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Ok'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                          if (_shouldSetState) safeSetState(() {});
+                          return;
+                        }
+                      }
+                      _model.resultqtyCopy = await actions.editCustomQty(
+                        widget!.parameter5!,
+                        FFAppState().selBill,
+                        widget!.parameter6!.toList(),
+                        functions.enabletaxinclusive(widget!.parameter7!),
+                        double.tryParse(
+                            _model.textFieldqty2TextController.text),
+                        _model.textFieldqty2TextController.text,
+                      );
+                      _shouldSetState = true;
+                      await actions.calSubTotalForHoldListkiosk(
+                        FFAppState().selBill.toString(),
+                        _model.resultqtyCopy!.toList(),
+                        functions.enabletaxinclusive(widget!.parameter7!),
+                      );
+                      _model.reuslt1223Copy = await actions.calBillAmt(
+                        valueOrDefault<double>(
+                          FFAppState().disAmt,
+                          0.0,
+                        ),
+                        FFAppState().delCharges,
+                      );
+                      _shouldSetState = true;
+                      if (_shouldSetState) safeSetState(() {});
+                    },
+                  ),
                   onFieldSubmitted: (_) async {
                     var _shouldSetState = false;
                     if (widget!.parameter3!) {
