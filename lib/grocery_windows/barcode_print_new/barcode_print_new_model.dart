@@ -106,6 +106,12 @@ class BarcodePrintNewModel extends FlutterFlowModel<BarcodePrintNewWidget> {
   bool? con2;
   // Stores action output result for [Custom Action - newCustomAction] action in Container widget.
   List<dynamic>? selected2;
+  // Stores action output result for [Custom Action - removeHoldListItem] action in Icon widget.
+  List<dynamic>? res20;
+  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in Icon widget.
+  double? ret;
+  // Stores action output result for [Custom Action - calBillAmtGrocery] action in Icon widget.
+  double? ads;
 
   @override
   void initState(BuildContext context) {}

@@ -1251,40 +1251,6 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                             ),
                                                           ),
                                                         ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      15.0,
-                                                                      0.0),
-                                                          child:
-                                                              FlutterFlowIconButton(
-                                                            borderColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .customColor1,
-                                                            borderRadius: 5.0,
-                                                            borderWidth: 1.0,
-                                                            buttonSize: 35.0,
-                                                            fillColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .tertiary,
-                                                            icon: Icon(
-                                                              Icons.add,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryText,
-                                                              size: 18.0,
-                                                            ),
-                                                            onPressed: () {
-                                                              print(
-                                                                  'IconButton pressed ...');
-                                                            },
-                                                          ),
-                                                        ),
                                                       ],
                                                     ),
                                                   ),
@@ -1331,7 +1297,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue1 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -1414,7 +1380,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue2 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -1497,7 +1463,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue3 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -1580,7 +1546,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue4 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -1675,7 +1641,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue5 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -1758,7 +1724,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue6 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -1841,7 +1807,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue7 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -1924,7 +1890,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue8 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -2019,7 +1985,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue9 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -2030,7 +1996,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '9pzhw5gy' /* Name */,
+                                                                      '9pzhw5gy' /* Product Name */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2102,7 +2068,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue10 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -2185,7 +2151,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue11 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -2268,7 +2234,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue12 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -2363,7 +2329,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue13 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -2446,7 +2412,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue14 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -2529,7 +2495,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue15 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -2612,7 +2578,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     CheckboxListTile(
                                                                   value: _model
                                                                           .checkboxListTileValue16 ??=
-                                                                      true,
+                                                                      false,
                                                                   onChanged:
                                                                       (newValue) async {
                                                                     safeSetState(() =>
@@ -3129,7 +3095,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  15.0, 5.0, 15.0, 5.0),
+                                                  14.0, 5.0, 14.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -3791,7 +3757,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                 return Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 0.0, 18.0, 0.0),
+                                                          0.0, 5.0, 25.0, 5.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -3822,13 +3788,62 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                           ),
                                                         ),
                                                       ),
-                                                      Icon(
-                                                        Icons.delete,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        size: 24.0,
+                                                      InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          _model.res20 =
+                                                              await actions
+                                                                  .removeHoldListItem(
+                                                            getJsonField(
+                                                              prdlistItem,
+                                                              r'''$''',
+                                                            ),
+                                                            FFAppState()
+                                                                .selBill,
+                                                          );
+                                                          _model.ret = await actions
+                                                              .calSubTotalForGrocery(
+                                                            FFAppState()
+                                                                .selBill
+                                                                .toString(),
+                                                            FFAppState()
+                                                                .allBillsList
+                                                                .toList(),
+                                                          );
+                                                          _model.ads = await actions
+                                                              .calBillAmtGrocery(
+                                                            valueOrDefault<
+                                                                double>(
+                                                              FFAppState()
+                                                                  .disAmt,
+                                                              0.0,
+                                                            ),
+                                                            FFAppState()
+                                                                .delCharges,
+                                                          );
+                                                          FFAppState().prdid =
+                                                              '';
+                                                          FFAppState()
+                                                                  .groceryshow =
+                                                              false;
+                                                          safeSetState(() {});
+
+                                                          safeSetState(() {});
+                                                        },
+                                                        child: Icon(
+                                                          Icons.delete,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          size: 24.0,
+                                                        ),
                                                       ),
                                                     ],
                                                   ),

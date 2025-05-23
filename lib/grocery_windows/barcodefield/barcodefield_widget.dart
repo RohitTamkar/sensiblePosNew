@@ -1105,7 +1105,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                     ),
                   ),
                   Expanded(
-                    flex: 4,
+                    flex: 5,
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -1349,41 +1349,6 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                             validator: _model
                                 .textFieldnetWtTextControllerValidator
                                 .asValidator(context),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 100.0,
-                          child: VerticalDivider(
-                            width: 20.0,
-                            thickness: 0.5,
-                            color: FlutterFlowTheme.of(context).accent2,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    flex: 4,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            getJsonField(
-                              widget!.jsonitem,
-                              r'''$.total''',
-                            ).toString(),
-                            textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context)
-                                .labelSmall
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w600,
-                                  useGoogleFonts: !FlutterFlowTheme.of(context)
-                                      .labelSmallIsCustom,
-                                ),
                           ),
                         ),
                         SizedBox(
