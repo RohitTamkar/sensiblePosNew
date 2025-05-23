@@ -1661,14 +1661,16 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .labelSmall
+                                                                        .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                          fontSize:
+                                                                              11.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
                                                                         ),
                                                                   ),
                                                                   tileColor: FlutterFlowTheme.of(
@@ -2742,7 +2744,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'ugec74qw' /* 50mm×75mm */,
+                                                          'ugec74qw' /* 50mm*75mm */,
                                                         )
                                                       ],
                                                       onChanged: (val) async {
@@ -2798,276 +2800,272 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                   ),
                                                 ].divide(SizedBox(width: 10.0)),
                                               ),
-                                              Container(
-                                                width:
-                                                    MediaQuery.sizeOf(context)
-                                                            .width *
-                                                        1.0,
-                                                height:
-                                                    MediaQuery.sizeOf(context)
-                                                            .height *
-                                                        0.207,
-                                                decoration: BoxDecoration(),
-                                                child: Visibility(
-                                                  visible: FFAppState()
-                                                              .posMode !=
-                                                          null &&
-                                                      FFAppState().posMode !=
-                                                          '',
-                                                  child: Builder(
-                                                    builder: (context) {
-                                                      final printerList =
-                                                          FFAppState()
-                                                              .printerDevice
-                                                              .toList();
+                                              Expanded(
+                                                child: Container(
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          1.0,
+                                                  height:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height *
+                                                          0.207,
+                                                  decoration: BoxDecoration(),
+                                                  child: Visibility(
+                                                    visible: FFAppState()
+                                                                .posMode !=
+                                                            null &&
+                                                        FFAppState().posMode !=
+                                                            '',
+                                                    child: Builder(
+                                                      builder: (context) {
+                                                        final printerList =
+                                                            FFAppState()
+                                                                .printerDevice
+                                                                .toList();
 
-                                                      return ListView.separated(
-                                                        padding:
-                                                            EdgeInsets.zero,
-                                                        scrollDirection:
-                                                            Axis.vertical,
-                                                        itemCount:
-                                                            printerList.length,
-                                                        separatorBuilder:
-                                                            (_, __) => SizedBox(
-                                                                height: 5.0),
-                                                        itemBuilder: (context,
-                                                            printerListIndex) {
-                                                          final printerListItem =
-                                                              printerList[
-                                                                  printerListIndex];
-                                                          return InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              FFAppState()
-                                                                      .setHoldListColor =
-                                                                  getJsonField(
-                                                                printerListItem,
-                                                                r'''$.address''',
-                                                              );
-                                                              safeSetState(
-                                                                  () {});
-                                                              FFAppState()
-                                                                      .printerIndex =
-                                                                  getJsonField(
-                                                                printerListItem,
-                                                                r'''$.address''',
-                                                              ).toString();
-                                                              FFAppState()
-                                                                      .labelindex =
-                                                                  printerListIndex;
-                                                              FFAppState()
-                                                                      .printerName =
-                                                                  getJsonField(
-                                                                printerListItem,
-                                                                r'''$.deviceName''',
-                                                              ).toString();
-                                                              FFAppState()
-                                                                  .update(
-                                                                      () {});
-                                                              _model.con2 =
-                                                                  await actions
-                                                                      .connectDevice(
-                                                                printerListItem,
-                                                                getJsonField(
+                                                        return ListView
+                                                            .separated(
+                                                          padding:
+                                                              EdgeInsets.zero,
+                                                          scrollDirection:
+                                                              Axis.vertical,
+                                                          itemCount: printerList
+                                                              .length,
+                                                          separatorBuilder: (_,
+                                                                  __) =>
+                                                              SizedBox(
+                                                                  height: 5.0),
+                                                          itemBuilder: (context,
+                                                              printerListIndex) {
+                                                            final printerListItem =
+                                                                printerList[
+                                                                    printerListIndex];
+                                                            return InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                FFAppState()
+                                                                        .setHoldListColor =
+                                                                    getJsonField(
                                                                   printerListItem,
                                                                   r'''$.address''',
-                                                                ).toString(),
-                                                              );
-                                                              if (_model
-                                                                  .con2!) {
-                                                                ScaffoldMessenger.of(
-                                                                        context)
-                                                                    .showSnackBar(
-                                                                  SnackBar(
-                                                                    content:
-                                                                        Text(
-                                                                      'Device connected',
-                                                                      style:
-                                                                          TextStyle(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                      ),
-                                                                    ),
-                                                                    duration: Duration(
-                                                                        milliseconds:
-                                                                            4000),
-                                                                    backgroundColor:
-                                                                        Color(
-                                                                            0x00000000),
-                                                                  ),
                                                                 );
-                                                                _model.selected2 =
+                                                                safeSetState(
+                                                                    () {});
+                                                                FFAppState()
+                                                                        .printerIndex =
+                                                                    getJsonField(
+                                                                  printerListItem,
+                                                                  r'''$.address''',
+                                                                ).toString();
+                                                                FFAppState()
+                                                                        .labelindex =
+                                                                    printerListIndex;
+                                                                FFAppState()
+                                                                        .printerName =
+                                                                    getJsonField(
+                                                                  printerListItem,
+                                                                  r'''$.deviceName''',
+                                                                ).toString();
+                                                                FFAppState()
+                                                                    .update(
+                                                                        () {});
+                                                                _model.con2 =
                                                                     await actions
-                                                                        .newCustomAction(
-                                                                  FFAppState()
-                                                                      .printerIndex,
+                                                                        .connectDevice(
+                                                                  printerListItem,
+                                                                  getJsonField(
+                                                                    printerListItem,
+                                                                    r'''$.address''',
+                                                                  ).toString(),
                                                                 );
-                                                              } else {
-                                                                ScaffoldMessenger.of(
-                                                                        context)
-                                                                    .showSnackBar(
-                                                                  SnackBar(
-                                                                    content:
-                                                                        Text(
-                                                                      'Device not connected',
-                                                                      style:
-                                                                          TextStyle(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
+                                                                if (_model
+                                                                    .con2!) {
+                                                                  ScaffoldMessenger.of(
+                                                                          context)
+                                                                      .showSnackBar(
+                                                                    SnackBar(
+                                                                      content:
+                                                                          Text(
+                                                                        'Device connected',
+                                                                        style:
+                                                                            TextStyle(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                        ),
                                                                       ),
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              4000),
+                                                                      backgroundColor:
+                                                                          Color(
+                                                                              0x00000000),
                                                                     ),
-                                                                    duration: Duration(
-                                                                        milliseconds:
-                                                                            4000),
-                                                                    backgroundColor:
-                                                                        Color(
-                                                                            0x00000000),
-                                                                  ),
-                                                                );
-                                                              }
+                                                                  );
+                                                                  _model.selected2 =
+                                                                      await actions
+                                                                          .newCustomAction(
+                                                                    FFAppState()
+                                                                        .printerIndex,
+                                                                  );
+                                                                } else {
+                                                                  ScaffoldMessenger.of(
+                                                                          context)
+                                                                      .showSnackBar(
+                                                                    SnackBar(
+                                                                      content:
+                                                                          Text(
+                                                                        'Device not connected',
+                                                                        style:
+                                                                            TextStyle(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                        ),
+                                                                      ),
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              4000),
+                                                                      backgroundColor:
+                                                                          Color(
+                                                                              0x00000000),
+                                                                    ),
+                                                                  );
+                                                                }
 
-                                                              safeSetState(
-                                                                  () {});
-                                                            },
-                                                            child: Container(
-                                                              width: double
-                                                                  .infinity,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            12.0),
-                                                              ),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Expanded(
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          10.0,
-                                                                          6.0,
-                                                                          10.0,
-                                                                          8.0),
+                                                                safeSetState(
+                                                                    () {});
+                                                              },
+                                                              child: Container(
+                                                                width: double
+                                                                    .infinity,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              12.0),
+                                                                ),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Expanded(
                                                                       child:
-                                                                          Column(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceBetween,
-                                                                        children:
-                                                                            [
-                                                                          Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.start,
-                                                                            children: [
-                                                                              Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
-                                                                                child: Icon(
-                                                                                  Icons.print_rounded,
-                                                                                  color: FlutterFlowTheme.of(context).primaryText,
-                                                                                  size: 16.0,
-                                                                                ),
-                                                                              ),
-                                                                              Text(
-                                                                                getJsonField(
-                                                                                  printerListItem,
-                                                                                  r'''$.deviceName''',
-                                                                                ).toString(),
-                                                                                style: FlutterFlowTheme.of(context).labelLarge.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
-                                                                                      letterSpacing: 0.0,
-                                                                                      useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
-                                                                                    ),
-                                                                              ),
-                                                                            ],
-                                                                          ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                5.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Row(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            10.0,
+                                                                            6.0,
+                                                                            10.0,
+                                                                            8.0),
+                                                                        child:
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.spaceBetween,
+                                                                          children:
+                                                                              [
+                                                                            Row(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               mainAxisAlignment: MainAxisAlignment.start,
                                                                               children: [
                                                                                 Padding(
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Icon(
-                                                                                    Icons.location_on,
-                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    size: 15.0,
+                                                                                    Icons.print_rounded,
+                                                                                    color: FlutterFlowTheme.of(context).primaryText,
+                                                                                    size: 16.0,
                                                                                   ),
                                                                                 ),
                                                                                 Text(
-                                                                                  printerListIndex.toString(),
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                  getJsonField(
+                                                                                    printerListItem,
+                                                                                    r'''$.deviceName''',
+                                                                                  ).toString(),
+                                                                                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                                                                                        fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                                         letterSpacing: 0.0,
-                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                                        useGoogleFonts: !FlutterFlowTheme.of(context).labelLargeIsCustom,
                                                                                       ),
                                                                                 ),
                                                                               ],
                                                                             ),
-                                                                          ),
-                                                                        ].divide(SizedBox(height: 5.0)),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.start,
+                                                                                children: [
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                    child: Icon(
+                                                                                      Icons.location_on,
+                                                                                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                      size: 15.0,
+                                                                                    ),
+                                                                                  ),
+                                                                                  Text(
+                                                                                    printerListIndex.toString(),
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                          letterSpacing: 0.0,
+                                                                                          useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                                        ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                            ),
+                                                                          ].divide(SizedBox(height: 5.0)),
+                                                                        ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                  if (FFAppState()
-                                                                          .labelindex ==
-                                                                      printerListIndex)
-                                                                    FlutterFlowIconButton(
-                                                                      borderColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      borderRadius:
-                                                                          30.0,
-                                                                      borderWidth:
-                                                                          1.0,
-                                                                      buttonSize:
-                                                                          50.0,
-                                                                      icon:
-                                                                          Icon(
-                                                                        Icons
-                                                                            .check_circle,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .tertiary,
-                                                                        size:
-                                                                            24.0,
+                                                                    if (FFAppState()
+                                                                            .labelindex ==
+                                                                        printerListIndex)
+                                                                      FlutterFlowIconButton(
+                                                                        borderColor:
+                                                                            Colors.transparent,
+                                                                        borderRadius:
+                                                                            30.0,
+                                                                        borderWidth:
+                                                                            1.0,
+                                                                        buttonSize:
+                                                                            50.0,
+                                                                        icon:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .check_circle,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).tertiary,
+                                                                          size:
+                                                                              24.0,
+                                                                        ),
+                                                                        onPressed:
+                                                                            () {
+                                                                          print(
+                                                                              'IconButton pressed ...');
+                                                                        },
                                                                       ),
-                                                                      onPressed:
-                                                                          () {
-                                                                        print(
-                                                                            'IconButton pressed ...');
-                                                                      },
-                                                                    ),
-                                                                ],
+                                                                  ],
+                                                                ),
                                                               ),
-                                                            ),
-                                                          );
-                                                        },
-                                                      );
-                                                    },
+                                                            );
+                                                          },
+                                                        );
+                                                      },
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -3080,7 +3078,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                 ),
                               ),
                               Expanded(
-                                flex: 12,
+                                flex: 11,
                                 child: Container(
                                   width: double.infinity,
                                   height: 100.0,

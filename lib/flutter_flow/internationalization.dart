@@ -24600,7 +24600,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '35มม.*25มม.',
     },
     'ugec74qw': {
-      'en': '50mm×75mm',
+      'en': '50mm*75mm',
       'hi': '',
       'kn': '',
       'mr': '',
