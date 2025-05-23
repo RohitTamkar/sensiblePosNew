@@ -103,15 +103,6 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                               onTap: () async {
                                 context.safePop();
                               },
-                              onLongPress: () async {
-                                if (_model.editbill) {
-                                  _model.editbill = false;
-                                  safeSetState(() {});
-                                } else {
-                                  _model.editbill = true;
-                                  safeSetState(() {});
-                                }
-                              },
                               child: Container(
                                 width: double.infinity,
                                 height:
@@ -1036,7 +1027,26 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                      BarcodePrintingWidget.routeName);
+                                    BarcodePrintNewWidget.routeName,
+                                    queryParameters: {
+                                      'shiftdetail': serializeParam(
+                                        widget!.shiftDetails,
+                                        ParamType.JSON,
+                                      ),
+                                      'taxDetails': serializeParam(
+                                        widget!.tax,
+                                        ParamType.Document,
+                                        isList: true,
+                                      ),
+                                      'userref': serializeParam(
+                                        widget!.doc,
+                                        ParamType.DocumentReference,
+                                      ),
+                                    }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      'taxDetails': widget!.tax,
+                                    },
+                                  );
                                 },
                                 child: Container(
                                   width: double.infinity,

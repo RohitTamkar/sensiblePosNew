@@ -3370,7 +3370,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                             }
                                                                                                           }
 
-                                                                                                          _model.qtyunitresult = await actions.addToHoldListprdGrocery(
+                                                                                                          _model.qtyunitresult = await actions.addToHoldListprdbarcode(
                                                                                                             productListItem,
                                                                                                             FFAppState().selBill,
                                                                                                             widget!.taxcollection!.toList(),
@@ -3572,7 +3572,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                             }
                                                                                                           }
 
-                                                                                                          _model.jsonlistnew2 = await actions.addToHoldListprdGrocery(
+                                                                                                          _model.jsonlistnew2 = await actions.addToHoldListprdbarcode(
                                                                                                             productListItem,
                                                                                                             FFAppState().selBill,
                                                                                                             widget!.taxcollection!.toList(),

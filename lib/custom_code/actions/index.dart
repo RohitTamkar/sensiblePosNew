@@ -1,6 +1,7 @@
 export 'check_platform.dart' show checkPlatform;
 export 'print_billnewhive_n_e_w.dart' show printBillnewhiveNEW;
 export 'update_product_stocknew.dart' show updateProductStocknew;
+export 'add_to_hold_listprd_grocery.dart' show addToHoldListprdGrocery;
 export 'edit_custom_qty.dart' show editCustomQty;
 export 'update_product_stock_out.dart' show updateProductStockOut;
 export 'shift_existseditbill.dart' show shiftExistseditbill;
@@ -38,7 +39,7 @@ export 'update_shift_summary_for_e_b.dart' show updateShiftSummaryForEB;
 export 'print_ethernethive.dart' show printEthernethive;
 export 'add_to_hold_list_copy.dart' show addToHoldListCopy;
 export 'create_device_copy.dart' show createDeviceCopy;
-export 'add_to_hold_listprd_grocery.dart' show addToHoldListprdGrocery;
+export 'add_to_hold_listprdbarcode.dart' show addToHoldListprdbarcode;
 export 'print_bill_copy.dart' show printBillCopy;
 export 'add_to_hold_listprd_copy.dart' show addToHoldListprdCopy;
 export 'add_to_hold_listprdplus_grocery.dart' show addToHoldListprdplusGrocery;
