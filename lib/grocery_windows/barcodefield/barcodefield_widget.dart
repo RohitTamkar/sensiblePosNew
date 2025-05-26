@@ -2120,7 +2120,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                 widget!.unitList!.toList(),
                                 dateTimeFormat(
                                   "dd-MMM-yyyy",
-                                  _model.datePicked4,
+                                  _model.datePicked3,
                                   locale:
                                       FFLocalizations.of(context).languageCode,
                                 ),
