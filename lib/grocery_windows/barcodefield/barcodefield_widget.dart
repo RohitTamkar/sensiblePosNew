@@ -1012,73 +1012,6 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               '_model.textFieldmfgdateTextController',
                               Duration(milliseconds: 2000),
                               () async {
-                                final _datePicked1Date = await showDatePicker(
-                                  context: context,
-                                  initialDate: getCurrentTimestamp,
-                                  firstDate: DateTime(1900),
-                                  lastDate: DateTime(2050),
-                                  builder: (context, child) {
-                                    return wrapInMaterialDatePickerTheme(
-                                      context,
-                                      child!,
-                                      headerBackgroundColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      headerForegroundColor:
-                                          FlutterFlowTheme.of(context).info,
-                                      headerTextStyle: FlutterFlowTheme.of(
-                                              context)
-                                          .headlineLarge
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineLargeFamily,
-                                            fontSize: 32.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            useGoogleFonts:
-                                                !FlutterFlowTheme.of(context)
-                                                    .headlineLargeIsCustom,
-                                          ),
-                                      pickerBackgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                      pickerForegroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                      selectedDateTimeBackgroundColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      selectedDateTimeForegroundColor:
-                                          FlutterFlowTheme.of(context).info,
-                                      actionButtonForegroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                      iconSize: 24.0,
-                                    );
-                                  },
-                                );
-
-                                if (_datePicked1Date != null) {
-                                  safeSetState(() {
-                                    _model.datePicked1 = DateTime(
-                                      _datePicked1Date.year,
-                                      _datePicked1Date.month,
-                                      _datePicked1Date.day,
-                                    );
-                                  });
-                                } else if (_model.datePicked1 != null) {
-                                  safeSetState(() {
-                                    _model.datePicked1 = getCurrentTimestamp;
-                                  });
-                                }
-                                safeSetState(() {
-                                  _model.textFieldmfgdateTextController?.text =
-                                      dateTimeFormat(
-                                    "d/M/y",
-                                    _model.datePicked1,
-                                    locale: FFLocalizations.of(context)
-                                        .languageCode,
-                                  );
-                                });
                                 _model.listCopy =
                                     await actions.addToHoldListGrmfgdate(
                                   widget!.parameter2!,
@@ -1182,6 +1115,94 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                 .asValidator(context),
                           ),
                         ),
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            final _datePicked1Date = await showDatePicker(
+                              context: context,
+                              initialDate: getCurrentTimestamp,
+                              firstDate: DateTime(1900),
+                              lastDate: DateTime(2050),
+                              builder: (context, child) {
+                                return wrapInMaterialDatePickerTheme(
+                                  context,
+                                  child!,
+                                  headerBackgroundColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  headerForegroundColor:
+                                      FlutterFlowTheme.of(context).info,
+                                  headerTextStyle: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineLargeFamily,
+                                        fontSize: 32.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .headlineLargeIsCustom,
+                                      ),
+                                  pickerBackgroundColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                  pickerForegroundColor:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  selectedDateTimeBackgroundColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  selectedDateTimeForegroundColor:
+                                      FlutterFlowTheme.of(context).info,
+                                  actionButtonForegroundColor:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  iconSize: 24.0,
+                                );
+                              },
+                            );
+
+                            if (_datePicked1Date != null) {
+                              safeSetState(() {
+                                _model.datePicked1 = DateTime(
+                                  _datePicked1Date.year,
+                                  _datePicked1Date.month,
+                                  _datePicked1Date.day,
+                                );
+                              });
+                            } else if (_model.datePicked1 != null) {
+                              safeSetState(() {
+                                _model.datePicked1 = getCurrentTimestamp;
+                              });
+                            }
+                            safeSetState(() {
+                              _model.textFieldmfgdateTextController?.text =
+                                  dateTimeFormat(
+                                "d/M/y",
+                                _model.datePicked1,
+                                locale:
+                                    FFLocalizations.of(context).languageCode,
+                              );
+                            });
+                            _model.listCopyCopy =
+                                await actions.addToHoldListGrmfgdate(
+                              widget!.parameter2!,
+                              FFAppState().selBill,
+                              widget!.parameter3!.toList(),
+                              functions.enabletaxinclusive(widget!.parameter4!),
+                              widget!.unitList!.toList(),
+                              _model.textFieldmfgdateTextController.text,
+                              _model.textFieldexpdateTextController.text,
+                            );
+
+                            safeSetState(() {});
+                          },
+                          child: Icon(
+                            Icons.calendar_month,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            size: 24.0,
+                          ),
+                        ),
                         SizedBox(
                           height: 100.0,
                           child: VerticalDivider(
@@ -1206,73 +1227,6 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               '_model.textFieldexpdateTextController',
                               Duration(milliseconds: 2000),
                               () async {
-                                final _datePicked2Date = await showDatePicker(
-                                  context: context,
-                                  initialDate: getCurrentTimestamp,
-                                  firstDate: DateTime(1900),
-                                  lastDate: DateTime(2050),
-                                  builder: (context, child) {
-                                    return wrapInMaterialDatePickerTheme(
-                                      context,
-                                      child!,
-                                      headerBackgroundColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      headerForegroundColor:
-                                          FlutterFlowTheme.of(context).info,
-                                      headerTextStyle: FlutterFlowTheme.of(
-                                              context)
-                                          .headlineLarge
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineLargeFamily,
-                                            fontSize: 32.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            useGoogleFonts:
-                                                !FlutterFlowTheme.of(context)
-                                                    .headlineLargeIsCustom,
-                                          ),
-                                      pickerBackgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                      pickerForegroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                      selectedDateTimeBackgroundColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      selectedDateTimeForegroundColor:
-                                          FlutterFlowTheme.of(context).info,
-                                      actionButtonForegroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                      iconSize: 24.0,
-                                    );
-                                  },
-                                );
-
-                                if (_datePicked2Date != null) {
-                                  safeSetState(() {
-                                    _model.datePicked2 = DateTime(
-                                      _datePicked2Date.year,
-                                      _datePicked2Date.month,
-                                      _datePicked2Date.day,
-                                    );
-                                  });
-                                } else if (_model.datePicked2 != null) {
-                                  safeSetState(() {
-                                    _model.datePicked2 = getCurrentTimestamp;
-                                  });
-                                }
-                                safeSetState(() {
-                                  _model.textFieldmfgdateTextController?.text =
-                                      dateTimeFormat(
-                                    "d/M/y",
-                                    _model.datePicked1,
-                                    locale: FFLocalizations.of(context)
-                                        .languageCode,
-                                  );
-                                });
                                 await actions.addToHoldListbarcodevalue(
                                   widget!.parameter2!,
                                   FFAppState().selBill,
@@ -1374,6 +1328,89 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                             validator: _model
                                 .textFieldexpdateTextControllerValidator
                                 .asValidator(context),
+                          ),
+                        ),
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            final _datePicked2Date = await showDatePicker(
+                              context: context,
+                              initialDate: getCurrentTimestamp,
+                              firstDate: DateTime(1900),
+                              lastDate: DateTime(2050),
+                              builder: (context, child) {
+                                return wrapInMaterialDatePickerTheme(
+                                  context,
+                                  child!,
+                                  headerBackgroundColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  headerForegroundColor:
+                                      FlutterFlowTheme.of(context).info,
+                                  headerTextStyle: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineLargeFamily,
+                                        fontSize: 32.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .headlineLargeIsCustom,
+                                      ),
+                                  pickerBackgroundColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                  pickerForegroundColor:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  selectedDateTimeBackgroundColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  selectedDateTimeForegroundColor:
+                                      FlutterFlowTheme.of(context).info,
+                                  actionButtonForegroundColor:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  iconSize: 24.0,
+                                );
+                              },
+                            );
+
+                            if (_datePicked2Date != null) {
+                              safeSetState(() {
+                                _model.datePicked2 = DateTime(
+                                  _datePicked2Date.year,
+                                  _datePicked2Date.month,
+                                  _datePicked2Date.day,
+                                );
+                              });
+                            } else if (_model.datePicked2 != null) {
+                              safeSetState(() {
+                                _model.datePicked2 = getCurrentTimestamp;
+                              });
+                            }
+                            safeSetState(() {
+                              _model.textFieldexpdateTextController?.text =
+                                  _model.datePicked2!.toString();
+                            });
+                            await actions.addToHoldListbarcodevalue(
+                              widget!.parameter2!,
+                              FFAppState().selBill,
+                              widget!.parameter3!.toList(),
+                              functions.enabletaxinclusive(widget!.parameter4!),
+                              widget!.unitList!.toList(),
+                              _model.textFieldmfgdateTextController.text,
+                              _model.textFieldexpdateTextController.text,
+                              _model.textFieldnetWtTextController.text,
+                              _model.textFieldbarchNoTextController.text,
+                              _model.textFieldunitTextController.text,
+                            );
+                          },
+                          child: Icon(
+                            Icons.calendar_month,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            size: 24.0,
                           ),
                         ),
                         SizedBox(
@@ -2004,6 +2041,95 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   ),
                             ),
                           ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              final _datePicked3Date = await showDatePicker(
+                                context: context,
+                                initialDate: getCurrentTimestamp,
+                                firstDate: DateTime(1900),
+                                lastDate: DateTime(2050),
+                                builder: (context, child) {
+                                  return wrapInMaterialDatePickerTheme(
+                                    context,
+                                    child!,
+                                    headerBackgroundColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    headerForegroundColor:
+                                        FlutterFlowTheme.of(context).info,
+                                    headerTextStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineLargeFamily,
+                                              fontSize: 32.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .headlineLargeIsCustom,
+                                            ),
+                                    pickerBackgroundColor:
+                                        FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                    pickerForegroundColor:
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                    selectedDateTimeBackgroundColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    selectedDateTimeForegroundColor:
+                                        FlutterFlowTheme.of(context).info,
+                                    actionButtonForegroundColor:
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                    iconSize: 24.0,
+                                  );
+                                },
+                              );
+
+                              if (_datePicked3Date != null) {
+                                safeSetState(() {
+                                  _model.datePicked3 = DateTime(
+                                    _datePicked3Date.year,
+                                    _datePicked3Date.month,
+                                    _datePicked3Date.day,
+                                  );
+                                });
+                              } else if (_model.datePicked3 != null) {
+                                safeSetState(() {
+                                  _model.datePicked3 = getCurrentTimestamp;
+                                });
+                              }
+                              _model.listicon2 =
+                                  await actions.addToHoldListGrmfgdate(
+                                widget!.parameter2!,
+                                FFAppState().selBill,
+                                widget!.parameter3!.toList(),
+                                functions
+                                    .enabletaxinclusive(widget!.parameter4!),
+                                widget!.unitList!.toList(),
+                                dateTimeFormat(
+                                  "d/M/y",
+                                  _model.datePicked4,
+                                  locale:
+                                      FFLocalizations.of(context).languageCode,
+                                ),
+                                _model.textFieldexpdateTextController.text,
+                              );
+
+                              safeSetState(() {});
+                            },
+                            child: Icon(
+                              Icons.calendar_month,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 24.0,
+                            ),
+                          ),
                           SizedBox(
                             height: 100.0,
                             child: VerticalDivider(
@@ -2037,6 +2163,95 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                         !FlutterFlowTheme.of(context)
                                             .labelSmallIsCustom,
                                   ),
+                            ),
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              final _datePicked4Date = await showDatePicker(
+                                context: context,
+                                initialDate: getCurrentTimestamp,
+                                firstDate: DateTime(1900),
+                                lastDate: DateTime(2050),
+                                builder: (context, child) {
+                                  return wrapInMaterialDatePickerTheme(
+                                    context,
+                                    child!,
+                                    headerBackgroundColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    headerForegroundColor:
+                                        FlutterFlowTheme.of(context).info,
+                                    headerTextStyle:
+                                        FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineLargeFamily,
+                                              fontSize: 32.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w600,
+                                              useGoogleFonts:
+                                                  !FlutterFlowTheme.of(context)
+                                                      .headlineLargeIsCustom,
+                                            ),
+                                    pickerBackgroundColor:
+                                        FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                    pickerForegroundColor:
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                    selectedDateTimeBackgroundColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    selectedDateTimeForegroundColor:
+                                        FlutterFlowTheme.of(context).info,
+                                    actionButtonForegroundColor:
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                    iconSize: 24.0,
+                                  );
+                                },
+                              );
+
+                              if (_datePicked4Date != null) {
+                                safeSetState(() {
+                                  _model.datePicked4 = DateTime(
+                                    _datePicked4Date.year,
+                                    _datePicked4Date.month,
+                                    _datePicked4Date.day,
+                                  );
+                                });
+                              } else if (_model.datePicked4 != null) {
+                                safeSetState(() {
+                                  _model.datePicked4 = getCurrentTimestamp;
+                                });
+                              }
+                              _model.listicon =
+                                  await actions.addToHoldListGrmfgdate(
+                                widget!.parameter2!,
+                                FFAppState().selBill,
+                                widget!.parameter3!.toList(),
+                                functions
+                                    .enabletaxinclusive(widget!.parameter4!),
+                                widget!.unitList!.toList(),
+                                _model.textFieldmfgdateTextController.text,
+                                dateTimeFormat(
+                                  "d/M/y",
+                                  _model.datePicked4,
+                                  locale:
+                                      FFLocalizations.of(context).languageCode,
+                                ),
+                              );
+
+                              safeSetState(() {});
+                            },
+                            child: Icon(
+                              Icons.calendar_month,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 24.0,
                             ),
                           ),
                           SizedBox(

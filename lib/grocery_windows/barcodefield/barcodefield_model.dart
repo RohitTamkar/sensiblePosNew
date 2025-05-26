@@ -89,9 +89,11 @@ class BarcodefieldModel extends FlutterFlowModel<BarcodefieldWidget> {
       textFieldmfgdateTextControllerValidator;
   // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in TextFieldmfgdate widget.
   List<dynamic>? list;
-  DateTime? datePicked1;
   // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in TextFieldmfgdate widget.
   List<dynamic>? listCopy;
+  DateTime? datePicked1;
+  // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in Icon widget.
+  List<dynamic>? listCopyCopy;
   // State field(s) for TextFieldexpdate widget.
   FocusNode? textFieldexpdateFocusNode;
   TextEditingController? textFieldexpdateTextController;
@@ -108,6 +110,12 @@ class BarcodefieldModel extends FlutterFlowModel<BarcodefieldWidget> {
   TextEditingController? textFieldnetWtTextController;
   String? Function(BuildContext, String?)?
       textFieldnetWtTextControllerValidator;
+  DateTime? datePicked3;
+  // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in Icon widget.
+  List<dynamic>? listicon2;
+  DateTime? datePicked4;
+  // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in Icon widget.
+  List<dynamic>? listicon;
 
   @override
   void initState(BuildContext context) {}
