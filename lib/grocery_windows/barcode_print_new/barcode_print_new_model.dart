@@ -65,6 +65,15 @@ class BarcodePrintNewModel extends FlutterFlowModel<BarcodePrintNewWidget> {
   List<ProductStructStruct>? prdhive2refresh;
   // Stores action output result for [Custom Action - getCategorylistHive] action in Button widget.
   List<CategoryStructStruct>? catlistrefresh;
+  // State field(s) for TextFieldcont widget.
+  FocusNode? textFieldcontFocusNode;
+  TextEditingController? textFieldcontTextController;
+  String? Function(BuildContext, String?)? textFieldcontTextControllerValidator;
+  // State field(s) for TextFieldbranch widget.
+  FocusNode? textFieldbranchFocusNode;
+  TextEditingController? textFieldbranchTextController;
+  String? Function(BuildContext, String?)?
+      textFieldbranchTextControllerValidator;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue1;
   // State field(s) for CheckboxListTile widget.
@@ -123,5 +132,11 @@ class BarcodePrintNewModel extends FlutterFlowModel<BarcodePrintNewWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {}
+  void dispose() {
+    textFieldcontFocusNode?.dispose();
+    textFieldcontTextController?.dispose();
+
+    textFieldbranchFocusNode?.dispose();
+    textFieldbranchTextController?.dispose();
+  }
 }

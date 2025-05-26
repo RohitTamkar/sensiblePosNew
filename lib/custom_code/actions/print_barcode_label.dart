@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:convert';
 
 import 'dart:typed_data';
@@ -31,8 +33,10 @@ Future printBarcodeLabel(
   List<dynamic> selectedPrinter,
   bool status,
   String statusName,
-  String paperSize,
+  String labelSize,
   List<dynamic> productList,
+  String contact,
+  String Branch,
 ) async {
   // Determine label dimensions based on paper size
   late double labelWidth;
@@ -44,8 +48,9 @@ Future printBarcodeLabel(
   late int topMargin;
   late int bottomMargin;
   late int sideMargin;
-
-  if (paperSize == '35mm*25mm') {
+  // Prepare all labels' TSPL commands
+  List<String> allLabelsCommands = [];
+  if (labelSize == '35mm*25mm') {
     labelWidth = 35.0; // mm
     labelHeight = 25.0; // mm
     fontSizeLarge = 3; // Large font for name
@@ -55,70 +60,152 @@ Future printBarcodeLabel(
     topMargin = 5; // Reduced margin for better spacing
     bottomMargin = 5;
     sideMargin = 2;
-  } else {
-    // Default to 75mm×50mm
-    labelWidth = 75.0; // mm
-    labelHeight = 50.0; // mm
-    fontSizeLarge = 3;
-    fontSizeMedium = 2;
-    fontSizeSmall = 1;
-    barcodeHeight = 40;
-    topMargin = 20;
-    bottomMargin = 20;
+
+    const int dpi = 203; // Standard thermal printer DPI
+    const double dotsPerMm = dpi / 25.4; // ~8 dots/mm
+
+    // Calculate dimensions in dots
+    final int widthInDots = (labelWidth * dotsPerMm).round();
+    final int heightInDots = (labelHeight * dotsPerMm).round();
+
+    for (var product in productList) {
+      // Print one label per quantity
+      for (int i = 0; i < (product['quantity'] ?? 1); i++) {
+        List<String> tsplCommands = [];
+
+        // Label setup
+        tsplCommands.add('SIZE ${labelWidth} mm, ${labelHeight} mm');
+        tsplCommands.add('GAP 2.5 mm,0 mm\r\n');
+        tsplCommands.add('DIRECTION 1'); // Print direction
+        tsplCommands.add('DENSITY 12'); // Print density
+        tsplCommands.add('CLS'); // Clear buffer
+        tsplCommands.add('DELAY 100'); // Short delay
+
+        // Calculate positions based on label size
+        final int centerX = widthInDots ~/ 2;
+        final int contentHeight = heightInDots - topMargin - bottomMargin;
+
+        // Product Name (Top, Centered)
+        String productName = product['name'] ?? "Product";
+        if (productName.length > 10) {
+          productName =
+              productName.substring(0, 10) + '...'; // Truncate long names
+        }
+        int nameX = centerX - ((productName.length * 16) ~/ 2);
+        tsplCommands.add('TEXT 20,20,"B.FNT",0,2,2,"${productName}"\r\n');
+
+        tsplCommands.add(
+            'TEXT 20,50,"3.EFT",0,1,1,"MRP: ${product['price']?.toStringAsFixed(2) ?? "0.00"}"\r\n');
+        tsplCommands.add(
+            'TEXT 20,70,"3.EFT",0,1,1,"PRICE: ${product['price']?.toStringAsFixed(2) ?? "0.00"}"\r\n');
+
+        if (product['barcode']?.isNotEmpty ?? false) {
+          tsplCommands.add(
+              ' BARCODE 20,100,"128",60,1,0,2,2,"${product['barcode']}"\r\n');
+        }
+
+        // Print command for this label
+        tsplCommands.add('PRINT 1,1');
+
+        // Add this label's commands to the main list
+        allLabelsCommands.addAll(tsplCommands);
+      }
+    }
+  } else if (labelSize == '50mm*75mm') {
+    labelWidth = 50.0;
+    labelHeight = 75.0;
+    fontSizeLarge = 9; // Adjusted font size for this label
+    fontSizeMedium = 7;
+    fontSizeSmall = 5;
+    barcodeHeight = 50;
+    topMargin = 10;
+    bottomMargin = 10;
     sideMargin = 10;
-  }
 
-  const int dpi = 203; // Standard thermal printer DPI
-  const double dotsPerMm = dpi / 25.4; // ~8 dots/mm
+    const int dpi = 203;
+    const double dotsPerMm = dpi / 25.4;
 
-  // Calculate dimensions in dots
-  final int widthInDots = (labelWidth * dotsPerMm).round();
-  final int heightInDots = (labelHeight * dotsPerMm).round();
+    final int widthInDots = (labelWidth * dotsPerMm).round();
+    final int heightInDots = (labelHeight * dotsPerMm).round();
 
-  // Prepare all labels' TSPL commands
-  List<String> allLabelsCommands = [];
+    for (var product in productList) {
+      for (int i = 0; i < (product['quantity'] ?? 1); i++) {
+        List<String> tsplCommands = [];
 
-  for (var product in productList) {
-    // Print one label per quantity
-    for (int i = 0; i < (product.quantity ?? 1); i++) {
-      List<String> tsplCommands = [];
+        tsplCommands.add('SIZE ${labelWidth} mm, ${labelHeight} mm');
+        tsplCommands.add('GAP 0.14,0');
+        tsplCommands.add('DIRECTION 1');
+        tsplCommands.add('DENSITY 12');
+        tsplCommands.add('CLS');
 
-      // Label setup
-      tsplCommands.add('SIZE ${labelWidth} mm, ${labelHeight} mm');
-      tsplCommands.add('GAP 2.5 mm,0 mm\r\n');
-      tsplCommands.add('DIRECTION 1'); // Print direction
-      tsplCommands.add('DENSITY 12'); // Print density
-      tsplCommands.add('CLS'); // Clear buffer
-      tsplCommands.add('DELAY 100'); // Short delay
+        int y = 20;
 
-      // Calculate positions based on label size
-      final int centerX = widthInDots ~/ 2;
-      final int contentHeight = heightInDots - topMargin - bottomMargin;
+        // Example shop or manufacturer info
+        tsplCommands.add('TEXT 15,$y,"0",0,12,12,"${FFAppState().outletName}"');
+        y += 40;
 
-      // Product Name (Top, Centered)
-      String productName = product.name ?? "Product";
-      if (productName.length > 10) {
-        productName =
-            productName.substring(0, 10) + '...'; // Truncate long names
+        // Item name
+        String productName = product['name'] ?? "Item";
+        if (productName.length > 18) {
+          productName = productName.substring(0, 18) + '...';
+        }
+        tsplCommands.add('TEXT 15,$y,"0",0,0,12,"$productName"');
+        y += 50;
+
+        // Net weight
+        if (product.containsKey('netWt')) {
+          tsplCommands.add(
+              'TEXT 15,$y,"0",0,0,$fontSizeLarge,"Net Weight : ${product['netWt']} ${product['unit']}"');
+          y += 50;
+        }
+
+        // Batch number (if applicable)
+        if (product.containsKey('batchNo')) {
+          String batch = product['batchNo'];
+          tsplCommands
+              .add('TEXT 15,$y,"0",0,0,$fontSizeLarge,"Batch No : $batch"');
+          y += 40;
+        }
+
+        // MRP
+        tsplCommands.add(
+            'TEXT 15,$y,"0",0,0,$fontSizeLarge,"Mrp : RS ${product['mrpPrice']?.toStringAsFixed(2) ?? "0.00"}"');
+        y += 50;
+
+        // Price
+        tsplCommands.add(
+            'TEXT 15,$y,"0",0,0,$fontSizeLarge,"Price : RS ${product['price']?.toStringAsFixed(2) ?? "0.00"}"');
+        y += 50;
+
+        //MFG
+        if (product.containsKey('mfgDate')) {
+          String mfgDate = product['mfgDate'];
+          tsplCommands
+              .add('TEXT 15,$y,"0",0,0,$fontSizeLarge,"Mfg Date : $mfgDate"');
+          y += 40;
+        }
+        //EXP
+        if (product.containsKey('expDate')) {
+          String expDate = product['expDate'];
+          tsplCommands.add(
+              'TEXT 15,$y,"0",0,0,$fontSizeLarge,"Expiry Date : $expDate"');
+          y += 40;
+        }
+        // Barcode
+        if (product['barcode']?.isNotEmpty ?? false) {
+          tsplCommands.add(
+              'BARCODE 15,$y,"128",$barcodeHeight,1,0,2,3,"${product['barcode']}"');
+          y += barcodeHeight + 20;
+        }
+
+        // Optional border bars
+        //tsplCommands.add('BAR 0,420,800,2');
+        // tsplCommands.add('BAR 0,480,800,2');
+
+        tsplCommands.add('PRINT 1,1');
+
+        allLabelsCommands.addAll(tsplCommands);
       }
-      int nameX = centerX - ((productName.length * 16) ~/ 2);
-      tsplCommands.add('TEXT 20,20,"B.FNT",0,2,2,"${productName}"\r\n');
-
-      tsplCommands.add(
-          'TEXT 20,50,"3.EFT",0,1,1,"MRP: ${product.price?.toStringAsFixed(2) ?? "0.00"}"\r\n');
-      tsplCommands.add(
-          'TEXT 20,70,"3.EFT",0,1,1,"PRICE: ${product.price?.toStringAsFixed(2) ?? "0.00"}"\r\n');
-
-      if (product.barcode?.isNotEmpty ?? false) {
-        tsplCommands
-            .add(' BARCODE 20,100,"128",60,1,0,2,2,"${product.barcode}"\r\n');
-      }
-
-      // Print command for this label
-      tsplCommands.add('PRINT 1,1');
-
-      // Add this label's commands to the main list
-      allLabelsCommands.addAll(tsplCommands);
     }
   }
 
