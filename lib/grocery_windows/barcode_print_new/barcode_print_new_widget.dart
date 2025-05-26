@@ -192,7 +192,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 5.0, 20.0, 5.0),
+                                      20.0, 7.0, 20.0, 7.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -1607,1390 +1607,1193 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                 ].divide(SizedBox(width: 10.0)),
                                               ),
                                               Expanded(
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Expanded(
-                                                      child: Column(
+                                                child: SingleChildScrollView(
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
                                                         children: [
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue1 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue1 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'g5fziik6' /* Shop Name */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                          Expanded(
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                              children: [
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
                                                                         ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue1 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue1 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            'g5fziik6' /* Shop Name */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
                                                                   ),
                                                                 ),
-                                                              ),
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
+                                                                        ),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue2 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue2 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            'ybdupngx' /* MRP */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
+                                                                        ),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue3 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue3 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            '49wjlf8z' /* Short Code */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
+                                                                        ),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue4 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue4 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            '7n9kt0kv' /* HSN Number */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ].divide(SizedBox(
+                                                                  height: 2.0)),
                                                             ),
                                                           ),
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue2 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue2 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'ybdupngx' /* MRP */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                          Expanded(
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                              children: [
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
                                                                         ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue5 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue5 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            'q8rm5wcf' /* Price with Outlet Name */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                fontSize: 11.0,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).bodyMediumIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
                                                                   ),
                                                                 ),
-                                                              ),
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
+                                                                        ),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue6 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue6 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            'zbjjdru1' /* Mfg Date */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
+                                                                        ),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue7 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue7 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            'ejfoutc3' /* Pack Date */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
+                                                                        ),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue8 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue8 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            'y2pzj65r' /* Category */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ].divide(SizedBox(
+                                                                  height: 2.0)),
                                                             ),
                                                           ),
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue3 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue3 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '49wjlf8z' /* Short Code */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                          Expanded(
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                              children: [
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
                                                                         ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue9 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue9 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            '9pzhw5gy' /* Product Name */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
                                                                   ),
                                                                 ),
-                                                              ),
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
+                                                                        ),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue10 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue10 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            '1fp68fpk' /* Short Name */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
+                                                                        ),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue11 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue11 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            '0b704jcf' /* Discount */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
+                                                                        ),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue12 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue12 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            '9rz0ghv2' /* Price */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ].divide(SizedBox(
+                                                                  height: 2.0)),
                                                             ),
                                                           ),
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue4 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue4 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '7n9kt0kv' /* HSN Number */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                          Expanded(
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                              children: [
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
                                                                         ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue13 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue13 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            'oqup56bf' /* Purchase Price */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
                                                                   ),
                                                                 ),
-                                                              ),
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
+                                                                        ),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue14 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue14 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            'cehesyvw' /* Exp Date */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
+                                                                        ),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue15 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue15 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            '1kk4h02a' /* Batch Number */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      Material(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    child:
+                                                                        Theme(
+                                                                      data:
+                                                                          ThemeData(
+                                                                        checkboxTheme:
+                                                                            CheckboxThemeData(
+                                                                          visualDensity:
+                                                                              VisualDensity.standard,
+                                                                          materialTapTargetSize:
+                                                                              MaterialTapTargetSize.padded,
+                                                                        ),
+                                                                        unselectedWidgetColor:
+                                                                            FlutterFlowTheme.of(context).alternate,
+                                                                      ),
+                                                                      child:
+                                                                          CheckboxListTile(
+                                                                        value: _model.checkboxListTileValue16 ??=
+                                                                            false,
+                                                                        onChanged:
+                                                                            (newValue) async {
+                                                                          safeSetState(() =>
+                                                                              _model.checkboxListTileValue16 = newValue!);
+                                                                        },
+                                                                        title:
+                                                                            Text(
+                                                                          FFLocalizations.of(context)
+                                                                              .getText(
+                                                                            'watyj8vm' /* MRP */,
+                                                                          ),
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
+                                                                                letterSpacing: 0.0,
+                                                                                useGoogleFonts: !FlutterFlowTheme.of(context).labelSmallIsCustom,
+                                                                              ),
+                                                                        ),
+                                                                        tileColor:
+                                                                            FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        activeColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                        checkColor:
+                                                                            FlutterFlowTheme.of(context).primaryBtnText,
+                                                                        dense:
+                                                                            true,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.leading,
+                                                                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                        shape:
+                                                                            RoundedRectangleBorder(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(5.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ].divide(SizedBox(
+                                                                  height: 2.0)),
                                                             ),
                                                           ),
                                                         ].divide(SizedBox(
-                                                            height: 2.0)),
+                                                            width: 5.0)),
                                                       ),
-                                                    ),
-                                                    Expanded(
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        children: [
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue5 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue5 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'q8rm5wcf' /* Price with Outlet Name */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                          fontSize:
-                                                                              11.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).bodyMediumIsCustom,
-                                                                        ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue6 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue6 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'zbjjdru1' /* Mfg Date */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
-                                                                        ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue7 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue7 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'ejfoutc3' /* Pack Date */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
-                                                                        ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue8 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue8 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'y2pzj65r' /* Category */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
-                                                                        ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ].divide(SizedBox(
-                                                            height: 2.0)),
-                                                      ),
-                                                    ),
-                                                    Expanded(
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        children: [
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue9 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue9 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '9pzhw5gy' /* Product Name */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
-                                                                        ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue10 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue10 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '1fp68fpk' /* Short Name */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
-                                                                        ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue11 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue11 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '0b704jcf' /* Discount */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
-                                                                        ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue12 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue12 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '9rz0ghv2' /* Price */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
-                                                                        ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ].divide(SizedBox(
-                                                            height: 2.0)),
-                                                      ),
-                                                    ),
-                                                    Expanded(
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        children: [
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue13 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue13 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'oqup56bf' /* Purchase Price */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
-                                                                        ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue14 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue14 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'cehesyvw' /* Exp Date */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
-                                                                        ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue15 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue15 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '1kk4h02a' /* Batch Number */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
-                                                                        ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Material(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              child: Theme(
-                                                                data: ThemeData(
-                                                                  checkboxTheme:
-                                                                      CheckboxThemeData(
-                                                                    visualDensity:
-                                                                        VisualDensity
-                                                                            .standard,
-                                                                    materialTapTargetSize:
-                                                                        MaterialTapTargetSize
-                                                                            .padded,
-                                                                  ),
-                                                                  unselectedWidgetColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                ),
-                                                                child:
-                                                                    CheckboxListTile(
-                                                                  value: _model
-                                                                          .checkboxListTileValue16 ??=
-                                                                      false,
-                                                                  onChanged:
-                                                                      (newValue) async {
-                                                                    safeSetState(() =>
-                                                                        _model.checkboxListTileValue16 =
-                                                                            newValue!);
-                                                                  },
-                                                                  title: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'watyj8vm' /* MRP */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).labelSmallFamily,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          useGoogleFonts:
-                                                                              !FlutterFlowTheme.of(context).labelSmallIsCustom,
-                                                                        ),
-                                                                  ),
-                                                                  tileColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  activeColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .error,
-                                                                  checkColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBtnText,
-                                                                  dense: true,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .leading,
-                                                                  contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  shape:
-                                                                      RoundedRectangleBorder(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ].divide(SizedBox(
-                                                            height: 2.0)),
-                                                      ),
-                                                    ),
-                                                  ].divide(
-                                                      SizedBox(width: 5.0)),
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
                                             ].divide(SizedBox(height: 10.0)),
@@ -3423,7 +3226,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                 ),
                               ),
                               Expanded(
-                                flex: 11,
+                                flex: 10,
                                 child: Container(
                                   width: double.infinity,
                                   height: 100.0,
