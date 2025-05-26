@@ -1178,7 +1178,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                             safeSetState(() {
                               _model.textFieldmfgdateTextController?.text =
                                   dateTimeFormat(
-                                "d/M/y",
+                                "dd-MMM-yyyy",
                                 _model.datePicked1,
                                 locale:
                                     FFLocalizations.of(context).languageCode,
@@ -1392,7 +1392,12 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                             }
                             safeSetState(() {
                               _model.textFieldexpdateTextController?.text =
-                                  _model.datePicked2!.toString();
+                                  dateTimeFormat(
+                                "dd-MMM-yyyy",
+                                _model.datePicked2,
+                                locale:
+                                    FFLocalizations.of(context).languageCode,
+                              );
                             });
                             await actions.addToHoldListbarcodevalue(
                               widget!.parameter2!,
@@ -2114,7 +2119,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     .enabletaxinclusive(widget!.parameter4!),
                                 widget!.unitList!.toList(),
                                 dateTimeFormat(
-                                  "d/M/y",
+                                  "dd-MMM-yyyy",
                                   _model.datePicked4,
                                   locale:
                                       FFLocalizations.of(context).languageCode,
@@ -2239,7 +2244,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                 widget!.unitList!.toList(),
                                 _model.textFieldmfgdateTextController.text,
                                 dateTimeFormat(
-                                  "d/M/y",
+                                  "dd-MMM-yyyy",
                                   _model.datePicked4,
                                   locale:
                                       FFLocalizations.of(context).languageCode,
