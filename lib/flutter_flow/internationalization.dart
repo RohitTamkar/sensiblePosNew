@@ -30347,6 +30347,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
   },
+  // Barcodefield
+  {
+    '541pyo07': {
+      'en': 'INGREDIENT  ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    '92ixzs6s': {
+      'en': 'INGREDiENT  ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+  },
   // Miscellaneous
   {
     'c0tsq8sj': {

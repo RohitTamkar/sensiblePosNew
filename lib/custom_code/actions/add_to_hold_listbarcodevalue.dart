@@ -26,6 +26,7 @@ Future<List<dynamic>> addToHoldListbarcodevalue(
   String netWt,
   String batchNo,
   String unitType,
+  String ingredient,
 ) async {
   List<dynamic> list = FFAppState().allBillsList;
   print(document);

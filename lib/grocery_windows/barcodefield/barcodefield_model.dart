@@ -110,6 +110,11 @@ class BarcodefieldModel extends FlutterFlowModel<BarcodefieldWidget> {
   TextEditingController? textFieldnetWtTextController;
   String? Function(BuildContext, String?)?
       textFieldnetWtTextControllerValidator;
+  // State field(s) for TextFieldingrd widget.
+  FocusNode? textFieldingrdFocusNode;
+  TextEditingController? textFieldingrdTextController;
+  String? Function(BuildContext, String?)?
+      textFieldingrdTextControllerValidator;
   DateTime? datePicked3;
   // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in Icon widget.
   List<dynamic>? listicon2;
@@ -145,5 +150,8 @@ class BarcodefieldModel extends FlutterFlowModel<BarcodefieldWidget> {
 
     textFieldnetWtFocusNode?.dispose();
     textFieldnetWtTextController?.dispose();
+
+    textFieldingrdFocusNode?.dispose();
+    textFieldingrdTextController?.dispose();
   }
 }
