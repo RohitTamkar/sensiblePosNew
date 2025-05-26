@@ -7,6 +7,7 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -55,6 +56,13 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
     ).toString().toString());
     _model.textFieldqtFocusNode ??= FocusNode();
     _model.textFieldqtFocusNode!.addListener(() => safeSetState(() {}));
+    _model.textFieldunitTextController ??= TextEditingController(
+        text: getJsonField(
+      widget!.jsonitem,
+      r'''$.unit''',
+    ).toString().toString());
+    _model.textFieldunitFocusNode ??= FocusNode();
+
     _model.textFieldrateTextController ??= TextEditingController(
         text: getJsonField(
       widget!.jsonitem,
@@ -540,12 +548,101 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Expanded(
-                          child: Text(
-                            getJsonField(
-                              widget!.jsonitem,
-                              r'''$.unit''',
-                            ).toString(),
-                            textAlign: TextAlign.center,
+                          child: TextFormField(
+                            controller: _model.textFieldunitTextController,
+                            focusNode: _model.textFieldunitFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.textFieldunitTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                await actions.addToHoldListbarcodevalue(
+                                  widget!.parameter2!,
+                                  FFAppState().selBill,
+                                  widget!.parameter3!.toList(),
+                                  functions
+                                      .enabletaxinclusive(widget!.parameter4!),
+                                  widget!.unitList!.toList(),
+                                  _model.textFieldmfgdateTextController.text,
+                                  _model.textFieldexpdateTextController.text,
+                                  _model.textFieldnetWtTextController.text,
+                                  _model.textFieldbarchNoTextController.text,
+                                  _model.textFieldunitTextController.text,
+                                );
+                              },
+                            ),
+                            onFieldSubmitted: (_) async {
+                              await actions.addToHoldListbarcodevalue(
+                                widget!.parameter2!,
+                                FFAppState().selBill,
+                                widget!.parameter3!.toList(),
+                                functions
+                                    .enabletaxinclusive(widget!.parameter4!),
+                                widget!.unitList!.toList(),
+                                _model.textFieldmfgdateTextController.text,
+                                _model.textFieldexpdateTextController.text,
+                                _model.textFieldnetWtTextController.text,
+                                _model.textFieldbarchNoTextController.text,
+                                _model.textFieldunitTextController.text,
+                              );
+                            },
+                            autofocus: false,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              isDense: true,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelMediumIsCustom,
+                                  ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelMediumFamily,
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts:
+                                        !FlutterFlowTheme.of(context)
+                                            .labelMediumIsCustom,
+                                  ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color:
+                                      FlutterFlowTheme.of(context).customColor2,
+                                  width: 0.5,
+                                ),
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).info,
+                                  width: 0.5,
+                                ),
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 0.5,
+                                ),
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 0.5,
+                                ),
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                              filled: true,
+                              fillColor: Color(0xFFF5F6FB),
+                              contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 10.0),
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
@@ -555,6 +652,10 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   useGoogleFonts: !FlutterFlowTheme.of(context)
                                       .labelSmallIsCustom,
                                 ),
+                            textAlign: TextAlign.center,
+                            validator: _model
+                                .textFieldunitTextControllerValidator
+                                .asValidator(context),
                           ),
                         ),
                         SizedBox(
@@ -577,6 +678,44 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                           child: TextFormField(
                             controller: _model.textFieldrateTextController,
                             focusNode: _model.textFieldrateFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.textFieldrateTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                _model.ratechangedCopy = await actions
+                                    .ratePriceChangedFunctiongrocery(
+                                  widget!.parameter2!,
+                                  FFAppState().selBill,
+                                  widget!.parameter3!.toList(),
+                                  functions
+                                      .enabletaxinclusive(widget!.parameter4!),
+                                  widget!.unitList!.toList(),
+                                  0.0,
+                                  0.0,
+                                  double.parse(
+                                      _model.textFieldrateTextController.text),
+                                  double.parse(
+                                      _model.textFieldqtTextController.text),
+                                  0.0,
+                                  0.0,
+                                );
+                                _model.outputr2Copy =
+                                    await actions.calSubTotalForGrocery(
+                                  FFAppState().selBill.toString(),
+                                  FFAppState().allBillsList.toList(),
+                                );
+                                _model.reuslt122Copy =
+                                    await actions.calBillAmtGrocery(
+                                  valueOrDefault<double>(
+                                    FFAppState().disAmt,
+                                    0.0,
+                                  ),
+                                  FFAppState().delCharges,
+                                );
+
+                                safeSetState(() {});
+                              },
+                            ),
                             onFieldSubmitted: (_) async {
                               _model.ratechanged =
                                   await actions.ratePriceChangedFunctiongrocery(
@@ -704,6 +843,44 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                           child: TextFormField(
                             controller: _model.textFieldmrprateTextController,
                             focusNode: _model.textFieldmrprateFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.textFieldmrprateTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                _model.ratechanged2Copy = await actions
+                                    .ratePriceChangedFunctiongrocery(
+                                  widget!.parameter2!,
+                                  FFAppState().selBill,
+                                  widget!.parameter3!.toList(),
+                                  functions
+                                      .enabletaxinclusive(widget!.parameter4!),
+                                  widget!.unitList!.toList(),
+                                  0.0,
+                                  0.0,
+                                  double.parse(_model
+                                      .textFieldmrprateTextController.text),
+                                  double.parse(
+                                      _model.textFieldqtTextController.text),
+                                  0.0,
+                                  0.0,
+                                );
+                                _model.outputr22Copy =
+                                    await actions.calSubTotalForGrocery(
+                                  FFAppState().selBill.toString(),
+                                  FFAppState().allBillsList.toList(),
+                                );
+                                _model.reuslt1222Copy =
+                                    await actions.calBillAmtGrocery(
+                                  valueOrDefault<double>(
+                                    FFAppState().disAmt,
+                                    0.0,
+                                  ),
+                                  FFAppState().delCharges,
+                                );
+
+                                safeSetState(() {});
+                              },
+                            ),
                             onFieldSubmitted: (_) async {
                               _model.ratechanged2 =
                                   await actions.ratePriceChangedFunctiongrocery(
@@ -835,6 +1012,73 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               '_model.textFieldmfgdateTextController',
                               Duration(milliseconds: 2000),
                               () async {
+                                final _datePicked1Date = await showDatePicker(
+                                  context: context,
+                                  initialDate: getCurrentTimestamp,
+                                  firstDate: DateTime(1900),
+                                  lastDate: DateTime(2050),
+                                  builder: (context, child) {
+                                    return wrapInMaterialDatePickerTheme(
+                                      context,
+                                      child!,
+                                      headerBackgroundColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      headerForegroundColor:
+                                          FlutterFlowTheme.of(context).info,
+                                      headerTextStyle: FlutterFlowTheme.of(
+                                              context)
+                                          .headlineLarge
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineLargeFamily,
+                                            fontSize: 32.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineLargeIsCustom,
+                                          ),
+                                      pickerBackgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                      pickerForegroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                      selectedDateTimeBackgroundColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      selectedDateTimeForegroundColor:
+                                          FlutterFlowTheme.of(context).info,
+                                      actionButtonForegroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                      iconSize: 24.0,
+                                    );
+                                  },
+                                );
+
+                                if (_datePicked1Date != null) {
+                                  safeSetState(() {
+                                    _model.datePicked1 = DateTime(
+                                      _datePicked1Date.year,
+                                      _datePicked1Date.month,
+                                      _datePicked1Date.day,
+                                    );
+                                  });
+                                } else if (_model.datePicked1 != null) {
+                                  safeSetState(() {
+                                    _model.datePicked1 = getCurrentTimestamp;
+                                  });
+                                }
+                                safeSetState(() {
+                                  _model.textFieldmfgdateTextController?.text =
+                                      dateTimeFormat(
+                                    "d/M/y",
+                                    _model.datePicked1,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  );
+                                });
                                 _model.listCopy =
                                     await actions.addToHoldListGrmfgdate(
                                   widget!.parameter2!,
@@ -962,6 +1206,73 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               '_model.textFieldexpdateTextController',
                               Duration(milliseconds: 2000),
                               () async {
+                                final _datePicked2Date = await showDatePicker(
+                                  context: context,
+                                  initialDate: getCurrentTimestamp,
+                                  firstDate: DateTime(1900),
+                                  lastDate: DateTime(2050),
+                                  builder: (context, child) {
+                                    return wrapInMaterialDatePickerTheme(
+                                      context,
+                                      child!,
+                                      headerBackgroundColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      headerForegroundColor:
+                                          FlutterFlowTheme.of(context).info,
+                                      headerTextStyle: FlutterFlowTheme.of(
+                                              context)
+                                          .headlineLarge
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineLargeFamily,
+                                            fontSize: 32.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                            useGoogleFonts:
+                                                !FlutterFlowTheme.of(context)
+                                                    .headlineLargeIsCustom,
+                                          ),
+                                      pickerBackgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                      pickerForegroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                      selectedDateTimeBackgroundColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      selectedDateTimeForegroundColor:
+                                          FlutterFlowTheme.of(context).info,
+                                      actionButtonForegroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                      iconSize: 24.0,
+                                    );
+                                  },
+                                );
+
+                                if (_datePicked2Date != null) {
+                                  safeSetState(() {
+                                    _model.datePicked2 = DateTime(
+                                      _datePicked2Date.year,
+                                      _datePicked2Date.month,
+                                      _datePicked2Date.day,
+                                    );
+                                  });
+                                } else if (_model.datePicked2 != null) {
+                                  safeSetState(() {
+                                    _model.datePicked2 = getCurrentTimestamp;
+                                  });
+                                }
+                                safeSetState(() {
+                                  _model.textFieldmfgdateTextController?.text =
+                                      dateTimeFormat(
+                                    "d/M/y",
+                                    _model.datePicked1,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  );
+                                });
                                 await actions.addToHoldListbarcodevalue(
                                   widget!.parameter2!,
                                   FFAppState().selBill,
@@ -973,6 +1284,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   _model.textFieldexpdateTextController.text,
                                   _model.textFieldnetWtTextController.text,
                                   _model.textFieldbarchNoTextController.text,
+                                  _model.textFieldunitTextController.text,
                                 );
                               },
                             ),
@@ -988,6 +1300,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                 _model.textFieldexpdateTextController.text,
                                 _model.textFieldnetWtTextController.text,
                                 _model.textFieldbarchNoTextController.text,
+                                _model.textFieldunitTextController.text,
                               );
                             },
                             autofocus: false,
@@ -1098,6 +1411,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   _model.textFieldexpdateTextController.text,
                                   _model.textFieldnetWtTextController.text,
                                   _model.textFieldbarchNoTextController.text,
+                                  _model.textFieldunitTextController.text,
                                 );
                               },
                             ),
@@ -1113,6 +1427,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                 _model.textFieldexpdateTextController.text,
                                 _model.textFieldnetWtTextController.text,
                                 _model.textFieldbarchNoTextController.text,
+                                _model.textFieldunitTextController.text,
                               );
                             },
                             autofocus: false,
@@ -1208,41 +1523,39 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                           child: TextFormField(
                             controller: _model.textFieldnetWtTextController,
                             focusNode: _model.textFieldnetWtFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.textFieldnetWtTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                await actions.addToHoldListbarcodevalue(
+                                  widget!.parameter2!,
+                                  FFAppState().selBill,
+                                  widget!.parameter3!.toList(),
+                                  functions
+                                      .enabletaxinclusive(widget!.parameter4!),
+                                  widget!.unitList!.toList(),
+                                  _model.textFieldmfgdateTextController.text,
+                                  _model.textFieldexpdateTextController.text,
+                                  _model.textFieldnetWtTextController.text,
+                                  _model.textFieldbarchNoTextController.text,
+                                  _model.textFieldunitTextController.text,
+                                );
+                              },
+                            ),
                             onFieldSubmitted: (_) async {
-                              _model.taxamtchanged =
-                                  await actions.taxAmtChangedFunctiongrocery(
+                              await actions.addToHoldListbarcodevalue(
                                 widget!.parameter2!,
                                 FFAppState().selBill,
                                 widget!.parameter3!.toList(),
                                 functions
                                     .enabletaxinclusive(widget!.parameter4!),
                                 widget!.unitList!.toList(),
-                                0.0,
-                                0.0,
-                                double.parse(
-                                    _model.textFieldrateTextController.text),
-                                double.parse(
-                                    _model.textFieldqtTextController.text),
-                                double.parse(
-                                    _model.textFieldbarchNoTextController.text),
-                                double.parse(
-                                    _model.textFieldnetWtTextController.text),
+                                _model.textFieldmfgdateTextController.text,
+                                _model.textFieldexpdateTextController.text,
+                                _model.textFieldnetWtTextController.text,
+                                _model.textFieldbarchNoTextController.text,
+                                _model.textFieldunitTextController.text,
                               );
-                              _model.output3 =
-                                  await actions.calSubTotalForGrocery(
-                                FFAppState().selBill.toString(),
-                                FFAppState().allBillsList.toList(),
-                              );
-                              _model.reuslt12g =
-                                  await actions.calBillAmtGrocery(
-                                valueOrDefault<double>(
-                                  FFAppState().disAmt,
-                                  0.0,
-                                ),
-                                FFAppState().delCharges,
-                              );
-
-                              safeSetState(() {});
                             },
                             autofocus: false,
                             obscureText: false,
@@ -1399,6 +1712,12 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                   )?.toString(),
                   '0',
                 );
+              });
+              safeSetState(() {
+                _model.textFieldunitTextController?.text = getJsonField(
+                  widget!.jsonitem,
+                  r'''$.unit''',
+                ).toString();
               });
             },
             child: Container(

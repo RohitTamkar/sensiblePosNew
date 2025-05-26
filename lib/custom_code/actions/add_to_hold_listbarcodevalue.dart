@@ -25,6 +25,7 @@ Future<List<dynamic>> addToHoldListbarcodevalue(
   String expdate,
   String netWt,
   String batchNo,
+  String unitType,
 ) async {
   List<dynamic> list = FFAppState().allBillsList;
   print(document);
@@ -52,7 +53,7 @@ Future<List<dynamic>> addToHoldListbarcodevalue(
         itemExists = true;
         itemList[j]["mfgDate"] = mfgDate;
         itemList[j]["expDate"] = expdate;
-
+        itemList[j]["unit"] = unitType;
         itemList[j]["netWt"] = netWt;
         itemList[j]["batchNo"] = batchNo;
         list[billIndex]["details"]["itemList"] = itemList;

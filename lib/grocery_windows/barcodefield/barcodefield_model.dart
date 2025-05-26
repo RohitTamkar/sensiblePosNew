@@ -8,6 +8,7 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'barcodefield_widget.dart' show BarcodefieldWidget;
 import 'package:easy_debounce/easy_debounce.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -44,6 +45,10 @@ class BarcodefieldModel extends FlutterFlowModel<BarcodefieldWidget> {
   double? output1;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in IconButton widget.
   double? reuslt121;
+  // State field(s) for TextFieldunit widget.
+  FocusNode? textFieldunitFocusNode;
+  TextEditingController? textFieldunitTextController;
+  String? Function(BuildContext, String?)? textFieldunitTextControllerValidator;
   // State field(s) for TextFieldrate widget.
   FocusNode? textFieldrateFocusNode;
   TextEditingController? textFieldrateTextController;
@@ -54,6 +59,12 @@ class BarcodefieldModel extends FlutterFlowModel<BarcodefieldWidget> {
   double? outputr2;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldrate widget.
   double? reuslt122;
+  // Stores action output result for [Custom Action - ratePriceChangedFunctiongrocery] action in TextFieldrate widget.
+  List<dynamic>? ratechangedCopy;
+  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFieldrate widget.
+  double? outputr2Copy;
+  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldrate widget.
+  double? reuslt122Copy;
   // State field(s) for TextFieldmrprate widget.
   FocusNode? textFieldmrprateFocusNode;
   TextEditingController? textFieldmrprateTextController;
@@ -65,6 +76,12 @@ class BarcodefieldModel extends FlutterFlowModel<BarcodefieldWidget> {
   double? outputr22;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldmrprate widget.
   double? reuslt1222;
+  // Stores action output result for [Custom Action - ratePriceChangedFunctiongrocery] action in TextFieldmrprate widget.
+  List<dynamic>? ratechanged2Copy;
+  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFieldmrprate widget.
+  double? outputr22Copy;
+  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldmrprate widget.
+  double? reuslt1222Copy;
   // State field(s) for TextFieldmfgdate widget.
   FocusNode? textFieldmfgdateFocusNode;
   TextEditingController? textFieldmfgdateTextController;
@@ -72,6 +89,7 @@ class BarcodefieldModel extends FlutterFlowModel<BarcodefieldWidget> {
       textFieldmfgdateTextControllerValidator;
   // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in TextFieldmfgdate widget.
   List<dynamic>? list;
+  DateTime? datePicked1;
   // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in TextFieldmfgdate widget.
   List<dynamic>? listCopy;
   // State field(s) for TextFieldexpdate widget.
@@ -79,6 +97,7 @@ class BarcodefieldModel extends FlutterFlowModel<BarcodefieldWidget> {
   TextEditingController? textFieldexpdateTextController;
   String? Function(BuildContext, String?)?
       textFieldexpdateTextControllerValidator;
+  DateTime? datePicked2;
   // State field(s) for TextFieldbarchNo widget.
   FocusNode? textFieldbarchNoFocusNode;
   TextEditingController? textFieldbarchNoTextController;
@@ -89,12 +108,6 @@ class BarcodefieldModel extends FlutterFlowModel<BarcodefieldWidget> {
   TextEditingController? textFieldnetWtTextController;
   String? Function(BuildContext, String?)?
       textFieldnetWtTextControllerValidator;
-  // Stores action output result for [Custom Action - taxAmtChangedFunctiongrocery] action in TextFieldnetWt widget.
-  List<dynamic>? taxamtchanged;
-  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFieldnetWt widget.
-  double? output3;
-  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldnetWt widget.
-  double? reuslt12g;
 
   @override
   void initState(BuildContext context) {}
@@ -103,6 +116,9 @@ class BarcodefieldModel extends FlutterFlowModel<BarcodefieldWidget> {
   void dispose() {
     textFieldqtFocusNode?.dispose();
     textFieldqtTextController?.dispose();
+
+    textFieldunitFocusNode?.dispose();
+    textFieldunitTextController?.dispose();
 
     textFieldrateFocusNode?.dispose();
     textFieldrateTextController?.dispose();
