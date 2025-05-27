@@ -596,6 +596,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                           .textFieldbarchNoTextController.text,
                                       _model.textFieldunitTextController.text,
                                       _model.textFieldingrdTextController.text,
+                                      _model
+                                          .textFieldmrprateTextController.text,
                                     );
                                   },
                                 ),
@@ -613,6 +615,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     _model.textFieldbarchNoTextController.text,
                                     _model.textFieldunitTextController.text,
                                     _model.textFieldingrdTextController.text,
+                                    _model.textFieldmrprateTextController.text,
                                   );
                                 },
                                 autofocus: false,
@@ -882,73 +885,43 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   '_model.textFieldmrprateTextController',
                                   Duration(milliseconds: 2000),
                                   () async {
-                                    _model.ratechanged2Copy = await actions
-                                        .ratePriceChangedFunctiongrocery(
+                                    await actions.addToHoldListbarcodevalue(
                                       widget!.parameter2!,
                                       FFAppState().selBill,
                                       widget!.parameter3!.toList(),
                                       functions.enabletaxinclusive(
                                           widget!.parameter4!),
                                       widget!.unitList!.toList(),
-                                      0.0,
-                                      0.0,
-                                      double.parse(_model
-                                          .textFieldmrprateTextController.text),
-                                      double.parse(_model
-                                          .textFieldqtTextController.text),
-                                      0.0,
-                                      0.0,
+                                      _model
+                                          .textFieldmfgdateTextController.text,
+                                      _model
+                                          .textFieldexpdateTextController.text,
+                                      _model.textFieldnetWtTextController.text,
+                                      _model
+                                          .textFieldbarchNoTextController.text,
+                                      _model.textFieldunitTextController.text,
+                                      _model.textFieldingrdTextController.text,
+                                      _model
+                                          .textFieldmrprateTextController.text,
                                     );
-                                    _model.outputr22Copy =
-                                        await actions.calSubTotalForGrocery(
-                                      FFAppState().selBill.toString(),
-                                      FFAppState().allBillsList.toList(),
-                                    );
-                                    _model.reuslt1222Copy =
-                                        await actions.calBillAmtGrocery(
-                                      valueOrDefault<double>(
-                                        FFAppState().disAmt,
-                                        0.0,
-                                      ),
-                                      FFAppState().delCharges,
-                                    );
-
-                                    safeSetState(() {});
                                   },
                                 ),
                                 onFieldSubmitted: (_) async {
-                                  _model.ratechanged2 = await actions
-                                      .ratePriceChangedFunctiongrocery(
+                                  await actions.addToHoldListbarcodevalue(
                                     widget!.parameter2!,
                                     FFAppState().selBill,
                                     widget!.parameter3!.toList(),
                                     functions.enabletaxinclusive(
                                         widget!.parameter4!),
                                     widget!.unitList!.toList(),
-                                    0.0,
-                                    0.0,
-                                    double.parse(_model
-                                        .textFieldmrprateTextController.text),
-                                    double.parse(
-                                        _model.textFieldqtTextController.text),
-                                    0.0,
-                                    0.0,
+                                    _model.textFieldmfgdateTextController.text,
+                                    _model.textFieldexpdateTextController.text,
+                                    _model.textFieldnetWtTextController.text,
+                                    _model.textFieldbarchNoTextController.text,
+                                    _model.textFieldunitTextController.text,
+                                    _model.textFieldingrdTextController.text,
+                                    _model.textFieldmrprateTextController.text,
                                   );
-                                  _model.outputr22 =
-                                      await actions.calSubTotalForGrocery(
-                                    FFAppState().selBill.toString(),
-                                    FFAppState().allBillsList.toList(),
-                                  );
-                                  _model.reuslt1222 =
-                                      await actions.calBillAmtGrocery(
-                                    valueOrDefault<double>(
-                                      FFAppState().disAmt,
-                                      0.0,
-                                    ),
-                                    FFAppState().delCharges,
-                                  );
-
-                                  safeSetState(() {});
                                 },
                                 autofocus: false,
                                 obscureText: false,
@@ -1068,8 +1041,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   },
                                 ),
                                 onFieldSubmitted: (_) async {
-                                  _model.list =
-                                      await actions.addToHoldListGrmfgdate(
+                                  await actions.addToHoldListbarcodevalue(
                                     widget!.parameter2!,
                                     FFAppState().selBill,
                                     widget!.parameter3!.toList(),
@@ -1078,9 +1050,12 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     widget!.unitList!.toList(),
                                     _model.textFieldmfgdateTextController.text,
                                     _model.textFieldexpdateTextController.text,
+                                    _model.textFieldnetWtTextController.text,
+                                    _model.textFieldbarchNoTextController.text,
+                                    _model.textFieldunitTextController.text,
+                                    _model.textFieldingrdTextController.text,
+                                    _model.textFieldmrprateTextController.text,
                                   );
-
-                                  safeSetState(() {});
                                 },
                                 autofocus: false,
                                 obscureText: false,
@@ -1230,8 +1205,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                         .languageCode,
                                   );
                                 });
-                                _model.listCopyCopy =
-                                    await actions.addToHoldListGrmfgdate(
+                                await actions.addToHoldListbarcodevalue(
                                   widget!.parameter2!,
                                   FFAppState().selBill,
                                   widget!.parameter3!.toList(),
@@ -1240,9 +1214,12 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   widget!.unitList!.toList(),
                                   _model.textFieldmfgdateTextController.text,
                                   _model.textFieldexpdateTextController.text,
+                                  _model.textFieldnetWtTextController.text,
+                                  _model.textFieldbarchNoTextController.text,
+                                  _model.textFieldunitTextController.text,
+                                  _model.textFieldingrdTextController.text,
+                                  _model.textFieldmrprateTextController.text,
                                 );
-
-                                safeSetState(() {});
                               },
                               child: Icon(
                                 Icons.calendar_month,
@@ -1291,6 +1268,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                           .textFieldbarchNoTextController.text,
                                       _model.textFieldunitTextController.text,
                                       _model.textFieldingrdTextController.text,
+                                      _model
+                                          .textFieldmrprateTextController.text,
                                     );
                                   },
                                 ),
@@ -1308,6 +1287,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     _model.textFieldbarchNoTextController.text,
                                     _model.textFieldunitTextController.text,
                                     _model.textFieldingrdTextController.text,
+                                    _model.textFieldmrprateTextController.text,
                                   );
                                 },
                                 autofocus: false,
@@ -1471,6 +1451,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   _model.textFieldbarchNoTextController.text,
                                   _model.textFieldunitTextController.text,
                                   _model.textFieldingrdTextController.text,
+                                  _model.textFieldmrprateTextController.text,
                                 );
                               },
                               child: Icon(
@@ -1520,6 +1501,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                           .textFieldbarchNoTextController.text,
                                       _model.textFieldunitTextController.text,
                                       _model.textFieldingrdTextController.text,
+                                      _model
+                                          .textFieldmrprateTextController.text,
                                     );
                                   },
                                 ),
@@ -1537,6 +1520,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     _model.textFieldbarchNoTextController.text,
                                     _model.textFieldunitTextController.text,
                                     _model.textFieldingrdTextController.text,
+                                    _model.textFieldmrprateTextController.text,
                                   );
                                 },
                                 autofocus: false,
@@ -1654,6 +1638,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                           .textFieldbarchNoTextController.text,
                                       _model.textFieldunitTextController.text,
                                       _model.textFieldingrdTextController.text,
+                                      _model
+                                          .textFieldmrprateTextController.text,
                                     );
                                   },
                                 ),
@@ -1671,6 +1657,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     _model.textFieldbarchNoTextController.text,
                                     _model.textFieldunitTextController.text,
                                     _model.textFieldingrdTextController.text,
+                                    _model.textFieldmrprateTextController.text,
                                   );
                                 },
                                 autofocus: false,
@@ -1794,6 +1781,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   _model.textFieldbarchNoTextController.text,
                                   _model.textFieldunitTextController.text,
                                   _model.textFieldingrdTextController.text,
+                                  _model.textFieldmrprateTextController.text,
                                 );
                               },
                             ),
@@ -1807,10 +1795,11 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                 widget!.unitList!.toList(),
                                 _model.textFieldmfgdateTextController.text,
                                 _model.textFieldexpdateTextController.text,
-                                _model.textFieldingrdTextController.text,
+                                _model.textFieldnetWtTextController.text,
                                 _model.textFieldbarchNoTextController.text,
                                 _model.textFieldunitTextController.text,
                                 _model.textFieldingrdTextController.text,
+                                _model.textFieldmrprateTextController.text,
                               );
                             },
                             autofocus: false,
@@ -1965,6 +1954,12 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                 _model.textFieldunitTextController?.text = getJsonField(
                   widget!.jsonitem,
                   r'''$.unit''',
+                ).toString();
+              });
+              safeSetState(() {
+                _model.textFieldmrprateTextController?.text = getJsonField(
+                  widget!.jsonitem,
+                  r'''$.mrpPrice''',
                 ).toString();
               });
             },

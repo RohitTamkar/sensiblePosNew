@@ -24336,7 +24336,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     'q8rm5wcf': {
-      'en': 'Price with Outlet Name',
+      'en': 'Branch',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24400,7 +24400,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     '9pzhw5gy': {
-      'en': 'Product Name',
+      'en': 'Contact',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24464,7 +24464,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     'oqup56bf': {
-      'en': 'Purchase Price',
+      'en': 'Ingredients',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24670,14 +24670,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': 'संलग्नक',
       'ta': 'இணைப்பு',
       'th': 'สิ่งที่แนบมา',
-    },
-    'zm27tsvk': {
-      'en': 'Grand Total',
-      'hi': 'कुल योग',
-      'kn': 'ಒಟ್ಟು ಮೊತ್ತ',
-      'mr': 'एकूण',
-      'ta': 'மொத்த தொகை',
-      'th': 'รวมทั้งหมด',
     },
     'gpjnxrfw': {
       'en': 'Home',

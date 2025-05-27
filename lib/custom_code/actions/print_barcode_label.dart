@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:convert';
 
 import 'dart:typed_data';
@@ -36,7 +38,11 @@ Future printBarcodeLabel(
   String labelSize,
   List<dynamic> productList,
   String contact,
-  String Branch,
+  String branch,
+  bool shopeName,
+  bool branchflag,
+  bool contactsflag,
+  bool ingredient,
 ) async {
   // Determine label dimensions based on paper size
   late double labelWidth;
@@ -95,7 +101,7 @@ Future printBarcodeLabel(
         tsplCommands.add('TEXT 20,20,"B.FNT",0,2,2,"${productName}"\r\n');
 
         tsplCommands.add(
-            'TEXT 20,50,"3.EFT",0,1,1,"MRP: ${product['price']?.toStringAsFixed(2) ?? "0.00"}"\r\n');
+            'TEXT 20,50,"3.EFT",0,1,1,"MRP: ${product['mrpPrice']?.toStringAsFixed(2) ?? "0.00"}"\r\n');
         tsplCommands.add(
             'TEXT 20,70,"3.EFT",0,1,1,"PRICE: ${product['price']?.toStringAsFixed(2) ?? "0.00"}"\r\n');
 
@@ -143,6 +149,11 @@ Future printBarcodeLabel(
         // Example shop or manufacturer info
         tsplCommands.add('TEXT 15,$y,"0",0,12,12,"${FFAppState().outletName}"');
         y += 40;
+        // Example shop or manufacturer info
+        tsplCommands.add('TEXT 15,$y,"0",0,9,9,"${branch}"');
+        y += 40;
+        tsplCommands.add('TEXT 15,$y,"0",0,9,9,"${contact}"');
+        y += 40;
 
         // Item name
         String productName = product['name'] ?? "Item";
@@ -170,12 +181,48 @@ Future printBarcodeLabel(
         // MRP
         tsplCommands.add(
             'TEXT 15,$y,"0",0,0,$fontSizeLarge,"Mrp : RS ${product['mrpPrice']?.toStringAsFixed(2) ?? "0.00"}"');
-        y += 50;
+        //tsplCommands.add('BAR 0,420,800,2');
+
+        // tsplCommands.add('BAR 0,480,800,2');
 
         // Price
         tsplCommands.add(
-            'TEXT 15,$y,"0",0,0,$fontSizeLarge,"Price : RS ${product['price']?.toStringAsFixed(2) ?? "0.00"}"');
+            'TEXT 200,$y,"0",0,0,$fontSizeLarge,"Price : RS ${product['price']?.toStringAsFixed(2) ?? "0.00"}"');
         y += 50;
+
+        //INGREDIENT
+
+        if (product.containsKey('ingredient')) {
+          String ingrd = product['ingredient'];
+          const int maxLineLength =
+              20; // Adjust based on label width and font size
+          List<String> lines = [];
+
+          // Manually split text into lines that fit the label width
+          while (ingrd.isNotEmpty) {
+            if (ingrd.length <= maxLineLength) {
+              lines.add(ingrd);
+              break;
+            } else {
+              int splitAt = ingrd.lastIndexOf(' ', maxLineLength);
+              if (splitAt == -1) splitAt = maxLineLength;
+              lines.add(ingrd.substring(0, splitAt).trim());
+              ingrd = ingrd.substring(splitAt).trim();
+            }
+          }
+
+          // Print each line at incremented y position
+          for (int i = 0; i < lines.length; i++) {
+            if (i == 0) {
+              tsplCommands.add(
+                  'TEXT 15,$y,"0",0,0,$fontSizeLarge,"Ingredient : ${lines[i]}"');
+            } else {
+              tsplCommands
+                  .add('TEXT 15,$y,"0",0,0,$fontSizeLarge,"${lines[i]}"');
+            }
+            y += 30; // line spacing
+          }
+        }
 
         //MFG
         if (product.containsKey('mfgDate')) {

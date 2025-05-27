@@ -73,38 +73,38 @@ class BarcodePrintNewModel extends FlutterFlowModel<BarcodePrintNewWidget> {
   TextEditingController? textFieldbranchTextController;
   String? Function(BuildContext, String?)?
       textFieldbranchTextControllerValidator;
+  // State field(s) for Checkboxshopname widget.
+  bool? checkboxshopnameValue;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue1;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue2;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue3;
+  // State field(s) for Checkboxbranch widget.
+  bool? checkboxbranchValue;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue4;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue5;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue6;
+  // State field(s) for Checkboxcontact widget.
+  bool? checkboxcontactValue;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue7;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue8;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue9;
+  // State field(s) for Checkboxingred widget.
+  bool? checkboxingredValue;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue10;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue11;
   // State field(s) for CheckboxListTile widget.
   bool? checkboxListTileValue12;
-  // State field(s) for CheckboxListTile widget.
-  bool? checkboxListTileValue13;
-  // State field(s) for CheckboxListTile widget.
-  bool? checkboxListTileValue14;
-  // State field(s) for CheckboxListTile widget.
-  bool? checkboxListTileValue15;
-  // State field(s) for CheckboxListTile widget.
-  bool? checkboxListTileValue16;
   // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
   bool? resultDevic;
   // State field(s) for DropDown widget.

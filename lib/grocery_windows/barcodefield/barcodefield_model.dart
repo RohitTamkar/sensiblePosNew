@@ -70,30 +70,14 @@ class BarcodefieldModel extends FlutterFlowModel<BarcodefieldWidget> {
   TextEditingController? textFieldmrprateTextController;
   String? Function(BuildContext, String?)?
       textFieldmrprateTextControllerValidator;
-  // Stores action output result for [Custom Action - ratePriceChangedFunctiongrocery] action in TextFieldmrprate widget.
-  List<dynamic>? ratechanged2;
-  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFieldmrprate widget.
-  double? outputr22;
-  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldmrprate widget.
-  double? reuslt1222;
-  // Stores action output result for [Custom Action - ratePriceChangedFunctiongrocery] action in TextFieldmrprate widget.
-  List<dynamic>? ratechanged2Copy;
-  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFieldmrprate widget.
-  double? outputr22Copy;
-  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldmrprate widget.
-  double? reuslt1222Copy;
   // State field(s) for TextFieldmfgdate widget.
   FocusNode? textFieldmfgdateFocusNode;
   TextEditingController? textFieldmfgdateTextController;
   String? Function(BuildContext, String?)?
       textFieldmfgdateTextControllerValidator;
   // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in TextFieldmfgdate widget.
-  List<dynamic>? list;
-  // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in TextFieldmfgdate widget.
   List<dynamic>? listCopy;
   DateTime? datePicked1;
-  // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in Icon widget.
-  List<dynamic>? listCopyCopy;
   // State field(s) for TextFieldexpdate widget.
   FocusNode? textFieldexpdateFocusNode;
   TextEditingController? textFieldexpdateTextController;
