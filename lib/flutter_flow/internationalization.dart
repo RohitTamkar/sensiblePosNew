@@ -30286,7 +30286,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     '92ixzs6s': {
-      'en': 'INGREDiENT  ',
+      'en': 'INGREDIENT  ',
       'hi': '',
       'kn': '',
       'mr': '',

@@ -2086,7 +2086,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 100.0,
+                                  height: 50.0,
                                   child: VerticalDivider(
                                     width: 20.0,
                                     thickness: 0.5,
@@ -2123,7 +2123,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   )),
                                 ),
                                 SizedBox(
-                                  height: 100.0,
+                                  height: 50.0,
                                   child: VerticalDivider(
                                     width: 20.0,
                                     thickness: 0.5,
@@ -2160,7 +2160,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 100.0,
+                                  height: 50.0,
                                   child: VerticalDivider(
                                     width: 20.0,
                                     thickness: 0.5,
@@ -2199,7 +2199,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 100.0,
+                                  height: 50.0,
                                   child: VerticalDivider(
                                     width: 20.0,
                                     thickness: 0.5,
@@ -2235,7 +2235,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 100.0,
+                                  height: 50.0,
                                   child: VerticalDivider(
                                     width: 20.0,
                                     thickness: 0.5,
@@ -2271,7 +2271,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 100.0,
+                                  height: 50.0,
                                   child: VerticalDivider(
                                     width: 20.0,
                                     thickness: 0.5,
@@ -2307,7 +2307,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 100.0,
+                                  height: 50.0,
                                   child: VerticalDivider(
                                     width: 20.0,
                                     thickness: 0.5,
@@ -2439,7 +2439,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 100.0,
+                                  height: 50.0,
                                   child: VerticalDivider(
                                     width: 20.0,
                                     thickness: 0.5,
@@ -2571,7 +2571,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 100.0,
+                                  height: 50.0,
                                   child: VerticalDivider(
                                     width: 20.0,
                                     thickness: 0.5,
@@ -2607,7 +2607,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 100.0,
+                                  height: 50.0,
                                   child: VerticalDivider(
                                     width: 20.0,
                                     thickness: 0.5,
@@ -2643,7 +2643,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 100.0,
+                                  height: 50.0,
                                   child: VerticalDivider(
                                     width: 20.0,
                                     thickness: 0.5,
@@ -2664,7 +2664,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                         children: [
                           Text(
                             FFLocalizations.of(context).getText(
-                              '92ixzs6s' /* INGREDiENT   */,
+                              '92ixzs6s' /* INGREDIENT   */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -2695,14 +2695,6 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                         !FlutterFlowTheme.of(context)
                                             .labelSmallIsCustom,
                                   ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 100.0,
-                            child: VerticalDivider(
-                              width: 20.0,
-                              thickness: 0.5,
-                              color: FlutterFlowTheme.of(context).accent2,
                             ),
                           ),
                         ],
