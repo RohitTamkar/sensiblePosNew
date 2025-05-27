@@ -1082,7 +1082,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                       CheckboxListTile(
                                                                     value: _model
                                                                             .checkboxshopnameValue ??=
-                                                                        false,
+                                                                        true,
                                                                     onChanged:
                                                                         (newValue) async {
                                                                       safeSetState(() =>
@@ -2068,7 +2068,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                                       CheckboxListTile(
                                                                     value: _model
                                                                             .checkboxingredValue ??=
-                                                                        false,
+                                                                        true,
                                                                     onChanged:
                                                                         (newValue) async {
                                                                       safeSetState(() =>
@@ -2441,17 +2441,17 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'v6bt1zln' /* 35mm*25mm */,
+                                                      'v6bt1zln' /* 50mm*75mm */,
                                                     ),
                                                   ),
                                                   options: [
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'hkn19852' /* 35mm*25mm */,
+                                                      'hkn19852' /* 50mm*75mm */,
                                                     ),
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'ugec74qw' /* 50mm*75mm */,
+                                                      'ugec74qw' /* 35mm*25mm */,
                                                     )
                                                   ],
                                                   onChanged: (val) async {
@@ -3666,6 +3666,16 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                           _model.checkboxcontactValue!,
                                           _model.checkboxingredValue!,
                                         );
+                                        await actions.removeFromAllBillList(
+                                          FFAppState().selBill,
+                                        );
+                                        FFAppState().holdBillCount = 0;
+                                        FFAppState().allBillsList = [];
+                                        FFAppState().itemCartList = [];
+                                        await actions.clearValue();
+                                        FFAppState().noOfItems = 0;
+                                        FFAppState().prdid = '';
+                                        safeSetState(() {});
 
                                         safeSetState(() {});
                                       },

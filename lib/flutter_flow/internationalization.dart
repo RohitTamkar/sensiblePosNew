@@ -24536,7 +24536,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     'v6bt1zln': {
-      'en': '35mm*25mm',
+      'en': '50mm*75mm',
       'hi': '35मिमी*25मिमी',
       'kn': '35ಮಿಮೀ*25ಮಿಮೀ',
       'mr': '३५ मिमी*२५ मिमी',
@@ -24552,7 +24552,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': 'เลือกขนาดฉลากของคุณ',
     },
     'hkn19852': {
-      'en': '35mm*25mm',
+      'en': '50mm*75mm',
       'hi': '35मिमी*25मिमी',
       'kn': '35ಮಿಮೀ*25ಮಿಮೀ',
       'mr': '३५ मिमी*२५ मिमी',
@@ -24560,7 +24560,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '35มม.*25มม.',
     },
     'ugec74qw': {
-      'en': '50mm*75mm',
+      'en': '35mm*25mm',
       'hi': '',
       'kn': '',
       'mr': '',
