@@ -130,15 +130,16 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
       children: [
         if (FFAppState().groceryshow)
           Container(
+            width: 1440.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
-                  child: Row(
+            child: Padding(
+              padding: EdgeInsets.all(5.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -167,7 +168,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               ),
                             ),
                             SizedBox(
-                              height: 100.0,
+                              height: 50.0,
                               child: VerticalDivider(
                                 width: 20.0,
                                 thickness: 0.5,
@@ -203,7 +204,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               )),
                             ),
                             SizedBox(
-                              height: 100.0,
+                              height: 50.0,
                               child: VerticalDivider(
                                 width: 20.0,
                                 thickness: 0.5,
@@ -239,7 +240,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               ),
                             ),
                             SizedBox(
-                              height: 100.0,
+                              height: 50.0,
                               child: VerticalDivider(
                                 width: 20.0,
                                 thickness: 0.5,
@@ -257,10 +258,11 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                             FlutterFlowIconButton(
                               borderColor:
                                   FlutterFlowTheme.of(context).primaryText,
-                              borderRadius: 20.0,
+                              borderRadius: 10.0,
                               borderWidth: 1.0,
-                              buttonSize: 25.0,
-                              fillColor: FlutterFlowTheme.of(context).alternate,
+                              buttonSize: 30.0,
+                              fillColor:
+                                  FlutterFlowTheme.of(context).customColor2,
                               icon: Icon(
                                 Icons.remove,
                                 color: FlutterFlowTheme.of(context).primaryText,
@@ -499,10 +501,11 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                             FlutterFlowIconButton(
                               borderColor:
                                   FlutterFlowTheme.of(context).primaryText,
-                              borderRadius: 20.0,
+                              borderRadius: 10.0,
                               borderWidth: 1.0,
-                              buttonSize: 25.0,
-                              fillColor: FlutterFlowTheme.of(context).alternate,
+                              buttonSize: 30.0,
+                              fillColor:
+                                  FlutterFlowTheme.of(context).customColor2,
                               icon: Icon(
                                 Icons.add,
                                 color: FlutterFlowTheme.of(context).primaryText,
@@ -555,14 +558,14 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               },
                             ),
                             SizedBox(
-                              height: 100.0,
+                              height: 50.0,
                               child: VerticalDivider(
                                 width: 20.0,
                                 thickness: 0.5,
                                 color: FlutterFlowTheme.of(context).accent2,
                               ),
                             ),
-                          ],
+                          ].divide(SizedBox(width: 5.0)),
                         ),
                       ),
                       Expanded(
@@ -689,7 +692,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               ),
                             ),
                             SizedBox(
-                              height: 100.0,
+                              height: 50.0,
                               child: VerticalDivider(
                                 width: 20.0,
                                 thickness: 0.5,
@@ -856,7 +859,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               ),
                             ),
                             SizedBox(
-                              height: 100.0,
+                              height: 50.0,
                               child: VerticalDivider(
                                 width: 20.0,
                                 thickness: 0.5,
@@ -1024,7 +1027,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               ),
                             ),
                             SizedBox(
-                              height: 100.0,
+                              height: 50.0,
                               child: VerticalDivider(
                                 width: 20.0,
                                 thickness: 0.5,
@@ -1249,14 +1252,14 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               ),
                             ),
                             SizedBox(
-                              height: 100.0,
+                              height: 50.0,
                               child: VerticalDivider(
                                 width: 20.0,
                                 thickness: 0.5,
                                 color: FlutterFlowTheme.of(context).accent2,
                               ),
                             ),
-                          ],
+                          ].divide(SizedBox(width: 5.0)),
                         ),
                       ),
                       Expanded(
@@ -1478,14 +1481,14 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               ),
                             ),
                             SizedBox(
-                              height: 100.0,
+                              height: 50.0,
                               child: VerticalDivider(
                                 width: 20.0,
                                 thickness: 0.5,
                                 color: FlutterFlowTheme.of(context).accent2,
                               ),
                             ),
-                          ],
+                          ].divide(SizedBox(width: 5.0)),
                         ),
                       ),
                       Expanded(
@@ -1613,7 +1616,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                               ),
                             ),
                             SizedBox(
-                              height: 100.0,
+                              height: 50.0,
                               child: VerticalDivider(
                                 width: 20.0,
                                 thickness: 0.5,
@@ -1746,68 +1749,35 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     .asValidator(context),
                               ),
                             ),
-                            SizedBox(
-                              height: 100.0,
-                              child: VerticalDivider(
-                                width: 20.0,
-                                thickness: 0.5,
-                                color: FlutterFlowTheme.of(context).accent2,
-                              ),
-                            ),
                           ],
                         ),
                       ),
                     ],
                   ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          FFLocalizations.of(context).getText(
-                            '541pyo07' /* INGREDIENT   */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .bodyMediumFamily,
-                                letterSpacing: 0.0,
-                                useGoogleFonts: !FlutterFlowTheme.of(context)
-                                    .bodyMediumIsCustom,
-                              ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        FFLocalizations.of(context).getText(
+                          '541pyo07' /* INGREDIENT   */,
                         ),
-                        Expanded(
-                          child: TextFormField(
-                            controller: _model.textFieldingrdTextController,
-                            focusNode: _model.textFieldingrdFocusNode,
-                            onChanged: (_) => EasyDebounce.debounce(
-                              '_model.textFieldingrdTextController',
-                              Duration(milliseconds: 2000),
-                              () async {
-                                await actions.addToHoldListbarcodevalue(
-                                  widget!.parameter2!,
-                                  FFAppState().selBill,
-                                  widget!.parameter3!.toList(),
-                                  functions
-                                      .enabletaxinclusive(widget!.parameter4!),
-                                  widget!.unitList!.toList(),
-                                  _model.textFieldmfgdateTextController.text,
-                                  _model.textFieldexpdateTextController.text,
-                                  _model.textFieldnetWtTextController.text,
-                                  _model.textFieldbarchNoTextController.text,
-                                  _model.textFieldunitTextController.text,
-                                  _model.textFieldingrdTextController.text,
-                                );
-                              },
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: !FlutterFlowTheme.of(context)
+                                  .bodyMediumIsCustom,
                             ),
-                            onFieldSubmitted: (_) async {
+                      ),
+                      Expanded(
+                        child: TextFormField(
+                          controller: _model.textFieldingrdTextController,
+                          focusNode: _model.textFieldingrdFocusNode,
+                          onChanged: (_) => EasyDebounce.debounce(
+                            '_model.textFieldingrdTextController',
+                            Duration(milliseconds: 2000),
+                            () async {
                               await actions.addToHoldListbarcodevalue(
                                 widget!.parameter2!,
                                 FFAppState().selBill,
@@ -1817,98 +1787,103 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                 widget!.unitList!.toList(),
                                 _model.textFieldmfgdateTextController.text,
                                 _model.textFieldexpdateTextController.text,
-                                _model.textFieldingrdTextController.text,
+                                _model.textFieldnetWtTextController.text,
                                 _model.textFieldbarchNoTextController.text,
                                 _model.textFieldunitTextController.text,
                                 _model.textFieldingrdTextController.text,
                               );
                             },
-                            autofocus: false,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              isDense: true,
-                              labelStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts:
-                                        !FlutterFlowTheme.of(context)
-                                            .labelMediumIsCustom,
-                                  ),
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts:
-                                        !FlutterFlowTheme.of(context)
-                                            .labelMediumIsCustom,
-                                  ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color:
-                                      FlutterFlowTheme.of(context).customColor2,
-                                  width: 0.5,
-                                ),
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).info,
-                                  width: 0.5,
-                                ),
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 0.5,
-                                ),
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 0.5,
-                                ),
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              filled: true,
-                              fillColor: Color(0xFFF5F6FB),
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 10.0),
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .labelSmall
+                          ),
+                          onFieldSubmitted: (_) async {
+                            await actions.addToHoldListbarcodevalue(
+                              widget!.parameter2!,
+                              FFAppState().selBill,
+                              widget!.parameter3!.toList(),
+                              functions.enabletaxinclusive(widget!.parameter4!),
+                              widget!.unitList!.toList(),
+                              _model.textFieldmfgdateTextController.text,
+                              _model.textFieldexpdateTextController.text,
+                              _model.textFieldingrdTextController.text,
+                              _model.textFieldbarchNoTextController.text,
+                              _model.textFieldunitTextController.text,
+                              _model.textFieldingrdTextController.text,
+                            );
+                          },
+                          autofocus: false,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            isDense: true,
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
                                 .override(
                                   fontFamily: FlutterFlowTheme.of(context)
-                                      .labelSmallFamily,
+                                      .labelMediumFamily,
                                   letterSpacing: 0.0,
                                   useGoogleFonts: !FlutterFlowTheme.of(context)
-                                      .labelSmallIsCustom,
+                                      .labelMediumIsCustom,
                                 ),
-                            textAlign: TextAlign.center,
-                            validator: _model
-                                .textFieldingrdTextControllerValidator
-                                .asValidator(context),
+                            hintStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelMediumFamily,
+                                  letterSpacing: 0.0,
+                                  useGoogleFonts: !FlutterFlowTheme.of(context)
+                                      .labelMediumIsCustom,
+                                ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color:
+                                    FlutterFlowTheme.of(context).customColor2,
+                                width: 0.5,
+                              ),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).info,
+                                width: 0.5,
+                              ),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 0.5,
+                              ),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 0.5,
+                              ),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            filled: true,
+                            fillColor: Color(0xFFF5F6FB),
+                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 0.0, 10.0),
                           ),
+                          style: FlutterFlowTheme.of(context)
+                              .labelSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelSmallFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: !FlutterFlowTheme.of(context)
+                                    .labelSmallIsCustom,
+                              ),
+                          textAlign: TextAlign.center,
+                          validator: _model
+                              .textFieldingrdTextControllerValidator
+                              .asValidator(context),
                         ),
-                        SizedBox(
-                          height: 100.0,
-                          child: VerticalDivider(
-                            width: 20.0,
-                            thickness: 0.5,
-                            color: FlutterFlowTheme.of(context).accent2,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ),
-              ],
+                ].divide(SizedBox(height: 10.0)),
+              ),
             ),
           ),
         if (!FFAppState().groceryshow)
