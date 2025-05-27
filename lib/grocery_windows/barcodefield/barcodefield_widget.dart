@@ -2331,6 +2331,15 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                       _model.datePicked3 = getCurrentTimestamp;
                                     });
                                   }
+                                  safeSetState(() {
+                                    _model.textFieldmfgdateTextController
+                                        ?.text = dateTimeFormat(
+                                      "dd-MMM-yyyy",
+                                      _model.datePicked3,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    );
+                                  });
                                   _model.listicon2 =
                                       await actions.addToHoldListGrmfgdate(
                                     widget!.parameter2!,
@@ -2339,12 +2348,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     functions.enabletaxinclusive(
                                         widget!.parameter4!),
                                     widget!.unitList!.toList(),
-                                    dateTimeFormat(
-                                      "dd-MMM-yyyy",
-                                      _model.datePicked3,
-                                      locale: FFLocalizations.of(context)
-                                          .languageCode,
-                                    ),
+                                    _model.textFieldmfgdateTextController.text,
                                     _model.textFieldexpdateTextController.text,
                                   );
 
@@ -2460,6 +2464,15 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                       _model.datePicked4 = getCurrentTimestamp;
                                     });
                                   }
+                                  safeSetState(() {
+                                    _model.textFieldexpdateTextController
+                                        ?.text = dateTimeFormat(
+                                      "dd-MMM-yyyy",
+                                      _model.datePicked4,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    );
+                                  });
                                   _model.listicon =
                                       await actions.addToHoldListGrmfgdate(
                                     widget!.parameter2!,
@@ -2469,12 +2482,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                         widget!.parameter4!),
                                     widget!.unitList!.toList(),
                                     _model.textFieldmfgdateTextController.text,
-                                    dateTimeFormat(
-                                      "dd-MMM-yyyy",
-                                      _model.datePicked4,
-                                      locale: FFLocalizations.of(context)
-                                          .languageCode,
-                                    ),
+                                    _model.textFieldexpdateTextController.text,
                                   );
 
                                   safeSetState(() {});
