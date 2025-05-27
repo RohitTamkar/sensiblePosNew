@@ -596,8 +596,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                           .textFieldbarchNoTextController.text,
                                       _model.textFieldunitTextController.text,
                                       _model.textFieldingrdTextController.text,
-                                      _model
-                                          .textFieldmrprateTextController.text,
+                                      double.parse(_model
+                                          .textFieldmrprateTextController.text),
                                     );
                                   },
                                 ),
@@ -615,7 +615,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     _model.textFieldbarchNoTextController.text,
                                     _model.textFieldunitTextController.text,
                                     _model.textFieldingrdTextController.text,
-                                    _model.textFieldmrprateTextController.text,
+                                    double.parse(_model
+                                        .textFieldmrprateTextController.text),
                                   );
                                 },
                                 autofocus: false,
@@ -901,8 +902,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                           .textFieldbarchNoTextController.text,
                                       _model.textFieldunitTextController.text,
                                       _model.textFieldingrdTextController.text,
-                                      _model
-                                          .textFieldmrprateTextController.text,
+                                      double.parse(_model
+                                          .textFieldmrprateTextController.text),
                                     );
                                   },
                                 ),
@@ -920,7 +921,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     _model.textFieldbarchNoTextController.text,
                                     _model.textFieldunitTextController.text,
                                     _model.textFieldingrdTextController.text,
-                                    _model.textFieldmrprateTextController.text,
+                                    double.parse(_model
+                                        .textFieldmrprateTextController.text),
                                   );
                                 },
                                 autofocus: false,
@@ -1054,7 +1056,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     _model.textFieldbarchNoTextController.text,
                                     _model.textFieldunitTextController.text,
                                     _model.textFieldingrdTextController.text,
-                                    _model.textFieldmrprateTextController.text,
+                                    double.parse(_model
+                                        .textFieldmrprateTextController.text),
                                   );
                                 },
                                 autofocus: false,
@@ -1218,7 +1221,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   _model.textFieldbarchNoTextController.text,
                                   _model.textFieldunitTextController.text,
                                   _model.textFieldingrdTextController.text,
-                                  _model.textFieldmrprateTextController.text,
+                                  double.parse(_model
+                                      .textFieldmrprateTextController.text),
                                 );
                               },
                               child: Icon(
@@ -1268,8 +1272,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                           .textFieldbarchNoTextController.text,
                                       _model.textFieldunitTextController.text,
                                       _model.textFieldingrdTextController.text,
-                                      _model
-                                          .textFieldmrprateTextController.text,
+                                      double.parse(_model
+                                          .textFieldmrprateTextController.text),
                                     );
                                   },
                                 ),
@@ -1287,7 +1291,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     _model.textFieldbarchNoTextController.text,
                                     _model.textFieldunitTextController.text,
                                     _model.textFieldingrdTextController.text,
-                                    _model.textFieldmrprateTextController.text,
+                                    double.parse(_model
+                                        .textFieldmrprateTextController.text),
                                   );
                                 },
                                 autofocus: false,
@@ -1451,7 +1456,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   _model.textFieldbarchNoTextController.text,
                                   _model.textFieldunitTextController.text,
                                   _model.textFieldingrdTextController.text,
-                                  _model.textFieldmrprateTextController.text,
+                                  double.parse(_model
+                                      .textFieldmrprateTextController.text),
                                 );
                               },
                               child: Icon(
@@ -1501,8 +1507,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                           .textFieldbarchNoTextController.text,
                                       _model.textFieldunitTextController.text,
                                       _model.textFieldingrdTextController.text,
-                                      _model
-                                          .textFieldmrprateTextController.text,
+                                      double.parse(_model
+                                          .textFieldmrprateTextController.text),
                                     );
                                   },
                                 ),
@@ -1520,7 +1526,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     _model.textFieldbarchNoTextController.text,
                                     _model.textFieldunitTextController.text,
                                     _model.textFieldingrdTextController.text,
-                                    _model.textFieldmrprateTextController.text,
+                                    double.parse(_model
+                                        .textFieldmrprateTextController.text),
                                   );
                                 },
                                 autofocus: false,
@@ -1638,8 +1645,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                           .textFieldbarchNoTextController.text,
                                       _model.textFieldunitTextController.text,
                                       _model.textFieldingrdTextController.text,
-                                      _model
-                                          .textFieldmrprateTextController.text,
+                                      double.parse(_model
+                                          .textFieldmrprateTextController.text),
                                     );
                                   },
                                 ),
@@ -1657,7 +1664,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                     _model.textFieldbarchNoTextController.text,
                                     _model.textFieldunitTextController.text,
                                     _model.textFieldingrdTextController.text,
-                                    _model.textFieldmrprateTextController.text,
+                                    double.parse(_model
+                                        .textFieldmrprateTextController.text),
                                   );
                                 },
                                 autofocus: false,
@@ -1781,7 +1789,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                   _model.textFieldbarchNoTextController.text,
                                   _model.textFieldunitTextController.text,
                                   _model.textFieldingrdTextController.text,
-                                  _model.textFieldmrprateTextController.text,
+                                  double.parse(_model
+                                      .textFieldmrprateTextController.text),
                                 );
                               },
                             ),
@@ -1799,7 +1808,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                 _model.textFieldbarchNoTextController.text,
                                 _model.textFieldunitTextController.text,
                                 _model.textFieldingrdTextController.text,
-                                _model.textFieldmrprateTextController.text,
+                                double.parse(
+                                    _model.textFieldmrprateTextController.text),
                               );
                             },
                             autofocus: false,
