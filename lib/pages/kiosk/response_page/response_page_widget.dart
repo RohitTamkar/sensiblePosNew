@@ -69,9 +69,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
       safeSetState(() {});
       FFAppState().shiftDetailsJson = _model.shiftDetailsneweb!;
       FFAppState().kioskAmt = FFAppState().finalAmt;
-      safeSetState(() {});
       FFAppState().shiftexist = 'True';
-      safeSetState(() {});
       if (!FFAppState().isBillPrinted) {
         if (widget!.doc!.status) {
           _model.invoicecount = await queryInvoiceRecordOnce(
@@ -96,18 +94,14 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                       r'''$.shiftId''',
                     ).toString().toString())) {
               FFAppState().count = _model.invoicecount!.count;
-              safeSetState(() {});
             } else {
               FFAppState().count = 500;
-              safeSetState(() {});
             }
           } else {
             if (_model.invoicecount?.count != null) {
               FFAppState().count = _model.invoicecount!.count;
-              safeSetState(() {});
             } else {
               FFAppState().count = 0;
-              safeSetState(() {});
             }
           }
 
@@ -116,7 +110,6 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
             FFAppState().allBillsList.toList(),
           );
           FFAppState().count = FFAppState().count + 1;
-          safeSetState(() {});
 
           var invoiceRecordReference =
               InvoiceRecord.createDoc(FFAppState().outletIdRef!);
@@ -239,9 +232,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               _model.shiftDetailsneweb,
               r'''$.billCount''',
             );
-            safeSetState(() {});
             FFAppState().billcount = FFAppState().billcount + 1;
-            safeSetState(() {});
             _model.shiftSummarRkiosk = await actions.calShiftSummary(
               _model.docInvoicekiosk!,
               FFAppState().shiftDetailsJson,
@@ -317,7 +308,6 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
           );
           if (_model.isConnected!) {
             FFAppState().lastBill = FFAppState().finalAmt;
-            FFAppState().update(() {});
             await Future.delayed(const Duration(milliseconds: 500));
             _model.returnedList2kiosk = await actions.selectBillPrint(
               FFAppState().selBill.toString(),
@@ -416,7 +406,6 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                 .firstOrNull!
                 .value) {
               FFAppState().startLoop = 0;
-              safeSetState(() {});
               while (FFAppState().startLoop < _model.prdListkiosk!.length) {
                 _model.stockupdateprd = await queryProductRecordOnce(
                   parent: FFAppState().outletIdRef,
@@ -446,7 +435,6 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                   });
                 }
                 FFAppState().startLoop = FFAppState().startLoop + 1;
-                safeSetState(() {});
               }
             }
             await actions.removeFromAllBillList(
@@ -454,7 +442,6 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
             );
             await actions.clearValue();
             FFAppState().subTotal = 0.0;
-            FFAppState().update(() {});
             FFAppState().finalAmt = 0.0;
             FFAppState().billAmt = 0.0;
             FFAppState().count = FFAppState().count;

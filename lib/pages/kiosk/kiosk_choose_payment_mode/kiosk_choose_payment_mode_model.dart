@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:ui';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'kiosk_choose_payment_mode_widget.dart'
@@ -31,6 +32,14 @@ class KioskChoosePaymentModeModel
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  CouponsCodeRecord? coupDoc;
+  // Stores action output result for [Custom Action - applyCouponCode] action in Button widget.
+  double? disAmount;
+  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk2] action in Button widget.
+  double? res23456;
+  // Stores action output result for [Custom Action - calBillAmt2] action in Button widget.
+  double? reuslt123;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   OutletRecord? outletDOc;
   // Stores action output result for [Backend Call - API (razorPaycreateQR)] action in Button widget.

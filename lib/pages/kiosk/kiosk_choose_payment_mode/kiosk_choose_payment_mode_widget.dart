@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import 'dart:ui';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -321,8 +322,127 @@ class _KioskChoosePaymentModeWidgetState
                                           ),
                                         ),
                                         FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async {
+                                            if (_model.textController.text !=
+                                                    null &&
+                                                _model.textController.text !=
+                                                    '') {
+                                              _model.coupDoc =
+                                                  await queryCouponsCodeRecordOnce(
+                                                parent:
+                                                    FFAppState().outletIdRef,
+                                                queryBuilder:
+                                                    (couponsCodeRecord) =>
+                                                        couponsCodeRecord
+                                                            .where(
+                                                              'couponCode',
+                                                              isEqualTo: _model
+                                                                  .textController
+                                                                  .text,
+                                                            )
+                                                            .where(
+                                                              'isActive',
+                                                              isEqualTo: true,
+                                                            ),
+                                                singleRecord: true,
+                                              ).then((s) => s.firstOrNull);
+                                              if (_model.coupDoc != null) {
+                                                _model.disAmount = await actions
+                                                    .applyCouponCode(
+                                                  FFAppState().finalAmt,
+                                                  _model.coupDoc,
+                                                );
+                                                FFAppState().disAmt =
+                                                    _model.disAmount!;
+                                                safeSetState(() {});
+                                                _model.res23456 = await actions
+                                                    .calSubTotalForHoldListkiosk2(
+                                                  valueOrDefault<String>(
+                                                    FFAppState()
+                                                        .selBill
+                                                        .toString(),
+                                                    '1',
+                                                  ),
+                                                  FFAppState()
+                                                      .allBillsList
+                                                      .toList(),
+                                                  functions.enabletaxinclusive(
+                                                      widget!.appSettings!
+                                                          .settingList
+                                                          .where((e) =>
+                                                              e.title ==
+                                                              'enableInclusiveTax')
+                                                          .toList()
+                                                          .firstOrNull!
+                                                          .value),
+                                                  widget!
+                                                      .appSettings!.settingList
+                                                      .where((e) =>
+                                                          e.title ==
+                                                          'qtyWiseParcelCharges')
+                                                      .toList()
+                                                      .firstOrNull!
+                                                      .value,
+                                                );
+                                                _model.reuslt123 =
+                                                    await actions.calBillAmt2(
+                                                  valueOrDefault<double>(
+                                                    FFAppState().disAmt,
+                                                    0.0,
+                                                  ),
+                                                  FFAppState().delCharges,
+                                                  widget!
+                                                      .appSettings!.settingList
+                                                      .where((e) =>
+                                                          e.title ==
+                                                          'qtyWiseParcelCharges')
+                                                      .toList()
+                                                      .firstOrNull!
+                                                      .value,
+                                                );
+                                              } else {
+                                                await showDialog(
+                                                  context: context,
+                                                  builder:
+                                                      (alertDialogContext) {
+                                                    return AlertDialog(
+                                                      title: Text('Invalid'),
+                                                      content: Text(
+                                                          'Coupon Code Invalid or Expired'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    );
+                                                  },
+                                                );
+                                              }
+                                            } else {
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    title: Text('Error'),
+                                                    content: Text(
+                                                        'Input Coupon Code...'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              );
+                                            }
+
+                                            safeSetState(() {});
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
@@ -357,6 +477,22 @@ class _KioskChoosePaymentModeWidgetState
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                           ),
+                                        ),
+                                        Text(
+                                          FFAppState().finalAmt.toString(),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
+                                                fontSize: 16.0,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMediumIsCustom,
+                                              ),
                                         ),
                                       ].divide(SizedBox(width: 15.0)),
                                     ),

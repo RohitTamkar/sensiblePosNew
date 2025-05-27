@@ -5578,7 +5578,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 FFAppState().newcount + 1;
                                                                             FFAppState().billcount =
                                                                                 FFAppState().billcount + 1;
-                                                                            safeSetState(() {});
                                                                           } else {
                                                                             FFAppState().count =
                                                                                 FFAppState().count + 1;
@@ -5586,7 +5585,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 FFAppState().newcount + 1;
                                                                             FFAppState().billcount =
                                                                                 FFAppState().billcount + 1;
-                                                                            safeSetState(() {});
                                                                           }
 
                                                                           _model.prdlistsavebillupi =
@@ -6162,12 +6160,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               FFAppState().count = FFAppState().count + 1;
                                                                               FFAppState().newcount = FFAppState().newcount + 1;
                                                                               FFAppState().billcount = FFAppState().billcount + 1;
-                                                                              safeSetState(() {});
                                                                             } else {
                                                                               FFAppState().count = FFAppState().count + 1;
                                                                               FFAppState().newcount = FFAppState().newcount + 1;
                                                                               FFAppState().billcount = FFAppState().billcount + 1;
-                                                                              safeSetState(() {});
                                                                             }
 
                                                                             _model.prdlistsavebill =
@@ -6492,7 +6488,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
 
                                                                               if (productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableStock').toList().firstOrNull!.value) {
                                                                                 FFAppState().startLoop = 0;
-                                                                                safeSetState(() {});
                                                                                 while (FFAppState().startLoop < _model.prdlistsavebill!.length) {
                                                                                   _model.stockupdateprd = await queryProductRecordOnce(
                                                                                     parent: FFAppState().outletIdRef,
@@ -6558,7 +6553,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                         ..hivekey = _model.itemprd?.hivekey
                                                                                         ..version = _model.itemprd?.version,
                                                                                     );
-                                                                                    safeSetState(() {});
                                                                                     _model.productupdated = await actions.hiveProductCrud(
                                                                                       FFAppState().productHiveput.hivekey,
                                                                                       FFAppState().productHiveput,
@@ -6567,14 +6561,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                     _shouldSetState = true;
                                                                                     FFAppState().productHive = [];
                                                                                     FFAppState().productHiveput = ProductStructStruct();
-                                                                                    safeSetState(() {});
                                                                                     _model.newupdatedproductlist2 = await actions.getProductlistHive();
                                                                                     _shouldSetState = true;
                                                                                     FFAppState().productHive = _model.newupdatedproductlist2!.toList().cast<ProductStructStruct>();
-                                                                                    safeSetState(() {});
                                                                                   }
                                                                                   FFAppState().startLoop = FFAppState().startLoop + 1;
-                                                                                  safeSetState(() {});
                                                                                 }
                                                                                 await actions.updateProductStocknew(
                                                                                   _model.prdlistsavebill!.toList(),
@@ -6587,15 +6578,12 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 _model.dropDownValueController?.value = 'CASH';
                                                                               });
                                                                               FFAppState().lastBill = FFAppState().finalAmt;
-                                                                              FFAppState().update(() {});
                                                                               _model.prdid = '0';
-                                                                              safeSetState(() {});
                                                                               await actions.clearValue();
                                                                               FFAppState().noOfItems = 0;
                                                                               FFAppState().subTotal = 0.0;
                                                                               FFAppState().count = FFAppState().shiftDetails.billCount;
                                                                               FFAppState().delCharges = 0.0;
-                                                                              FFAppState().update(() {});
                                                                               FFAppState().oldBalance = 0;
                                                                               FFAppState().custCredit = 0;
                                                                               FFAppState().custNameRef = null;
@@ -6603,7 +6591,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               FFAppState().setCustName = '';
                                                                               FFAppState().setCustMobNo = '';
                                                                               FFAppState().prdid = '';
-                                                                              FFAppState().update(() {});
                                                                               FFAppState().finalAmt = 0.0;
                                                                               FFAppState().billAmt = 0.0;
                                                                               FFAppState().update(() {});
@@ -6762,12 +6749,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 FFAppState().count = FFAppState().count + 1;
                                                                                 FFAppState().newcount = FFAppState().newcount + 1;
                                                                                 FFAppState().billcount = FFAppState().billcount + 1;
-                                                                                safeSetState(() {});
                                                                               } else {
                                                                                 FFAppState().count = FFAppState().count + 1;
                                                                                 FFAppState().newcount = FFAppState().newcount + 1;
                                                                                 FFAppState().billcount = FFAppState().billcount + 1;
-                                                                                safeSetState(() {});
                                                                               }
 
                                                                               _model.prdlinstnewtx = await actions.filterProducts2(
@@ -7201,7 +7186,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               _shouldSetState = true;
                                                                               if (_model.isconnected!) {
                                                                                 FFAppState().lastBill = FFAppState().finalAmt;
-                                                                                FFAppState().update(() {});
                                                                                 _model.returnedList2 = await actions.selectBillPrint(
                                                                                   FFAppState().selBill.toString(),
                                                                                   FFAppState().allBillsList.toList(),
@@ -7266,7 +7250,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 }
                                                                                 if (productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableStock').toList().firstOrNull!.value) {
                                                                                   FFAppState().startLoop = 0;
-                                                                                  safeSetState(() {});
                                                                                   while (FFAppState().startLoop < _model.prdlinstnewtx!.length) {
                                                                                     _model.stockupdateprdprt = await queryProductRecordOnce(
                                                                                       parent: FFAppState().outletIdRef,
@@ -7332,7 +7315,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                           ..hivekey = _model.itemprd2?.hivekey
                                                                                           ..version = _model.itemprd2?.version,
                                                                                       );
-                                                                                      safeSetState(() {});
                                                                                       _model.productupdated2 = await actions.hiveProductCrud(
                                                                                         FFAppState().productHiveput.hivekey,
                                                                                         FFAppState().productHiveput,
@@ -7341,14 +7323,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                       _shouldSetState = true;
                                                                                       FFAppState().productHive = [];
                                                                                       FFAppState().productHiveput = ProductStructStruct();
-                                                                                      safeSetState(() {});
                                                                                       _model.newupdatedproductlist22 = await actions.getProductlistHive();
                                                                                       _shouldSetState = true;
                                                                                       FFAppState().productHive = _model.newupdatedproductlist22!.toList().cast<ProductStructStruct>();
-                                                                                      safeSetState(() {});
                                                                                     }
                                                                                     FFAppState().startLoop = FFAppState().startLoop + 1;
-                                                                                    safeSetState(() {});
                                                                                   }
                                                                                   await actions.updateProductStocknew(
                                                                                     _model.prdlinstnewtx!.toList(),
@@ -7371,7 +7350,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 FFAppState().setCustMobNo = '';
                                                                                 FFAppState().noOfItems = 0;
                                                                                 FFAppState().prdid = '';
-                                                                                FFAppState().update(() {});
                                                                                 FFAppState().finalAmt = 0.0;
                                                                                 FFAppState().billAmt = 0.0;
                                                                                 FFAppState().count = _model.updatedShiftDetails!.billCount;
