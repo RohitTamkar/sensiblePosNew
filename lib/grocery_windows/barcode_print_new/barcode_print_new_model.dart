@@ -11,6 +11,8 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/flutter_flow/request_manager.dart';
+
 import '/index.dart';
 import 'barcode_print_new_widget.dart' show BarcodePrintNewWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -127,6 +129,38 @@ class BarcodePrintNewModel extends FlutterFlowModel<BarcodePrintNewWidget> {
   // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
   List<dynamic>? selected4;
 
+  /// Query cache managers for this widget.
+
+  final _unittyManager = StreamRequestManager<List<UnitTypeRecord>>();
+  Stream<List<UnitTypeRecord>> unitty({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Stream<List<UnitTypeRecord>> Function() requestFn,
+  }) =>
+      _unittyManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearUnittyCache() => _unittyManager.clear();
+  void clearUnittyCacheKey(String? uniqueKey) =>
+      _unittyManager.clearRequest(uniqueKey);
+
+  final _appsettManager = StreamRequestManager<List<AppSettingsRecord>>();
+  Stream<List<AppSettingsRecord>> appsett({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Stream<List<AppSettingsRecord>> Function() requestFn,
+  }) =>
+      _appsettManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearAppsettCache() => _appsettManager.clear();
+  void clearAppsettCacheKey(String? uniqueKey) =>
+      _appsettManager.clearRequest(uniqueKey);
+
   @override
   void initState(BuildContext context) {}
 
@@ -137,5 +171,11 @@ class BarcodePrintNewModel extends FlutterFlowModel<BarcodePrintNewWidget> {
 
     textFieldbranchFocusNode?.dispose();
     textFieldbranchTextController?.dispose();
+
+    /// Dispose query cache managers for this widget.
+
+    clearUnittyCache();
+
+    clearAppsettCache();
   }
 }

@@ -111,7 +111,9 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
     context.watch<FFAppState>();
 
     return StreamBuilder<List<UnitTypeRecord>>(
-      stream: queryUnitTypeRecord(),
+      stream: _model.unitty(
+        requestFn: () => queryUnitTypeRecord(),
+      ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -143,14 +145,16 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 body: StreamBuilder<List<AppSettingsRecord>>(
-                  stream: queryAppSettingsRecord(
-                    parent: FFAppState().outletIdRef,
-                    queryBuilder: (appSettingsRecord) =>
-                        appSettingsRecord.where(
-                      'deviceId',
-                      isEqualTo: FFAppState().dId,
+                  stream: _model.appsett(
+                    requestFn: () => queryAppSettingsRecord(
+                      parent: FFAppState().outletIdRef,
+                      queryBuilder: (appSettingsRecord) =>
+                          appSettingsRecord.where(
+                        'deviceId',
+                        isEqualTo: FFAppState().dId,
+                      ),
+                      singleRecord: true,
                     ),
-                    singleRecord: true,
                   ),
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
@@ -227,6 +231,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                   .removeFromAllBillList(
                                                 FFAppState().selBill,
                                               );
+                                              await actions.clearValue();
                                               if (FFAppState().navigate ==
                                                   'GROCERY') {
                                                 _model.paymentmode =
@@ -238,7 +243,8 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                   queryParameters: {
                                                     'shiftdetail':
                                                         serializeParam(
-                                                      widget!.shiftdetail,
+                                                      FFAppState()
+                                                          .shiftDetailsJson,
                                                       ParamType.JSON,
                                                     ),
                                                     'taxDetails':
@@ -285,7 +291,8 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                     ),
                                                     'shiftDetails':
                                                         serializeParam(
-                                                      widget!.shiftdetail,
+                                                      FFAppState()
+                                                          .shiftDetailsJson,
                                                       ParamType.JSON,
                                                     ),
                                                     'taxcollection':
@@ -324,7 +331,8 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                     ),
                                                     'shiftDetails':
                                                         serializeParam(
-                                                      widget!.shiftdetail,
+                                                      FFAppState()
+                                                          .shiftDetailsJson,
                                                       ParamType.JSON,
                                                     ),
                                                   }.withoutNulls,
@@ -345,7 +353,8 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                                     ),
                                                     'shiftDetails':
                                                         serializeParam(
-                                                      widget!.shiftdetail,
+                                                      FFAppState()
+                                                          .shiftDetailsJson,
                                                       ParamType.JSON,
                                                     ),
                                                     'taxcollection':
