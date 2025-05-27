@@ -1970,600 +1970,617 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
               });
             },
             child: Container(
+              width: 1440.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(15.0, 3.0, 0.0, 3.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          flex: 2,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  getJsonField(
-                                    widget!.jsonitem,
-                                    r'''$.srno''',
-                                  ).toString(),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelSmallFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts:
-                                            !FlutterFlowTheme.of(context)
-                                                .labelSmallIsCustom,
-                                      ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 100.0,
-                                child: VerticalDivider(
-                                  width: 20.0,
-                                  thickness: 0.5,
-                                  color: FlutterFlowTheme.of(context).accent2,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          flex: 4,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: SelectionArea(
-                                    child: Text(
-                                  getJsonField(
-                                    widget!.jsonitem,
-                                    r'''$.barcode''',
-                                  ).toString(),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelSmallFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts:
-                                            !FlutterFlowTheme.of(context)
-                                                .labelSmallIsCustom,
-                                      ),
-                                )),
-                              ),
-                              SizedBox(
-                                height: 100.0,
-                                child: VerticalDivider(
-                                  width: 20.0,
-                                  thickness: 0.5,
-                                  color: FlutterFlowTheme.of(context).accent2,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          flex: 10,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  getJsonField(
-                                    widget!.jsonitem,
-                                    r'''$.name''',
-                                  ).toString(),
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelSmallFamily,
-                                        color: Color(0xFF446AFE),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w600,
-                                        useGoogleFonts:
-                                            !FlutterFlowTheme.of(context)
-                                                .labelSmallIsCustom,
-                                      ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 100.0,
-                                child: VerticalDivider(
-                                  width: 20.0,
-                                  thickness: 0.5,
-                                  color: FlutterFlowTheme.of(context).accent2,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          flex: 6,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  valueOrDefault<String>(
+              child: Padding(
+                padding: EdgeInsets.all(5.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Flexible(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Expanded(
+                            flex: 2,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Text(
                                     getJsonField(
                                       widget!.jsonitem,
-                                      r'''$.quantity''',
-                                    )?.toString(),
-                                    '0',
+                                      r'''$.srno''',
+                                    ).toString(),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmallFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .labelSmallIsCustom,
+                                        ),
                                   ),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelSmallFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts:
-                                            !FlutterFlowTheme.of(context)
-                                                .labelSmallIsCustom,
-                                      ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 100.0,
-                                child: VerticalDivider(
-                                  width: 20.0,
-                                  thickness: 0.5,
-                                  color: FlutterFlowTheme.of(context).accent2,
+                                SizedBox(
+                                  height: 100.0,
+                                  child: VerticalDivider(
+                                    width: 20.0,
+                                    thickness: 0.5,
+                                    color: FlutterFlowTheme.of(context).accent2,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 3,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  getJsonField(
-                                    widget!.jsonitem,
-                                    r'''$.unit''',
-                                  ).toString(),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelSmallFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts:
-                                            !FlutterFlowTheme.of(context)
-                                                .labelSmallIsCustom,
-                                      ),
+                          Expanded(
+                            flex: 4,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: SelectionArea(
+                                      child: Text(
+                                    getJsonField(
+                                      widget!.jsonitem,
+                                      r'''$.barcode''',
+                                    ).toString(),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmallFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .labelSmallIsCustom,
+                                        ),
+                                  )),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 100.0,
-                                child: VerticalDivider(
-                                  width: 20.0,
-                                  thickness: 0.5,
-                                  color: FlutterFlowTheme.of(context).accent2,
+                                SizedBox(
+                                  height: 100.0,
+                                  child: VerticalDivider(
+                                    width: 20.0,
+                                    thickness: 0.5,
+                                    color: FlutterFlowTheme.of(context).accent2,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 4,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  getJsonField(
-                                    widget!.jsonitem,
-                                    r'''$.price''',
-                                  ).toString(),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelSmallFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts:
-                                            !FlutterFlowTheme.of(context)
-                                                .labelSmallIsCustom,
-                                      ),
+                          Expanded(
+                            flex: 10,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    getJsonField(
+                                      widget!.jsonitem,
+                                      r'''$.name''',
+                                    ).toString(),
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmallFamily,
+                                          color: Color(0xFF446AFE),
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .labelSmallIsCustom,
+                                        ),
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 100.0,
-                                child: VerticalDivider(
-                                  width: 20.0,
-                                  thickness: 0.5,
-                                  color: FlutterFlowTheme.of(context).accent2,
+                                SizedBox(
+                                  height: 100.0,
+                                  child: VerticalDivider(
+                                    width: 20.0,
+                                    thickness: 0.5,
+                                    color: FlutterFlowTheme.of(context).accent2,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 4,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  getJsonField(
-                                    widget!.jsonitem,
-                                    r'''$.mrpPrice''',
-                                  ).toString(),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelSmallFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts:
-                                            !FlutterFlowTheme.of(context)
-                                                .labelSmallIsCustom,
-                                      ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 100.0,
-                                child: VerticalDivider(
-                                  width: 20.0,
-                                  thickness: 0.5,
-                                  color: FlutterFlowTheme.of(context).accent2,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          flex: 5,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  getJsonField(
-                                    widget!.jsonitem,
-                                    r'''$.mfgDate''',
-                                  ).toString(),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelSmallFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts:
-                                            !FlutterFlowTheme.of(context)
-                                                .labelSmallIsCustom,
-                                      ),
-                                ),
-                              ),
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  final _datePicked3Date = await showDatePicker(
-                                    context: context,
-                                    initialDate: getCurrentTimestamp,
-                                    firstDate: DateTime(1900),
-                                    lastDate: DateTime(2050),
-                                    builder: (context, child) {
-                                      return wrapInMaterialDatePickerTheme(
-                                        context,
-                                        child!,
-                                        headerBackgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                        headerForegroundColor:
-                                            FlutterFlowTheme.of(context).info,
-                                        headerTextStyle: FlutterFlowTheme.of(
-                                                context)
-                                            .headlineLarge
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineLargeFamily,
-                                              fontSize: 32.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w600,
-                                              useGoogleFonts:
-                                                  !FlutterFlowTheme.of(context)
-                                                      .headlineLargeIsCustom,
-                                            ),
-                                        pickerBackgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                        pickerForegroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                        selectedDateTimeBackgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                        selectedDateTimeForegroundColor:
-                                            FlutterFlowTheme.of(context).info,
-                                        actionButtonForegroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                        iconSize: 24.0,
-                                      );
-                                    },
-                                  );
-
-                                  if (_datePicked3Date != null) {
-                                    safeSetState(() {
-                                      _model.datePicked3 = DateTime(
-                                        _datePicked3Date.year,
-                                        _datePicked3Date.month,
-                                        _datePicked3Date.day,
-                                      );
-                                    });
-                                  } else if (_model.datePicked3 != null) {
-                                    safeSetState(() {
-                                      _model.datePicked3 = getCurrentTimestamp;
-                                    });
-                                  }
-                                  _model.listicon2 =
-                                      await actions.addToHoldListGrmfgdate(
-                                    widget!.parameter2!,
-                                    FFAppState().selBill,
-                                    widget!.parameter3!.toList(),
-                                    functions.enabletaxinclusive(
-                                        widget!.parameter4!),
-                                    widget!.unitList!.toList(),
-                                    dateTimeFormat(
-                                      "dd-MMM-yyyy",
-                                      _model.datePicked3,
-                                      locale: FFLocalizations.of(context)
-                                          .languageCode,
+                          Expanded(
+                            flex: 6,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      getJsonField(
+                                        widget!.jsonitem,
+                                        r'''$.quantity''',
+                                      )?.toString(),
+                                      '0',
                                     ),
-                                    _model.textFieldexpdateTextController.text,
-                                  );
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmallFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .labelSmallIsCustom,
+                                        ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 100.0,
+                                  child: VerticalDivider(
+                                    width: 20.0,
+                                    thickness: 0.5,
+                                    color: FlutterFlowTheme.of(context).accent2,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            flex: 3,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    getJsonField(
+                                      widget!.jsonitem,
+                                      r'''$.unit''',
+                                    ).toString(),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmallFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .labelSmallIsCustom,
+                                        ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 100.0,
+                                  child: VerticalDivider(
+                                    width: 20.0,
+                                    thickness: 0.5,
+                                    color: FlutterFlowTheme.of(context).accent2,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            flex: 4,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    getJsonField(
+                                      widget!.jsonitem,
+                                      r'''$.price''',
+                                    ).toString(),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmallFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .labelSmallIsCustom,
+                                        ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 100.0,
+                                  child: VerticalDivider(
+                                    width: 20.0,
+                                    thickness: 0.5,
+                                    color: FlutterFlowTheme.of(context).accent2,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            flex: 4,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    getJsonField(
+                                      widget!.jsonitem,
+                                      r'''$.mrpPrice''',
+                                    ).toString(),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmallFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .labelSmallIsCustom,
+                                        ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 100.0,
+                                  child: VerticalDivider(
+                                    width: 20.0,
+                                    thickness: 0.5,
+                                    color: FlutterFlowTheme.of(context).accent2,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            flex: 5,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    getJsonField(
+                                      widget!.jsonitem,
+                                      r'''$.mfgDate''',
+                                    ).toString(),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmallFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .labelSmallIsCustom,
+                                        ),
+                                  ),
+                                ),
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    final _datePicked3Date =
+                                        await showDatePicker(
+                                      context: context,
+                                      initialDate: getCurrentTimestamp,
+                                      firstDate: DateTime(1900),
+                                      lastDate: DateTime(2050),
+                                      builder: (context, child) {
+                                        return wrapInMaterialDatePickerTheme(
+                                          context,
+                                          child!,
+                                          headerBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          headerForegroundColor:
+                                              FlutterFlowTheme.of(context).info,
+                                          headerTextStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .headlineLarge
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineLargeFamily,
+                                                fontSize: 32.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineLargeIsCustom,
+                                              ),
+                                          pickerBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          pickerForegroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          selectedDateTimeBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          selectedDateTimeForegroundColor:
+                                              FlutterFlowTheme.of(context).info,
+                                          actionButtonForegroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          iconSize: 24.0,
+                                        );
+                                      },
+                                    );
 
-                                  safeSetState(() {});
-                                },
-                                child: Icon(
-                                  Icons.calendar_month,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 24.0,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 100.0,
-                                child: VerticalDivider(
-                                  width: 20.0,
-                                  thickness: 0.5,
-                                  color: FlutterFlowTheme.of(context).accent2,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          flex: 5,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  getJsonField(
-                                    widget!.jsonitem,
-                                    r'''$.expDate''',
-                                  ).toString(),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelSmallFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts:
-                                            !FlutterFlowTheme.of(context)
-                                                .labelSmallIsCustom,
+                                    if (_datePicked3Date != null) {
+                                      safeSetState(() {
+                                        _model.datePicked3 = DateTime(
+                                          _datePicked3Date.year,
+                                          _datePicked3Date.month,
+                                          _datePicked3Date.day,
+                                        );
+                                      });
+                                    } else if (_model.datePicked3 != null) {
+                                      safeSetState(() {
+                                        _model.datePicked3 =
+                                            getCurrentTimestamp;
+                                      });
+                                    }
+                                    _model.listicon2 =
+                                        await actions.addToHoldListGrmfgdate(
+                                      widget!.parameter2!,
+                                      FFAppState().selBill,
+                                      widget!.parameter3!.toList(),
+                                      functions.enabletaxinclusive(
+                                          widget!.parameter4!),
+                                      widget!.unitList!.toList(),
+                                      dateTimeFormat(
+                                        "dd-MMM-yyyy",
+                                        _model.datePicked3,
+                                        locale: FFLocalizations.of(context)
+                                            .languageCode,
                                       ),
-                                ),
-                              ),
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  final _datePicked4Date = await showDatePicker(
-                                    context: context,
-                                    initialDate: getCurrentTimestamp,
-                                    firstDate: DateTime(1900),
-                                    lastDate: DateTime(2050),
-                                    builder: (context, child) {
-                                      return wrapInMaterialDatePickerTheme(
-                                        context,
-                                        child!,
-                                        headerBackgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                        headerForegroundColor:
-                                            FlutterFlowTheme.of(context).info,
-                                        headerTextStyle: FlutterFlowTheme.of(
-                                                context)
-                                            .headlineLarge
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineLargeFamily,
-                                              fontSize: 32.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w600,
-                                              useGoogleFonts:
-                                                  !FlutterFlowTheme.of(context)
-                                                      .headlineLargeIsCustom,
-                                            ),
-                                        pickerBackgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                        pickerForegroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                        selectedDateTimeBackgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                        selectedDateTimeForegroundColor:
-                                            FlutterFlowTheme.of(context).info,
-                                        actionButtonForegroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                        iconSize: 24.0,
-                                      );
-                                    },
-                                  );
+                                      _model
+                                          .textFieldexpdateTextController.text,
+                                    );
 
-                                  if (_datePicked4Date != null) {
-                                    safeSetState(() {
-                                      _model.datePicked4 = DateTime(
-                                        _datePicked4Date.year,
-                                        _datePicked4Date.month,
-                                        _datePicked4Date.day,
-                                      );
-                                    });
-                                  } else if (_model.datePicked4 != null) {
-                                    safeSetState(() {
-                                      _model.datePicked4 = getCurrentTimestamp;
-                                    });
-                                  }
-                                  _model.listicon =
-                                      await actions.addToHoldListGrmfgdate(
-                                    widget!.parameter2!,
-                                    FFAppState().selBill,
-                                    widget!.parameter3!.toList(),
-                                    functions.enabletaxinclusive(
-                                        widget!.parameter4!),
-                                    widget!.unitList!.toList(),
-                                    _model.textFieldmfgdateTextController.text,
-                                    dateTimeFormat(
-                                      "dd-MMM-yyyy",
-                                      _model.datePicked4,
-                                      locale: FFLocalizations.of(context)
-                                          .languageCode,
-                                    ),
-                                  );
+                                    safeSetState(() {});
+                                  },
+                                  child: Icon(
+                                    Icons.calendar_month,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 24.0,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 100.0,
+                                  child: VerticalDivider(
+                                    width: 20.0,
+                                    thickness: 0.5,
+                                    color: FlutterFlowTheme.of(context).accent2,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            flex: 5,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    getJsonField(
+                                      widget!.jsonitem,
+                                      r'''$.expDate''',
+                                    ).toString(),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmallFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .labelSmallIsCustom,
+                                        ),
+                                  ),
+                                ),
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    final _datePicked4Date =
+                                        await showDatePicker(
+                                      context: context,
+                                      initialDate: getCurrentTimestamp,
+                                      firstDate: DateTime(1900),
+                                      lastDate: DateTime(2050),
+                                      builder: (context, child) {
+                                        return wrapInMaterialDatePickerTheme(
+                                          context,
+                                          child!,
+                                          headerBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          headerForegroundColor:
+                                              FlutterFlowTheme.of(context).info,
+                                          headerTextStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .headlineLarge
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineLargeFamily,
+                                                fontSize: 32.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                useGoogleFonts:
+                                                    !FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineLargeIsCustom,
+                                              ),
+                                          pickerBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          pickerForegroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          selectedDateTimeBackgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          selectedDateTimeForegroundColor:
+                                              FlutterFlowTheme.of(context).info,
+                                          actionButtonForegroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          iconSize: 24.0,
+                                        );
+                                      },
+                                    );
 
-                                  safeSetState(() {});
-                                },
-                                child: Icon(
-                                  Icons.calendar_month,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 24.0,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 100.0,
-                                child: VerticalDivider(
-                                  width: 20.0,
-                                  thickness: 0.5,
-                                  color: FlutterFlowTheme.of(context).accent2,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          flex: 5,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  getJsonField(
-                                    widget!.jsonitem,
-                                    r'''$.batchNo''',
-                                  ).toString(),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelSmallFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts:
-                                            !FlutterFlowTheme.of(context)
-                                                .labelSmallIsCustom,
+                                    if (_datePicked4Date != null) {
+                                      safeSetState(() {
+                                        _model.datePicked4 = DateTime(
+                                          _datePicked4Date.year,
+                                          _datePicked4Date.month,
+                                          _datePicked4Date.day,
+                                        );
+                                      });
+                                    } else if (_model.datePicked4 != null) {
+                                      safeSetState(() {
+                                        _model.datePicked4 =
+                                            getCurrentTimestamp;
+                                      });
+                                    }
+                                    _model.listicon =
+                                        await actions.addToHoldListGrmfgdate(
+                                      widget!.parameter2!,
+                                      FFAppState().selBill,
+                                      widget!.parameter3!.toList(),
+                                      functions.enabletaxinclusive(
+                                          widget!.parameter4!),
+                                      widget!.unitList!.toList(),
+                                      _model
+                                          .textFieldmfgdateTextController.text,
+                                      dateTimeFormat(
+                                        "dd-MMM-yyyy",
+                                        _model.datePicked4,
+                                        locale: FFLocalizations.of(context)
+                                            .languageCode,
                                       ),
+                                    );
+
+                                    safeSetState(() {});
+                                  },
+                                  child: Icon(
+                                    Icons.calendar_month,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 24.0,
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 100.0,
-                                child: VerticalDivider(
-                                  width: 20.0,
-                                  thickness: 0.5,
-                                  color: FlutterFlowTheme.of(context).accent2,
+                                SizedBox(
+                                  height: 100.0,
+                                  child: VerticalDivider(
+                                    width: 20.0,
+                                    thickness: 0.5,
+                                    color: FlutterFlowTheme.of(context).accent2,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 4,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  getJsonField(
-                                    widget!.jsonitem,
-                                    r'''$.netWt''',
-                                  ).toString(),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .labelSmallFamily,
-                                        letterSpacing: 0.0,
-                                        useGoogleFonts:
-                                            !FlutterFlowTheme.of(context)
-                                                .labelSmallIsCustom,
-                                      ),
+                          Expanded(
+                            flex: 5,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    getJsonField(
+                                      widget!.jsonitem,
+                                      r'''$.batchNo''',
+                                    ).toString(),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmallFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .labelSmallIsCustom,
+                                        ),
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 100.0,
-                                child: VerticalDivider(
-                                  width: 20.0,
-                                  thickness: 0.5,
-                                  color: FlutterFlowTheme.of(context).accent2,
+                                SizedBox(
+                                  height: 100.0,
+                                  child: VerticalDivider(
+                                    width: 20.0,
+                                    thickness: 0.5,
+                                    color: FlutterFlowTheme.of(context).accent2,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                          Expanded(
+                            flex: 4,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    getJsonField(
+                                      widget!.jsonitem,
+                                      r'''$.netWt''',
+                                    ).toString(),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelSmallFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .labelSmallIsCustom,
+                                        ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 100.0,
+                                  child: VerticalDivider(
+                                    width: 20.0,
+                                    thickness: 0.5,
+                                    color: FlutterFlowTheme.of(context).accent2,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                    Expanded(
+                      flex: 1,
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -2614,8 +2631,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                         ],
                       ),
                     ),
-                  ),
-                ],
+                  ].divide(SizedBox(height: 10.0)),
+                ),
               ),
             ),
           ),
