@@ -2852,8 +2852,7 @@ class _BarcodePrintNewWidgetState extends State<BarcodePrintNewWidget> {
                                       color: FlutterFlowTheme.of(context).info,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 5.0, 5.0, 5.0),
+                                      padding: EdgeInsets.all(5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
