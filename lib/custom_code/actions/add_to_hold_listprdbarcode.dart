@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> addToHoldListprdbarcode(
   ProductStructStruct document,
   int billno,
@@ -55,11 +57,8 @@ Future<List<dynamic>> addToHoldListprdbarcode(
   if (taxRecord != null) {
     double taxPer = taxRecord.percentage ?? 0.0;
     double price;
-    if (purchase) {
-      price = document.purchasePrice;
-    } else {
-      price = document.sellingPrice;
-    }
+
+    price = document.sellingPrice;
 
     // Calculate tax amount per item based on inclusive/exclusive option
     double taxAmtPerItem = (inclusiveorexclusive.toLowerCase() == 'inclusive')
@@ -91,7 +90,7 @@ Future<List<dynamic>> addToHoldListprdbarcode(
       "regionallang": document.regionalName,
       "barcode": document.barcode,
       "price": price,
-      "purPrice": price,
+      "purPrice": document.purchasePrice,
       "mrpPrice": document.mrpPrice.toDouble(),
       "quantity": quantity,
       "qtystring": quantity,
@@ -105,8 +104,11 @@ Future<List<dynamic>> addToHoldListprdbarcode(
       "taxAmt": double.parse(taxAmt.toStringAsFixed(2)),
       "disPer": double.parse(disPer.toStringAsFixed(2)),
       "disAmt": double.parse(disAmt.toStringAsFixed(2)),
-      "mfgDate": " ",
-      "expDate": " ",
+      "mfgDate": "",
+      "ingredient": "",
+      "expDate": "",
+      "batchNo": "",
+      "netWt": "",
       "stockable": document.stockable,
       "currentStock": document.stock,
     };

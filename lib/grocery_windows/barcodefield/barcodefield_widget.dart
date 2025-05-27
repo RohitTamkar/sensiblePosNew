@@ -1177,7 +1177,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                       selectedDateTimeBackgroundColor:
                                           FlutterFlowTheme.of(context).primary,
                                       selectedDateTimeForegroundColor:
-                                          FlutterFlowTheme.of(context).info,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryBackground,
                                       actionButtonForegroundColor:
                                           FlutterFlowTheme.of(context)
                                               .primaryText,
@@ -1412,7 +1413,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                       selectedDateTimeBackgroundColor:
                                           FlutterFlowTheme.of(context).primary,
                                       selectedDateTimeForegroundColor:
-                                          FlutterFlowTheme.of(context).info,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryBackground,
                                       actionButtonForegroundColor:
                                           FlutterFlowTheme.of(context)
                                               .primaryText,
@@ -2303,7 +2305,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                             FlutterFlowTheme.of(context)
                                                 .primary,
                                         selectedDateTimeForegroundColor:
-                                            FlutterFlowTheme.of(context).info,
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
                                         actionButtonForegroundColor:
                                             FlutterFlowTheme.of(context)
                                                 .primaryText,
@@ -2430,7 +2433,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                             FlutterFlowTheme.of(context)
                                                 .primary,
                                         selectedDateTimeForegroundColor:
-                                            FlutterFlowTheme.of(context).info,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryBackground,
                                         actionButtonForegroundColor:
                                             FlutterFlowTheme.of(context)
                                                 .primaryText,

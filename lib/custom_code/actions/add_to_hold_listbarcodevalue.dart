@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
+
+import 'index.dart'; // Imports other custom actions
 import 'index.dart'; // Imports other custom actions
 
 // Imports other custom actions
@@ -58,6 +60,8 @@ Future<List<dynamic>> addToHoldListbarcodevalue(
         itemList[j]["unit"] = unitType;
         itemList[j]["netWt"] = netWt;
         itemList[j]["batchNo"] = batchNo;
+        itemList[j]["ingredient"] = ingredient;
+        itemList[j]["mrpPrice"] = mrp;
         list[billIndex]["details"]["itemList"] = itemList;
         break;
       }
