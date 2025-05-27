@@ -130,7 +130,6 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
       children: [
         if (FFAppState().groceryshow)
           Container(
-            width: 1440.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
             ),
@@ -1754,7 +1753,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                       ),
                     ],
                   ),
-                  Expanded(
+                  Flexible(
                     flex: 1,
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -1970,7 +1969,6 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
               });
             },
             child: Container(
-              width: 1440.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
               ),
@@ -2558,7 +2556,7 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                         ),
                       ],
                     ),
-                    Expanded(
+                    Flexible(
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
