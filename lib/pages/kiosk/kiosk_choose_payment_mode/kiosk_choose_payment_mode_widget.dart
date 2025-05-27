@@ -1,16 +1,23 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
+import 'dart:convert';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
+import 'package:confetti_modualo_library_b75kfy/app_state.dart'
+    as confetti_modualo_library_b75kfy_app_state;
+import 'package:confetti_modualo_library_b75kfy/custom_code/actions/index.dart'
+    as confetti_modualo_library_b75kfy_actions;
+import 'package:confetti_modualo_library_b75kfy/custom_code/widgets/index.dart'
+    as confetti_modualo_library_b75kfy_custom_widgets;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -83,6 +90,7 @@ class _KioskChoosePaymentModeWidgetState
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
+    context.watch<confetti_modualo_library_b75kfy_app_state.FFAppState>();
 
     return Title(
         title: 'KioskChoosePaymentMode',
@@ -119,53 +127,79 @@ class _KioskChoosePaymentModeWidgetState
                         updateCallback: () => safeSetState(() {}),
                         child: KioskHeaderWidget(),
                       ),
-                      Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 20.0, 0.0),
-                          child: FlutterFlowIconButton(
-                            borderColor: FlutterFlowTheme.of(context).primary,
-                            borderRadius: 15.0,
-                            borderWidth: 0.5,
-                            buttonSize: 65.0,
-                            fillColor: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            icon: Icon(
-                              Icons.keyboard_backspace_outlined,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 40.0,
-                            ),
-                            onPressed: () async {
-                              context.goNamed(
-                                KioskBillScreenWidget.routeName,
-                                queryParameters: {
-                                  'doc': serializeParam(
-                                    widget!.doc,
-                                    ParamType.DocumentReference,
-                                  ),
-                                  'shiftdoc': serializeParam(
-                                    widget!.shiftdetails,
-                                    ParamType.JSON,
-                                  ),
-                                  'appsetting': serializeParam(
-                                    widget!.appSettings,
-                                    ParamType.Document,
-                                  ),
-                                  'taxcollection': serializeParam(
-                                    widget!.taxcollection,
-                                    ParamType.Document,
-                                    isList: true,
-                                  ),
-                                }.withoutNulls,
-                                extra: <String, dynamic>{
-                                  'appsetting': widget!.appSettings,
-                                  'taxcollection': widget!.taxcollection,
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Align(
+                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 20.0, 0.0),
+                              child: FlutterFlowIconButton(
+                                borderColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                borderRadius: 15.0,
+                                borderWidth: 0.5,
+                                buttonSize: 65.0,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                icon: Icon(
+                                  Icons.keyboard_backspace_outlined,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 40.0,
+                                ),
+                                onPressed: () async {
+                                  context.goNamed(
+                                    KioskBillScreenWidget.routeName,
+                                    queryParameters: {
+                                      'doc': serializeParam(
+                                        widget!.doc,
+                                        ParamType.DocumentReference,
+                                      ),
+                                      'shiftdoc': serializeParam(
+                                        widget!.shiftdetails,
+                                        ParamType.JSON,
+                                      ),
+                                      'appsetting': serializeParam(
+                                        widget!.appSettings,
+                                        ParamType.Document,
+                                      ),
+                                      'taxcollection': serializeParam(
+                                        widget!.taxcollection,
+                                        ParamType.Document,
+                                        isList: true,
+                                      ),
+                                    }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      'appsetting': widget!.appSettings,
+                                      'taxcollection': widget!.taxcollection,
+                                    },
+                                  );
                                 },
-                              );
-                            },
+                              ),
+                            ),
                           ),
-                        ),
+                          Align(
+                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            child:
+                                confetti_modualo_library_b75kfy_custom_widgets
+                                    .CustomConfetti(
+                              width: 200.0,
+                              height: 50.0,
+                              id: 'abc',
+                              degree: 360,
+                              isExplosion: true,
+                              gravity: 0.2,
+                              emissionFrequency: 0.02,
+                              duration: 3,
+                              particleDrag: 0.05,
+                              numberOfParticles: 25,
+                              displayTarget: false,
+                              shouldLoop: false,
+                            ),
+                          ),
+                        ],
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.max,
@@ -399,6 +433,17 @@ class _KioskChoosePaymentModeWidgetState
                                                       .toList()
                                                       .firstOrNull!
                                                       .value,
+                                                );
+                                                await confetti_modualo_library_b75kfy_actions
+                                                    .startConfetti(
+                                                  'abc',
+                                                );
+                                                await Future.delayed(
+                                                    const Duration(
+                                                        milliseconds: 3000));
+                                                await confetti_modualo_library_b75kfy_actions
+                                                    .stopConfetti(
+                                                  'abc',
                                                 );
                                               } else {
                                                 await showDialog(

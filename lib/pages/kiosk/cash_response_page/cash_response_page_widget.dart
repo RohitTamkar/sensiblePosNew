@@ -2,7 +2,6 @@ import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/cash_confirm_order/cash_confirm_order_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
@@ -10,8 +9,11 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
+import 'package:confetti_modualo_library_b75kfy/app_state.dart'
+    as confetti_modualo_library_b75kfy_app_state;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -61,12 +63,10 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
         FFAppState().outletIdRef!.id,
       );
       FFAppState().shiftDetailsNEw = _model.shiftDetailnewweb!;
-      safeSetState(() {});
       FFAppState().shiftDetailsJson = _model.shiftDetailnewweb!;
       FFAppState().kioskAmt = FFAppState().finalAmt;
       safeSetState(() {});
       FFAppState().shiftexist = 'True';
-      safeSetState(() {});
       if (!FFAppState().isBillPrinted) {
         _model.invoicecount = await queryInvoiceRecordOnce(
           parent: FFAppState().outletIdRef,
@@ -90,23 +90,18 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                     r'''$.shiftId''',
                   ).toString().toString())) {
             FFAppState().count = _model.invoicecount!.count;
-            safeSetState(() {});
           } else {
             FFAppState().count = 500;
-            safeSetState(() {});
           }
         } else {
           if (_model.invoicecount?.count != null) {
             FFAppState().count = _model.invoicecount!.count;
-            safeSetState(() {});
           } else {
             FFAppState().count = 0;
-            safeSetState(() {});
           }
         }
 
         FFAppState().count = FFAppState().count + 1;
-        safeSetState(() {});
         _model.prdListkiosk = await actions.filterProducts(
           FFAppState().selBill,
           FFAppState().allBillsList.toList(),
@@ -270,9 +265,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
             _model.shiftDetailnewweb,
             r'''$.billCount''',
           );
-          safeSetState(() {});
           FFAppState().billcount = FFAppState().billcount + 1;
-          safeSetState(() {});
           _model.shiftSummarRkiosk = await actions.calShiftSummary(
             _model.docInvoicekiosk!,
             FFAppState().shiftDetailsJson,
@@ -348,7 +341,6 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
         );
         if (_model.isConnected!) {
           FFAppState().lastBill = FFAppState().finalAmt;
-          FFAppState().update(() {});
           _model.returnedList2kiosk = await actions.selectBillPrint(
             FFAppState().selBill.toString(),
             FFAppState().allBillsList.toList(),
@@ -446,7 +438,6 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
               .firstOrNull!
               .value) {
             FFAppState().startLoop = 0;
-            safeSetState(() {});
             while (FFAppState().startLoop < _model.prdListkiosk!.length) {
               _model.stockupdateprd = await queryProductRecordOnce(
                 parent: FFAppState().outletIdRef,
@@ -476,7 +467,6 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                 });
               }
               FFAppState().startLoop = FFAppState().startLoop + 1;
-              safeSetState(() {});
             }
           }
           await actions.removeFromAllBillList(
@@ -484,7 +474,6 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
           );
           await actions.clearValue();
           FFAppState().subTotal = 0.0;
-          FFAppState().update(() {});
           FFAppState().finalAmt = 0.0;
           FFAppState().billAmt = 0.0;
           FFAppState().count = FFAppState().count;
@@ -642,6 +631,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
+    context.watch<confetti_modualo_library_b75kfy_app_state.FFAppState>();
 
     return Title(
         title: 'cashResponsePage',
