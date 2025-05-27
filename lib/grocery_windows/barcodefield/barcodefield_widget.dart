@@ -1153,7 +1153,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                       headerBackgroundColor:
                                           FlutterFlowTheme.of(context).primary,
                                       headerForegroundColor:
-                                          FlutterFlowTheme.of(context).info,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryBackground,
                                       headerTextStyle: FlutterFlowTheme.of(
                                               context)
                                           .headlineLarge
@@ -1389,7 +1390,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                       headerBackgroundColor:
                                           FlutterFlowTheme.of(context).primary,
                                       headerForegroundColor:
-                                          FlutterFlowTheme.of(context).info,
+                                          FlutterFlowTheme.of(context)
+                                              .primaryBackground,
                                       headerTextStyle: FlutterFlowTheme.of(
                                               context)
                                           .headlineLarge
@@ -2280,7 +2282,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                             FlutterFlowTheme.of(context)
                                                 .primary,
                                         headerForegroundColor:
-                                            FlutterFlowTheme.of(context).info,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryBackground,
                                         headerTextStyle: FlutterFlowTheme.of(
                                                 context)
                                             .headlineLarge
@@ -2408,7 +2411,8 @@ class _BarcodefieldWidgetState extends State<BarcodefieldWidget> {
                                             FlutterFlowTheme.of(context)
                                                 .primary,
                                         headerForegroundColor:
-                                            FlutterFlowTheme.of(context).info,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryBackground,
                                         headerTextStyle: FlutterFlowTheme.of(
                                                 context)
                                             .headlineLarge
