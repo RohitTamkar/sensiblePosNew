@@ -5741,49 +5741,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             await _model.invonlineCopy!.reference.update(createInvoiceRecordData(
                                                                               id: _model.invonlineCopy?.reference.id,
                                                                             ));
-                                                                            _model.hiveInvoiceDataupi =
-                                                                                await actions.addInvoiceBillhive(
-                                                                              _model.invonlineCopy!.reference.id,
-                                                                              functions.genInvoiceNum(FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
-                                                                              valueOrDefault<String>(
-                                                                                FFAppState().setCustRef?.id,
-                                                                                'NA',
-                                                                              ),
-                                                                              functions.timestampToMili(getCurrentTimestamp),
-                                                                              functions.getDayId(),
-                                                                              'DIGITAL',
-                                                                              valueOrDefault<double>(
-                                                                                FFAppState().disAmt,
-                                                                                0.0,
-                                                                              ),
-                                                                              valueOrDefault<double>(
-                                                                                FFAppState().disPer,
-                                                                                0.0,
-                                                                              ),
-                                                                              valueOrDefault<double>(
-                                                                                FFAppState().delCharges,
-                                                                                0.0,
-                                                                              ),
-                                                                              FFAppState().taxamt,
-                                                                              valueOrDefault<double>(
-                                                                                FFAppState().billAmt,
-                                                                                0.0,
-                                                                              ),
-                                                                              valueOrDefault<double>(
-                                                                                FFAppState().finalAmt,
-                                                                                0.0,
-                                                                              ),
-                                                                              0.0,
-                                                                              _model.prdlistsavebillupi?.toList(),
-                                                                              getJsonField(
-                                                                                FFAppState().shiftDetailsJson,
-                                                                                r'''$.shiftId''',
-                                                                              ).toString(),
-                                                                              true,
-                                                                              FFAppState().invoiceStructVersion,
-                                                                            );
-                                                                            _shouldSetState =
-                                                                                true;
                                                                           } else {
                                                                             await showDialog(
                                                                               context: context,
@@ -5809,26 +5766,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             r'''$.shiftExists''',
                                                                           )) {
                                                                             _model.shiftSummarResultsNew2Copy =
-                                                                                await actions.calShiftSummaryNew(
-                                                                              _model.hiveInvoiceDataupi!,
+                                                                                await actions.calShiftSummary(
+                                                                              _model.invonlineCopy!,
                                                                               FFAppState().shiftDetailsJson,
-                                                                            );
-                                                                            _shouldSetState =
-                                                                                true;
-                                                                            _model.shiftidhive2Copy =
-                                                                                await actions.shiftIdtoInt(
-                                                                              getJsonField(
-                                                                                FFAppState().shiftDetailsJson,
-                                                                                r'''$.shiftId''',
-                                                                              ).toString(),
-                                                                            );
-                                                                            _shouldSetState =
-                                                                                true;
-                                                                            _model.getOfflineShiftdetailsCopy =
-                                                                                await actions.hiveShiftCrud(
-                                                                              _model.shiftidhive2Copy,
-                                                                              FFAppState().shiftDetails,
-                                                                              'get',
                                                                             );
                                                                             _shouldSetState =
                                                                                 true;
@@ -5897,7 +5837,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 ..hivekey = FFAppState().shiftDetails.hivekey
                                                                                 ..id = FFAppState().shiftDetails.id,
                                                                             );
-                                                                            safeSetState(() {});
                                                                             if (_model.internetconCopy!) {
                                                                               _model.shiftondataCopy = await queryShiftRecordOnce(
                                                                                 parent: FFAppState().outletIdRef,
@@ -5971,12 +5910,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   r'''$.shiftId''',
                                                                                 ).toString(),
                                                                               ));
-                                                                              _model.updatedShift23Copy = await actions.hiveShiftCrud(
-                                                                                _model.getOfflineShiftdetailsCopy?.newIDShift,
-                                                                                FFAppState().shiftDetails,
-                                                                                'update',
-                                                                              );
-                                                                              _shouldSetState = true;
                                                                             } else {
                                                                               if (_shouldSetState)
                                                                                 safeSetState(() {});
@@ -5985,7 +5918,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
 
                                                                             if (productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableStock').toList().firstOrNull!.value) {
                                                                               FFAppState().startLoop = 0;
-                                                                              safeSetState(() {});
                                                                               while (FFAppState().startLoop < _model.prdlistsavebillupi!.length) {
                                                                                 _model.stockupdateprdCopy = await queryProductRecordOnce(
                                                                                   parent: FFAppState().outletIdRef,
@@ -6051,7 +5983,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                       ..hivekey = _model.itemprdCopy?.hivekey
                                                                                       ..version = _model.itemprdCopy?.version,
                                                                                   );
-                                                                                  safeSetState(() {});
                                                                                   _model.productupdatedCopy = await actions.hiveProductCrud(
                                                                                     FFAppState().productHiveput.hivekey,
                                                                                     FFAppState().productHiveput,
@@ -6060,14 +5991,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   _shouldSetState = true;
                                                                                   FFAppState().productHive = [];
                                                                                   FFAppState().productHiveput = ProductStructStruct();
-                                                                                  safeSetState(() {});
                                                                                   _model.newupdatedproductlist2Copy = await actions.getProductlistHive();
                                                                                   _shouldSetState = true;
                                                                                   FFAppState().productHive = _model.newupdatedproductlist2Copy!.toList().cast<ProductStructStruct>();
-                                                                                  safeSetState(() {});
                                                                                 }
                                                                                 FFAppState().startLoop = FFAppState().startLoop + 1;
-                                                                                safeSetState(() {});
                                                                               }
                                                                               await actions.updateProductStocknew(
                                                                                 _model.prdlistsavebillupi!.toList(),
@@ -6081,7 +6009,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             });
                                                                             FFAppState().lastBill =
                                                                                 FFAppState().finalAmt;
-                                                                            FFAppState().update(() {});
+                                                                            safeSetState(() {});
                                                                             _model.prdid =
                                                                                 '0';
                                                                             safeSetState(() {});
@@ -6091,10 +6019,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             FFAppState().subTotal =
                                                                                 0.0;
                                                                             FFAppState().count =
-                                                                                _model.updatedShift23Copy!.billCount;
+                                                                                FFAppState().shiftDetails.billCount;
                                                                             FFAppState().delCharges =
                                                                                 0.0;
-                                                                            FFAppState().update(() {});
                                                                             FFAppState().oldBalance =
                                                                                 0;
                                                                             FFAppState().custCredit =
@@ -6114,7 +6041,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 0.0;
                                                                             FFAppState().billAmt =
                                                                                 0.0;
-                                                                            FFAppState().update(() {});
+                                                                            safeSetState(() {});
                                                                             if (_shouldSetState)
                                                                               safeSetState(() {});
                                                                             return;
@@ -6393,50 +6320,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               await _model.invonline!.reference.update(createInvoiceRecordData(
                                                                                 id: _model.invonline?.reference.id,
                                                                               ));
-                                                                              _model.hiveInvoiceDataCopyCopy = await actions.addInvoiceBillhive(
-                                                                                valueOrDefault<String>(
-                                                                                  _model.invonline?.reference.id,
-                                                                                  'NA',
-                                                                                ),
-                                                                                functions.genInvoiceNum(FFAppState().newcount, FFAppState().shiftDetails.shiftNo),
-                                                                                valueOrDefault<String>(
-                                                                                  FFAppState().setCustRef?.id,
-                                                                                  'NA',
-                                                                                ),
-                                                                                functions.timestampToMili(getCurrentTimestamp),
-                                                                                functions.getDayId(),
-                                                                                _model.dropDownValue!,
-                                                                                valueOrDefault<double>(
-                                                                                  FFAppState().disAmt,
-                                                                                  0.0,
-                                                                                ),
-                                                                                valueOrDefault<double>(
-                                                                                  FFAppState().disPer,
-                                                                                  0.0,
-                                                                                ),
-                                                                                valueOrDefault<double>(
-                                                                                  FFAppState().delCharges,
-                                                                                  0.0,
-                                                                                ),
-                                                                                FFAppState().taxamt,
-                                                                                valueOrDefault<double>(
-                                                                                  FFAppState().billAmt,
-                                                                                  0.0,
-                                                                                ),
-                                                                                valueOrDefault<double>(
-                                                                                  FFAppState().finalAmt,
-                                                                                  0.0,
-                                                                                ),
-                                                                                0.0,
-                                                                                _model.prdlistsavebill?.toList(),
-                                                                                getJsonField(
-                                                                                  FFAppState().shiftDetailsJson,
-                                                                                  r'''$.shiftId''',
-                                                                                ).toString(),
-                                                                                true,
-                                                                                FFAppState().invoiceStructVersion,
-                                                                              );
-                                                                              _shouldSetState = true;
                                                                             } else {
                                                                               await showDialog(
                                                                                 context: context,
@@ -6461,22 +6344,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               FFAppState().shiftDetailsJson,
                                                                               r'''$.shiftExists''',
                                                                             )) {
-                                                                              _model.shiftSummarResultsNew2 = await actions.calShiftSummaryNew(
-                                                                                _model.hiveInvoiceDataCopyCopy!,
+                                                                              _model.shiftSummarResultsNew2 = await actions.calShiftSummary(
+                                                                                _model.invonline!,
                                                                                 FFAppState().shiftDetailsJson,
-                                                                              );
-                                                                              _shouldSetState = true;
-                                                                              _model.shiftidhive2 = await actions.shiftIdtoInt(
-                                                                                getJsonField(
-                                                                                  FFAppState().shiftDetailsJson,
-                                                                                  r'''$.shiftId''',
-                                                                                ).toString(),
-                                                                              );
-                                                                              _shouldSetState = true;
-                                                                              _model.getOfflineShiftdetails = await actions.hiveShiftCrud(
-                                                                                _model.shiftidhive2,
-                                                                                FFAppState().shiftDetails,
-                                                                                'get',
                                                                               );
                                                                               _shouldSetState = true;
                                                                               FFAppState().updateShiftDetailsStruct(
@@ -6615,12 +6485,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                     r'''$.shiftId''',
                                                                                   ).toString(),
                                                                                 ));
-                                                                                _model.updatedShift23 = await actions.hiveShiftCrud(
-                                                                                  _model.getOfflineShiftdetails?.newIDShift,
-                                                                                  FFAppState().shiftDetails,
-                                                                                  'update',
-                                                                                );
-                                                                                _shouldSetState = true;
                                                                               } else {
                                                                                 if (_shouldSetState) safeSetState(() {});
                                                                                 return;
@@ -6729,7 +6593,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               await actions.clearValue();
                                                                               FFAppState().noOfItems = 0;
                                                                               FFAppState().subTotal = 0.0;
-                                                                              FFAppState().count = _model.updatedShift23!.billCount;
+                                                                              FFAppState().count = FFAppState().shiftDetails.billCount;
                                                                               FFAppState().delCharges = 0.0;
                                                                               FFAppState().update(() {});
                                                                               FFAppState().oldBalance = 0;

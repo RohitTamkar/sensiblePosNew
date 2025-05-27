@@ -19026,6 +19026,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // KioskChoosePaymentMode
   {
+    '6pjr7fhs': {
+      'en': 'COUPON CODE',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+    '8hhr58l4': {
+      'en': 'Apply',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
     'sw0ojh01': {
       'en': 'Choose Payment Type ',
       'hi': 'भुगतान प्रकार चुनें',

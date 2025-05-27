@@ -27,6 +27,10 @@ class KioskChoosePaymentModeModel
   FooterRecord? footer;
   // Model for KioskHeader component.
   late KioskHeaderModel kioskHeaderModel;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   OutletRecord? outletDOc;
   // Stores action output result for [Backend Call - API (razorPaycreateQR)] action in Button widget.
@@ -50,5 +54,7 @@ class KioskChoosePaymentModeModel
   @override
   void dispose() {
     kioskHeaderModel.dispose();
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
   }
 }

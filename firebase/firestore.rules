@@ -440,5 +440,17 @@ service cloud.firestore {
       allow read: if true;
     }
 
+
+    match /OUTLET/{parent}/COUPONS_CODE/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/COUPONS_CODE/{document} {
+      allow read: if true;
+    }
+
   }
 }

@@ -205,18 +205,10 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   bool? internetconCopy;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   InvoiceRecord? invonlineCopy;
-  // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
-  InvoiceStructStruct? hiveInvoiceDataupi;
-  // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
+  // Stores action output result for [Custom Action - calShiftSummary] action in Button widget.
   dynamic? shiftSummarResultsNew2Copy;
-  // Stores action output result for [Custom Action - shiftIdtoInt] action in Button widget.
-  int? shiftidhive2Copy;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? getOfflineShiftdetailsCopy;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   ShiftRecord? shiftondataCopy;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? updatedShift23Copy;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   ProductRecord? stockupdateprdCopy;
   // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
@@ -233,18 +225,10 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   bool? internetcon;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   InvoiceRecord? invonline;
-  // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
-  InvoiceStructStruct? hiveInvoiceDataCopyCopy;
-  // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
+  // Stores action output result for [Custom Action - calShiftSummary] action in Button widget.
   dynamic? shiftSummarResultsNew2;
-  // Stores action output result for [Custom Action - shiftIdtoInt] action in Button widget.
-  int? shiftidhive2;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? getOfflineShiftdetails;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   ShiftRecord? shiftondata;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? updatedShift23;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   ProductRecord? stockupdateprd;
   // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
