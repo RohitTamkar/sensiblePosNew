@@ -19,6 +19,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:typed_data';
 
 import 'package:flutter/services.dart';
@@ -661,9 +663,14 @@ Future printBillPreview(
 
   if (bytes.length > 0) {
     //_printEscPos(bytes, generator);
-
+    var bluetoothPrinter;
     if (selectedPrinter == null) return;
-    var bluetoothPrinter = selectedPrinter[FFAppState().index]!;
+    print(FFAppState().navigate);
+    if (FFAppState().navigate == 'KIOSK') {
+      bluetoothPrinter = selectedPrinter[0]!;
+    } else {
+      bluetoothPrinter = selectedPrinter[FFAppState().index]!;
+    }
 
     switch (bluetoothPrinter["typePrinter"]) {
       case PrinterType.usb:
