@@ -1,5 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
+import 'package:confetti_modualo_library_b75kfy/app_state.dart'
+    as confetti_modualo_library_b75kfy_app_state;
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -48,6 +50,9 @@ class _AlertWidgetState extends State<AlertWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+    context.watch<confetti_modualo_library_b75kfy_app_state.FFAppState>();
+
     return Container(
       width: 270.0,
       height: 200.0,
@@ -89,6 +94,20 @@ class _AlertWidgetState extends State<AlertWidget> {
                               FlutterFlowTheme.of(context).displayLargeFamily,
                           color: Color(0xFF000241),
                           fontSize: 18.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w600,
+                          useGoogleFonts: !FlutterFlowTheme.of(context)
+                              .displayLargeIsCustom,
+                        ),
+                  ),
+                  Text(
+                    'You Save ₹${FFAppState().disAmt.toString()}!',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).displayLarge.override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).displayLargeFamily,
+                          color: Color(0xFF000241),
+                          fontSize: 12.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                           useGoogleFonts: !FlutterFlowTheme.of(context)
