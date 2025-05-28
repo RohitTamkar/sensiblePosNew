@@ -124,520 +124,739 @@ class _KioskChoosePaymentModeWidgetState
                         updateCallback: () => safeSetState(() {}),
                         child: KioskHeaderWidget(),
                       ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 20.0, 0.0),
-                              child: FlutterFlowIconButton(
-                                borderColor:
-                                    FlutterFlowTheme.of(context).primary,
-                                borderRadius: 15.0,
-                                borderWidth: 0.5,
-                                buttonSize: 65.0,
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                icon: Icon(
-                                  Icons.keyboard_backspace_outlined,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 40.0,
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 20.0, 0.0),
+                                child: FlutterFlowIconButton(
+                                  borderColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  borderRadius: 15.0,
+                                  borderWidth: 0.5,
+                                  buttonSize: 65.0,
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  icon: Icon(
+                                    Icons.keyboard_backspace_outlined,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    size: 40.0,
+                                  ),
+                                  onPressed: () async {
+                                    context.goNamed(
+                                      KioskBillScreenWidget.routeName,
+                                      queryParameters: {
+                                        'doc': serializeParam(
+                                          widget!.doc,
+                                          ParamType.DocumentReference,
+                                        ),
+                                        'shiftdoc': serializeParam(
+                                          widget!.shiftdetails,
+                                          ParamType.JSON,
+                                        ),
+                                        'appsetting': serializeParam(
+                                          widget!.appSettings,
+                                          ParamType.Document,
+                                        ),
+                                        'taxcollection': serializeParam(
+                                          widget!.taxcollection,
+                                          ParamType.Document,
+                                          isList: true,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        'appsetting': widget!.appSettings,
+                                        'taxcollection': widget!.taxcollection,
+                                      },
+                                    );
+                                  },
                                 ),
-                                onPressed: () async {
-                                  context.goNamed(
-                                    KioskBillScreenWidget.routeName,
-                                    queryParameters: {
-                                      'doc': serializeParam(
-                                        widget!.doc,
-                                        ParamType.DocumentReference,
-                                      ),
-                                      'shiftdoc': serializeParam(
-                                        widget!.shiftdetails,
-                                        ParamType.JSON,
-                                      ),
-                                      'appsetting': serializeParam(
-                                        widget!.appSettings,
-                                        ParamType.Document,
-                                      ),
-                                      'taxcollection': serializeParam(
-                                        widget!.taxcollection,
-                                        ParamType.Document,
-                                        isList: true,
-                                      ),
-                                    }.withoutNulls,
-                                    extra: <String, dynamic>{
-                                      'appsetting': widget!.appSettings,
-                                      'taxcollection': widget!.taxcollection,
-                                    },
-                                  );
-                                },
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 10.0),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        25.0, 8.0, 25.0, 8.0),
-                                    child: Icon(
-                                      Icons.currency_rupee_outlined,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      size: 40.0,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Text(
-                                FFAppState().finalAmt.toString(),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .bodyMediumFamily,
-                                      fontSize: 16.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w600,
-                                      useGoogleFonts:
-                                          !FlutterFlowTheme.of(context)
-                                              .bodyMediumIsCustom,
-                                    ),
-                              ),
-                              if (valueOrDefault<bool>(
-                                widget!.appSettings?.settingList
-                                    ?.where((e) => e.title == 'applyCouponCode')
-                                    .toList()
-                                    ?.firstOrNull
-                                    ?.value,
-                                false,
-                              ))
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      25.0, 0.0, 0.0, 10.0),
-                                  child: Container(
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 40.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Container(
+                                    width: 250.0,
+                                    height: 50.0,
                                     decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
                                       borderRadius: BorderRadius.circular(10.0),
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        width: 1.0,
+                                      ),
                                     ),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Container(
-                                          width: 200.0,
-                                          child: TextFormField(
-                                            controller: _model.textController,
-                                            focusNode:
-                                                _model.textFieldFocusNode,
-                                            autofocus: false,
-                                            obscureText: false,
-                                            decoration: InputDecoration(
-                                              isDense: true,
-                                              labelStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMediumFamily,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts:
-                                                            !FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelMediumIsCustom,
-                                                      ),
-                                              hintText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                '6pjr7fhs' /* COUPON CODE */,
-                                              ),
-                                              hintStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMediumFamily,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts:
-                                                            !FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelMediumIsCustom,
-                                                      ),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0x00000000),
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0x00000000),
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              focusedErrorBorder:
-                                                  OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              filled: true,
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20.0, 10.0, 20.0, 10.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Icon(
+                                            Icons.currency_rupee_outlined,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            size: 24.0,
+                                          ),
+                                          Text(
+                                            valueOrDefault<String>(
+                                              (FFAppState().finalAmt -
+                                                      FFAppState().disAmt)
+                                                  .toString(),
+                                              '0',
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
+                                                .headlineLarge
                                                 .override(
                                                   fontFamily:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMediumFamily,
-                                                  letterSpacing: 0.0,
+                                                          .headlineLargeFamily,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  letterSpacing: 1.0,
+                                                  fontWeight: FontWeight.w600,
                                                   useGoogleFonts:
                                                       !FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMediumIsCustom,
+                                                          .headlineLargeIsCustom,
                                                 ),
-                                            cursorColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                            validator: _model
-                                                .textControllerValidator
-                                                .asValidator(context),
                                           ),
-                                        ),
-                                        FFButtonWidget(
-                                          onPressed: () async {
-                                            if (_model.textController.text !=
-                                                    null &&
-                                                _model.textController.text !=
-                                                    '') {
-                                              _model.coupDoc =
-                                                  await queryCouponsCodeRecordOnce(
-                                                parent:
-                                                    FFAppState().outletIdRef,
-                                                queryBuilder:
-                                                    (couponsCodeRecord) =>
-                                                        couponsCodeRecord
-                                                            .where(
-                                                              'couponCode',
-                                                              isEqualTo: _model
-                                                                  .textController
-                                                                  .text,
-                                                            )
-                                                            .where(
-                                                              'isActive',
-                                                              isEqualTo: true,
-                                                            ),
-                                                singleRecord: true,
-                                              ).then((s) => s.firstOrNull);
-                                              if (_model.coupDoc != null) {
-                                                _model.disAmount = await actions
-                                                    .applyCouponCode(
-                                                  FFAppState().finalAmt,
-                                                  _model.coupDoc,
-                                                );
-                                                FFAppState().disAmt =
-                                                    _model.disAmount!;
-                                                safeSetState(() {});
-                                                _model.res23456 = await actions
-                                                    .calSubTotalForHoldListkiosk2(
-                                                  valueOrDefault<String>(
-                                                    FFAppState()
-                                                        .selBill
-                                                        .toString(),
-                                                    '1',
-                                                  ),
-                                                  FFAppState()
-                                                      .allBillsList
-                                                      .toList(),
-                                                  functions.enabletaxinclusive(
-                                                      widget!.appSettings!
-                                                          .settingList
-                                                          .where((e) =>
-                                                              e.title ==
-                                                              'enableInclusiveTax')
-                                                          .toList()
-                                                          .firstOrNull!
-                                                          .value),
-                                                  widget!
-                                                      .appSettings!.settingList
-                                                      .where((e) =>
-                                                          e.title ==
-                                                          'qtyWiseParcelCharges')
-                                                      .toList()
-                                                      .firstOrNull!
-                                                      .value,
-                                                );
-                                                _model.reuslt123 =
-                                                    await actions.calBillAmt2(
-                                                  valueOrDefault<double>(
-                                                    FFAppState().disAmt,
-                                                    0.0,
-                                                  ),
-                                                  FFAppState().delCharges,
-                                                  widget!
-                                                      .appSettings!.settingList
-                                                      .where((e) =>
-                                                          e.title ==
-                                                          'qtyWiseParcelCharges')
-                                                      .toList()
-                                                      .firstOrNull!
-                                                      .value,
-                                                );
-                                                await showModalBottomSheet(
-                                                  isScrollControlled: true,
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  enableDrag: false,
-                                                  context: context,
-                                                  builder: (context) {
-                                                    return GestureDetector(
-                                                      onTap: () {
-                                                        FocusScope.of(context)
-                                                            .unfocus();
-                                                        FocusManager.instance
-                                                            .primaryFocus
-                                                            ?.unfocus();
-                                                      },
-                                                      child: Padding(
-                                                        padding: MediaQuery
-                                                            .viewInsetsOf(
-                                                                context),
-                                                        child: Container(
-                                                          height: 200.0,
-                                                          child: AlertWidget(),
-                                                        ),
-                                                      ),
-                                                    );
-                                                  },
-                                                ).then((value) =>
-                                                    safeSetState(() {}));
-                                              } else {
-                                                await showDialog(
-                                                  context: context,
-                                                  builder:
-                                                      (alertDialogContext) {
-                                                    return AlertDialog(
-                                                      title: Text('Invalid'),
-                                                      content: Text(
-                                                          'Coupon Code Invalid or Expired'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: Text('Ok'),
-                                                        ),
-                                                      ],
-                                                    );
-                                                  },
-                                                );
-                                              }
-                                            } else {
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: Text('Error'),
-                                                    content: Text(
-                                                        'Input Coupon Code...'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
-                                              );
-                                            }
-
-                                            safeSetState(() {});
-                                          },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            '8hhr58l4' /* Apply */,
-                                          ),
-                                          icon: Icon(
-                                            Icons.confirmation_num,
-                                            size: 15.0,
-                                          ),
-                                          options: FFButtonOptions(
-                                            height: 40.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmallFamily,
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                      useGoogleFonts:
-                                                          !FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmallIsCustom,
-                                                    ),
-                                            elevation: 0.0,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                        ),
-                                      ].divide(SizedBox(width: 15.0)),
+                                        ].divide(SizedBox(width: 5.0)),
+                                      ),
                                     ),
                                   ),
-                                ),
-                            ],
-                          ),
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'sw0ojh01' /* Choose Payment Type  */,
+                                  if (valueOrDefault<bool>(
+                                    widget!.appSettings?.settingList
+                                        ?.where(
+                                            (e) => e.title == 'applyCouponCode')
+                                        .toList()
+                                        ?.firstOrNull
+                                        ?.value,
+                                    false,
+                                  ))
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Container(
+                                                width: 250.0,
+                                                child: TextFormField(
+                                                  controller:
+                                                      _model.textController,
+                                                  focusNode:
+                                                      _model.textFieldFocusNode,
+                                                  autofocus: false,
+                                                  obscureText: false,
+                                                  decoration: InputDecoration(
+                                                    isDense: false,
+                                                    labelStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumIsCustom,
+                                                            ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      '6pjr7fhs' /* YOUR COUPON CODE */,
+                                                    ),
+                                                    hintStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              useGoogleFonts:
+                                                                  !FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumIsCustom,
+                                                            ),
+                                                    enabledBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .success,
+                                                        width: 1.5,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
+                                                    ),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            Color(0x00000000),
+                                                        width: 1.5,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
+                                                    ),
+                                                    errorBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 1.5,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
+                                                    ),
+                                                    focusedErrorBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 1.5,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
+                                                    ),
+                                                    filled: true,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
+                                                  ),
+                                                  style:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeIsCustom,
+                                                          ),
+                                                  cursorColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                  validator: _model
+                                                      .textControllerValidator
+                                                      .asValidator(context),
+                                                ),
+                                              ),
+                                              FFButtonWidget(
+                                                onPressed: () async {
+                                                  if (_model.textController
+                                                              .text !=
+                                                          null &&
+                                                      _model.textController
+                                                              .text !=
+                                                          '') {
+                                                    _model.coupDoc =
+                                                        await queryCouponsCodeRecordOnce(
+                                                      parent: FFAppState()
+                                                          .outletIdRef,
+                                                      queryBuilder:
+                                                          (couponsCodeRecord) =>
+                                                              couponsCodeRecord
+                                                                  .where(
+                                                                    'couponCode',
+                                                                    isEqualTo: _model
+                                                                        .textController
+                                                                        .text,
+                                                                  )
+                                                                  .where(
+                                                                    'isActive',
+                                                                    isEqualTo:
+                                                                        true,
+                                                                  ),
+                                                      singleRecord: true,
+                                                    ).then((s) =>
+                                                            s.firstOrNull);
+                                                    if (_model.coupDoc !=
+                                                        null) {
+                                                      _model.disAmount =
+                                                          await actions
+                                                              .applyCouponCode(
+                                                        FFAppState().finalAmt,
+                                                        _model.coupDoc,
+                                                      );
+                                                      FFAppState().disAmt =
+                                                          _model.disAmount!;
+                                                      safeSetState(() {});
+                                                      _model.res23456 =
+                                                          await actions
+                                                              .calSubTotalForHoldListkiosk2(
+                                                        valueOrDefault<String>(
+                                                          FFAppState()
+                                                              .selBill
+                                                              .toString(),
+                                                          '1',
+                                                        ),
+                                                        FFAppState()
+                                                            .allBillsList
+                                                            .toList(),
+                                                        functions.enabletaxinclusive(
+                                                            widget!.appSettings!
+                                                                .settingList
+                                                                .where((e) =>
+                                                                    e.title ==
+                                                                    'enableInclusiveTax')
+                                                                .toList()
+                                                                .firstOrNull!
+                                                                .value),
+                                                        widget!.appSettings!
+                                                            .settingList
+                                                            .where((e) =>
+                                                                e.title ==
+                                                                'qtyWiseParcelCharges')
+                                                            .toList()
+                                                            .firstOrNull!
+                                                            .value,
+                                                      );
+                                                      _model.reuslt123 =
+                                                          await actions
+                                                              .calBillAmt2(
+                                                        valueOrDefault<double>(
+                                                          FFAppState().disAmt,
+                                                          0.0,
+                                                        ),
+                                                        FFAppState().delCharges,
+                                                        widget!.appSettings!
+                                                            .settingList
+                                                            .where((e) =>
+                                                                e.title ==
+                                                                'qtyWiseParcelCharges')
+                                                            .toList()
+                                                            .firstOrNull!
+                                                            .value,
+                                                      );
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return GestureDetector(
+                                                            onTap: () {
+                                                              FocusScope.of(
+                                                                      context)
+                                                                  .unfocus();
+                                                              FocusManager
+                                                                  .instance
+                                                                  .primaryFocus
+                                                                  ?.unfocus();
+                                                            },
+                                                            child: Padding(
+                                                              padding: MediaQuery
+                                                                  .viewInsetsOf(
+                                                                      context),
+                                                              child: Container(
+                                                                height: 200.0,
+                                                                child:
+                                                                    AlertWidget(),
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          safeSetState(() {}));
+                                                    } else {
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (alertDialogContext) {
+                                                          return AlertDialog(
+                                                            title:
+                                                                Text('Invalid'),
+                                                            content: Text(
+                                                                'Coupon Code Invalid or Expired'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext),
+                                                                child:
+                                                                    Text('Ok'),
+                                                              ),
+                                                            ],
+                                                          );
+                                                        },
+                                                      );
+                                                    }
+                                                  } else {
+                                                    await showDialog(
+                                                      context: context,
+                                                      builder:
+                                                          (alertDialogContext) {
+                                                        return AlertDialog(
+                                                          title: Text('Error'),
+                                                          content: Text(
+                                                              'Input Coupon Code...'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext),
+                                                              child: Text('Ok'),
+                                                            ),
+                                                          ],
+                                                        );
+                                                      },
+                                                    );
+                                                  }
+
+                                                  safeSetState(() {});
+                                                },
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '8hhr58l4' /* Apply */,
+                                                ),
+                                                icon: Icon(
+                                                  Icons.confirmation_num,
+                                                  size: 25.0,
+                                                ),
+                                                options: FFButtonOptions(
+                                                  height: 50.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          16.0, 0.0, 16.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .tertiary,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineLarge
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineLargeFamily,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts:
+                                                                !FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineLargeIsCustom,
+                                                          ),
+                                                  elevation: 0.0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10.0),
+                                                ),
+                                              ),
+                                            ].divide(SizedBox(width: 15.0)),
+                                          ),
+                                          Container(
+                                            height: 60.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                              border: Border.all(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiary,
+                                                width: 1.0,
+                                              ),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      20.0, 10.0, 20.0, 10.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.min,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'lzb51nn9' /* Discounted Amount */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .titleMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMediumFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .success,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleMediumIsCustom,
+                                                        ),
+                                                  ),
+                                                  Icon(
+                                                    Icons
+                                                        .currency_rupee_outlined,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .success,
+                                                    size: 30.0,
+                                                  ),
+                                                  Text(
+                                                    FFAppState()
+                                                        .finalAmt
+                                                        .toString(),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .displayLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .displayLargeFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .success,
+                                                          letterSpacing: 1.5,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          useGoogleFonts:
+                                                              !FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .displayLargeIsCustom,
+                                                        ),
+                                                  ),
+                                                ].divide(SizedBox(width: 5.0)),
+                                              ),
+                                            ),
+                                          ),
+                                        ].divide(SizedBox(height: 20.0)),
+                                      ),
+                                    ),
+                                ].divide(SizedBox(height: 20.0)),
+                              ),
                             ),
-                            style: FlutterFlowTheme.of(context)
-                                .displayLarge
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .displayLargeFamily,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  fontSize: 40.0,
-                                  letterSpacing: 5.0,
-                                  fontWeight: FontWeight.bold,
-                                  useGoogleFonts: !FlutterFlowTheme.of(context)
-                                      .displayLargeIsCustom,
-                                ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 20.0, 0.0, 80.0),
-                            child: Text(
+                            Text(
                               FFLocalizations.of(context).getText(
-                                '8bm0y3wk' /* Please Collect Your Token & Bi... */,
+                                'sw0ojh01' /* Choose Payment Type  */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .displayLarge
                                   .override(
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .displayLargeFamily,
-                                    color: FlutterFlowTheme.of(context)
-                                        .parkingSecondaryBackground,
-                                    fontSize: 30.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    fontSize: 32.0,
+                                    letterSpacing: 5.0,
+                                    fontWeight: FontWeight.bold,
                                     useGoogleFonts:
                                         !FlutterFlowTheme.of(context)
                                             .displayLargeIsCustom,
                                   ),
                             ),
-                          ),
-                          if (!valueOrDefault<bool>(
-                            widget!.appSettings?.settingList
-                                ?.where((e) => e.title == 'hideUpiPaymentMode')
-                                .toList()
-                                ?.firstOrNull
-                                ?.value,
-                            false,
-                          ))
-                            FFButtonWidget(
-                              onPressed: () async {
-                                FFAppState().PayMode = 'UPI QR';
-                                safeSetState(() {});
-                                _model.outletDOc = await queryOutletRecordOnce(
-                                  queryBuilder: (outletRecord) =>
-                                      outletRecord.where(
-                                    'id',
-                                    isEqualTo: FFAppState().outletIdRef?.id,
-                                  ),
-                                  singleRecord: true,
-                                ).then((s) => s.firstOrNull);
-                                if (functions
-                                    .filterBillList(FFAppState().selBill,
-                                        FFAppState().allBillsList.toList())
-                                    .isNotEmpty) {
-                                  if (_model.outletDOc?.merchantId != null &&
-                                      _model.outletDOc?.merchantId != '') {
-                                    if (getJsonField(
-                                      widget!.shiftdetails,
-                                      r'''$.shiftExists''',
-                                    )) {}
-                                    FFAppState().orderId =
-                                        FFAppState().orderId + 10;
-                                    FFAppState().paytmOrderId =
-                                        valueOrDefault<String>(
-                                      'ORD-${getCurrentTimestamp.millisecondsSinceEpoch.toString()}',
-                                      '0',
-                                    );
-                                    FFAppState().outletId =
-                                        _model.outletDOc!.id;
-                                    safeSetState(() {});
-                                    if (FFAppState().isRazorPay) {
-                                      _model.apiResultplq =
-                                          await RazorPaycreateQRCall.call(
-                                        mid: _model.outletDOc?.merchantId,
-                                        orderId: FFAppState().paytmOrderId,
-                                        amount:
-                                            FFAppState().finalAmt.toString(),
-                                        posId: _model.outletDOc?.id,
-                                        mKey: _model.outletDOc?.merchantKey,
-                                        businessType: 'UPI_QR_CODE',
-                                        isProd: _model.outletDOc?.isProd,
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 40.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  '8bm0y3wk' /* Please Collect Your Token & Bi... */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .displayLarge
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .displayLargeFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .parkingSecondaryBackground,
+                                      fontSize: 26.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .displayLargeIsCustom,
+                                    ),
+                              ),
+                            ),
+                            if (!valueOrDefault<bool>(
+                              widget!.appSettings?.settingList
+                                  ?.where(
+                                      (e) => e.title == 'hideUpiPaymentMode')
+                                  .toList()
+                                  ?.firstOrNull
+                                  ?.value,
+                              false,
+                            ))
+                              FFButtonWidget(
+                                onPressed: () async {
+                                  FFAppState().PayMode = 'UPI QR';
+                                  safeSetState(() {});
+                                  _model.outletDOc =
+                                      await queryOutletRecordOnce(
+                                    queryBuilder: (outletRecord) =>
+                                        outletRecord.where(
+                                      'id',
+                                      isEqualTo: FFAppState().outletIdRef?.id,
+                                    ),
+                                    singleRecord: true,
+                                  ).then((s) => s.firstOrNull);
+                                  if (functions
+                                      .filterBillList(FFAppState().selBill,
+                                          FFAppState().allBillsList.toList())
+                                      .isNotEmpty) {
+                                    if (_model.outletDOc?.merchantId != null &&
+                                        _model.outletDOc?.merchantId != '') {
+                                      if (getJsonField(
+                                        widget!.shiftdetails,
+                                        r'''$.shiftExists''',
+                                      )) {}
+                                      FFAppState().orderId =
+                                          FFAppState().orderId + 10;
+                                      FFAppState().paytmOrderId =
+                                          valueOrDefault<String>(
+                                        'ORD-${getCurrentTimestamp.millisecondsSinceEpoch.toString()}',
+                                        '0',
                                       );
+                                      FFAppState().outletId =
+                                          _model.outletDOc!.id;
+                                      safeSetState(() {});
+                                      if (FFAppState().isRazorPay) {
+                                        _model.apiResultplq =
+                                            await RazorPaycreateQRCall.call(
+                                          mid: _model.outletDOc?.merchantId,
+                                          orderId: FFAppState().paytmOrderId,
+                                          amount:
+                                              FFAppState().finalAmt.toString(),
+                                          posId: _model.outletDOc?.id,
+                                          mKey: _model.outletDOc?.merchantKey,
+                                          businessType: 'UPI_QR_CODE',
+                                          isProd: _model.outletDOc?.isProd,
+                                        );
 
-                                      if ((_model.apiResultplq?.succeeded ??
-                                          true)) {
+                                        if ((_model.apiResultplq?.succeeded ??
+                                            true)) {
+                                          context.goNamed(
+                                            KioskPaymentWidget.routeName,
+                                            queryParameters: {
+                                              'doc': serializeParam(
+                                                widget!.doc,
+                                                ParamType.DocumentReference,
+                                              ),
+                                              'shiftdetails': serializeParam(
+                                                widget!.shiftdetails,
+                                                ParamType.JSON,
+                                              ),
+                                              'qrJson': serializeParam(
+                                                (_model.apiResultplq
+                                                        ?.jsonBody ??
+                                                    ''),
+                                                ParamType.JSON,
+                                              ),
+                                              'paytmOrderId': serializeParam(
+                                                FFAppState().paytmOrderId,
+                                                ParamType.String,
+                                              ),
+                                              'isPaytm': serializeParam(
+                                                true,
+                                                ParamType.bool,
+                                              ),
+                                              'appsettings': serializeParam(
+                                                widget!.appSettings,
+                                                ParamType.Document,
+                                              ),
+                                              'taxcollection': serializeParam(
+                                                widget!.taxcollection,
+                                                ParamType.Document,
+                                                isList: true,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              'appsettings':
+                                                  widget!.appSettings,
+                                              'taxcollection':
+                                                  widget!.taxcollection,
+                                            },
+                                          );
+                                        }
+                                      } else {
+                                        _model.paymentQrResponse =
+                                            await CreateQRCall.call(
+                                          mid: _model.outletDOc?.merchantId,
+                                          orderId: FFAppState().paytmOrderId,
+                                          amount: functions
+                                              .toDecimal(FFAppState().finalAmt),
+                                          businessType: 'UPI_QR_CODE',
+                                          posId: _model.outletDOc?.id,
+                                          mKey: _model.outletDOc?.merchantKey,
+                                          isProd: _model.outletDOc?.isProd,
+                                        );
+
                                         context.goNamed(
                                           KioskPaymentWidget.routeName,
                                           queryParameters: {
@@ -650,7 +869,8 @@ class _KioskChoosePaymentModeWidgetState
                                               ParamType.JSON,
                                             ),
                                             'qrJson': serializeParam(
-                                              (_model.apiResultplq?.jsonBody ??
+                                              (_model.paymentQrResponse
+                                                      ?.jsonBody ??
                                                   ''),
                                               ParamType.JSON,
                                             ),
@@ -676,348 +896,6 @@ class _KioskChoosePaymentModeWidgetState
                                             'appsettings': widget!.appSettings,
                                             'taxcollection':
                                                 widget!.taxcollection,
-                                          },
-                                        );
-                                      }
-                                    } else {
-                                      _model.paymentQrResponse =
-                                          await CreateQRCall.call(
-                                        mid: _model.outletDOc?.merchantId,
-                                        orderId: FFAppState().paytmOrderId,
-                                        amount: functions
-                                            .toDecimal(FFAppState().finalAmt),
-                                        businessType: 'UPI_QR_CODE',
-                                        posId: _model.outletDOc?.id,
-                                        mKey: _model.outletDOc?.merchantKey,
-                                        isProd: _model.outletDOc?.isProd,
-                                      );
-
-                                      context.goNamed(
-                                        KioskPaymentWidget.routeName,
-                                        queryParameters: {
-                                          'doc': serializeParam(
-                                            widget!.doc,
-                                            ParamType.DocumentReference,
-                                          ),
-                                          'shiftdetails': serializeParam(
-                                            widget!.shiftdetails,
-                                            ParamType.JSON,
-                                          ),
-                                          'qrJson': serializeParam(
-                                            (_model.paymentQrResponse
-                                                    ?.jsonBody ??
-                                                ''),
-                                            ParamType.JSON,
-                                          ),
-                                          'paytmOrderId': serializeParam(
-                                            FFAppState().paytmOrderId,
-                                            ParamType.String,
-                                          ),
-                                          'isPaytm': serializeParam(
-                                            true,
-                                            ParamType.bool,
-                                          ),
-                                          'appsettings': serializeParam(
-                                            widget!.appSettings,
-                                            ParamType.Document,
-                                          ),
-                                          'taxcollection': serializeParam(
-                                            widget!.taxcollection,
-                                            ParamType.Document,
-                                            isList: true,
-                                          ),
-                                        }.withoutNulls,
-                                        extra: <String, dynamic>{
-                                          'appsettings': widget!.appSettings,
-                                          'taxcollection':
-                                              widget!.taxcollection,
-                                        },
-                                      );
-                                    }
-                                  } else {
-                                    await showDialog(
-                                      context: context,
-                                      builder: (alertDialogContext) {
-                                        return AlertDialog(
-                                          content: Text(
-                                              'Merchant Id  Is Not Available Contact Support!'),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: Text('Ok'),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
-                                  }
-                                } else {
-                                  await showDialog(
-                                    context: context,
-                                    builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        content: Text('Cart Is Empty !'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
-
-                                  context.goNamed(
-                                    KioskBillScreenWidget.routeName,
-                                    queryParameters: {
-                                      'doc': serializeParam(
-                                        widget!.doc,
-                                        ParamType.DocumentReference,
-                                      ),
-                                      'shiftdoc': serializeParam(
-                                        widget!.shiftdetails,
-                                        ParamType.JSON,
-                                      ),
-                                      'appsetting': serializeParam(
-                                        widget!.appSettings,
-                                        ParamType.Document,
-                                      ),
-                                      'taxcollection': serializeParam(
-                                        widget!.taxcollection,
-                                        ParamType.Document,
-                                        isList: true,
-                                      ),
-                                    }.withoutNulls,
-                                    extra: <String, dynamic>{
-                                      'appsetting': widget!.appSettings,
-                                      'taxcollection': widget!.taxcollection,
-                                    },
-                                  );
-                                }
-
-                                safeSetState(() {});
-                              },
-                              text: FFLocalizations.of(context).getText(
-                                'zsxrmuif' /* UPI Payment */,
-                              ),
-                              icon: Icon(
-                                Icons.qr_code_scanner,
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                size: 50.0,
-                              ),
-                              options: FFButtonOptions(
-                                width: 550.0,
-                                height: 200.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 10.0, 0.0),
-                                color: FlutterFlowTheme.of(context).info,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .titleSmallFamily,
-                                      color: Colors.white,
-                                      fontSize: 35.0,
-                                      letterSpacing: 0.0,
-                                      useGoogleFonts:
-                                          !FlutterFlowTheme.of(context)
-                                              .titleSmallIsCustom,
-                                    ),
-                                elevation: 0.0,
-                                borderRadius: BorderRadius.circular(30.0),
-                              ),
-                            ),
-                          if (valueOrDefault<bool>(
-                            widget!.appSettings?.settingList
-                                ?.where(
-                                    (e) => e.title == 'showCardPaymentOption')
-                                .toList()
-                                ?.firstOrNull
-                                ?.value,
-                            false,
-                          ))
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 25.0, 0.0, 0.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'b4zgkn34' /* OR */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .displayLarge
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .displayLargeFamily,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      fontSize: 30.0,
-                                      letterSpacing: 5.0,
-                                      fontWeight: FontWeight.normal,
-                                      useGoogleFonts:
-                                          !FlutterFlowTheme.of(context)
-                                              .displayLargeIsCustom,
-                                    ),
-                              ),
-                            ),
-                          if (valueOrDefault<bool>(
-                            widget!.appSettings?.settingList
-                                ?.where(
-                                    (e) => e.title == 'showCardPaymentOption')
-                                .toList()
-                                ?.firstOrNull
-                                ?.value,
-                            false,
-                          ))
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 50.0, 0.0, 0.0),
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  FFAppState().PayMode = 'CARD';
-                                  safeSetState(() {});
-                                  _model.outletDOccard =
-                                      await queryOutletRecordOnce(
-                                    queryBuilder: (outletRecord) =>
-                                        outletRecord.where(
-                                      'id',
-                                      isEqualTo: FFAppState().outletIdRef?.id,
-                                    ),
-                                    singleRecord: true,
-                                  ).then((s) => s.firstOrNull);
-                                  if (functions
-                                      .filterBillList(FFAppState().selBill,
-                                          FFAppState().allBillsList.toList())
-                                      .isNotEmpty) {
-                                    if (_model.outletDOccard?.paytmTid !=
-                                            null &&
-                                        _model.outletDOccard?.paytmTid != '') {
-                                      if (getJsonField(
-                                        widget!.shiftdetails,
-                                        r'''$.shiftExists''',
-                                      )) {}
-                                      FFAppState().orderId =
-                                          FFAppState().orderId + 10;
-                                      FFAppState().paytmOrderId =
-                                          valueOrDefault<String>(
-                                        'ORD-${getCurrentTimestamp.millisecondsSinceEpoch.toString()}',
-                                        '0',
-                                      );
-                                      FFAppState().outletId =
-                                          _model.outletDOccard!.id;
-                                      FFAppState().transactionDateTimeCard =
-                                          dateTimeFormat(
-                                        "y-MM-d H:mm:s",
-                                        getCurrentTimestamp,
-                                        locale: FFLocalizations.of(context)
-                                            .languageCode,
-                                      );
-                                      safeSetState(() {});
-                                      _model.cardPaymentApiResponse =
-                                          await CardSwipeSaleCall.call(
-                                        isProd: _model.outletDOccard?.isProd,
-                                        mkey:
-                                            _model.outletDOccard?.paytmCardmkey,
-                                        channelId:
-                                            _model.outletDOccard?.channelId,
-                                        paytmMid:
-                                            _model.outletDOccard?.paytmMid,
-                                        paytmTid:
-                                            _model.outletDOccard?.paytmTid,
-                                        merchantTransactionId:
-                                            FFAppState().paytmOrderId,
-                                        transactionAmount:
-                                            FFAppState().finalAmt * 100,
-                                        transactionDateTime: FFAppState()
-                                            .transactionDateTimeCard,
-                                      );
-
-                                      if ((_model.cardPaymentApiResponse
-                                              ?.succeeded ??
-                                          true)) {
-                                        if ('ACCEPTED_SUCCESS' ==
-                                            getJsonField(
-                                              (_model.cardPaymentApiResponse
-                                                      ?.jsonBody ??
-                                                  ''),
-                                              r'''$.body.resultInfo.resultStatus''',
-                                            ).toString()) {
-                                          context.pushNamed(
-                                            KioskCardPaymentWidget.routeName,
-                                            queryParameters: {
-                                              'doc': serializeParam(
-                                                widget!.doc,
-                                                ParamType.DocumentReference,
-                                              ),
-                                              'shiftdetails': serializeParam(
-                                                widget!.shiftdetails,
-                                                ParamType.JSON,
-                                              ),
-                                              'appsettings': serializeParam(
-                                                widget!.appSettings,
-                                                ParamType.Document,
-                                              ),
-                                              'taxcollection': serializeParam(
-                                                widget!.taxcollection,
-                                                ParamType.Document,
-                                                isList: true,
-                                              ),
-                                              'paytmOrderId': serializeParam(
-                                                FFAppState().paytmOrderId,
-                                                ParamType.String,
-                                              ),
-                                            }.withoutNulls,
-                                            extra: <String, dynamic>{
-                                              'appsettings':
-                                                  widget!.appSettings,
-                                              'taxcollection':
-                                                  widget!.taxcollection,
-                                            },
-                                          );
-                                        } else {
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text('Error'),
-                                                content: Text(getJsonField(
-                                                  (_model.cardPaymentApiResponse
-                                                          ?.jsonBody ??
-                                                      ''),
-                                                  r'''$.body.resultInfo.resultMsg''',
-                                                ).toString()),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
-                                              );
-                                            },
-                                          );
-                                        }
-                                      } else {
-                                        await showDialog(
-                                          context: context,
-                                          builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title: Text('Error'),
-                                              content: Text('Api Failed'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: Text('Ok'),
-                                                ),
-                                              ],
-                                            );
                                           },
                                         );
                                       }
@@ -1087,10 +965,10 @@ class _KioskChoosePaymentModeWidgetState
                                   safeSetState(() {});
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  '920v2xki' /* Card payment */,
+                                  'zsxrmuif' /* UPI Payment */,
                                 ),
                                 icon: Icon(
-                                  Icons.credit_card,
+                                  Icons.qr_code_scanner,
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
                                   size: 50.0,
@@ -1119,120 +997,431 @@ class _KioskChoosePaymentModeWidgetState
                                   borderRadius: BorderRadius.circular(30.0),
                                 ),
                               ),
-                            ),
-                          if (!valueOrDefault<bool>(
-                            widget!.appSettings?.settingList
-                                ?.where((e) => e.title == 'hideUpiPaymentMode')
-                                .toList()
-                                ?.firstOrNull
-                                ?.value,
-                            false,
-                          ))
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 25.0, 0.0, 25.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'bi488f0w' /* OR */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .displayLarge
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .displayLargeFamily,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      fontSize: 30.0,
-                                      letterSpacing: 5.0,
-                                      fontWeight: FontWeight.normal,
-                                      useGoogleFonts:
-                                          !FlutterFlowTheme.of(context)
-                                              .displayLargeIsCustom,
-                                    ),
-                              ),
-                            ),
-                          if (!valueOrDefault<bool>(
-                            widget!.appSettings?.settingList
-                                ?.where((e) => e.title == 'hideCashPaymentMode')
-                                .toList()
-                                ?.firstOrNull
-                                ?.value,
-                            false,
-                          ))
-                            FFButtonWidget(
-                              onPressed: () async {
-                                FFAppState().PayMode = 'CASH';
-                                safeSetState(() {});
-                                _model.outletDOc2 = await queryOutletRecordOnce(
-                                  queryBuilder: (outletRecord) =>
-                                      outletRecord.where(
-                                    'id',
-                                    isEqualTo: FFAppState().outletIdRef?.id,
+                            if (valueOrDefault<bool>(
+                              widget!.appSettings?.settingList
+                                  ?.where(
+                                      (e) => e.title == 'showCardPaymentOption')
+                                  .toList()
+                                  ?.firstOrNull
+                                  ?.value,
+                              false,
+                            ))
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 25.0, 0.0, 0.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'b4zgkn34' /* OR */,
                                   ),
-                                  singleRecord: true,
-                                ).then((s) => s.firstOrNull);
-                                if (functions
-                                    .filterBillList(FFAppState().selBill,
-                                        FFAppState().allBillsList.toList())
-                                    .isNotEmpty) {
-                                  if (_model.outletDOc2?.merchantId != null &&
-                                      _model.outletDOc2?.merchantId != '') {
-                                    if (getJsonField(
-                                      widget!.shiftdetails,
-                                      r'''$.shiftExists''',
-                                    )) {}
-                                    FFAppState().orderId =
-                                        FFAppState().orderId + 10;
-                                    FFAppState().paytmOrderId =
-                                        valueOrDefault<String>(
-                                      'ORD-${getCurrentTimestamp.millisecondsSinceEpoch.toString()}',
-                                      '0',
-                                    );
-                                    FFAppState().outletId =
-                                        _model.outletDOc2!.id;
+                                  style: FlutterFlowTheme.of(context)
+                                      .displayLarge
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displayLargeFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        fontSize: 30.0,
+                                        letterSpacing: 5.0,
+                                        fontWeight: FontWeight.normal,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .displayLargeIsCustom,
+                                      ),
+                                ),
+                              ),
+                            if (valueOrDefault<bool>(
+                              widget!.appSettings?.settingList
+                                  ?.where(
+                                      (e) => e.title == 'showCardPaymentOption')
+                                  .toList()
+                                  ?.firstOrNull
+                                  ?.value,
+                              false,
+                            ))
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 50.0, 0.0, 0.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    FFAppState().PayMode = 'CARD';
                                     safeSetState(() {});
-                                    _model.paymentQrResponsecash =
-                                        await CreateQRCall.call(
-                                      mid: _model.outletDOc2?.merchantId,
-                                      orderId: FFAppState().paytmOrderId,
-                                      amount: functions
-                                          .toDecimal(FFAppState().finalAmt),
-                                      businessType: 'UPI_QR_CODE',
-                                      posId: _model.outletDOc2?.id,
-                                      mKey: _model.outletDOc2?.merchantKey,
-                                      isProd: _model.outletDOc2?.isProd,
-                                    );
-
-                                    context.goNamed(
-                                      CashResponsePageWidget.routeName,
-                                      queryParameters: {
-                                        'shiftdetails': serializeParam(
+                                    _model.outletDOccard =
+                                        await queryOutletRecordOnce(
+                                      queryBuilder: (outletRecord) =>
+                                          outletRecord.where(
+                                        'id',
+                                        isEqualTo: FFAppState().outletIdRef?.id,
+                                      ),
+                                      singleRecord: true,
+                                    ).then((s) => s.firstOrNull);
+                                    if (functions
+                                        .filterBillList(FFAppState().selBill,
+                                            FFAppState().allBillsList.toList())
+                                        .isNotEmpty) {
+                                      if (_model.outletDOccard?.paytmTid !=
+                                              null &&
+                                          _model.outletDOccard?.paytmTid !=
+                                              '') {
+                                        if (getJsonField(
                                           widget!.shiftdetails,
-                                          ParamType.JSON,
-                                        ),
-                                        'appsetting': serializeParam(
-                                          widget!.appSettings,
-                                          ParamType.Document,
-                                        ),
-                                        'taxcoollectipon': serializeParam(
-                                          widget!.taxcollection,
-                                          ParamType.Document,
-                                          isList: true,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        'appsetting': widget!.appSettings,
-                                        'taxcoollectipon':
+                                          r'''$.shiftExists''',
+                                        )) {}
+                                        FFAppState().orderId =
+                                            FFAppState().orderId + 10;
+                                        FFAppState().paytmOrderId =
+                                            valueOrDefault<String>(
+                                          'ORD-${getCurrentTimestamp.millisecondsSinceEpoch.toString()}',
+                                          '0',
+                                        );
+                                        FFAppState().outletId =
+                                            _model.outletDOccard!.id;
+                                        FFAppState().transactionDateTimeCard =
+                                            dateTimeFormat(
+                                          "y-MM-d H:mm:s",
+                                          getCurrentTimestamp,
+                                          locale: FFLocalizations.of(context)
+                                              .languageCode,
+                                        );
+                                        safeSetState(() {});
+                                        _model.cardPaymentApiResponse =
+                                            await CardSwipeSaleCall.call(
+                                          isProd: _model.outletDOccard?.isProd,
+                                          mkey: _model
+                                              .outletDOccard?.paytmCardmkey,
+                                          channelId:
+                                              _model.outletDOccard?.channelId,
+                                          paytmMid:
+                                              _model.outletDOccard?.paytmMid,
+                                          paytmTid:
+                                              _model.outletDOccard?.paytmTid,
+                                          merchantTransactionId:
+                                              FFAppState().paytmOrderId,
+                                          transactionAmount:
+                                              FFAppState().finalAmt * 100,
+                                          transactionDateTime: FFAppState()
+                                              .transactionDateTimeCard,
+                                        );
+
+                                        if ((_model.cardPaymentApiResponse
+                                                ?.succeeded ??
+                                            true)) {
+                                          if ('ACCEPTED_SUCCESS' ==
+                                              getJsonField(
+                                                (_model.cardPaymentApiResponse
+                                                        ?.jsonBody ??
+                                                    ''),
+                                                r'''$.body.resultInfo.resultStatus''',
+                                              ).toString()) {
+                                            context.pushNamed(
+                                              KioskCardPaymentWidget.routeName,
+                                              queryParameters: {
+                                                'doc': serializeParam(
+                                                  widget!.doc,
+                                                  ParamType.DocumentReference,
+                                                ),
+                                                'shiftdetails': serializeParam(
+                                                  widget!.shiftdetails,
+                                                  ParamType.JSON,
+                                                ),
+                                                'appsettings': serializeParam(
+                                                  widget!.appSettings,
+                                                  ParamType.Document,
+                                                ),
+                                                'taxcollection': serializeParam(
+                                                  widget!.taxcollection,
+                                                  ParamType.Document,
+                                                  isList: true,
+                                                ),
+                                                'paytmOrderId': serializeParam(
+                                                  FFAppState().paytmOrderId,
+                                                  ParamType.String,
+                                                ),
+                                              }.withoutNulls,
+                                              extra: <String, dynamic>{
+                                                'appsettings':
+                                                    widget!.appSettings,
+                                                'taxcollection':
+                                                    widget!.taxcollection,
+                                              },
+                                            );
+                                          } else {
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: Text('Error'),
+                                                  content: Text(getJsonField(
+                                                    (_model.cardPaymentApiResponse
+                                                            ?.jsonBody ??
+                                                        ''),
+                                                    r'''$.body.resultInfo.resultMsg''',
+                                                  ).toString()),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            );
+                                          }
+                                        } else {
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                title: Text('Error'),
+                                                content: Text('Api Failed'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                        }
+                                      } else {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              content: Text(
+                                                  'Merchant Id  Is Not Available Contact Support!'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      }
+                                    } else {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            content: Text('Cart Is Empty !'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+
+                                      context.goNamed(
+                                        KioskBillScreenWidget.routeName,
+                                        queryParameters: {
+                                          'doc': serializeParam(
+                                            widget!.doc,
+                                            ParamType.DocumentReference,
+                                          ),
+                                          'shiftdoc': serializeParam(
+                                            widget!.shiftdetails,
+                                            ParamType.JSON,
+                                          ),
+                                          'appsetting': serializeParam(
+                                            widget!.appSettings,
+                                            ParamType.Document,
+                                          ),
+                                          'taxcollection': serializeParam(
                                             widget!.taxcollection,
-                                      },
-                                    );
+                                            ParamType.Document,
+                                            isList: true,
+                                          ),
+                                        }.withoutNulls,
+                                        extra: <String, dynamic>{
+                                          'appsetting': widget!.appSettings,
+                                          'taxcollection':
+                                              widget!.taxcollection,
+                                        },
+                                      );
+                                    }
+
+                                    safeSetState(() {});
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    '920v2xki' /* Card payment */,
+                                  ),
+                                  icon: Icon(
+                                    Icons.credit_card,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    size: 50.0,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: 550.0,
+                                    height: 200.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 10.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).info,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
+                                          color: Colors.white,
+                                          fontSize: 35.0,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts:
+                                              !FlutterFlowTheme.of(context)
+                                                  .titleSmallIsCustom,
+                                        ),
+                                    elevation: 0.0,
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  ),
+                                ),
+                              ),
+                            if (!valueOrDefault<bool>(
+                              widget!.appSettings?.settingList
+                                  ?.where(
+                                      (e) => e.title == 'hideUpiPaymentMode')
+                                  .toList()
+                                  ?.firstOrNull
+                                  ?.value,
+                              false,
+                            ))
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 25.0, 0.0, 25.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'bi488f0w' /* OR */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .displayLarge
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displayLargeFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        fontSize: 30.0,
+                                        letterSpacing: 5.0,
+                                        fontWeight: FontWeight.normal,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .displayLargeIsCustom,
+                                      ),
+                                ),
+                              ),
+                            if (!valueOrDefault<bool>(
+                              widget!.appSettings?.settingList
+                                  ?.where(
+                                      (e) => e.title == 'hideCashPaymentMode')
+                                  .toList()
+                                  ?.firstOrNull
+                                  ?.value,
+                              false,
+                            ))
+                              FFButtonWidget(
+                                onPressed: () async {
+                                  FFAppState().PayMode = 'CASH';
+                                  safeSetState(() {});
+                                  _model.outletDOc2 =
+                                      await queryOutletRecordOnce(
+                                    queryBuilder: (outletRecord) =>
+                                        outletRecord.where(
+                                      'id',
+                                      isEqualTo: FFAppState().outletIdRef?.id,
+                                    ),
+                                    singleRecord: true,
+                                  ).then((s) => s.firstOrNull);
+                                  if (functions
+                                      .filterBillList(FFAppState().selBill,
+                                          FFAppState().allBillsList.toList())
+                                      .isNotEmpty) {
+                                    if (_model.outletDOc2?.merchantId != null &&
+                                        _model.outletDOc2?.merchantId != '') {
+                                      if (getJsonField(
+                                        widget!.shiftdetails,
+                                        r'''$.shiftExists''',
+                                      )) {}
+                                      FFAppState().orderId =
+                                          FFAppState().orderId + 10;
+                                      FFAppState().paytmOrderId =
+                                          valueOrDefault<String>(
+                                        'ORD-${getCurrentTimestamp.millisecondsSinceEpoch.toString()}',
+                                        '0',
+                                      );
+                                      FFAppState().outletId =
+                                          _model.outletDOc2!.id;
+                                      safeSetState(() {});
+                                      _model.paymentQrResponsecash =
+                                          await CreateQRCall.call(
+                                        mid: _model.outletDOc2?.merchantId,
+                                        orderId: FFAppState().paytmOrderId,
+                                        amount: functions
+                                            .toDecimal(FFAppState().finalAmt),
+                                        businessType: 'UPI_QR_CODE',
+                                        posId: _model.outletDOc2?.id,
+                                        mKey: _model.outletDOc2?.merchantKey,
+                                        isProd: _model.outletDOc2?.isProd,
+                                      );
+
+                                      context.goNamed(
+                                        CashResponsePageWidget.routeName,
+                                        queryParameters: {
+                                          'shiftdetails': serializeParam(
+                                            widget!.shiftdetails,
+                                            ParamType.JSON,
+                                          ),
+                                          'appsetting': serializeParam(
+                                            widget!.appSettings,
+                                            ParamType.Document,
+                                          ),
+                                          'taxcoollectipon': serializeParam(
+                                            widget!.taxcollection,
+                                            ParamType.Document,
+                                            isList: true,
+                                          ),
+                                        }.withoutNulls,
+                                        extra: <String, dynamic>{
+                                          'appsetting': widget!.appSettings,
+                                          'taxcoollectipon':
+                                              widget!.taxcollection,
+                                        },
+                                      );
+                                    } else {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            content: Text(
+                                                'Merchant Id  Is Not Available Contact Support!'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+                                    }
                                   } else {
                                     await showDialog(
                                       context: context,
                                       builder: (alertDialogContext) {
                                         return AlertDialog(
-                                          content: Text(
-                                              'Merchant Id  Is Not Available Contact Support!'),
+                                          content: Text('Cart Is Empty !'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
@@ -1243,88 +1432,72 @@ class _KioskChoosePaymentModeWidgetState
                                         );
                                       },
                                     );
+
+                                    context.goNamed(
+                                      KioskBillScreenWidget.routeName,
+                                      queryParameters: {
+                                        'doc': serializeParam(
+                                          widget!.doc,
+                                          ParamType.DocumentReference,
+                                        ),
+                                        'shiftdoc': serializeParam(
+                                          widget!.shiftdetails,
+                                          ParamType.JSON,
+                                        ),
+                                        'appsetting': serializeParam(
+                                          widget!.appSettings,
+                                          ParamType.Document,
+                                        ),
+                                        'taxcollection': serializeParam(
+                                          widget!.taxcollection,
+                                          ParamType.Document,
+                                          isList: true,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        'appsetting': widget!.appSettings,
+                                        'taxcollection': widget!.taxcollection,
+                                      },
+                                    );
                                   }
-                                } else {
-                                  await showDialog(
-                                    context: context,
-                                    builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        content: Text('Cart Is Empty !'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
 
-                                  context.goNamed(
-                                    KioskBillScreenWidget.routeName,
-                                    queryParameters: {
-                                      'doc': serializeParam(
-                                        widget!.doc,
-                                        ParamType.DocumentReference,
+                                  safeSetState(() {});
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'fwj35smm' /* Pay at Counter */,
+                                ),
+                                icon: FaIcon(
+                                  FontAwesomeIcons.moneyBillWaveAlt,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  size: 50.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 550.0,
+                                  height: 200.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).info,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
+                                        color: Colors.white,
+                                        fontSize: 35.0,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts:
+                                            !FlutterFlowTheme.of(context)
+                                                .titleSmallIsCustom,
                                       ),
-                                      'shiftdoc': serializeParam(
-                                        widget!.shiftdetails,
-                                        ParamType.JSON,
-                                      ),
-                                      'appsetting': serializeParam(
-                                        widget!.appSettings,
-                                        ParamType.Document,
-                                      ),
-                                      'taxcollection': serializeParam(
-                                        widget!.taxcollection,
-                                        ParamType.Document,
-                                        isList: true,
-                                      ),
-                                    }.withoutNulls,
-                                    extra: <String, dynamic>{
-                                      'appsetting': widget!.appSettings,
-                                      'taxcollection': widget!.taxcollection,
-                                    },
-                                  );
-                                }
-
-                                safeSetState(() {});
-                              },
-                              text: FFLocalizations.of(context).getText(
-                                'fwj35smm' /* Pay at Counter */,
+                                  elevation: 0.0,
+                                  borderRadius: BorderRadius.circular(30.0),
+                                ),
                               ),
-                              icon: FaIcon(
-                                FontAwesomeIcons.moneyBillWaveAlt,
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                size: 50.0,
-                              ),
-                              options: FFButtonOptions(
-                                width: 550.0,
-                                height: 200.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 10.0, 0.0),
-                                color: FlutterFlowTheme.of(context).info,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .titleSmallFamily,
-                                      color: Colors.white,
-                                      fontSize: 35.0,
-                                      letterSpacing: 0.0,
-                                      useGoogleFonts:
-                                          !FlutterFlowTheme.of(context)
-                                              .titleSmallIsCustom,
-                                    ),
-                                elevation: 0.0,
-                                borderRadius: BorderRadius.circular(30.0),
-                              ),
-                            ),
-                        ],
+                          ],
+                        ),
                       ),
                     ],
                   ),

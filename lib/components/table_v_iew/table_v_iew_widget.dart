@@ -5,6 +5,8 @@ import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:confetti_modualo_library_b75kfy/app_state.dart'
     as confetti_modualo_library_b75kfy_app_state;
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -408,8 +410,22 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                       ),
                                       Expanded(
                                         child: FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async {
+                                            _model.tablekot =
+                                                await queryTableKotRecordOnce(
+                                              parent: FFAppState().outletIdRef,
+                                              queryBuilder: (tableKotRecord) =>
+                                                  tableKotRecord.where(
+                                                'tableNo',
+                                                isEqualTo: getJsonField(
+                                                  tablelistItem,
+                                                  r'''$.id''',
+                                                ).toString(),
+                                              ),
+                                              singleRecord: true,
+                                            ).then((s) => s.firstOrNull);
+
+                                            safeSetState(() {});
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
