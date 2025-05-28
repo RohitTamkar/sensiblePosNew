@@ -3513,18 +3513,15 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                 _model.dropDownValueController?.value = 'CASH';
                                                                               });
                                                                               _model.prdid = null;
-                                                                              safeSetState(() {});
                                                                               await actions.clearValue();
                                                                               FFAppState().noOfItems = 0;
                                                                               FFAppState().subTotal = 0.0;
                                                                               FFAppState().delCharges = 0.0;
-                                                                              FFAppState().update(() {});
                                                                               FFAppState().prdid = '';
-                                                                              FFAppState().update(() {});
                                                                               FFAppState().finalAmt = 0.0;
                                                                               FFAppState().billAmt = 0.0;
                                                                               FFAppState().tableViewHideShow = true;
-                                                                              FFAppState().update(() {});
+                                                                              safeSetState(() {});
                                                                               if (_shouldSetState)
                                                                                 safeSetState(() {});
                                                                               return;
@@ -3691,7 +3688,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                             });
                                                                             _model.prdid =
                                                                                 null;
-                                                                            safeSetState(() {});
                                                                             await actions.clearValue();
                                                                             FFAppState().noOfItems =
                                                                                 0;
@@ -3699,17 +3695,15 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                 0.0;
                                                                             FFAppState().delCharges =
                                                                                 0.0;
-                                                                            FFAppState().update(() {});
                                                                             FFAppState().prdid =
                                                                                 '';
-                                                                            FFAppState().update(() {});
                                                                             FFAppState().finalAmt =
                                                                                 0.0;
                                                                             FFAppState().billAmt =
                                                                                 0.0;
                                                                             FFAppState().tableViewHideShow =
                                                                                 true;
-                                                                            FFAppState().update(() {});
+                                                                            safeSetState(() {});
                                                                             if (_shouldSetState)
                                                                               safeSetState(() {});
                                                                             return;
@@ -3808,12 +3802,10 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                 FFAppState().count = FFAppState().count + 1;
                                                                                 FFAppState().newcount = FFAppState().newcount + 1;
                                                                                 FFAppState().billcount = FFAppState().billcount + 1;
-                                                                                safeSetState(() {});
                                                                               } else {
                                                                                 FFAppState().count = FFAppState().count + 1;
                                                                                 FFAppState().newcount = FFAppState().newcount + 1;
                                                                                 FFAppState().billcount = FFAppState().billcount + 1;
-                                                                                safeSetState(() {});
                                                                               }
 
                                                                               _model.prdlistsavebill = await actions.filterProducts2(
@@ -4054,7 +4046,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                     ..hivekey = FFAppState().shiftDetails.hivekey
                                                                                     ..id = FFAppState().shiftDetails.id,
                                                                                 );
-                                                                                safeSetState(() {});
                                                                                 if (_model.internetcon!) {
                                                                                   _model.shiftondata = await queryShiftRecordOnce(
                                                                                     parent: FFAppState().outletIdRef,
@@ -4132,7 +4123,6 @@ class _TableListWidgetState extends State<TableListWidget>
 
                                                                                 if (tableListAppSettingsRecord!.settingList.where((e) => e.title == 'enableStock').toList().firstOrNull!.value) {
                                                                                   FFAppState().startLoop = 0;
-                                                                                  safeSetState(() {});
                                                                                   while (FFAppState().startLoop < _model.prdlistsavebill!.length) {
                                                                                     _model.stockupdateprd = await queryProductRecordOnce(
                                                                                       parent: FFAppState().outletIdRef,
@@ -4198,7 +4188,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                           ..hivekey = _model.itemprd?.hivekey
                                                                                           ..version = _model.itemprd?.version,
                                                                                       );
-                                                                                      safeSetState(() {});
                                                                                       _model.productupdated = await actions.hiveProductCrud(
                                                                                         FFAppState().productHiveput.hivekey,
                                                                                         FFAppState().productHiveput,
@@ -4207,14 +4196,11 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                       _shouldSetState = true;
                                                                                       FFAppState().productHive = [];
                                                                                       FFAppState().productHiveput = ProductStructStruct();
-                                                                                      safeSetState(() {});
                                                                                       _model.newupdatedproductlist2 = await actions.getProductlistHive();
                                                                                       _shouldSetState = true;
                                                                                       FFAppState().productHive = _model.newupdatedproductlist2!.toList().cast<ProductStructStruct>();
-                                                                                      safeSetState(() {});
                                                                                     }
                                                                                     FFAppState().startLoop = FFAppState().startLoop + 1;
-                                                                                    safeSetState(() {});
                                                                                   }
                                                                                   await actions.updateProductStocknew(
                                                                                     _model.prdlistsavebill!.toList(),
@@ -4227,15 +4213,12 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                   _model.dropDownValueController?.value = 'CASH';
                                                                                 });
                                                                                 FFAppState().lastBill = FFAppState().finalAmt;
-                                                                                FFAppState().update(() {});
                                                                                 _model.prdid = null;
-                                                                                safeSetState(() {});
                                                                                 await actions.clearValue();
                                                                                 FFAppState().noOfItems = 0;
                                                                                 FFAppState().subTotal = 0.0;
                                                                                 FFAppState().count = FFAppState().billcount;
                                                                                 FFAppState().delCharges = 0.0;
-                                                                                FFAppState().update(() {});
                                                                                 FFAppState().oldBalance = 0;
                                                                                 FFAppState().custCredit = 0;
                                                                                 FFAppState().custNameRef = null;
@@ -4243,11 +4226,10 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                 FFAppState().setCustName = '';
                                                                                 FFAppState().setCustMobNo = '';
                                                                                 FFAppState().prdid = '';
-                                                                                FFAppState().update(() {});
                                                                                 FFAppState().finalAmt = 0.0;
                                                                                 FFAppState().billAmt = 0.0;
                                                                                 FFAppState().tableViewHideShow = true;
-                                                                                FFAppState().update(() {});
+                                                                                safeSetState(() {});
                                                                                 if (_shouldSetState) safeSetState(() {});
                                                                                 return;
                                                                               } else {
@@ -4392,12 +4374,10 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                   FFAppState().count = FFAppState().count + 1;
                                                                                   FFAppState().newcount = FFAppState().newcount + 1;
                                                                                   FFAppState().billcount = FFAppState().billcount + 1;
-                                                                                  safeSetState(() {});
                                                                                 } else {
                                                                                   FFAppState().count = FFAppState().count + 1;
                                                                                   FFAppState().newcount = FFAppState().newcount + 1;
                                                                                   FFAppState().billcount = FFAppState().billcount + 1;
-                                                                                  safeSetState(() {});
                                                                                 }
 
                                                                                 _model.prdlinstnewtx = await actions.filterProducts2(
@@ -4659,7 +4639,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                       ..synC = FFAppState().shiftDetails.synC
                                                                                       ..id = FFAppState().shiftDetails.id,
                                                                                   );
-                                                                                  safeSetState(() {});
                                                                                   if (_model.interprd!) {
                                                                                     _model.shiftondataprint = await queryShiftRecordOnce(
                                                                                       parent: FFAppState().outletIdRef,
@@ -4781,7 +4760,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                 _shouldSetState = true;
                                                                                 if (_model.isconnected!) {
                                                                                   FFAppState().lastBill = FFAppState().finalAmt;
-                                                                                  FFAppState().update(() {});
                                                                                   _model.returnedList2 = await actions.selectBillPrint(
                                                                                     FFAppState().selBill.toString(),
                                                                                     FFAppState().allBillsList.toList(),
@@ -4846,7 +4824,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                   }
                                                                                   if (tableListAppSettingsRecord!.settingList.where((e) => e.title == 'enableStock').toList().firstOrNull!.value) {
                                                                                     FFAppState().startLoop = 0;
-                                                                                    safeSetState(() {});
                                                                                     while (FFAppState().startLoop < _model.prdlinstnewtx!.length) {
                                                                                       _model.stockupdateprdprt = await queryProductRecordOnce(
                                                                                         parent: FFAppState().outletIdRef,
@@ -4912,7 +4889,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                             ..hivekey = _model.itemprd2?.hivekey
                                                                                             ..version = _model.itemprd2?.version,
                                                                                         );
-                                                                                        safeSetState(() {});
                                                                                         _model.productupdated2 = await actions.hiveProductCrud(
                                                                                           FFAppState().productHiveput.hivekey,
                                                                                           FFAppState().productHiveput,
@@ -4921,14 +4897,11 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                         _shouldSetState = true;
                                                                                         FFAppState().productHive = [];
                                                                                         FFAppState().productHiveput = ProductStructStruct();
-                                                                                        safeSetState(() {});
                                                                                         _model.newupdatedproductlist22 = await actions.getProductlistHive();
                                                                                         _shouldSetState = true;
                                                                                         FFAppState().productHive = _model.newupdatedproductlist22!.toList().cast<ProductStructStruct>();
-                                                                                        safeSetState(() {});
                                                                                       }
                                                                                       FFAppState().startLoop = FFAppState().startLoop + 1;
-                                                                                      safeSetState(() {});
                                                                                     }
                                                                                     await actions.updateProductStocknew(
                                                                                       _model.prdlinstnewtx!.toList(),
@@ -4941,7 +4914,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                     _model.dropDownValueController?.value = 'CASH';
                                                                                   });
                                                                                   _model.prdid = null;
-                                                                                  safeSetState(() {});
                                                                                   await actions.clearValue();
                                                                                   FFAppState().subTotal = 0.0;
                                                                                   FFAppState().delCharges = 0.0;
@@ -4953,12 +4925,11 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                   FFAppState().setCustMobNo = '';
                                                                                   FFAppState().noOfItems = 0;
                                                                                   FFAppState().prdid = '';
-                                                                                  FFAppState().update(() {});
                                                                                   FFAppState().finalAmt = 0.0;
                                                                                   FFAppState().billAmt = 0.0;
                                                                                   FFAppState().count = FFAppState().billcount;
                                                                                   FFAppState().tableViewHideShow = true;
-                                                                                  FFAppState().update(() {});
+                                                                                  safeSetState(() {});
                                                                                   if (_shouldSetState) safeSetState(() {});
                                                                                   return;
                                                                                 } else {

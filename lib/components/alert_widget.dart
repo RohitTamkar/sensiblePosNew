@@ -34,7 +34,7 @@ class _AlertWidgetState extends State<AlertWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await Future.delayed(const Duration(milliseconds: 2000));
+      await Future.delayed(const Duration(milliseconds: 3000));
       Navigator.pop(context);
     });
 

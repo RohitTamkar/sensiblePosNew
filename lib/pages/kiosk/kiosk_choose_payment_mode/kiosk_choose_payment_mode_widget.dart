@@ -12,10 +12,6 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:confetti_modualo_library_b75kfy/app_state.dart'
     as confetti_modualo_library_b75kfy_app_state;
-import 'package:confetti_modualo_library_b75kfy/custom_code/actions/index.dart'
-    as confetti_modualo_library_b75kfy_actions;
-import 'package:confetti_modualo_library_b75kfy/custom_code/widgets/index.dart'
-    as confetti_modualo_library_b75kfy_custom_widgets;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
@@ -178,29 +174,6 @@ class _KioskChoosePaymentModeWidgetState
                                     },
                                   );
                                 },
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 400.0, 0.0),
-                              child:
-                                  confetti_modualo_library_b75kfy_custom_widgets
-                                      .CustomConfetti(
-                                width: 200.0,
-                                height: 50.0,
-                                id: 'abc',
-                                degree: 360,
-                                isExplosion: true,
-                                gravity: 0.2,
-                                emissionFrequency: 0.02,
-                                duration: 3,
-                                particleDrag: 0.05,
-                                numberOfParticles: 500,
-                                displayTarget: false,
-                                shouldLoop: false,
                               ),
                             ),
                           ),
@@ -482,18 +455,6 @@ class _KioskChoosePaymentModeWidgetState
                                                   },
                                                 ).then((value) =>
                                                     safeSetState(() {}));
-
-                                                await confetti_modualo_library_b75kfy_actions
-                                                    .startConfetti(
-                                                  'abc',
-                                                );
-                                                await Future.delayed(
-                                                    const Duration(
-                                                        milliseconds: 3000));
-                                                await confetti_modualo_library_b75kfy_actions
-                                                    .stopConfetti(
-                                                  'abc',
-                                                );
                                               } else {
                                                 await showDialog(
                                                   context: context,

@@ -14,10 +14,6 @@ import 'kiosk_choose_payment_mode_widget.dart'
     show KioskChoosePaymentModeWidget;
 import 'package:confetti_modualo_library_b75kfy/app_state.dart'
     as confetti_modualo_library_b75kfy_app_state;
-import 'package:confetti_modualo_library_b75kfy/custom_code/actions/index.dart'
-    as confetti_modualo_library_b75kfy_actions;
-import 'package:confetti_modualo_library_b75kfy/custom_code/widgets/index.dart'
-    as confetti_modualo_library_b75kfy_custom_widgets;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
