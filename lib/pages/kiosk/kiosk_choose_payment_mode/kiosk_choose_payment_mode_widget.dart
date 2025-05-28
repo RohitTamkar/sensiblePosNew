@@ -14,6 +14,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -280,6 +281,9 @@ class _KioskChoosePaymentModeWidgetState
                                                   focusNode:
                                                       _model.textFieldFocusNode,
                                                   autofocus: false,
+                                                  textCapitalization:
+                                                      TextCapitalization.none,
+                                                  readOnly: _model.focus,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     isDense: false,
@@ -398,6 +402,22 @@ class _KioskChoosePaymentModeWidgetState
                                                   validator: _model
                                                       .textControllerValidator
                                                       .asValidator(context),
+                                                  inputFormatters: [
+                                                    if (!isAndroid && !isiOS)
+                                                      TextInputFormatter
+                                                          .withFunction(
+                                                              (oldValue,
+                                                                  newValue) {
+                                                        return TextEditingValue(
+                                                          selection: newValue
+                                                              .selection,
+                                                          text: newValue.text
+                                                              .toCapitalization(
+                                                                  TextCapitalization
+                                                                      .none),
+                                                        );
+                                                      }),
+                                                  ],
                                                 ),
                                               ),
                                               FFButtonWidget(
@@ -487,10 +507,6 @@ class _KioskChoosePaymentModeWidgetState
                                                             .firstOrNull!
                                                             .value,
                                                       );
-                                                      safeSetState(() {
-                                                        _model.textController
-                                                            ?.text = '';
-                                                      });
                                                       await showModalBottomSheet(
                                                         isScrollControlled:
                                                             true,
@@ -523,6 +539,9 @@ class _KioskChoosePaymentModeWidgetState
                                                         },
                                                       ).then((value) =>
                                                           safeSetState(() {}));
+
+                                                      _model.focus = true;
+                                                      safeSetState(() {});
                                                     } else {
                                                       await showDialog(
                                                         context: context,
