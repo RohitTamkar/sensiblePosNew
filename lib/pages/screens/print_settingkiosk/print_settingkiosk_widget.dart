@@ -927,7 +927,11 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                                 ).toString();
                                                                 FFAppState()
                                                                         .index =
-                                                                    printerListIndex;
+                                                                    valueOrDefault<
+                                                                        int>(
+                                                                  printerListIndex,
+                                                                  0,
+                                                                );
                                                                 FFAppState()
                                                                     .update(
                                                                         () {});
