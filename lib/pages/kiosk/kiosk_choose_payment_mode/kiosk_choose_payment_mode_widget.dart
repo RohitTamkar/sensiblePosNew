@@ -221,7 +221,7 @@ class _KioskChoosePaymentModeWidgetState
                                           ),
                                           Text(
                                             valueOrDefault<String>(
-                                              (FFAppState().finalAmt -
+                                              (FFAppState().finalAmt +
                                                       FFAppState().disAmt)
                                                   .toString(),
                                               '0',
@@ -487,6 +487,10 @@ class _KioskChoosePaymentModeWidgetState
                                                             .firstOrNull!
                                                             .value,
                                                       );
+                                                      safeSetState(() {
+                                                        _model.textController
+                                                            ?.text = '';
+                                                      });
                                                       await showModalBottomSheet(
                                                         isScrollControlled:
                                                             true,
