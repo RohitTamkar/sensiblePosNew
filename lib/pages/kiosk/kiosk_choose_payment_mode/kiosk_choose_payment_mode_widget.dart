@@ -67,6 +67,8 @@ class _KioskChoosePaymentModeWidgetState
         parent: FFAppState().outletIdRef,
         singleRecord: true,
       ).then((s) => s.firstOrNull);
+      _model.focus = false;
+      safeSetState(() {});
     });
 
     _model.textController ??= TextEditingController();
