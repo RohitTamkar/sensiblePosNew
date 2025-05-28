@@ -30302,6 +30302,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
   },
+  // alert
+  {
+    '4gdislex': {
+      'en': 'Coupon Code Applied Successfully!',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
+  },
   // Miscellaneous
   {
     'c0tsq8sj': {

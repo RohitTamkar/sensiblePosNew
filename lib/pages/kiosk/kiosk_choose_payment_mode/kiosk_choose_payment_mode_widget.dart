@@ -1,5 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
+import '/components/alert_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -182,21 +183,25 @@ class _KioskChoosePaymentModeWidgetState
                           ),
                           Align(
                             alignment: AlignmentDirectional(-1.0, 0.0),
-                            child:
-                                confetti_modualo_library_b75kfy_custom_widgets
-                                    .CustomConfetti(
-                              width: 200.0,
-                              height: 50.0,
-                              id: 'abc',
-                              degree: 360,
-                              isExplosion: true,
-                              gravity: 0.2,
-                              emissionFrequency: 0.02,
-                              duration: 3,
-                              particleDrag: 0.05,
-                              numberOfParticles: 25,
-                              displayTarget: false,
-                              shouldLoop: false,
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 400.0, 0.0),
+                              child:
+                                  confetti_modualo_library_b75kfy_custom_widgets
+                                      .CustomConfetti(
+                                width: 200.0,
+                                height: 50.0,
+                                id: 'abc',
+                                degree: 360,
+                                isExplosion: true,
+                                gravity: 0.2,
+                                emissionFrequency: 0.02,
+                                duration: 3,
+                                particleDrag: 0.05,
+                                numberOfParticles: 500,
+                                displayTarget: false,
+                                shouldLoop: false,
+                              ),
                             ),
                           ),
                         ],
@@ -228,6 +233,21 @@ class _KioskChoosePaymentModeWidgetState
                                     ),
                                   ),
                                 ),
+                              ),
+                              Text(
+                                FFAppState().finalAmt.toString(),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      fontSize: 16.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                      useGoogleFonts:
+                                          !FlutterFlowTheme.of(context)
+                                              .bodyMediumIsCustom,
+                                    ),
                               ),
                               if (valueOrDefault<bool>(
                                 widget!.appSettings?.settingList
@@ -434,6 +454,35 @@ class _KioskChoosePaymentModeWidgetState
                                                       .firstOrNull!
                                                       .value,
                                                 );
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child: Container(
+                                                          height: 200.0,
+                                                          child: AlertWidget(),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
+
                                                 await confetti_modualo_library_b75kfy_actions
                                                     .startConfetti(
                                                   'abc',
@@ -493,6 +542,10 @@ class _KioskChoosePaymentModeWidgetState
                                               .getText(
                                             '8hhr58l4' /* Apply */,
                                           ),
+                                          icon: Icon(
+                                            Icons.confirmation_num,
+                                            size: 15.0,
+                                          ),
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
@@ -522,22 +575,6 @@ class _KioskChoosePaymentModeWidgetState
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                           ),
-                                        ),
-                                        Text(
-                                          FFAppState().finalAmt.toString(),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily,
-                                                fontSize: 16.0,
-                                                letterSpacing: 0.0,
-                                                useGoogleFonts:
-                                                    !FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMediumIsCustom,
-                                              ),
                                         ),
                                       ].divide(SizedBox(width: 15.0)),
                                     ),
