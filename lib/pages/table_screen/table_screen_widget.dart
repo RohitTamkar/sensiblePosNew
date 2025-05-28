@@ -4,6 +4,7 @@ import '/components/menu_drawer/menu_drawer_widget.dart';
 import '/components/table_details/table_details_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -11,11 +12,8 @@ import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:confetti_modualo_library_b75kfy/app_state.dart'
-    as confetti_modualo_library_b75kfy_app_state;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_debounce/easy_debounce.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -83,7 +81,6 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
-    context.watch<confetti_modualo_library_b75kfy_app_state.FFAppState>();
 
     return Title(
         title: 'TableScreen',

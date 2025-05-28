@@ -6,15 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'backend/firebase/firebase_config.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
-
-import 'package:confetti_modualo_library_b75kfy/app_state.dart'
-    as confetti_modualo_library_b75kfy_app_state;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,19 +30,8 @@ void main() async {
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
 
-  final confetti_modualo_library_b75kfyAppState =
-      confetti_modualo_library_b75kfy_app_state.FFAppState();
-  await confetti_modualo_library_b75kfyAppState.initializePersistedState();
-
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(
-        create: (context) => appState,
-      ),
-      ChangeNotifierProvider(
-        create: (context) => confetti_modualo_library_b75kfyAppState,
-      ),
-    ],
+  runApp(ChangeNotifierProvider(
+    create: (context) => appState,
     child: MyApp(),
   ));
 }

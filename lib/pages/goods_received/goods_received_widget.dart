@@ -4,16 +4,14 @@ import '/components/menu_drawer/menu_drawer_widget.dart';
 import '/components/reject_order_comment/reject_order_comment_widget.dart';
 import '/components/rejection_details/rejection_details_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
-import 'package:confetti_modualo_library_b75kfy/app_state.dart'
-    as confetti_modualo_library_b75kfy_app_state;
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -67,7 +65,6 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
-    context.watch<confetti_modualo_library_b75kfy_app_state.FFAppState>();
 
     return Title(
         title: 'GoodsReceived',
