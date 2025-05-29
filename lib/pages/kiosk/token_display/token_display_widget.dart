@@ -47,14 +47,14 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
-            duration: 600.0.ms,
+            duration: 800.0.ms,
             begin: Offset(0.9, 0.9),
             end: Offset(1.2, 1.2),
           ),
           TintEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
-            duration: 600.0.ms,
+            duration: 800.0.ms,
             color: Color(0xFF006D25),
             begin: 0.0,
             end: 1.0,

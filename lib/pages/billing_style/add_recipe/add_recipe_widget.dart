@@ -650,8 +650,6 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                     ),
                                     icon: Icon(
                                       Icons.add,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
                                       size: 15.0,
                                     ),
                                     options: FFButtonOptions(
@@ -661,6 +659,8 @@ class _AddRecipeWidgetState extends State<AddRecipeWidget> {
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
+                                      iconColor:
+                                          FlutterFlowTheme.of(context).primary,
                                       color: FlutterFlowTheme.of(context)
                                           .secondary,
                                       textStyle: FlutterFlowTheme.of(context)

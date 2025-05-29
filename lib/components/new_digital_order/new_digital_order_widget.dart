@@ -918,7 +918,6 @@ class _NewDigitalOrderWidgetState extends State<NewDigitalOrderWidget> {
                         text: '',
                         icon: Icon(
                           Icons.remove,
-                          color: FlutterFlowTheme.of(context).primaryText,
                           size: 15.0,
                         ),
                         options: FFButtonOptions(
@@ -928,6 +927,7 @@ class _NewDigitalOrderWidgetState extends State<NewDigitalOrderWidget> {
                               0.0, 0.0, 0.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
+                          iconColor: FlutterFlowTheme.of(context).primaryText,
                           color: FlutterFlowTheme.of(context).secondary,
                           textStyle: FlutterFlowTheme.of(context)
                               .titleSmall
@@ -1017,7 +1017,6 @@ class _NewDigitalOrderWidgetState extends State<NewDigitalOrderWidget> {
                         text: '',
                         icon: Icon(
                           Icons.add,
-                          color: FlutterFlowTheme.of(context).primaryText,
                           size: 15.0,
                         ),
                         options: FFButtonOptions(
@@ -1027,6 +1026,7 @@ class _NewDigitalOrderWidgetState extends State<NewDigitalOrderWidget> {
                               0.0, 0.0, 0.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
+                          iconColor: FlutterFlowTheme.of(context).primaryText,
                           color: FlutterFlowTheme.of(context).secondary,
                           textStyle: FlutterFlowTheme.of(context)
                               .titleSmall

@@ -589,10 +589,12 @@ class _Product5ShoeWidgetState extends State<Product5ShoeWidget>
                                                     _model.checkboxValue1 =
                                                         newValue!);
                                               },
-                                              side: BorderSide(
-                                                width: 2,
-                                                color: Color(0xFF57636C),
-                                              ),
+                                              side: (Color(0xFF57636C) != null)
+                                                  ? BorderSide(
+                                                      width: 2,
+                                                      color: Color(0xFF57636C)!,
+                                                    )
+                                                  : null,
                                               activeColor: Color(0xFF4B39EF),
                                               checkColor: Colors.transparent,
                                             ),
@@ -728,10 +730,12 @@ class _Product5ShoeWidgetState extends State<Product5ShoeWidget>
                                                     _model.checkboxValue2 =
                                                         newValue!);
                                               },
-                                              side: BorderSide(
-                                                width: 2,
-                                                color: Color(0xFF57636C),
-                                              ),
+                                              side: (Color(0xFF57636C) != null)
+                                                  ? BorderSide(
+                                                      width: 2,
+                                                      color: Color(0xFF57636C)!,
+                                                    )
+                                                  : null,
                                               activeColor: Color(0xFF4B39EF),
                                               checkColor: Colors.transparent,
                                             ),
@@ -866,10 +870,12 @@ class _Product5ShoeWidgetState extends State<Product5ShoeWidget>
                                                     _model.checkboxValue3 =
                                                         newValue!);
                                               },
-                                              side: BorderSide(
-                                                width: 2,
-                                                color: Color(0xFF57636C),
-                                              ),
+                                              side: (Color(0xFF57636C) != null)
+                                                  ? BorderSide(
+                                                      width: 2,
+                                                      color: Color(0xFF57636C)!,
+                                                    )
+                                                  : null,
                                               activeColor: Color(0xFF4B39EF),
                                               checkColor: Colors.transparent,
                                             ),

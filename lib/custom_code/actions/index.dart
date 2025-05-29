@@ -1,4 +1,5 @@
 export 'check_platform.dart' show checkPlatform;
+export 'add_to_hold_listprd_k_o_t.dart' show addToHoldListprdKOT;
 export 'print_barcode_label.dart' show printBarcodeLabel;
 export 'print_billnewhive_n_e_w.dart' show printBillnewhiveNEW;
 export 'update_product_stocknew.dart' show updateProductStocknew;

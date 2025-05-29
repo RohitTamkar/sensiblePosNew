@@ -412,13 +412,18 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                 await queryTableKotRecordOnce(
                                               parent: FFAppState().outletIdRef,
                                               queryBuilder: (tableKotRecord) =>
-                                                  tableKotRecord.where(
-                                                'tableNo',
-                                                isEqualTo: getJsonField(
-                                                  tablelistItem,
-                                                  r'''$.id''',
-                                                ).toString(),
-                                              ),
+                                                  tableKotRecord
+                                                      .where(
+                                                        'tableNo',
+                                                        isEqualTo: getJsonField(
+                                                          tablelistItem,
+                                                          r'''$.id''',
+                                                        ).toString(),
+                                                      )
+                                                      .where(
+                                                        'kotStatus',
+                                                        isEqualTo: 'PENDING',
+                                                      ),
                                               singleRecord: true,
                                             ).then((s) => s.firstOrNull);
 
@@ -430,8 +435,6 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                           ),
                                           icon: Icon(
                                             Icons.remove_red_eye_outlined,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
                                             size: 15.0,
                                           ),
                                           options: FFButtonOptions(
@@ -443,6 +446,9 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             textStyle:

@@ -822,7 +822,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   text: '',
                                                                                   icon: Icon(
                                                                                     Icons.backspace_sharp,
-                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                     size: 16.0,
                                                                                   ),
                                                                                   options: FFButtonOptions(
@@ -830,6 +829,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     height: 33.0,
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    iconColor: FlutterFlowTheme.of(context).primaryText,
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
@@ -1226,7 +1226,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     text: '',
                                                                                     icon: Icon(
                                                                                       Icons.done,
-                                                                                      color: FlutterFlowTheme.of(context).primaryText,
                                                                                       size: 19.0,
                                                                                     ),
                                                                                     options: FFButtonOptions(
@@ -1234,6 +1233,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                       height: 33.0,
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      iconColor: FlutterFlowTheme.of(context).primaryText,
                                                                                       color: FlutterFlowTheme.of(context).customColor2,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
@@ -2177,7 +2177,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   text: '',
                                                                                   icon: Icon(
                                                                                     Icons.backspace_sharp,
-                                                                                    color: FlutterFlowTheme.of(context).primaryText,
                                                                                     size: 16.0,
                                                                                   ),
                                                                                   options: FFButtonOptions(
@@ -2185,6 +2184,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     height: 33.0,
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    iconColor: FlutterFlowTheme.of(context).primaryText,
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
@@ -2529,7 +2529,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                 text: '',
                                                                                 icon: Icon(
                                                                                   Icons.done,
-                                                                                  color: FlutterFlowTheme.of(context).primaryText,
                                                                                   size: 19.0,
                                                                                 ),
                                                                                 options: FFButtonOptions(
@@ -2537,6 +2536,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   height: 33.0,
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  iconColor: FlutterFlowTheme.of(context).primaryText,
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,

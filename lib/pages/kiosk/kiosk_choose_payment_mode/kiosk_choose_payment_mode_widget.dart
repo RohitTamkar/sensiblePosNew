@@ -996,8 +996,6 @@ class _KioskChoosePaymentModeWidgetState
                                 ),
                                 icon: Icon(
                                   Icons.qr_code_scanner,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
                                   size: 50.0,
                                 ),
                                 options: FFButtonOptions(
@@ -1007,6 +1005,8 @@ class _KioskChoosePaymentModeWidgetState
                                       16.0, 0.0, 16.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
+                                  iconColor: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
                                   color: FlutterFlowTheme.of(context).info,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
@@ -1286,8 +1286,6 @@ class _KioskChoosePaymentModeWidgetState
                                   ),
                                   icon: Icon(
                                     Icons.credit_card,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
                                     size: 50.0,
                                   ),
                                   options: FFButtonOptions(
@@ -1297,6 +1295,8 @@ class _KioskChoosePaymentModeWidgetState
                                         16.0, 0.0, 16.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
+                                    iconColor: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
                                     color: FlutterFlowTheme.of(context).info,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
@@ -1495,8 +1495,6 @@ class _KioskChoosePaymentModeWidgetState
                                 ),
                                 icon: FaIcon(
                                   FontAwesomeIcons.moneyBillWaveAlt,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
                                   size: 50.0,
                                 ),
                                 options: FFButtonOptions(
@@ -1506,6 +1504,8 @@ class _KioskChoosePaymentModeWidgetState
                                       16.0, 0.0, 16.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
+                                  iconColor: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
                                   color: FlutterFlowTheme.of(context).info,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall

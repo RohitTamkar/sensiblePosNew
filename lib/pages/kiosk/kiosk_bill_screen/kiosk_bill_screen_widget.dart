@@ -286,9 +286,6 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                             icon: Icon(
                                                               Icons
                                                                   .dinner_dining_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
                                                               size: 24.0,
                                                             ),
                                                             options:
@@ -308,6 +305,10 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
+                                                              iconColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
                                                               color: Color(
                                                                   0x00B6001A),
                                                               textStyle:
@@ -355,9 +356,6 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                             icon: Icon(
                                                               Icons
                                                                   .takeout_dining_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
                                                               size: 30.0,
                                                             ),
                                                             options:
@@ -377,6 +375,10 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
+                                                              iconColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
                                                               color: Color(
                                                                   0x00B6001A),
                                                               textStyle:
@@ -1707,7 +1709,6 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                             ),
                             icon: Icon(
                               Icons.close_sharp,
-                              color: FlutterFlowTheme.of(context).primary,
                               size: 24.0,
                             ),
                             options: FFButtonOptions(
@@ -1717,6 +1718,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                   12.0, 0.0, 12.0, 0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
+                              iconColor: FlutterFlowTheme.of(context).primary,
                               color: Color(0x00FFAC47),
                               textStyle: FlutterFlowTheme.of(context)
                                   .displayMedium
@@ -2038,8 +2040,6 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                             ),
                             icon: Icon(
                               Icons.chevron_right,
-                              color:
-                                  FlutterFlowTheme.of(context).primaryBtnText,
                               size: 25.0,
                             ),
                             options: FFButtonOptions(
@@ -2049,6 +2049,8 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                   12.0, 0.0, 12.0, 0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
+                              iconColor:
+                                  FlutterFlowTheme.of(context).primaryBtnText,
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
                                   .displayMedium

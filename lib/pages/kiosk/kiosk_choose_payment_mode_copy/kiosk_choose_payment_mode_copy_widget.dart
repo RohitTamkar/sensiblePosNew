@@ -786,8 +786,6 @@ class _KioskChoosePaymentModeCopyWidgetState
                                 ),
                                 icon: Icon(
                                   Icons.qr_code_scanner,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
                                   size: 50.0,
                                 ),
                                 options: FFButtonOptions(
@@ -797,6 +795,8 @@ class _KioskChoosePaymentModeCopyWidgetState
                                       16.0, 0.0, 16.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
+                                  iconColor: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
                                   color: FlutterFlowTheme.of(context).info,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
@@ -832,8 +832,6 @@ class _KioskChoosePaymentModeCopyWidgetState
                                 ),
                                 icon: Icon(
                                   Icons.qr_code_scanner,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
                                   size: 50.0,
                                 ),
                                 options: FFButtonOptions(
@@ -843,6 +841,8 @@ class _KioskChoosePaymentModeCopyWidgetState
                                       16.0, 0.0, 16.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
+                                  iconColor: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
                                   color: FlutterFlowTheme.of(context).info,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall

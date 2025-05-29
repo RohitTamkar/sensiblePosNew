@@ -143,7 +143,6 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
               text: '',
               icon: Icon(
                 Icons.backspace,
-                color: Color(0xFF493A19),
                 size: 30.0,
               ),
               options: FFButtonOptions(
@@ -151,6 +150,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 height: 90.0,
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                iconColor: Color(0xFF493A19),
                 color: Color(0xFFFFFFFB),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
@@ -388,7 +388,6 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
               text: '',
               icon: Icon(
                 Icons.done,
-                color: Color(0xFF493A19),
                 size: 40.0,
               ),
               options: FFButtonOptions(
@@ -396,6 +395,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 height: 90.0,
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                iconColor: Color(0xFF493A19),
                 color: Color(0xFFE3D0AD),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,

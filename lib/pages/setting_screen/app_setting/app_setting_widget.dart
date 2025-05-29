@@ -375,9 +375,6 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                 ),
                                                 icon: Icon(
                                                   Icons.track_changes,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .lineColor,
                                                   size: 15.0,
                                                 ),
                                                 options: FFButtonOptions(
@@ -390,6 +387,10 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                       EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
+                                                  iconColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .lineColor,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondary,

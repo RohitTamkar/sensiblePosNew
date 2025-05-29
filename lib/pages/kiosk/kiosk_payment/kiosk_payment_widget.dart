@@ -342,8 +342,6 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                           ),
                                           icon: Icon(
                                             Icons.dinner_dining_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
                                             size: 30.0,
                                           ),
                                           options: FFButtonOptions(
@@ -354,6 +352,9 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
                                             color: Color(0x00B6001A),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
@@ -394,8 +395,6 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                           ),
                                           icon: Icon(
                                             Icons.takeout_dining_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
                                             size: 30.0,
                                           ),
                                           options: FFButtonOptions(
@@ -406,6 +405,9 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
+                                            iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
                                             color: Color(0x00B6001A),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)

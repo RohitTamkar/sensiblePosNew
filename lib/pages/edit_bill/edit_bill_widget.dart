@@ -785,13 +785,13 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                             safeSetState(() {});
                                                                           }
                                                                         },
-                                                                        side:
-                                                                            BorderSide(
-                                                                          width:
-                                                                              2,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).alternate,
-                                                                        ),
+                                                                        side: (FlutterFlowTheme.of(context).alternate !=
+                                                                                null)
+                                                                            ? BorderSide(
+                                                                                width: 2,
+                                                                                color: FlutterFlowTheme.of(context).alternate!,
+                                                                              )
+                                                                            : null,
                                                                         activeColor:
                                                                             FlutterFlowTheme.of(context).primary,
                                                                         checkColor:
