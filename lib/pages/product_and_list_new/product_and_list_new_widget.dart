@@ -861,10 +861,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                   _model.deviceCopy!.toList(),
                   FFAppState().isPrinterConnected,
                   FFAppState().printerName,
-                  getJsonField(
-                    functions.outletDocToJson(_model.outletdocenter!),
-                    r'''$''',
-                  ),
                   _model.invonlineprtCopy!,
                   FFAppState().paperSize,
                   _model.appsetting!,
@@ -883,10 +879,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                   _model.deviceCopy!.toList(),
                   FFAppState().isPrinterConnected,
                   FFAppState().printerName,
-                  getJsonField(
-                    functions.outletDocToJson(_model.outletdocenter!),
-                    r'''$''',
-                  ),
                   _model.invonlineprtCopy!,
                   FFAppState().paperSize,
                   FFAppState().port,
@@ -7218,10 +7210,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                     _model.device!.toList(),
                                                                                     FFAppState().isPrinterConnected,
                                                                                     FFAppState().printerName,
-                                                                                    getJsonField(
-                                                                                      functions.outletDocToJson(buttonOutletRecord),
-                                                                                      r'''$''',
-                                                                                    ),
                                                                                     _model.invonlineprt!,
                                                                                     FFAppState().paperSize,
                                                                                     productAndListNewAppSettingsRecord!,
@@ -7236,10 +7224,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                     _model.device!.toList(),
                                                                                     FFAppState().isPrinterConnected,
                                                                                     FFAppState().printerName,
-                                                                                    getJsonField(
-                                                                                      functions.outletDocToJson(buttonOutletRecord),
-                                                                                      r'''$''',
-                                                                                    ),
                                                                                     _model.invonlineprt!,
                                                                                     FFAppState().paperSize,
                                                                                     FFAppState().port,

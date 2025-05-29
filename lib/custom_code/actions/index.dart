@@ -1,4 +1,6 @@
 export 'check_platform.dart' show checkPlatform;
+export 'print_k_o_twithusbtable.dart' show printKOTwithusbtable;
+export 'print_ethernet_kot.dart' show printEthernetKot;
 export 'add_to_hold_listprd_k_o_t.dart' show addToHoldListprdKOT;
 export 'print_barcode_label.dart' show printBarcodeLabel;
 export 'print_billnewhive_n_e_w.dart' show printBillnewhiveNEW;

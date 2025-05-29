@@ -11,55 +11,52 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
 //import 'package:flutter_pos_printer_platform/flutter_pos_printer_platform.dart';
 import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
 import 'package:flutter_pos_printer_platform_image_3/flutter_pos_printer_platform_image_3.dart';
-import "package:firedart/firedart.dart";
 
-Future<void> printEthernethive(
+Future printKOTwithusbtable(
   List<dynamic> data,
   List<dynamic> selectedPrinter,
   bool status,
   String statusName,
-  InvoiceRecord invoiceDetails,
+  TableKotRecord invoiceDetails,
   String printerSize,
-  String port,
-  String? ipaddress,
-  List<ServicePointOutletRecord> list,
   AppSettingsRecord appSetting,
+  List<ServicePointOutletRecord> list,
 ) async {
-  // Determine the size of the print based on the printer size
-  int size = printerSize == "3 inch" ? 46 : 32;
-
-  // Load the printer profile and generator
+  // Add your function code here!
+  int size = 32;
+  if (printerSize == "3 inch") {
+    size = 46;
+  } else if (printerSize == "2 inch") {
+    size = 32;
+  }
   final profile = await CapabilityProfile.load();
   final generator = size == 32
       ? Generator(PaperSize.mm58, profile)
       : Generator(PaperSize.mm80, profile);
 
+  var printerManager = PrinterManager.instance;
   List<int>? pendingTask;
   BTStatus _currentStatus = BTStatus.none;
   USBStatus _currentUsbStatus = USBStatus.none;
   if (statusName == "BTStatus.connected") {
     _currentStatus = BTStatus.connected;
   }
-  // _currentUsbStatus is only supported on Android
-  if (statusName == "USBStatus.connected") {
+  // _currentUsbStatus is only supports on Android
+  if (statusName == "connected usb") {
     _currentUsbStatus = USBStatus.connected;
   }
-  // Initialize the printer manager
-  var printerManager = PrinterManager.instance;
+  FFAppState().printerName = "";
+  List<int> bytes = [];
+  String billColumn3;
+  String taxColumn3;
+  dynamic obj;
 
-  // Fetch service point details associated with each product
   Map<String, List<dynamic>> servicePointProducts = {};
   for (var product in invoiceDetails.productList) {
     QuerySnapshot querySnapshot;
@@ -86,7 +83,8 @@ Future<void> printEthernethive(
       List<int> bytes = [];
       if (size == 46) {
         String billColumn3 = "ITEM NAME                                  QTY";
-        bytes += generator.text(
+
+        /*  bytes += generator.text(
             "-----------------------------------------------",
             styles: const PosStyles(
                 height: PosTextSize.size1,
@@ -100,23 +98,24 @@ Future<void> printEthernethive(
                 width: PosTextSize.size2,
                 bold: false,
                 align: PosAlign.center));
+                */
 
+        bytes += generator.text("# NEW KOT #",
+            styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                align: PosAlign.center));
+        bytes += generator.text(servicePoint.name,
+            styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                align: PosAlign.center));
         bytes += generator.text(
             "-----------------------------------------------",
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
                 bold: false,
-                align: PosAlign.center));
-        bytes += generator.text("# NEW KOT #",
-            styles: PosStyles(
-                height: PosTextSize.size2,
-                width: PosTextSize.size2,
-                align: PosAlign.center));
-        bytes += generator.text(servicePoint.name,
-            styles: PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
                 align: PosAlign.center));
 
         String printLine = '';
@@ -187,8 +186,8 @@ Future<void> printEthernethive(
         String billColumn3 = "ITEM NAME                   QTY";
         bytes += generator.text("# NEW KOT #",
             styles: PosStyles(
-                height: PosTextSize.size2,
-                width: PosTextSize.size2,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
                 align: PosAlign.center));
         bytes += generator.text(servicePoint.name,
             styles: PosStyles(
@@ -261,7 +260,7 @@ Future<void> printEthernethive(
           bytes += generatePrintBytes(generator, product);
         }
       }
-      if (bytes.isNotEmpty) {
+      /* if (bytes.isNotEmpty) {
         // Add the bytes for feeding and cutting paper
         bytes += generator.feed(2);
         bytes += generator.cut();
@@ -275,6 +274,74 @@ Future<void> printEthernethive(
 
         // Send the bytes to the printer
         printerManager.send(type: PrinterType.network, bytes: bytes);
+      }*/
+
+      if (bytes.isNotEmpty) {
+        //_printEscPos(bytes, generator);
+
+        if (selectedPrinter == null) return;
+        var bluetoothPrinter = selectedPrinter[0]!;
+
+        switch (bluetoothPrinter["typePrinter"]) {
+          case PrinterType.usb:
+            bytes += generator.feed(2);
+            bytes += generator.cut();
+            FFAppState().printerName = statusName;
+            FFAppState().isPrinterConnected = status;
+            await printerManager.connect(
+                type: bluetoothPrinter["typePrinter"],
+                model: UsbPrinterInput(
+                    name: bluetoothPrinter["deviceName"],
+                    productId: bluetoothPrinter["productId"],
+                    vendorId: bluetoothPrinter["vendorId"]));
+            pendingTask = null;
+            if (Platform.isAndroid) pendingTask = bytes;
+            break;
+          case PrinterType.bluetooth:
+            bytes += generator.cut();
+            FFAppState().printerName = statusName;
+            FFAppState().isPrinterConnected = status;
+            await printerManager.connect(
+                type: bluetoothPrinter["typePrinter"],
+                model: BluetoothPrinterInput(
+                  name: bluetoothPrinter["deviceName"],
+                  address: bluetoothPrinter["address"],
+                  isBle: bluetoothPrinter["isBle"] ?? false,
+                ));
+            pendingTask = null;
+            if (Platform.isIOS || Platform.isAndroid) pendingTask = bytes;
+            break;
+          case PrinterType.network:
+            bytes += generator.feed(2);
+            bytes += generator.cut();
+            await printerManager.connect(
+                type: bluetoothPrinter["typePrinter"],
+                model: TcpPrinterInput(ipAddress: bluetoothPrinter.address!));
+            break;
+          default:
+        }
+        if (bluetoothPrinter["typePrinter"] == PrinterType.bluetooth) {
+          _currentStatus = BTStatus.connected;
+
+          if (_currentStatus == BTStatus.connected) {
+            FFAppState().printerName = "connected bt";
+            printerManager.send(
+                type: bluetoothPrinter["typePrinter"], bytes: bytes);
+            pendingTask = null;
+          }
+        } else if (bluetoothPrinter["typePrinter"] == PrinterType.usb &&
+            Platform.isAndroid) {
+          // _currentUsbStatus is only supports on Android
+          if (_currentUsbStatus == USBStatus.connected) {
+            FFAppState().printerName = "connected usb";
+            printerManager.send(
+                type: bluetoothPrinter["typePrinter"], bytes: bytes);
+            pendingTask = null;
+          }
+        } else {
+          printerManager.send(
+              type: bluetoothPrinter["typePrinter"], bytes: bytes);
+        }
       }
     }
   }
@@ -283,27 +350,73 @@ Future<void> printEthernethive(
 List<int> generatePrintBytes(Generator generator, dynamic product) {
   List<int> bytes = [];
 
-  bytes += generator.row([
-    PosColumn(
-      text: product.name.toString(),
-      width: 6,
-      styles: PosStyles(
-          fontType: PosFontType.fontA,
-          height: PosTextSize.size2,
-          width: PosTextSize.size2,
-          bold: true,
-          align: PosAlign.left),
-    ),
-    PosColumn(
-      text: product.quantity.toString(),
-      width: 6,
-      styles: PosStyles(
-          height: PosTextSize.size2,
-          width: PosTextSize.size2,
-          bold: true,
-          align: PosAlign.right),
-    ),
-  ]);
+  // Define the maximum length per line for the product name conservatively
+  const int maxLineLength =
+      15; // Adjust this value based on your printer's actual character width per line
+
+  // Split the product name into multiple lines if necessary
+  String productName = product.name.toString();
+  List<String> nameLines = [];
+  for (int i = 0; i < productName.length; i += maxLineLength) {
+    int end = (i + maxLineLength < productName.length)
+        ? i + maxLineLength
+        : productName.length;
+    nameLines.add(productName.substring(i, end));
+  }
+
+  // Print each line of the product name
+  for (int i = 0; i < nameLines.length; i++) {
+    if (i == 0) {
+      // First line: print product name and quantity
+      bytes += generator.row([
+        PosColumn(
+          text: nameLines[i],
+          width: 8,
+          styles: PosStyles(
+            //
+            height: PosTextSize.size1,
+            width: PosTextSize.size1,
+            bold: false,
+            align: PosAlign.left,
+          ),
+        ),
+        PosColumn(
+          text: product.quantity.toString(),
+          width: 4,
+          styles: PosStyles(
+            height: PosTextSize.size1,
+            width: PosTextSize.size1,
+            bold: false,
+            align: PosAlign.right,
+          ),
+        ),
+      ]);
+    } else {
+      // Subsequent lines: print product name parts only
+      bytes += generator.row([
+        PosColumn(
+          text: nameLines[i],
+          width: 8,
+          styles: PosStyles(
+            height: PosTextSize.size1,
+            width: PosTextSize.size1,
+            bold: false,
+            align: PosAlign.left,
+          ),
+        ),
+        PosColumn(
+          text: '',
+          width: 4, // Empty column to maintain the total width of 12
+          styles: PosStyles(
+            height: PosTextSize.size1,
+            width: PosTextSize.size1,
+            bold: false,
+            align: PosAlign.right,
+          ),
+        ),
+      ]);
+    }
+  }
 
   return bytes;
 }

@@ -6045,11 +6045,6 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           .isPrinterConnected,
                                                                       FFAppState()
                                                                           .printerName,
-                                                                      getJsonField(
-                                                                        functions
-                                                                            .outletDocToJson(buttonOutletRecord),
-                                                                        r'''$''',
-                                                                      ),
                                                                       _model
                                                                           .invonlineprt!,
                                                                       FFAppState()
@@ -6084,11 +6079,6 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           .isPrinterConnected,
                                                                       FFAppState()
                                                                           .printerName,
-                                                                      getJsonField(
-                                                                        functions
-                                                                            .outletDocToJson(buttonOutletRecord),
-                                                                        r'''$''',
-                                                                      ),
                                                                       _model
                                                                           .invonlineprt!,
                                                                       FFAppState()

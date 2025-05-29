@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
@@ -18,10 +19,14 @@ class TableVIewWidget extends StatefulWidget {
     super.key,
     this.parameter2,
     this.parameter3,
+    this.taxcollection,
+    this.apsetting,
   });
 
   final PremisesRecord? parameter2;
   final String? parameter3;
+  final List<TaxMasterRecord>? taxcollection;
+  final AppSettingsRecord? apsetting;
 
   @override
   State<TableVIewWidget> createState() => _TableVIewWidgetState();
@@ -194,7 +199,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                       ).toString();
                                       FFAppState().selectedPremise =
                                           widget!.parameter3!;
-                                      FFAppState().update(() {});
+                                      _model.updatePage(() {});
                                     },
                                     child: Container(
                                       width: double.infinity,
@@ -426,6 +431,57 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                       ),
                                               singleRecord: true,
                                             ).then((s) => s.firstOrNull);
+                                            if (_model.tablekot != null) {
+                                              await actions.addToHoldListprdKOT(
+                                                0,
+                                                widget!.taxcollection!.toList(),
+                                                functions.enabletaxinclusive(
+                                                    widget!
+                                                        .apsetting!.settingList
+                                                        .where((e) =>
+                                                            e.title ==
+                                                            'enableInclusiveTax')
+                                                        .toList()
+                                                        .firstOrNull!
+                                                        .value),
+                                                _model.tablekot!.productList
+                                                    .toList(),
+                                              );
+                                              FFAppState().tableViewHideShow =
+                                                  false;
+                                              FFAppState().tableNo =
+                                                  getJsonField(
+                                                tablelistItem,
+                                                r'''$.id''',
+                                              ).toString();
+                                              FFAppState().selectedPremise =
+                                                  widget!.parameter3!;
+                                              FFAppState().kotDocRef =
+                                                  _model.tablekot?.reference;
+
+                                              _model.updatePage(() {});
+                                            } else {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    'Table Is Empty !',
+                                                    style: TextStyle(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                  ),
+                                                  duration: Duration(
+                                                      milliseconds: 4000),
+                                                  backgroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondary,
+                                                ),
+                                              );
+                                            }
 
                                             safeSetState(() {});
                                           },

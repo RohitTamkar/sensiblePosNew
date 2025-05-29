@@ -131,11 +131,6 @@ class InvoiceRecord extends FirestoreRecord {
   double get taxPer => _taxPer ?? 0.0;
   bool hasTaxPer() => _taxPer != null;
 
-  // "vechicleNo" field.
-  String? _vechicleNo;
-  String get vechicleNo => _vechicleNo ?? '';
-  bool hasVechicleNo() => _vechicleNo != null;
-
   // "checkInTime" field.
   int? _checkInTime;
   int get checkInTime => _checkInTime ?? 0;
@@ -150,11 +145,6 @@ class InvoiceRecord extends FirestoreRecord {
   double? _advancePaid;
   double get advancePaid => _advancePaid ?? 0.0;
   bool hasAdvancePaid() => _advancePaid != null;
-
-  // "vechicleType" field.
-  String? _vechicleType;
-  String get vechicleType => _vechicleType ?? '';
-  bool hasVechicleType() => _vechicleType != null;
 
   // "count" field.
   int? _count;
@@ -220,11 +210,9 @@ class InvoiceRecord extends FirestoreRecord {
     _shiftId = snapshotData['shiftId'] as String?;
     _partyMobNo = snapshotData['partyMobNo'] as String?;
     _taxPer = castToType<double>(snapshotData['taxPer']);
-    _vechicleNo = snapshotData['vechicleNo'] as String?;
     _checkInTime = castToType<int>(snapshotData['checkInTime']);
     _checkOutTime = castToType<int>(snapshotData['checkOutTime']);
     _advancePaid = castToType<double>(snapshotData['advancePaid']);
-    _vechicleType = snapshotData['vechicleType'] as String?;
     _count = castToType<int>(snapshotData['count']);
     _duration = castToType<double>(snapshotData['duration']);
     _orderType = snapshotData['orderType'] as String?;
@@ -296,11 +284,9 @@ Map<String, dynamic> createInvoiceRecordData({
   String? shiftId,
   String? partyMobNo,
   double? taxPer,
-  String? vechicleNo,
   int? checkInTime,
   int? checkOutTime,
   double? advancePaid,
-  String? vechicleType,
   int? count,
   double? duration,
   String? orderType,
@@ -333,11 +319,9 @@ Map<String, dynamic> createInvoiceRecordData({
       'shiftId': shiftId,
       'partyMobNo': partyMobNo,
       'taxPer': taxPer,
-      'vechicleNo': vechicleNo,
       'checkInTime': checkInTime,
       'checkOutTime': checkOutTime,
       'advancePaid': advancePaid,
-      'vechicleType': vechicleType,
       'count': count,
       'duration': duration,
       'orderType': orderType,
@@ -380,11 +364,9 @@ class InvoiceRecordDocumentEquality implements Equality<InvoiceRecord> {
         e1?.shiftId == e2?.shiftId &&
         e1?.partyMobNo == e2?.partyMobNo &&
         e1?.taxPer == e2?.taxPer &&
-        e1?.vechicleNo == e2?.vechicleNo &&
         e1?.checkInTime == e2?.checkInTime &&
         e1?.checkOutTime == e2?.checkOutTime &&
         e1?.advancePaid == e2?.advancePaid &&
-        e1?.vechicleType == e2?.vechicleType &&
         e1?.count == e2?.count &&
         e1?.duration == e2?.duration &&
         e1?.orderType == e2?.orderType &&
@@ -419,11 +401,9 @@ class InvoiceRecordDocumentEquality implements Equality<InvoiceRecord> {
         e?.shiftId,
         e?.partyMobNo,
         e?.taxPer,
-        e?.vechicleNo,
         e?.checkInTime,
         e?.checkOutTime,
         e?.advancePaid,
-        e?.vechicleType,
         e?.count,
         e?.duration,
         e?.orderType,

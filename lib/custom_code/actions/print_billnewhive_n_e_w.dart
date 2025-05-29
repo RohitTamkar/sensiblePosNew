@@ -38,7 +38,6 @@ Future printBillnewhiveNEW(
   List<dynamic> selectedPrinter,
   bool status,
   String statusName,
-  dynamic outletDetails,
   InvoiceRecord invoiceDetails,
   String printerSize,
   AppSettingsRecord appSetting,

@@ -25,15 +25,13 @@ import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
 import 'package:flutter_pos_printer_platform_image_3/flutter_pos_printer_platform_image_3.dart';
 import "package:firedart/firedart.dart";
 
-Future<void> printEthernethive(
+Future<void> printEthernetKot(
   List<dynamic> data,
   List<dynamic> selectedPrinter,
   bool status,
   String statusName,
-  InvoiceRecord invoiceDetails,
+  TableKotRecord TableKotDetails,
   String printerSize,
-  String port,
-  String? ipaddress,
   List<ServicePointOutletRecord> list,
   AppSettingsRecord appSetting,
 ) async {

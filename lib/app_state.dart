@@ -644,6 +644,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _tableNo = prefs.getString('ff_tableNo') ?? _tableNo;
     });
+    _safeInit(() {
+      _kotDocRef = prefs.getString('ff_kotDocRef')?.ref ?? _kotDocRef;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -3654,6 +3657,15 @@ class FFAppState extends ChangeNotifier {
   set tableNo(String value) {
     _tableNo = value;
     prefs.setString('ff_tableNo', value);
+  }
+
+  DocumentReference? _kotDocRef;
+  DocumentReference? get kotDocRef => _kotDocRef;
+  set kotDocRef(DocumentReference? value) {
+    _kotDocRef = value;
+    value != null
+        ? prefs.setString('ff_kotDocRef', value.path)
+        : prefs.remove('ff_kotDocRef');
   }
 
   final _listManager = StreamRequestManager<List<PremisesRecord>>();
