@@ -3530,6 +3530,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                               FFAppState().noOfItems = 0;
                                                                               FFAppState().subTotal = 0.0;
                                                                               FFAppState().delCharges = 0.0;
+                                                                              FFAppState().kotDocRef = null;
                                                                               FFAppState().prdid = '';
                                                                               FFAppState().finalAmt = 0.0;
                                                                               FFAppState().billAmt = 0.0;
@@ -3745,6 +3746,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                               FFAppState().noOfItems = 0;
                                                                               FFAppState().subTotal = 0.0;
                                                                               FFAppState().delCharges = 0.0;
+                                                                              FFAppState().kotDocRef = null;
                                                                               FFAppState().prdid = '';
                                                                               FFAppState().finalAmt = 0.0;
                                                                               FFAppState().billAmt = 0.0;
