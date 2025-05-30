@@ -2160,7 +2160,38 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     Colors
                                                                         .transparent,
                                                                 onLongPress:
-                                                                    () async {},
+                                                                    () async {
+                                                                  context
+                                                                      .pushNamed(
+                                                                    TableListWidget
+                                                                        .routeName,
+                                                                    queryParameters:
+                                                                        {
+                                                                      'shiftDetails':
+                                                                          serializeParam(
+                                                                        widget!
+                                                                            .shiftDetails,
+                                                                        ParamType
+                                                                            .JSON,
+                                                                      ),
+                                                                      'taxcollection':
+                                                                          serializeParam(
+                                                                        widget!
+                                                                            .taxcollection,
+                                                                        ParamType
+                                                                            .Document,
+                                                                        isList:
+                                                                            true,
+                                                                      ),
+                                                                    }.withoutNulls,
+                                                                    extra: <String,
+                                                                        dynamic>{
+                                                                      'taxcollection':
+                                                                          widget!
+                                                                              .taxcollection,
+                                                                    },
+                                                                  );
+                                                                },
                                                                 child: Text(
                                                                   FFAppState()
                                                                       .outletName,
