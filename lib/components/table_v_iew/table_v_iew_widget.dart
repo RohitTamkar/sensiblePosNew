@@ -460,7 +460,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                 FFAppState().selBill = 1;
                                               }
                                               await actions.addToHoldListprdKOT(
-                                                0,
+                                                FFAppState().selBill,
                                                 widget!.taxcollection!.toList(),
                                                 functions.enabletaxinclusive(
                                                     widget!
