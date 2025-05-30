@@ -432,6 +432,16 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                               singleRecord: true,
                                             ).then((s) => s.firstOrNull);
                                             if (_model.tablekot != null) {
+                                              await actions
+                                                  .removeFromAllBillList(
+                                                FFAppState().selBill,
+                                              );
+                                              await actions.clearValue();
+                                              FFAppState().delCharges = 0.0;
+                                              FFAppState().kotDocRef = null;
+                                              FFAppState().tableViewHideShow =
+                                                  true;
+                                              FFAppState().prdid = '';
                                               if (FFAppState().holdBillCount ==
                                                   0) {
                                                 FFAppState().holdBillCount =
