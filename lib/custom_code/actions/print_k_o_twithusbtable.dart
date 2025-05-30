@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -23,7 +25,7 @@ Future printKOTwithusbtable(
   List<dynamic> selectedPrinter,
   bool status,
   String statusName,
-  TableKotRecord invoiceDetails,
+  TableKotRecord tableKotDetails,
   String printerSize,
   AppSettingsRecord appSetting,
   List<ServicePointOutletRecord> list,
@@ -58,7 +60,7 @@ Future printKOTwithusbtable(
   dynamic obj;
 
   Map<String, List<dynamic>> servicePointProducts = {};
-  for (var product in invoiceDetails.productList) {
+  for (var product in tableKotDetails.productList) {
     QuerySnapshot querySnapshot;
     querySnapshot = await FirebaseFirestore.instance
         .collection('OUTLET')
@@ -146,7 +148,7 @@ Future printKOTwithusbtable(
         final String formatted1 = formatter1.format(now1);
 
         String dateTimeString = formatted1.toString();
-        String billNo = 'Bill No: ' + invoiceDetails.invoice.toString();
+        String billNo = 'Table No: ' + tableKotDetails.tableNo;
         printLine = billNo;
         for (int i = 1;
             i <= (size - (billNo.length + dateTimeString.length));
@@ -223,7 +225,7 @@ Future printKOTwithusbtable(
         final String formatted1 = formatter1.format(now1);
 
         String dateTimeString = formatted1.toString();
-        String billNo = 'Bill No: ' + invoiceDetails.invoice.toString();
+        String billNo = 'Table No: ' + tableKotDetails.tableNo;
         printLine = billNo;
         for (int i = 1;
             i <= (size - (billNo.length + dateTimeString.length));

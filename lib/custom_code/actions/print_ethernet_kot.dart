@@ -17,6 +17,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -30,7 +32,7 @@ Future<void> printEthernetKot(
   List<dynamic> selectedPrinter,
   bool status,
   String statusName,
-  TableKotRecord TableKotDetails,
+  TableKotRecord tableKotDetails,
   String printerSize,
   List<ServicePointOutletRecord> list,
   AppSettingsRecord appSetting,
@@ -59,7 +61,7 @@ Future<void> printEthernetKot(
 
   // Fetch service point details associated with each product
   Map<String, List<dynamic>> servicePointProducts = {};
-  for (var product in invoiceDetails.productList) {
+  for (var product in tableKotDetails.productList) {
     QuerySnapshot querySnapshot;
     querySnapshot = await FirebaseFirestore.instance
         .collection('OUTLET')
@@ -145,7 +147,7 @@ Future<void> printEthernetKot(
         final String formatted1 = formatter1.format(now1);
 
         String dateTimeString = formatted1.toString();
-        String billNo = 'Bill No: ' + invoiceDetails.invoice.toString();
+        String billNo = 'Table No: ' + tableKotDetails.tableNo;
         printLine = billNo;
         for (int i = 1;
             i <= (size - (billNo.length + dateTimeString.length));
@@ -222,7 +224,7 @@ Future<void> printEthernetKot(
         final String formatted1 = formatter1.format(now1);
 
         String dateTimeString = formatted1.toString();
-        String billNo = 'Bill No: ' + invoiceDetails.invoice.toString();
+        String billNo = 'Table No: ' + tableKotDetails.tableNo;
         printLine = billNo;
         for (int i = 1;
             i <= (size - (billNo.length + dateTimeString.length));
