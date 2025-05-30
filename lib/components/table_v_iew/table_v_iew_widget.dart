@@ -432,6 +432,33 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                               singleRecord: true,
                                             ).then((s) => s.firstOrNull);
                                             if (_model.tablekot != null) {
+                                              if (FFAppState().holdBillCount ==
+                                                  0) {
+                                                FFAppState().holdBillCount =
+                                                    FFAppState().holdBillCount +
+                                                        1;
+                                                FFAppState().addToAllBillsList(
+                                                    functions
+                                                        .generateBillDetailsJson(
+                                                            0.0,
+                                                            0.0,
+                                                            0.0,
+                                                            'CASH',
+                                                            0.0,
+                                                            0.0,
+                                                            FFAppState()
+                                                                .billAmt,
+                                                            0.0,
+                                                            FFAppState()
+                                                                .finalAmt,
+                                                            '0',
+                                                            FFAppState()
+                                                                .itemCartList
+                                                                .toList(),
+                                                            FFAppState()
+                                                                .holdBillCount));
+                                                FFAppState().selBill = 1;
+                                              }
                                               await actions.addToHoldListprdKOT(
                                                 0,
                                                 widget!.taxcollection!.toList(),
