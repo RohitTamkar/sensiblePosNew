@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 import 'index.dart'; // Imports other custom actions
+
+import 'index.dart'; // Imports other custom actions
 import '/custom_code/actions/index.dart' as actions;
 import 'index.dart'; // Imports other custom actions
 
@@ -21,34 +23,34 @@ Future<List<dynamic>> addToHoldListprdKOT(
   int billno,
   List<TaxMasterRecord> taxcollection,
   String inclusiveorexclusive,
-  List<SelItemListStruct> documentList, // <-- renamed for clarity
+  List<SelItemListStruct> documentList,
 ) async {
   List<dynamic> list = FFAppState().allBillsList;
   List<dynamic> itemList = [];
-  double quantity = 1.0;
+
+  // First group all items by their ID to combine quantities
+  Map<String, double> quantityMap = {};
+  Map<String, SelItemListStruct> itemMap = {};
 
   for (var document in documentList) {
-    // Resolve taxId and unitId
+    if (quantityMap.containsKey(document.id)) {
+      quantityMap[document.id] = quantityMap[document.id]! + document.quantity;
+    } else {
+      quantityMap[document.id] = document.quantity;
+      itemMap[document.id] = document;
+    }
+  }
+
+  // Now process each unique item with combined quantities
+  for (var id in quantityMap.keys) {
+    var document = itemMap[id]!;
+    double quantity = quantityMap[id]!;
+
     String taxId =
         document.taxId.isNotEmpty ? document.taxId : 'QPIz6c63YKBYVKT80oPv';
     TaxMasterRecord? taxRecord = taxcollection.firstWhere(
       (element) => element.id == taxId,
     );
-
-    /*  String unitId = document.unitId.isNotEmpty ? document.unitId : 'HjExWViQAwNJCUiUPwBz';
-    UnitTypeRecord? unitRecord = unitcollection.firstWhere(
-          (element) => element.id == unitId,
-
-    );*/
-
-    /*   int disPer = document.discountPer.toInt();
-    double disAmt = document.discountAmt;
-
-    if (disAmt > 0) {
-      disPer = (disAmt * 100 / document.sellingPrice).toInt();
-    } else if (disPer > 0) {
-      disAmt = (document.sellingPrice * disPer) / 100.0;
-    }*/
 
     if (taxRecord != null) {
       double taxPer = taxRecord.percentage ?? 0.0;
@@ -64,84 +66,67 @@ Future<List<dynamic>> addToHoldListprdKOT(
           ? (price * quantity)
           : (price * quantity) + taxAmt;
 
-      // total -= disAmt * quantity;
-
-      int srNo = 1;
-
-      for (var bill in list) {
-        if (bill["billno"] == billno &&
-            bill["details"]["itemList"].isNotEmpty) {
-          itemList = bill["details"]["itemList"];
-          srNo = itemList.length + 1;
-          break;
-        }
-      }
-
-      final data = {
-        "srno": srNo,
-        "name": document.name,
-        "regionallang": '',
-        "barcode": '',
-        "price": price,
-        "purPrice": price,
-        "mrpPrice": 0,
-        "quantity": quantity,
-        "qtystring": quantity,
-        "unit": '',
-        "unitId": '',
-        "total": double.parse(total.toStringAsFixed(2)),
-        "id": document.id,
-        "catId": document.catId,
-        "taxId": taxId,
-        "taxPer": double.parse(taxPer.toStringAsFixed(2)),
-        "taxAmt": double.parse(taxAmt.toStringAsFixed(2)),
-        "disPer": 0,
-        "disAmt": 0,
-        "mfgDate": " ",
-        "expDate": " ",
-        "stockable": false,
-        "currentStock": 0,
-        "kotPrint": document.kotPrint,
-      };
-
-      bool itemFound = false;
+      // Find the bill to update
       for (int i = 0; i < list.length; i++) {
         if (list[i]["billno"] == billno) {
+          itemList = list[i]["details"]["itemList"] ?? [];
+
+          // Check if item already exists in this bill
+          bool itemFound = false;
           for (int j = 0; j < itemList.length; j++) {
-            if (itemList[j]["name"] == data["name"]) {
-              itemList[j]["quantity"]++;
-              itemList[j]["qtystring"] = itemList[j]["quantity"];
-              /*itemList[j]["disAmt"] = double.parse(
-                  (disAmt * itemList[j]["quantity"]).toStringAsFixed(2));*/
-              itemList[j]["taxAmt"] = double.parse(
-                  (taxAmtPerItem * itemList[j]["quantity"]).toStringAsFixed(2));
-
-              itemList[j]["total"] =
-                  inclusiveorexclusive.toLowerCase() == 'inclusive'
-                      ? (itemList[j]["price"] * itemList[j]["quantity"])
-                      : (itemList[j]["price"] * itemList[j]["quantity"]) +
-                          itemList[j]["taxAmt"];
-              itemList[j]["total"] -= itemList[j]["disAmt"];
-
-              list[i]["details"]["itemList"] = itemList;
-              FFAppState().allBillsList = list;
+            if (itemList[j]["id"] == id) {
+              // Update existing item with combined quantity
+              itemList[j]["quantity"] = quantity;
+              itemList[j]["qtystring"] = quantity.toString();
+              itemList[j]["taxAmt"] =
+                  double.parse((taxAmtPerItem * quantity).toStringAsFixed(2));
+              itemList[j]["total"] = double.parse(total.toStringAsFixed(2));
               itemFound = true;
               break;
             }
           }
 
           if (!itemFound) {
-            data["srno"] = itemList.length + 1;
+            // Add new item with combined quantity
+            final data = {
+              "srno": itemList.length + 1,
+              "name": document.name,
+              "regionallang": '',
+              "barcode": '',
+              "price": price,
+              "purPrice": price,
+              "mrpPrice": 0,
+              "quantity": quantity,
+              "qtystring": quantity.toString(),
+              "unit": '',
+              "unitId": '',
+              "total": double.parse(total.toStringAsFixed(2)),
+              "id": id,
+              "catId": document.catId,
+              "taxId": taxId,
+              "taxPer": double.parse(taxPer.toStringAsFixed(2)),
+              "taxAmt": double.parse(taxAmt.toStringAsFixed(2)),
+              "disPer": 0.0,
+              "disAmt": 0.0,
+              "mfgDate": " ",
+              "expDate": " ",
+              "stockable": false,
+              "currentStock": 0,
+              "printKot": document.printKot,
+              "kotTime": document.kotTime,
+            };
             itemList.add(data);
-            list[i]["details"]["itemList"] = itemList;
-            FFAppState().allBillsList = list;
           }
+
+          list[i]["details"]["itemList"] = itemList;
           break;
         }
       }
     }
   }
 
+  // Update the app state
+  FFAppState().allBillsList = list;
   print(FFAppState().allBillsList);
 
   await actions.calSubTotalForHoldListkiosk(

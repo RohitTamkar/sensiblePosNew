@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -61,20 +63,24 @@ Future printKOTwithusbtable(
 
   Map<String, List<dynamic>> servicePointProducts = {};
   for (var product in tableKotDetails.productList) {
-    QuerySnapshot querySnapshot;
-    querySnapshot = await FirebaseFirestore.instance
-        .collection('OUTLET')
-        .doc(FFAppState().outletIdRef?.id)
-        .collection('PRODUCT')
-        .where('id', isEqualTo: product.id)
-        .get();
+    if (product.printKot) {
+      print('Kot Already Printed !');
+    } else {
+      QuerySnapshot querySnapshot;
+      querySnapshot = await FirebaseFirestore.instance
+          .collection('OUTLET')
+          .doc(FFAppState().outletIdRef?.id)
+          .collection('PRODUCT')
+          .where('id', isEqualTo: product.id)
+          .get();
 
-    for (var doc in querySnapshot.docs) {
-      var serviceOutletRefId = doc["serviceRefId"];
-      if (!servicePointProducts.containsKey(serviceOutletRefId)) {
-        servicePointProducts[serviceOutletRefId] = [];
+      for (var doc in querySnapshot.docs) {
+        var serviceOutletRefId = doc["serviceRefId"];
+        if (!servicePointProducts.containsKey(serviceOutletRefId)) {
+          servicePointProducts[serviceOutletRefId] = [];
+        }
+        servicePointProducts[serviceOutletRefId]?.add(product);
       }
-      servicePointProducts[serviceOutletRefId]?.add(product);
     }
   }
 
@@ -84,9 +90,11 @@ Future printKOTwithusbtable(
       List<dynamic> productsToPrint = servicePointProducts[servicePoint.id]!;
       List<int> bytes = [];
       if (size == 46) {
-        String billColumn3 = "ITEM NAME                                  QTY";
+        String billColumn3 = "  ITEM NAME                              QTY  ";
 
-        /*  bytes += generator.text(
+        /*
+
+         bytes += generator.text(
             "-----------------------------------------------",
             styles: const PosStyles(
                 height: PosTextSize.size1,
@@ -100,6 +108,7 @@ Future printKOTwithusbtable(
                 width: PosTextSize.size2,
                 bold: false,
                 align: PosAlign.center));
+
                 */
 
         bytes += generator.text("# NEW KOT #",
@@ -121,7 +130,7 @@ Future printKOTwithusbtable(
                 align: PosAlign.center));
 
         String printLine = '';
-        String dateString = '';
+        /*   String dateString = '';
         String serialTemp = 'Serial no: ' + FFAppState().count.toString();
 
         final DateTime now = DateTime.now();
@@ -141,10 +150,10 @@ Future printKOTwithusbtable(
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: false));
+                bold: false));*/
         printLine = '';
         final DateTime now1 = DateTime.now();
-        final DateFormat formatter1 = DateFormat('h:mm:ss');
+        final DateFormat formatter1 = DateFormat('dd-MM-yyyy h:mm:ss');
         final String formatted1 = formatter1.format(now1);
 
         String dateTimeString = formatted1.toString();
@@ -286,7 +295,7 @@ Future printKOTwithusbtable(
 
         switch (bluetoothPrinter["typePrinter"]) {
           case PrinterType.usb:
-            bytes += generator.feed(2);
+            //  bytes += generator.feed(2);
             bytes += generator.cut();
             FFAppState().printerName = statusName;
             FFAppState().isPrinterConnected = status;
@@ -314,7 +323,7 @@ Future printKOTwithusbtable(
             if (Platform.isIOS || Platform.isAndroid) pendingTask = bytes;
             break;
           case PrinterType.network:
-            bytes += generator.feed(2);
+            //  bytes += generator.feed(2);
             bytes += generator.cut();
             await printerManager.connect(
                 type: bluetoothPrinter["typePrinter"],
@@ -389,7 +398,7 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
             height: PosTextSize.size1,
             width: PosTextSize.size1,
             bold: false,
-            align: PosAlign.right,
+            align: PosAlign.center,
           ),
         ),
       ]);
@@ -413,7 +422,7 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
             height: PosTextSize.size1,
             width: PosTextSize.size1,
             bold: false,
-            align: PosAlign.right,
+            align: PosAlign.center,
           ),
         ),
       ]);

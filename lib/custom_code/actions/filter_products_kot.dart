@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<SelItemListStruct>> filterProductsKot(
   int billno,
   List<dynamic> allBillList,
@@ -22,6 +24,9 @@ Future<List<SelItemListStruct>> filterProductsKot(
   List<SelItemListStruct> returnList = [];
   SelItemListStruct struct = SelItemListStruct();
 
+  bool kot = false;
+  int timems = getCurrentTimestamp.millisecondsSinceEpoch;
+
   if (allBillList.isNotEmpty) {
     for (int i = 0; i < allBillList.length; i++) {
       print(allBillList[i]["billno"]);
@@ -30,6 +35,12 @@ Future<List<SelItemListStruct>> filterProductsKot(
           itemList = (allBillList[i]["details"]["itemList"]);
           for (int j = 0; j < itemList.length; j++) {
             print(itemList[j]);
+            if (kotPrint) {
+              kot = true;
+              timems = itemList[j]["kotTime"];
+            } else {
+              kot = itemList[j]["printKot"];
+            }
             struct = createSelItemListStruct(
               name: itemList[j]["name"],
               price: itemList[j]["price"],
@@ -44,8 +55,8 @@ Future<List<SelItemListStruct>> filterProductsKot(
               disAmt: itemList[j]["disAmt"],
               qtystring: itemList[j]["qtystring"].toString(),
               isDeletedItem: false,
-              printKot: itemList[j]["printKot"],
-              kotTime: DateTime.now().millisecond,
+              printKot: kot,
+              kotTime: getCurrentTimestamp.millisecondsSinceEpoch,
             );
 
             returnList.add(struct);

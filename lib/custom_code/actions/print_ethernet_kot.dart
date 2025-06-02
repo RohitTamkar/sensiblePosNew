@@ -19,6 +19,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -62,20 +64,24 @@ Future<void> printEthernetKot(
   // Fetch service point details associated with each product
   Map<String, List<dynamic>> servicePointProducts = {};
   for (var product in tableKotDetails.productList) {
-    QuerySnapshot querySnapshot;
-    querySnapshot = await FirebaseFirestore.instance
-        .collection('OUTLET')
-        .doc(FFAppState().outletIdRef?.id)
-        .collection('PRODUCT')
-        .where('id', isEqualTo: product.id)
-        .get();
+    if (product.printKot) {
+      print('Kot Already Printed !');
+    } else {
+      QuerySnapshot querySnapshot;
+      querySnapshot = await FirebaseFirestore.instance
+          .collection('OUTLET')
+          .doc(FFAppState().outletIdRef?.id)
+          .collection('PRODUCT')
+          .where('id', isEqualTo: product.id)
+          .get();
 
-    for (var doc in querySnapshot.docs) {
-      var serviceOutletRefId = doc["serviceRefId"];
-      if (!servicePointProducts.containsKey(serviceOutletRefId)) {
-        servicePointProducts[serviceOutletRefId] = [];
+      for (var doc in querySnapshot.docs) {
+        var serviceOutletRefId = doc["serviceRefId"];
+        if (!servicePointProducts.containsKey(serviceOutletRefId)) {
+          servicePointProducts[serviceOutletRefId] = [];
+        }
+        servicePointProducts[serviceOutletRefId]?.add(product);
       }
-      servicePointProducts[serviceOutletRefId]?.add(product);
     }
   }
 
@@ -85,7 +91,7 @@ Future<void> printEthernetKot(
       List<dynamic> productsToPrint = servicePointProducts[servicePoint.id]!;
       List<int> bytes = [];
       if (size == 46) {
-        String billColumn3 = "ITEM NAME                                  QTY";
+        String billColumn3 = "  ITEM NAME                               QTY ";
         bytes += generator.text(
             "-----------------------------------------------",
             styles: const PosStyles(
@@ -120,10 +126,10 @@ Future<void> printEthernetKot(
                 align: PosAlign.center));
 
         String printLine = '';
-        String dateString = '';
-        String serialTemp = 'Serial no: ' + FFAppState().count.toString();
+        /*    String dateString = '';
+        String serialTemp = 'Serial no: ' + FFAppState().count.toString();*/
 
-        final DateTime now = DateTime.now();
+        /*  final DateTime now = DateTime.now();
         final DateFormat formatter = DateFormat('dd-MM-yyyy');
         final String formatted = formatter.format(now);
         dateString = formatted.toString();
@@ -140,10 +146,10 @@ Future<void> printEthernetKot(
             styles: const PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
-                bold: false));
+                bold: false));*/
         printLine = '';
         final DateTime now1 = DateTime.now();
-        final DateFormat formatter1 = DateFormat('h:mm:ss');
+        final DateFormat formatter1 = DateFormat('dd-MM-yyyy h:mm:ss');
         final String formatted1 = formatter1.format(now1);
 
         String dateTimeString = formatted1.toString();
@@ -263,7 +269,7 @@ Future<void> printEthernetKot(
       }
       if (bytes.isNotEmpty) {
         // Add the bytes for feeding and cutting paper
-        bytes += generator.feed(2);
+        // bytes += generator.feed(2);
         bytes += generator.cut();
 
         // Connect to the printer via Ethernet
@@ -286,22 +292,22 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
   bytes += generator.row([
     PosColumn(
       text: product.name.toString(),
-      width: 6,
+      width: 8,
       styles: PosStyles(
-          fontType: PosFontType.fontA,
-          height: PosTextSize.size2,
-          width: PosTextSize.size2,
+          //fontType: PosFontType.fontA,
+          height: PosTextSize.size1,
+          width: PosTextSize.size1,
           bold: true,
           align: PosAlign.left),
     ),
     PosColumn(
       text: product.quantity.toString(),
-      width: 6,
+      width: 4,
       styles: PosStyles(
-          height: PosTextSize.size2,
-          width: PosTextSize.size2,
+          height: PosTextSize.size1,
+          width: PosTextSize.size1,
           bold: true,
-          align: PosAlign.right),
+          align: PosAlign.center),
     ),
   ]);
 

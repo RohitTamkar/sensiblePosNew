@@ -84,13 +84,18 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
             return StreamBuilder<List<TableKotRecord>>(
               stream: queryTableKotRecord(
                 parent: FFAppState().outletIdRef,
-                queryBuilder: (tableKotRecord) => tableKotRecord.where(
-                  'tableNo',
-                  isEqualTo: getJsonField(
-                    tablelistItem,
-                    r'''$.id''',
-                  ).toString(),
-                ),
+                queryBuilder: (tableKotRecord) => tableKotRecord
+                    .where(
+                      'tableNo',
+                      isEqualTo: getJsonField(
+                        tablelistItem,
+                        r'''$.id''',
+                      ).toString(),
+                    )
+                    .where(
+                      'kotStatus',
+                      isEqualTo: 'PENDING',
+                    ),
               ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
