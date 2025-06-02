@@ -199,6 +199,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                       ).toString();
                                       FFAppState().selectedPremise =
                                           widget!.parameter3!;
+                                      FFAppState().kotDocRef = null;
                                       FFAppState().update(() {});
                                     },
                                     child: Container(
