@@ -4039,6 +4039,10 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                 await _model.invonline!.reference.update(createInvoiceRecordData(
                                                                                   id: _model.invonline?.reference.id,
                                                                                 ));
+
+                                                                                await FFAppState().kotDocRef!.update(createTableKotRecordData(
+                                                                                      kotStatus: 'FINAL',
+                                                                                    ));
                                                                               } else {
                                                                                 await showDialog(
                                                                                   context: context,
@@ -4618,6 +4622,10 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                               await _model.invonlineprt!.reference.update(createInvoiceRecordData(
                                                                                 id: _model.invonlineprt?.reference.id,
                                                                               ));
+
+                                                                              await FFAppState().kotDocRef!.update(createTableKotRecordData(
+                                                                                    kotStatus: 'FINAL',
+                                                                                  ));
                                                                             } else {
                                                                               await showDialog(
                                                                                 context: context,
