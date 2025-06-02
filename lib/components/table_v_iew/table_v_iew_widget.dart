@@ -200,6 +200,8 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                       FFAppState().selectedPremise =
                                           widget!.parameter3!;
                                       _model.updatePage(() {});
+
+                                      _model.updatePage(() {});
                                     },
                                     child: Container(
                                       width: double.infinity,
