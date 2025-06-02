@@ -16,6 +16,7 @@ import 'index.dart'; // Imports other custom actions
 Future<List<SelItemListStruct>> filterProductsKot(
   int billno,
   List<dynamic> allBillList,
+  bool kotPrint,
 ) async {
   List<dynamic> itemList = [];
   List<SelItemListStruct> returnList = [];

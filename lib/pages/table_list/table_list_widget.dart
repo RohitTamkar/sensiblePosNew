@@ -3441,6 +3441,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                               _model.prdlistsavebillkot = await actions.filterProductsKot(
                                                                                 FFAppState().selBill,
                                                                                 FFAppState().allBillsList.toList(),
+                                                                                true,
                                                                               );
                                                                               _shouldSetState = true;
                                                                               _model.internetconkot = await actions.checkInternetConnection();
@@ -3624,6 +3625,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                 await actions.filterProductsKot(
                                                                               FFAppState().selBill,
                                                                               FFAppState().allBillsList.toList(),
+                                                                              false,
                                                                             );
                                                                             _shouldSetState =
                                                                                 true;
@@ -3735,6 +3737,22 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                   tableListAppSettingsRecord!,
                                                                                 );
                                                                               }
+                                                                              _model.prdlistsavebillkotupdate = await actions.filterProductsKot(
+                                                                                FFAppState().selBill,
+                                                                                FFAppState().allBillsList.toList(),
+                                                                                true,
+                                                                              );
+                                                                              _shouldSetState = true;
+
+                                                                              await FFAppState().kotDocRef!.update({
+                                                                                ...mapToFirestore(
+                                                                                  {
+                                                                                    'productList': getSelItemListListFirestoreData(
+                                                                                      _model.prdlistsavebillkotupdate,
+                                                                                    ),
+                                                                                  },
+                                                                                ),
+                                                                              });
                                                                               await actions.removeFromAllBillList(
                                                                                 FFAppState().selBill,
                                                                               );
@@ -3878,6 +3896,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                               _model.prdlistsavebill = await actions.filterProductsKot(
                                                                                 FFAppState().selBill,
                                                                                 FFAppState().allBillsList.toList(),
+                                                                                true,
                                                                               );
                                                                               _shouldSetState = true;
                                                                               if (FFAppState().setCustRef != null) {
@@ -4431,6 +4450,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                 await actions.filterProductsKot(
                                                                               FFAppState().selBill,
                                                                               FFAppState().allBillsList.toList(),
+                                                                              true,
                                                                             );
                                                                             _shouldSetState =
                                                                                 true;
@@ -4850,20 +4870,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                   FFAppState().port,
                                                                                   FFAppState().ipAddresss,
                                                                                   _model.spoutlet!.toList(),
-                                                                                );
-                                                                              }
-                                                                              if (tableListAppSettingsRecord!.settingList.where((e) => e.title == 'enableEthernetPrint').toList().firstOrNull!.value) {
-                                                                                await actions.printEthernethive(
-                                                                                  _model.returnedList2!.toList(),
-                                                                                  _model.device!.toList(),
-                                                                                  FFAppState().isPrinterConnected,
-                                                                                  FFAppState().printerName,
-                                                                                  _model.invonlineprt!,
-                                                                                  FFAppState().paperSize,
-                                                                                  FFAppState().port,
-                                                                                  FFAppState().ipAddresss,
-                                                                                  _model.spoutlet!.toList(),
-                                                                                  tableListAppSettingsRecord!,
                                                                                 );
                                                                               }
                                                                               if (tableListAppSettingsRecord!.settingList.where((e) => e.title == 'enableStock').toList().firstOrNull!.value) {

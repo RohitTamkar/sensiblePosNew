@@ -153,6 +153,8 @@ class TableListModel extends FlutterFlowModel<TableListWidget> {
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<ServicePointOutletRecord>? spoutletkot;
   // Stores action output result for [Custom Action - filterProductsKot] action in Button widget.
+  List<SelItemListStruct>? prdlistsavebillkotupdate;
+  // Stores action output result for [Custom Action - filterProductsKot] action in Button widget.
   List<SelItemListStruct>? prdlistsavebill;
   // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
   int? totalcredit2;
