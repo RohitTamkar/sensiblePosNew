@@ -1396,7 +1396,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                                                   }
                                                                                                                 }
 
-                                                                                                                _model.qtyunitresult = await actions.addToHoldListprdbarcode(
+                                                                                                                _model.qtyunitresult = await actions.addToHoldListprdtable(
                                                                                                                   productListItem,
                                                                                                                   FFAppState().selBill,
                                                                                                                   widget!.taxcollection!.toList(),
@@ -1596,7 +1596,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                                                   }
                                                                                                                 }
 
-                                                                                                                _model.jsonlistnew2 = await actions.addToHoldListprdbarcode(
+                                                                                                                _model.qtyunitresult23 = await actions.addToHoldListprdtable(
                                                                                                                   productListItem,
                                                                                                                   FFAppState().selBill,
                                                                                                                   widget!.taxcollection!.toList(),
@@ -3438,7 +3438,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                 false;
                                                                             if (functions.filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList()).length >
                                                                                 0) {
-                                                                              _model.prdlistsavebillkot = await actions.filterProducts2(
+                                                                              _model.prdlistsavebillkot = await actions.filterProductsKot(
                                                                                 FFAppState().selBill,
                                                                                 FFAppState().allBillsList.toList(),
                                                                               );
@@ -3621,7 +3621,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                           if (functions.filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList()).length >
                                                                               0) {
                                                                             _model.prdlistsavebillupi =
-                                                                                await actions.filterProducts2(
+                                                                                await actions.filterProductsKot(
                                                                               FFAppState().selBill,
                                                                               FFAppState().allBillsList.toList(),
                                                                             );
@@ -3875,7 +3875,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                 FFAppState().billcount = FFAppState().billcount + 1;
                                                                               }
 
-                                                                              _model.prdlistsavebill = await actions.filterProducts2(
+                                                                              _model.prdlistsavebill = await actions.filterProductsKot(
                                                                                 FFAppState().selBill,
                                                                                 FFAppState().allBillsList.toList(),
                                                                               );
@@ -4428,7 +4428,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                             }
 
                                                                             _model.prdlinstnewtx =
-                                                                                await actions.filterProducts2(
+                                                                                await actions.filterProductsKot(
                                                                               FFAppState().selBill,
                                                                               FFAppState().allBillsList.toList(),
                                                                             );

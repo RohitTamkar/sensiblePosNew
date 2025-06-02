@@ -196,6 +196,11 @@ class ProductRecord extends FirestoreRecord {
   bool get purchasable => _purchasable ?? false;
   bool hasPurchasable() => _purchasable != null;
 
+  // "isKotPrint" field.
+  bool? _isKotPrint;
+  bool get isKotPrint => _isKotPrint ?? false;
+  bool hasIsKotPrint() => _isKotPrint != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -235,6 +240,7 @@ class ProductRecord extends FirestoreRecord {
     _currentStock = castToType<int>(snapshotData['currentStock']);
     _serviceRefId = snapshotData['serviceRefId'] as String?;
     _purchasable = snapshotData['purchasable'] as bool?;
+    _isKotPrint = snapshotData['isKotPrint'] as bool?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -312,6 +318,7 @@ Map<String, dynamic> createProductRecordData({
   int? currentStock,
   String? serviceRefId,
   bool? purchasable,
+  bool? isKotPrint,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -350,6 +357,7 @@ Map<String, dynamic> createProductRecordData({
       'currentStock': currentStock,
       'serviceRefId': serviceRefId,
       'purchasable': purchasable,
+      'isKotPrint': isKotPrint,
     }.withoutNulls,
   );
 
@@ -397,7 +405,8 @@ class ProductRecordDocumentEquality implements Equality<ProductRecord> {
         e1?.isEnable == e2?.isEnable &&
         e1?.currentStock == e2?.currentStock &&
         e1?.serviceRefId == e2?.serviceRefId &&
-        e1?.purchasable == e2?.purchasable;
+        e1?.purchasable == e2?.purchasable &&
+        e1?.isKotPrint == e2?.isKotPrint;
   }
 
   @override
@@ -437,7 +446,8 @@ class ProductRecordDocumentEquality implements Equality<ProductRecord> {
         e?.isEnable,
         e?.currentStock,
         e?.serviceRefId,
-        e?.purchasable
+        e?.purchasable,
+        e?.isKotPrint
       ]);
 
   @override

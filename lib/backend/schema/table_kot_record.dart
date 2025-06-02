@@ -136,6 +136,11 @@ class TableKotRecord extends FirestoreRecord {
   String get premiseName => _premiseName ?? '';
   bool hasPremiseName() => _premiseName != null;
 
+  // "kotJson" field.
+  String? _kotJson;
+  String get kotJson => _kotJson ?? '';
+  bool hasKotJson() => _kotJson != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -166,6 +171,7 @@ class TableKotRecord extends FirestoreRecord {
     _settled = snapshotData['settled'] as bool?;
     _tableNo = snapshotData['tableNo'] as String?;
     _premiseName = snapshotData['premiseName'] as String?;
+    _kotJson = snapshotData['kotJson'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -231,6 +237,7 @@ Map<String, dynamic> createTableKotRecordData({
   bool? settled,
   String? tableNo,
   String? premiseName,
+  String? kotJson,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -257,6 +264,7 @@ Map<String, dynamic> createTableKotRecordData({
       'settled': settled,
       'tableNo': tableNo,
       'premiseName': premiseName,
+      'kotJson': kotJson,
     }.withoutNulls,
   );
 
@@ -292,7 +300,8 @@ class TableKotRecordDocumentEquality implements Equality<TableKotRecord> {
         e1?.isDeleted == e2?.isDeleted &&
         e1?.settled == e2?.settled &&
         e1?.tableNo == e2?.tableNo &&
-        e1?.premiseName == e2?.premiseName;
+        e1?.premiseName == e2?.premiseName &&
+        e1?.kotJson == e2?.kotJson;
   }
 
   @override
@@ -320,7 +329,8 @@ class TableKotRecordDocumentEquality implements Equality<TableKotRecord> {
         e?.isDeleted,
         e?.settled,
         e?.tableNo,
-        e?.premiseName
+        e?.premiseName,
+        e?.kotJson
       ]);
 
   @override

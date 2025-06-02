@@ -101,6 +101,7 @@ Future<List<dynamic>> addToHoldListprdKOT(
         "expDate": " ",
         "stockable": false,
         "currentStock": 0,
+        "kotPrint": document.kotPrint,
       };
 
       bool itemFound = false;

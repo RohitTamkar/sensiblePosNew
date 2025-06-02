@@ -17,7 +17,7 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
-Future<List<dynamic>> addToHoldListprdbarcode(
+Future<List<dynamic>> addToHoldListprdtable(
   ProductStructStruct document,
   int billno,
   List<TaxMasterRecord> taxcollection,
@@ -119,7 +119,8 @@ Future<List<dynamic>> addToHoldListprdbarcode(
     for (int i = 0; i < list.length; i++) {
       if (list[i]["billno"] == billno) {
         for (int j = 0; j < itemList.length; j++) {
-          if (itemList[j]["name"] == data["name"]) {
+          if (itemList[j]["name"] == data["name"] &&
+              itemList[j]["kotPrint"] == false) {
             itemList[j]["quantity"]++;
             itemList[j]["qtystring"] = itemList[j]["quantity"];
             itemList[j]["disAmt"] = double.parse(
