@@ -75,6 +75,14 @@ class TableListModel extends FlutterFlowModel<TableListWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Custom Action - getProductlistHive] action in TableList widget.
+  List<ProductStructStruct>? hiveProductList;
+  // Stores action output result for [Custom Action - getCategorylistHive] action in TableList widget.
+  List<CategoryStructStruct>? categoryListHive;
+  // Stores action output result for [Custom Action - scanPrinter] action in TableList widget.
+  bool? resDevice2Copy;
+  // Stores action output result for [Custom Action - connectDevice] action in TableList widget.
+  bool? isConnected;
   // Model for MenuDrawer component.
   late MenuDrawerModel menuDrawerModel;
   // State field(s) for ListView widget.

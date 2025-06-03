@@ -73,6 +73,32 @@ class _TableListWidgetState extends State<TableListWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       FFAppState().tableViewHideShow = true;
       safeSetState(() {});
+      FFAppState().shiftDocExists = getJsonField(
+        widget!.shiftDetails,
+        r'''$.shiftExists''',
+      );
+      FFAppState().update(() {});
+      FFAppState().shiftDetailsNEw = widget!.shiftDetails!;
+      safeSetState(() {});
+      FFAppState().shiftDetailsJson = widget!.shiftDetails!;
+      FFAppState().shiftdetails = widget!.shiftDetails!;
+      safeSetState(() {});
+      _model.hiveProductList = await actions.getProductlistHive();
+      _model.categoryListHive = await actions.getCategorylistHive();
+      FFAppState().productHive =
+          _model.hiveProductList!.toList().cast<ProductStructStruct>();
+      FFAppState().categoryHive =
+          _model.categoryListHive!.toList().cast<CategoryStructStruct>();
+      safeSetState(() {});
+      if (!functions.isPrinterSelected(FFAppState().printerDevice)!) {
+        _model.resDevice2Copy = await actions.scanPrinter(
+          FFAppState().posMode,
+        );
+      }
+      _model.isConnected = await actions.connectDevice(
+        FFAppState().printerDevice,
+        FFAppState().printerIndex,
+      );
     });
 
     _model.textController1 ??= TextEditingController();
