@@ -920,38 +920,82 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                             },
                                                           );
                                                         } else {
-                                                          context.pushNamed(
-                                                            ProductAndListNewWidget
-                                                                .routeName,
-                                                            queryParameters: {
-                                                              'doc':
-                                                                  serializeParam(
-                                                                widget!.doc,
-                                                                ParamType
-                                                                    .DocumentReference,
-                                                              ),
-                                                              'shiftDetails':
-                                                                  serializeParam(
-                                                                _model
-                                                                    .shiftDetailsNew2,
-                                                                ParamType.JSON,
-                                                              ),
-                                                              'taxcollection':
-                                                                  serializeParam(
-                                                                _model
-                                                                    .taxcollection,
-                                                                ParamType
-                                                                    .Document,
-                                                                isList: true,
-                                                              ),
-                                                            }.withoutNulls,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              'taxcollection':
+                                                          if (_model.devicew!
+                                                              .settingList
+                                                              .where((e) =>
+                                                                  e.title ==
+                                                                  'enableTables')
+                                                              .toList()
+                                                              .firstOrNull!
+                                                              .value) {
+                                                            context.pushNamed(
+                                                              TableListWidget
+                                                                  .routeName,
+                                                              queryParameters: {
+                                                                'shiftDetails':
+                                                                    serializeParam(
+                                                                  _model
+                                                                      .shiftDetailsNew2,
+                                                                  ParamType
+                                                                      .JSON,
+                                                                ),
+                                                                'taxcollection':
+                                                                    serializeParam(
                                                                   _model
                                                                       .taxcollection,
-                                                            },
-                                                          );
+                                                                  ParamType
+                                                                      .Document,
+                                                                  isList: true,
+                                                                ),
+                                                                'doc':
+                                                                    serializeParam(
+                                                                  widget!.doc,
+                                                                  ParamType
+                                                                      .DocumentReference,
+                                                                ),
+                                                              }.withoutNulls,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                'taxcollection':
+                                                                    _model
+                                                                        .taxcollection,
+                                                              },
+                                                            );
+                                                          } else {
+                                                            context.pushNamed(
+                                                              ProductAndListNewWidget
+                                                                  .routeName,
+                                                              queryParameters: {
+                                                                'doc':
+                                                                    serializeParam(
+                                                                  widget!.doc,
+                                                                  ParamType
+                                                                      .DocumentReference,
+                                                                ),
+                                                                'shiftDetails':
+                                                                    serializeParam(
+                                                                  _model
+                                                                      .shiftDetailsNew2,
+                                                                  ParamType
+                                                                      .JSON,
+                                                                ),
+                                                                'taxcollection':
+                                                                    serializeParam(
+                                                                  _model
+                                                                      .taxcollection,
+                                                                  ParamType
+                                                                      .Document,
+                                                                  isList: true,
+                                                                ),
+                                                              }.withoutNulls,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                'taxcollection':
+                                                                    _model
+                                                                        .taxcollection,
+                                                              },
+                                                            );
+                                                          }
                                                         }
                                                       }
                                                     }
@@ -971,186 +1015,6 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                       r'''$.billCount''',
                                                     );
                                                     FFAppState().update(() {});
-                                                    _model.shiftidhive2 =
-                                                        await actions
-                                                            .shiftIdtoInt(
-                                                      getJsonField(
-                                                        widget!.shiftDetails,
-                                                        r'''$.shiftId''',
-                                                      ).toString(),
-                                                    );
-                                                    _shouldSetState = true;
-                                                    _model.getOfflineShiftdetails =
-                                                        await actions
-                                                            .hiveShiftCrud(
-                                                      _model.shiftidhive2,
-                                                      FFAppState().shiftDetails,
-                                                      'get',
-                                                    );
-                                                    _shouldSetState = true;
-                                                    if (_model.getOfflineShiftdetails
-                                                                ?.shiftId ==
-                                                            null ||
-                                                        _model.getOfflineShiftdetails
-                                                                ?.shiftId ==
-                                                            '') {
-                                                      FFAppState()
-                                                          .updateShiftDetailsStruct(
-                                                        (e) => e
-                                                          ..billCount =
-                                                              getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.billCount''',
-                                                          )
-                                                          ..dayId =
-                                                              getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.dayId''',
-                                                          ).toString()
-                                                          ..lastBillNo =
-                                                              getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.lastBillNo''',
-                                                          ).toString()
-                                                          ..lastBillTime =
-                                                              getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.lastBillTime''',
-                                                          )
-                                                          ..tax = getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.tax''',
-                                                          )
-                                                          ..deliveryCharges =
-                                                              getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.deliveryCharges''',
-                                                          )
-                                                          ..code = null
-                                                          ..endTime =
-                                                              getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.endTime''',
-                                                          )
-                                                          ..advanceAmtTotal =
-                                                              0.0
-                                                          ..customerReciveAmtTotal =
-                                                              0.0
-                                                          ..discount =
-                                                              getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.discount''',
-                                                          )
-                                                          ..expensesAmtTotal =
-                                                              0.0
-                                                          ..openingAmt =
-                                                              getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.openingAmt''',
-                                                          )
-                                                          ..receiveAmtTotal =
-                                                              0.0
-                                                          ..refoundAmount = 0.0
-                                                          ..totalSale = 0.0
-                                                          ..roundOff = 0.0
-                                                          ..cashInHand = 0.0
-                                                          ..cashSale =
-                                                              getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.cashSale''',
-                                                          )
-                                                          ..startTime =
-                                                              getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.startTime''',
-                                                          )
-                                                          ..inActive = true
-                                                          ..shiftNo =
-                                                              getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.shiftCount''',
-                                                          )
-                                                          ..subTotalBill = 0.0
-                                                          ..userId =
-                                                              widget!.doc?.id
-                                                          ..deviceId =
-                                                              containerDeviceRecord
-                                                                  ?.deviceId
-                                                          ..paymentJson =
-                                                              getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.paymentJson''',
-                                                          ).toString()
-                                                          ..shiftId =
-                                                              getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.shiftId''',
-                                                          ).toString()
-                                                          ..synC = true
-                                                          ..newIDShift = _model
-                                                              .shiftidhive2
-                                                          ..version = FFAppState()
-                                                              .shiftStructVersion
-                                                          ..id = getJsonField(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            r'''$.ref''',
-                                                          ).toString(),
-                                                      );
-                                                      safeSetState(() {});
-                                                      _model.createdshiftDetailshivenew =
-                                                          await actions
-                                                              .hiveShiftCrud(
-                                                        functions.getShiftIdInt(
-                                                            FFAppState()
-                                                                .shiftCount),
-                                                        FFAppState()
-                                                            .shiftDetails,
-                                                        'create',
-                                                      );
-                                                      _shouldSetState = true;
-                                                      _model.getOfflineShiftdetailsagain =
-                                                          await actions
-                                                              .hiveShiftCrud(
-                                                        _model.shiftidhive2,
-                                                        FFAppState()
-                                                            .shiftDetails,
-                                                        'get',
-                                                      );
-                                                      _shouldSetState = true;
-                                                      FFAppState()
-                                                              .shiftDetails =
-                                                          _model
-                                                              .getOfflineShiftdetailsagain!;
-                                                      FFAppState().count = _model
-                                                          .getOfflineShiftdetailsagain!
-                                                          .billCount;
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      FFAppState()
-                                                              .shiftDetails =
-                                                          _model
-                                                              .getOfflineShiftdetails!;
-                                                      FFAppState().count = _model
-                                                          .getOfflineShiftdetails!
-                                                          .billCount;
-                                                      safeSetState(() {});
-                                                    }
-
                                                     ScaffoldMessenger.of(
                                                             context)
                                                         .showSnackBar(
@@ -1300,38 +1164,82 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                             },
                                                           );
                                                         } else {
-                                                          context.pushNamed(
-                                                            ProductAndListNewWidget
-                                                                .routeName,
-                                                            queryParameters: {
-                                                              'doc':
-                                                                  serializeParam(
-                                                                widget!.doc,
-                                                                ParamType
-                                                                    .DocumentReference,
-                                                              ),
-                                                              'shiftDetails':
-                                                                  serializeParam(
-                                                                widget!
-                                                                    .shiftDetails,
-                                                                ParamType.JSON,
-                                                              ),
-                                                              'taxcollection':
-                                                                  serializeParam(
-                                                                _model
-                                                                    .taxcollection,
-                                                                ParamType
-                                                                    .Document,
-                                                                isList: true,
-                                                              ),
-                                                            }.withoutNulls,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              'taxcollection':
+                                                          if (_model.devicew!
+                                                              .settingList
+                                                              .where((e) =>
+                                                                  e.title ==
+                                                                  'enableTables')
+                                                              .toList()
+                                                              .firstOrNull!
+                                                              .value) {
+                                                            context.pushNamed(
+                                                              TableListWidget
+                                                                  .routeName,
+                                                              queryParameters: {
+                                                                'shiftDetails':
+                                                                    serializeParam(
+                                                                  widget!
+                                                                      .shiftDetails,
+                                                                  ParamType
+                                                                      .JSON,
+                                                                ),
+                                                                'taxcollection':
+                                                                    serializeParam(
                                                                   _model
                                                                       .taxcollection,
-                                                            },
-                                                          );
+                                                                  ParamType
+                                                                      .Document,
+                                                                  isList: true,
+                                                                ),
+                                                                'doc':
+                                                                    serializeParam(
+                                                                  widget!.doc,
+                                                                  ParamType
+                                                                      .DocumentReference,
+                                                                ),
+                                                              }.withoutNulls,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                'taxcollection':
+                                                                    _model
+                                                                        .taxcollection,
+                                                              },
+                                                            );
+                                                          } else {
+                                                            context.pushNamed(
+                                                              ProductAndListNewWidget
+                                                                  .routeName,
+                                                              queryParameters: {
+                                                                'doc':
+                                                                    serializeParam(
+                                                                  widget!.doc,
+                                                                  ParamType
+                                                                      .DocumentReference,
+                                                                ),
+                                                                'shiftDetails':
+                                                                    serializeParam(
+                                                                  widget!
+                                                                      .shiftDetails,
+                                                                  ParamType
+                                                                      .JSON,
+                                                                ),
+                                                                'taxcollection':
+                                                                    serializeParam(
+                                                                  _model
+                                                                      .taxcollection,
+                                                                  ParamType
+                                                                      .Document,
+                                                                  isList: true,
+                                                                ),
+                                                              }.withoutNulls,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                'taxcollection':
+                                                                    _model
+                                                                        .taxcollection,
+                                                              },
+                                                            );
+                                                          }
                                                         }
                                                       }
                                                     }

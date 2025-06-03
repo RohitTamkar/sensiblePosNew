@@ -19,6 +19,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> addToHoldListprdtable(
   ProductStructStruct document,
   int billno,
@@ -114,6 +116,7 @@ Future<List<dynamic>> addToHoldListprdtable(
       "stockable": document.stockable,
       "currentStock": document.stock,
       "printKot": false,
+      "kotTime": 0,
     };
 
     // Add or update item in the bill list
@@ -121,7 +124,7 @@ Future<List<dynamic>> addToHoldListprdtable(
     for (int i = 0; i < list.length; i++) {
       if (list[i]["billno"] == billno) {
         for (int j = 0; j < itemList.length; j++) {
-          if (itemList[j]["name"] == data["name"] &&
+          if (itemList[j]["id"] == data["id"] &&
               itemList[j]["printKot"] == false) {
             itemList[j]["quantity"]++;
             itemList[j]["qtystring"] = itemList[j]["quantity"];

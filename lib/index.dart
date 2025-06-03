@@ -35,7 +35,6 @@ export '/pages/fsqr/fsqr_widget.dart' show FsqrWidget;
 export '/pages/report_screen/product_wise_report/product_wise_report_widget.dart'
     show ProductWiseReportWidget;
 export '/pages/report_screen/bill/bill_widget.dart' show BillWidget;
-export '/pages/table_screen/table_screen_widget.dart' show TableScreenWidget;
 export '/pages/report_screen/day_wise_shift_report/day_wise_shift_report_widget.dart'
     show DayWiseShiftReportWidget;
 export '/pages/full_screen_q_r/full_screen_q_r_widget.dart'

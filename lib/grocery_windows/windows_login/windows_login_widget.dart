@@ -99,8 +99,8 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                 Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width * 0.6,
-                    height: MediaQuery.sizeOf(context).height * 0.65,
+                    width: MediaQuery.sizeOf(context).width * 0.8,
+                    height: MediaQuery.sizeOf(context).height * 0.75,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       boxShadow: [
@@ -249,7 +249,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                         : null;
 
                                 return Container(
-                                  width: 100.0,
+                                  width: 110.0,
                                   height: double.infinity,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)

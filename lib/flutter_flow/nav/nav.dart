@@ -207,11 +207,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: TableScreenWidget.routeName,
-              path: TableScreenWidget.routePath,
-              builder: (context, params) => TableScreenWidget(),
-            ),
-            FFRoute(
               name: DayWiseShiftReportWidget.routeName,
               path: DayWiseShiftReportWidget.routePath,
               builder: (context, params) => DayWiseShiftReportWidget(),

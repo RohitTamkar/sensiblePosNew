@@ -36,14 +36,6 @@ class OpeningBalNewModel extends FlutterFlowModel<OpeningBalNewWidget> {
   List<ShiftDetailsStruct>? shiftdetailshive;
   // Stores action output result for [Custom Action - shiftDetailNew] action in Button widget.
   dynamic? shiftDetailsNew2;
-  // Stores action output result for [Custom Action - shiftIdtoInt] action in Button widget.
-  int? shiftidhive2;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? getOfflineShiftdetails;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? createdshiftDetailshivenew;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? getOfflineShiftdetailsagain;
 
   @override
   void initState(BuildContext context) {}
