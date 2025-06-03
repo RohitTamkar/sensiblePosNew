@@ -62,11 +62,21 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
 
     return Builder(
       builder: (context) {
-        final tablelist = getJsonField(
-          functions.generatePremiseTables(
-              widget!.parameter2!, widget!.parameter3),
-          r'''$.type''',
-        ).toList();
+        final tablelist = (!_model.flag
+                    ? getJsonField(
+                        functions.generatePremiseTables(
+                            widget!.parameter2!, widget!.parameter3),
+                        r'''$.type''',
+                        true,
+                      )
+                    : getJsonField(
+                        functions.generateMergeTables(widget!.parameter2!,
+                            'NON AC Table 2', 'NON AC', 'NON AC Table 3'),
+                        r'''$.type''',
+                        true,
+                      ))
+                ?.toList() ??
+            [];
 
         return GridView.builder(
           padding: EdgeInsets.zero,
@@ -240,6 +250,12 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                         FFAppState().kotDocRef = null;
                                         FFAppState().update(() {});
                                       }
+                                    },
+                                    onLongPress: () async {
+                                      _model.flag = true;
+                                      safeSetState(() {});
+
+                                      FFAppState().update(() {});
                                     },
                                     child: Container(
                                       width: double.infinity,

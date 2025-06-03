@@ -1360,3 +1360,47 @@ double? returnTotaljason(
 
   return amt;
 }
+
+dynamic generateMergeTables(
+  PremisesRecord doc,
+  String selectedTable,
+  String selectedPremise,
+  String choosedTableForMerge,
+) {
+  List<dynamic> list1 = [];
+  List<dynamic> list2 = [];
+  List<dynamic> returnData = [];
+
+  int noOfTables = doc.tables!;
+  for (int i = 1; i <= noOfTables; i++) {
+    var typeName = doc.type! + " $i";
+    var id = "${doc.name} $typeName"; // e.g., "AC TABLE 1"
+
+    Map<String, dynamic> tableData = {
+      "typeName": typeName,
+      "id": id,
+      "status": "available"
+    };
+
+    if (id == selectedTable) {
+      tableData["status"] = "merged";
+      tableData["mergedFrom"] = choosedTableForMerge;
+      tableData["mergedTables"] = "$choosedTableForMerge, $selectedTable";
+    } else if (id == choosedTableForMerge) {
+      tableData["status"] = "empty";
+    }
+
+    list1.add(tableData);
+  }
+
+  list2.add({"premise": doc.name, "type": list1});
+
+  for (int x = 0; x < list2.length; x++) {
+    if (list2[x]["premise"] == selectedPremise!) {
+      returnData.add(list2[x]);
+      break;
+    }
+  }
+
+  return returnData[0];
+}

@@ -19,6 +19,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:image/image.dart' as img;
 import 'package:flutter/services.dart';
 
@@ -264,9 +266,27 @@ Future printBillnewhiveNEW(
               align: PosAlign.center));
       String printLine = '';
 
-      if (FFAppState().billPrintFooter == "KOT" ||
-          FFAppState().billPrintFooter == "CUSTOMER") {
+      if (FFAppState().tableNo.length > 0) {
         String printLine = '';
+
+        String tableString = 'Table No:#' + FFAppState().tableNo;
+        String serialTemp = 'Serial No: ' + FFAppState().newcount.toString();
+
+        printLine = serialTemp;
+        for (int i = 1;
+            i <= (size - (serialTemp.length + tableString.length));
+            i++) {
+          printLine += " ";
+        }
+
+        printLine += tableString;
+
+        bytes += generator.text(printLine,
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: true));
+
         String dateString = '';
         // String serialTemp = 'Token no: ' + FFAppState().count.toString();
         final DateTime now =
