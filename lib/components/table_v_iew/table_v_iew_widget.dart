@@ -136,12 +136,12 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                   r'''$.id''',
                                 ).toString()
                             ? FlutterFlowTheme.of(context).tertiary
-                            : Color(0xFFFFE69E),
+                            : Color(0xFFD1CDCD),
                         Color(0xFFFFE69E),
                       ),
                       borderRadius: BorderRadius.circular(15.0),
                       border: Border.all(
-                        color: Color(0xFFFFE69E),
+                        color: FlutterFlowTheme.of(context).alternate,
                         width: 2.0,
                       ),
                     ),
@@ -197,15 +197,49 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      FFAppState().tableViewHideShow = false;
-                                      FFAppState().tableNo = getJsonField(
-                                        tablelistItem,
-                                        r'''$.id''',
-                                      ).toString();
-                                      FFAppState().selectedPremise =
-                                          widget!.parameter3!;
-                                      FFAppState().kotDocRef = null;
-                                      FFAppState().update(() {});
+                                      if (containerTableKotRecordList
+                                              .where((e) =>
+                                                  e.tableNo ==
+                                                  getJsonField(
+                                                    tablelistItem,
+                                                    r'''$.id''',
+                                                  ).toString())
+                                              .toList()
+                                              .firstOrNull
+                                              ?.tableNo ==
+                                          getJsonField(
+                                            tablelistItem,
+                                            r'''$.id''',
+                                          ).toString()) {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Table Already In  Use ! ',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                            ),
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondary,
+                                          ),
+                                        );
+                                      } else {
+                                        FFAppState().tableViewHideShow = false;
+                                        FFAppState().tableNo = getJsonField(
+                                          tablelistItem,
+                                          r'''$.id''',
+                                        ).toString();
+                                        FFAppState().selectedPremise =
+                                            widget!.parameter3!;
+                                        FFAppState().kotDocRef = null;
+                                        FFAppState().update(() {});
+                                      }
                                     },
                                     child: Container(
                                       width: double.infinity,
