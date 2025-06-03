@@ -411,6 +411,35 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                           .labelLargeIsCustom,
                                                 ),
                                           ),
+                                          if (getJsonField(
+                                                tablelistItem,
+                                                r'''$.mergedTables''',
+                                              ) !=
+                                              null)
+                                            Text(
+                                              '(${getJsonField(
+                                                tablelistItem,
+                                                r'''$.mergedTables''',
+                                              ).toString()})',
+                                              textAlign: TextAlign.center,
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelLarge
+                                                  .override(
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeFamily,
+                                                    color: Color(0xAD5000B6),
+                                                    fontSize: 12.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w600,
+                                                    useGoogleFonts:
+                                                        !FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLargeIsCustom,
+                                                  ),
+                                            ),
                                         ],
                                       ),
                                     ),
