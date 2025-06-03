@@ -17,16 +17,16 @@ export 'table_v_iew_model.dart';
 class TableVIewWidget extends StatefulWidget {
   const TableVIewWidget({
     super.key,
-    this.parameter2,
     this.parameter3,
     this.taxcollection,
     this.apsetting,
+    this.jsonlist,
   });
 
-  final PremisesRecord? parameter2;
   final String? parameter3;
   final List<TaxMasterRecord>? taxcollection;
   final AppSettingsRecord? apsetting;
+  final dynamic jsonlist;
 
   @override
   State<TableVIewWidget> createState() => _TableVIewWidgetState();
@@ -62,21 +62,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
 
     return Builder(
       builder: (context) {
-        final tablelist = (!_model.flag
-                    ? getJsonField(
-                        functions.generatePremiseTables(
-                            widget!.parameter2!, widget!.parameter3),
-                        r'''$.type''',
-                        true,
-                      )
-                    : getJsonField(
-                        functions.generateMergeTables(widget!.parameter2!,
-                            'NON AC Table 2', 'NON AC', 'NON AC Table 3'),
-                        r'''$.type''',
-                        true,
-                      ))
-                ?.toList() ??
-            [];
+        final tablelist = widget!.jsonlist?.toList() ?? [];
 
         return GridView.builder(
           padding: EdgeInsets.zero,

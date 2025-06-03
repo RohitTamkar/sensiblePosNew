@@ -85,8 +85,15 @@ class _TableListWidgetState extends State<TableListWidget>
       safeSetState(() {});
       _model.hiveProductList = await actions.getProductlistHive();
       _model.categoryListHive = await actions.getCategorylistHive();
+      _model.premiseDoc = await queryPremisesRecordOnce(
+        parent: FFAppState().outletIdRef,
+      );
       FFAppState().productHive =
           _model.hiveProductList!.toList().cast<ProductStructStruct>();
+      FFAppState().table = functions
+          .generatePremiseTablesjson(_model.premiseDoc!.toList())
+          .toList()
+          .cast<dynamic>();
       FFAppState().categoryHive =
           _model.categoryListHive!.toList().cast<CategoryStructStruct>();
       safeSetState(() {});
@@ -946,52 +953,23 @@ class _TableListWidgetState extends State<TableListWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
                                             ),
-                                            child: StreamBuilder<
-                                                List<PremisesRecord>>(
-                                              stream: FFAppState().list(
-                                                requestFn: () =>
-                                                    queryPremisesRecord(
-                                                  parent:
-                                                      FFAppState().outletIdRef,
-                                                ),
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 40.0,
-                                                      height: 40.0,
-                                                      child:
-                                                          SpinKitFadingCircle(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        size: 40.0,
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<PremisesRecord>
-                                                    listViewPremisesRecordList =
-                                                    snapshot.data!;
+                                            child: Builder(
+                                              builder: (context) {
+                                                final json =
+                                                    FFAppState().table.toList();
 
                                                 return ListView.separated(
                                                   padding: EdgeInsets.zero,
                                                   shrinkWrap: true,
                                                   scrollDirection:
                                                       Axis.vertical,
-                                                  itemCount:
-                                                      listViewPremisesRecordList
-                                                          .length,
+                                                  itemCount: json.length,
                                                   separatorBuilder: (_, __) =>
                                                       SizedBox(height: 25.0),
                                                   itemBuilder:
-                                                      (context, listViewIndex) {
-                                                    final listViewPremisesRecord =
-                                                        listViewPremisesRecordList[
-                                                            listViewIndex];
+                                                      (context, jsonIndex) {
+                                                    final jsonItem =
+                                                        json[jsonIndex];
                                                     return Container(
                                                       decoration: BoxDecoration(
                                                         borderRadius:
@@ -1023,8 +1001,10 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                           0.0,
                                                                           0.0),
                                                               child: Text(
-                                                                listViewPremisesRecord
-                                                                    .name,
+                                                                getJsonField(
+                                                                  jsonItem,
+                                                                  r'''$.premise''',
+                                                                ).toString(),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .titleMedium
@@ -1045,16 +1025,21 @@ class _TableListWidgetState extends State<TableListWidget>
                                                             ),
                                                             TableVIewWidget(
                                                               key: Key(
-                                                                  'Key6bd_${listViewIndex}_of_${listViewPremisesRecordList.length}'),
-                                                              parameter2:
-                                                                  listViewPremisesRecord,
+                                                                  'Key6bd_${jsonIndex}_of_${json.length}'),
                                                               parameter3:
-                                                                  listViewPremisesRecord
-                                                                      .name,
+                                                                  getJsonField(
+                                                                jsonItem,
+                                                                r'''$.premise''',
+                                                              ).toString(),
                                                               taxcollection: widget!
                                                                   .taxcollection,
                                                               apsetting:
                                                                   tableListAppSettingsRecord,
+                                                              jsonlist:
+                                                                  getJsonField(
+                                                                jsonItem,
+                                                                r'''$.type''',
+                                                              ),
                                                             ),
                                                           ].divide(SizedBox(
                                                               height: 10.0)),

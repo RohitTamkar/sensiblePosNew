@@ -647,6 +647,17 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _kotDocRef = prefs.getString('ff_kotDocRef')?.ref ?? _kotDocRef;
     });
+    _safeInit(() {
+      _table = prefs.getStringList('ff_table')?.map((x) {
+            try {
+              return jsonDecode(x);
+            } catch (e) {
+              print("Can't decode persisted json. Error: $e.");
+              return {};
+            }
+          }).toList() ??
+          _table;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -3668,20 +3679,40 @@ class FFAppState extends ChangeNotifier {
         : prefs.remove('ff_kotDocRef');
   }
 
-  final _listManager = StreamRequestManager<List<PremisesRecord>>();
-  Stream<List<PremisesRecord>> list({
-    String? uniqueQueryKey,
-    bool? overrideCache,
-    required Stream<List<PremisesRecord>> Function() requestFn,
-  }) =>
-      _listManager.performRequest(
-        uniqueQueryKey: uniqueQueryKey,
-        overrideCache: overrideCache,
-        requestFn: requestFn,
-      );
-  void clearListCache() => _listManager.clear();
-  void clearListCacheKey(String? uniqueKey) =>
-      _listManager.clearRequest(uniqueKey);
+  List<dynamic> _table = [];
+  List<dynamic> get table => _table;
+  set table(List<dynamic> value) {
+    _table = value;
+    prefs.setStringList('ff_table', value.map((x) => jsonEncode(x)).toList());
+  }
+
+  void addToTable(dynamic value) {
+    table.add(value);
+    prefs.setStringList('ff_table', _table.map((x) => jsonEncode(x)).toList());
+  }
+
+  void removeFromTable(dynamic value) {
+    table.remove(value);
+    prefs.setStringList('ff_table', _table.map((x) => jsonEncode(x)).toList());
+  }
+
+  void removeAtIndexFromTable(int index) {
+    table.removeAt(index);
+    prefs.setStringList('ff_table', _table.map((x) => jsonEncode(x)).toList());
+  }
+
+  void updateTableAtIndex(
+    int index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    table[index] = updateFn(_table[index]);
+    prefs.setStringList('ff_table', _table.map((x) => jsonEncode(x)).toList());
+  }
+
+  void insertAtIndexInTable(int index, dynamic value) {
+    table.insert(index, value);
+    prefs.setStringList('ff_table', _table.map((x) => jsonEncode(x)).toList());
+  }
 
   final _appsdettingManager = StreamRequestManager<List<AppSettingsRecord>>();
   Stream<List<AppSettingsRecord>> appsdetting({

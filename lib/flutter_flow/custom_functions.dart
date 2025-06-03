@@ -97,6 +97,30 @@ int? outwardItemsqty(
   return totalQty;
 }
 
+dynamic generatePremiseTablesjson(List<PremisesRecord> doc) {
+  List<dynamic> list1 = [];
+  List<dynamic> list2 = [];
+  List<dynamic> returnData = [];
+  for (var doc1 in doc) {
+    int noOfTables = doc1.tables!;
+    for (int i = 1; i <= noOfTables; i++) {
+      var typeName = doc1.type! + " $i";
+      var id = "${doc1.name} $typeName"; // e.g., "AC TABLE 1"
+      list1.add({"typeName": typeName, "id": id});
+    }
+
+    list2.add({"premise": doc1.name, "type": list1});
+
+    for (int x = 0; x < list2.length; x++) {
+      if (list2[x]["premise"] == doc1.name!) {
+        returnData.add(list2[x]);
+        break;
+      }
+    }
+  }
+  return returnData[0];
+}
+
 String genInvoiceNumLaundry(
   int? count,
   int? shiftCount,

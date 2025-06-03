@@ -79,6 +79,8 @@ class TableListModel extends FlutterFlowModel<TableListWidget> {
   List<ProductStructStruct>? hiveProductList;
   // Stores action output result for [Custom Action - getCategorylistHive] action in TableList widget.
   List<CategoryStructStruct>? categoryListHive;
+  // Stores action output result for [Firestore Query - Query a collection] action in TableList widget.
+  List<PremisesRecord>? premiseDoc;
   // Stores action output result for [Custom Action - scanPrinter] action in TableList widget.
   bool? resDevice2Copy;
   // Stores action output result for [Custom Action - connectDevice] action in TableList widget.
