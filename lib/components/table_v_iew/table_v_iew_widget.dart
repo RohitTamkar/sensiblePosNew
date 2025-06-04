@@ -269,25 +269,20 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      if ((containerTableKotRecordList
-                                                  .where((e) =>
-                                                      e.tableNo ==
-                                                      getJsonField(
-                                                        tablelistItem,
-                                                        r'''$.id''',
-                                                      ).toString())
-                                                  .toList()
-                                                  .firstOrNull
-                                                  ?.tableNo ==
-                                              getJsonField(
-                                                tablelistItem,
-                                                r'''$.id''',
-                                              ).toString()) &&
-                                          ('EMPTY' !=
-                                              getJsonField(
-                                                tablelistItem,
-                                                r'''$.status''',
-                                              ).toString())) {
+                                      if (containerTableKotRecordList
+                                              .where((e) =>
+                                                  e.tableNo ==
+                                                  getJsonField(
+                                                    tablelistItem,
+                                                    r'''$.id''',
+                                                  ).toString())
+                                              .toList()
+                                              .firstOrNull
+                                              ?.tableNo ==
+                                          getJsonField(
+                                            tablelistItem,
+                                            r'''$.id''',
+                                          ).toString()) {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(
@@ -307,15 +302,41 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                           ),
                                         );
                                       } else {
-                                        FFAppState().tableViewHideShow = false;
-                                        FFAppState().tableNo = getJsonField(
-                                          tablelistItem,
-                                          r'''$.id''',
-                                        ).toString();
-                                        FFAppState().selectedPremise =
-                                            widget!.parameter3!;
-                                        FFAppState().kotDocRef = null;
-                                        FFAppState().update(() {});
+                                        if ('EMPTY' ==
+                                            getJsonField(
+                                              tablelistItem,
+                                              r'''$.status''',
+                                            ).toString()) {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Table Already In  Use ! ',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                            ),
+                                          );
+                                        } else {
+                                          FFAppState().tableViewHideShow =
+                                              false;
+                                          FFAppState().tableNo = getJsonField(
+                                            tablelistItem,
+                                            r'''$.id''',
+                                          ).toString();
+                                          FFAppState().selectedPremise =
+                                              widget!.parameter3!;
+                                          FFAppState().kotDocRef = null;
+                                          FFAppState().update(() {});
+                                        }
                                       }
                                     },
                                     onLongPress: () async {
