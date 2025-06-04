@@ -196,12 +196,11 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                             ),
                                           ),
                                           unselectedWidgetColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .alternate,
+                                              FlutterFlowTheme.of(context).info,
                                         ),
                                         child: Checkbox(
                                           value: _model.checkboxValueMap[
-                                              tablelistItem] ??= true,
+                                              tablelistItem] ??= false,
                                           onChanged: (newValue) async {
                                             safeSetState(() =>
                                                 _model.checkboxValueMap[
@@ -224,13 +223,13 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                             }
                                           },
                                           side: (FlutterFlowTheme.of(context)
-                                                      .alternate !=
+                                                      .info !=
                                                   null)
                                               ? BorderSide(
                                                   width: 2,
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .alternate!,
+                                                      .info!,
                                                 )
                                               : null,
                                           activeColor:
