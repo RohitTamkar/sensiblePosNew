@@ -23153,7 +23153,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     '1ll896bu': {
-      'en': 'Filter Table',
+      'en': 'Load Tables',
       'hi': '',
       'kn': '',
       'mr': '',

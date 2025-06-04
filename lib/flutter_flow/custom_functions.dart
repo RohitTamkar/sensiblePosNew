@@ -1436,3 +1436,16 @@ List<dynamic> generateMergeTables(
 
   return returnData;
 }
+
+bool checkmergedtables(List<dynamic> jsonlist) {
+  for (var premise in jsonlist) {
+    var tables = premise["type"] ?? [];
+    for (var table in tables) {
+      if ((table["status"] ?? "").toString().toUpperCase() == "MERGED") {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}

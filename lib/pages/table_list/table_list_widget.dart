@@ -90,10 +90,12 @@ class _TableListWidgetState extends State<TableListWidget>
       );
       FFAppState().productHive =
           _model.hiveProductList!.toList().cast<ProductStructStruct>();
-      FFAppState().table = functions
-          .generatePremiseTablesjson(_model.premiseDoc!.toList())
-          .toList()
-          .cast<dynamic>();
+      if (!functions.checkmergedtables(FFAppState().table.toList())) {
+        FFAppState().table = functions
+            .generatePremiseTablesjson(_model.premiseDoc!.toList())
+            .toList()
+            .cast<dynamic>();
+      }
       FFAppState().categoryHive =
           _model.categoryListHive!.toList().cast<CategoryStructStruct>();
       safeSetState(() {});
@@ -430,11 +432,14 @@ class _TableListWidgetState extends State<TableListWidget>
                                           .hiveProductListCopy!
                                           .toList()
                                           .cast<ProductStructStruct>();
-                                      FFAppState().table = functions
-                                          .generatePremiseTablesjson(
-                                              _model.premiseDocCopy!.toList())
-                                          .toList()
-                                          .cast<dynamic>();
+                                      if (!functions.checkmergedtables(
+                                          FFAppState().table.toList())) {
+                                        FFAppState().table = functions
+                                            .generatePremiseTablesjson(
+                                                _model.premiseDoc!.toList())
+                                            .toList()
+                                            .cast<dynamic>();
+                                      }
                                       FFAppState().categoryHive = _model
                                           .categoryListHiveCopy!
                                           .toList()
@@ -773,7 +778,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                               text: FFLocalizations
                                                                       .of(context)
                                                                   .getText(
-                                                                '1ll896bu' /* Filter Table */,
+                                                                '1ll896bu' /* Load Tables */,
                                                               ),
                                                               options:
                                                                   FFButtonOptions(
