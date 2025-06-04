@@ -177,7 +177,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                       size: 24.0,
                                     ),
                                     if ((FFAppState().tableFlag == true) &&
-                                        ('${FFAppState().tableNo}' ==
+                                        ('${FFAppState().tableNo}' !=
                                             getJsonField(
                                               tablelistItem,
                                               r'''$.id''',
