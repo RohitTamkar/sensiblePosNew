@@ -319,29 +319,91 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                       }
                                     },
                                     onLongPress: () async {
-                                      await showDialog(
-                                        context: context,
-                                        builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            content: Text('Choose Tables....'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      );
-                                      FFAppState().tableFlag = true;
-                                      FFAppState().tableNo = getJsonField(
-                                        tablelistItem,
-                                        r'''$.id''',
-                                      ).toString();
-                                      FFAppState().selectedPremise =
-                                          widget!.parameter3!;
-                                      FFAppState().update(() {});
+                                      if ('MERGED' !=
+                                          getJsonField(
+                                            tablelistItem,
+                                            r'''$.status''',
+                                          ).toString()) {
+                                        FFAppState().tableFlag = true;
+                                        FFAppState().tableNo = getJsonField(
+                                          tablelistItem,
+                                          r'''$.id''',
+                                        ).toString();
+                                        FFAppState().selectedPremise =
+                                            widget!.parameter3!;
+                                        FFAppState().update(() {});
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              content:
+                                                  Text('Choose Tables....'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      } else {
+                                        var confirmDialogResponse =
+                                            await showDialog<bool>(
+                                                  context: context,
+                                                  builder:
+                                                      (alertDialogContext) {
+                                                    return AlertDialog(
+                                                      title: Text(
+                                                          'Already Merged !'),
+                                                      content: Text(
+                                                          'Do You Want To Split Tables?'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  false),
+                                                          child: Text('Cancel'),
+                                                        ),
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  true),
+                                                          child:
+                                                              Text('Confirm'),
+                                                        ),
+                                                      ],
+                                                    );
+                                                  },
+                                                ) ??
+                                                false;
+                                        if (confirmDialogResponse) {
+                                          FFAppState().table = functions
+                                              .splitMergeTables(
+                                                  widget!.premisedoc!.toList(),
+                                                  getJsonField(
+                                                    tablelistItem,
+                                                    r'''$.id''',
+                                                  ).toString(),
+                                                  widget!.parameter3!,
+                                                  (getJsonField(
+                                                    tablelistItem,
+                                                    r'''$.mergedFrom''',
+                                                    true,
+                                                  ) as List)
+                                                      .map<String>(
+                                                          (s) => s.toString())
+                                                      .toList()!,
+                                                  FFAppState().table.toList())
+                                              .toList()
+                                              .cast<dynamic>();
+                                          FFAppState().update(() {});
+                                        }
+                                      }
                                     },
                                     child: Container(
                                       width: double.infinity,

@@ -897,6 +897,9 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                               .selectedPremise,
                                                                           FFAppState()
                                                                               .postableList
+                                                                              .toList(),
+                                                                          FFAppState()
+                                                                              .table
                                                                               .toList())
                                                                       .toList()
                                                                       .cast<

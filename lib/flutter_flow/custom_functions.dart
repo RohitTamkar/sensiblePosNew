@@ -74,6 +74,73 @@ List<dynamic> shiftDocToJsonList2(ShiftDetailsStruct item) {
   return list;
 }
 
+List<dynamic> generateMergeTables(
+  List<PremisesRecord> docList,
+  String selectedTables,
+  String selectedPremise,
+  List<String> choosedTableForMerge,
+  List<dynamic> jsonList,
+) {
+  List<dynamic> returnData = [];
+
+  for (var doc in docList) {
+    List<dynamic> tables = [];
+    int noOfTables = doc.tables ?? 0;
+
+    // Find existing data for this premise in jsonList
+    var existingPremiseData = jsonList.firstWhere(
+      (e) => e["premise"] == doc.name,
+      orElse: () => null,
+    );
+
+    List<dynamic> existingTables = existingPremiseData != null
+        ? List.from(existingPremiseData["type"] ?? [])
+        : [];
+
+    for (int i = 1; i <= noOfTables; i++) {
+      var typeName = "${doc.type} $i";
+      var id = "${doc.name} $typeName";
+
+      // Default tableData
+      Map<String, dynamic> tableData = {
+        "typeName": typeName,
+        "id": id,
+        "status": "AVAILABLE",
+      };
+
+      // Apply merge logic only to selectedPremise
+      if (doc.name == selectedPremise) {
+        if (id == selectedTables) {
+          tableData["status"] = "MERGED";
+          tableData["mergedFrom"] = choosedTableForMerge;
+          tableData["mergedTables"] =
+              [...choosedTableForMerge, selectedTables].join(", ");
+        } else if (choosedTableForMerge.contains(id)) {
+          tableData["status"] = "EMPTY";
+        }
+      } else {
+        // If not selectedPremise, try to keep existing status
+        var existing = existingTables.firstWhere(
+          (e) => e["id"] == id,
+          orElse: () => null,
+        );
+        if (existing != null) {
+          tableData = Map<String, dynamic>.from(existing);
+        }
+      }
+
+      tables.add(tableData);
+    }
+
+    returnData.add({
+      "premise": doc.name,
+      "type": tables,
+    });
+  }
+
+  return returnData;
+}
+
 int? outwardItemsqty(
   List<StockSummaryRecord>? stockDocList,
   String? productId,
@@ -1390,37 +1457,56 @@ double? returnTotaljason(
   return amt;
 }
 
-List<dynamic> generateMergeTables(
+List<dynamic> splitMergeTables(
   List<PremisesRecord> docList,
-  String selectedTables,
+  String selectedMergeTable,
   String selectedPremise,
-  List<String> choosedTableForMerge,
+  List<String> mergedFrom,
+  List<dynamic> jsonList,
 ) {
   List<dynamic> returnData = [];
 
   for (var doc in docList) {
-    if (doc.name != selectedPremise) continue;
-
     List<dynamic> tables = [];
     int noOfTables = doc.tables ?? 0;
 
+    // Get existing data for this premise from jsonList
+    var existingPremise = jsonList.firstWhere(
+      (e) => e["premise"] == doc.name,
+      orElse: () => null,
+    );
+
+    List<dynamic> existingTables =
+        existingPremise != null ? List.from(existingPremise["type"] ?? []) : [];
+
     for (int i = 1; i <= noOfTables; i++) {
       var typeName = "${doc.type} $i";
-      var id = "${doc.name} $typeName"; // e.g., "AC TABLE 1"
+      var id = "${doc.name} $typeName";
 
+      // Default: available
       Map<String, dynamic> tableData = {
         "typeName": typeName,
         "id": id,
         "status": "AVAILABLE",
       };
 
-      if (id == selectedTables) {
-        tableData["status"] = "merged";
-        tableData["mergedFrom"] = choosedTableForMerge;
-        tableData["mergedTables"] =
-            [...choosedTableForMerge, selectedTables].join(", ");
-      } else if (choosedTableForMerge.contains(id)) {
-        tableData["status"] = "EMPTY";
+      // Preserve existing data if not being split
+      var existing = existingTables.firstWhere(
+        (e) => e["id"] == id,
+        orElse: () => null,
+      );
+
+      if (existing != null) {
+        tableData = Map<String, dynamic>.from(existing);
+      }
+
+      // Apply split logic only for selectedPremise
+      if (doc.name == selectedPremise) {
+        if (id == selectedMergeTable || mergedFrom.contains(id)) {
+          tableData["status"] = "AVAILABLE";
+          tableData.remove("mergedFrom");
+          tableData.remove("mergedTables");
+        }
       }
 
       tables.add(tableData);
@@ -1430,8 +1516,6 @@ List<dynamic> generateMergeTables(
       "premise": doc.name,
       "type": tables,
     });
-
-    break; // Exit after processing the selected premise
   }
 
   return returnData;
