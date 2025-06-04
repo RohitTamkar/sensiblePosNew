@@ -23176,6 +23176,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
+    'hll7uldo': {
+      'en': 'Cancel',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
     'd91diq32': {
       'en': 'All',
       'hi': 'सभी',

@@ -1021,79 +1021,109 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                   FFButtonWidget(
                                                                 onPressed:
                                                                     () async {
-                                                                  var confirmDialogResponse =
-                                                                      await showDialog<
-                                                                              bool>(
-                                                                            context:
-                                                                                context,
-                                                                            builder:
-                                                                                (alertDialogContext) {
-                                                                              return AlertDialog(
-                                                                                content: Text('Are You Sure To Move Table Kot Order?'),
-                                                                                actions: [
-                                                                                  TextButton(
-                                                                                    onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                    child: Text('Cancel'),
-                                                                                  ),
-                                                                                  TextButton(
-                                                                                    onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                    child: Text('Confirm'),
-                                                                                  ),
-                                                                                ],
-                                                                              );
-                                                                            },
-                                                                          ) ??
-                                                                          false;
-                                                                  if (confirmDialogResponse) {
-                                                                    await FFAppState()
-                                                                        .kotDocRef!
-                                                                        .update(
-                                                                            createTableKotRecordData(
-                                                                          tableNo:
+                                                                  if (FFAppState()
+                                                                          .postableList
+                                                                          .length >
+                                                                      1) {
+                                                                    var confirmDialogResponse =
+                                                                        await showDialog<bool>(
+                                                                              context: context,
+                                                                              builder: (alertDialogContext) {
+                                                                                return AlertDialog(
+                                                                                  content: Text('Are You Sure To Move Table Kot Orders?'),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                      child: Text('Cancel'),
+                                                                                    ),
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                      child: Text('Confirm'),
+                                                                                    ),
+                                                                                  ],
+                                                                                );
+                                                                              },
+                                                                            ) ??
+                                                                            false;
+                                                                    if (confirmDialogResponse) {
+                                                                      await FFAppState()
+                                                                          .kotDocRef!
+                                                                          .update(
+                                                                              createTableKotRecordData(
+                                                                            tableNo:
+                                                                                FFAppState().tableNo,
+                                                                          ));
+                                                                      FFAppState().table = functions
+                                                                          .generateMergeTables(
+                                                                              containerPremisesRecordList.toList(),
                                                                               FFAppState().tableNo,
-                                                                        ));
-                                                                    FFAppState().table = functions
-                                                                        .generateMergeTables(
-                                                                            containerPremisesRecordList
-                                                                                .toList(),
-                                                                            FFAppState()
-                                                                                .tableNo,
-                                                                            FFAppState()
-                                                                                .selectedPremise,
-                                                                            FFAppState()
-                                                                                .postableList
-                                                                                .toList(),
-                                                                            FFAppState()
-                                                                                .table
-                                                                                .toList())
-                                                                        .toList()
-                                                                        .cast<
-                                                                            dynamic>();
-                                                                    FFAppState()
-                                                                        .tableNo = '';
-                                                                    FFAppState()
-                                                                        .postableList = [];
-                                                                    FFAppState()
-                                                                            .tableFlag =
-                                                                        false;
-                                                                    FFAppState()
-                                                                            .kotDocRef =
-                                                                        null;
-                                                                    safeSetState(
-                                                                        () {});
+                                                                              FFAppState().selectedPremise,
+                                                                              FFAppState().postableList.toList(),
+                                                                              FFAppState().table.toList())
+                                                                          .toList()
+                                                                          .cast<dynamic>();
+                                                                      FFAppState()
+                                                                          .tableNo = '';
+                                                                      FFAppState()
+                                                                          .postableList = [];
+                                                                      FFAppState()
+                                                                              .tableFlag =
+                                                                          false;
+                                                                      FFAppState()
+                                                                              .kotDocRef =
+                                                                          null;
+                                                                      safeSetState(
+                                                                          () {});
+                                                                      ScaffoldMessenger.of(
+                                                                              context)
+                                                                          .showSnackBar(
+                                                                        SnackBar(
+                                                                          content:
+                                                                              Text(
+                                                                            'Table Kot Move Successfully !',
+                                                                            style:
+                                                                                TextStyle(
+                                                                              color: FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
+                                                                          ),
+                                                                          duration:
+                                                                              Duration(milliseconds: 4000),
+                                                                          backgroundColor:
+                                                                              FlutterFlowTheme.of(context).secondary,
+                                                                        ),
+                                                                      );
+                                                                    } else {
+                                                                      FFAppState()
+                                                                          .tableNo = '';
+                                                                      FFAppState()
+                                                                          .postableList = [];
+                                                                      FFAppState()
+                                                                              .tableFlag =
+                                                                          false;
+                                                                      FFAppState()
+                                                                              .kotDocRef =
+                                                                          null;
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    }
                                                                   } else {
-                                                                    FFAppState()
-                                                                        .tableNo = '';
-                                                                    FFAppState()
-                                                                        .postableList = [];
-                                                                    FFAppState()
-                                                                            .tableFlag =
-                                                                        false;
-                                                                    FFAppState()
-                                                                            .kotDocRef =
-                                                                        null;
-                                                                    safeSetState(
-                                                                        () {});
+                                                                    await showDialog(
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (alertDialogContext) {
+                                                                        return AlertDialog(
+                                                                          content:
+                                                                              Text('Choose Single Table Only !'),
+                                                                          actions: [
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                              child: Text('Ok'),
+                                                                            ),
+                                                                          ],
+                                                                        );
+                                                                      },
+                                                                    );
                                                                   }
                                                                 },
                                                                 text: FFLocalizations.of(
@@ -1131,6 +1161,116 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                      ),
+                                                                  elevation:
+                                                                      0.0,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              18.0),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                3.0, 0.0),
+                                                    child: Container(
+                                                      width: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width *
+                                                          0.14,
+                                                      height: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .height *
+                                                          0.06,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(0.0),
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          if (FFAppState()
+                                                              .tableFlag)
+                                                            Flexible(
+                                                              child:
+                                                                  FFButtonWidget(
+                                                                onPressed:
+                                                                    () async {
+                                                                  FFAppState()
+                                                                      .tableNo = '';
+                                                                  FFAppState()
+                                                                      .postableList = [];
+                                                                  FFAppState()
+                                                                          .tableFlag =
+                                                                      false;
+                                                                  FFAppState()
+                                                                          .kotDocRef =
+                                                                      null;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                },
+                                                                text: FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'hll7uldo' /* Cancel */,
+                                                                ),
+                                                                icon: Icon(
+                                                                  Icons
+                                                                      .cancel_rounded,
+                                                                  size: 30.0,
+                                                                ),
+                                                                options:
+                                                                    FFButtonOptions(
+                                                                  height: 40.0,
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                                  iconPadding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  iconColor: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  textStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
