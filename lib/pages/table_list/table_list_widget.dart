@@ -1022,89 +1022,105 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                 onPressed:
                                                                     () async {
                                                                   if (FFAppState()
-                                                                          .postableList
-                                                                          .length >
-                                                                      1) {
-                                                                    var confirmDialogResponse =
-                                                                        await showDialog<bool>(
-                                                                              context: context,
-                                                                              builder: (alertDialogContext) {
-                                                                                return AlertDialog(
-                                                                                  content: Text('Are You Sure To Move Table Kot Orders?'),
-                                                                                  actions: [
-                                                                                    TextButton(
-                                                                                      onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                      child: Text('Cancel'),
-                                                                                    ),
-                                                                                    TextButton(
-                                                                                      onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                      child: Text('Confirm'),
-                                                                                    ),
-                                                                                  ],
-                                                                                );
-                                                                              },
-                                                                            ) ??
-                                                                            false;
-                                                                    if (confirmDialogResponse) {
-                                                                      await FFAppState()
-                                                                          .kotDocRef!
-                                                                          .update(
-                                                                              createTableKotRecordData(
-                                                                            tableNo:
+                                                                          .kotDocRef !=
+                                                                      null) {
+                                                                    if (FFAppState()
+                                                                            .postableList
+                                                                            .length >=
+                                                                        1) {
+                                                                      var confirmDialogResponse = await showDialog<
+                                                                              bool>(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (alertDialogContext) {
+                                                                              return AlertDialog(
+                                                                                content: Text('Are You Sure To Move Table Kot Orders?'),
+                                                                                actions: [
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                    child: Text('Cancel'),
+                                                                                  ),
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                    child: Text('Confirm'),
+                                                                                  ),
+                                                                                ],
+                                                                              );
+                                                                            },
+                                                                          ) ??
+                                                                          false;
+                                                                      if (confirmDialogResponse) {
+                                                                        await FFAppState()
+                                                                            .kotDocRef!
+                                                                            .update(createTableKotRecordData(
+                                                                              tableNo: FFAppState().tableNo,
+                                                                            ));
+                                                                        FFAppState().table = functions
+                                                                            .generateMergeTables(
+                                                                                containerPremisesRecordList.toList(),
                                                                                 FFAppState().tableNo,
-                                                                          ));
-                                                                      FFAppState().table = functions
-                                                                          .generateMergeTables(
-                                                                              containerPremisesRecordList.toList(),
-                                                                              FFAppState().tableNo,
-                                                                              FFAppState().selectedPremise,
-                                                                              FFAppState().postableList.toList(),
-                                                                              FFAppState().table.toList())
-                                                                          .toList()
-                                                                          .cast<dynamic>();
-                                                                      FFAppState()
-                                                                          .tableNo = '';
-                                                                      FFAppState()
-                                                                          .postableList = [];
-                                                                      FFAppState()
-                                                                              .tableFlag =
-                                                                          false;
-                                                                      FFAppState()
-                                                                              .kotDocRef =
-                                                                          null;
-                                                                      safeSetState(
-                                                                          () {});
-                                                                      ScaffoldMessenger.of(
-                                                                              context)
-                                                                          .showSnackBar(
-                                                                        SnackBar(
-                                                                          content:
-                                                                              Text(
-                                                                            'Table Kot Move Successfully !',
-                                                                            style:
-                                                                                TextStyle(
-                                                                              color: FlutterFlowTheme.of(context).primaryText,
+                                                                                FFAppState().selectedPremise,
+                                                                                FFAppState().postableList.toList(),
+                                                                                FFAppState().table.toList())
+                                                                            .toList()
+                                                                            .cast<dynamic>();
+                                                                        FFAppState().tableNo =
+                                                                            '';
+                                                                        FFAppState().postableList =
+                                                                            [];
+                                                                        FFAppState().tableFlag =
+                                                                            false;
+                                                                        FFAppState().kotDocRef =
+                                                                            null;
+                                                                        safeSetState(
+                                                                            () {});
+                                                                        ScaffoldMessenger.of(context)
+                                                                            .showSnackBar(
+                                                                          SnackBar(
+                                                                            content:
+                                                                                Text(
+                                                                              'Table Kot Move Successfully !',
+                                                                              style: TextStyle(
+                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                              ),
                                                                             ),
+                                                                            duration:
+                                                                                Duration(milliseconds: 4000),
+                                                                            backgroundColor:
+                                                                                FlutterFlowTheme.of(context).secondary,
                                                                           ),
-                                                                          duration:
-                                                                              Duration(milliseconds: 4000),
-                                                                          backgroundColor:
-                                                                              FlutterFlowTheme.of(context).secondary,
-                                                                        ),
-                                                                      );
+                                                                        );
+                                                                      } else {
+                                                                        FFAppState().tableNo =
+                                                                            '';
+                                                                        FFAppState().postableList =
+                                                                            [];
+                                                                        FFAppState().tableFlag =
+                                                                            false;
+                                                                        FFAppState().kotDocRef =
+                                                                            null;
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      }
                                                                     } else {
-                                                                      FFAppState()
-                                                                          .tableNo = '';
-                                                                      FFAppState()
-                                                                          .postableList = [];
-                                                                      FFAppState()
-                                                                              .tableFlag =
-                                                                          false;
-                                                                      FFAppState()
-                                                                              .kotDocRef =
-                                                                          null;
-                                                                      safeSetState(
-                                                                          () {});
+                                                                      await showDialog(
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (alertDialogContext) {
+                                                                          return AlertDialog(
+                                                                            content:
+                                                                                Text('Choose Single Table Only !'),
+                                                                            actions: [
+                                                                              TextButton(
+                                                                                onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                child: Text('Ok'),
+                                                                              ),
+                                                                            ],
+                                                                          );
+                                                                        },
+                                                                      );
                                                                     }
                                                                   } else {
                                                                     await showDialog(
@@ -1114,7 +1130,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                           (alertDialogContext) {
                                                                         return AlertDialog(
                                                                           content:
-                                                                              Text('Choose Single Table Only !'),
+                                                                              Text('Table Is Empty !'),
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext),
