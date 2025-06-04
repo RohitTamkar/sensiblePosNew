@@ -1231,38 +1231,112 @@ Future printBillnewhiveNEW(
               align: PosAlign.center));
 
       String printLine = '';
+      if (FFAppState().tableNo.length > 0) {
+        String printLine = '';
 
-      String dateString = '';
-      String serialTemp = 'Serial no: ' + FFAppState().newcount.toString();
-      final DateTime now =
-          DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
-      final DateFormat formatter = DateFormat('dd-MM-yyyy');
-      final String formatted = formatter.format(now);
-      dateString = formatted.toString();
-      printLine = serialTemp + " " + dateString;
+        String tableString = 'Table No:#' + FFAppState().tableNo;
+        String serialTemp = 'Serial No: ' + FFAppState().newcount.toString();
 
-      bytes += generator.text(printLine,
+        printLine = serialTemp;
+        for (int i = 1;
+            i <= (size - (serialTemp.length + tableString.length));
+            i++) {
+          printLine += " ";
+        }
+
+        printLine += tableString;
+
+        bytes += generator.text(printLine,
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: true));
+
+        String dateString = '';
+        // String serialTemp = 'Token no: ' + FFAppState().count.toString();
+        final DateTime now =
+            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
+        final DateFormat formatter = DateFormat('dd-MM-yyyy');
+        final String formatted = formatter.format(now);
+        dateString = formatted.toString();
+        // printLine = serialTemp;
+        for (int i = 1; i <= (size - (dateString.length)); i++) {
+          printLine += " ";
+        }
+
+        printLine += dateString;
+
+        /*    bytes += generator.text(printLine,
           styles: const PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
-              bold: false));
+              bold: true));*/
 
-      printLine = '';
-      final DateTime now1 =
-          DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
-      final DateFormat formatter1 = DateFormat('h:mm:ss');
-      final String formatted1 = formatter1.format(now1);
+        printLine = '';
+        final DateTime now1 =
+            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
+        final DateFormat formatter1 = DateFormat('dd-MM-yyyy h:mm a');
+        final String formatted1 = formatter1.format(now1);
 
-      String dateTimeString = formatted1.toString();
-      String billNo = 'Bill No: ' + invoiceDetails.invoice.toString();
-      printLine = billNo + " " + dateTimeString;
+        String dateTimeString = formatted1.toString();
+        String billNo = 'Bill No:' + invoiceDetails.invoice.toString();
+        printLine = billNo;
+        for (int i = 1;
+            i <= (size - (billNo.length + dateTimeString.length));
+            i++) {
+          printLine += " ";
+        }
+        printLine += dateTimeString;
 
-      bytes += generator.text(printLine,
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              align: PosAlign.center,
-              bold: false));
+        bytes += generator.text(printLine,
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: true));
+      } else {
+        String dateString = '';
+        String serialTemp = 'Serial no: ' + FFAppState().newcount.toString();
+        final DateTime now =
+            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
+        final DateFormat formatter = DateFormat('dd-MM-yyyy');
+        final String formatted = formatter.format(now);
+        dateString = formatted.toString();
+        printLine = serialTemp;
+        for (int i = 1;
+            i <= (size - (serialTemp.length + dateString.length));
+            i++) {
+          printLine += " ";
+        }
+
+        printLine += dateString;
+
+        bytes += generator.text(printLine,
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false));
+        printLine = '';
+        final DateTime now1 =
+            DateTime.fromMillisecondsSinceEpoch(invoiceDetails.invoiceDate);
+        final DateFormat formatter1 = DateFormat('h:mm:ss');
+        final String formatted1 = formatter1.format(now1);
+
+        String dateTimeString = formatted1.toString();
+        String billNo = 'Bill No: ' + invoiceDetails.invoice.toString();
+        printLine = billNo;
+        for (int i = 1;
+            i <= (size - (billNo.length + dateTimeString.length));
+            i++) {
+          printLine += " ";
+        }
+        printLine += dateTimeString;
+
+        bytes += generator.text(printLine,
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false));
+      }
 
       bytes += generator.text("--------------------------------",
           styles: const PosStyles(

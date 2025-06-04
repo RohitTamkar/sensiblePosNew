@@ -1593,7 +1593,7 @@ class FFAppState extends ChangeNotifier {
     _containerVisibility = value;
   }
 
-  bool _tableFlag = true;
+  bool _tableFlag = false;
   bool get tableFlag => _tableFlag;
   set tableFlag(bool value) {
     _tableFlag = value;

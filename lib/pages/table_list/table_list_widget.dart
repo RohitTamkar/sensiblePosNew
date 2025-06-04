@@ -906,20 +906,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                   safeSetState(
                                                                       () {});
                                                                 } else {
-                                                                  FFAppState().table = functions
-                                                                      .generateMergeTables(
-                                                                          containerPremisesRecordList
-                                                                              .toList(),
-                                                                          FFAppState()
-                                                                              .tableNo,
-                                                                          FFAppState()
-                                                                              .selectedPremise,
-                                                                          FFAppState()
-                                                                              .postableList
-                                                                              .toList())
-                                                                      .toList()
-                                                                      .cast<
-                                                                          dynamic>();
                                                                   FFAppState()
                                                                       .tableNo = '';
                                                                   FFAppState()

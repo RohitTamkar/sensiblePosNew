@@ -97,7 +97,7 @@ int? outwardItemsqty(
   return totalQty;
 }
 
-dynamic generatePremiseTablesjson(List<PremisesRecord> doc) {
+List<dynamic> generatePremiseTablesjson(List<PremisesRecord> doc) {
   List<dynamic> returnData = [];
 
   for (var doc1 in doc) {
@@ -1390,7 +1390,7 @@ double? returnTotaljason(
   return amt;
 }
 
-dynamic generateMergeTables(
+List<dynamic> generateMergeTables(
   List<PremisesRecord> docList,
   String selectedTables,
   String selectedPremise,
@@ -1434,5 +1434,5 @@ dynamic generateMergeTables(
     break; // Exit after processing the selected premise
   }
 
-  return returnData.isNotEmpty ? returnData[0] : null;
+  return returnData;
 }
