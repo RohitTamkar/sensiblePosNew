@@ -858,129 +858,295 @@ class _TableListWidgetState extends State<TableListWidget>
                                                             MainAxisAlignment
                                                                 .center,
                                                         children: [
-                                                          Flexible(
-                                                            child:
-                                                                FFButtonWidget(
-                                                              onPressed:
-                                                                  () async {
-                                                                var confirmDialogResponse =
-                                                                    await showDialog<
-                                                                            bool>(
-                                                                          context:
-                                                                              context,
-                                                                          builder:
-                                                                              (alertDialogContext) {
-                                                                            return AlertDialog(
-                                                                              content: Text('Are You Sure To Merge Tables ?'),
-                                                                              actions: [
-                                                                                TextButton(
-                                                                                  onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                  child: Text('Cancel'),
-                                                                                ),
-                                                                                TextButton(
-                                                                                  onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                  child: Text('Confirm'),
-                                                                                ),
-                                                                              ],
-                                                                            );
-                                                                          },
-                                                                        ) ??
+                                                          if (FFAppState()
+                                                              .tableFlag)
+                                                            Flexible(
+                                                              child:
+                                                                  FFButtonWidget(
+                                                                onPressed:
+                                                                    () async {
+                                                                  var confirmDialogResponse =
+                                                                      await showDialog<
+                                                                              bool>(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (alertDialogContext) {
+                                                                              return AlertDialog(
+                                                                                content: Text('Are You Sure To Merge Tables ?'),
+                                                                                actions: [
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                    child: Text('Cancel'),
+                                                                                  ),
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                    child: Text('Confirm'),
+                                                                                  ),
+                                                                                ],
+                                                                              );
+                                                                            },
+                                                                          ) ??
+                                                                          false;
+                                                                  if (confirmDialogResponse) {
+                                                                    FFAppState().table = functions
+                                                                        .generateMergeTables(
+                                                                            containerPremisesRecordList
+                                                                                .toList(),
+                                                                            FFAppState()
+                                                                                .tableNo,
+                                                                            FFAppState()
+                                                                                .selectedPremise,
+                                                                            FFAppState()
+                                                                                .postableList
+                                                                                .toList(),
+                                                                            FFAppState()
+                                                                                .table
+                                                                                .toList())
+                                                                        .toList()
+                                                                        .cast<
+                                                                            dynamic>();
+                                                                    FFAppState()
+                                                                        .tableNo = '';
+                                                                    FFAppState()
+                                                                        .postableList = [];
+                                                                    FFAppState()
+                                                                            .tableFlag =
                                                                         false;
-                                                                if (confirmDialogResponse) {
-                                                                  FFAppState().table = functions
-                                                                      .generateMergeTables(
-                                                                          containerPremisesRecordList
-                                                                              .toList(),
-                                                                          FFAppState()
-                                                                              .tableNo,
-                                                                          FFAppState()
-                                                                              .selectedPremise,
-                                                                          FFAppState()
-                                                                              .postableList
-                                                                              .toList(),
-                                                                          FFAppState()
-                                                                              .table
-                                                                              .toList())
-                                                                      .toList()
-                                                                      .cast<
-                                                                          dynamic>();
-                                                                  FFAppState()
-                                                                      .tableNo = '';
-                                                                  FFAppState()
-                                                                      .postableList = [];
-                                                                  FFAppState()
-                                                                          .tableFlag =
-                                                                      false;
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  FFAppState()
-                                                                      .tableNo = '';
-                                                                  FFAppState()
-                                                                      .postableList = [];
-                                                                  FFAppState()
-                                                                          .tableFlag =
-                                                                      false;
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              text: FFLocalizations
-                                                                      .of(context)
-                                                                  .getText(
-                                                                'n8mn6fkt' /* Merge Tables */,
-                                                              ),
-                                                              icon: FaIcon(
-                                                                FontAwesomeIcons
-                                                                    .mixer,
-                                                                size: 15.0,
-                                                              ),
-                                                              options:
-                                                                  FFButtonOptions(
-                                                                height: 40.0,
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        16.0,
-                                                                        0.0,
-                                                                        16.0,
-                                                                        0.0),
-                                                                iconPadding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                color: FlutterFlowTheme.of(
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    FFAppState()
+                                                                        .tableNo = '';
+                                                                    FFAppState()
+                                                                        .postableList = [];
+                                                                    FFAppState()
+                                                                            .tableFlag =
+                                                                        false;
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                text: FFLocalizations.of(
                                                                         context)
-                                                                    .alternate,
-                                                                textStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      letterSpacing:
+                                                                    .getText(
+                                                                  'n8mn6fkt' /* Merge Tables */,
+                                                                ),
+                                                                icon: FaIcon(
+                                                                  FontAwesomeIcons
+                                                                      .mixer,
+                                                                  size: 30.0,
+                                                                ),
+                                                                options:
+                                                                    FFButtonOptions(
+                                                                  height: 40.0,
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
                                                                           0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                      useGoogleFonts:
-                                                                          !FlutterFlowTheme.of(context)
-                                                                              .titleSmallIsCustom,
-                                                                    ),
-                                                                elevation: 0.0,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            8.0),
+                                                                          16.0,
+                                                                          0.0),
+                                                                  iconPadding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
+                                                                  textStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                      ),
+                                                                  elevation:
+                                                                      0.0,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              18.0),
+                                                                ),
                                                               ),
                                                             ),
-                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                3.0, 0.0),
+                                                    child: Container(
+                                                      width: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width *
+                                                          0.14,
+                                                      height: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .height *
+                                                          0.06,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(0.0),
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          if (FFAppState()
+                                                              .tableFlag)
+                                                            Flexible(
+                                                              child:
+                                                                  FFButtonWidget(
+                                                                onPressed:
+                                                                    () async {
+                                                                  var confirmDialogResponse =
+                                                                      await showDialog<
+                                                                              bool>(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (alertDialogContext) {
+                                                                              return AlertDialog(
+                                                                                content: Text('Are You Sure To Move Table Kot Order?'),
+                                                                                actions: [
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                    child: Text('Cancel'),
+                                                                                  ),
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                    child: Text('Confirm'),
+                                                                                  ),
+                                                                                ],
+                                                                              );
+                                                                            },
+                                                                          ) ??
+                                                                          false;
+                                                                  if (confirmDialogResponse) {
+                                                                    await FFAppState()
+                                                                        .kotDocRef!
+                                                                        .update(
+                                                                            createTableKotRecordData(
+                                                                          tableNo:
+                                                                              FFAppState().tableNo,
+                                                                        ));
+                                                                    FFAppState().table = functions
+                                                                        .generateMergeTables(
+                                                                            containerPremisesRecordList
+                                                                                .toList(),
+                                                                            FFAppState()
+                                                                                .tableNo,
+                                                                            FFAppState()
+                                                                                .selectedPremise,
+                                                                            FFAppState()
+                                                                                .postableList
+                                                                                .toList(),
+                                                                            FFAppState()
+                                                                                .table
+                                                                                .toList())
+                                                                        .toList()
+                                                                        .cast<
+                                                                            dynamic>();
+                                                                    FFAppState()
+                                                                        .tableNo = '';
+                                                                    FFAppState()
+                                                                        .postableList = [];
+                                                                    FFAppState()
+                                                                            .tableFlag =
+                                                                        false;
+                                                                    FFAppState()
+                                                                            .kotDocRef =
+                                                                        null;
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    FFAppState()
+                                                                        .tableNo = '';
+                                                                    FFAppState()
+                                                                        .postableList = [];
+                                                                    FFAppState()
+                                                                            .tableFlag =
+                                                                        false;
+                                                                    FFAppState()
+                                                                            .kotDocRef =
+                                                                        null;
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                text: FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'kr00pxaj' /* Move Kot */,
+                                                                ),
+                                                                icon: Icon(
+                                                                  Icons
+                                                                      .move_down,
+                                                                  size: 30.0,
+                                                                ),
+                                                                options:
+                                                                    FFButtonOptions(
+                                                                  height: 40.0,
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                                  iconPadding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  color: Color(
+                                                                      0xFFA79DFF),
+                                                                  textStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            !FlutterFlowTheme.of(context).titleSmallIsCustom,
+                                                                      ),
+                                                                  elevation:
+                                                                      0.0,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              18.0),
+                                                                ),
+                                                              ),
+                                                            ),
                                                         ],
                                                       ),
                                                     ),

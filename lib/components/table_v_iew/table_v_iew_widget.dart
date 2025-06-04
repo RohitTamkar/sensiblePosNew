@@ -352,6 +352,17 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                         ).toString();
                                         FFAppState().selectedPremise =
                                             widget!.parameter3!;
+                                        FFAppState().kotDocRef =
+                                            containerTableKotRecordList
+                                                .where((e) =>
+                                                    e.tableNo ==
+                                                    getJsonField(
+                                                      tablelistItem,
+                                                      r'''$.id''',
+                                                    ).toString())
+                                                .toList()
+                                                .firstOrNull
+                                                ?.reference;
                                         FFAppState().update(() {});
                                         await showDialog(
                                           context: context,

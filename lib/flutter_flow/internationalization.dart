@@ -23168,6 +23168,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
       'th': '',
     },
+    'kr00pxaj': {
+      'en': 'Move Kot',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
     'd91diq32': {
       'en': 'All',
       'hi': 'सभी',
