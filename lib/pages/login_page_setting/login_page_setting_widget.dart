@@ -278,7 +278,7 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                       15.0, 5.0, 5.0, 5.0),
                                               child: FlutterFlowRadioButton(
                                                 options: FFAppState()
-                                                    .posModelList
+                                                    .postableList
                                                     .toList(),
                                                 onChanged: (val) =>
                                                     safeSetState(() {}),

@@ -21,12 +21,14 @@ class TableVIewWidget extends StatefulWidget {
     this.taxcollection,
     this.apsetting,
     this.jsonlist,
+    this.premisedoc,
   });
 
   final String? parameter3;
   final List<TaxMasterRecord>? taxcollection;
   final AppSettingsRecord? apsetting;
   final dynamic jsonlist;
+  final List<PremisesRecord>? premisedoc;
 
   @override
   State<TableVIewWidget> createState() => _TableVIewWidgetState();
@@ -117,22 +119,32 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                     height: 100.0,
                     decoration: BoxDecoration(
                       color: valueOrDefault<Color>(
-                        containerTableKotRecordList
-                                    .where((e) =>
-                                        e.tableNo ==
-                                        getJsonField(
-                                          tablelistItem,
-                                          r'''$.id''',
-                                        ).toString())
-                                    .toList()
-                                    .firstOrNull
-                                    ?.tableNo ==
-                                getJsonField(
-                                  tablelistItem,
-                                  r'''$.id''',
-                                ).toString()
-                            ? FlutterFlowTheme.of(context).tertiary
-                            : Color(0xFFD1CDCD),
+                        () {
+                          if (containerTableKotRecordList
+                                  .where((e) =>
+                                      e.tableNo ==
+                                      getJsonField(
+                                        tablelistItem,
+                                        r'''$.id''',
+                                      ).toString())
+                                  .toList()
+                                  .firstOrNull
+                                  ?.tableNo ==
+                              getJsonField(
+                                tablelistItem,
+                                r'''$.id''',
+                              ).toString()) {
+                            return FlutterFlowTheme.of(context).tertiary;
+                          } else if ('EMPTY' ==
+                              getJsonField(
+                                tablelistItem,
+                                r'''$.status''',
+                              ).toString()) {
+                            return FlutterFlowTheme.of(context).warning;
+                          } else {
+                            return Color(0xFFD1CDCD);
+                          }
+                        }(),
                         Color(0xFFFFE69E),
                       ),
                       borderRadius: BorderRadius.circular(15.0),
@@ -164,6 +176,71 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                           .primaryText,
                                       size: 24.0,
                                     ),
+                                    if ((FFAppState().tableFlag == true) &&
+                                        ('${FFAppState().tableNo}' ==
+                                            getJsonField(
+                                              tablelistItem,
+                                              r'''$.id''',
+                                            ).toString()))
+                                      Theme(
+                                        data: ThemeData(
+                                          checkboxTheme: CheckboxThemeData(
+                                            visualDensity:
+                                                VisualDensity.compact,
+                                            materialTapTargetSize:
+                                                MaterialTapTargetSize
+                                                    .shrinkWrap,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(4.0),
+                                            ),
+                                          ),
+                                          unselectedWidgetColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                        ),
+                                        child: Checkbox(
+                                          value: _model.checkboxValueMap[
+                                              tablelistItem] ??= true,
+                                          onChanged: (newValue) async {
+                                            safeSetState(() =>
+                                                _model.checkboxValueMap[
+                                                    tablelistItem] = newValue!);
+                                            if (newValue!) {
+                                              FFAppState().addToPostableList(
+                                                  getJsonField(
+                                                tablelistItem,
+                                                r'''$.id''',
+                                              ).toString());
+                                              safeSetState(() {});
+                                            } else {
+                                              FFAppState()
+                                                  .removeFromPostableList(
+                                                      getJsonField(
+                                                tablelistItem,
+                                                r'''$.id''',
+                                              ).toString());
+                                              safeSetState(() {});
+                                            }
+                                          },
+                                          side: (FlutterFlowTheme.of(context)
+                                                      .alternate !=
+                                                  null)
+                                              ? BorderSide(
+                                                  width: 2,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .alternate!,
+                                                )
+                                              : null,
+                                          activeColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          checkColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                        ),
+                                      ),
                                   ],
                                 ),
                               ),
@@ -193,20 +270,25 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      if (containerTableKotRecordList
-                                              .where((e) =>
-                                                  e.tableNo ==
-                                                  getJsonField(
-                                                    tablelistItem,
-                                                    r'''$.id''',
-                                                  ).toString())
-                                              .toList()
-                                              .firstOrNull
-                                              ?.tableNo ==
-                                          getJsonField(
-                                            tablelistItem,
-                                            r'''$.id''',
-                                          ).toString()) {
+                                      if ((containerTableKotRecordList
+                                                  .where((e) =>
+                                                      e.tableNo ==
+                                                      getJsonField(
+                                                        tablelistItem,
+                                                        r'''$.id''',
+                                                      ).toString())
+                                                  .toList()
+                                                  .firstOrNull
+                                                  ?.tableNo ==
+                                              getJsonField(
+                                                tablelistItem,
+                                                r'''$.id''',
+                                              ).toString()) &&
+                                          ('AVAILABLE' ==
+                                              getJsonField(
+                                                tablelistItem,
+                                                r'''$.status''',
+                                              ).toString())) {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(
@@ -238,10 +320,29 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                       }
                                     },
                                     onLongPress: () async {
-                                      _model.flag = true;
-                                      safeSetState(() {});
-
-                                      FFAppState().update(() {});
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            content: Text('Choose Tables....'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+                                      FFAppState().tableFlag = true;
+                                      FFAppState().tableNo = getJsonField(
+                                        tablelistItem,
+                                        r'''$.id''',
+                                      ).toString();
+                                      FFAppState().selectedPremise =
+                                          widget!.parameter3!;
+                                      _model.updatePage(() {});
                                     },
                                     child: Container(
                                       width: double.infinity,

@@ -117,7 +117,7 @@ class FFAppState extends ChangeNotifier {
       _paperSize = prefs.getString('ff_paperSize') ?? _paperSize;
     });
     _safeInit(() {
-      _posModelList = prefs.getStringList('ff_posModelList') ?? _posModelList;
+      _postableList = prefs.getStringList('ff_postableList') ?? _postableList;
     });
     _safeInit(() {
       _printerTypeList =
@@ -249,7 +249,7 @@ class FFAppState extends ChangeNotifier {
       _selBill = prefs.getInt('ff_selBill') ?? _selBill;
     });
     _safeInit(() {
-      _orderColor = prefs.getBool('ff_orderColor') ?? _orderColor;
+      _tableFlag = prefs.getBool('ff_tableFlag') ?? _tableFlag;
     });
     _safeInit(() {
       _shiftDocExists = prefs.getBool('ff_shiftDocExists') ?? _shiftDocExists;
@@ -956,39 +956,39 @@ class FFAppState extends ChangeNotifier {
     prefs.setString('ff_paperSize', value);
   }
 
-  List<String> _posModelList = ['307', 'TT', 'Magic', 'Magic pro'];
-  List<String> get posModelList => _posModelList;
-  set posModelList(List<String> value) {
-    _posModelList = value;
-    prefs.setStringList('ff_posModelList', value);
+  List<String> _postableList = ['307', 'TT', 'Magic', 'Magic pro'];
+  List<String> get postableList => _postableList;
+  set postableList(List<String> value) {
+    _postableList = value;
+    prefs.setStringList('ff_postableList', value);
   }
 
-  void addToPosModelList(String value) {
-    posModelList.add(value);
-    prefs.setStringList('ff_posModelList', _posModelList);
+  void addToPostableList(String value) {
+    postableList.add(value);
+    prefs.setStringList('ff_postableList', _postableList);
   }
 
-  void removeFromPosModelList(String value) {
-    posModelList.remove(value);
-    prefs.setStringList('ff_posModelList', _posModelList);
+  void removeFromPostableList(String value) {
+    postableList.remove(value);
+    prefs.setStringList('ff_postableList', _postableList);
   }
 
-  void removeAtIndexFromPosModelList(int index) {
-    posModelList.removeAt(index);
-    prefs.setStringList('ff_posModelList', _posModelList);
+  void removeAtIndexFromPostableList(int index) {
+    postableList.removeAt(index);
+    prefs.setStringList('ff_postableList', _postableList);
   }
 
-  void updatePosModelListAtIndex(
+  void updatePostableListAtIndex(
     int index,
     String Function(String) updateFn,
   ) {
-    posModelList[index] = updateFn(_posModelList[index]);
-    prefs.setStringList('ff_posModelList', _posModelList);
+    postableList[index] = updateFn(_postableList[index]);
+    prefs.setStringList('ff_postableList', _postableList);
   }
 
-  void insertAtIndexInPosModelList(int index, String value) {
-    posModelList.insert(index, value);
-    prefs.setStringList('ff_posModelList', _posModelList);
+  void insertAtIndexInPostableList(int index, String value) {
+    postableList.insert(index, value);
+    prefs.setStringList('ff_postableList', _postableList);
   }
 
   List<String> _printerTypeList = ['USB', 'Bluetooth'];
@@ -1593,11 +1593,11 @@ class FFAppState extends ChangeNotifier {
     _containerVisibility = value;
   }
 
-  bool _orderColor = true;
-  bool get orderColor => _orderColor;
-  set orderColor(bool value) {
-    _orderColor = value;
-    prefs.setBool('ff_orderColor', value);
+  bool _tableFlag = true;
+  bool get tableFlag => _tableFlag;
+  set tableFlag(bool value) {
+    _tableFlag = value;
+    prefs.setBool('ff_tableFlag', value);
   }
 
   bool _shiftDocExists = true;
@@ -3728,6 +3728,21 @@ class FFAppState extends ChangeNotifier {
   void clearAppsdettingCache() => _appsdettingManager.clear();
   void clearAppsdettingCacheKey(String? uniqueKey) =>
       _appsdettingManager.clearRequest(uniqueKey);
+
+  final _premiseManager = StreamRequestManager<List<PremisesRecord>>();
+  Stream<List<PremisesRecord>> premise({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Stream<List<PremisesRecord>> Function() requestFn,
+  }) =>
+      _premiseManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearPremiseCache() => _premiseManager.clear();
+  void clearPremiseCacheKey(String? uniqueKey) =>
+      _premiseManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {

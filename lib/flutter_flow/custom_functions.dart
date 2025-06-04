@@ -98,27 +98,28 @@ int? outwardItemsqty(
 }
 
 dynamic generatePremiseTablesjson(List<PremisesRecord> doc) {
-  List<dynamic> list1 = [];
-  List<dynamic> list2 = [];
   List<dynamic> returnData = [];
+
   for (var doc1 in doc) {
-    int noOfTables = doc1.tables!;
+    List<dynamic> list1 = []; // <--- Moved inside loop
+
+    int noOfTables = doc1.tables ?? 0;
     for (int i = 1; i <= noOfTables; i++) {
-      var typeName = doc1.type! + " $i";
+      var typeName = "${doc1.type} $i";
       var id = "${doc1.name} $typeName"; // e.g., "AC TABLE 1"
-      list1.add({"typeName": typeName, "id": id});
+      list1.add({
+        "typeName": typeName,
+        "id": id,
+        "status": 'AVAILABLE',
+      });
     }
 
-    list2.add({"premise": doc1.name, "type": list1});
-
-    for (int x = 0; x < list2.length; x++) {
-      if (list2[x]["premise"] == doc1.name!) {
-        returnData.add(list2[x]);
-        break;
-      }
-    }
+    var premiseData = {"premise": doc1.name, "type": list1};
+    returnData.add(premiseData);
   }
-  return returnData[0];
+
+  print(returnData);
+  return returnData;
 }
 
 String genInvoiceNumLaundry(
@@ -564,7 +565,11 @@ dynamic generatePremiseTables(
   for (int i = 1; i <= noOfTables; i++) {
     var typeName = doc.type! + " $i";
     var id = "${doc.name} $typeName"; // e.g., "AC TABLE 1"
-    list1.add({"typeName": typeName, "id": id});
+    list1.add({
+      "typeName": typeName,
+      "id": id,
+      "status": 'AVAILABLE',
+    });
   }
 
   list2.add({"premise": doc.name, "type": list1});
@@ -1386,45 +1391,48 @@ double? returnTotaljason(
 }
 
 dynamic generateMergeTables(
-  PremisesRecord doc,
-  String selectedTable,
+  List<PremisesRecord> docList,
+  String selectedTables,
   String selectedPremise,
-  String choosedTableForMerge,
+  List<String> choosedTableForMerge,
 ) {
-  List<dynamic> list1 = [];
-  List<dynamic> list2 = [];
   List<dynamic> returnData = [];
 
-  int noOfTables = doc.tables!;
-  for (int i = 1; i <= noOfTables; i++) {
-    var typeName = doc.type! + " $i";
-    var id = "${doc.name} $typeName"; // e.g., "AC TABLE 1"
+  for (var doc in docList) {
+    if (doc.name != selectedPremise) continue;
 
-    Map<String, dynamic> tableData = {
-      "typeName": typeName,
-      "id": id,
-      "status": "available"
-    };
+    List<dynamic> tables = [];
+    int noOfTables = doc.tables ?? 0;
 
-    if (id == selectedTable) {
-      tableData["status"] = "merged";
-      tableData["mergedFrom"] = choosedTableForMerge;
-      tableData["mergedTables"] = "$choosedTableForMerge, $selectedTable";
-    } else if (id == choosedTableForMerge) {
-      tableData["status"] = "empty";
+    for (int i = 1; i <= noOfTables; i++) {
+      var typeName = "${doc.type} $i";
+      var id = "${doc.name} $typeName"; // e.g., "AC TABLE 1"
+
+      Map<String, dynamic> tableData = {
+        "typeName": typeName,
+        "id": id,
+        "status": "AVAILABLE",
+      };
+
+      if (id == selectedTables) {
+        tableData["status"] = "merged";
+        tableData["mergedFrom"] = choosedTableForMerge;
+        tableData["mergedTables"] =
+            [...choosedTableForMerge, selectedTables].join(", ");
+      } else if (choosedTableForMerge.contains(id)) {
+        tableData["status"] = "EMPTY";
+      }
+
+      tables.add(tableData);
     }
 
-    list1.add(tableData);
+    returnData.add({
+      "premise": doc.name,
+      "type": tables,
+    });
+
+    break; // Exit after processing the selected premise
   }
 
-  list2.add({"premise": doc.name, "type": list1});
-
-  for (int x = 0; x < list2.length; x++) {
-    if (list2[x]["premise"] == selectedPremise!) {
-      returnData.add(list2[x]);
-      break;
-    }
-  }
-
-  return returnData[0];
+  return returnData.isNotEmpty ? returnData[0] : null;
 }

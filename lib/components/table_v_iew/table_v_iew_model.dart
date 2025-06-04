@@ -20,6 +20,11 @@ class TableVIewModel extends FlutterFlowModel<TableVIewWidget> {
 
   ///  State fields for stateful widgets in this component.
 
+  // State field(s) for Checkbox widget.
+  Map<dynamic, bool> checkboxValueMap = {};
+  List<dynamic> get checkboxCheckedItems =>
+      checkboxValueMap.entries.where((e) => e.value).map((e) => e.key).toList();
+
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   TableKotRecord? tablekot;
 

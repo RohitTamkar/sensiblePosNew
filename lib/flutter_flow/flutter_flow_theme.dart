@@ -192,14 +192,14 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFE21C3D);
   late Color info = const Color(0xFF1C4494);
 
-  late Color primaryBtnText = Color(0xFFFFFFFF);
-  late Color lineColor = Color(0xFF0D0801);
-  late Color customColor2 = Color(0xFFD8D5E5);
-  late Color customColor3 = Color(0xFFF5F6FB);
-  late Color customColor1 = Color(0xFF979CAF);
-  late Color parkingPrimary = Color(0xFFFFAC47);
-  late Color parkingPrimaryBackground = Color(0xFFE4E2EC);
-  late Color parkingSecondaryBackground = Color(0xFF18212F);
+  late Color primaryBtnText = const Color(0xFFFFFFFF);
+  late Color lineColor = const Color(0xFF0D0801);
+  late Color customColor2 = const Color(0xFFD8D5E5);
+  late Color customColor3 = const Color(0xFFF5F6FB);
+  late Color customColor1 = const Color(0xFF979CAF);
+  late Color parkingPrimary = const Color(0xFFFFAC47);
+  late Color parkingPrimaryBackground = const Color(0xFFE4E2EC);
+  late Color parkingSecondaryBackground = const Color(0xFF18212F);
 }
 
 abstract class Typography {
@@ -611,14 +611,14 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFE21C3D);
   late Color info = const Color(0xFF1C4494);
 
-  late Color primaryBtnText = Color(0xFFFFFFFF);
-  late Color lineColor = Color(0xFF0D0801);
-  late Color customColor2 = Color(0xFF212A2F);
-  late Color customColor3 = Color(0xFF0D0801);
-  late Color customColor1 = Color(0xFF4E595D);
-  late Color parkingPrimary = Color(0xFFFFAC47);
-  late Color parkingPrimaryBackground = Color(0xFF161A1E);
-  late Color parkingSecondaryBackground = Color(0xFF18212F);
+  late Color primaryBtnText = const Color(0xFFFFFFFF);
+  late Color lineColor = const Color(0xFF0D0801);
+  late Color customColor2 = const Color(0xFF212A2F);
+  late Color customColor3 = const Color(0xFF0D0801);
+  late Color customColor1 = const Color(0xFF4E595D);
+  late Color parkingPrimary = const Color(0xFFFFAC47);
+  late Color parkingPrimaryBackground = const Color(0xFF161A1E);
+  late Color parkingSecondaryBackground = const Color(0xFF18212F);
 }
 
 extension TextStyleHelper on TextStyle {

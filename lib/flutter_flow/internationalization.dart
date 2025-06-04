@@ -23136,6 +23136,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // TableList
   {
+    'culcl05n': {
+      'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+      'th': '',
+    },
     'bke4nom9': {
       'en': 'Load Menu',
       'hi': '',
@@ -23153,7 +23161,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'th': '',
     },
     'n8mn6fkt': {
-      'en': 'Change Table',
+      'en': 'Merge Tables',
       'hi': '',
       'kn': '',
       'mr': '',
