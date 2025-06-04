@@ -283,7 +283,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                 tablelistItem,
                                                 r'''$.id''',
                                               ).toString()) &&
-                                          ('AVAILABLE' ==
+                                          ('EMPTY' !=
                                               getJsonField(
                                                 tablelistItem,
                                                 r'''$.status''',
