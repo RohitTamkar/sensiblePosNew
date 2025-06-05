@@ -1027,7 +1027,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                       null) {
                                                                     if (FFAppState()
                                                                             .postableList
-                                                                            .length >=
+                                                                            .length >
                                                                         1) {
                                                                       var confirmDialogResponse = await showDialog<
                                                                               bool>(
@@ -1093,8 +1093,8 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                             false;
                                                                         FFAppState().kotDocRef =
                                                                             null;
-                                                                        safeSetState(
-                                                                            () {});
+                                                                        FFAppState()
+                                                                            .update(() {});
                                                                       }
                                                                     } else {
                                                                       await showDialog(
