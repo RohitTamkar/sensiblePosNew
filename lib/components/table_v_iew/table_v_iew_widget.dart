@@ -234,6 +234,8 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                 tablelistItem,
                                                 r'''$.id''',
                                               ).toString());
+                                              FFAppState().prmiseupdate =
+                                                  widget!.parameter3!;
                                               safeSetState(() {});
                                             } else {
                                               FFAppState()
@@ -242,6 +244,7 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                                 tablelistItem,
                                                 r'''$.id''',
                                               ).toString());
+                                              FFAppState().prmiseupdate = '';
                                               safeSetState(() {});
                                             }
                                           },

@@ -1055,8 +1055,8 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                         await FFAppState()
                                                                             .kotDocRef!
                                                                             .update(createTableKotRecordData(
-                                                                              tableNo: FFAppState().tableNo,
-                                                                              premiseName: FFAppState().selectedPremise,
+                                                                              tableNo: FFAppState().postableList.firstOrNull,
+                                                                              premiseName: FFAppState().prmiseupdate,
                                                                             ));
                                                                         FFAppState().tableNo =
                                                                             '';

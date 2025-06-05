@@ -3714,6 +3714,12 @@ class FFAppState extends ChangeNotifier {
     prefs.setStringList('ff_table', _table.map((x) => jsonEncode(x)).toList());
   }
 
+  String _prmiseupdate = '';
+  String get prmiseupdate => _prmiseupdate;
+  set prmiseupdate(String value) {
+    _prmiseupdate = value;
+  }
+
   final _appsdettingManager = StreamRequestManager<List<AppSettingsRecord>>();
   Stream<List<AppSettingsRecord>> appsdetting({
     String? uniqueQueryKey,
