@@ -1533,3 +1533,19 @@ bool checkmergedtables(List<dynamic> jsonlist) {
 
   return false;
 }
+
+String totalDuration(int starttimemillis) {
+  final now = DateTime.now();
+  final startTime = DateTime.fromMillisecondsSinceEpoch(starttimemillis);
+  final duration = now.difference(startTime);
+
+  if (duration.inDays > 0) {
+    return '${duration.inDays}d ${duration.inHours.remainder(24)}h';
+  } else if (duration.inHours > 0) {
+    return '${duration.inHours}h ${duration.inMinutes.remainder(60)}m';
+  } else if (duration.inMinutes > 0) {
+    return '${duration.inMinutes}m ${duration.inSeconds.remainder(60)}s';
+  } else {
+    return '${duration.inSeconds}s';
+  }
+}

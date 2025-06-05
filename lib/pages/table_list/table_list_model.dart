@@ -4,6 +4,7 @@ import '/components/discount_and_delivery_copy/discount_and_delivery_copy_widget
 import '/components/menu_drawer/menu_drawer_widget.dart';
 import '/components/mix_payment_mode/mix_payment_mode_widget.dart';
 import '/components/qty_edit_widget.dart';
+import '/components/table_details/table_details_widget.dart';
 import '/components/table_v_iew/table_v_iew_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -94,6 +95,8 @@ class TableListModel extends FlutterFlowModel<TableListWidget> {
   List<CategoryStructStruct>? categoryListHiveCopy;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<PremisesRecord>? premiseDocCopy;
+  // Stores action output result for [Backend Call - Read Document] action in Button widget.
+  TableKotRecord? tkot;
   // State field(s) for ListView widget.
   ScrollController? listViewController1;
   // Stores action output result for [Custom Action - getProductlistHive] action in Container widget.
