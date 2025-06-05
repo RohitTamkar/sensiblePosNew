@@ -1057,15 +1057,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                             .update(createTableKotRecordData(
                                                                               tableNo: FFAppState().tableNo,
                                                                             ));
-                                                                        FFAppState().table = functions
-                                                                            .generateMergeTables(
-                                                                                containerPremisesRecordList.toList(),
-                                                                                FFAppState().tableNo,
-                                                                                FFAppState().selectedPremise,
-                                                                                FFAppState().postableList.toList(),
-                                                                                FFAppState().table.toList())
-                                                                            .toList()
-                                                                            .cast<dynamic>();
                                                                         FFAppState().tableNo =
                                                                             '';
                                                                         FFAppState().postableList =
