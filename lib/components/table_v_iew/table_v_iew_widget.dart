@@ -201,19 +201,27 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                         child: Checkbox(
                                           value: _model.checkboxValueMap[
                                               tablelistItem] ??= FFAppState()
-                                                      .postableList
-                                                      .where((e) =>
-                                                          e ==
-                                                          getJsonField(
-                                                            tablelistItem,
-                                                            r'''$.id''',
-                                                          ).toString())
-                                                      .toList()
-                                                      .firstOrNull ==
-                                                  getJsonField(
-                                                    tablelistItem,
-                                                    r'''$.id''',
-                                                  ).toString()
+                                                          .postableList
+                                                          .where((e) =>
+                                                              e ==
+                                                              getJsonField(
+                                                                tablelistItem,
+                                                                r'''$.id''',
+                                                              ).toString())
+                                                          .toList()
+                                                          .firstOrNull !=
+                                                      null &&
+                                                  FFAppState()
+                                                          .postableList
+                                                          .where((e) =>
+                                                              e ==
+                                                              getJsonField(
+                                                                tablelistItem,
+                                                                r'''$.id''',
+                                                              ).toString())
+                                                          .toList()
+                                                          .firstOrNull !=
+                                                      ''
                                               ? true
                                               : false,
                                           onChanged: (newValue) async {
