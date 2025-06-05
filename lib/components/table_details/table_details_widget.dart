@@ -89,6 +89,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .headlineSmallFamily,
                                         letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
                                         useGoogleFonts:
                                             !FlutterFlowTheme.of(context)
                                                 .headlineSmallIsCustom,
@@ -107,8 +108,9 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                           .headlineMediumFamily,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
-                                      fontSize: 18.0,
+                                      fontSize: 19.0,
                                       letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
                                       useGoogleFonts:
                                           !FlutterFlowTheme.of(context)
                                               .headlineMediumIsCustom,

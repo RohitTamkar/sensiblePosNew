@@ -446,7 +446,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                           .categoryListHiveCopy!
                                           .toList()
                                           .cast<CategoryStructStruct>();
-                                      safeSetState(() {});
+                                      FFAppState().update(() {});
 
                                       safeSetState(() {});
                                     },
