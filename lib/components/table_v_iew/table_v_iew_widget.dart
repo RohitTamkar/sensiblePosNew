@@ -352,6 +352,14 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                             ),
                                           );
                                         } else {
+                                          await actions.removeFromAllBillList(
+                                            FFAppState().selBill,
+                                          );
+                                          await actions.clearValue();
+                                          FFAppState().delCharges = 0.0;
+                                          FFAppState().kotDocRef = null;
+                                          FFAppState().tableViewHideShow = true;
+                                          FFAppState().prdid = '';
                                           FFAppState().tableViewHideShow =
                                               false;
                                           FFAppState().tableNo = getJsonField(
