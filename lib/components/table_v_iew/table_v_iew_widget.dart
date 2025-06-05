@@ -345,42 +345,66 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                             tablelistItem,
                                             r'''$.status''',
                                           ).toString()) {
-                                        FFAppState().tableFlag = true;
-                                        FFAppState().tableNo = getJsonField(
-                                          tablelistItem,
-                                          r'''$.id''',
-                                        ).toString();
-                                        FFAppState().selectedPremise =
-                                            widget!.parameter3!;
-                                        FFAppState().kotDocRef =
-                                            containerTableKotRecordList
-                                                .where((e) =>
-                                                    e.tableNo ==
-                                                    getJsonField(
-                                                      tablelistItem,
-                                                      r'''$.id''',
-                                                    ).toString())
-                                                .toList()
-                                                .firstOrNull
-                                                ?.reference;
-                                        FFAppState().update(() {});
-                                        await showDialog(
-                                          context: context,
-                                          builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              content:
-                                                  Text('Choose Tables....'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: Text('Ok'),
-                                                ),
-                                              ],
-                                            );
-                                          },
-                                        );
+                                        if ('EMPTY' ==
+                                            getJsonField(
+                                              tablelistItem,
+                                              r'''$.status''',
+                                            ).toString()) {
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                content:
+                                                    Text('Choose Tables....'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                        } else {
+                                          FFAppState().tableFlag = true;
+                                          FFAppState().tableNo = getJsonField(
+                                            tablelistItem,
+                                            r'''$.id''',
+                                          ).toString();
+                                          FFAppState().selectedPremise =
+                                              widget!.parameter3!;
+                                          FFAppState().kotDocRef =
+                                              containerTableKotRecordList
+                                                  .where((e) =>
+                                                      e.tableNo ==
+                                                      getJsonField(
+                                                        tablelistItem,
+                                                        r'''$.id''',
+                                                      ).toString())
+                                                  .toList()
+                                                  .firstOrNull
+                                                  ?.reference;
+                                          FFAppState().update(() {});
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                content:
+                                                    Text('Choose Tables....'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                        }
                                       } else {
                                         var confirmDialogResponse =
                                             await showDialog<bool>(
