@@ -407,33 +407,45 @@ class _TableListWidgetState extends State<TableListWidget>
                                   FFButtonWidget(
                                     onPressed: () async {
                                       FFAppState().tableViewHideShow = true;
-                                      safeSetState(() {});
                                       FFAppState().shiftDocExists =
                                           getJsonField(
                                         widget!.shiftDetails,
                                         r'''$.shiftExists''',
                                       );
-                                      FFAppState().update(() {});
                                       FFAppState().shiftDetailsNEw =
                                           widget!.shiftDetails!;
-                                      safeSetState(() {});
                                       FFAppState().shiftDetailsJson =
                                           widget!.shiftDetails!;
                                       FFAppState().shiftdetails =
                                           widget!.shiftDetails!;
-                                      safeSetState(() {});
-                                      _model.hiveProductListCopy =
+                                      _model.allprdrefresh =
+                                          await queryProductRecordOnce(
+                                        parent: FFAppState().outletIdRef,
+                                      );
+                                      _model.prdlist = await actions
+                                          .addFirebasetoHiveProduct(
+                                        _model.allprdrefresh!.toList(),
+                                      );
+                                      _model.listcategory =
+                                          await queryCategoryRecordOnce(
+                                        parent: FFAppState().outletIdRef,
+                                      );
+                                      _model.cat = await actions
+                                          .addFirebasetoHiveCategory(
+                                        _model.listcategory!.toList(),
+                                      );
+                                      _model.hiveProductList25 =
                                           await actions.getProductlistHive();
-                                      _model.categoryListHiveCopy =
+                                      _model.categoryListHive25 =
                                           await actions.getCategorylistHive();
+                                      FFAppState().productHive = _model
+                                          .hiveProductList25!
+                                          .toList()
+                                          .cast<ProductStructStruct>();
                                       _model.premiseDocCopy =
                                           await queryPremisesRecordOnce(
                                         parent: FFAppState().outletIdRef,
                                       );
-                                      FFAppState().productHive = _model
-                                          .hiveProductListCopy!
-                                          .toList()
-                                          .cast<ProductStructStruct>();
                                       if (!functions.checkmergedtables(
                                           FFAppState().table.toList())) {
                                         FFAppState().table = functions
@@ -443,7 +455,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                             .cast<dynamic>();
                                       }
                                       FFAppState().categoryHive = _model
-                                          .categoryListHiveCopy!
+                                          .categoryListHive25!
                                           .toList()
                                           .cast<CategoryStructStruct>();
                                       FFAppState().update(() {});

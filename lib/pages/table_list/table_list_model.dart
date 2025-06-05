@@ -89,10 +89,18 @@ class TableListModel extends FlutterFlowModel<TableListWidget> {
   bool? isConnected;
   // Model for MenuDrawer component.
   late MenuDrawerModel menuDrawerModel;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<ProductRecord>? allprdrefresh;
+  // Stores action output result for [Custom Action - addFirebasetoHiveProduct] action in Button widget.
+  int? prdlist;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<CategoryRecord>? listcategory;
+  // Stores action output result for [Custom Action - addFirebasetoHiveCategory] action in Button widget.
+  int? cat;
   // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
-  List<ProductStructStruct>? hiveProductListCopy;
+  List<ProductStructStruct>? hiveProductList25;
   // Stores action output result for [Custom Action - getCategorylistHive] action in Button widget.
-  List<CategoryStructStruct>? categoryListHiveCopy;
+  List<CategoryStructStruct>? categoryListHive25;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<PremisesRecord>? premiseDocCopy;
   // Stores action output result for [Backend Call - Read Document] action in Button widget.
