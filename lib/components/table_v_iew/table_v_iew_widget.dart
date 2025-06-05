@@ -200,7 +200,22 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                         ),
                                         child: Checkbox(
                                           value: _model.checkboxValueMap[
-                                              tablelistItem] ??= false,
+                                              tablelistItem] ??= FFAppState()
+                                                      .postableList
+                                                      .where((e) =>
+                                                          e ==
+                                                          getJsonField(
+                                                            tablelistItem,
+                                                            r'''$.id''',
+                                                          ).toString())
+                                                      .toList()
+                                                      .firstOrNull ==
+                                                  getJsonField(
+                                                    tablelistItem,
+                                                    r'''$.id''',
+                                                  ).toString()
+                                              ? true
+                                              : false,
                                           onChanged: (newValue) async {
                                             safeSetState(() =>
                                                 _model.checkboxValueMap[

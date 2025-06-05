@@ -1335,7 +1335,8 @@ class _TableListWidgetState extends State<TableListWidget>
                                                               .transparent,
                                                           highlightColor: Colors
                                                               .transparent,
-                                                          onTap: () async {
+                                                          onLongPress:
+                                                              () async {
                                                             context.pushNamed(
                                                                 DigitalOrderWidget
                                                                     .routeName);
