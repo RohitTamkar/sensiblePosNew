@@ -4026,6 +4026,9 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                   if (_model.internetconkot!) {
                                                                                     if (FFAppState().kotDocRef != null) {
                                                                                       await FFAppState().kotDocRef!.update({
+                                                                                        ...createTableKotRecordData(
+                                                                                          finalBillAmt: FFAppState().finalAmt,
+                                                                                        ),
                                                                                         ...mapToFirestore(
                                                                                           {
                                                                                             'productList': getSelItemListListFirestoreData(
@@ -4045,6 +4048,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                           kotStatus: 'PENDING',
                                                                                           tableNo: FFAppState().tableNo,
                                                                                           premiseName: FFAppState().selectedPremise,
+                                                                                          finalBillAmt: FFAppState().finalAmt,
                                                                                         ),
                                                                                         ...mapToFirestore(
                                                                                           {
@@ -4063,6 +4067,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                           kotStatus: 'PENDING',
                                                                                           tableNo: FFAppState().tableNo,
                                                                                           premiseName: FFAppState().selectedPremise,
+                                                                                          finalBillAmt: FFAppState().finalAmt,
                                                                                         ),
                                                                                         ...mapToFirestore(
                                                                                           {
@@ -4184,6 +4189,9 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                 if (_model.internetconCopy!) {
                                                                                   if (FFAppState().kotDocRef != null) {
                                                                                     await FFAppState().kotDocRef!.update({
+                                                                                      ...createTableKotRecordData(
+                                                                                        finalBillAmt: FFAppState().finalAmt,
+                                                                                      ),
                                                                                       ...mapToFirestore(
                                                                                         {
                                                                                           'productList': getSelItemListListFirestoreData(
