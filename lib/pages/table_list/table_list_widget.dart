@@ -771,6 +771,24 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                 FFButtonWidget(
                                                               onPressed:
                                                                   () async {
+                                                                await actions
+                                                                    .removeFromAllBillList(
+                                                                  FFAppState()
+                                                                      .selBill,
+                                                                );
+                                                                await actions
+                                                                    .clearValue();
+                                                                FFAppState()
+                                                                        .delCharges =
+                                                                    0.0;
+                                                                FFAppState()
+                                                                        .kotDocRef =
+                                                                    null;
+                                                                FFAppState()
+                                                                        .tableViewHideShow =
+                                                                    true;
+                                                                FFAppState()
+                                                                    .prdid = '';
                                                                 FFAppState()
                                                                         .tableViewHideShow =
                                                                     true;
@@ -4185,6 +4203,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                         kotStatus: 'PENDING',
                                                                                         tableNo: FFAppState().tableNo,
                                                                                         premiseName: FFAppState().selectedPremise,
+                                                                                        finalBillAmt: FFAppState().finalAmt,
                                                                                       ),
                                                                                       ...mapToFirestore(
                                                                                         {
@@ -4203,6 +4222,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                         kotStatus: 'PENDING',
                                                                                         tableNo: FFAppState().tableNo,
                                                                                         premiseName: FFAppState().selectedPremise,
+                                                                                        finalBillAmt: FFAppState().finalAmt,
                                                                                       ),
                                                                                       ...mapToFirestore(
                                                                                         {

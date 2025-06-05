@@ -56,7 +56,7 @@ Future<List<SelItemListStruct>> filterProductsKot(
               qtystring: itemList[j]["qtystring"].toString(),
               isDeletedItem: false,
               printKot: kot,
-              kotTime: getCurrentTimestamp.millisecondsSinceEpoch,
+              kotTime: timems,
             );
 
             returnList.add(struct);

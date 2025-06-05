@@ -116,7 +116,7 @@ Future<List<dynamic>> addToHoldListprdtable(
       "stockable": document.stockable,
       "currentStock": document.stock,
       "printKot": false,
-      "kotTime": 0,
+      "kotTime": getCurrentTimestamp.millisecondsSinceEpoch,
     };
 
     // Add or update item in the bill list
