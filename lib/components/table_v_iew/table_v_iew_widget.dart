@@ -354,8 +354,8 @@ class _TableVIewWidgetState extends State<TableVIewWidget> {
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
-                                                content:
-                                                    Text('Choose Tables....'),
+                                                content: Text(
+                                                    'Already Merged With Other  Tables !'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>

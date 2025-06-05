@@ -15,6 +15,7 @@ import 'dart:math';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
@@ -1332,82 +1333,73 @@ class _TableListWidgetState extends State<TableListWidget>
                                                         MainAxisAlignment
                                                             .spaceAround,
                                                     children: [
-                                                      if (FFAppState()
-                                                          .tableViewHideShow)
-                                                        Expanded(
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              FFAppState()
-                                                                      .tableViewHideShow =
-                                                                  functions.toggleLogin(
-                                                                      FFAppState()
-                                                                          .tableViewHideShow);
-                                                              FFAppState()
-                                                                  .update(
-                                                                      () {});
-                                                            },
-                                                            child: Container(
-                                                              width: 100.0,
-                                                              height: 100.0,
-                                                              decoration:
-                                                                  BoxDecoration(
+                                                      Expanded(
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                                DigitalOrderWidget
+                                                                    .routeName);
+                                                          },
+                                                          child: Container(
+                                                            width: 100.0,
+                                                            height: 100.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
+                                                              border:
+                                                                  Border.all(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondaryBackground,
-                                                                border:
-                                                                    Border.all(
+                                                                    .info,
+                                                                width: 0.5,
+                                                              ),
+                                                            ),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceEvenly,
+                                                              children: [
+                                                                Icon(
+                                                                  Icons.dining,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .info,
-                                                                  width: 0.5,
+                                                                      .primary,
+                                                                  size: 30.0,
                                                                 ),
-                                                              ),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Icon(
-                                                                    Icons
-                                                                        .lunch_dining,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .customColor1,
-                                                                    size: 30.0,
-                                                                  ),
-                                                                  Icon(
-                                                                    Icons
-                                                                        .sync_alt,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    size: 25.0,
-                                                                  ),
-                                                                  Icon(
-                                                                    Icons
-                                                                        .table_bar_sharp,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .customColor1,
-                                                                    size: 30.0,
-                                                                  ),
-                                                                ],
-                                                              ),
+                                                                Icon(
+                                                                  Icons
+                                                                      .sync_alt,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  size: 25.0,
+                                                                ),
+                                                                Icon(
+                                                                  Icons
+                                                                      .table_bar_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .customColor1,
+                                                                  size: 30.0,
+                                                                ),
+                                                              ],
                                                             ),
                                                           ),
                                                         ),
+                                                      ),
                                                       if (!FFAppState()
                                                           .tableViewHideShow)
                                                         Flexible(
@@ -1439,7 +1431,7 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                             context)
                                                                         .info,
                                                                     fontSize:
-                                                                        22.0,
+                                                                        20.0,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
