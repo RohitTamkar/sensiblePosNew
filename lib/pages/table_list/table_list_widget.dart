@@ -5062,7 +5062,10 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                           r'''$.dayId''',
                                                                                         ).toString()
                                                                                         ..code = FFAppState().shiftDetails.code
-                                                                                        ..endTime = FFAppState().shiftDetails.endTime
+                                                                                        ..endTime = getJsonField(
+                                                                                          _model.shiftSummarResultsNew2,
+                                                                                          r'''$.endTime''',
+                                                                                        )
                                                                                         ..advanceAmtTotal = FFAppState().shiftDetails.advanceAmtTotal
                                                                                         ..customerReciveAmtTotal = FFAppState().shiftDetails.customerReciveAmtTotal
                                                                                         ..expensesAmtTotal = FFAppState().shiftDetails.expensesAmtTotal
@@ -5070,8 +5073,14 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                         ..receiveAmtTotal = FFAppState().shiftDetails.receiveAmtTotal
                                                                                         ..refoundAmount = FFAppState().shiftDetails.refoundAmount
                                                                                         ..roundOff = FFAppState().shiftDetails.roundOff
-                                                                                        ..cashInHand = FFAppState().shiftDetails.cashInHand
-                                                                                        ..startTime = FFAppState().shiftDetails.startTime
+                                                                                        ..cashInHand = getJsonField(
+                                                                                          _model.shiftSummarResultsNew2,
+                                                                                          r'''$.cashSale''',
+                                                                                        )
+                                                                                        ..startTime = getJsonField(
+                                                                                          _model.shiftSummarResultsNew2,
+                                                                                          r'''$.startTime''',
+                                                                                        )
                                                                                         ..inActive = FFAppState().shiftDetails.inActive
                                                                                         ..shiftNo = FFAppState().shiftDetails.shiftNo
                                                                                         ..subTotalBill = FFAppState().shiftDetails.subTotalBill
@@ -5606,7 +5615,10 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                   ..refoundAmount = FFAppState().shiftDetails.refoundAmount
                                                                                   ..roundOff = FFAppState().shiftDetails.roundOff
                                                                                   ..cashInHand = FFAppState().shiftDetails.cashInHand
-                                                                                  ..startTime = FFAppState().shiftDetails.startTime
+                                                                                  ..startTime = getJsonField(
+                                                                                    _model.shiftSummarResultsNew,
+                                                                                    r'''$.startTime''',
+                                                                                  )
                                                                                   ..inActive = FFAppState().shiftDetails.inActive
                                                                                   ..shiftNo = FFAppState().shiftDetails.shiftNo
                                                                                   ..subTotalBill = FFAppState().shiftDetails.subTotalBill
@@ -5669,7 +5681,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                     r'''$.paymentJson''',
                                                                                   ).toString(),
                                                                                   code: FFAppState().shiftDetails.code,
-                                                                                  endTime: FFAppState().shiftDetails.endTime,
                                                                                   advanceAmtTotal: FFAppState().shiftDetails.advanceAmtTotal,
                                                                                   customerReciveAmtTotal: FFAppState().shiftDetails.customerReciveAmtTotal,
                                                                                   expensesAmtTotal: FFAppState().shiftDetails.expensesAmtTotal,
@@ -5681,7 +5692,6 @@ class _TableListWidgetState extends State<TableListWidget>
                                                                                     _model.shiftSummarResultsNew,
                                                                                     r'''$.cashSale''',
                                                                                   ),
-                                                                                  startTime: FFAppState().shiftDetails.startTime,
                                                                                   inActive: FFAppState().shiftDetails.inActive,
                                                                                   shiftNo: FFAppState().shiftDetails.shiftNo,
                                                                                   shiftId: getJsonField(
